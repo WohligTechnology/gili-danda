@@ -11,14 +11,28 @@
 @filterGrey-color: #a2a0a0;
 @printBlack-color: #272727;
 @printBlue-color: #112674;
-@font-family: 'Titillium Web', sans-serif;
+@whit-color:#fff;
+@font-titillium: 'Titillium Web','Sansation' sans-serif;
+@font-sansation: 'Sansation', sans-serif;
+
 
 @font-face {
     font-family: 'Sansation';
-    src: url("fonts/Sansation_Bold.TTF");
+    src: url("fonts/Sansation_Regular.TTF");
     font-weight: 400;
 }
+@font-face {
+    font-family: 'Sansation';
+    src: url("fonts/Sansation_Bold.TTF");
+    font-weight: 700;
+}
+body{
+font-family: @font-titillium , @font-sansation;
+}
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
+//  background-color:@whit-color;
+//  border-color: @whit-color;
+//    color:@menu-color;
+//    min-height: 100px;
+      background: url("img/menu.jpg") no-repeat center;
 }

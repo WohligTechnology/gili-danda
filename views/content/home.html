@@ -1,1 +1,84 @@
-<div class="container">Hello World !</div>
+<div class="slider">
+    <carousel interval="myInterval">
+        <slide ng-repeat="slide in slides" active="slide.active">
+            <img ng-src="{{slide.image}}" style="margin:auto;">
+        </slide>
+        <a class="left carousel-control" ng-click="prev()" ng-show="slides.length > 1"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    </carousel>
+</div>
+<div class="sub-menu">
+    <div class="container">
+        <div class="row">
+            <div class="sub-cat">
+                <ul>
+                    <li>
+                        <figure>
+                            <img src="img/submenu/tabletennis.png">
+                            <figcaption>table tennis</figcaption>
+
+                        </figure>
+                    </li>
+                    <li>
+                        <figure><img src="img/submenu/tennis.png">
+                            <figcaption>TENNIS</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure><img src="img/submenu/batminton.png">
+                            <figcaption>BADMINTON</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure><img src="img/submenu/sqaush.png">
+                            <figcaption>SQUASH</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure><img src="img/submenu/aquatics.png">
+                            <figcaption>aquatics</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure><img src="img/submenu/basketball.png">
+                            <figcaption>basketball</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure><img src="img/submenu/volleyball.png">
+                            <figcaption>VOLLEYBALL</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure><img src="img/submenu/handball.png">
+                            <figcaption>handball</figcaption>
+                        </figure>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="home-content text-center">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                <a class="regi">REGISTRATION now</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="middle-home">
+    <img src="img/home-middle.jpg" class="img-responsive">
+    <div class="container">
+        <div class=" over-img">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="mid-det">
+                    <h1>WHAT IS SFA?</h1>
+                    <img src="img/hr.png">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                    <img src="img/play.png">
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+
+        </div>
+    </div>
+</div>
+

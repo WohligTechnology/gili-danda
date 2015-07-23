@@ -6,6 +6,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.myInterval = 3000;
+    var slides = $scope.slides = [];
+    $scope.addSlide = function() {
+        var newWidth = 600 + slides.length + 1;
+        slides.push({
+            image: 'img/slider/slide1.jpg',
+           
+        });
+    };
+    for (var i = 0; i < 4; i++) {
+        $scope.addSlide();
+    }
 })
 
 .controller('FeatureCtrl', function($scope, TemplateService, NavigationService, cfpLoadingBar, $timeout, toaster, ngDialog, valdr) {
@@ -17,9 +29,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //Angular Loader Example
     //Start loader
     $scope.showLoader = function() {
-        cfpLoadingBar.start();
-    }
-    //Complete loader
+            cfpLoadingBar.start();
+        }
+        //Complete loader
     $scope.hideLoader = function() {
         cfpLoadingBar.complete();
     }
@@ -75,7 +87,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     //MomentJS
     $scope.today = new Date();
-    $scope.dateformat="medium";
+    $scope.dateformat = "medium";
 
 })
 

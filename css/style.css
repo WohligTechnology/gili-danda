@@ -10,15 +10,35 @@
   font-weight: 700;
 }
 body {
-  font-family: 'Titillium Web', 'Sansation' sans-serif, 'Sansation', sans-serif;
+  font-family: 'Titillium Web', sans-serif, 'Sansation', sans-serif;
 }
 .navbar-default {
   background-color: #ffffff;
   border-color: #ffffff;
   color: #041a72;
-  min-height: 133px;
-  border-bottom-left-radius: 700px 55px;
-  border-bottom-right-radius: 700px 55px;
+  z-index: 1;
+}
+.curve {
+  background: url("../img/curves1.png") no-repeat center;
+  width: 100%;
+  height: 40px;
+  position: relative;
+  z-index: 1;
+  background-position-y: 0px;
+}
+.curve2 {
+  background: url("../img/curves2.png") no-repeat center;
+  width: 100%;
+  height: 40px;
+  position: relative;
+  z-index: 1;
+  margin-top: -40px;
+}
+.curve3 {
+  background: url("../img/curves3.png") no-repeat center;
+  width: 100%;
+  height: 40px;
+  position: relative;
   z-index: 1;
 }
 ul.menu-list {
@@ -36,11 +56,17 @@ ul.menu-list li {
 }
 .logo img {
   text-align: center;
-  margin: 10px auto;
+  margin: 0 auto;
 }
 .slider {
-  margin-top: -72px;
+  margin-top: -38px;
   z-index: -1;
+}
+.navbar {
+  position: relative;
+  min-height: 26px !important;
+  margin-bottom: 0px !important;
+  border: 1px solid transparent;
 }
 .carousel-control.left {
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.0001) 100%);
@@ -81,13 +107,9 @@ ul.menu-list li {
   padding: 0px;
 }
 .sub-menu {
-  background-color: #fff;
-  border-top-right-radius: 700px 55px;
-  border-top-left-radius: 700px 55px;
-  margin-top: -73px;
-  z-index: 133;
-  position: absolute;
-  width: 100%;
+  position: relative;
+  z-index: 1;
+  margin-top: -28px;
 }
 .sub-cat ul {
   list-style: none;
@@ -115,4 +137,93 @@ ul.menu-list li {
   left: 50%;
   text-align: center;
   transform: translate(-50%, -50%);
+}
+.middle-end {
+  background: url("../img/home-end.jpg") no-repeat center;
+  background-size: cover;
+  min-height: 453px;
+}
+.footers {
+  background-color: #eaeaea;
+  margin-top: -1px;
+}
+.footers .footer-menu {
+  margin-top: 32px;
+}
+.footers .footer-menu ul {
+  list-style: none;
+  display: block;
+  font-family: 'Titillium Web', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #5a5a5a;
+  padding: 0;
+  margin: 0;
+}
+.footers .footer-menu ul li {
+  display: inline-block;
+  border-right: 2px solid #5a5a5a;
+  padding: 0px 18px;
+}
+.footers .part-logo ul {
+  list-style: none;
+  display: block;
+  padding: 0;
+}
+.footers .part-logo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.footers .part-logo ul li {
+  display: inline-block;
+  padding: 0px 14px;
+}
+.footers .social-icon ul {
+  list-style: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.footers .social-icon ul li {
+  display: inline-block;
+}
+.footers .partners p {
+  color: #5a5a5a;
+  text-transform: uppercase;
+  margin-left: 18px;
+}
+.footers .partners {
+  margin-top: 23px;
+}
+.footers .newsleter {
+  margin-top: 33px;
+  text-transform: capitalize;
+  color: #5a5a5a;
+  float: right;
+}
+.footers .input-text input {
+  border-radius: 0;
+  width: 100%;
+  background-color: #dbdbdb;
+  box-shadow: 0px 0px 0px 0px;
+  border-color: #dbdbdb;
+  padding: 10px 0px 10px 12px;
+  height: 40px;
+  outline: 0;
+}
+.footers .input-text {
+  margin-top: 20px;
+  float: left;
+  width: 80%;
+}
+.footers .button-text {
+  text-align: left;
+  margin-top: 23px;
+}
+.footers .button-text button {
+  background: #e46b1f;
+  border-color: #e46b1f;
+  transition: 300ms ease all;
+  color: #fff;
+  padding: 9px 14px;
 }

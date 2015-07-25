@@ -19,7 +19,7 @@ sans-serif;
 @font-sansation: 'Sansation',
 sans-serif;
 @footer-font: 12px;
-@text-font:13px;
+@text-font: 13px;
 @font-bold: 700;
 @font-face {
     font-family: 'Sansation';
@@ -81,48 +81,53 @@ ul.menu-list {
     padding: 0;
     font-size: 14.5px;
     text-transform: uppercase;
-        margin-top: 55px;
+    margin-top: 55px;
 }
 
 ul.menu-list li {
     display: inline-block;
-      padding: 0px 10px;
+    padding: 0px 6px;
 }
+
 ul.menu-list li a {
     text-decoration: none;
-    color:@menu-color;
+    color: @menu-color;
 }
 
 ul.menu-list li a:hover {
     text-decoration: none;
-    color:@menu-color;
+    color: @menu-color;
 }
+
 .marg-tp {
     margin-top: 24px;
 }
+
 .login p {
     text-transform: uppercase;
     font-size: @text-font;
     margin: 5px 4px;
     color: @login-color;
 }
+
 .logo {
     text-align: center;
     margin: 0 auto;
-      width: 12%;
+    //    width: 12%;
 }
-.wth{
-  width: 44%;
-}
-.wth-six{
-  width: 66%;
-}
+
+//.wth {
+//    width: 44%;
+//}
+//.wth-six {
+//    width: 66%;
+//}
 .logo img {
     text-align: center;
     margin: 0 auto;
-      position: relative;
-  top: 14px;
-  z-index: 99;
+    position: relative;
+    top: 14px;
+    z-index: 99;
 }
 
 .slider {
@@ -135,7 +140,7 @@ ul.menu-list li a:hover {
     min-height: 26px !important;
     margin-bottom: 0px !important;
     border: 1px solid transparent;
-      z-index: 999;
+    z-index: 999;
 }
 
 //.carousel-control.left {
@@ -266,12 +271,12 @@ ul.menu-list li a:hover {
         display: inline-block;
         border-right: 2px solid @footerMenu-color;
         padding: 0px 18px;
-        a{
-        color: @footerMenu-color;
+        a {
+            color: @footerMenu-color;
             text-decoration: none;
         }
-        a:hover{
-        color: @footerMenu-color;
+        a:hover {
+            color: @footerMenu-color;
             text-decoration: none;
         }
     }
@@ -498,7 +503,115 @@ ul.menu-list li a:hover {
 }
 
 .media-set {
-  z-index: 999;
-  position: relative;
-  top: -35px;
+    position: relative;
+    margin: 5px auto;
+    img {
+        width: 100%;
+    }
+}
+
+.media-text {
+    position: absolute;
+    margin: 0 auto;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h2 {
+        color: #fff;
+        font-weight: 600;
+         font-size: 60px;
+        margin: 0px;
+        text-transform: uppercase;
+    }
+}
+
+.print {
+    text-align: center;
+    display: block;
+    a {
+        text-decoration: none;
+        figure {
+            display: inline-block;
+            figcaption {
+                padding-top: 10px;
+                color:@grey-color;
+                font-size: 13px;
+            }
+        }
+    }
+    .fig-act {
+  color: #303030;
+  font-weight: 600;
+        font-size: 14px;
+}
+}
+
+.print figure.figure1 {
+    padding-right: 45px;
+}
+
+.print figure.figure2 {
+    padding-left: 45px;
+}
+
+hr.hr-width {
+    border-width: 2px;
+}
+
+.prints {
+    h3 {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 32px;
+        color: #ed562e;
+    }
+}
+
+.print-img {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    .box-img {
+        text-align: center;
+        .inner-img {
+            height: 215px;
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+            display: block;
+            img {
+                height: auto;
+                max-width: 100%;
+                background-color: #e7e7e7;
+                padding: 5px;
+                box-shadow: 1px 1px 7px #e2e2e2;
+            }
+        }
+        figcaption {
+            color: #272727;
+            text-decoration: underline;
+            font-size: 16px;
+        }
+        a {
+            color: #112674;
+            span {
+                color: #112674;
+                text-decoration: underline;
+                font-size: 16px;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+.arow {
+    margin-bottom: 50px;
+}
+
+.pad-lft {
+    padding-left: 50px;
+}
+
+.pad-rg {
+    padding-right: 50px;
 }

@@ -20,91 +20,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
 })
 
-.controller('FeatureCtrl', function($scope, TemplateService, NavigationService, cfpLoadingBar, $timeout, toaster, ngDialog, valdr) {
-    $scope.template = TemplateService.changecontent("feature");
-    $scope.menutitle = NavigationService.makeactive("Features");
+.controller('ProfileCtrl', function($scope, TemplateService, NavigationService, cfpLoadingBar, $timeout, toaster, ngDialog, valdr) {
+    $scope.template = TemplateService.changecontent("profile");
+    $scope.menutitle = NavigationService.makeactive("Profile");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
-    //Angular Loader Example
-    //Start loader
-    $scope.showLoader = function() {
-            cfpLoadingBar.start();
-        }
-        //Complete loader
-    $scope.hideLoader = function() {
-        cfpLoadingBar.complete();
-    }
 
-    //Angular toaster
-    $scope.showToaster = function() {
-        toaster.pop({
-            type: 'success',
-            title: 'Success!',
-            body: 'Huraaay!',
-            showCloseButton: true
-        });
-    };
-
-    //Tags input
-    $scope.tags = [{
-        text: 'Chintan'
-    }, {
-        text: 'Saloni'
-    }, {
-        text: 'Sohan'
-    }, {
-        text: 'Mahesh'
-    }, {
-        text: 'Jagruti'
-    }];
-
-    //ngDialog
-    $scope.showPopup = function() {
-        ngDialog.open({
-            template: 'demopop'
-        });
-    };
-
-    //Valdr
-    valdr.addConstraints({
-        'Person': {
-            'firstName': {
-                'size': {
-                    'min': 3,
-                    'max': 20,
-                    'message': 'First name is required to be between 3 and 20 characters.'
-                },
-                'required': {
-                    'message': 'First name is required.'
-                }
-            }
-        }
-    });
-
-    //Colours for ui-select
-    $scope.availableColors = ['Red', 'Green', 'Blue', 'Yellow', 'Magenta', 'Maroon', 'Umbra', 'Turquoise'];
-
-    //MomentJS
-    $scope.today = new Date();
-    $scope.dateformat = "medium";
 
 })
 
-.controller('InfiniteCtrl', function($scope, TemplateService, NavigationService) {
-    $scope.template = TemplateService.changecontent("infinite");
-    $scope.menutitle = NavigationService.makeactive("Infinite Scroll");
+.controller('MediaCtrl', function($scope, TemplateService, NavigationService) {
+    $scope.template = TemplateService.changecontent("media");
+    $scope.menutitle = NavigationService.makeactive("Media");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
-    //Infinite scroll
-    $scope.images = [1, 2, 3, 4, 5, 6, 7, 8];
-    $scope.loadMore = function() {
-        var last = $scope.images[$scope.images.length - 1];
-        for (var i = 1; i <= 8; i++) {
-            $scope.images.push(last + i);
-        }
-    };
+   
 })
 
 .controller('headerctrl', function($scope, TemplateService) {

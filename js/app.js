@@ -17,17 +17,21 @@ firstapp.config(function($stateProvider, $urlRouterProvider, cfpLoadingBarProvid
         templateUrl: "views/template.html",
         controller: 'HomeCtrl'
     })
-
-    .state('feature', {
-        url: "/feature",
+// .state('profile', {
+//        url: "/profile",
+//        templateUrl: "views/template.html",
+//        controller: 'ProfileCtrl'
+//    })
+    .state('profile', {
+        url: "/profile",
         templateUrl: "views/template.html",
-        controller: 'FeatureCtrl'
+        controller: 'ProfileCtrl'
     })
     
-    .state('infinite', {
-        url: "/infinite",
+    .state('media', {
+        url: "/media",
         templateUrl: "views/template.html",
-        controller: 'InfiniteCtrl'
+        controller: 'MediaCtrl'
     })
 
     $urlRouterProvider.otherwise("/home");

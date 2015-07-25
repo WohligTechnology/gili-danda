@@ -19,6 +19,7 @@ sans-serif;
 @font-sansation: 'Sansation',
 sans-serif;
 @footer-font: 12px;
+@text-font:13px;
 @font-bold: 700;
 @font-face {
     font-family: 'Sansation';
@@ -78,20 +79,50 @@ ul.menu-list {
     display: block;
     margin: 0;
     padding: 0;
+    font-size: 14.5px;
+    text-transform: uppercase;
+        margin-top: 55px;
 }
 
 ul.menu-list li {
     display: inline-block;
+      padding: 0px 10px;
+}
+ul.menu-list li a {
+    text-decoration: none;
+    color:@menu-color;
 }
 
+ul.menu-list li a:hover {
+    text-decoration: none;
+    color:@menu-color;
+}
+.marg-tp {
+    margin-top: 24px;
+}
+.login p {
+    text-transform: uppercase;
+    font-size: @text-font;
+    margin: 5px 4px;
+    color: @login-color;
+}
 .logo {
     text-align: center;
     margin: 0 auto;
+      width: 12%;
 }
-
+.wth{
+  width: 44%;
+}
+.wth-six{
+  width: 66%;
+}
 .logo img {
     text-align: center;
     margin: 0 auto;
+      position: relative;
+  top: 14px;
+  z-index: 99;
 }
 
 .slider {
@@ -104,6 +135,7 @@ ul.menu-list li {
     min-height: 26px !important;
     margin-bottom: 0px !important;
     border: 1px solid transparent;
+      z-index: 999;
 }
 
 //.carousel-control.left {
@@ -161,18 +193,18 @@ ul.menu-list li {
         list-style: none;
         display: block;
         margin: 0;
-        padding: 0; 
-            li {
+        padding: 0;
+        li {
             display: inline-block;
             margin: 0px 16px;
-                figure{
-                    text-align: center;
-                    figcaption{
-                    color:@subMenu-color;
-                        text-transform: uppercase;
-                          padding-top: 10px;
-                    }
+            figure {
+                text-align: center;
+                figcaption {
+                    color: @subMenu-color;
+                    text-transform: uppercase;
+                    padding-top: 10px;
                 }
+            }
         }
     }
 }
@@ -202,6 +234,7 @@ ul.menu-list li {
         }
         img {
             margin: 0 auto;
+            cursor: pointer;
         }
     }
 }
@@ -227,12 +260,20 @@ ul.menu-list li {
         color: @footerMenu-color;
         padding: 0;
         margin: 0;
-        font-size: 13px;
+        font-size: @text-font;
     }
     .footer-menu ul li {
         display: inline-block;
         border-right: 2px solid @footerMenu-color;
         padding: 0px 18px;
+        a{
+        color: @footerMenu-color;
+            text-decoration: none;
+        }
+        a:hover{
+        color: @footerMenu-color;
+            text-decoration: none;
+        }
     }
     .part-logo ul {
         list-style: none;
@@ -274,7 +315,7 @@ ul.menu-list li {
         color: @footerMenu-color;
         text-transform: uppercase;
         margin-left: 18px;
-        font-size: 13px;
+        font-size: @text-font;
     }
     .partners {
         margin-top: 23px;
@@ -284,7 +325,7 @@ ul.menu-list li {
         text-transform: capitalize;
         color: @footerMenu-color;
         float: right;
-        font-size: 13px;
+        font-size: @text-font;
     }
     .input-text input {
         border-radius: 0;
@@ -315,7 +356,7 @@ ul.menu-list li {
         border-radius: 0;
     }
     .copy h5 {
-        font-size: 13px;
+        font-size: @text-font;
         text-transform: uppercase;
         margin: 19px 17px;
     }
@@ -412,13 +453,52 @@ ul.menu-list li {
 }
 
 .container.events .student.active figure:hover img {
-    border-color: #fff;
+    border-color: @whit-color;
 }
 
 .container.events .student.active figure:hover figcaption {
-    color: #fff;
+    color: @whit-color;
 }
 
 .container.events .student.active figure:hover .hover-act {
     opacity: 1;
+}
+
+.home-content.text-center {
+    margin-top: 80px;
+    p {
+        color: #616161;
+        font-size: 17px;
+    }
+}
+
+.patch {
+    background: url("../img/patch.jpg");
+    background-repeat: repeat;
+    min-height: 53px;
+    margin-top: 30px;
+    .pad-left {
+        padding-left: 8px;
+        padding-right: 8px;
+        .regi {
+            background-color: @whit-color;
+            text-align: center;
+            padding: 15px;
+            a {
+                color: #f47321;
+                text-transform: uppercase;
+                border: 2px solid #f47321;
+                padding: 6px 50px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+.media-set {
+  z-index: 999;
+  position: relative;
+  top: -35px;
 }

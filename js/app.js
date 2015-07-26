@@ -27,13 +27,21 @@ firstapp.config(function($stateProvider, $urlRouterProvider, cfpLoadingBarProvid
         templateUrl: "views/template.html",
         controller: 'ProfileCtrl'
     })
-    
+      .state('sports', {
+        url: "/sports",
+        templateUrl: "views/template.html",
+        controller: 'SportsCtrl'
+    })
     .state('media', {
         url: "/media",
         templateUrl: "views/template.html",
         controller: 'MediaCtrl'
     })
-
+  .state('schedule', {
+        url: "/schedule",
+        templateUrl: "views/template.html",
+        controller: 'ScheduleCtrl'
+    })
     $urlRouterProvider.otherwise("/home");
 
 });

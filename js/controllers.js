@@ -39,6 +39,29 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
    
 })
 
+.controller('SportsCtrl', function($scope, TemplateService, NavigationService) {
+    $scope.template = TemplateService.changecontent("sports");
+    $scope.menutitle = NavigationService.makeactive("Sports");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+   
+})
+.controller('ScheduleCtrl', function($scope, TemplateService, NavigationService) {
+    $scope.template = TemplateService.changecontent("schedule");
+    $scope.menutitle = NavigationService.makeactive("Schedule");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+    $scope.oneAtATime = true;
+    $scope.oneAtATimes = true;
+    
+      $scope.status = {
+    isFirstOpen: true,
+    isFirstDisabled: false
+  };
+   
+})
 .controller('headerctrl', function($scope, TemplateService) {
     $scope.template = TemplateService;
 })

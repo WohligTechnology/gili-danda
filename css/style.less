@@ -669,15 +669,26 @@ hr.hr-width {
             list-style: none;
             text-align: center;
             vertical-align: middle;
+                padding: 0;
             li {
                 display: inline-block;
                 vertical-align: middle;
                 text-align: center;
                 margin: 0 auto;
                 padding: 0px 16px;
+               width: 114px;
                 img {
                     text-align: center;
                     margin: 0 auto;
+                    -webkit-transition: opacity 1s ease-in-out;
+                    -moz-transition: opacity 1s ease-in-out;
+                    -o-transition: opacity 1s ease-in-out;
+                    transition: opacity 1s ease-in-out;
+                }
+                .bottom {
+                    position: absolute;
+                    top: 0;
+                    text-align: center;
                 }
                 figcaption {
                     text-transform: uppercase;
@@ -700,7 +711,7 @@ hr.hr-width {
 }
 
 .marg {
-    margin-top: -78px;
+       margin-top: -60px;
 }
 
 .regis {
@@ -922,11 +933,10 @@ p.sel-game {
         }
     }
     .pad-rig {
-                padding: 15px 46px !important;
-            }
+        padding: 15px 46px !important;
+    }
     .table {
         .head {
-            
             .pad-rigs {
                 padding: 15px 37px !important;
             }
@@ -956,13 +966,13 @@ p.sel-game {
                 color: @menu-color;
                 td {
                     color: @menu-color;
-                      padding: 18px 13px;
+                    padding: 18px 13px;
                 }
                 span {
                     padding: 0px 25px;
                 }
-                .col-scr{
-                padding: 18px 0px;
+                .col-scr {
+                    padding: 18px 0px;
                 }
             }
             .pads {
@@ -974,8 +984,39 @@ p.sel-game {
                 font-weight: 600;
                 text-transform: uppercase;
                 font-size: 16px;
-                  border-bottom: 0px;
+                border-bottom: 0px;
             }
         }
+    }
+}
+
+.hovers {
+    cursor: pointer;
+    .top {
+        opacity: 1;
+        position: relative;
+        text-align: center;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    .bottom {
+        opacity: 0;
+-webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+}
+
+.hovers:hover {
+    .top {
+        opacity: 0;
+
+    }
+    .bottom {
+        opacity: 1;
+
     }
 }

@@ -44,6 +44,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Sports");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    
+    
+//    
+//            $scope.tab = 'basketball';
+//        $scope.class = '';
+//        $scope.class = 'bottom';
+//        $scope.classd = '';
+//        $scope.tabchange = function(tab,a) {
+//           
+//            $scope.tab = tab;
+//            if (a == 1) {
+//                $scope.class = "bottom";
+//                $scope.classd = '';
+//                
+//            } else if (a == 2) {
+//               
+//                $scope.class = '';
+//                $scope.classd = 'bottom';
+//            } 
+//        };
+
 
    
 })

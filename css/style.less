@@ -1,20 +1,22 @@
 @import "lesshat.less";
-@menu-color: #041a72;
+@menu-color: #0a1a72;
 @subMenu-color: #303030;
-@login-color: #fb7700;
-@button-color: #f47321;
+@login-color: #fc7700;
+@button-color: #fc7700;
 @base-color: #616161;
 @orangeBold-color: #e46b1f;
 @footerMenu-color: #5a5a5a;
 @filter-color: #3f3f40;
-@filterBlue-color: #375298;
+@filterBlue-color: #0a1a72;
 @filterGrey-color: #a2a0a0;
 @printBlack-color: #272727;
-@printBlue-color: #112674;
+@printBlue-color: #0a1a72;
 @whit-color: #fff;
 @footer-color: #eaeaea;
 @grey-color: #dbdbdb;
 @font-titillium: 'Titillium Web',
+sans-serif;
+@font-pt: 'PT Sans',
 sans-serif;
 @font-sansation: 'Sansation',
 sans-serif;
@@ -182,18 +184,18 @@ ul.menu-list li a:hover {
 }
 
 .sfms input[type="text"] {
-     background-color: #e6e6e6;
-  font-size: 23px;
-  border: 0px;
-  text-transform: uppercase;
-  margin-top: 2px;
-  color: #999;
-  letter-spacing: 1px;
-  padding: 14px 9px;
-  outline: 0;
-  border-radius: 8px 0px 0px 8px;
-  width: 85%;
-  text-align: center;
+    background-color: #e6e6e6;
+    font-size: 23px;
+    border: 0px;
+    text-transform: uppercase;
+    margin-top: 2px;
+    color: #999;
+    letter-spacing: 1px;
+    padding: 14px 9px;
+    outline: 0;
+    border-radius: 8px 0px 0px 8px;
+    width: 85%;
+    text-align: center;
 }
 
 .sb {
@@ -203,17 +205,17 @@ ul.menu-list li a:hover {
     border-radius: 0px 8px 8px 0px !important;
     padding: 4px 8px !important;
 }
+
 .sbs {
-      height: 63px;
-  vertical-align: top;
-  margin: 2px 0px 0px -3px;
-  border-radius: 0px 8px 8px 0px !important;
-  padding: 22px 22px !important;
-  background-color: #dbdbdb;
-  width: 63px;
+    height: 63px;
+    vertical-align: top;
+    margin: 2px 0px 0px -3px;
+    border-radius: 0px 8px 8px 0px !important;
+    padding: 22px 22px !important;
+    background-color: #dbdbdb;
+    width: 63px;
     outline: 0;
 }
-
 
 .custom {
     padding: 0px;
@@ -641,6 +643,13 @@ hr.hr-width {
 
 .arow {
     margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.aroww {
+    margin-bottom: 70px;
+    margin-top: 40px;
+    cursor: pointer;
 }
 
 .pad-lft {
@@ -865,7 +874,7 @@ hr.hr-width {
 
 p.sel-game {
     text-transform: uppercase;
-    color: #375298;
+    color: @menu-color;
     font-size: 17px;
     padding: 10px 0px 0px 0px;
 }
@@ -887,4 +896,86 @@ p.sel-game {
     outline: 1px solid rgb(204, 204, 204);
     height: 8px;
     border-radius: 20px;
+}
+
+.marginegt {
+    margin: 0px 0px 0px 80px;
+    padding-right: 0px;
+}
+
+.width {
+    //width: 74%;
+    .sch-det {
+        margin-bottom: 30px;
+        h2 {
+            color: @menu-color;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+    .search-rsl {
+        margin: 20px 0px 50px 0px;
+        h4 {
+            color: @grey-color;
+            font-size: 21px;
+            font-family: @font-pt;
+        }
+    }
+    .pad-rig {
+                padding: 15px 46px !important;
+            }
+    .table {
+        .head {
+            
+            .pad-rigs {
+                padding: 15px 37px !important;
+            }
+            .pad-righ {
+                padding: 15px 150px !important;
+            }
+            th {
+                font-weight: 400;
+                text-transform: uppercase;
+                font-size: 23px;
+                border-bottom: 0px !important;
+                color: #fc7700;
+                padding: 15px 0px !important;
+            }
+        }
+        .tr-body {
+            td {
+                color: #656363;
+                text-transform: uppercase;
+                font-size: 21px;
+                border-top: 0;
+                padding: 18px 0px;
+                border-bottom: 2px solid @grey-color;
+                font-family: @font-pt;
+            }
+            .th-blue {
+                color: @menu-color;
+                td {
+                    color: @menu-color;
+                      padding: 18px 13px;
+                }
+                span {
+                    padding: 0px 25px;
+                }
+                .col-scr{
+                padding: 18px 0px;
+                }
+            }
+            .pads {
+                padding: 18px 35px;
+            }
+        }
+        .score-hd {
+            th {
+                font-weight: 600;
+                text-transform: uppercase;
+                font-size: 16px;
+                  border-bottom: 0px;
+            }
+        }
+    }
 }

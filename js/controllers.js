@@ -47,20 +47,30 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
    
 })
+
+.controller('ScoreCtrl', function($scope, TemplateService, NavigationService) {
+    $scope.template = TemplateService.changecontent("score");
+    $scope.menutitle = NavigationService.makeactive("Score");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+   
+})
+
 .controller('ScheduleCtrl', function($scope, TemplateService, NavigationService) {
     $scope.template = TemplateService.changecontent("schedule");
     $scope.menutitle = NavigationService.makeactive("Schedule");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
-    $scope.oneAtATime = true;
-    $scope.oneAtATimes = false;
-    
-      $scope.status = {
-    isFirstOpen: true,
-    isFirstDisabled: false
-  };
-   
+//    $scope.oneAtATime = true;
+//    $scope.oneAtATimes = false;
+//    
+//      $scope.status = {
+//    isFirstOpen: true,
+//    isFirstDisabled: false
+//  };
+//   
      $scope.jqueryScrollbarOptions = {
         "onScroll":function(y, x){
             if(y.scroll == y.maxScroll){

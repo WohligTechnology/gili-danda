@@ -43,6 +43,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, cfpLoadingBarProvid
         templateUrl: "views/template.html",
         controller: 'ScheduleCtrl'
     })
+    .state('score', {
+        url: "/score",
+        templateUrl: "views/template.html",
+        controller: 'ScoreCtrl'
+    })
     $urlRouterProvider.otherwise("/home");
 
 });

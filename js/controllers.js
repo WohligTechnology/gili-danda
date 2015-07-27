@@ -54,7 +54,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
 
     $scope.oneAtATime = true;
-    $scope.oneAtATimes = true;
+    $scope.oneAtATimes = false;
     
       $scope.status = {
     isFirstOpen: true,

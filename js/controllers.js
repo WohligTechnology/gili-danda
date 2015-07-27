@@ -61,6 +61,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     isFirstDisabled: false
   };
    
+     $scope.jqueryScrollbarOptions = {
+        "onScroll":function(y, x){
+            if(y.scroll == y.maxScroll){
+                alert('Scrolled to bottom');
+            }
+        }
+    };
 })
 .controller('headerctrl', function($scope, TemplateService) {
     $scope.template = TemplateService;

@@ -55,7 +55,7 @@
 <div class="container">
     <div class="row marginlft">
         <div class="col-md-3">
-            <div class="cat-left">
+            <div class="cat-left scrollbar-dynamic" data-jquery-scrollbar="jqueryScrollbarOptions">
 
                 <accordion close-others="oneAtATime">
 
@@ -115,7 +115,7 @@
 
                     <accordion-group is-open="status.open">
                         <accordion-heading>
-                            age group <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
+                            table tennis <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
                         </accordion-heading>
                         <form class="sub-catgame">
                             <ul>
@@ -148,7 +148,7 @@
 
                     <accordion-group is-open="status.open">
                         <accordion-heading>
-                            age group <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
+                            aquatics <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
                         </accordion-heading>
                         <form class="sub-catgame">
                             <ul>
@@ -181,7 +181,7 @@
 
                     <accordion-group is-open="status.open">
                         <accordion-heading>
-                            age group <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
+                            basketball <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
                         </accordion-heading>
                         <form class="sub-catgame">
                             <ul>
@@ -214,7 +214,7 @@
 
                     <accordion-group is-open="status.open">
                         <accordion-heading>
-                            age group <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
+                            tennis <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
                         </accordion-heading>
                         <form class="sub-catgame">
                             <ul>
@@ -247,7 +247,7 @@
 
                     <accordion-group is-open="status.open">
                         <accordion-heading>
-                            age group <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
+                            squash <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
                         </accordion-heading>
                         <form class="sub-catgame">
                             <ul>
@@ -280,7 +280,7 @@
 
                     <accordion-group is-open="status.open">
                         <accordion-heading>
-                            age group <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
+                            badminton <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
                         </accordion-heading>
                         <form class="sub-catgame">
                             <ul>
@@ -313,7 +313,7 @@
 
                     <accordion-group is-open="status.open">
                         <accordion-heading>
-                            age group <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
+                            handball <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
                         </accordion-heading>
                         <form class="sub-catgame">
                             <ul>
@@ -340,9 +340,52 @@
                             </ul>
                         </form>
                     </accordion-group>
-                </accordion>
-            </div>
+                </accordion>   
+                       <accordion close-others="oneAtATime">
+
+
+                    <accordion-group is-open="status.open">
+                        <accordion-heading>
+                            vollyball <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
+                        </accordion-heading>
+                        <form class="sub-catgame">
+                            <ul>
+                                <li>
+                                    <input id="Option" type="checkbox">
+                                    <label class="checkbox" for="Option">all</label>
+                                </li>
+                                <li>
+                                    <input id="option2" type="checkbox">
+                                    <label class="checkbox" for="option2">under - 9</label>
+                                </li>
+                                <li>
+                                    <input id="option3" type="checkbox">
+                                    <label class="checkbox" for="option3">under - 11</label>
+                                </li>
+                                <li>
+                                    <input id="option4" type="checkbox">
+                                    <label class="checkbox" for="option4">under - 13</label>
+                                </li>
+                                <li>
+                                    <input id="option5" type="checkbox">
+                                    <label class="checkbox" for="option5">under - 16</label>
+                                </li>
+                            </ul>
+                        </form>
+                    </accordion-group>
+                </accordion>      
+                 </div>
         </div>
-        <div class="col-md-8"></div>
+        <div class="col-md-8">
+            <div class="sch-det text-center">
+                <h2>basketball</h2>
+            </div>
+            <div class="searchs text-center">
+                            <form action="/search" method="get" class="sfms">
+                                <input type="text" name="q" value="">
+                                <input type="image" value="Search" src="img/searchbig.png" class="sbs">
+                            </form>
+                        </div>
+        </div>
     </div>
 </div>

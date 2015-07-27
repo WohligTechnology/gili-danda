@@ -181,6 +181,21 @@ ul.menu-list li a:hover {
     border-radius: 8px 0px 0px 8px;
 }
 
+.sfms input[type="text"] {
+     background-color: #e6e6e6;
+  font-size: 23px;
+  border: 0px;
+  text-transform: uppercase;
+  margin-top: 2px;
+  color: #999;
+  letter-spacing: 1px;
+  padding: 14px 9px;
+  outline: 0;
+  border-radius: 8px 0px 0px 8px;
+  width: 85%;
+  text-align: center;
+}
+
 .sb {
     height: 22px;
     vertical-align: top;
@@ -188,6 +203,17 @@ ul.menu-list li a:hover {
     border-radius: 0px 8px 8px 0px !important;
     padding: 4px 8px !important;
 }
+.sbs {
+      height: 63px;
+  vertical-align: top;
+  margin: 2px 0px 0px -3px;
+  border-radius: 0px 8px 8px 0px !important;
+  padding: 22px 22px !important;
+  background-color: #dbdbdb;
+  width: 63px;
+    outline: 0;
+}
+
 
 .custom {
     padding: 0px;
@@ -730,8 +756,14 @@ hr.hr-width {
     }
 }
 
+.scrollbar-dynamic {
+    height: 380px;
+    display: block;
+    overflow: auto;
+}
+
 .marginlft {
-    margin: 0px 0px 0px 50px;
+    margin: 30px 0px 0px 50px;
     .cat-left {
         width: 80%;
         margin-top: 18px;
@@ -756,6 +788,7 @@ hr.hr-width {
                         text-align: left;
                         text-transform: uppercase;
                         color: #3f3f40;
+                        font-weight: 400;
                         a {
                             outline: 0;
                             text-decoration: none;
@@ -835,4 +868,23 @@ p.sel-game {
     color: #375298;
     font-size: 17px;
     padding: 10px 0px 0px 0px;
+}
+
+.scrollbar-dynamic::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+    border-left: 1px solid #C6C6C6;
+    border-right: 1px solid #C6C6C6;
+    border-radius: 10px;
+}
+
+.scrollbar-dynamic::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 26px;
+}
+
+.scrollbar-dynamic::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid rgb(204, 204, 204);
+    height: 8px;
+    border-radius: 20px;
 }

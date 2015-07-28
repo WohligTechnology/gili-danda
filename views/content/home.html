@@ -1,13 +1,20 @@
- <div class="curve">
+<!--<a class="btn btn-default" ng-click="changeslider();">Change</a>{{flex.demo}}-->
+<div class="curve">
 
-    </div>
-   <div class="slider">
-    <carousel interval="myInterval">
-        <slide ng-repeat="slide in slides" active="slide.active">
-            <img ng-src="{{slide.image}}" style="margin:auto;">
-        </slide>
-        <a class="left carousel-control" ng-click="prev()" ng-show="slides.length > 1"><span class="glyphicon glyphicon-chevron-left"></span></a>
-    </carousel>
+</div>
+<div class="slider">
+
+    <flex-slider class="carousel" flex-slide="s in slides" animation="slide" animation-loop="true" item-margin="1" control-nav="false" flexvar="demo" after="changeslider();" start="changeslider();">
+        <li>
+            <img ng-src="{{s}}" class="img-responsive">
+            
+        </li>
+
+    </flex-slider>
+<div class="slider-text" ng-repeat="element in homeslide">
+                <h3>{{element.captions}}</h3>
+                <a ng-click="clickonslider(element);" ng-show="element.link">KNOW MORE</a>
+            </div>
 </div>
 <div class="curve2">
 
@@ -17,46 +24,10 @@
         <div class="row">
             <div class="sub-cat">
                 <ul>
-                    <li>
+                    <li ng-repeat="element in homeslide" ng-click="iconclick(element);">
                         <figure>
-                            <img src="img/submenu/tabletennis.png" class="img-responsive">
-                            <figcaption>table tennis</figcaption>
-
-                        </figure>
-                    </li>
-                    <li>
-                        <figure><img src="img/submenu/tennis.png" class="img-responsive">
-                            <figcaption>TENNIS</figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure><img src="img/submenu/batminton.png" class="img-responsive">
-                            <figcaption>BADMINTON</figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure><img src="img/submenu/sqaush.png" class="img-responsive">
-                            <figcaption>SQUASH</figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure><img src="img/submenu/aquatics.png" class="img-responsive">
-                            <figcaption>aquatics</figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure><img src="img/submenu/basketball.png" class="img-responsive">
-                            <figcaption>basketball</figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure><img src="img/submenu/volleyball.png" class="img-responsive">
-                            <figcaption>VOLLEYBALL</figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure><img src="img/submenu/handball.png">
-                            <figcaption>handball</figcaption>
+                            <img class="transition" ng-src="{{element.icon}}" ng-style="{ 'width' : element.zoom*110 }" class="img-responsive">
+                            <figcaption ng-style="{ 'font-size' : element.zoom*14 }">{{element.caption}}</figcaption>
                         </figure>
                     </li>
                 </ul>
@@ -71,17 +42,17 @@
         </div>
     </div>
     <div class="patch">
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3 pad-left">
-            <div class="regi">
-        <a href="#">REGISTRATION now</a>
-    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 pad-left">
+                    <div class="regi">
+                        <a href="#">REGISTRATION now</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-    </div>
-    
+
 </div>
 <div class="middle-home">
     <img src="img/home-middle.jpg" class="img-responsive">

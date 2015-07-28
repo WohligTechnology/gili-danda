@@ -8,46 +8,7 @@
     <div class="row">
         <div class="blue-cat">
             <ul>
-                <li>
-                    <figure><img src="img/orangemenu/tabletennis.png" class="img-responsive">
-                        <figcaption>table tennis</figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure><img src="img/orangemenu/tennis.png" class="img-responsive">
-                        <figcaption>TENNIS</figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure><img src="img/orangemenu/batminton.png" class="img-responsive">
-                        <figcaption>BADMINTON</figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure><img src="img/orangemenu/squash.png" class="img-responsive">
-                        <figcaption>SQUASH</figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure><img src="img/orangemenu/aquash.png" class="img-responsive">
-                        <figcaption>aquatics</figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure><img src="img/orangemenu/basketball.png" class="img-responsive">
-                        <figcaption class="orange-act">basketball</figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure><img src="img/orangemenu/vollyball.png" class="img-responsive">
-                        <figcaption>VOLLEYBALL</figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure><img src="img/orangemenu/handball.png">
-                        <figcaption>handball</figcaption>
-                    </figure>
-                </li>
+                <hovericon game="game" ng-repeat="game in games" ng-click="makeactive(game);"></hovericon>
             </ul>
         </div>
     </div>

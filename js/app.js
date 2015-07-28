@@ -1,6 +1,7 @@
 var $test = {};
 var firstapp = angular.module('firstapp', [
     'ui.router',
+    'angular-flexslider',
     'phonecatControllers',
     'templateservicemod',
     'navigationservice',
@@ -47,6 +48,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvi
             url: "/score",
             templateUrl: "views/template.html",
             controller: 'ScoreCtrl'
+        }) 
+        .state('venue', {
+            url: "/venue",
+            templateUrl: "views/template.html",
+            controller: 'VenueCtrl'
         })
     $urlRouterProvider.otherwise("/home");
 

@@ -1,4 +1,4 @@
-// JavaScript Document
+var $test = {};
 var firstapp = angular.module('firstapp', [
     'ui.router',
     'phonecatControllers',
@@ -58,16 +58,29 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvi
         restrict: 'EA',
         replace: true,
         templateUrl: 'views/directive/hovericon.html',
+        scope: {
+            game: '='
+        },
         link: function (scope, element, attr) {
-            console.log("hover element");
-            console.log(element);
-            console.log("hover attr");
-            console.log(attr);
-            console.log("Hover Scope");
-            console.log(scope);
 
-            scope.iconBlue = attr.icon;
-            scope.game = attr.game;
+        
+            console.log(attr);
+            var ishover;
+            var $element = $(element);
+            $test = $element;
+            $element.ready(function () {
+                var $top = $element.children(".top");
+                var $bottom = $element.children(".bottom");
+                $bottom.width($top.width());
+
+                $element.hover(function () {
+                    $element.addClass("bigger");
+                }, function () {
+                    $element.removeClass("bigger");
+                    $bottom.width($top.width());
+                });
+
+            });
 
         }
 

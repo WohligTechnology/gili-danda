@@ -53,6 +53,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvi
             url: "/venue",
             templateUrl: "views/template.html",
             controller: 'VenueCtrl'
+        }) 
+        .state('schoolprofile', {
+            url: "/schoolprofile",
+            templateUrl: "views/template.html",
+            controller: 'SchoolprofileCtrl'
         })
     $urlRouterProvider.otherwise("/home");
 

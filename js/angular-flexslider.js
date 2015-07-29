@@ -13,7 +13,6 @@
                 template: '<div class="flexslider-container"></div>',
                 compile: function (element, attr, linker) {
                     return function ($scope, $element) {
-                        console.log($scope.flex[attr.flexvar]);
                         var addSlide, collectionString, flexsliderDiv, getTrackFromItem, indexString, match, removeSlide, slidesItems, trackBy;
                         match = (attr.slide || attr.flexSlide).match(/^\s*(.+)\s+in\s+(.*?)(?:\s+track\s+by\s+(.+?))?\s*$/);
                         indexString = match[1];
@@ -180,8 +179,11 @@
                                 flexsliderDiv.attr('id', options.sliderId);
                             }
                             return $timeout((function () {
-                                $scope.flex[attr.flexvar] = flexsliderDiv.flexslider(options);
-                                return $scope.flex[attr.flexvar];
+                                if ($scope.flex && $scope.flex[attr.flexvar]) {
+                                    $scope.flex[attr.flexvar] = flexsliderDiv.flexslider(options);
+                                    return $scope.flex[attr.flexvar];
+                                } else
+                                    return flexsliderDiv.flexslider(options);
                             }), 0);
                         });
                     };

@@ -176,6 +176,58 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 })
+    .controller('SchoolprofileCtrl', function ($scope, TemplateService, NavigationService) {
+    $scope.template = TemplateService.changecontent("schoolprofile");
+    $scope.menutitle = NavigationService.makeactive("Schoolprofile");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+            $scope.games = // JavaScript Document
+[{
+                "icon": "img/bluemenu/tabletennis.png",
+                "icon2": "img/bluemenu/tabletennisor.png",
+                "game": "table tennis"
+        }, {
+                "icon": "img/bluemenu/tennis.png",
+                "icon2": "img/bluemenu/tennisor.png",
+                "game": "tennis"
+        }, {
+                "icon": "img/bluemenu/batminton.png",
+                "icon2": "img/bluemenu/batmintonor.png",
+                "game": "badminton"
+        }, {
+                "icon": "img/bluemenu/squash.png",
+                "icon2": "img/bluemenu/sqaushor.png",
+                "game": "squash"
+        }, {
+                "icon": "img/bluemenu/aqua.png",
+                "icon2": "img/bluemenu/aquaticsor.png",
+                "game": "aquatics"
+        }, {
+                "icon": "img/bluemenu/basketball.png",
+                "icon2": "img/bluemenu/basketballor.png",
+                "game": "basketball"
+        }, {
+                "icon": "img/bluemenu/vollyball.png",
+                "icon2": "img/bluemenu/volleyballor.png",
+                "game": "volleyball"
+        }];
+
+        $scope.demo = 111;
+        $scope.checkthis = function () {
+            console.log("Android");
+        };
+
+        $scope.makeactive = function (game) {
+            _.each($scope.games, function (n) {
+                n.active = false;
+            });
+            game.active = true;
+            $scope.tab = game.game;
+        };
+        $scope.makeactive($scope.games[6]);
+
+})
 
 .controller('SportsCtrl', function ($scope, TemplateService, NavigationService) {
     $scope.template = TemplateService.changecontent("sports");

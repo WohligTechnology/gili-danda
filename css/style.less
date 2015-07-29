@@ -228,23 +228,6 @@ ul.menu-list li a:hover {
     z-index: 999;
 }
 
-//.carousel-control.left {
-//    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .0001) 100%);
-//    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .0001) 100%);
-//    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, .0001)));
-//    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .0001) 100%);
-//    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
-//    background-repeat: repeat-x;
-//}
-//
-//.carousel-control.right {
-//    background-image: -webkit-linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .0001) 100%);
-//    background-image: -o-linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .0001) 100%);
-//    background-image: -webkit-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .0001) 100%);
-//    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .0001) 100%);
-//    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#00000000', GradientType=1);
-//    background-repeat: repeat-x;
-//}
 .sfm input {
     background-color: @input-color;
     font-size: 8px;
@@ -1168,3 +1151,87 @@ h5.copen {
 .transition {
     .transition(all 1s ease);
 }
+
+.sprofile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .slogo {
+        width: 201px;
+        height: auto;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .splogo {
+        .slogo;
+        img {
+            margin: 15px auto;
+        }
+    }
+    .sdata {
+        color: #fff;
+        h3 {
+            font-size: 36px;
+            font-weight: 600;
+            margin: 18px 0px 0px 0px;
+        }
+        .spoint {
+            p {
+                text-transform: uppercase;
+                margin: 0px !important;
+            }
+        }
+        ul {
+            display: block;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            margin-top: 25px;
+            li {
+                display: inline-block;
+                padding: 0px 30px 0px 25px;
+                h2 {
+                    margin: 0px;
+                    font-weight: 600;
+                }
+            }
+            li.borderrigh {
+                border-right: 1px solid #fff;
+                padding-left: 0px !important;
+            }
+        }
+        a {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 15px;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            padding: 0px 10px;
+        }
+    }
+}
+
+.stab {
+    ul {
+        display: block;
+        list-style: none;
+        li {
+            display: inline-block;
+            color: @filterGrey-color;
+            text-transform: uppercase;
+            padding: 0px 26px;
+           
+        }
+         .active {
+                border-bottom: 3px solid @menu-color;
+            }
+    }
+}
+//.backim{
+//    background: url("../img/sback1.jpg") no-repeat center;
+//    width: 100%;
+//    background-size: cover;
+//}

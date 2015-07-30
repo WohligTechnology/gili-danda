@@ -114,13 +114,52 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
 
 
-        $scope.slides = [
-    'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
-    'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
-    'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
-    'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
+//        $scope.slides = [
+//    'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
+//    'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
+//    'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
+//    'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
+//            
+//   ];
+    
+     $scope.venuslide = [
+        {
+            image: "img/venuegal/g1.jpg"
             
-   ];
+            
+        },
+        {
+           image: "img/venuegal/g2.jpg"
+           
+
+        },
+        {
+            image: "img/venuegal/g3.jpg"
+            
+        },
+        {
+            image: "img/venuegal/g4.jpg"
+          
+        },
+        {
+            image: "img/venuegal/g5.jpg"
+           
+        },
+        {
+            image: "img/venuegal/g6.jpg"
+           
+        },
+        {
+            image: "img/venuegal/g7.jpg"
+          
+        },
+        {
+           image: "img/venuegal/g8.jpg"
+           
+        }
+    ];
+    
+     $scope.slides = _.pluck($scope.venuslide, "image");
 
         $scope.games = // JavaScript Document
 [{

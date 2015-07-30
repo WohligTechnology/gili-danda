@@ -37,7 +37,7 @@ sans-serif;
 }
 
 body {
-    font-family: @font-titillium , @font-sansation;
+    font-family: @font-titillium, @font-sansation;
 }
 
 a {
@@ -765,6 +765,9 @@ hr.hr-width {
                     .transition(all 1s ease);
                 }
             }
+            li.grey {
+                .filter(grayscale(1) brightness(1.5));
+            }
             li.bigger,
             li.active {
                 cursor: pointer;
@@ -828,6 +831,8 @@ hr.hr-width {
         padding-top: 0;
     }
 }
+
+
 
 .about-game {
     margin-top: 30px;
@@ -1345,6 +1350,7 @@ h5.copen {
         text-transform: uppercase;
         font-weight: 600;
         /* padding: 0px; */
+        
         padding: 45px 0px;
         margin: 0px;
         font-size: 30px;
@@ -1355,6 +1361,7 @@ h5.copen {
 .adv {
     position: relative;
     /* width: 100%; */
+    
     top: 202px;
     left: 0;
 }
@@ -1414,8 +1421,8 @@ h5.copen {
                     th {
                         border-bottom: 0px;
                     }
-                    .padleft{
-                            padding-left: 155px;
+                    .padleft {
+                        padding-left: 155px;
                     }
                 }
             }
@@ -1434,15 +1441,16 @@ h5.copen {
         }
     }
 }
+
 .view {
     margin-top: 35px;
     margin-bottom: 50px;
-    a{
-            font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 600;
-    border: 2px solid @grey-color;
-    padding: 2px 10px;
-        color:@grey-color;
+    a {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+        border: 2px solid @grey-color;
+        padding: 2px 10px;
+        color: @grey-color;
     }
 }

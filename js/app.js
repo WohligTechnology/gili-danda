@@ -48,12 +48,12 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvi
             url: "/score",
             templateUrl: "views/template.html",
             controller: 'ScoreCtrl'
-        }) 
+        })
         .state('venue', {
             url: "/venue",
             templateUrl: "views/template.html",
             controller: 'VenueCtrl'
-        }) 
+        })
         .state('schoolprofile', {
             url: "/schoolprofile",
             templateUrl: "views/template.html",
@@ -74,22 +74,28 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvi
         },
         link: function (scope, element, attr) {
 
-        
+
+
             console.log(attr);
             var ishover;
             var $element = $(element);
             $test = $element;
             $element.ready(function () {
-                var $top = $element.children(".top");
-                var $bottom = $element.children(".bottom");
-                $bottom.width($top.width());
 
-                $element.hover(function () {
-                    $element.addClass("bigger");
-                }, function () {
-                    $element.removeClass("bigger");
+                if (scope.game.grey) {
+                    $element.addClass("grey");
+                } else {
+                    var $top = $element.children(".top");
+                    var $bottom = $element.children(".bottom");
                     $bottom.width($top.width());
-                });
+
+                    $element.hover(function () {
+                        $element.addClass("bigger");
+                    }, function () {
+                        $element.removeClass("bigger");
+                        $bottom.width($top.width());
+                    });
+                }
 
             });
 

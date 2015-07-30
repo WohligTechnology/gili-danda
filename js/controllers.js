@@ -10,15 +10,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.flex = {
         demo: 0
     };
-    $scope.clickonslider=function(data) {
-        window.location.href=data.link;
-    };  
+    $scope.clickonslider = function (data) {
+        window.location.href = data.link;
+    };
     $scope.homeslide = [
         {
             image: "img/slider/slide1.jpg",
             icon: "img/submenu/tabletennis.png",
             zoom: 1,
-            link:"http://www.wohlig.com",
+            link: "http://www.wohlig.com",
             caption: "table tennis",
             captions: "Circular Junior Nationals 2015"
         },
@@ -28,7 +28,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             zoom: 1,
             caption: "tennis",
             captions: "Circular Junior Nationals 2015"
-            
+
         },
         {
             image: "img/slider/slide3.jpg",
@@ -83,9 +83,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         for (var i = 0; i < $scope.homeslide.length; i++) {
             var x = Math.abs(i - flexi.currentSlide);
             var taninverse = Math.atan(x);
-            taninverse=taninverse/Math.PI*2;
-            $scope.homeslide[i].zoom=1-taninverse/1.8;
-            console.log(1-taninverse);
+            taninverse = taninverse / Math.PI * 2;
+            $scope.homeslide[i].zoom = 1 - taninverse / 1.8;
+            console.log(1 - taninverse);
         }
 
     };
@@ -115,11 +115,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
         $scope.slides = [
-				'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
-				'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
-				'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
-				'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
-			];
+    'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
+    'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
+    'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
+    'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
+            
+   ];
 
         $scope.games = // JavaScript Document
 [{
@@ -169,20 +170,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     })
 
 .controller('MediaCtrl', function ($scope, TemplateService, NavigationService) {
-    $scope.template = TemplateService.changecontent("media");
-    $scope.menutitle = NavigationService.makeactive("Media");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
+        $scope.template = TemplateService.changecontent("media");
+        $scope.menutitle = NavigationService.makeactive("Media");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
 
 
-})
+    })
     .controller('SchoolprofileCtrl', function ($scope, TemplateService, NavigationService) {
-    $scope.template = TemplateService.changecontent("schoolprofile");
-    $scope.menutitle = NavigationService.makeactive("Schoolprofile");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
+        $scope.template = TemplateService.changecontent("schoolprofile");
+        $scope.menutitle = NavigationService.makeactive("Schoolprofile");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
 
-            $scope.games = // JavaScript Document
+        $scope.games = // JavaScript Document
 [{
                 "icon": "img/bluemenu/tabletennis.png",
                 "icon2": "img/bluemenu/tabletennisor.png",
@@ -202,15 +203,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, {
                 "icon": "img/bluemenu/aqua.png",
                 "icon2": "img/bluemenu/aquaticsor.png",
-                "game": "aquatics"
+                "game": "aquatics",
+                "grey": true
         }, {
                 "icon": "img/bluemenu/basketball.png",
                 "icon2": "img/bluemenu/basketballor.png",
-                "game": "basketball"
+                "game": "basketball",
         }, {
                 "icon": "img/bluemenu/vollyball.png",
                 "icon2": "img/bluemenu/volleyballor.png",
-                "game": "volleyball"
+                "game": "volleyball",
+                "grey": true
         }];
 
         $scope.demo = 111;
@@ -219,15 +222,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
 
         $scope.makeactive = function (game) {
-            _.each($scope.games, function (n) {
-                n.active = false;
-            });
-            game.active = true;
-            $scope.tab = game.game;
+            if(!game.grey)
+            {
+                _.each($scope.games, function (n) {
+                    n.active = false;
+                });
+                game.active = true;
+                $scope.tab = game.game;
+            }
         };
-        $scope.makeactive($scope.games[6]);
+        $scope.makeactive($scope.games[0]);
 
-})
+    })
 
 .controller('SportsCtrl', function ($scope, TemplateService, NavigationService) {
     $scope.template = TemplateService.changecontent("sports");

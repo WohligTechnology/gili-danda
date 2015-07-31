@@ -1013,7 +1013,7 @@ p.sel-game {
 }
 
 .marginegt {
-    margin: 0px 0px 0px 40px;
+    margin: -10px 0px 0px 40px;
     padding-right: 0px;
 }
 
@@ -1226,6 +1226,7 @@ h5.copen {
             color: @filterGrey-color;
             text-transform: uppercase;
             padding: 0px 26px;
+            cursor: pointer;
         }
         .active {
             border-bottom: 3px solid @menu-color;
@@ -1235,7 +1236,7 @@ h5.copen {
 
 .backim {
     background: url("../img/sback.jpg") no-repeat center;
-    width: 100%;
+//    width: 100%;
     background-size: cover;
     min-height: 560px;
     margin-left: 4px;
@@ -1247,12 +1248,12 @@ h5.copen {
 }
 
 .wth2 {
-    width: 79.666667%;
+    width: 79.99%;
     padding: 0px
 }
 
 .marginlfts {
-    margin: -10px 0px 0px 50px;
+    margin: 0px 0px 0px 50px;
 }
 
 .sscore {
@@ -1445,74 +1446,96 @@ h5.copen {
         font-size: 14px;
         text-transform: uppercase;
         font-weight: 600;
-        border: 2px solid @grey-color;
+        border: 2px solid #bbbbbb;
         padding: 2px 10px;
-        color: @grey-color;
+        color: #bbbbbb;
+        text-decoration: none
     }
+    //     a {
+    //        font-size: 14px;
+    //        text-transform: uppercase;
+    //        font-weight: 600;
+    //        border: 2px solid #bbbbbb;
+    //        padding: 2px 10px;
+    //        color: #bbbbbb;
+    //    }
 }
 
 .flexiwitdh {
     width: 79%;
     margin: 0 auto;
     padding-top: 44px;
-    .flexslider {
-        overflow: visible;
-    }
-    .flex-direction-nav a.flex-next:before {
-        content: '';
-        background: url("../img/varrowl.png") no-repeat center;
-        width: 42px;
-        height: 62px;
-    }
-    .flex-direction-nav a.flex-prev:before {
-        content: '';
-        background: url("../img/varrowr.png") no-repeat center;
-        width: 42px;
-        height: 62px;
-    }
-    .flex-direction-nav a {
-        width: 54px;
-        height: 66px;
-        opacity: 1;
-    }
-    .flex-direction-nav .flex-prev {
-        left: -100px;
-    }
-    .flex-direction-nav .flex-next {
-        right: -100px;
-        text-align: right;
-    }
-    .flexslider:hover .flex-direction-nav .flex-prev:hover {
-        opacity: 1;
-        left: -100px;
-    }
-    .flexslider:hover .flex-direction-nav .flex-next:hover {
-        opacity: 1;
-        right: -100px;
-    }
-    .flexslider:hover .flex-direction-nav .flex-prev {
-        opacity: 1;
-        left: -100px;
-        outline: 0;
-    }
-    .flexslider:hover .flex-direction-nav .flex-next {
-        opacity: 1;
-        right: -100px;
-        outline: 0;
-    }
-    .flexslider .slides > li {
-        display: none;
-        -webkit-backface-visibility: hidden;
-        height: 166px;
-        overflow: hidden;
-    }
-    .flexslider .slides img {
-        height: 166px;
-    }
-    .flexslider-container {
-        width: 50%;
-        margin: 6px auto;
-    }
+}
+
+.flexiwitdh .flexslider {
+    overflow: visible;
+}
+
+.flexiwitdh .flex-direction-nav a.flex-next:before {
+    content: '';
+    background: url("../img/varrowl.png") no-repeat center;
+    width: 42px;
+    height: 62px;
+}
+
+.flexiwitdh .flex-direction-nav a.flex-prev:before {
+    content: '';
+    background: url("../img/varrowr.png") no-repeat center;
+    width: 42px;
+    height: 62px;
+}
+
+.flexiwitdh .flex-direction-nav a {
+    width: 54px;
+    height: 66px;
+    opacity: 1;
+}
+
+.flexiwitdh .flex-direction-nav .flex-prev {
+    left: -100px;
+}
+
+.flexiwitdh .flex-direction-nav .flex-next {
+    right: -100px;
+    text-align: right;
+}
+
+.flexiwitdh .flexslider:hover .flex-direction-nav .flex-prev:hover {
+    opacity: 1;
+    left: -100px;
+}
+
+.flexiwitdh .flexslider:hover .flex-direction-nav .flex-next:hover {
+    opacity: 1;
+    right: -100px;
+}
+
+.flexiwitdh .flexslider:hover .flex-direction-nav .flex-prev {
+    opacity: 1;
+    left: -100px;
+    outline: 0;
+}
+
+.flexiwitdh .flexslider:hover .flex-direction-nav .flex-next {
+    opacity: 1;
+    right: -100px;
+    outline: 0;
+}
+
+.flexiwitdh .flexslider .slides > li {
+    display: none;
+    -webkit-backface-visibility: hidden;
+    height: 166px;
+    overflow: hidden;
+}
+
+.flexiwitdh .flexslider .slides img {
+    height: 166px;
+}
+
+.flexiwitdh .flexslider-container {
+    width: 50%;
+    margin: 6px auto;
 }
 
 .venuecurve {
@@ -1526,4 +1549,71 @@ h5.copen {
     background-size: cover;
     position: relative;
     top: 35px;
+}
+
+.tab-gallery {
+   
+       background: url("../img/venbak.png") no-repeat center;
+//    background-size: cover;'
+    margin-bottom: 0px !important;
+        padding-top: 30px;
+    .width .sch-det;
+    .act {
+        background-color: #f47321 !important;
+    }
+    .padlmin {
+        padding-left: 15px !important;
+    }
+    .tgal {
+        background-color: #d3d3d3;
+        color: @whit-color;
+        padding: 4px 0;
+        cursor: pointer;
+        p {
+            display: inline-block;
+            font-size: 24px;
+            text-transform: uppercase;
+            margin: 0;
+            padding-top: 7px;
+            vertical-align: middle;
+            padding-left: 7px;
+        }
+    }
+    .scooolgal {
+        width: 100%;
+        height: 185px;
+        overflow: hidden;
+        display: block;
+            padding: 4px;
+    background-color: grey;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+
+
+}
+.marginos {
+    margin: 0px;
+}
+.costums{
+        padding: 5px 2px;
+    overflow: hidden;
+}
+.tab-vide {
+    margin-left: 8px;
+}
+.tab-gal {
+    margin-left: 8px;
+}
+.fancybox {
+  display: none;
+}
+
+pre {
+  background-color: #eee;
+  padding: 5px;
+  border: 1px solid #aaa;
 }

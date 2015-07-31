@@ -183,7 +183,9 @@
                                     $scope.flex[attr.flexvar] = flexsliderDiv.flexslider(options);
                                     return $scope.flex[attr.flexvar];
                                 } else
+                                {
                                     return flexsliderDiv.flexslider(options);
+                                }
                             }), 0);
                         });
                     };

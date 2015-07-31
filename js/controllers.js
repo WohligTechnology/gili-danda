@@ -201,6 +201,161 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })
+    .controller('StudentprofileCtrl', function ($scope, TemplateService, NavigationService, ngDialog) {
+        $scope.template = TemplateService.changecontent("studentprofile");
+        $scope.menutitle = NavigationService.makeactive("Studentprofile");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+
+        $scope.gallery = [{
+            image: "img/schoolgallery/g1.jpg"
+        }, {
+            image: "img/schoolgallery/g2.jpg"
+        }, {
+            image: "img/schoolgallery/g3.jpg"
+        }, {
+            image: "img/schoolgallery/g4.jpg"
+        }, {
+            image: "img/schoolgallery/g5.jpg"
+        }, {
+            image: "img/schoolgallery/g6.jpg"
+        }];
+        $scope.zoomposition = 0;
+
+        $scope.openModal = function (gal) {
+
+            $scope.zoomposition = $scope.gallery.indexOf(gal);
+
+            ngDialog.open({
+                template: 'views/directive/zoomimage.html',
+                scope: $scope
+            });
+        };
+
+        $scope.nextImage = function (oldposition) {
+            if (oldposition == ($scope.gallery.length - 1)) {
+                $scope.zoomposition = 0;
+            } else {
+                $scope.zoomposition++;
+            }
+        };
+
+        $scope.previousImage = function (oldposition) {
+            if (oldposition == 0) {
+                $scope.zoomposition = ($scope.gallery.length - 1);
+            } else {
+                $scope.zoomposition--;
+            }
+        };
+
+
+        $scope.tab1 = "gallery";
+        //    tab change
+        $scope.class = 'act';
+        $scope.classb = '';
+
+        console.log($scope.tab);
+        $scope.tabchange1 = function (tab, a) {
+            //        console.log(tab);
+            $scope.tab1 = tab;
+            if (a == 1) {
+                $scope.class = "act";
+                $scope.classb = '';
+
+            } else if (a == 2) {
+                $scope.class = '';
+                $scope.classb = "act";
+
+            }
+        };
+
+        //    end
+
+        $scope.tab2 = "gallerymain";
+        //    tab change
+        $scope.active = 'active';
+        $scope.actives = '';
+
+        console.log($scope.tab);
+        $scope.tabchange = function (tab, a) {
+            //        console.log(tab);
+            $scope.tab2 = tab;
+            if (a == 1) {
+                $scope.active = "active";
+                $scope.actives = '';
+
+            } else if (a == 2) {
+                $scope.active = '';
+                $scope.actives = "active";
+
+            }
+        };
+
+        //    end
+
+        $scope.foo = "World";
+        $scope.list = [];
+
+        $scope.image = "https://www.google.com/images/srpr/logo11w.png";
+
+        $scope.openBox = function (id) {
+            $(id).attr('openbox', 'show');
+        }
+
+        $scope.add = function (term) {
+            $scope.list.push(term);
+        }
+        $scope.games = // JavaScript Document
+            [{
+                "icon": "img/bluemenu/tabletennis.png",
+                "icon2": "img/bluemenu/tabletennisor.png",
+                "game": "table tennis"
+            }, {
+                "icon": "img/bluemenu/tennis.png",
+                "icon2": "img/bluemenu/tennisor.png",
+                "game": "tennis"
+            }, {
+                "icon": "img/bluemenu/batminton.png",
+                "icon2": "img/bluemenu/batmintonor.png",
+                "game": "badminton"
+            }, {
+                "icon": "img/bluemenu/squash.png",
+                "icon2": "img/bluemenu/sqaushor.png",
+                "game": "squash"
+            }, {
+                "icon": "img/bluemenu/aqua.png",
+                "icon2": "img/bluemenu/aquaticsor.png",
+                "game": "aquatics",
+                "grey": true
+            }, {
+                "icon": "img/bluemenu/basketball.png",
+                "icon2": "img/bluemenu/basketballor.png",
+                "game": "basketball",
+            }, {
+                "icon": "img/bluemenu/vollyball.png",
+                "icon2": "img/bluemenu/volleyballor.png",
+                "game": "volleyball",
+                "grey": true
+            }];
+
+        $scope.demo = 111;
+        $scope.checkthis = function () {
+            console.log("Android");
+        };
+
+        $scope.makeactive = function (game) {
+            if (!game.grey) {
+                _.each($scope.games, function (n) {
+                    n.active = false;
+                });
+                game.active = true;
+                $scope.tab = game.game;
+            }
+        };
+        $scope.makeactive($scope.games[0]);
+
+    })
     .controller('SchoolprofileCtrl', function ($scope, TemplateService, NavigationService, ngDialog) {
         $scope.template = TemplateService.changecontent("schoolprofile");
         $scope.menutitle = NavigationService.makeactive("Schoolprofile");

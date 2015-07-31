@@ -1042,15 +1042,17 @@ h5.copen {
 }
 .sprofile .slogo {
   width: 201px;
-  height: auto;
+  height: 201px;
   text-align: center;
   margin: 0 auto;
+  overflow: hidden;
 }
 .sprofile .splogo {
   width: 201px;
-  height: auto;
+  height: 201px;
   text-align: center;
   margin: 0 auto;
+  overflow: hidden;
 }
 .sprofile .splogo img {
   margin: 15px auto;
@@ -1083,10 +1085,11 @@ h5.copen {
 .sprofile .sdata ul li h2 {
   margin: 0px;
   font-weight: 600;
+  text-transform: uppercase;
+  font-size: 27px;
 }
 .sprofile .sdata ul li.borderrigh {
   border-right: 1px solid #ffffff;
-  padding-left: 0px !important;
 }
 .sprofile .sdata a {
   color: #ffffff;
@@ -1095,6 +1098,15 @@ h5.copen {
   border: 1px solid #ffffff;
   border-radius: 4px;
   padding: 0px 10px;
+}
+.sprofile .sdata p {
+  margin: 0px;
+  padding: 0px;
+}
+.sprofile .sdata h2 {
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
 }
 .stab ul {
   display: block;
@@ -1109,6 +1121,9 @@ h5.copen {
 }
 .stab ul .active {
   border-bottom: 3px solid #0a1a72;
+}
+.padlefo {
+  padding-left: 0px !important;
 }
 .backim {
   background: url("../img/sback.jpg") no-repeat center;
@@ -1245,19 +1260,6 @@ h5.copen {
   display: inline-block;
   padding: 0px 3px;
 }
-.bg-school .stable .lis ul li .name h5 {
-  font-weight: 400;
-  color: #616161;
-  margin: 0;
-  font-size: 15px;
-  line-height: 32px;
-}
-.bg-school .stable .lis ul li .name h6 {
-  color: #dbdbdb;
-  font-size: 15px;
-  line-height: 100%;
-  margin: 0;
-}
 .bg-school .stable .lis ul .vs {
   font-size: 60px;
   color: #a2a0a0;
@@ -1281,6 +1283,22 @@ h5.copen {
   font-weight: 600;
   border-bottom: 2px solid #dbdbdb;
   vertical-align: middle;
+}
+.name {
+  vertical-align: middle;
+}
+.name h5 {
+  font-weight: 400;
+  color: #616161;
+  margin: 0;
+  font-size: 15px;
+  line-height: 32px;
+}
+.name h6 {
+  color: #a2a0a0;
+  font-size: 15px;
+  line-height: 100%;
+  margin: 0;
 }
 .view {
   margin-top: 35px;
@@ -1407,11 +1425,12 @@ h5.copen {
   overflow: hidden;
   display: block;
   padding: 4px;
-  background-color: grey;
+  background-color: #ffffff;
 }
 .tab-gallery .scooolgal img {
   width: 100%;
-  height: auto;
+  height: 176px;
+  cursor: pointer;
 }
 .marginos {
   margin: 0px;
@@ -1433,4 +1452,19 @@ pre {
   background-color: #eee;
   padding: 5px;
   border: 1px solid #aaa;
+}
+.blackbak {
+  margin: 0 auto;
+  display: inline-block;
+  background-color: black;
+  padding: 10px;
+}
+.scolist ul {
+  display: block;
+  list-style: none;
+  padding: 0;
+}
+.scolist ul li {
+  display: inline-block;
+  padding: 0px 4px;
 }

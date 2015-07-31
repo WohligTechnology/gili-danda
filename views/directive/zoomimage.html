@@ -1,5 +1,8 @@
 <div class="image">
-    <a ng-click="previousImage(zoomposition);" class="btn btn-primary">PREV</a>
-    <img ng-src="{{gallery[zoomposition].image}}" alt="" />
-    <a ng-click="nextImage(zoomposition);" class="btn btn-primary">NEXT</a>
+<!--    <a ng-click="previousImage(zoomposition);" class="btn btn-primary">PREV</a>-->
+   <img src="img/schoolgallery/arrow.png" ng-click="previousImage(zoomposition);" >
+  
+    <img ng-src="{{gallery[zoomposition].image}}" class="balckbak" alt="" />
+<!--    <a ng-click="nextImage(zoomposition);" class="btn btn-primary">NEXT</a>-->
+     <img src="img/schoolgallery/arrowr.png" ng-click="nextImage(zoomposition);" >
 </div>

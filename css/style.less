@@ -1162,11 +1162,17 @@ h5.copen {
     transform: translate(-50%, -50%);
     .slogo {
         width: 201px;
-        height: auto;
+        height: 201px;
         text-align: center;
         margin: 0 auto;
+        overflow: hidden;
     }
     .splogo {
+        width: 201px;
+        height: 201px;
+        text-align: center;
+        margin: 0 auto;
+        overflow: hidden;
         .slogo;
         img {
             margin: 15px auto;
@@ -1183,6 +1189,7 @@ h5.copen {
             p {
                 text-transform: uppercase;
                 margin: 0px !important;
+                //                    text-align: center;
             }
         }
         ul {
@@ -1199,11 +1206,14 @@ h5.copen {
                 h2 {
                     margin: 0px;
                     font-weight: 600;
+                    //                        text-align: center;
+                    text-transform: uppercase;
+                    font-size: 27px;
                 }
             }
             li.borderrigh {
                 border-right: 1px solid @whit-color;
-                padding-left: 0px !important;
+                //                padding-left: 0px !important;
             }
         }
         a {
@@ -1213,6 +1223,15 @@ h5.copen {
             border: 1px solid @whit-color;
             border-radius: 4px;
             padding: 0px 10px;
+        }
+        p {
+            margin: 0px;
+            padding: 0px;
+        }
+        h2 {
+            font-weight: 600;
+            padding: 0;
+            margin: 0;
         }
     }
 }
@@ -1234,9 +1253,13 @@ h5.copen {
     }
 }
 
+.padlefo {
+    padding-left: 0px !important;
+}
+
 .backim {
     background: url("../img/sback.jpg") no-repeat center;
-//    width: 100%;
+    //    width: 100%;
     background-size: cover;
     min-height: 560px;
     margin-left: 4px;
@@ -1385,21 +1408,7 @@ h5.copen {
                 li {
                     display: inline-block;
                     padding: 0px 3px;
-                    .name {
-                        h5 {
-                            font-weight: 400;
-                            color: @base-color;
-                            margin: 0;
-                            font-size: 15px;
-                            line-height: 32px;
-                        }
-                        h6 {
-                            color: @grey-color;
-                            font-size: 15px;
-                            line-height: 100%;
-                            margin: 0;
-                        }
-                    }
+                
                 }
                 .vs {
                     font-size: 60px;
@@ -1438,6 +1447,22 @@ h5.copen {
         }
     }
 }
+    .name {
+                        vertical-align: middle;
+                        h5 {
+                            font-weight: 400;
+                            color: @base-color;
+                            margin: 0;
+                            font-size: 15px;
+                            line-height: 32px;
+                        }
+                        h6 {
+                            color: @filterGrey-color;
+                            font-size: 15px;
+                            line-height: 100%;
+                            margin: 0;
+                        }
+                    }
 
 .view {
     margin-top: 35px;
@@ -1552,11 +1577,10 @@ h5.copen {
 }
 
 .tab-gallery {
-   
-       background: url("../img/venbak.png") no-repeat center;
-//    background-size: cover;'
+    background: url("../img/venbak.png") no-repeat center;
+    //    background-size: cover;'
     margin-bottom: 0px !important;
-        padding-top: 30px;
+    padding-top: 30px;
     .width .sch-det;
     .act {
         background-color: #f47321 !important;
@@ -1584,36 +1608,58 @@ h5.copen {
         height: 185px;
         overflow: hidden;
         display: block;
-            padding: 4px;
-    background-color: grey;
+        padding: 4px;
+        background-color: @whit-color;
         img {
             width: 100%;
-            height: auto;
+            height: 176px;
+            cursor: pointer;
         }
     }
-
-
-
 }
+
 .marginos {
     margin: 0px;
 }
-.costums{
-        padding: 5px 2px;
+
+.costums {
+    padding: 5px 2px;
     overflow: hidden;
 }
+
 .tab-vide {
     margin-left: 8px;
 }
+
 .tab-gal {
     margin-left: 8px;
 }
+
 .fancybox {
-  display: none;
+    display: none;
 }
 
 pre {
-  background-color: #eee;
-  padding: 5px;
-  border: 1px solid #aaa;
+    background-color: #eee;
+    padding: 5px;
+    border: 1px solid #aaa;
+}
+
+.blackbak {
+    margin: 0 auto;
+    display: inline-block;
+    background-color: black;
+    padding: 10px;
+}
+
+.scolist {
+    ul {
+        display: block;
+        list-style: none;
+        padding: 0;
+        li {
+            display: inline-block;
+            padding: 0px 4px;
+        }
+    }
 }

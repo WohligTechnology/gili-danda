@@ -163,6 +163,14 @@ ul.menu-list li a:hover {
   font-weight: 600;
   font-size: 18px;
   cursor: pointer;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.slider-text a:hover {
+  color: #fff;
+  background-color: #fc7700;
 }
 .navbar {
   position: relative;
@@ -181,7 +189,12 @@ ul.menu-list li a:hover {
   letter-spacing: 1px;
   padding: 5px 9px;
   outline: 0;
+  -webkit-border-radius: 8px 0px 0px 8px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 8px 0px 0px 8px;
+  -moz-background-clip: padding;
   border-radius: 8px 0px 0px 8px;
+  background-clip: padding-box;
 }
 .sfms input[type="text"] {
   background-color: #e9e9e9;
@@ -193,7 +206,12 @@ ul.menu-list li a:hover {
   letter-spacing: 1px;
   padding: 14px 9px;
   outline: 0;
+  -webkit-border-radius: 8px 0px 0px 8px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 8px 0px 0px 8px;
+  -moz-background-clip: padding;
   border-radius: 8px 0px 0px 8px;
+  background-clip: padding-box;
   width: 85%;
   text-align: center;
 }
@@ -201,14 +219,24 @@ ul.menu-list li a:hover {
   height: 22px;
   vertical-align: top;
   margin: 0px 0px 0px -3px;
+  -webkit-border-radius: 0px 8px 8px 0px !important;
+  -webkit-background-clip: padding-box !important;
+  -moz-border-radius: 0px 8px 8px 0px !important;
+  -moz-background-clip: padding !important;
   border-radius: 0px 8px 8px 0px !important;
+  background-clip: padding-box !important;
   padding: 4px 8px !important;
 }
 .sbs {
   height: 63px;
   vertical-align: top;
   margin: 2px 0px 0px -3px;
+  -webkit-border-radius: 0px 8px 8px 0px !important;
+  -webkit-background-clip: padding-box !important;
+  -moz-border-radius: 0px 8px 8px 0px !important;
+  -moz-background-clip: padding !important;
   border-radius: 0px 8px 8px 0px !important;
+  background-clip: padding-box !important;
   padding: 22px 22px !important;
   background-color: #dbdbdb;
   width: 63px;
@@ -342,7 +370,12 @@ ul.menu-list li a:hover {
 }
 .footers .social-icon ul li i {
   background: #dbdbdb;
+  -webkit-border-radius: 100%;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 100%;
+  -moz-background-clip: padding;
   border-radius: 100%;
+  background-clip: padding-box;
   height: 33px;
   width: 32px;
   padding: 5px 6px;
@@ -365,7 +398,12 @@ ul.menu-list li a:hover {
   font-size: 13px;
 }
 .footers .input-text input {
+  -webkit-border-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0;
+  -moz-background-clip: padding;
   border-radius: 0;
+  background-clip: padding-box;
   width: 100%;
   background-color: #dbdbdb;
   box-shadow: 0px 0px 0px 0px;
@@ -386,11 +424,19 @@ ul.menu-list li a:hover {
 .footers .button-text button {
   background: #e46b1f;
   border-color: #e46b1f;
-  transition: 300ms ease all;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
   color: #ffffff;
   padding: 9px 14px;
   outline: 0;
+  -webkit-border-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0;
+  -moz-background-clip: padding;
   border-radius: 0;
+  background-clip: padding-box;
 }
 .footers .copy h5 {
   font-size: 13px;
@@ -413,7 +459,12 @@ ul.menu-list li a:hover {
   background: #3b4f96;
   color: white;
   font-size: 49px;
+  -webkit-border-radius: 100%;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 100%;
+  -moz-background-clip: padding;
   border-radius: 100%;
+  background-clip: padding-box;
   height: 80px;
   width: 80px;
   padding: 18px 25px;
@@ -422,7 +473,12 @@ ul.menu-list li a:hover {
   background: #3b4f96;
   color: white;
   font-size: 49px;
+  -webkit-border-radius: 100%;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 100%;
+  -moz-background-clip: padding;
   border-radius: 100%;
+  background-clip: padding-box;
   height: 80px;
   width: 80px;
   padding: 17px 19px;
@@ -431,7 +487,12 @@ ul.menu-list li a:hover {
   background: #3b4f96;
   color: white;
   font-size: 49px;
+  -webkit-border-radius: 100%;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 100%;
+  -moz-background-clip: padding;
   border-radius: 100%;
+  background-clip: padding-box;
   height: 80px;
   width: 80px;
   padding: 16px 20px;
@@ -444,13 +505,18 @@ ul.menu-list li a:hover {
 }
 .container.events .student.active figure img {
   margin: 0 auto;
-  transition: linear 0.3s;
   -webkit-transition: linear 0.3s;
   -moz-transition: linear 0.3s;
-  -ms-transition: linear 0.3s;
+  -o-transition: linear 0.3s;
+  transition: linear 0.3s;
   outline: 0;
   border: 12px solid rgba(255, 255, 255, 0);
+  -webkit-border-radius: 100%;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 100%;
+  -moz-background-clip: padding;
   border-radius: 100%;
+  background-clip: padding-box;
   cursor: pointer;
 }
 .container.events .student.active figure figcaption {
@@ -478,7 +544,12 @@ ul.menu-list li a:hover {
 .container.events .student.active figure .hover-act {
   margin: 0 auto;
   border: 0;
+  -webkit-border-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0;
+  -moz-background-clip: padding;
   border-radius: 0;
+  background-clip: padding-box;
   opacity: 0;
 }
 .container.events .student.active figure:hover img {
@@ -520,6 +591,14 @@ ul.menu-list li a:hover {
   text-decoration: none;
   font-weight: 600;
   font-size: 18px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.regi a:hover {
+  color: #fff;
+  background-color: #fc7700;
 }
 .media-set {
   position: relative;
@@ -762,12 +841,19 @@ hr.hr-width {
   background: #d3d3d3;
   padding: 10px 0;
   cursor: pointer;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }
 .margino .col-md-3 .sports-tab p {
   margin: 0;
   color: #ffffff;
   text-transform: uppercase;
   font-size: 22px;
+}
+.margino .col-md-3 .sports-tab:hover {
+  background: #fc7700;
 }
 .margino .col-md-3 .sports-tab.active {
   background: #fc7700;
@@ -873,7 +959,12 @@ hr.hr-width {
   background-color: #b5b4b4;
   color: #f3f3f3;
   text-align: center;
-  border-radius: 0px;
+  -webkit-border-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0;
+  -moz-background-clip: padding;
+  border-radius: 0;
+  background-clip: padding-box;
   margin-right: 10px;
 }
 .marginlft .cat-left .sub-catgame ul li input[type=checkbox]:checked + .checkbox:before {
@@ -901,17 +992,32 @@ p.sel-game {
   background-color: #eaeaea;
   border-left: 1px solid #a2a0a0;
   border-right: 1px solid #a2a0a0;
+  -webkit-border-radius: 10px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 10px;
+  -moz-background-clip: padding;
   border-radius: 10px;
+  background-clip: padding-box;
 }
 .scrollbar-dynamic::-webkit-scrollbar {
   width: 6px;
+  -webkit-border-radius: 26px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 26px;
+  -moz-background-clip: padding;
   border-radius: 26px;
+  background-clip: padding-box;
 }
 .scrollbar-dynamic::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid #cccccc;
   height: 8px;
+  -webkit-border-radius: 20px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 20px;
+  -moz-background-clip: padding;
   border-radius: 20px;
+  background-clip: padding-box;
 }
 .marginegt {
   margin: -10px 0px 0px 40px;
@@ -1096,7 +1202,12 @@ h5.copen {
   text-transform: uppercase;
   font-size: 15px;
   border: 1px solid #ffffff;
+  -webkit-border-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 4px;
+  -moz-background-clip: padding;
   border-radius: 4px;
+  background-clip: padding-box;
   padding: 0px 10px;
 }
 .sprofile .sdata p {
@@ -1127,6 +1238,8 @@ h5.copen {
 }
 .backim {
   background: url("../img/sback.jpg") no-repeat center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
   background-size: cover;
   min-height: 560px;
   margin-left: 4px;

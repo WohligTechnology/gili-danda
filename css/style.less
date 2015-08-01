@@ -209,14 +209,19 @@ ul.menu-list li a:hover {
         cursor: pointer;
     }
     a {
-        color: #fc7700;
+        color: @login-color;
         text-transform: uppercase;
-        border: 2px solid #fc7700;
+        border: 2px solid @login-color;
         padding: 9px 40px;
         text-decoration: none;
         font-weight: 600;
         font-size: 18px;
         cursor: pointer;
+         .transition(all 1s ease);
+    }
+    a:hover {
+        color: #fff;
+        background-color: @login-color;
     }
 }
 
@@ -238,7 +243,7 @@ ul.menu-list li a:hover {
     letter-spacing: 1px;
     padding: 5px 9px;
     outline: 0;
-    border-radius: 8px 0px 0px 8px;
+    .border-radius(8px 0px 0px 8px);
 }
 
 .sfms input[type="text"] {
@@ -251,7 +256,7 @@ ul.menu-list li a:hover {
     letter-spacing: 1px;
     padding: 14px 9px;
     outline: 0;
-    border-radius: 8px 0px 0px 8px;
+    .border-radius(8px 0px 0px 8px);
     width: 85%;
     text-align: center;
 }
@@ -260,7 +265,7 @@ ul.menu-list li a:hover {
     height: 22px;
     vertical-align: top;
     margin: 0px 0px 0px -3px;
-    border-radius: 0px 8px 8px 0px !important;
+    .border-radius( 0px 8px 8px 0px) !important;
     padding: 4px 8px !important;
 }
 
@@ -268,7 +273,7 @@ ul.menu-list li a:hover {
     height: 63px;
     vertical-align: top;
     margin: 2px 0px 0px -3px;
-    border-radius: 0px 8px 8px 0px !important;
+    .border-radius(0px 8px 8px 0px) !important;
     padding: 22px 22px !important;
     background-color: @grey-color;
     width: 63px;
@@ -405,7 +410,7 @@ ul.menu-list li a:hover {
         padding: 0px 2px;
         i {
             background: @grey-color;
-            border-radius: 100%;
+            .border-radius(100%);
             height: 33px;
             width: 32px;
             padding: 5px 6px;
@@ -429,7 +434,7 @@ ul.menu-list li a:hover {
         font-size: @text-font;
     }
     .input-text input {
-        border-radius: 0;
+        .border-radius(0);
         width: 100%;
         background-color: @grey-color;
         box-shadow: 0px 0px 0px 0px;
@@ -450,11 +455,12 @@ ul.menu-list li a:hover {
     .button-text button {
         background: @orangeBold-color;
         border-color: @orangeBold-color;
-        transition: 300ms ease all;
+//        transition: 300ms ease all;
+        .transition(all 300ms ease);
         color: @whit-color;
         padding: 9px 14px;
         outline: 0;
-        border-radius: 0;
+        .border-radius(0);
     }
     .copy h5 {
         font-size: @text-font;
@@ -480,7 +486,7 @@ ul.menu-list li a:hover {
         background: #3b4f96;
         color: white;
         font-size: 49px;
-        border-radius: 100%;
+        .border-radius(100%);
         height: 80px;
         width: 80px;
         padding: 18px 25px;
@@ -489,7 +495,7 @@ ul.menu-list li a:hover {
         background: #3b4f96;
         color: white;
         font-size: 49px;
-        border-radius: 100%;
+       .border-radius(100%);
         height: 80px;
         width: 80px;
         padding: 17px 19px;
@@ -498,7 +504,7 @@ ul.menu-list li a:hover {
         background: #3b4f96;
         color: white;
         font-size: 49px;
-        border-radius: 100%;
+        .border-radius(100%);
         height: 80px;
         width: 80px;
         padding: 16px 20px;
@@ -512,13 +518,15 @@ ul.menu-list li a:hover {
         figure {
             img {
                 margin: 0 auto;
-                transition: linear 0.3s;
-                -webkit-transition: linear 0.3s;
-                -moz-transition: linear 0.3s;
-                -ms-transition: linear 0.3s;
+//                transition: linear 0.3s;
+//                -webkit-transition: linear 0.3s;
+//                -moz-transition: linear 0.3s;
+//                -ms-transition: linear 0.3s;
+                .transition(linear 0.3s);
+                
                 outline: 0;
                 border: 12px solid rgba(255, 255, 255, 0);
-                border-radius: 100%;
+                .border-radius(100%);
                 cursor: pointer;
             }
             figcaption {
@@ -546,7 +554,7 @@ ul.menu-list li a:hover {
             .hover-act {
                 margin: 0 auto;
                 border: 0;
-                border-radius: 0;
+                .border-radius(0);
                 opacity: 0;
             }
         }
@@ -596,6 +604,11 @@ ul.menu-list li a:hover {
         text-decoration: none;
         font-weight: 600;
         font-size: 18px;
+        .transition(all 1s ease);
+    }
+     a:hover {
+        color: #fff;
+        background-color: @login-color;
     }
 }
 
@@ -845,12 +858,16 @@ hr.hr-width {
             background: #d3d3d3;
             padding: 10px 0;
             cursor: pointer;
+            .transition(all 1s ease);
             p {
                 margin: 0;
                 color: @whit-color;
                 text-transform: uppercase;
                 font-size: 22px;
             }
+        }
+        .sports-tab:hover{
+            background: @login-color; 
         }
         .sports-tab.active {
             background: @login-color;
@@ -962,7 +979,7 @@ hr.hr-width {
                         background-color: #b5b4b4;
                         color: #f3f3f3;
                         text-align: center;
-                        border-radius: 0px;
+                        .border-radius(0);
                         margin-right: 10px;
                     }
                     input[type=checkbox]:checked + .checkbox:before {
@@ -997,19 +1014,19 @@ p.sel-game {
     background-color: @footer-color;
     border-left: 1px solid @filterGrey-color;
     border-right: 1px solid @filterGrey-color;
-    border-radius: 10px;
+   .border-radius(10px);
 }
 
 .scrollbar-dynamic::-webkit-scrollbar {
     width: 6px;
-    border-radius: 26px;
+    .border-radius(26px);
 }
 
 .scrollbar-dynamic::-webkit-scrollbar-thumb {
     background-color: darkgrey;
     outline: 1px solid rgb(204, 204, 204);
     height: 8px;
-    border-radius: 20px;
+    .border-radius(20px);
 }
 
 .marginegt {
@@ -1221,7 +1238,7 @@ h5.copen {
             text-transform: uppercase;
             font-size: 15px;
             border: 1px solid @whit-color;
-            border-radius: 4px;
+            .border-radius(4px);
             padding: 0px 10px;
         }
         p {
@@ -1260,7 +1277,7 @@ h5.copen {
 .backim {
     background: url("../img/sback.jpg") no-repeat center;
     //    width: 100%;
-    background-size: cover;
+    .background-size(cover);
     min-height: 560px;
     margin-left: 4px;
 }
@@ -1408,7 +1425,6 @@ h5.copen {
                 li {
                     display: inline-block;
                     padding: 0px 3px;
-                
                 }
                 .vs {
                     font-size: 60px;
@@ -1447,22 +1463,23 @@ h5.copen {
         }
     }
 }
-    .name {
-                        vertical-align: middle;
-                        h5 {
-                            font-weight: 400;
-                            color: @base-color;
-                            margin: 0;
-                            font-size: 15px;
-                            line-height: 32px;
-                        }
-                        h6 {
-                            color: @filterGrey-color;
-                            font-size: 15px;
-                            line-height: 100%;
-                            margin: 0;
-                        }
-                    }
+
+.name {
+    vertical-align: middle;
+    h5 {
+        font-weight: 400;
+        color: @base-color;
+        margin: 0;
+        font-size: 15px;
+        line-height: 32px;
+    }
+    h6 {
+        color: @filterGrey-color;
+        font-size: 15px;
+        line-height: 100%;
+        margin: 0;
+    }
+}
 
 .view {
     margin-top: 35px;

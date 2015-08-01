@@ -44,27 +44,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         captions: "Circular Junior Nationals 2015"
     }, {
         image: "img/slider/slide5.jpg",
-        icon: "img/submenu/tabletennis.png",
+        icon: "img/submenu/aquatics.png",
         zoom: 1,
-        caption: "table tennis",
+        caption: "aquatics",
         captions: "Circular Junior Nationals 2015"
     }, {
         image: "img/slider/slide6.jpg",
-        icon: "img/submenu/tennis.png",
+        icon: "img/submenu/basketball.png",
         zoom: 1,
-        caption: "tennis",
+        caption: "basketball",
         captions: "Circular Junior Nationals 2015"
     }, {
         image: "img/slider/slide7.jpg",
-        icon: "img/submenu/batminton.png",
+        icon: "img/submenu/volleyball.png",
         zoom: 1,
-        caption: "badminton",
+        caption: "volleyball",
         captions: "Circular Junior Nationals 2015"
     }, {
         image: "img/slider/slide8.jpg",
-        icon: "img/submenu/sqaush.png",
+        icon: "img/submenu/handball.png",
         zoom: 1,
-        caption: "sqaush",
+        caption: "handball",
         captions: "Circular Junior Nationals 2015"
     }];
 
@@ -521,7 +521,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.games = // JavaScript Document
         [{
             "icon": "img/bluemenu/overall.png",
-            "icon2": "img/bluemenu/tabletennisor.png",
+            "icon2": "img/bluemenu/overallor.png",
             "game": "overall"
         }, {
             "icon": "img/bluemenu/tabletennis.png",

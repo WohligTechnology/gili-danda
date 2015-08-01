@@ -390,7 +390,7 @@
             </div>
             <div class="col-md-8 wth2" ng-show="tab2=='statics'">
 
-                <div class="tab-statics" >
+                <div class="tab-statics">
 
                     <div class="backim">
                         <div class="shead text-center">
@@ -471,9 +471,9 @@
                         </div>
                     </div>
                 </div>
-                </div>
-<div class="col-md-8 wth2" ng-show="tab2=='gallerymain'">
-                <div class="" >
+            </div>
+            <div class="col-md-8 wth2" ng-show="tab2=='gallerymain'">
+                <div class="">
                     <div class="tab-gallery ">
                         <div class="theads row marginos">
                             <div class="col-md-5 custom padlmin">
@@ -499,14 +499,14 @@
 
                         <div class="tab-gal" ng-show="tab1=='gallery'">
 
-                            <div class="row marginos text-center" >
+                            <div class="row marginos text-center">
                                 <div class="col-md-10 text-center">
                                     <div class="col-md-4 costums" ng-repeat="gal in gallery">
-                                        <div class="scooolgal" >
+                                        <div class="scooolgal">
                                             <img ng-src="{{gal.image}}" ng-click="openModal(gal);">
                                         </div>
                                     </div>
-<!--
+                                    <!--
                                     <div class="col-md-4 costums">
                                         <div class="scooolgal">
                                             <img src="img/schoolgallery/g1.jpg">
@@ -520,7 +520,7 @@
 -->
                                 </div>
                             </div>
-<!--
+                            <!--
                             <div class="row marginos text-center">
                                 <div class="col-md-10 text-center">
                                     <div class="col-md-4 costums">
@@ -549,42 +549,15 @@
                         <div class="tab-vide" ng-show="tab1=='video'">
                             <div class="row marginos text-center">
                                 <div class="col-md-10 text-center">
-                                    <div class="col-md-4 costums">
+                                    <div class="col-md-4 costums" ng-repeat="gal in gallery">
                                         <div class="scooolgal">
-                                            <img src="img/schoolgallery/g1.jpg">
+                                            <img ng-src="{{gal.image}}" ng-click="openModal(gal);">
                                         </div>
                                     </div>
-                                    <div class="col-md-4 costums">
-                                        <div class="scooolgal">
-                                            <img src="img/schoolgallery/g1.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 costums">
-                                        <div class="scooolgal">
-                                            <img src="img/schoolgallery/g1.jpg">
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
-                            <div class="row marginos text-center">
-                                <div class="col-md-10 text-center">
-                                    <div class="col-md-4 costums">
-                                        <div class="scooolgal">
-                                            <img src="img/schoolgallery/g1.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 costums">
-                                        <div class="scooolgal">
-                                            <img src="img/schoolgallery/g1.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 costums">
-                                        <div class="scooolgal">
-                                            <img src="img/schoolgallery/g1.jpg">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
 
                         <!--                    ******** END *******-->
@@ -592,104 +565,104 @@
                     <!--                </div>-->
                 </div>
             </div>
-            </div>
-        </div>
-        <div class="bg-school">
-            <div class="container">
-
-<!--                load more tab-->
-<!--                -->
-                <div ng-show="tab2=='gallerymain'">
-                    <div class="aroww text-center col-md-offset-4 col-md-6">
-                        <img src="img/arrow.png">
-                    </div>
-                </div>
-                
-<!--                ** END************-->
-
-<!--                ********* matches tab ********-->
-                
-                <div class="row marginos" ng-show="tab2=='statics'">
-                    <div class="smatch text-center">
-                        <img src="img/matchlogo.png">
-                        <p>matches</p>
-                    </div>
-                    <div class="col-md-offset-1 col-md-10 stable">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th class="padleft">
-                                        opponents
-                                    </th>
-                                    <th>
-                                        SCORE
-                                    </th>
-
-                                    <th>
-                                        result
-                                    </th>
-                                    <th>
-                                        date
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td class="lis">
-                                        <ul>
-                                            <li class="vs">v/s</li>
-                                            <li><img src="img/collage/scologo.png" </li>
-                                                <li class="name">
-                                                    <h5>St. Xaviers, Mumbai</h5>
-                                                    <h6>Sarvesh Brahme</h6>
-                                                </li>
-                                        </ul>
-                                    </td>
-                                    <td>
-                                        <p>
-                                            92
-                                        </p>
-                                        <p>
-                                            92
-                                        </p>
-                                    </td>
-                                    <td>won</td>
-                                    <td>12<sup>th</sup>oct 2015</td>
-                                </tr>
-                                <tr>
-                                    <td class="lis">
-                                        <ul>
-                                            <li class="vs">v/s</li>
-                                            <li><img src="img/collage/scologo.png" </li>
-                                                <li class="name">
-                                                    <h5>St. Xaviers, Mumbai</h5>
-                                                    <h6>Sarvesh Brahme</h6>
-                                                </li>
-                                        </ul>
-                                    </td>
-                                    <td>
-                                        <p>
-                                            92
-                                        </p>
-                                        <p>
-                                            92
-                                        </p>
-                                    </td>
-                                    <td>won</td>
-                                    <td>12<sup>th</sup>oct 2015</td>
-                                </tr>
-                            </tbody>
-
-                        </table>
-                        <div class="view text-center">
-                            <a href="">view more</a>
-                        </div>
-                    </div>
-                </div>
-<!--                *** end *********-->
-                
-
-            </div>
         </div>
     </div>
+    <div class="bg-school">
+        <div class="container">
+
+            <!--                load more tab-->
+            <!--                -->
+            <div ng-show="tab2=='gallerymain'">
+                <div class="aroww text-center col-md-offset-4 col-md-6">
+                    <img src="img/arrow.png">
+                </div>
+            </div>
+
+            <!--                ** END************-->
+
+            <!--                ********* matches tab ********-->
+
+            <div class="row marginos" ng-show="tab2=='statics'">
+                <div class="smatch text-center">
+                    <img src="img/matchlogo.png">
+                    <p>matches</p>
+                </div>
+                <div class="col-md-offset-1 col-md-10 stable">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="padleft">
+                                    opponents
+                                </th>
+                                <th>
+                                    SCORE
+                                </th>
+
+                                <th>
+                                    result
+                                </th>
+                                <th>
+                                    date
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td class="lis">
+                                    <ul>
+                                        <li class="vs">v/s</li>
+                                        <li><img src="img/collage/scologo.png" </li>
+                                            <li class="name">
+                                                <h5>St. Xaviers, Mumbai</h5>
+                                                <h6>Sarvesh Brahme</h6>
+                                            </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p>
+                                        92
+                                    </p>
+                                    <p>
+                                        92
+                                    </p>
+                                </td>
+                                <td>won</td>
+                                <td>12<sup>th</sup>oct 2015</td>
+                            </tr>
+                            <tr>
+                                <td class="lis">
+                                    <ul>
+                                        <li class="vs">v/s</li>
+                                        <li><img src="img/collage/scologo.png" </li>
+                                            <li class="name">
+                                                <h5>St. Xaviers, Mumbai</h5>
+                                                <h6>Sarvesh Brahme</h6>
+                                            </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p>
+                                        92
+                                    </p>
+                                    <p>
+                                        92
+                                    </p>
+                                </td>
+                                <td>won</td>
+                                <td>12<sup>th</sup>oct 2015</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <div class="view text-center">
+                        <a href="">view more</a>
+                    </div>
+                </div>
+            </div>
+            <!--                *** end *********-->
+
+
+        </div>
+    </div>
+</div>

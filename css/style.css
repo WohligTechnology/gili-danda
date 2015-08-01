@@ -146,7 +146,7 @@ ul.menu-list li a:hover {
   width: 32%;
 }
 .slider-text h3 {
-  color: #fff;
+  color: #ffffff;
   font-size: 60px;
   font-weight: 600;
   line-height: 93%;
@@ -169,7 +169,7 @@ ul.menu-list li a:hover {
   transition: all 1s ease;
 }
 .slider-text a:hover {
-  color: #fff;
+  color: #ffffff;
   background-color: #fc7700;
 }
 .navbar {
@@ -380,6 +380,14 @@ ul.menu-list li a:hover {
   width: 32px;
   padding: 5px 6px;
   color: #eaeaea;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.footers .social-icon ul li i:hover {
+  background-color: #fc7700;
+  color: #ffffff;
 }
 .footers .partners p {
   color: #5a5a5a;
@@ -597,7 +605,7 @@ ul.menu-list li a:hover {
   transition: all 1s ease;
 }
 .regi a:hover {
-  color: #fff;
+  color: #ffffff;
   background-color: #fc7700;
 }
 .media-set {
@@ -1209,6 +1217,17 @@ h5.copen {
   border-radius: 4px;
   background-clip: padding-box;
   padding: 0px 10px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  text-decoration: none;
+}
+.sprofile .sdata a:hover {
+  background-color: #ffffff;
+  color: #0a1a72;
+  text-decoration: none;
+  border: 1px solid #ffffff;
 }
 .sprofile .sdata p {
   margin: 0px;
@@ -1522,6 +1541,10 @@ h5.copen {
   color: #ffffff;
   padding: 4px 0;
   cursor: pointer;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }
 .tab-gallery .tgal p {
   display: inline-block;
@@ -1531,6 +1554,9 @@ h5.copen {
   padding-top: 7px;
   vertical-align: middle;
   padding-left: 7px;
+}
+.tab-gallery .tgal:hover {
+  background-color: #F47321;
 }
 .tab-gallery .scooolgal {
   width: 100%;
@@ -1580,4 +1606,17 @@ pre {
 .scolist ul li {
   display: inline-block;
   padding: 0px 4px;
+}
+.image {
+  height: auto;
+  max-width: 100%;
+  width: 754px;
+  overflow: hidden;
+  background-color: black;
+  padding: 10px;
+}
+.image img {
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
 }

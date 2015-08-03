@@ -157,10 +157,13 @@ firstapp.directive('img', function($compile, $parse) {
             var oldsrc = attrs.src;
             var $element = $(element);
             console.log(oldsrc);
-            $element.attr("src","");
+            $element.attr("src", "");
+
             $element.load(function() {
 
                 $element.attr("src", oldsrc);
+                $element.attr("background-image", "none");
+
 
             });
         }

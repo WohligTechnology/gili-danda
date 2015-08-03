@@ -8,27 +8,27 @@ var firstapp = angular.module('firstapp', [
 
 ]);
 
-firstapp.config(function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvider) {
+firstapp.config(function($stateProvider, $urlRouterProvider, cfpLoadingBarProvider) {
     //Turn the spinner on or off
     cfpLoadingBarProvider.includeSpinner = false;
 
     $stateProvider
 
-        .state('home', {
-            url: "/home",
-            templateUrl: "views/template.html",
-            controller: 'HomeCtrl'
-        })
-        // .state('profile', {
-        //        url: "/profile",
-        //        templateUrl: "views/template.html",
-        //        controller: 'ProfileCtrl'
-        //    })
-        .state('profile', {
-            url: "/profile",
-            templateUrl: "views/template.html",
-            controller: 'ProfileCtrl'
-        })
+    .state('home', {
+        url: "/home",
+        templateUrl: "views/template.html",
+        controller: 'HomeCtrl'
+    })
+    // .state('profile', {
+    //        url: "/profile",
+    //        templateUrl: "views/template.html",
+    //        controller: 'ProfileCtrl'
+    //    })
+    .state('profile', {
+        url: "/profile",
+        templateUrl: "views/template.html",
+        controller: 'ProfileCtrl'
+    })
         .state('sports', {
             url: "/sports",
             templateUrl: "views/template.html",
@@ -58,7 +58,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvi
             url: "/schoolprofile",
             templateUrl: "views/template.html",
             controller: 'SchoolprofileCtrl'
-        }) 
+        })
         .state('studentprofile', {
             url: "/studentprofile",
             templateUrl: "views/template.html",
@@ -69,7 +69,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvi
 })
 
 
-.directive('hovericon', function ($document) {
+.directive('hovericon', function($document) {
     return {
         restrict: 'EA',
         replace: true,
@@ -77,7 +77,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvi
         scope: {
             game: '='
         },
-        link: function (scope, element, attr) {
+        link: function(scope, element, attr) {
 
 
 
@@ -85,7 +85,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvi
             var ishover;
             var $element = $(element);
             $test = $element;
-            $element.ready(function () {
+            $element.ready(function() {
 
                 if (scope.game.grey) {
                     $element.addClass("grey");
@@ -94,9 +94,9 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvi
                     var $bottom = $element.children(".bottom");
                     $bottom.width($top.width());
 
-                    $element.hover(function () {
+                    $element.hover(function() {
                         $element.addClass("bigger");
-                    }, function () {
+                    }, function() {
                         $element.removeClass("bigger");
                         $bottom.width($top.width());
                     });
@@ -111,39 +111,57 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvi
 
 //fancybox directive
 
-app.directive('fancybox', function($compile, $parse) {
-  return {
-    restrict: 'C',
-    replace: false,
-    link: function($scope, element, attrs) {
+firstapp.directive('fancybox', function($compile, $parse) {
+    return {
+        restrict: 'C',
+        replace: false,
+        link: function($scope, element, attrs) {
 
-      $scope.$watch(function() {
-        return element.attr('openbox')
-      }, function(openbox) {
-        if (openbox == 'show') {
+            $scope.$watch(function() {
+                return element.attr('openbox')
+            }, function(openbox) {
+                if (openbox == 'show') {
 
-          var options = $parse(attrs.options)($scope) || {};
+                    var options = $parse(attrs.options)($scope) || {};
 
-          if (!options.href && !options.content) {
+                    if (!options.href && !options.content) {
 
-            options.content = angular.element(element.html());
+                        options.content = angular.element(element.html());
 
-            $compile(options.content)($scope);
+                        $compile(options.content)($scope);
 
-          }
+                    }
 
-          var onClosed = options.onClosed || function() {};
+                    var onClosed = options.onClosed || function() {};
 
-          options.onClosed = function() {
-            $scope.$apply(function() {
-              onClosed();
-              element.attr('openbox', 'hide');
+                    options.onClosed = function() {
+                        $scope.$apply(function() {
+                            onClosed();
+                            element.attr('openbox', 'hide');
+                        });
+                    };
+
+                    $.fancybox(options);
+                }
             });
-          };
-
-          $.fancybox(options);
         }
-      });
-    }
-  };
+    };
+});
+
+
+firstapp.directive('img', function($compile, $parse) {
+    return {
+        restrict: 'E',
+        replace: false,
+        link: function($scope, element, attrs) {
+            var oldsrc = attrs.src;
+            var $element = $(element);
+            $element.attr("src","img/loading.gif");
+            $element.load(function() {
+
+                $element.attr("src", oldsrc);
+
+            });
+        }
+    };
 });

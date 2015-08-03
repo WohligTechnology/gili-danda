@@ -156,7 +156,8 @@ firstapp.directive('img', function($compile, $parse) {
         link: function($scope, element, attrs) {
             var oldsrc = attrs.src;
             var $element = $(element);
-            $element.attr("src","img/loading.gif");
+            console.log(oldsrc);
+            $element.attr("src","");
             $element.load(function() {
 
                 $element.attr("src", oldsrc);

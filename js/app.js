@@ -158,7 +158,7 @@ firstapp.directive('img', function($compile, $parse) {
             $element.after("<img src='img/loading.gif' class='loading' />");
             var $loading = $element.next(".loading");
             $element.load(function() {
-//                $loading.remove();
+                $loading.remove();
                 $(this).addClass("doneLoading");
                 console.log($element.css("opacity"));
             });

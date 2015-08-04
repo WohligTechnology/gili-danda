@@ -1627,9 +1627,31 @@ pre {
 .marginbtn {
   margin-bottom: 50px;
 }
-img {
-  background-image: url(img/loading.gif);
+img.loading {
+  background-image: url(../img/loading.gif);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  opacity: 1;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+}
+img {
+  opacity: 0;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+img.doneLoading {
+  opacity: 1;
 }

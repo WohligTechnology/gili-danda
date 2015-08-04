@@ -154,17 +154,13 @@ firstapp.directive('img', function($compile, $parse) {
         restrict: 'E',
         replace: false,
         link: function($scope, element, attrs) {
-            var oldsrc = attrs.src;
-            var $element = $(element);
-            console.log(oldsrc);
-            $element.attr("src", "");
-
+            $element = $(element);
+            $element.after("<img src='img/loading.gif' class='loading' />");
+            var $loading = $element.next(".loading");
             $element.load(function() {
-
-                $element.attr("src", oldsrc);
-                $element.attr("background-image", "none");
-
-
+//                $loading.remove();
+                $(this).addClass("doneLoading");
+                console.log($element.css("opacity"));
             });
         }
     };

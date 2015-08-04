@@ -12,6 +12,17 @@
 body {
   font-family: 'Titillium Web', sans-serif, 'Sansation', sans-serif;
 }
+.row-centered {
+  text-align: center;
+}
+.col-centered {
+  display: inline-block;
+  float: none;
+  /* reset the text-align */
+  text-align: left;
+  /* inline-block space fix */
+  margin-right: -4px;
+}
 a {
   text-decoration: none;
 }
@@ -31,6 +42,7 @@ a:hover {
   position: relative;
   z-index: 1;
   background-position-y: 0px;
+  background-size: cover;
 }
 .curve2 {
   background: url("../img/curves2.png") no-repeat center;
@@ -39,6 +51,7 @@ a:hover {
   position: relative;
   z-index: 1;
   margin-top: -103px;
+  background-size: cover;
 }
 .curve3 {
   background: url("../img/curves3.png") no-repeat center;
@@ -47,6 +60,7 @@ a:hover {
   position: relative;
   z-index: 1;
   bottom: -1px;
+  background-size: cover;
 }
 ul.menu-list {
   list-style: none;
@@ -55,11 +69,15 @@ ul.menu-list {
   padding: 0;
   font-size: 14.5px;
   text-transform: uppercase;
-  margin-top: 55px;
+  margin-top: -46px;
+  margin-bottom: 25px;
 }
 ul.menu-list li {
   display: inline-block;
-  padding: 0px 6px;
+  padding: 0px 14px;
+}
+ul.menu-list li.logoli {
+  margin: 0px -20px 0px -15px;
 }
 ul.menu-list li a {
   text-decoration: none;
@@ -70,7 +88,9 @@ ul.menu-list li a:hover {
   color: #0a1a72;
 }
 .marg-tp {
-  margin-top: 24px;
+  position: absolute;
+  top: 18px;
+  right: 0px;
 }
 .login p {
   text-transform: uppercase;
@@ -244,7 +264,7 @@ ul.menu-list li a:hover {
   outline: 0;
 }
 .custom {
-  padding: 0px;
+  padding: 2px;
 }
 .sub-menu {
   position: relative;
@@ -1654,4 +1674,63 @@ img {
 }
 img.doneLoading {
   opacity: 1;
+}
+.onlylogo {
+  -webkit-transform: translateY(50px);
+  -moz-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  -o-transform: translateY(50px);
+  transform: translateY(50px);
+}
+.ngdialog-overlay {
+  position: fixed;
+}
+img.balckbak {
+  width: 100%;
+}
+.image img.imagebrowser {
+  position: absolute;
+  left: 48px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.image img.imagebrowser2 {
+  position: absolute;
+  right: 48px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.ngdialog.ngdialog-theme-default {
+  padding-bottom: 0px;
+  padding-top: 0px !important;
+  height: 100%;
+  position: fixed;
+  z-index: 1000000;
+}
+.ngdialog.ngdialog-theme-default .ngdialog-close:before {
+  font-size: 36px !important;
+}
+.ngdialog-content .image {
+  padding: 25px;
+}
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  -o-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+.ngdialog-closing {
+  display: none;
 }

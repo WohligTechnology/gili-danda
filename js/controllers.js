@@ -228,8 +228,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.zoomposition = $scope.gallery.indexOf(gal);
 
             ngDialog.open({
+                disableAnimation: true,
                 template: 'views/directive/zoomimage.html',
                 scope: $scope
+                
             });
         };
 

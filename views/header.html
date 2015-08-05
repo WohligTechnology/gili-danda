@@ -2,11 +2,11 @@
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="row ">
-                <div class="col-md-12 custom">
-                    <ul class="menu-list text-center ">
+                <div class="col-xs-12 custom">
+                    <ul class="menu-list text-center hidden-xs">
                         <li><a href="#/venue">The venue</a>
                         </li>
-                        <li><a href="">The Event</a> 
+                        <li><a href="">The Event</a>
                         </li>
                         <li><a href="#/sports">Sports</a>
                         </li>
@@ -24,7 +24,7 @@
                         <li><a href="">partners</a>
                         </li>
                     </ul>
-                    <div class="pull-left custom marg-tp">
+                    <div class="pull-left custom marg-tp hidden-xs ">
                         <div class="login">
                             <p>login / signup</p>
                         </div>
@@ -36,22 +36,52 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
 
-            <div class="navbar-header">
+            <div class="navbar-header padtop">
+                 <div class="pull-left custom marg-tp visible-xs ">
+                        <div class="login">
+                            <p>login / signup</p>
+                        </div>
+                        <div class="search">
+                            <form action="/search" method="get" class="sfm">
+                                <input type="text" name="q" value="">
+                                <input type="image" value="Search" src="img/search.png" class="sb">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="mobile-logo visible-xs">
+                        
+                            <a class="" href="#/home">
+                                <img src="img/logo.png" alt="logo" class="img-responsive onlylogo">
+                            </a>
+                        
+                    </div>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
             </div>
 
             <div class="collapse navbar-collapse" id="nav-collapse">
-                <div ng-include="template.menu" class="template menu"></div>
+                <ul class="nav navbar-nav visible-xs">
+                    <li><a href="#/venue">The venue</a>
+                    </li>
+                    <li><a href="">The Event</a>
+                    </li>
+                    <li><a href="#/sports">Sports</a>
+                    </li>
+                    <li><a href="#/schoolprofile">Schools</a>
+                    </li>
+                    <li><a href="#studentprofile">Students</a>
+                    </li>
+                    <li><a href="#score">Scores &amp; Statistics</a>
+                    </li>
+                    <li><a href="">partners</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>

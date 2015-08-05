@@ -108,6 +108,7 @@
   .navbar-nav {
     margin: 7.5px -15px;
     text-align: center;
+    text-transform: uppercase;
   }
   .navbar-nav li a {
     color: #0A1A72 !important;
@@ -216,6 +217,7 @@
   .navbar-nav {
     margin: 7.5px -15px;
     text-align: center;
+    text-transform: uppercase;
   }
   .navbar-nav li a {
     color: #0A1A72 !important;
@@ -238,16 +240,11 @@
     margin: 0px 0px 0px -6px;
   }
   ul.menu-list {
-    margin-top: -13px !important;
+    margin-top: -46px !important;
   }
   ul.menu-list li {
     padding: 0px 10px;
     font-size: 12px;
-  }
-  ul.menu-list li a img {
-    opacity: 1;
-    zoom: 0.7;
-    padding: 0px 30px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 998px) {

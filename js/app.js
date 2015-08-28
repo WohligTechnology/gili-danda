@@ -5,12 +5,9 @@ var firstapp = angular.module('firstapp', [
     'phonecatControllers',
     'templateservicemod',
     'navigationservice',
-
 ]);
 
-firstapp.config(function($stateProvider, $urlRouterProvider, cfpLoadingBarProvider) {
-    //Turn the spinner on or off
-    cfpLoadingBarProvider.includeSpinner = false;
+firstapp.config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
 
@@ -19,11 +16,6 @@ firstapp.config(function($stateProvider, $urlRouterProvider, cfpLoadingBarProvid
         templateUrl: "views/template.html",
         controller: 'HomeCtrl'
     })
-    // .state('profile', {
-    //        url: "/profile",
-    //        templateUrl: "views/template.html",
-    //        controller: 'ProfileCtrl'
-    //    })
     .state('profile', {
         url: "/profile",
         templateUrl: "views/template.html",
@@ -58,6 +50,26 @@ firstapp.config(function($stateProvider, $urlRouterProvider, cfpLoadingBarProvid
             url: "/schoolprofile",
             templateUrl: "views/template.html",
             controller: 'SchoolprofileCtrl'
+        })
+        .state('schoolregistration', {
+            url: "/schoolregistration",
+            templateUrl: "views/template.html",
+            controller: 'SchoolregistrationCtrl'
+        })  
+        .state('contact', {
+            url: "/contact",
+            templateUrl: "views/template.html",
+            controller: 'ContactCtrl'
+        })
+        .state('about', {
+            url: "/about",
+            templateUrl: "views/template.html",
+            controller: 'AboutCtrl'
+        }) 
+        .state('partner', {
+            url: "/partner",
+            templateUrl: "views/template.html",
+            controller: 'PartnerCtrl'
         })
         .state('studentprofile', {
             url: "/studentprofile",

@@ -1,5 +1,7 @@
 bower_components/
 node_modules/
+w/
+production/
 
 
 # Compiled source #

@@ -13,67 +13,67 @@ firstapp.config(function($stateProvider, $urlRouterProvider) {
 
     .state('home', {
         url: "/home",
-        templateUrl: "views/template.html",
+        templateUrl: "./views/template.html",
         controller: 'HomeCtrl'
     })
     .state('profile', {
         url: "/profile",
-        templateUrl: "views/template.html",
+        templateUrl: "./views/template.html",
         controller: 'ProfileCtrl'
     })
         .state('sports', {
             url: "/sports",
-            templateUrl: "views/template.html",
+            templateUrl: "./views/template.html",
             controller: 'SportsCtrl'
         })
         .state('media', {
             url: "/media",
-            templateUrl: "views/template.html",
+            templateUrl: "./views/template.html",
             controller: 'MediaCtrl'
         })
         .state('schedule', {
             url: "/schedule",
-            templateUrl: "views/template.html",
+            templateUrl: "./views/template.html",
             controller: 'ScheduleCtrl'
         })
         .state('score', {
             url: "/score",
-            templateUrl: "views/template.html",
+            templateUrl: "./views/template.html",
             controller: 'ScoreCtrl'
         })
         .state('venue', {
             url: "/venue",
-            templateUrl: "views/template.html",
+            templateUrl: "./views/template.html",
             controller: 'VenueCtrl'
         })
         .state('schoolprofile', {
             url: "/schoolprofile",
-            templateUrl: "views/template.html",
+            templateUrl: "./views/template.html",
             controller: 'SchoolprofileCtrl'
         })
         .state('schoolregistration', {
             url: "/schoolregistration",
-            templateUrl: "views/template.html",
+            templateUrl: "./views/template.html",
             controller: 'SchoolregistrationCtrl'
         })  
         .state('contact', {
             url: "/contact",
-            templateUrl: "views/template.html",
+            templateUrl: "./views/template.html",
             controller: 'ContactCtrl'
         })
         .state('about', {
             url: "/about",
-            templateUrl: "views/template.html",
+            templateUrl: "./views/template.html",
             controller: 'AboutCtrl'
         }) 
         .state('partner', {
             url: "/partner",
-            templateUrl: "views/template.html",
+            templateUrl: "./views/template.html",
             controller: 'PartnerCtrl'
         })
         .state('studentprofile', {
             url: "/studentprofile",
-            templateUrl: "views/template.html",
+            templateUrl: "./views/template.html",
             controller: 'StudentprofileCtrl'
         })
     $urlRouterProvider.otherwise("/home");
@@ -85,7 +85,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider) {
     return {
         restrict: 'EA',
         replace: true,
-        templateUrl: 'views/directive/hovericon.html',
+        templateUrl: './views/directive/hovericon.html',
         scope: {
             game: '='
         },

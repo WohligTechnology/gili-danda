@@ -1,5 +1,5 @@
 var test1 = {};
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngDialog', 'ngSanitize','angular-flexslider'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngDialog', 'ngSanitize', 'angular-flexslider'])
 
 .controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
@@ -7,7 +7,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
-
+    var getbannersliderscallback = function (data, status) {
+        console.log(data);
+        $scope.homeslide = data;
+        $scope.slides = _.pluck($scope.homeslide, "image");
+        $scope.smallslides = _.pluck($scope.homeslide, "icon");
+        //        _.each($scope.homeslide, function(n){
+        //            n.image = imgpath +"image?name="+n.image +"&width=500";
+        //        });
+    }
+    NavigationService.getbannersliders(getbannersliderscallback);
 
 
     $scope.flex = {
@@ -16,60 +25,59 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.clickonslider = function (data) {
         window.location.href = data.link;
     };
-    $scope.homeslide = [{
-        image: "img/slider/slide1.jpg",
-        icon: "img/submenu/tabletennis.png",
-        zoom: 1,
-        link: "http://www.wohlig.com",
-        caption: "table tennis",
-        captions: "Circular Junior Nationals 2015"
-    }, {
-        image: "img/slider/slide2.jpg",
-        icon: "img/submenu/tennis.png",
-        zoom: 1,
-        caption: "tennis",
-        captions: "Circular Junior Nationals 2015"
+    //    $scope.homeslide = [{
+    //        image: "img/slider/slide1.jpg",
+    //        icon: "img/submenu/tabletennis.png",
+    //        zoom: 1,
+    //        link: "http://www.wohlig.com",
+    //        caption: "table tennis",
+    //        captions: "Circular Junior Nationals 2015"
+    //    }, {
+    //        image: "img/slider/slide2.jpg",
+    //        icon: "img/submenu/tennis.png",
+    //        zoom: 1,
+    //        caption: "tennis",
+    //        captions: "Circular Junior Nationals 2015"
+    //
+    //    }, {
+    //        image: "img/slider/slide3.jpg",
+    //        icon: "img/submenu/batminton.png",
+    //        zoom: 1,
+    //        caption: "badminton",
+    //        captions: "Circular Junior Nationals 2015"
+    //    }, {
+    //        image: "img/slider/slide4.jpg",
+    //        icon: "img/submenu/sqaush.png",
+    //        zoom: 1,
+    //        caption: "sqaush",
+    //        captions: "Circular Junior Nationals 2015"
+    //    }, {
+    //        image: "img/slider/slide5.jpg",
+    //        icon: "img/submenu/aquatics.png",
+    //        zoom: 1,
+    //        caption: "aquatics",
+    //        captions: "Circular Junior Nationals 2015"
+    //    }, {
+    //        image: "img/slider/slide6.jpg",
+    //        icon: "img/submenu/basketball.png",
+    //        zoom: 1,
+    //        caption: "basketball",
+    //        captions: "Circular Junior Nationals 2015"
+    //    }, {
+    //        image: "img/slider/slide7.jpg",
+    //        icon: "img/submenu/volleyball.png",
+    //        zoom: 1,
+    //        caption: "volleyball",
+    //        captions: "Circular Junior Nationals 2015"
+    //    }, {
+    //        image: "img/slider/slide8.jpg",
+    //        icon: "img/submenu/handball.png",
+    //        zoom: 1,
+    //        caption: "handball",
+    //        captions: "Circular Junior Nationals 2015"
+    //    }];
 
-    }, {
-        image: "img/slider/slide3.jpg",
-        icon: "img/submenu/batminton.png",
-        zoom: 1,
-        caption: "badminton",
-        captions: "Circular Junior Nationals 2015"
-    }, {
-        image: "img/slider/slide4.jpg",
-        icon: "img/submenu/sqaush.png",
-        zoom: 1,
-        caption: "sqaush",
-        captions: "Circular Junior Nationals 2015"
-    }, {
-        image: "img/slider/slide5.jpg",
-        icon: "img/submenu/aquatics.png",
-        zoom: 1,
-        caption: "aquatics",
-        captions: "Circular Junior Nationals 2015"
-    }, {
-        image: "img/slider/slide6.jpg",
-        icon: "img/submenu/basketball.png",
-        zoom: 1,
-        caption: "basketball",
-        captions: "Circular Junior Nationals 2015"
-    }, {
-        image: "img/slider/slide7.jpg",
-        icon: "img/submenu/volleyball.png",
-        zoom: 1,
-        caption: "volleyball",
-        captions: "Circular Junior Nationals 2015"
-    }, {
-        image: "img/slider/slide8.jpg",
-        icon: "img/submenu/handball.png",
-        zoom: 1,
-        caption: "handball",
-        captions: "Circular Junior Nationals 2015"
-    }];
 
-    $scope.slides = _.pluck($scope.homeslide, "image");
-    $scope.smallslides = _.pluck($scope.homeslide, "icon");
     $scope.changeslider = function () {
         var homelen = $scope.homeslide.length;
         var flexi = $scope.flex.demo.data('flexslider');
@@ -92,25 +100,58 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('ProfileCtrl', function ($scope, TemplateService, NavigationService,  $timeout,  ngDialog) {
-        $scope.template = TemplateService.changecontent("profile");
-        $scope.menutitle = NavigationService.makeactive("Profile");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+.controller('ProfileCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    $scope.template = TemplateService.changecontent("profile");
+    $scope.menutitle = NavigationService.makeactive("Profile");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
 
 
 
-    })
-    .controller('SchoolregistrationCtrl', function ($scope, TemplateService, NavigationService,  $timeout,  ngDialog) {
+})
+    .controller('SchoolregistrationCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog, $filter) {
         $scope.template = TemplateService.changecontent("schoolregistration");
         $scope.menutitle = NavigationService.makeactive("Schoolregistration");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        var getsportsnamecallback = function (data, status) {
+            //        console.log(data);
+            $scope.sportsname = partitionarray(data, 4);
+            console.log($scope.sportsname)
+        }
+        NavigationService.getsportsname(getsportsnamecallback);
 
+        //submit registration form
+        $scope.school = {};
+        $scope.school.sports = [];
+        $scope.sportsflag = "";
+        $scope.school.establishdate = new Date();
+        var submitschoolregistrationcallback = function (data, status) {
+            console.log(data);
+            if (data == 1) {
+                $scope.school = {};
+                ngDialog.open({
+                    template: 'views/content/thankyou.html'
+                });
+            }
+        }
+        $scope.submitschoolregistration = function (school) {
+            $scope.school = school;
+            console.log($scope.school);
+            NavigationService.submitschoolregistration($scope.school, submitschoolregistrationcallback);
+        }
 
+        $scope.pushorpop = function (flag) {
+            var index = $scope.school.sports.indexOf(flag);
+            if (index == -1) {
+                $scope.school.sports.push(flag);
+            } else {
+                $scope.school.sports.splice(index, 1);
+            }
+        }
 
-    })  
-    .controller('ContactCtrl', function ($scope, TemplateService, NavigationService,  $timeout,  ngDialog) {
+    })
+    .controller('ContactCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("contact");
         $scope.menutitle = NavigationService.makeactive("Contact");
         TemplateService.title = $scope.menutitle;
@@ -118,8 +159,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 
-    })  
-    .controller('AboutCtrl', function ($scope, TemplateService, NavigationService,  $timeout,  ngDialog) {
+    })
+    .controller('AboutCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("about");
         $scope.menutitle = NavigationService.makeactive("About");
         TemplateService.title = $scope.menutitle;
@@ -127,17 +168,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 
-    })    
-    .controller('PartnerCtrl', function ($scope, TemplateService, NavigationService,  $timeout,  ngDialog) {
+    })
+    .controller('PartnerCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("partner");
         $scope.menutitle = NavigationService.makeactive("Partner");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        var getsponsorscallback = function (data, status) {
+            console.log(data.queryresult);
+            $scope.sponsors = data.queryresult;
+        }
+        NavigationService.getsponsors(getsponsorscallback);
 
 
 
     })
-    .controller('VenueCtrl', function ($scope, TemplateService, NavigationService,  $timeout,  ngDialog) {
+    .controller('VenueCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("venue");
         $scope.menutitle = NavigationService.makeactive("Venue");
         TemplateService.title = $scope.menutitle;
@@ -184,33 +230,33 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.games = // JavaScript Document
             [{
-                "icon": "img/bluemenu/tabletennis.png",
-                "icon2": "img/bluemenu/tabletennisor.png",
-                "game": "table tennis"
+            "icon": "img/bluemenu/tabletennis.png",
+            "icon2": "img/bluemenu/tabletennisor.png",
+            "game": "table tennis"
             }, {
-                "icon": "img/bluemenu/tennis.png",
-                "icon2": "img/bluemenu/tennisor.png",
-                "game": "tennis"
+            "icon": "img/bluemenu/tennis.png",
+            "icon2": "img/bluemenu/tennisor.png",
+            "game": "tennis"
             }, {
-                "icon": "img/bluemenu/batminton.png",
-                "icon2": "img/bluemenu/batmintonor.png",
-                "game": "badminton"
+            "icon": "img/bluemenu/batminton.png",
+            "icon2": "img/bluemenu/batmintonor.png",
+            "game": "badminton"
             }, {
-                "icon": "img/bluemenu/squash.png",
-                "icon2": "img/bluemenu/sqaushor.png",
-                "game": "squash"
+            "icon": "img/bluemenu/squash.png",
+            "icon2": "img/bluemenu/sqaushor.png",
+            "game": "squash"
             }, {
-                "icon": "img/bluemenu/aqua.png",
-                "icon2": "img/bluemenu/aquaticsor.png",
-                "game": "aquatics"
+            "icon": "img/bluemenu/aqua.png",
+            "icon2": "img/bluemenu/aquaticsor.png",
+            "game": "aquatics"
             }, {
-                "icon": "img/bluemenu/basketball.png",
-                "icon2": "img/bluemenu/basketballor.png",
-                "game": "basketball"
+            "icon": "img/bluemenu/basketball.png",
+            "icon2": "img/bluemenu/basketballor.png",
+            "game": "basketball"
             }, {
-                "icon": "img/bluemenu/vollyball.png",
-                "icon2": "img/bluemenu/volleyballor.png",
-                "game": "volleyball"
+            "icon": "img/bluemenu/vollyball.png",
+            "icon2": "img/bluemenu/volleyballor.png",
+            "game": "volleyball"
             }];
 
         $scope.demo = 111;
@@ -230,13 +276,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     })
 
 .controller('MediaCtrl', function ($scope, TemplateService, NavigationService) {
-        $scope.template = TemplateService.changecontent("media");
-        $scope.menutitle = NavigationService.makeactive("Media");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+    $scope.template = TemplateService.changecontent("media");
+    $scope.menutitle = NavigationService.makeactive("Media");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
 
 
-    })
+})
     .controller('StudentprofileCtrl', function ($scope, TemplateService, NavigationService, ngDialog) {
         $scope.template = TemplateService.changecontent("studentprofile");
         $scope.menutitle = NavigationService.makeactive("Studentprofile");
@@ -267,7 +313,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 disableAnimation: true,
                 template: './views/directive/zoomimage.html',
                 scope: $scope
-                
+
             });
         };
 
@@ -346,35 +392,35 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
         $scope.games = // JavaScript Document
             [{
-                "icon": "img/bluemenu/tabletennis.png",
-                "icon2": "img/bluemenu/tabletennisor.png",
-                "game": "table tennis"
+            "icon": "img/bluemenu/tabletennis.png",
+            "icon2": "img/bluemenu/tabletennisor.png",
+            "game": "table tennis"
             }, {
-                "icon": "img/bluemenu/tennis.png",
-                "icon2": "img/bluemenu/tennisor.png",
-                "game": "tennis"
+            "icon": "img/bluemenu/tennis.png",
+            "icon2": "img/bluemenu/tennisor.png",
+            "game": "tennis"
             }, {
-                "icon": "img/bluemenu/batminton.png",
-                "icon2": "img/bluemenu/batmintonor.png",
-                "game": "badminton"
+            "icon": "img/bluemenu/batminton.png",
+            "icon2": "img/bluemenu/batmintonor.png",
+            "game": "badminton"
             }, {
-                "icon": "img/bluemenu/squash.png",
-                "icon2": "img/bluemenu/sqaushor.png",
-                "game": "squash"
+            "icon": "img/bluemenu/squash.png",
+            "icon2": "img/bluemenu/sqaushor.png",
+            "game": "squash"
             }, {
-                "icon": "img/bluemenu/aqua.png",
-                "icon2": "img/bluemenu/aquaticsor.png",
-                "game": "aquatics",
-                "grey": true
+            "icon": "img/bluemenu/aqua.png",
+            "icon2": "img/bluemenu/aquaticsor.png",
+            "game": "aquatics",
+            "grey": true
             }, {
-                "icon": "img/bluemenu/basketball.png",
-                "icon2": "img/bluemenu/basketballor.png",
-                "game": "basketball",
+            "icon": "img/bluemenu/basketball.png",
+            "icon2": "img/bluemenu/basketballor.png",
+            "game": "basketball",
             }, {
-                "icon": "img/bluemenu/vollyball.png",
-                "icon2": "img/bluemenu/volleyballor.png",
-                "game": "volleyball",
-                "grey": true
+            "icon": "img/bluemenu/vollyball.png",
+            "icon2": "img/bluemenu/volleyballor.png",
+            "game": "volleyball",
+            "grey": true
             }];
 
         $scope.demo = 111;
@@ -501,35 +547,35 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
         $scope.games = // JavaScript Document
             [{
-                "icon": "img/bluemenu/tabletennis.png",
-                "icon2": "img/bluemenu/tabletennisor.png",
-                "game": "table tennis"
+            "icon": "img/bluemenu/tabletennis.png",
+            "icon2": "img/bluemenu/tabletennisor.png",
+            "game": "table tennis"
             }, {
-                "icon": "img/bluemenu/tennis.png",
-                "icon2": "img/bluemenu/tennisor.png",
-                "game": "tennis"
+            "icon": "img/bluemenu/tennis.png",
+            "icon2": "img/bluemenu/tennisor.png",
+            "game": "tennis"
             }, {
-                "icon": "img/bluemenu/batminton.png",
-                "icon2": "img/bluemenu/batmintonor.png",
-                "game": "badminton"
+            "icon": "img/bluemenu/batminton.png",
+            "icon2": "img/bluemenu/batmintonor.png",
+            "game": "badminton"
             }, {
-                "icon": "img/bluemenu/squash.png",
-                "icon2": "img/bluemenu/sqaushor.png",
-                "game": "squash"
+            "icon": "img/bluemenu/squash.png",
+            "icon2": "img/bluemenu/sqaushor.png",
+            "game": "squash"
             }, {
-                "icon": "img/bluemenu/aqua.png",
-                "icon2": "img/bluemenu/aquaticsor.png",
-                "game": "aquatics",
-                "grey": true
+            "icon": "img/bluemenu/aqua.png",
+            "icon2": "img/bluemenu/aquaticsor.png",
+            "game": "aquatics",
+            "grey": true
             }, {
-                "icon": "img/bluemenu/basketball.png",
-                "icon2": "img/bluemenu/basketballor.png",
-                "game": "basketball",
+            "icon": "img/bluemenu/basketball.png",
+            "icon2": "img/bluemenu/basketballor.png",
+            "game": "basketball",
             }, {
-                "icon": "img/bluemenu/vollyball.png",
-                "icon2": "img/bluemenu/volleyballor.png",
-                "game": "volleyball",
-                "grey": true
+            "icon": "img/bluemenu/vollyball.png",
+            "icon2": "img/bluemenu/volleyballor.png",
+            "game": "volleyball",
+            "grey": true
             }];
 
         $scope.demo = 111;
@@ -558,37 +604,37 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.games = // JavaScript Document
         [{
-            "icon": "img/bluemenu/overall.png",
-            "icon2": "img/bluemenu/overallor.png",
-            "game": "overall"
+        "icon": "img/bluemenu/overall.png",
+        "icon2": "img/bluemenu/overallor.png",
+        "game": "overall"
         }, {
-            "icon": "img/bluemenu/tabletennis.png",
-            "icon2": "img/bluemenu/tabletennisor.png",
-            "game": "table tennis"
+        "icon": "img/bluemenu/tabletennis.png",
+        "icon2": "img/bluemenu/tabletennisor.png",
+        "game": "table tennis"
         }, {
-            "icon": "img/bluemenu/tennis.png",
-            "icon2": "img/bluemenu/tennisor.png",
-            "game": "tennis"
+        "icon": "img/bluemenu/tennis.png",
+        "icon2": "img/bluemenu/tennisor.png",
+        "game": "tennis"
         }, {
-            "icon": "img/bluemenu/batminton.png",
-            "icon2": "img/bluemenu/batmintonor.png",
-            "game": "badminton"
+        "icon": "img/bluemenu/batminton.png",
+        "icon2": "img/bluemenu/batmintonor.png",
+        "game": "badminton"
         }, {
-            "icon": "img/bluemenu/squash.png",
-            "icon2": "img/bluemenu/sqaushor.png",
-            "game": "squash"
+        "icon": "img/bluemenu/squash.png",
+        "icon2": "img/bluemenu/sqaushor.png",
+        "game": "squash"
         }, {
-            "icon": "img/bluemenu/aqua.png",
-            "icon2": "img/bluemenu/aquaticsor.png",
-            "game": "aquatics"
+        "icon": "img/bluemenu/aqua.png",
+        "icon2": "img/bluemenu/aquaticsor.png",
+        "game": "aquatics"
         }, {
-            "icon": "img/bluemenu/basketball.png",
-            "icon2": "img/bluemenu/basketballor.png",
-            "game": "basketball"
+        "icon": "img/bluemenu/basketball.png",
+        "icon2": "img/bluemenu/basketballor.png",
+        "game": "basketball"
         }, {
-            "icon": "img/bluemenu/vollyball.png",
-            "icon2": "img/bluemenu/volleyballor.png",
-            "game": "volleyball"
+        "icon": "img/bluemenu/vollyball.png",
+        "icon2": "img/bluemenu/volleyballor.png",
+        "game": "volleyball"
         }];
 
     $scope.demo = 111;
@@ -614,37 +660,37 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.games = // JavaScript Document
         [{
-            "icon": "img/bluemenu/overall.png",
-            "icon2": "img/bluemenu/overallor.png",
-            "game": "overall"
+        "icon": "img/bluemenu/overall.png",
+        "icon2": "img/bluemenu/overallor.png",
+        "game": "overall"
         }, {
-            "icon": "img/bluemenu/tabletennis.png",
-            "icon2": "img/bluemenu/tabletennisor.png",
-            "game": "table tennis"
+        "icon": "img/bluemenu/tabletennis.png",
+        "icon2": "img/bluemenu/tabletennisor.png",
+        "game": "table tennis"
         }, {
-            "icon": "img/bluemenu/tennis.png",
-            "icon2": "img/bluemenu/tennisor.png",
-            "game": "tennis"
+        "icon": "img/bluemenu/tennis.png",
+        "icon2": "img/bluemenu/tennisor.png",
+        "game": "tennis"
         }, {
-            "icon": "img/bluemenu/batminton.png",
-            "icon2": "img/bluemenu/batmintonor.png",
-            "game": "badminton"
+        "icon": "img/bluemenu/batminton.png",
+        "icon2": "img/bluemenu/batmintonor.png",
+        "game": "badminton"
         }, {
-            "icon": "img/bluemenu/squash.png",
-            "icon2": "img/bluemenu/sqaushor.png",
-            "game": "squash"
+        "icon": "img/bluemenu/squash.png",
+        "icon2": "img/bluemenu/sqaushor.png",
+        "game": "squash"
         }, {
-            "icon": "img/bluemenu/aqua.png",
-            "icon2": "img/bluemenu/aquaticsor.png",
-            "game": "aquatics"
+        "icon": "img/bluemenu/aqua.png",
+        "icon2": "img/bluemenu/aquaticsor.png",
+        "game": "aquatics"
         }, {
-            "icon": "img/bluemenu/basketball.png",
-            "icon2": "img/bluemenu/basketballor.png",
-            "game": "basketball"
+        "icon": "img/bluemenu/basketball.png",
+        "icon2": "img/bluemenu/basketballor.png",
+        "game": "basketball"
         }, {
-            "icon": "img/bluemenu/vollyball.png",
-            "icon2": "img/bluemenu/volleyballor.png",
-            "game": "volleyball"
+        "icon": "img/bluemenu/vollyball.png",
+        "icon2": "img/bluemenu/volleyballor.png",
+        "game": "volleyball"
         }];
 
     $scope.demo = 111;
@@ -665,72 +711,72 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 })
 
 .controller('ScheduleCtrl', function ($scope, TemplateService, NavigationService) {
-        $scope.template = TemplateService.changecontent("schedule");
-        $scope.menutitle = NavigationService.makeactive("Schedule");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+    $scope.template = TemplateService.changecontent("schedule");
+    $scope.menutitle = NavigationService.makeactive("Schedule");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
 
-        //    $scope.oneAtATime = true;
-        //    $scope.oneAtATimes = false;
-        //    
-        //      $scope.status = {
-        //    isFirstOpen: true,
-        //    isFirstDisabled: false
-        //  };
+    //    $scope.oneAtATime = true;
+    //    $scope.oneAtATimes = false;
+    //    
+    //      $scope.status = {
+    //    isFirstOpen: true,
+    //    isFirstDisabled: false
+    //  };
 
-        $scope.games = // JavaScript Document
+    $scope.games = // JavaScript Document
             [{
-                "icon": "img/orangemenu/tabletennis.png",
-                "icon2": "img/orangemenu/tabletennisbl.png",
-                "game": "table tennis"
+        "icon": "img/orangemenu/tabletennis.png",
+        "icon2": "img/orangemenu/tabletennisbl.png",
+        "game": "table tennis"
             }, {
-                "icon": "img/orangemenu/tennis.png",
-                "icon2": "img/orangemenu/tennisbl.png",
-                "game": "tennis"
+        "icon": "img/orangemenu/tennis.png",
+        "icon2": "img/orangemenu/tennisbl.png",
+        "game": "tennis"
             }, {
-                "icon": "img/orangemenu/batminton.png",
-                "icon2": "img/orangemenu/batmintonbl.png",
-                "game": "badminton"
+        "icon": "img/orangemenu/batminton.png",
+        "icon2": "img/orangemenu/batmintonbl.png",
+        "game": "badminton"
             }, {
-                "icon": "img/orangemenu/squash.png",
-                "icon2": "img/orangemenu/squashbl.png",
-                "game": "squash"
+        "icon": "img/orangemenu/squash.png",
+        "icon2": "img/orangemenu/squashbl.png",
+        "game": "squash"
             }, {
-                "icon": "img/orangemenu/aquash.png",
-                "icon2": "img/orangemenu/aquashbl.png",
-                "game": "aquatics"
+        "icon": "img/orangemenu/aquash.png",
+        "icon2": "img/orangemenu/aquashbl.png",
+        "game": "aquatics"
             }, {
-                "icon": "img/orangemenu/basketball.png",
-                "icon2": "img/orangemenu/basketballbl.png",
-                "game": "basketball"
+        "icon": "img/orangemenu/basketball.png",
+        "icon2": "img/orangemenu/basketballbl.png",
+        "game": "basketball"
             }, {
-                "icon": "img/orangemenu/volleyball.png",
-                "icon2": "img/orangemenu/volleyballbl.png",
-                "game": "volleyball"
+        "icon": "img/orangemenu/volleyball.png",
+        "icon2": "img/orangemenu/volleyballbl.png",
+        "game": "volleyball"
             }];
 
-        $scope.demo = 111;
-        $scope.checkthis = function () {
-            console.log("Android");
-        };
+    $scope.demo = 111;
+    $scope.checkthis = function () {
+        console.log("Android");
+    };
 
-        $scope.makeactive = function (game) {
-            _.each($scope.games, function (n) {
-                n.active = false;
-            });
-            game.active = true;
-            $scope.tab = game.game;
-        };
-        $scope.makeactive($scope.games[6]);
+    $scope.makeactive = function (game) {
+        _.each($scope.games, function (n) {
+            n.active = false;
+        });
+        game.active = true;
+        $scope.tab = game.game;
+    };
+    $scope.makeactive($scope.games[6]);
 
-        $scope.jqueryScrollbarOptions = {
-            "onScroll": function (y, x) {
-                if (y.scroll == y.maxScroll) {
-                    alert('Scrolled to bottom');
-                }
+    $scope.jqueryScrollbarOptions = {
+        "onScroll": function (y, x) {
+            if (y.scroll == y.maxScroll) {
+                alert('Scrolled to bottom');
             }
-        };
-    })
+        }
+    };
+})
     .controller('headerctrl', function ($scope, TemplateService) {
         $scope.template = TemplateService;
     })

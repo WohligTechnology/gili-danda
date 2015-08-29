@@ -6,13 +6,14 @@
 
     <flex-slider class="carousel" flex-slide="s in slides" animation="slide" animation-loop="true" item-margin="1" control-nav="false" flexvar="demo" after="changeslider();" start="changeslider();">
         <li>
-            <img ng-src="{{s}}" class="img-responsive">
+            <img ng-src="{{s | serverimage}}" class="img-responsive">
             
         </li>
 
     </flex-slider>
+    
 <div class="slider-text" ng-repeat="element in homeslide">
-                <h3>{{element.captions}}</h3>
+                <h3>{{element.title}}</h3>
                 <a ng-click="clickonslider(element);" ng-show="element.link">KNOW MORE</a>
             </div>
 </div>
@@ -26,8 +27,8 @@
                 <ul>
                     <li ng-repeat="element in homeslide" ng-click="iconclick(element);">
                         <figure>
-                            <img class="transition" ng-src="{{element.icon}}" ng-style="{ 'width' : element.zoom*110 }" class="img-responsive">
-                            <figcaption ng-style="{ 'font-size' : element.zoom*14 }">{{element.caption}}</figcaption>
+                            <img class="transition" ng-src="{{element.icon |serverimage}}" ng-style="{ 'width' : element.zoom*110 }" class="img-responsive">
+                            <figcaption ng-style="{ 'font-size' : element.zoom*14 }">{{element.name}}</figcaption>
                         </figure>
                     </li>
                 </ul>

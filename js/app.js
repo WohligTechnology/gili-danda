@@ -121,8 +121,25 @@ firstapp.config(function($stateProvider, $urlRouterProvider) {
     }
 });
 
+firstapp.filter('serverimage', function() {
+    return function(image) {
+        return imgpath + image;
+    };
+});
 //fancybox directive
-
+function partitionarray(myarray, number) {
+            var arrlength = myarray.length;
+            var newarray = [];
+            var j = -1;
+            for (var i = 0; i < arrlength; i++) {
+                if (i % number == 0) {
+                    j++;
+                    newarray[j] = [];
+                }
+                newarray[j].push(myarray[i]);
+            }
+            return newarray;
+        };
 firstapp.directive('fancybox', function($compile, $parse) {
     return {
         restrict: 'C',

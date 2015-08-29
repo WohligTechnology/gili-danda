@@ -16,6 +16,17 @@
     <div class="backwhite">
         <div class="container ">
 
+            <!--
+                <input type="password" ng-model="login.oldpassword" class="form-control" ng-class="allvalidation[0].validation" required placeholder="Current Password* " />
+                
+                <input type="password" ng-model="login.newpassword" class="form-control" ng-class="allvalidation[1].validation" required placeholder="New Password *" />
+                
+                <input type="password" ng-model="login.confirmpassword" class="form-control" ng-class="allvalidation[2].validation" required placeholder="Confirm Password *" />
+
+                <button class="btn form-control" ng-click="changepassword(login)">Submit</button>
+-->
+
+
             <div class="row">
                 <div class="col-md-3">
                     <div class="sc-list">
@@ -24,7 +35,7 @@
                 </div>
                 <div class="col-md-9">
                     <div class="sc-input">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" ng-model="school.name" placeholder="Name" required>
                     </div>
                 </div>
             </div>
@@ -36,7 +47,7 @@
                 </div>
                 <div class="col-md-9">
                     <div class="sc-input">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" ng-model="school.address" placeholder="Address" required>
                     </div>
                 </div>
             </div>
@@ -50,23 +61,23 @@
                     <div class="row">
                         <div class="col-md-3 padzer ">
                             <div class="sc-input">
-                                <input type="text" class="form-control">
+                                <input type="date" class="form-control" ng-model="school.establishdate" required>
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="sc-ul">
                                 <ul>
                                     <li>
-                                        <input id="Option6" type="checkbox">
-                                        <label class="checkbox" for="Option6">Boys School</label>
+                                        <input id="Option6" type="radio" ng-model="school.type" value="1">
+                                        <label for="Option6">Boys School</label>
                                     </li>
                                     <li>
-                                        <input id="Option7" type="checkbox">
-                                        <label class="checkbox" for="Option7">Girls School</label>
+                                        <input id="Option7" type="radio" ng-model="school.type" value="2">
+                                        <label for="Option7">Girls School</label>
                                     </li>
                                     <li>
-                                        <input id="Option8" type="checkbox">
-                                        <label class="checkbox" for="Option8">Girls School</label>
+                                        <input id="Option8" type="radio" ng-model="school.type" value="3">
+                                        <label for="Option8">Girls School</label>
                                     </li>
 
                                 </ul>
@@ -84,7 +95,7 @@
                 </div>
                 <div class="col-md-9">
                     <div class="sc-input">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" ng-model="school.contactperson" placeholder="Contact Person" required>
                     </div>
                 </div>
             </div>
@@ -99,17 +110,17 @@
                     <div class="row">
                         <div class="col-md-4 padzer">
                             <div class="sc-input">
-                                <input type="text" class="form-control" placeholder="Email">
+                                <input type="text" class="form-control" placeholder="Email" ng-model="school.email" placeholder="Email" required>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="sc-input">
-                                <input type="text" class="form-control" placeholder="Mobile">
+                                <input type="text" class="form-control" placeholder="Mobile" ng-model="school.mobile" placeholder="Mobile" required>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="sc-input">
-                                <input type="text" class="form-control" placeholder="Landline">
+                                <input type="text" class="form-control" placeholder="Landline" ng-model="school.landline" placeholder="Landline" required>
                             </div>
                         </div>
                     </div>
@@ -122,58 +133,62 @@
                         <p>Interested Sports</p>
                     </div>
                 </div>
-                <div class="col-md-9 padzer pdbotom">
+                <div class="col-md-9 padzer pdbotom" ng-repeat="tworows in sportsname">
+                    <div class="row margzero">
+
+                        <div class="col-md-12 padzer">
+                            <div class="col-md-2" ng-repeat="singlesportsname in tworows">
+                                <input id="Option{{singlesportsname.id+10}}" type="checkbox" ng-model="sportsflag" ng-change="pushorpop(singlesportsname.id);">
+                                <label class="checkbox" for="Option{{singlesportsname.id+10}}">{{singlesportsname.name}}</label>
+                            </div>
+                            <!--
+                            <div class="col-md-2">
+                                <input id="Option11" type="checkbox">
+                                <label class="checkbox" for="Option11">Tennis</label>
+                            </div>
+                            <div class="col-md-2">
+                                <input id="Option12" type="checkbox">
+                                <label class="checkbox" for="Option12">Badminton</label>
+                            </div>
+                            <div class="col-md-2">
+                                <input id="Option13" type="checkbox">
+                                <label class="checkbox" for="Option13">Squash</label>
+                            </div>
+-->
+                        </div>
+                    </div>
+                    <!--
                     <div class="row margzero">
 
                         <div class="col-md-12 padzer">
                             <div class="col-md-2">
-                                <input id="Option9" type="checkbox">
-                                <label class="checkbox" for="Option9">Table Tennis</label>
+                                <input id="Option14" type="checkbox">
+                                <label class="checkbox" for="Option14">Aquatic</label>
                             </div>
                             <div class="col-md-2">
-                                <input id="Option9" type="checkbox">
-                                <label class="checkbox" for="Option9">Tennis</label>
+                                <input id="Option15" type="checkbox">
+                                <label class="checkbox" for="Option15">Basketball</label>
                             </div>
                             <div class="col-md-2">
-                                <input id="Option9" type="checkbox">
-                                <label class="checkbox" for="Option9">Badminton</label>
+                                <input id="Option16" type="checkbox">
+                                <label class="checkbox" for="Option16">Volyball</label>
                             </div>
                             <div class="col-md-2">
-                                <input id="Option9" type="checkbox">
-                                <label class="checkbox" for="Option9">Squash</label>
+                                <input id="Option17" type="checkbox">
+                                <label class="checkbox" for="Option17">Handball</label>
                             </div>
                         </div>
                     </div>
-                    <div class="row margzero">
-
-                        <div class="col-md-12 padzer">
-                            <div class="col-md-2">
-                                <input id="Option9" type="checkbox">
-                                <label class="checkbox" for="Option9">Aquatic</label>
-                            </div>
-                            <div class="col-md-2">
-                                <input id="Option9" type="checkbox">
-                                <label class="checkbox" for="Option9">Basketball</label>
-                            </div>
-                            <div class="col-md-2">
-                                <input id="Option9" type="checkbox">
-                                <label class="checkbox" for="Option9">Volyball</label>
-                            </div>
-                            <div class="col-md-2">
-                                <input id="Option9" type="checkbox">
-                                <label class="checkbox" for="Option9">Handball</label>
-                            </div>
-                        </div>
-                    </div>
+-->
 
 
 
                 </div>
-                        <div class="slider-btn text-center">
-    <a href="" class="">SUBMIT</a>
-</div>
+                <!--                       <button class="btn form-control slider-btn text-center" ng-click="changepassword(login)"><a>Submit</a></button>-->
+                <div class="slider-btn text-center" ng-click="submitschoolregistration(school);"><a>SUBMIT</a>
+                </div>
             </div>
-    
+
         </div>
     </div>
 </div>

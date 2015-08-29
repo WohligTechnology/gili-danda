@@ -92,7 +92,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('ProfileCtrl', function ($scope, TemplateService, NavigationService, cfpLoadingBar, $timeout, toaster, ngDialog, valdr) {
+.controller('ProfileCtrl', function ($scope, TemplateService, NavigationService,  $timeout,  ngDialog) {
         $scope.template = TemplateService.changecontent("profile");
         $scope.menutitle = NavigationService.makeactive("Profile");
         TemplateService.title = $scope.menutitle;
@@ -101,7 +101,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })
-    .controller('SchoolregistrationCtrl', function ($scope, TemplateService, NavigationService, cfpLoadingBar, $timeout, toaster, ngDialog, valdr) {
+    .controller('SchoolregistrationCtrl', function ($scope, TemplateService, NavigationService,  $timeout,  ngDialog) {
         $scope.template = TemplateService.changecontent("schoolregistration");
         $scope.menutitle = NavigationService.makeactive("Schoolregistration");
         TemplateService.title = $scope.menutitle;
@@ -110,7 +110,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })  
-    .controller('ContactCtrl', function ($scope, TemplateService, NavigationService, cfpLoadingBar, $timeout, toaster, ngDialog, valdr) {
+    .controller('ContactCtrl', function ($scope, TemplateService, NavigationService,  $timeout,  ngDialog) {
         $scope.template = TemplateService.changecontent("contact");
         $scope.menutitle = NavigationService.makeactive("Contact");
         TemplateService.title = $scope.menutitle;
@@ -119,7 +119,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })  
-    .controller('AboutCtrl', function ($scope, TemplateService, NavigationService, cfpLoadingBar, $timeout, toaster, ngDialog, valdr) {
+    .controller('AboutCtrl', function ($scope, TemplateService, NavigationService,  $timeout,  ngDialog) {
         $scope.template = TemplateService.changecontent("about");
         $scope.menutitle = NavigationService.makeactive("About");
         TemplateService.title = $scope.menutitle;
@@ -128,7 +128,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })    
-    .controller('PartnerCtrl', function ($scope, TemplateService, NavigationService, cfpLoadingBar, $timeout, toaster, ngDialog, valdr) {
+    .controller('PartnerCtrl', function ($scope, TemplateService, NavigationService,  $timeout,  ngDialog) {
         $scope.template = TemplateService.changecontent("partner");
         $scope.menutitle = NavigationService.makeactive("Partner");
         TemplateService.title = $scope.menutitle;
@@ -137,7 +137,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })
-    .controller('VenueCtrl', function ($scope, TemplateService, NavigationService, cfpLoadingBar, $timeout, toaster, ngDialog, valdr) {
+    .controller('VenueCtrl', function ($scope, TemplateService, NavigationService,  $timeout,  ngDialog) {
         $scope.template = TemplateService.changecontent("venue");
         $scope.menutitle = NavigationService.makeactive("Venue");
         TemplateService.title = $scope.menutitle;

@@ -1,4 +1,4 @@
-var admin_url = "http://localhost/sfabackend/sfabackend/index.php/";
+var admin_url = "http://localhost/sfabackend/index.php/";
 var imgpath = admin_url + "image?name=";
 var navigationservice = angular.module('navigationservice', [])
 

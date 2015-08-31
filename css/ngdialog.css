@@ -13,7 +13,7 @@
 .ngdialog.ngdialog-theme-default .ngdialog-content {
     -webkit-animation: ngdialog-flyin .5s;
     animation: ngdialog-flyin .5s;
-    background: transparent;
+    background: #fff ;
     border-radius: 5px;
     color: #444;
     font-family: 'Helvetica', sans-serif;
@@ -217,7 +217,7 @@
     animation: ngdialog-flipout-horizontal .5s;
 }
 
-.ngdialog.ngdialog-theme-flat .ngdialog-content {
+.ngdialog.ngdialog-theme-flat .ngdialog-ngdialog-content {
     -webkit-animation: ngdialog-flipin-horizontal .5s;
     animation: ngdialog-flipin-horizontal .5s;
     background: #fff;
@@ -458,7 +458,7 @@ body.ngdialog-open {
 }
 
 .ngdialog.ngdialog-theme-custom .ngdialog-content {
-    background: rgba(255, 255, 255, .9);
+    background: #fff !important;
     padding: 1.8em 2em;
     width: 440px;
     -webkit-border-radius: 0;

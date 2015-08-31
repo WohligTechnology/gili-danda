@@ -1213,6 +1213,7 @@ h5.copen {
             font-size: 36px;
             font-weight: 600;
             margin: 18px 0px 0px 0px;
+            text-transform: capitalize;
              span{
                 color:#f47321;
             }
@@ -1760,6 +1761,7 @@ img.balckbak {
     left: 50% !important;
     .translate(-50%,
     -50%);
+        background: rgba(10, 10, 10, 0)!important;
 }
 .ngdialog-closing {
     display: none;
@@ -1986,4 +1988,22 @@ img.balckbak {
     text-align: center;
         padding-bottom: 150px;
     margin-top: -30px;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    -webkit-animation: ngdialog-flyin .5s;
+    animation: ngdialog-flyin .5s;
+    background: #fff;
+    border-radius: 5px;
+    color: #444;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 1em;
+    position: relative;
+    width: 770px;
+    overflow: hidden;
+    display: block;
 }

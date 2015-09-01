@@ -51,6 +51,46 @@ firstapp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "./views/template.html",
             controller: 'StudentlandingCtrl'
         })
+    .state('handball', {
+            url: "/handball",
+            templateUrl: "./views/template.html",
+            controller: 'HandballCtrl'
+        })  
+        .state('basketball', {
+            url: "/basketball",
+            templateUrl: "./views/template.html",
+            controller: 'BasketballCtrl'
+        }) 
+        .state('squash', {
+            url: "/squash",
+            templateUrl: "./views/template.html",
+            controller: 'SquashCtrl'
+        }) 
+        .state('tabletennis', {
+            url: "/tabletennis",
+            templateUrl: "./views/template.html",
+            controller: 'TabletennisCtrl'
+        })  
+        .state('batminton', {
+            url: "/batminton",
+            templateUrl: "./views/template.html",
+            controller: 'BatmintonCtrl'
+        })  
+        .state('vollyball', {
+            url: "/vollyball",
+            templateUrl: "./views/template.html",
+            controller: 'VollyballCtrl'
+        })
+        .state('aquatic', {
+            url: "/aquatic",
+            templateUrl: "./views/template.html",
+            controller: 'AquaticCtrl'
+        }) 
+        .state('tennis', {
+            url: "/tennis",
+            templateUrl: "./views/template.html",
+            controller: 'TennisCtrl'
+        })
         .state('venue', {
             url: "/venue",
             templateUrl: "./views/template.html",

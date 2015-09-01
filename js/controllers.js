@@ -126,6 +126,78 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 
+})  
+    .controller('HandballCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    $scope.template = TemplateService.changecontent("handball");
+    $scope.menutitle = NavigationService.makeactive("Handball");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+
+
+}) 
+    .controller('VollyballCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    $scope.template = TemplateService.changecontent("vollyball");
+    $scope.menutitle = NavigationService.makeactive("Vollyball");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+
+
+})
+    .controller('AquaticCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    $scope.template = TemplateService.changecontent("aquatic");
+    $scope.menutitle = NavigationService.makeactive("aquatic");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+
+
+})
+    .controller('BasketballCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    $scope.template = TemplateService.changecontent("basketball");
+    $scope.menutitle = NavigationService.makeactive("basketball");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+
+
+}) 
+    .controller('BatmintonCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    $scope.template = TemplateService.changecontent("batminton");
+    $scope.menutitle = NavigationService.makeactive("batminton");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+
+
+})
+    .controller('TabletennisCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    $scope.template = TemplateService.changecontent("tabletennis");
+    $scope.menutitle = NavigationService.makeactive("Tabletennis");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+
+
+})
+    .controller('SquashCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    $scope.template = TemplateService.changecontent("squash");
+    $scope.menutitle = NavigationService.makeactive("Squash");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+
+
+})
+    .controller('TennisCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    $scope.template = TemplateService.changecontent("tennis");
+    $scope.menutitle = NavigationService.makeactive("Tennis");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+
+
 })
     .controller('SchoolregistrationCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog, $filter) {
         $scope.template = TemplateService.changecontent("schoolregistration");

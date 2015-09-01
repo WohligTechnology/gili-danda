@@ -109,6 +109,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 })
+    .controller('SchoollandingCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    $scope.template = TemplateService.changecontent("schoollanding");
+    $scope.menutitle = NavigationService.makeactive("Schoollanding");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+
+
+})
+    .controller('StudentlandingCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    $scope.template = TemplateService.changecontent("studentlanding");
+    $scope.menutitle = NavigationService.makeactive("Studentlanding");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+
+
+})
     .controller('SchoolregistrationCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog, $filter) {
         $scope.template = TemplateService.changecontent("schoolregistration");
         $scope.menutitle = NavigationService.makeactive("Schoolregistration");

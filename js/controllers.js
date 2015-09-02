@@ -258,6 +258,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 
+    }) 
+    .controller('LandingCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+        $scope.template = TemplateService.changecontent("landing");
+        $scope.menutitle = NavigationService.makeactive("Landing");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+
+
     })
     .controller('PartnerCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("partner");

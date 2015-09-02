@@ -110,6 +110,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider) {
             url: "/contact",
             templateUrl: "./views/template.html",
             controller: 'ContactCtrl'
+        }) 
+        .state('landing', {
+            url: "/landing",
+            templateUrl: "./views/template.html",
+            controller: 'LandingCtrl'
         })
         .state('about', {
             url: "/about",

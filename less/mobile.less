@@ -3,37 +3,44 @@
 ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
 ~"only screen and (min-device-pixel-ratio: 1.5)";
 @mobile: ~"only screen and (max-width: 468px)";
+@mobile-me: ~"only screen and (min-width: 320px)";
+@mobile-slider-school: ~"only screen and (min-width: 600px)";
 @tablet: ~"only screen and (min-width: 469px) and (max-width: 949px)";
 @customsc: ~"only screen and (min-width: 768px) and (max-width: 998px)";
 @slider: ~"only screen and (min-width: 469px) and (max-width: 768px)";
 @desktop: ~"only screen and (min-width: 950px) and (max-width: 1128px)";
 @custom: ~"only screen and (min-width: 949px) and (max-width: 1200px)";
 @desktop-xl: ~"only screen and (min-width: 1129px)";
-@desktopsmall: ~"only screen and (min-width: 998px) and (max-width: 1200px)";
+@desktopsmall: ~"only screen and (min-width: 950px) and (max-width: 998px)";
 ;
 //// *********  custom slider css 998 to 1200  *********
-@media @desktopsmall {}
+@media @desktopsmall {
+    .sprofile .slogo {
+        zoom: 0.8;
+        overflow: visible !important;
+        padding-top: 10px !important;
+    }
+}
 
 //// *********  custom slider css 469 to 768 *********
 @media @slider {
     .margintop {
-    margin-top: 30px !important;
-}
+        margin-top: 30px !important;
+    }
     .marg {
-    margin-top: -36px !important;
-}
+        margin-top: -36px !important;
+    }
     .twit {
-    margin-top: 36px;
-}
-    .insta{
+        margin-top: 36px;
+    }
+    .insta {
         margin-top: 36px;
     }
     .middle-home .over-img p {
-  
-    margin: 13px 0px 18px 0px !important;
-}
-     .middle-home .over-img img{
-        zoom:0.6 ;
+        margin: 13px 0px 18px 0px !important;
+    }
+    .middle-home .over-img img {
+        zoom: 0.6;
     }
     .home-content.text-center {
         margin-top: 30px !important;
@@ -86,6 +93,17 @@
 // *********   end *********
 /// *********  desktop 950 to 1120 *********
 @media @desktop {
+    .sprofile .splogo {
+        zoom: 0.9;
+    }
+    .sprofile .slogo {
+        zoom: 0.8;
+        overflow: visible !important;
+        padding-top: 20px !important;
+    }
+    .sprofile .sdata p {
+        font-size: 1.5vw;
+    }
     .cimg {
         zoom: 0.5 !important;
     }
@@ -108,48 +126,40 @@
 // css for  mobile max 468
 @media @mobile {
     .regi a {
-
-    font-size: 14px !important;
-  
-}
+        font-size: 14px !important;
+    }
     .game-content h3 {
-    margin-bottom: 24px !important;
-  
-}
+        margin-bottom: 24px !important;
+    }
     .game-content p {
-    font-size: 13px;
-}
+        font-size: 13px;
+    }
     .margino {
-    margin: 0px 70px 0px 70px !important;
-   
-}
+        margin: 0px 70px 0px 70px !important;
+    }
     .margino .col-md-3 .sports-tab p {
-  
-    font-size: 13px !important;
-}
+        font-size: 13px !important;
+    }
     .margintop {
-    margin-top: 10px !important;
-}
+        margin-top: 10px !important;
+    }
     .middle-home .over-img .mid-det h1 {
- 
-    line-height: 20% !important;
-}
-     .twit {
-    margin-top: 36px;
-}
-    .insta{
+        line-height: 20% !important;
+    }
+    .twit {
+        margin-top: 36px;
+    }
+    .insta {
         margin-top: 36px;
     }
     .curve6 {
-     background: transparent !important; 
-   
-}
+        background: transparent !important;
+    }
     .middle-home .over-img p {
-  
-    margin: 8px 0px 14px 0px !important;
-}
-     .middle-home .over-img img{
-        zoom:0.3 ;
+        margin: 8px 0px 14px 0px !important;
+    }
+    .middle-home .over-img img {
+        zoom: 0.3;
     }
     .sub-cat {
         zoom: 0.25;
@@ -469,8 +479,16 @@
 // ********* end *********
 // ********* star custom csss 768 t0 998 *********
 @media @customsc {
-    .middle-home .over-img img{
-        zoom:0.8 ;
+    .sprofile {
+        zoom: 0.8;
+    }
+    .sprofile .slogo {
+        zoom: 0.79;
+        overflow: visible !important;
+        padding-top: 10px !important;
+    }
+    .middle-home .over-img img {
+        zoom: 0.8;
     }
     .sub-cat {
         zoom: 0.8;
@@ -531,6 +549,56 @@
     h5.copen {
         font-size: 17px !important;
         margin: 0px 0px 2px 0px !important;
+    }
+}
+
+@media @mobile-me {
+    .sprofile {
+        width: 100% !important;
+        .slogo {
+            width: 100%!important;
+            height: auto!important;
+            margin: 45px auto!important;
+            overflow: visible!important;
+        }
+        .splogo {
+            width: 100%!important;
+            height: auto!important;
+            overflow: visible!important;
+            position: relative!important;
+            margin: 30px auto!important;
+            img {
+                margin: 60px auto!important;
+                width: 100%!important;
+            }
+        }
+        p {
+            font-size: smaller;
+        }
+        .sdata {
+            margin-top: 30px;
+            .spoint p {
+                font-size: 12px!important;
+            }
+        }
+        h3 {
+            font-size: 2vw;
+            margin: 35px 0px 0px 0px;
+        }
+        ul {
+            margin-top: 10px!important;
+            li {
+                padding: 0px 10px 0px 10px!important;
+            }
+        }
+    }
+}
+
+@media @mobile-slider-school @mobile-me {
+    .sprofile {
+        .slogo {
+            margin: 30px 0 auto!important;
+        }
     }
 }
 

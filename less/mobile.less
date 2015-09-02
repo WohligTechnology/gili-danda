@@ -9,11 +9,56 @@
 @desktop: ~"only screen and (min-width: 950px) and (max-width: 1128px)";
 @custom: ~"only screen and (min-width: 949px) and (max-width: 1200px)";
 @desktop-xl: ~"only screen and (min-width: 1129px)";
+@desktopsmall: ~"only screen and (min-width: 998px) and (max-width: 1200px)";
+;
+//// *********  custom slider css 998 to 1200  *********
+@media @desktopsmall {}
+
+//// *********  custom slider css 469 to 768 *********
 @media @slider {
+    .twit {
+    margin-top: 36px;
+}
+    .insta{
+        margin-top: 36px;
+    }
+    .middle-home .over-img p {
+  
+    margin: 13px 0px 18px 0px !important;
+}
+     .middle-home .over-img img{
+        zoom:0.6 ;
+    }
+    .home-content.text-center {
+        margin-top: 30px !important;
+    }
+    .home-content.text-center p {
+        font-size: 14px !important;
+    }
+    .curve {
+        height: 20px !important;
+    }
+    .sub-cat {
+        zoom: 0.5;
+    }
+    .slider-text h3 {
+        margin: 0px !important;
+        padding-bottom: 8px !important;
+    }
+    .slider-text a {
+        font-size: 10px !important;
+        padding: 3px 18px !important;
+    }
+    .flex-next,
+    flex-prev {
+        zoom: 0.7;
+    }
+    .flex-prev {
+        zoom: 0.7;
+    }
     .cimg {
         zoom: 0.3;
-            margin: 40px auto 0px auto !important;
-
+        margin: 40px auto 0px auto !important;
     }
     .media-text {
         p {
@@ -27,40 +72,80 @@
         margin: 0px 0px 0px 0px !important;
     }
     h5.copen {
-      
         font-size: 12px !important;
         margin: 2px 0px 2px 0px !important;
     }
 }
 
+// *********   end *********
+/// *********  desktop 950 to 1120 *********
 @media @desktop {
+    .cimg {
+        zoom: 0.5 !important;
+    }
     .footers .copy h5 {
-        margin: 15px 6px;
+        margin: 15px 6px !important;
     }
     .flexiwitdh .flex-direction-nav .flex-prev {
-        left: -75px;
+        left: -75px !important;
     }
     .flexiwitdh .flex-direction-nav .flex-next {
-        right: -75px;
-        text-align: right;
+        right: -75px !important;
+        text-align: right !important;
     }
-    //    .venuecurve {
-    //     background: transparent; 
-    //     background-size: 100%; 
-    //    min-height: 282px;
-    //}
-//     ul.menu-list li a img {
-//        opacity: 1;
-//        zoom: 0.7;
-//        padding: 0px 30px;
-//    }
+    .onlylogo {
+        zoom: 0.9 !important;
+    }
 }
 
+// end
+// css for  mobile max 468
 @media @mobile {
-.marg {
-    margin-top: -28px !important;
+    .middle-home .over-img .mid-det h1 {
+ 
+    line-height: 20% !important;
 }
-      .cabout h4 {
+     .twit {
+    margin-top: 36px;
+}
+    .insta{
+        margin-top: 36px;
+    }
+    .curve6 {
+     background: transparent !important; 
+   
+}
+    .middle-home .over-img p {
+  
+    margin: 8px 0px 14px 0px !important;
+}
+     .middle-home .over-img img{
+        zoom:0.3 ;
+    }
+    .sub-cat {
+        zoom: 0.25;
+        margin-top: -66px !important;
+    }
+    .slider-text h3 {
+        font-size: 4vw !important;
+        margin: 0px !important;
+        padding-bottom: 0px !important;
+    }
+    .slider-text a {
+        font-size: 6px !important;
+        padding: 1px 3px !important;
+    }
+    .flex-next,
+    flex-prev {
+        zoom: 0.4;
+    }
+    .flex-prev {
+        zoom: 0.4;
+    }
+    .marg {
+        margin-top: -28px !important;
+    }
+    .cabout h4 {
         font-size: 22px;
     }
     .venbak {
@@ -92,10 +177,9 @@
         left: -52px!important;
     }
     .flexiwitdh {
-    width: 58%  !important;
-        padding-top:20px !important;
- 
-}
+        width: 58% !important;
+        padding-top: 20px !important;
+    }
     .flexiwitdh .flex-direction-nav .flex-next {
         right: -52px !important;
         text-align: right;
@@ -121,8 +205,8 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        img{
-            zoom:0.6;
+        img {
+            zoom: 0.6;
         }
     }
     .onlylogo {
@@ -147,17 +231,16 @@
         }
     }
     .cabout h4 {
-   
-    font-size: 21px !important;
-    margin-top: 0px !important;
-}
+        font-size: 21px !important;
+        margin-top: 0px !important;
+    }
     .cabout p {
-   font-size: 13px !important;
-}
+        font-size: 13px !important;
+    }
     .footers .input-text {
         margin-top: 0px !important;
         float: left !important;
-    margin-left: 15px;
+        margin-left: 15px;
         width: 75% !important;
     }
     .footers .button-text {
@@ -181,65 +264,57 @@
         text-align: center;
     }
     .cimg {
-  
-    margin: 89px auto 0px auto !important;
-  
-}
+        margin: 89px auto 0px auto !important;
+    }
     h5.copen {
-  
-    margin: 0px 0px 2px 0px !important;
-}
-  
+        margin: 0px 0px 2px 0px !important;
+    }
     .footers .part-logo {
-    margin-top: 0px !important;
-    margin-bottom: 20px;
-}
+        margin-top: 0px !important;
+        margin-bottom: 20px;
+    }
     .map {
-   
-    padding-bottom: 80px !important;
-   
-}
+        padding-bottom: 80px !important;
+    }
     .footers .social-icon ul {
-  
-    float: none !important;
-    text-align: center !important;
-}
+        float: none !important;
+        text-align: center !important;
+    }
     .footers .copy h5 {
- 
-    float: none !important;
-            text-align: center;
-    margin-bottom: 10px !important;
-}
-    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-    border-color: #e7e7e7;
-    margin-top: 15px;
-}
+        float: none !important;
+        text-align: center;
+        margin-bottom: 10px !important;
+    }
+    .navbar-default .navbar-collapse,
+    .navbar-default .navbar-form {
+        border-color: #e7e7e7;
+        margin-top: 15px;
+    }
 }
 
+// ********* end **********
+// ********* tablet css ****************
 @media @tablet {
-    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-    border-color: #e7e7e7;
-    margin-top: 15px;
-}
-       .map {
-   
-    padding-bottom: 80px !important;
-   
-}
-        .footers .social-icon ul {
-  
-    float: none !important;
-    text-align: center !important;
-}
+    .navbar-default .navbar-collapse,
+    .navbar-default .navbar-form {
+        border-color: #e7e7e7;
+        margin-top: 15px;
+    }
+    .map {
+        padding-bottom: 80px !important;
+    }
+    .footers .social-icon ul {
+        float: none !important;
+        text-align: center !important;
+    }
     .footers .copy h5 {
- 
-    float: none !important;
-            text-align: center;
-    margin-bottom: 10px !important;
-}
+        float: none !important;
+        text-align: center;
+        margin-bottom: 10px !important;
+    }
     .cabout h4 {
         font-size: 25px !important;
-        margin-top:0px !important;
+        margin-top: 0px !important;
     }
     .venbak {
         top: 10px;
@@ -276,9 +351,8 @@
         margin-left: 23px !important;
     }
     .footers .part-logo {
-    margin-top: 0px !important;
-   
-}
+        margin-top: 0px !important;
+    }
     .footers .button-text {
         text-align: justify !important;
         margin-top: 0px !important;
@@ -325,8 +399,15 @@
     }
 }
 
+// ********* end *********
 //********* custom size Media qeury *******
 @media @custom {
+    .slider-text a {
+        font-size: 14px !important;
+    }
+    .slider-text h3 {
+        font-size: 4vw !important;
+    }
     .media-text {
         p {
             margin: 0;
@@ -346,17 +427,32 @@
         margin-top: -46px !important;
     }
     ul.menu-list li {
-        padding: 0px 10px;
-        font-size: 12px;
+        padding: 0px 10px !important;
+        font-size: 12px !important;
     }
-//    ul.menu-list li a img {
-//        opacity: 1;
-//        zoom: 0.7;
-//        padding: 0px 30px;
-//    }
+    //    ul.menu-list li a img {
+    //        opacity: 1;
+    //        zoom: 0.7;
+    //        padding: 0px 30px;
+    //    }
 }
 
+// ********* end *********
+// ********* star custom csss 768 t0 998 *********
 @media @customsc {
+    .middle-home .over-img img{
+        zoom:0.8 ;
+    }
+    .sub-cat {
+        zoom: 0.8;
+    }
+    .slider-text h3 {
+        margin: 0px !important;
+    }
+    .slider-text a {
+        font-size: 12px !important;
+        padding: 7px 30px !important;
+    }
     .blue-cat {
         zoom: 0.9;
     }
@@ -367,11 +463,12 @@
         margin: 0px 0px 0px -6px
     }
     ul.menu-list {
-        margin-top: -13px !important;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
     }
     ul.menu-list li {
-        padding: 0px 10px;
-        font-size: 12px;
+        padding: 0px 10px !important;
+        font-size: 12px !important;
     }
     ul.menu-list li a img {
         opacity: 1;
@@ -382,7 +479,7 @@
         padding: 0px 0px 0px 0px;
     }
     .onlylogo {
-        .translateY(50px);
+        .translateY(22px) !important;
     }
     .marg-tp {
         position: relative;
@@ -390,7 +487,7 @@
         left: 28px !important;
     }
     .cimg {
-        zoom: 0.7;
+        zoom: 0.6;
     }
     .media-text {
         p {
@@ -403,8 +500,9 @@
         margin: 7px 0px 0px 0px;
     }
     h5.copen {
-        color: #ffffff;
-        font-size: 17px;
-        margin: 0px 0px 2px 0px;
+        font-size: 17px !important;
+        margin: 0px 0px 2px 0px !important;
     }
 }
+
+/// ********* end *********

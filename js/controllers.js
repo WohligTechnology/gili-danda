@@ -723,48 +723,63 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     })
 
-.controller('SportsCtrl', function ($scope, TemplateService, NavigationService) {
+.controller('SportsCtrl', function ($scope, TemplateService, NavigationService,$location) {
+    
+    $scope.goto = function(data) {
+        $location.path(data);
+    };
+    
     $scope.template = TemplateService.changecontent("sports");
     $scope.menutitle = NavigationService.makeactive("Sports");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
     $scope.games = // JavaScript Document
-        [{
-        "icon": "img/bluemenu/overall.png",
-        "icon2": "img/bluemenu/overallor.png",
-        "game": "overall"
-        }, {
+        [
+//        {
+//        "icon": "img/bluemenu/overall.png",
+//        "icon2": "img/bluemenu/overallor.png",
+//        "game": "overall"
+//        },
+        {
         "icon": "img/bluemenu/tabletennis.png",
         "icon2": "img/bluemenu/tabletennisor.png",
-        "game": "table tennis"
+        "game": "table tennis",
+        "url":"/tabletennis"
         }, {
         "icon": "img/bluemenu/tennis.png",
         "icon2": "img/bluemenu/tennisor.png",
+        "url":"/tennis",
         "game": "tennis"
         }, {
         "icon": "img/bluemenu/batminton.png",
         "icon2": "img/bluemenu/batmintonor.png",
+        "url":"/batminton",
         "game": "badminton"
         }, {
         "icon": "img/bluemenu/squash.png",
         "icon2": "img/bluemenu/sqaushor.png",
+        "url":"/squash",
         "game": "squash"
         }, {
         "icon": "img/bluemenu/aqua.png",
         "icon2": "img/bluemenu/aquaticsor.png",
+        "url":"/aquatic",
         "game": "aquatics"
         }, {
         "icon": "img/bluemenu/basketball.png",
         "icon2": "img/bluemenu/basketballor.png",
+        "url":"/basketball",
         "game": "basketball"
         }, {
         "icon": "img/bluemenu/vollyball.png",
         "icon2": "img/bluemenu/volleyballor.png",
+         "url":"/vollyball",
         "game": "volleyball"
         }, {
         "icon": "img/bluemenu/handball.png",
         "icon2": "img/bluemenu/handballor.png",
+        "url":"/handball",
         "game": "Handball"
         }];
 

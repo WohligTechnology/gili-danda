@@ -6,7 +6,7 @@
 @import (inline) "../css/ngdialog.css";
 @import (inline) "http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600,700";
 @import (inline) "http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600,700";
-@import (inline) "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
+//@import (inline) "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
 @import "../less/mobile.less";
 @menu-color: #0a1a72;
 @subMenu-color: #303030;
@@ -374,6 +374,23 @@ ul.menu-list li a:hover {
     width: 85%;
     text-align: center;
 }
+
+    .inbinding{
+        background-color: @input-color;
+    font-size: 23px;
+    border: 0px;
+    text-transform: uppercase;
+    margin-top: 2px;
+    color: #999;
+    letter-spacing: 1px;
+    padding: 14px 9px;
+    outline: 0;
+    .border-radius(8px 0px 0px 8px);
+    width: 85%;
+    text-align: center; 
+        
+    }
+
 
 .sb {
     height: 22px;
@@ -1028,7 +1045,9 @@ hr.hr-width {
     display: block;
     overflow: auto;
 }
-
+.margin50{
+        margin-left: 50px;
+}
 .marginlft {
     .cat-left {
         width: 80%;
@@ -1129,12 +1148,20 @@ p.sel-game {
     padding-right: 0px;
     padding-top: 30px;
 }
-
+.marginegtss {
+//    padding-right: 0px;
+    padding-top: 30px;
+}
 .width {
     //width: 74%;
     .sch-det {
         margin-bottom: 30px;
         h4 {
+            color: @menu-color;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        h2 {
             color: @menu-color;
             text-transform: uppercase;
             font-weight: 600;
@@ -2242,7 +2269,7 @@ img.balckbak {
         outline: 0;
         font-size: 12px;
         margin: 7px auto;
-        border: 1px solid;
+        border: 1px solid #0b1a6d;
     }
 }
 
@@ -2258,6 +2285,7 @@ img.balckbak {
         right: -49px;
         top: 200px;
         outline: 0;
+        z-index: 999;
     }
 }
 
@@ -2287,4 +2315,7 @@ img.balckbak {
     }
     .fig{.hm-mid .col-md-4 .bor .fig;}
     
+}
+.mhsmargin{
+        margin-top: -68px;
 }

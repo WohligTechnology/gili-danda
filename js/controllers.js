@@ -380,7 +380,35 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
+        $scope.medias = [{
+            image: "img/print/print1.png",
+            name:"SACHIN SUPPORTS SFA - Hindustan Times"
 
+
+        }, {
+           image: "img/print/print2.png",
+            name:"Little Sania Makes Her School Proud"
+
+
+        }, {
+           image: "img/print/print3.png",
+            name:"SFA made me reach the Goal: Amrish Patel"
+
+        }, {
+           image: "img/print/print4.png",
+            name:"The well Equipped venue ever for inter school.."
+
+        }, {
+           image: "img/print/print5.png",
+            name:"Felt Like I was Playing on international Venue"
+
+        }, {
+          image: "img/print/print6.png",
+            name:"The game that Made a World Record"
+
+        }];
+
+    
 })
     .controller('StudentprofileCtrl', function ($scope, TemplateService, NavigationService, ngDialog) {
         $scope.template = TemplateService.changecontent("studentprofile");
@@ -734,6 +762,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         "icon": "img/bluemenu/vollyball.png",
         "icon2": "img/bluemenu/volleyballor.png",
         "game": "volleyball"
+        }, {
+        "icon": "img/bluemenu/handball.png",
+        "icon2": "img/bluemenu/handballor.png",
+        "game": "Handball"
         }];
 
     $scope.demo = 111;

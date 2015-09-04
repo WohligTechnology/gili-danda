@@ -113,12 +113,12 @@
                                 <input type="text" class="form-control" placeholder="Email" ng-model="school.email" placeholder="Email" required>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 mobpad">
                             <div class="sc-input">
                                 <input type="text" class="form-control" placeholder="Mobile" ng-model="school.mobile" placeholder="Mobile" required>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 mobpad">
                             <div class="sc-input">
                                 <input type="text" class="form-control" placeholder="Landline" ng-model="school.landline" placeholder="Landline" required>
                             </div>
@@ -137,7 +137,7 @@
                     <div class="row margzero" ng-repeat="tworows in sportsname">
 
                         <div class="col-md-12 padzer">
-                            <div class="col-md-2" ng-repeat="singlesportsname in tworows">
+                            <div class="col-md-3 col-sm-4" ng-repeat="singlesportsname in tworows">
                                 <input id="Option{{singlesportsname.id+10}}" type="checkbox" ng-model="sportsflag" ng-change="pushorpop(singlesportsname.id);">
                                 <label class="checkbox" for="Option{{singlesportsname.id+10}}">{{singlesportsname.name}}</label>
                             </div>

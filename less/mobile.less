@@ -3,7 +3,7 @@
 ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
 ~"only screen and (min-device-pixel-ratio: 1.5)";
 @mobile: ~"only screen and (max-width: 468px)";
-@mobile-me: ~"only screen and (min-width: 320px)";
+@mobile-me: ~"only screen and (max-width: 320px)";
 @mobile-slider-school: ~"only screen and (min-width: 600px)";
 @tablet: ~"only screen and (min-width: 469px) and (max-width: 949px)";
 @customsc: ~"only screen and (min-width: 768px) and (max-width: 998px)";
@@ -12,8 +12,16 @@
 @custom: ~"only screen and (min-width: 949px) and (max-width: 1200px)";
 @desktop-xl: ~"only screen and (min-width: 1129px)";
 @desktopsmall: ~"only screen and (min-width: 950px) and (max-width: 998px)";
+@moo: ~"only screen and (min-width: 849px) and (max-width: 998px)";
 ;
 //// *********  custom slider css 998 to 1200  *********
+
+@media @moo {
+   .sports .cus-imgs {
+    width: 264px !important;
+    padding-top: 30px !important;
+}
+} 
 @media @desktopsmall {
     .sprofile .slogo {
         zoom: 0.8;
@@ -24,6 +32,123 @@
 
 //// *********  custom slider css 469 to 768 *********
 @media @slider {
+    .sports .sports-text {
+    padding-top: 30px !important;
+  left: inherit !important;
+    width: 100% !important;
+}
+    .sports .sportss-texts {
+    padding-top: 35px !important;
+    padding-left: 28px !important;
+       
+    left: 0px !important;
+    width: 100% !important;
+ 
+}
+    .sports {
+
+    margin-bottom: 10px !important;
+}
+    .sports .cus-imgs {
+    width: inherit !important;
+    padding-top: 12px !important;
+    margin: 0 auto;
+}
+    .sports .sport-text {
+    padding-top: 28px !important;
+        text-align: center;
+        padding-left: 0px !important;
+ 
+}
+    .sports .sport-texts {
+    padding-top: 11px !important;
+        text-align: center;
+        padding-left: 0px !important;
+  
+}
+        .tabs-gallery h1 {
+ 
+    font-size: 30px !important;
+    margin: 0px !important;
+}
+    .backwhite .sc-ul ul {
+  
+    padding: 0;
+    margin-top: 10px !important;
+}
+       .mobpad{
+    padding: 0;
+}
+    .sc-input {
+    margin-top: 10px;
+}
+    
+    .patc {
+     position: inherit !important; 
+    width: 100%;
+     margin-top:-40px !important;
+    margin-bottom: 0px !important;
+}
+    .backwhite {
+    position: inherit !important;
+    top: 0px;
+    width: 100%;
+}
+    .scl {
+    background: transparent !important;
+    background-size: cover;
+    height: inherit !important;
+     margin-top: 0px !important;
+ margin-bottom:0px !important; 
+   
+}
+    .tabs-gallery {
+    margin-top: 0px !important;
+}
+    .scl .patches {
+    background: transparent !important;
+           margin-top: 0px !important; 
+    position: inherit !important;
+//        min-height: 0px !important;
+   
+}
+    .patch {
+    background:transparent !important;
+  
+}
+    .contact .regis {
+ 
+    padding-bottom: 35px !important;
+}
+    .partner-set {
+    margin: 70px auto;
+        p{
+                font-size: 13px;
+    text-align: center;
+        }
+}
+    .partner .par-logo img {
+    position: absolute;
+    left: 50% !important;
+    top: 50% !important;
+   
+    .translate(-50%,-50%) !important;
+    text-align: center;
+}
+    .print-img .box-img {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .searchs {
+        zoom: 0.7 !important;
+        margin-bottom: 30px !important;
+    }
+    .marginlft .cat-left {
+        width: 100% !important;
+    }
+    .mhsmargin {
+        margin-top: -30px !important;
+    }
     .margintop {
         margin-top: 30px !important;
     }
@@ -125,6 +250,127 @@
 // end
 // css for  mobile max 468
 @media @mobile {
+        .sports .sports-text {
+    padding-top: 30px !important;
+  left: inherit !important;
+    width: 100% !important;
+}
+    .sports .sportss-texts {
+    padding-top: 35px !important;
+//    padding-left: inherit !important;
+       
+    left: 0px !important;
+    width: 100% !important;
+ 
+}
+        .sports {
+
+    margin-bottom: 10px !important;
+}
+    .sports .cus-imgs {
+    width: inherit !important;
+    padding-top: 0px !important;
+    margin: 0 auto;
+}
+    .sports .sport-text {
+    padding-top: 28px !important;
+        padding-left: 0px !important;
+        text-align: center;
+ 
+}
+    .sports .sport-texts {
+       padding: 11px 0px 0px 0px !important;
+        text-align: center;
+  
+}
+        .tabs-gallery h1 {
+ 
+    font-size: 25px !important;
+    margin: 0px !important;
+}
+    .backwhite .sc-ul ul {
+  
+    padding: 0;
+    margin-top: 10px !important;
+}
+       .mobpad{
+    padding: 0;
+}
+    .sc-input {
+    margin-top: 10px;
+}
+    
+    .patc {
+     position: inherit !important; 
+    width: 100%;
+     margin-top:-40px !important;
+    margin-bottom: 0px !important;
+}
+    .backwhite {
+    position: inherit !important;
+    top: 0px;
+    width: 100%;
+}
+    .scl {
+    background: transparent !important;
+    background-size: cover;
+    height: inherit !important;
+     margin-top: 0px !important;
+ margin-bottom:0px !important; 
+   
+}
+    .tabs-gallery {
+    margin-top: 0px !important;
+}
+    .scl .patches {
+    background: transparent !important;
+           margin-top: 0px !important; 
+    position: inherit !important;
+//        min-height: 0px !important;
+   
+}
+    .contact .regis p {
+   
+    font-size: 23px !important;
+  
+}
+     .partner .par-logo img {
+    position: absolute;
+    left: 50% !important;
+    top: 50% !important;
+   
+    .translate(-50%,-50%) !important;
+    text-align: center;
+}
+    .patch {
+    background:transparent !important;
+  
+}
+      .contact .regis {
+ 
+    padding-bottom: 35px !important;
+}
+    .partner-set {
+    margin: 70px auto;
+        p{
+                font-size: 13px;
+    text-align: center;
+        }
+}
+    .print figure.figure1 {
+        zoom: 0.8;
+    }
+    .print figure.figure2 {
+        zoom: 0.8;
+    }
+    .print-img .box-img {
+        text-align: center;
+        margin-bottom: 20px !important;
+    }
+    .searchs {
+        zoom: 0.6;
+        margin-bottom: 30px;
+    }
     .regi a {
         font-size: 14px !important;
     }
@@ -441,6 +687,14 @@
 // ********* end *********
 //********* custom size Media qeury *******
 @media @custom {
+    .sports .btn-sports {
+ 
+    font-size: 10px !important;
+  
+}
+    .mobpads{
+    padding: 4px;
+}
     .slider-text a {
         font-size: 14px !important;
     }
@@ -479,6 +733,90 @@
 // ********* end *********
 // ********* star custom csss 768 t0 998 *********
 @media @customsc {
+    .sports .sportss-texts {
+    padding-top: 35px !important;
+    padding-left: 28px !important;
+ 
+}
+       .sports .btn-sports {
+ 
+    font-size: 10px !important;
+  
+}
+    .mobpads{
+    padding: 4px;
+}
+    .sports .sport-text {
+    padding-top: 80px !important;
+  
+}
+    .sports .sport-texts {
+    padding-top: 35px !important;
+  
+}
+    .tabs-gallery h1 {
+ 
+    font-size: 30px !important;
+    margin: 0px !important;
+}
+    .backwhite .sc-ul ul {
+  
+    padding: 0;
+    margin-top: 10px !important;
+}
+       .mobpad{
+    padding: 0;
+}
+    .sc-input {
+    margin-top: 10px;
+}
+    
+    .patc {
+     position: inherit !important; 
+    width: 100%;
+     margin-top:-40px !important;
+    margin-bottom: 0px !important;
+}
+    .backwhite {
+    position: inherit !important;
+    top: 0px;
+    width: 100%;
+}
+    .scl {
+    background: transparent !important;
+    background-size: cover;
+    height: inherit !important;
+     margin-top: 0px !important;
+ margin-bottom:0px !important; 
+   
+}
+    .tabs-gallery {
+    margin-top: 0px !important;
+}
+    .scl .patches {
+    background: transparent !important;
+           margin-top: 0px !important; 
+    position: inherit !important;
+//        min-height: 0px !important;
+   
+}
+    .print-img .box-img {
+        text-align: center;
+        margin-bottom: 20px !important;
+    }
+    .searchs {
+        zoom: 0.7 !important;
+        margin-bottom: 30px !important;
+    }
+    .marginlft .cat-left {
+        width: 100% !important;
+    }
+    .mhsmargin {
+        margin-top: -52px !important;
+    }
+    .marginlft .cat-left {
+        width: 100% !important;
+    }
     .sprofile {
         zoom: 0.8;
     }

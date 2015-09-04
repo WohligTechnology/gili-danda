@@ -745,31 +745,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         "icon": "img/bluemenu/tabletennis.png",
         "icon2": "img/bluemenu/tabletennisor.png",
         "game": "table tennis",
-        "url":"/tabletennis"
+        "url":"tabletennis"
         }, {
         "icon": "img/bluemenu/tennis.png",
         "icon2": "img/bluemenu/tennisor.png",
-        "url":"/tennis",
+        "url":"tennis",
         "game": "tennis"
         }, {
         "icon": "img/bluemenu/batminton.png",
         "icon2": "img/bluemenu/batmintonor.png",
-        "url":"/batminton",
+        "url":"batminton",
         "game": "badminton"
         }, {
         "icon": "img/bluemenu/squash.png",
         "icon2": "img/bluemenu/sqaushor.png",
-        "url":"/squash",
+        "url":"squash",
         "game": "squash"
         }, {
         "icon": "img/bluemenu/aqua.png",
         "icon2": "img/bluemenu/aquaticsor.png",
-        "url":"/aquatic",
+        "url":"aquatic",
         "game": "aquatics"
         }, {
         "icon": "img/bluemenu/basketball.png",
         "icon2": "img/bluemenu/basketballor.png",
-        "url":"/basketball",
+        "url":"basketball",
         "game": "basketball"
         }, {
         "icon": "img/bluemenu/vollyball.png",
@@ -779,7 +779,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, {
         "icon": "img/bluemenu/handball.png",
         "icon2": "img/bluemenu/handballor.png",
-        "url":"/handball",
+        "url":"handball",
         "game": "Handball"
         }];
 

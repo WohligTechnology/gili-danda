@@ -149,7 +149,7 @@ a:hover {
     position: relative;
     z-index: 1;
     background-position-y: 0px;
-    background-size: cover;
+    .background-size(cover);
 }
 
 .curve5 {
@@ -159,7 +159,7 @@ a:hover {
     position: relative;
     z-index: 1;
     background-position-y: 1px;
-    background-size: cover;
+    .background-size(cover);
 }
 
 .curve2 {
@@ -169,7 +169,7 @@ a:hover {
     position: relative;
     z-index: 1;
     margin-top: -103px;
-    background-size: cover;
+   .background-size(cover);
 }
 
 .curve3 {
@@ -179,7 +179,7 @@ a:hover {
     position: relative;
     z-index: 1;
     bottom: -1px;
-    background-size: cover;
+   .background-size(cover);
     //margin-top: -40px;
 }
 
@@ -189,7 +189,7 @@ a:hover {
     height: 40px;
     position: absolute;
     z-index: 1;
-    background-size: cover;
+    .background-size(cover);
     margin-top: 31%;
 }
 
@@ -280,7 +280,7 @@ ul.menu-list li a:hover {
     .flex-direction-nav a {
         width: 54px;
         height: 66px;
-        opacity: 1;
+        .opacity(1);
     }
     .flex-direction-nav .flex-prev {
         left: 50px;
@@ -290,18 +290,18 @@ ul.menu-list li a:hover {
         text-align: right;
     }
     .flexslider:hover .flex-direction-nav .flex-prev:hover {
-        opacity: 1;
+        .opacity(1);
     }
     .flexslider:hover .flex-direction-nav .flex-next:hover {
-        opacity: 1;
+        .opacity(1);
     }
     .flexslider:hover .flex-direction-nav .flex-prev {
-        opacity: 1;
+        .opacity(1);
         left: 50px;
         outline: 0;
     }
     .flexslider:hover .flex-direction-nav .flex-next {
-        opacity: 1;
+        .opacity(1);
         right: 50px;
         outline: 0;
     }
@@ -698,7 +698,7 @@ ul.menu-list li a:hover {
                 margin: 0 auto;
                 border: 0;
                 .border-radius(0);
-                opacity: 0;
+                .opacity(0);
             }
         }
     }
@@ -713,7 +713,7 @@ ul.menu-list li a:hover {
 }
 
 .container.events .student.active figure:hover .hover-act {
-    opacity: 1;
+    .opacity(1);
 }
 
 .home-content.text-center {
@@ -914,11 +914,11 @@ hr.hr-width {
                     .transition(all 1s ease);
                 }
                 .top {
-                    opacity: 1;
+                    .opacity(1);
                     .transition(all 1s ease);
                 }
                 .bottom {
-                    opacity: 0;
+                    .opacity(0);
                     .transition(all 1s ease);
                 }
             }
@@ -929,10 +929,10 @@ hr.hr-width {
             li.active {
                 cursor: pointer;
                 .top {
-                    opacity: 0;
+                    .opacity(0);
                 }
                 .bottom {
-                    opacity: 1;
+                   .opacity(1);
                     //                     width:100px !important;
                 }
                 figcaption {
@@ -1467,7 +1467,7 @@ h5.copen {
             }
             .sbac {
                 background: url("../img/sbac.jpg") no-repeat center;
-                background-size: cover;
+                .background-size(cover);
                 width: 111px;
                 height: 103px;
                 padding: 6px 0px;
@@ -1486,7 +1486,7 @@ h5.copen {
 
 .smadel {
     background: url("../img/collage/medalbak.png") no-repeat center;
-    background-size: cover;
+   .background-size(cover);
     min-height: 131px;
     color: @whit-color;
     margin: 12px 0px 0px 0px;
@@ -1681,7 +1681,7 @@ h5.copen {
 .flexiwitdh .flex-direction-nav a {
     width: 54px;
     height: 66px;
-    opacity: 1;
+    .opacity(1);
 }
 
 .flexiwitdh .flex-direction-nav .flex-prev {
@@ -1694,23 +1694,23 @@ h5.copen {
 }
 
 .flexiwitdh .flexslider:hover .flex-direction-nav .flex-prev:hover {
-    opacity: 1;
+   .opacity(1);
     left: -100px;
 }
 
 .flexiwitdh .flexslider:hover .flex-direction-nav .flex-next:hover {
-    opacity: 1;
+    .opacity(1);
     right: -100px;
 }
 
 .flexiwitdh .flexslider:hover .flex-direction-nav .flex-prev {
-    opacity: 1;
+    .opacity(1);
     left: -100px;
     outline: 0;
 }
 
 .flexiwitdh .flexslider:hover .flex-direction-nav .flex-next {
-    opacity: 1;
+    .opacity(1);
     right: -100px;
     outline: 0;
 }
@@ -1869,7 +1869,7 @@ img.loading {
     text-align: center;
     position: absolute;
     top: 0px;
-    opacity: 1;
+    .opacity(1);
     left: 50%;
     .translateX(-50%);
     width: 100px;
@@ -1877,12 +1877,12 @@ img.loading {
 }
 
 img {
-    opacity: 0;
+    .opacity(0);
     .transition(all 1s ease);
 }
 
 img.doneLoading {
-    opacity: 1;
+    .opacity(1);
 }
 
 .onlylogo {
@@ -2280,7 +2280,7 @@ img.balckbak {
         text-transform: uppercase;
         color: #fff;
         padding: 8px 20px;
-        transform: rotate(-90deg);
+        .rotate(-90deg);
         position: relative;
         right: -49px;
         top: 200px;

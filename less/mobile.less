@@ -7,7 +7,7 @@
 @mobile-slider-school: ~"only screen and (min-width: 600px)";
 @tablet: ~"only screen and (min-width: 469px) and (max-width: 949px)";
 @customsc: ~"only screen and (min-width: 768px) and (max-width: 998px)";
-@slider: ~"only screen and (min-width: 469px) and (max-width: 768px)";
+@slider: ~"only screen and (min-width: 469px) and (max-width: 767px)";
 @desktop: ~"only screen and (min-width: 950px) and (max-width: 1128px)";
 @custom: ~"only screen and (min-width: 949px) and (max-width: 1200px)";
 @desktop-xl: ~"only screen and (min-width: 1129px)";
@@ -191,8 +191,7 @@
         font-size: 10px !important;
         padding: 3px 18px !important;
     }
-    .flex-next,
-    flex-prev {
+    .flex-next {
         zoom: 0.7;
     }
     .flex-prev {
@@ -251,9 +250,13 @@
     }
 }
 
+
 // end
 // css for  mobile max 468
 @media @mobile {
+     .curve {
+        height: 20px !important;
+    }
     .landing {
     margin-top: -16px !important;
     margin-bottom: 15px !important;
@@ -384,17 +387,17 @@
         }
 }
     .print figure.figure1 {
-        zoom: 0.8;
+        zoom: 0.8 !important;
     }
     .print figure.figure2 {
-        zoom: 0.8;
+        zoom: 0.8 !important;
     }
     .print-img .box-img {
         text-align: center;
         margin-bottom: 20px !important;
     }
     .searchs {
-        zoom: 0.6;
+        zoom: 0.6 !important;
         margin-bottom: 30px;
     }
     .regi a {
@@ -431,10 +434,10 @@
         margin: 8px 0px 14px 0px !important;
     }
     .middle-home .over-img img {
-        zoom: 0.3;
+        zoom: 0.3 !important;
     }
     .sub-cat {
-        zoom: 0.24;
+        zoom: 0.24 !important;
         margin-top: -66px !important;
     }
     .slider-text h3 {
@@ -446,12 +449,11 @@
         font-size: 6px !important;
         padding: 1px 3px !important;
     }
-    .flex-next,
-    flex-prev {
-        zoom: 0.4;
+    .flex-next {
+        zoom: 0.4 !important;
     }
     .flex-prev {
-        zoom: 0.4;
+        zoom: 0.4 !important;
     }
     .marg {
         margin-top: -28px !important;
@@ -517,7 +519,7 @@
         left: 50%;
         .translateX(-50%);
         img {
-            zoom: 0.6;
+            zoom: 0.6 !important;
         }
     }
     .onlylogo {
@@ -762,6 +764,10 @@
 // ********* end *********
 // ********* star custom csss 768 t0 998 *********
 @media @customsc {
+    .sports .sports-text {
+    padding-top: 55px !important;
+  
+}
     .sports .sportss-texts {
     padding-top: 35px !important;
     padding-left: 28px !important;
@@ -776,7 +782,7 @@
     padding: 4px;
 }
     .sports .sport-text {
-    padding-top: 80px !important;
+    padding-top: 35px !important;
   
 }
     .sports .sport-texts {

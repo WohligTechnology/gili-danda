@@ -1,0 +1,5 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/xampp/htdocs/gili-danda/bower_components/angular-ui/test/lib/angular-1.0.1/angular-mocks.js"
+    ]
+}

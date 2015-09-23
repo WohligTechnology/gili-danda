@@ -13,8 +13,10 @@
     </flex-slider>
     
 <div class="slider-text" ng-repeat="element in homeslide">
-                <h3>{{element.title}}</h3>
-                <a ng-click="clickonslider(element);" ng-show="element.link">KNOW MORE</a>
+                <h3 class="text-uppercase">{{element.title}}</h3>
+                <p class="">{{element.descp}}</p>
+                <p>{{element.info}}</p>
+                <a ng-click="clickonslider(element);" ng-show="element.link">REGISTER NOW</a>
             </div>
 </div>
 <div class="curve2">

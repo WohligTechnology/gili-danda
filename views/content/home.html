@@ -3,21 +3,22 @@
 
 </div>
 <div class="slider">
-
-    <flex-slider class="carousel" flex-slide="s in slides" animation="slide" animation-loop="true" item-margin="1" control-nav="false" flexvar="demo" after="changeslider();" start="changeslider();">
+    <flex-slider class="carousel" flex-slide="slid in homeslide track by $index" animation="slide" animation-loop="true" item-margin="1" control-nav="false" flexvar="demo" after="changeslider();" start="changeslider();">
         <li>
-            <img ng-src="{{s | serverimage}}" class="img-responsive">
-            
+            <img ng-src="{{slid.image | serverimage}}" class="img-responsive">
+
         </li>
 
     </flex-slider>
-    
-<div class="slider-text" ng-repeat="element in homeslide">
+
+    <div class="slider-text" ng-repeat="element in homeslide">
+        <!--
                 <h3 class="text-uppercase">{{element.title}}</h3>
-                <p class="">{{element.descp}}</p>
-                <p>{{element.info}}</p>
-                <a ng-click="clickonslider(element);" ng-show="element.link">REGISTER NOW</a>
-            </div>
+                <p class="">{{element.description}}</p>
+                <p>{{element.startdate}}
+-->
+        <!--                <a ng-click="clickonslider(element);" ng-show="element.link">REGISTER NOW</a>-->
+    </div>
 </div>
 <div class="curve2">
 
@@ -75,53 +76,53 @@
     </div>
 </div>
 <div class="curve5">
-    
+
 </div>
 <div class="hm-mid">
-<div class="col-md-4 col-sm-4"> 
-<figure>
-<img src="img/home/1.jpg" class="img-responsive">
+    <div class="col-md-4 col-sm-4">
+        <figure>
+            <img src="img/home/1.jpg" class="img-responsive">
 
-<div class="bor">
-<div class="fig">
+            <div class="bor">
+                <div class="fig">
 
-    <p>students</p>
- 
-</div>
-</div>
-</figure>
-</div>
-<div class="col-md-4 col-sm-4">
-<figure>
-<img src="img/home/2.jpg" class="img-responsive">
-<div class="bor">
-<div class="fig">
+                    <p>students</p>
 
-    <p style="color:#384C8B;">schools</p>
- 
-</div>
-</div>
-</figure>
-</div>
-<div class="col-md-4 col-sm-4">
-<figure>
-<img src="img/home/3.jpg" class="img-responsive">
-<div class="bor">
-<div class="fig">
+                </div>
+            </div>
+        </figure>
+    </div>
+    <div class="col-md-4 col-sm-4">
+        <figure>
+            <img src="img/home/2.jpg" class="img-responsive">
+            <div class="bor">
+                <div class="fig">
 
-    <p style="color:#449C43;">venue</p>
- 
-</div>
-</div>
-</figure>
-</div>
-<div class="curve6">
-    
-</div>
+                    <p style="color:#384C8B;">schools</p>
+
+                </div>
+            </div>
+        </figure>
+    </div>
+    <div class="col-md-4 col-sm-4">
+        <figure>
+            <img src="img/home/3.jpg" class="img-responsive">
+            <div class="bor">
+                <div class="fig">
+
+                    <p style="color:#449C43;">venue</p>
+
+                </div>
+            </div>
+        </figure>
+    </div>
+    <div class="curve6">
+
+    </div>
 
 </div>
 <div class="container">
-<!--
+    <!--
  <div class="feed text-center">
         <h3>live feeds</h3>
     </div>
@@ -131,7 +132,7 @@
             <div class="fb social-set">
                 <i class="fa fa-facebook"></i>
                 <div class="fb-set">
-<!--
+                    <!--
                      <div class="fb-page" data-href="https://www.facebook.com/localbanya" data-width="200" data-height="360" data-hide-cover="false" data-show-facepile="false" data-show-posts="true">
                                 <div class="fb-xfbml-parse-ignore">
                                     <blockquote cite="https://www.facebook.com/localbanya"><a href="https://www.facebook.com/localbanya">Local Banya</a>
@@ -139,10 +140,15 @@
                                 </div>
                             </div>
 -->
-                            
-                                  <div class="fb-set">
-          <div class="fb-page" data-href="https://www.facebook.com/sportsforallnow" data-width="300" data-height="360"  data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/sportsforallnow"><a href="https://www.facebook.com/sportsforallnow">Sports For All</a></blockquote></div></div>
-                </div>
+
+                    <div class="fb-set">
+                        <div class="fb-page" data-href="https://www.facebook.com/sportsforallnow" data-width="300" data-height="360" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
+                            <div class="fb-xfbml-parse-ignore">
+                                <blockquote cite="https://www.facebook.com/sportsforallnow"><a href="https://www.facebook.com/sportsforallnow">Sports For All</a>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -150,7 +156,7 @@
             <div class="twit social-set">
                 <i class="fa fa-twitter"></i>
                 <div class="fb-set">
-<!--
+                    <!--
                            <a class="twitter-timeline" href="https://twitter.com/LocalBanya" data-widget-id="594025626274648064">Tweets by @LocalBanya</a>
                             <script>
                                 ! function (d, s, id) {
@@ -165,21 +171,33 @@
                                 }(document, "script", "twitter-wjs");
                             </script>
 -->
-<a class="twitter-timeline" href="https://twitter.com/sfanow" data-widget-id="641859487024869376">Tweets by @sfanow</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    <a class="twitter-timeline" href="https://twitter.com/sfanow" data-widget-id="641859487024869376">Tweets by @sfanow</a>
+                    <script>
+                        ! function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0],
+                                p = /^http:/.test(d.location) ? 'http' : 'https';
+                            if (!d.getElementById(id)) {
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = p + "://platform.twitter.com/widgets.js";
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }
+                        }(document, "script", "twitter-wjs");
+                    </script>
                 </div>
             </div>
         </div>
         <div class="col-md-4 col-sm-4">
             <div class="insta social-set">
                 <i class="fa fa-instagram"></i>
-<!--
+                <!--
                 <div class="fb-set" style="height: 365px;overflow-y: scroll;">
                      <iframe src="//instansive.com/widgets/ba0ad9aad53001654f6fac3da0abca67b15d2329.html" id="instansive_ba0ad9aad5" name="instansive_ba0ad9aad5" scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;height: 100%;"></iframe>
                 </div>
--->  <div class="fb-set" style="height: 365px;overflow-y: scroll;">
-          <iframe src="//instansive.com/widgets/3022c4c499b1da4b7e2ab1b0495294bf8d9cdfff.html" id="instansive_3022c4c499" name="instansive_3022c4c499"  scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
-            </div>
+-->
+                <div class="fb-set" style="height: 365px;overflow-y: scroll;">
+                    <iframe src="//instansive.com/widgets/3022c4c499b1da4b7e2ab1b0495294bf8d9cdfff.html" id="instansive_3022c4c499" name="instansive_3022c4c499" scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+                </div>
             </div>
         </div>
     </div>

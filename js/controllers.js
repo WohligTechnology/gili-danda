@@ -10,13 +10,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	var getbannersliderscallback = function (data, status) {
 		console.log(data);
 		$scope.homeslide = data;
-		        $scope.slides = _.pluck($scope.homeslide, "image");
+//		        $scope.slides = _.pluck($scope.homeslide, "image");
 //		$scope.slides = [
 //			"../img/slider/1.jpg",
 //				"../img/slider/2.jpg",
 //				"../img/slider/3.jpg"
 //			];
-		$scope.smallslides = _.pluck($scope.homeslide, "icon");
+//		$scope.smallslides = _.pluck($scope.homeslide, "icon");
 		//        _.each($scope.homeslide, function(n){
 		//            n.image = imgpath +"image?name="+n.image +"&width=500";
 		//        });
@@ -44,42 +44,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	//        caption: "tennis",
 	//        captions: "Circular Junior Nationals 2015"
 	//
-	//    }, {
-	//        image: "img/slider/slide3.jpg",
-	//        icon: "img/submenu/batminton.png",
-	//        zoom: 1,
-	//        caption: "badminton",
-	//        captions: "Circular Junior Nationals 2015"
-	//    }, {
-	//        image: "img/slider/slide4.jpg",
-	//        icon: "img/submenu/sqaush.png",
-	//        zoom: 1,
-	//        caption: "sqaush",
-	//        captions: "Circular Junior Nationals 2015"
-	//    }, {
-	//        image: "img/slider/slide5.jpg",
-	//        icon: "img/submenu/aquatics.png",
-	//        zoom: 1,
-	//        caption: "aquatics",
-	//        captions: "Circular Junior Nationals 2015"
-	//    }, {
-	//        image: "img/slider/slide6.jpg",
-	//        icon: "img/submenu/basketball.png",
-	//        zoom: 1,
-	//        caption: "basketball",
-	//        captions: "Circular Junior Nationals 2015"
-	//    }, {
-	//        image: "img/slider/slide7.jpg",
-	//        icon: "img/submenu/volleyball.png",
-	//        zoom: 1,
-	//        caption: "volleyball",
-	//        captions: "Circular Junior Nationals 2015"
-	//    }, {
-	//        image: "img/slider/slide8.jpg",
-	//        icon: "img/submenu/handball.png",
-	//        zoom: 1,
-	//        caption: "handball",
-	//        captions: "Circular Junior Nationals 2015"
 	//    }];
 
 

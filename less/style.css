@@ -3120,8 +3120,7 @@ img.balckbak {
   padding-bottom: 50px;
 }
 .sports .cus-imgs {
-  width: 344px !important;
-  padding-top: 43px !important;
+  padding-top: 50px !important;
 }
 .sports .cus-imgss {
   width: 100%;
@@ -3180,6 +3179,18 @@ img.balckbak {
   -moz-transition: all 500ms ease-in-out;
   -o-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
+}
+.handball {
+  min-height: 1000px;
+}
+.volly {
+  min-height: 1000px;
+}
+.squash {
+  min-height: 1200px;
+}
+.tennis {
+  min-height: 1500px;
 }
 .verti .vert {
   background-color: #fb7700;

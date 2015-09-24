@@ -5,11 +5,10 @@
 <div class="slider">
 	<flex-slider class="carousel" flex-slide="slid in homeslide track by $index" animation="slide" animation-loop="true" item-margin="1" control-nav="false" flexvar="demo" after="changeslider();" start="changeslider();">
 		<li>
-			<img ng-src="{{slid.image | serverimage}}" class="img-responsive">
+			<a href="#/schoolregistration"><img ng-src="{{slid.image | serverimage}}" class="img-responsive"></a>
 
 		</li>
-
-	</flex-slider>
+</flex-slider>
 
 	<div class="slider-text" ng-repeat="element in homeslide">
 		<!--

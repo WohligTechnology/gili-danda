@@ -1619,6 +1619,15 @@ ul.menu-list li a:hover {
   color: #616161;
   font-size: 17px;
 }
+.home-content.text-center h5 {
+  font-size: 20px;
+  margin: 20px 0;
+}
+.home-content.text-center a {
+  font-size: 18px;
+  text-decoration: underline;
+  color: #0a1a72;
+}
 .patch {
   background: url("../img/patch.jpg");
   background-repeat: repeat;
@@ -3252,6 +3261,12 @@ img.balckbak {
   font-weight: 600;
   color: #fc7700;
   text-align: center;
+}
+.court-list {
+  text-align: center !important;
+}
+.court-list ul {
+  list-style-type: none;
 }
 .panel-group > .title {
   border: none;

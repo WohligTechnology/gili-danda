@@ -1,12 +1,12 @@
 	@import "../bower_components/lesshat/build/lesshat.less";
 	@import "../bower_components/bootstrap/dist/css/bootstrap.min.css";
 	@import "../bower_components/ui-select/dist/select.min.css";
-	@import "../bower_components/fontawesome/css/font-awesome.min.css";
+//	@import "../bower_components/fontawesome/css/font-awesome.min.css";
 	@import "../css/flexslider.css";
 	@import "../css/ngdialog.css";
 	@import "http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600,700";
-	@import "http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600,700";
-	//@import (inline) "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
+//	@import "http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600,700";
+	@import (inline) "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
 	@import "../less/mobile.less";
 	@menu-color: #0a1a72;
 	@subMenu-color: #303030;
@@ -34,6 +34,26 @@
 	@text-font: 13px;
 	@font-bold: 700;
 	@font-face {
+		font-family: 'Titillium Web';
+		src: url("../fonts/TitilliumWeb-Regular.ttf");
+		font-weight: 400;
+	}
+		@font-face {
+		font-family: 'Titillium Web';
+		src: url("../fonts/TitilliumWeb-Light.ttf");
+		font-weight: 300;
+	}
+		@font-face {
+		font-family: 'Titillium Web';
+		src: url("../fonts/TitilliumWeb-SemiBold.ttf");
+		font-weight: 600;
+	}
+		@font-face {
+		font-family: 'Titillium Web';
+		src: url("../fonts/TitilliumWeb-Bold.ttf");
+		font-weight: 700;
+	}
+		@font-face {
 		font-family: 'Sansation';
 		src: url("../fonts/Sansation_Regular.ttf");
 		font-weight: 400;
@@ -2328,6 +2348,9 @@
 	.tennis {
 		min-height: 1500px;
 	}
+.aqua {
+	min-height: 1000px;
+}
 	
 	.verti {
 		.vert {
@@ -2459,7 +2482,7 @@
 	.spaceli {
 		padding-left: 20px !important;
 		li {
-			margin: 10px 0 !important;
+			margin: 10px 0 ;
 			text-align: left;
 		}
 	}

@@ -2171,6 +2171,12 @@ h5.copen {
   color: #616161;
   margin: 25px auto;
 }
+.cabout .table tbody tr td {
+  border: 1px solid #ddd !important;
+}
+.marginbtnss {
+  margin-bottom: 50px !important;
+}
 .flexslider-container {
   width: 50%;
   margin: 10px auto;
@@ -3012,13 +3018,18 @@ img.balckbak {
   color: #fc7700;
 }
 .contact-set {
-  padding-top: 100px;
+  padding-top: 35px;
 }
 .contact-set .orng {
   color: #fc7700;
 }
+.contact-set h2 {
+  color: #0a1a72;
+  font-weight: 600;
+}
 .contact-set p {
   margin: 0;
+  font-size: 16px;
 }
 .contact-set span {
   text-transform: capitalize;
@@ -3031,7 +3042,11 @@ img.balckbak {
   padding-top: 25px;
 }
 .download {
-  margin: 200px 0px 200px 0px;
+  margin: 80px 0;
+}
+.download p {
+  margin-bottom: 27px;
+  font-size: 16px;
 }
 .partner {
   margin: 60px 0px 60px 0px;
@@ -3086,12 +3101,13 @@ img.balckbak {
   width: 100%;
 }
 .sports {
-  background: url("../img/sport/back2.png") center no-repeat;
-  background-size: 100% 100%;
-  min-height: 600px;
+  background: url("../img/sport/backgrd.png") top center no-repeat;
+  background-size: 100% auto;
+  min-height: 1000px;
   z-index: 9;
   margin-top: -35px;
   margin-bottom: -50px;
+  background-color: #D7D7D7;
 }
 .sports .cus-imgs {
   width: 344px;
@@ -3110,12 +3126,12 @@ img.balckbak {
   padding-top: 40px;
 }
 .sports .sport-text {
-  padding-top: 98px;
+  padding-top: 10px;
   padding-left: 43px;
   color: #18318f;
 }
 .sports .sports-text {
-  padding-top: 98px;
+  padding-top: 10px;
   padding-left: 0;
   color: #18318f;
   position: relative;
@@ -3123,7 +3139,7 @@ img.balckbak {
   width: 110%;
 }
 .sports .sportss-texts {
-  padding-top: 100px;
+  padding-top: 10px;
   /* padding-left: 43px; */
   color: #18318f;
   position: relative;
@@ -3131,22 +3147,29 @@ img.balckbak {
   width: 94%;
 }
 .sports .sport-texts {
-  padding-top: 100px;
+  padding-top: 50px;
   padding-left: 43px;
   color: #18318f;
 }
 .sports .btn-sports {
   width: 100%;
-  background-color: #0b1a6d;
-  border-color: #0b1a6d;
-  color: #fff;
+  border: 2px solid #0b1a6d;
+  color: #0b1a6d;
   text-transform: uppercase;
   font-weight: 100;
   padding: 6px;
   outline: 0;
   font-size: 12px;
+  font-weight: 700;
   margin: 7px auto;
-  border: 1px solid #0b1a6d;
+}
+.sports .btn-sports:hover {
+  background-color: #0b1a6d;
+  color: #fff;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }
 .verti .vert {
   background-color: #fb7700;
@@ -3267,7 +3290,7 @@ img.balckbak {
   color: #fff;
 }
 .table {
-  margin: 65px 0 20px;
+  margin: 40px 0 20px;
 }
 .table td {
   border: none !important;
@@ -3276,5 +3299,5 @@ img.balckbak {
   padding-left: 20px !important;
 }
 .spaceli li {
-  margin: 20px 0 !important;
+  margin: 10px 0 !important;
 }

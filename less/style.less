@@ -1286,6 +1286,19 @@
 			color: @base-color;
 			margin: 25px auto;
 		}
+		.table {
+			tbody {
+				tr {
+					td {
+						border: 1px solid #ddd !important;
+					}
+				}
+			}
+		}
+	}
+	
+	.marginbtnss {
+		margin-bottom: 50px !important;
 	}
 	
 	.flexslider-container {
@@ -2134,12 +2147,17 @@
 	}
 	
 	.contact-set {
-		padding-top: 100px;
+		padding-top: 35px;
 		.orng {
 			color: @login-color;
 		}
+		h2 {
+			color: @menu-color;
+			font-weight: 600;
+		}
 		p {
 			margin: 0;
+			font-size: 16px;
 		}
 		span {
 			text-transform: capitalize;
@@ -2154,7 +2172,11 @@
 	}
 	
 	.download {
-		margin: 200px 0px 200px 0px;
+		margin: 80px 0;
+		p {
+			margin-bottom: 27px;
+			font-size: 16px;
+		}
 	}
 	
 	.partner {
@@ -2213,12 +2235,13 @@
 	}
 	
 	.sports {
-		background: url("../img/sport/back2.png")center no-repeat;
-		background-size: 100% 100%;
-		min-height: 600px;
+		background: url("../img/sport/backgrd.png")top center no-repeat;
+		background-size: 100% auto;
+		min-height: 1000px;
 		z-index: 9;
 		margin-top: -35px;
 		margin-bottom: -50px;
+		background-color: #D7D7D7;
 		.cus-imgs {
 			width: 344px;
 			padding-top: 43px;
@@ -2236,12 +2259,12 @@
 			padding-top: 40px;
 		}
 		.sport-text {
-			padding-top: 98px;
+			padding-top: 10px;
 			padding-left: 43px;
 			color: #18318f;
 		}
 		.sports-text {
-			padding-top: 98px;
+			padding-top: 10px;
 			padding-left: 0;
 			color: #18318f;
 			position: relative;
@@ -2249,7 +2272,7 @@
 			width: 110%;
 		}
 		.sportss-texts {
-			padding-top: 100px;
+			padding-top: 10px;
 			/* padding-left: 43px; */
 			color: #18318f;
 			position: relative;
@@ -2257,22 +2280,26 @@
 			width: 94%;
 		}
 		.sport-texts {
-			padding-top: 100px;
+			padding-top: 50px;
 			padding-left: 43px;
 			color: #18318f;
 		}
 		.btn-sports {
 			width: 100%;
-			background-color: #0b1a6d;
-			border-color: #0b1a6d;
-			color: #fff;
+			border: 2px solid #0b1a6d;
+			color: #0b1a6d;
 			text-transform: uppercase;
 			font-weight: 100;
 			padding: 6px;
 			outline: 0;
 			font-size: 12px;
+			font-weight: 700;
 			margin: 7px auto;
-			border: 1px solid #0b1a6d;
+			&:hover {
+				background-color: #0b1a6d;
+				color: #fff;
+				.transition(all 500ms ease-in-out);
+			}
 		}
 	}
 	
@@ -2382,7 +2409,7 @@
 	}
 	
 	.table {
-		margin: 65px 0 20px;
+		margin: 40px 0 20px;
 		td {
 			border: none !important;
 		}
@@ -2391,6 +2418,6 @@
 	.spaceli {
 		padding-left: 20px !important;
 		li {
-			margin: 20px 0 !important;
+			margin: 10px 0 !important;
 		}
-	} 
+	}

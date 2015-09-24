@@ -20,174 +20,190 @@
   }
 }
 @media only screen and (min-width: 469px) and (max-width: 767px) {
-  .contact-set {
-    padding-top: 0px !important;
-    padding-bottom: 0px;
-  }
-  .sports .sports-text {
-    padding-top: 30px !important;
-    left: inherit !important;
-    width: 100% !important;
-  }
-  .sports .sportss-texts {
-    padding-top: 35px !important;
-    padding-left: 28px !important;
-    left: 0px !important;
-    width: 100% !important;
-  }
-  .sports {
-    margin-bottom: 10px !important;
-  }
-  .sports .cus-imgs {
-    width: inherit !important;
-    padding-top: 12px !important;
-    margin: 0 auto;
-  }
-  .sports .sport-text {
-    padding-top: 28px !important;
-    text-align: center;
-    padding-left: 0px !important;
-  }
-  .sports .sport-texts {
-    padding-top: 11px !important;
-    text-align: center;
-    padding-left: 0px !important;
-  }
-  .tabs-gallery h1 {
-    font-size: 30px !important;
-    margin: 0px !important;
-  }
-  .backwhite .sc-ul ul {
-    padding: 0;
-    margin-top: 10px !important;
-  }
-  .mobpad {
+  .court-list ul {
     padding: 0;
   }
-  .sc-input {
-    margin-top: 10px;
+  .contact-set h2 {
+    font-size: 17px !important;
   }
-  .patc {
-    position: inherit !important;
-    width: 100%;
-    margin-top: -40px !important;
-    margin-bottom: 0px !important;
+  .contact-set p {
+    font-size: 15px !important;
   }
-  .backwhite {
-    position: inherit !important;
-    top: 0px;
-    width: 100%;
+  .cabout .table tbody tr td {
+    border: 1px solid #ddd !important;
+    font-size: 12px;
+    padding: 8px;
   }
-  .scl {
-    background: transparent !important;
-    background-size: cover;
-    height: inherit !important;
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
+  .home-content.text-center h5 {
+    font-size: 16px !important;
   }
-  .tabs-gallery {
-    margin-top: 0px !important;
+  .home-content.text-center a {
+    font-size: 15px !important;
   }
-  .scl .patches {
-    background: transparent !important;
-    margin-top: 0px !important;
-    position: inherit !important;
-  }
-  .patch {
-    background: transparent !important;
-  }
-  .contact .regis {
-    padding-bottom: 35px !important;
-  }
-  .partner-set {
-    margin: 70px auto;
-  }
-  .partner-set p {
-    font-size: 13px;
-    text-align: center;
-  }
-  .partner .par-logo img {
-    position: absolute;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    text-align: center;
-  }
-  .print-img .box-img {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .searchs {
-    zoom: 0.7 !important;
-    margin-bottom: 30px !important;
-  }
-  .marginlft .cat-left {
-    width: 100% !important;
-  }
-  .mhsmargin {
-    margin-top: -30px !important;
-  }
-  .margintop {
-    margin-top: 30px !important;
-  }
-  .marg {
-    margin-top: -36px !important;
-  }
-  .twit {
-    margin-top: 36px;
-  }
-  .insta {
-    margin-top: 36px;
-  }
-  .middle-home .over-img p {
-    margin: 13px 0px 18px 0px !important;
-  }
-  .middle-home .over-img img {
-    zoom: 0.6;
-  }
-  .home-content.text-center {
-    margin-top: 40px !important;
-  }
-  .home-content.text-center p {
-    font-size: 14px !important;
-  }
-  .curve {
-    height: 20px !important;
-  }
-  .sub-cat {
-    zoom: 0.5;
-  }
-  .slider-text h3 {
-    margin: 0px !important;
-    padding-bottom: 8px !important;
-  }
-  .slider-text a {
-    font-size: 10px !important;
-    padding: 3px 18px !important;
-  }
-  .flex-next {
-    zoom: 0.7;
-  }
-  .flex-prev {
-    zoom: 0.7;
-  }
-  .cimg {
-    zoom: 0.3;
-    margin: 40px auto 0px auto !important;
-  }
-  .media-text p {
-    font-size: 11px;
-    margin: 0;
-    padding: 0;
-  }
-  h3.cname {
-    font-size: 18px !important;
-    margin: 0px 0px 0px 0px !important;
-  }
-  h5.copen {
-    font-size: 12px !important;
-    margin: 2px 0px 2px 0px !important;
-  }
+}
+.sports .sports-text {
+  padding-top: 30px !important;
+  left: inherit !important;
+  width: 100% !important;
+}
+.sports .sportss-texts {
+  padding-top: 35px !important;
+  padding-left: 28px !important;
+  left: 0px !important;
+  width: 100% !important;
+}
+.sports {
+  margin-bottom: 10px !important;
+}
+.sports .cus-imgs {
+  width: inherit !important;
+  padding-top: 12px !important;
+  margin: 0 auto;
+}
+.sports .sport-text {
+  padding-top: 28px !important;
+  text-align: center;
+  padding-left: 0px !important;
+}
+.sports .sport-texts {
+  padding-top: 11px !important;
+  text-align: center;
+  padding-left: 0px !important;
+}
+.tabs-gallery h1 {
+  font-size: 30px !important;
+  margin: 0px !important;
+}
+.backwhite .sc-ul ul {
+  padding: 0;
+  margin-top: 10px !important;
+}
+.mobpad {
+  padding: 0;
+}
+.sc-input {
+  margin-top: 10px;
+}
+.patc {
+  position: inherit !important;
+  width: 100%;
+  margin-top: -40px !important;
+  margin-bottom: 0px !important;
+}
+.backwhite {
+  position: inherit !important;
+  top: 0px;
+  width: 100%;
+}
+.scl {
+  background: transparent !important;
+  background-size: cover;
+  height: inherit !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+.tabs-gallery {
+  margin-top: 0px !important;
+}
+.scl .patches {
+  background: transparent !important;
+  margin-top: 0px !important;
+  position: inherit !important;
+}
+.patch {
+  background: transparent !important;
+}
+.contact .regis {
+  padding-bottom: 35px !important;
+}
+.partner-set {
+  margin: 70px auto;
+}
+.partner-set p {
+  font-size: 13px;
+  text-align: center;
+}
+.partner .par-logo img {
+  position: absolute;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  text-align: center;
+}
+.print-img .box-img {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.searchs {
+  zoom: 0.7 !important;
+  margin-bottom: 30px !important;
+}
+.marginlft .cat-left {
+  width: 100% !important;
+}
+.mhsmargin {
+  margin-top: -30px !important;
+}
+.margintop {
+  margin-top: 30px !important;
+}
+.marg {
+  margin-top: -36px !important;
+}
+.twit {
+  margin-top: 36px;
+}
+.insta {
+  margin-top: 36px;
+}
+.middle-home .over-img p {
+  margin: 13px 0px 18px 0px !important;
+}
+.middle-home .over-img img {
+  zoom: 0.6;
+}
+.home-content.text-center {
+  margin-top: 40px !important;
+}
+.home-content.text-center p {
+  font-size: 14px !important;
+}
+.curve {
+  height: 20px !important;
+}
+.sub-cat {
+  zoom: 0.5;
+}
+.slider-text h3 {
+  margin: 0px !important;
+  padding-bottom: 8px !important;
+}
+.slider-text a {
+  font-size: 10px !important;
+  padding: 3px 18px !important;
+}
+.flex-next {
+  zoom: 0.7;
+}
+.flex-prev {
+  zoom: 0.7;
+}
+.cimg {
+  zoom: 0.3;
+  margin: 40px auto 0px auto !important;
+}
+.media-text p {
+  font-size: 11px;
+  margin: 0;
+  padding: 0;
+}
+h3.cname {
+  font-size: 18px !important;
+  margin: 0px 0px 0px 0px !important;
+}
+h5.copen {
+  font-size: 12px !important;
+  margin: 2px 0px 2px 0px !important;
 }
 @media only screen and (min-width: 950px) and (max-width: 1128px) {
   .sprofile .splogo {
@@ -219,6 +235,27 @@
   }
 }
 @media only screen and (max-width: 468px) {
+  .court-list ul {
+    padding: 0;
+  }
+  .contact-set h2 {
+    font-size: 16px !important;
+  }
+  .contact-set p {
+    margin: 0;
+    font-size: 14px !important;
+  }
+  .cabout .table tbody tr td {
+    border: 1px solid #ddd !important;
+    font-size: 9px;
+    padding: 6px;
+  }
+  .home-content.text-center h5 {
+    font-size: 14px !important;
+  }
+  .home-content.text-center a {
+    font-size: 13px !important;
+  }
   .curve {
     height: 20px !important;
   }
@@ -383,7 +420,7 @@
     zoom: 0.3 !important;
   }
   .sub-cat {
-    zoom: 0.24 !important;
+    zoom: 0.21 !important;
     margin-top: -66px !important;
   }
   .slider-text h3 {
@@ -471,11 +508,11 @@
   }
   .sb {
     margin: 0px 0px 0px -6px;
-    height: 23px !important;
+    height: 22px !important;
   }
   .sfm input {
     margin-top: 4px;
-    padding: 6px 9px !important;
+    padding: 5px 9px !important;
   }
   .navbar-nav {
     margin: 7.5px -15px;
@@ -3114,13 +3151,13 @@ img.balckbak {
   background-size: 100% auto;
   min-height: 1000px;
   z-index: 9;
-  margin-top: -35px;
+  margin-top: -48px;
   margin-bottom: -50px;
   background-color: #D7D7D7;
 }
 .sports .cus-imgs {
-  width: 344px;
-  padding-top: 43px;
+  width: 344px !important;
+  padding-top: 43px !important;
 }
 .sports .cus-imgss {
   width: 100%;
@@ -3284,9 +3321,13 @@ img.balckbak {
   display: block !important;
   background-color: #fff;
   color: #18318f;
+  text-align: left !important;
 }
 .panel-title {
   font-size: 14px !important;
+}
+.title p {
+  text-align: left !important;
 }
 .panel-heading > .panel-title > a:focus {
   background-color: #fb7700;
@@ -3304,15 +3345,23 @@ img.balckbak {
   background-color: #18318f !important;
   color: #fff;
 }
-.table {
+.tab-info {
   margin: 40px 0 20px;
 }
-.table td {
+.tab-info td {
   border: none !important;
+  text-align: left;
 }
 .spaceli {
   padding-left: 20px !important;
 }
 .spaceli li {
   margin: 10px 0 !important;
+  text-align: left;
+}
+.panel {
+  border-radius: 0 !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
 }

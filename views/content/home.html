@@ -27,7 +27,7 @@
         <div class="row">
             <div class="sub-cat">
                 <ul>
-                    <li ng-repeat="element in homeslide" ng-click="iconclick(element);">
+                    <li ng-repeat="element in homeslide" ng-hover="iconclick(element);">
                         <a href="{{element.link}}">
                             <figure>
                                 <img class="transition" ng-src="{{element.icon |serverimage}}" ng-style="{ 'width' : element.zoom*110 }" class="img-responsive">

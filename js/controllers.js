@@ -51,13 +51,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		var homelen = $scope.homeslide.length;
 		var flexi = $scope.flex.demo.data('flexslider');
 		console.log(flexi);
-		for (var i = 0; i < $scope.homeslide.length; i++) {
-			var x = Math.abs(i - flexi.currentSlide);
-			var taninverse = Math.atan(x);
-			taninverse = taninverse / Math.PI * 2;
-			$scope.homeslide[i].zoom = 1 - taninverse / 1.8;
-			console.log(1 - taninverse);
-		}
+//		for (var i = 0; i < $scope.homeslide.length; i++) {
+//			var x = Math.abs(i - flexi.currentSlide);
+//			var taninverse = Math.atan(x);
+//			taninverse = taninverse / Math.PI * 2;
+//			$scope.homeslide[i].zoom = 1 - taninverse / 1.8;
+//			console.log(1 - taninverse);
+//		}
 
 	};
 	$scope.iconclick = function (element) {

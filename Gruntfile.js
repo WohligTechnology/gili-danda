@@ -267,5 +267,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.registerTask('default', ['less:development','concat','watch']);
-    grunt.registerTask('production', ['copy', 'htmlmin', 'less:production', 'cssmin', 'ngtemplates', 'concat', 'uglify', 'compress:css', 'compress:js','compress:indexhtml', 'compress:zip']);
+    grunt.registerTask('production', ['copy', 'htmlmin', 'less:production', 'ngtemplates','cssmin', 'concat', 'uglify', 'compress:css', 'compress:js','compress:indexhtml', 'compress:zip']);
 };

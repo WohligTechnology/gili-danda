@@ -552,8 +552,24 @@
 			margin-bottom: 20px;
 		}
 		.part-logo ul li {
-			display: inline-block;
 			padding: 0px 8px;
+			margin-right: 27px;
+			display: inline-block;
+		}
+		.part-logo ul li a {
+			color: @base-color;
+			&:hover {
+				color: inherit;
+			}
+		}
+		.part-logo ul li:last-child {
+			margin-right: 0;
+		}
+		.part-logo ul li figcaption {
+			margin-top: 15px;
+		}
+		.sponsers > p {
+			margin: 50px 0;
 		}
 		.social-icon {
 			margin-top: 38px;
@@ -2303,7 +2319,7 @@
 		}
 		.verti-right {
 			position: absolute;
-			right: -271px;
+			right: -270px;
 			top: 400px;
 			.transform(rotate(-90deg));
 			a.pdn {
@@ -2385,8 +2401,8 @@
 			width: 94%;
 		}
 		.sport-texts {
-			padding-top: 50px;
-			padding-left: 43px;
+			padding-top: 10px;
+			padding-left: 55px;
 			color: #18318f;
 		}
 		.btn-sports {
@@ -2521,6 +2537,7 @@
 	
 	.panel-title {
 		font-size: 14px !important;
+		font-weight: 600 !important;
 	}
 	
 	.title {

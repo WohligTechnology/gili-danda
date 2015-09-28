@@ -32,6 +32,14 @@
 
 //// *********  custom slider css 469 to 768 *********
 @media @slider {
+	.sports {
+		.verti-right {
+			top: 250px !important;
+		}
+	}
+	.slider {
+		min-height: 150px !important;
+	}
 	.contact-set {
 		padding-top: 0px !important;
 		padding-bottom: 0px;
@@ -240,6 +248,20 @@
 // end
 // css for  mobile max 468
 @media @mobile {
+	.sports {
+		.vertical {
+			.verti-right {
+				right: -218px !important;
+				top: 250px !important;
+				.right_button {
+					font-size: 9px !important;
+				}
+			}
+		}
+	}
+	.slider {
+		min-height: 20px !important;
+	}
 	.curve {
 		height: 20px !important;
 	}
@@ -664,10 +686,10 @@
 	.mobile-logo {
 		position: absolute;
 		left: 50%;
-		transfrom: translateX(-50%);
+		transform: translateX(-50%);
 	}
 	.onlylogo {
-		transfrom: translateY(0px) !important;
+		transform: translateY(0px) !important;
 	}
 	.navbar-nav {
 		margin: 7.5px -15px;
@@ -686,6 +708,9 @@
 // ********* end *********
 //********* custom size Media qeury *******
 @media @custom {
+	.slider {
+		min-height: 400px !important;
+	}
 	.sports .btn-sports {
 		font-size: 10px !important;
 	}
@@ -728,8 +753,18 @@
 }
 
 // ********* end *********
-// ********* star custom csss 768 t0 998 *********
+// ********* star custom csss 768 to 998 *********
 @media @customsc {
+	.sports {
+		min-height: 700px !important;
+		.verti-right {
+			top: 270px !important;
+			right: -235px !important;
+		}
+	}
+	.slider {
+		min-height: 250px !important;
+	}
 	.sports .sports-text {
 		padding-top: 55px !important;
 	}
@@ -740,11 +775,20 @@
 	.sports .btn-sports {
 		font-size: 10px !important;
 	}
+	.right_button {
+		font-size: 10px !important;
+	}
 	.mobpads {
 		padding: 4px;
 	}
 	.sports .sport-text {
 		padding-top: 35px !important;
+	}
+	.sports .sport-text > h2.game_title {
+		font-size: 26px !important;
+	}
+	.sports .sport-text > p {
+		font-size: 13px !important;
 	}
 	.sports .sport-texts {
 		padding-top: 35px !important;
@@ -878,6 +922,15 @@
 		font-size: 17px !important;
 		margin: 0px 0px 2px 0px !important;
 	}
+	div.home-content.text-center div.link-btn > a {
+		width: 50%;
+		margin: 0 auto;
+		display: block;
+		font-size: 17px;
+	}
+	div.home-content.text-center div.link-btn > .enquire-btn {
+		margin: 0 auto 2%;
+	}
 	//	sports
 	.sports {
 		font-size: 11px;
@@ -890,10 +943,10 @@
 		font-size: 12px;
 	}
 	.spaceli li {
-		margin: 5px 0 !important; 
+		margin: 5px 0 !important;
 	}
 	.verti .vert {
-		right: -41px !important; 
+		right: -41px !important;
 	}
 	.tab-info {
 		margin: 20px 0 10px !important;

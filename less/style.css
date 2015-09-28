@@ -38,6 +38,9 @@
   div.home-content.text-center div.link-btn > .enquire-btn {
     margin: 0 auto 2%;
   }
+  div.vertical div.handball-logo {
+    display: none !important;
+  }
   .contact-set {
     padding-top: 0px !important;
     padding-bottom: 0px;
@@ -255,6 +258,9 @@
   }
   div.home-content.text-center div.link-btn > .enquire-btn {
     margin: 0 auto 2%;
+  }
+  div.vertical div.handball-logo {
+    display: none !important;
   }
   .curve {
     height: 20px !important;
@@ -694,6 +700,14 @@
   .sports .btn-sports {
     font-size: 10px !important;
   }
+  div.vertical .handball-logo {
+    top: -40px;
+    right: 130px;
+  }
+  div.vertical .handball-logo img {
+    width: 75%;
+    margin: 0 auto;
+  }
   .mobpads {
     padding: 4px;
   }
@@ -734,6 +748,14 @@
   }
   .slider {
     min-height: 250px !important;
+  }
+  div.vertical div.handball-logo {
+    top: -30px;
+    right: 110px;
+  }
+  div.vertical div.handball-logo img {
+    width: 60%;
+    float: right;
   }
   .sports .sports-text {
     padding-top: 55px !important;
@@ -3545,5 +3567,6 @@ img.balckbak {
   box-shadow: none !important;
 }
 .margintps {
-  margin-top: -33px;
+  margin-top: -33px !important;
+  position: relative !important;
 }

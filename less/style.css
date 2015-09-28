@@ -23,6 +23,21 @@
   }
 }
 @media only screen and (min-width: 469px) and (max-width: 767px) {
+  .sports .verti-right {
+    top: 250px !important;
+  }
+  .slider {
+    min-height: 150px !important;
+  }
+  div.home-content.text-center div.link-btn > a {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+    font-size: 15px;
+  }
+  div.home-content.text-center div.link-btn > .enquire-btn {
+    margin: 0 auto 2%;
+  }
   .contact-set {
     padding-top: 0px !important;
     padding-bottom: 0px;
@@ -222,6 +237,25 @@
   }
 }
 @media only screen and (max-width: 468px) {
+  .sports .vertical .verti-right {
+    right: -218px !important;
+    top: 250px !important;
+  }
+  .sports .vertical .verti-right .right_button {
+    font-size: 9px !important;
+  }
+  .slider {
+    min-height: 20px !important;
+  }
+  div.home-content.text-center div.link-btn > a {
+    width: 75%;
+    margin: 0 auto;
+    display: block;
+    font-size: 13px;
+  }
+  div.home-content.text-center div.link-btn > .enquire-btn {
+    margin: 0 auto 2%;
+  }
   .curve {
     height: 20px !important;
   }
@@ -637,10 +671,10 @@
   .mobile-logo {
     position: absolute;
     left: 50%;
-    transfrom: translateX(-50%);
+    transform: translateX(-50%);
   }
   .onlylogo {
-    transfrom: translateY(0px) !important;
+    transform: translateY(0px) !important;
   }
   .navbar-nav {
     margin: 7.5px -15px;
@@ -654,6 +688,9 @@
   }
 }
 @media only screen and (min-width: 949px) and (max-width: 1200px) {
+  .slider {
+    min-height: 400px !important;
+  }
   .sports .btn-sports {
     font-size: 10px !important;
   }
@@ -688,6 +725,16 @@
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 998px) {
+  .sports {
+    min-height: 700px !important;
+  }
+  .sports .verti-right {
+    top: 270px !important;
+    right: -235px !important;
+  }
+  .slider {
+    min-height: 250px !important;
+  }
   .sports .sports-text {
     padding-top: 55px !important;
   }
@@ -698,11 +745,20 @@
   .sports .btn-sports {
     font-size: 10px !important;
   }
+  .right_button {
+    font-size: 10px !important;
+  }
   .mobpads {
     padding: 4px;
   }
   .sports .sport-text {
     padding-top: 35px !important;
+  }
+  .sports .sport-text > h2.game_title {
+    font-size: 26px !important;
+  }
+  .sports .sport-text > p {
+    font-size: 13px !important;
   }
   .sports .sport-texts {
     padding-top: 35px !important;
@@ -836,6 +892,15 @@
   h5.copen {
     font-size: 17px !important;
     margin: 0px 0px 2px 0px !important;
+  }
+  div.home-content.text-center div.link-btn > a {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+    font-size: 17px;
+  }
+  div.home-content.text-center div.link-btn > .enquire-btn {
+    margin: 0 auto 2%;
   }
   .sports {
     font-size: 11px;

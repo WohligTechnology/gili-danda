@@ -247,6 +247,10 @@
   .sports .vertical .verti-right .right_button {
     font-size: 9px !important;
   }
+  .chart-table tr > td {
+    padding: 4px !important;
+    font-size: 13px !important;
+  }
   .slider {
     min-height: 20px !important;
   }
@@ -504,12 +508,20 @@
   .mobile-logo {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%) !important;
+    -moz-transform: translateX(-50%) !important;
+    -ms-transform: translateX(-50%) !important;
+    -o-transform: translateX(-50%) !important;
+    transform: translateX(-50%) !important;
   }
   .mobile-logo img {
     zoom: 0.6 !important;
   }
   .onlylogo {
+    -webkit-transform: translateY(0px) !important;
+    -moz-transform: translateY(0px) !important;
+    -ms-transform: translateY(0px) !important;
+    -o-transform: translateY(0px) !important;
     transform: translateY(0px) !important;
   }
   .sb {
@@ -677,9 +689,17 @@
   .mobile-logo {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%) !important;
+    -moz-transform: translateX(-50%) !important;
+    -ms-transform: translateX(-50%) !important;
+    -o-transform: translateX(-50%) !important;
+    transform: translateX(-50%) !important;
   }
   .onlylogo {
+    -webkit-transform: translateY(0px) !important;
+    -moz-transform: translateY(0px) !important;
+    -ms-transform: translateY(0px) !important;
+    -o-transform: translateY(0px) !important;
     transform: translateY(0px) !important;
   }
   .navbar-nav {
@@ -1524,6 +1544,7 @@ ul.menu-list li a:hover {
 .footers .part-logo ul li {
   padding: 0px 8px;
   margin-right: 25px;
+  margin-bottom: 25px;
   display: inline-block;
 }
 .footers .part-logo ul li a {

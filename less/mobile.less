@@ -532,13 +532,14 @@
 	.mobile-logo {
 		position: absolute;
 		left: 50%;
-		top: 50% transform: translate(-50%);
+		top: 50%;
+		.transform(translate(-50%));
 		img {
 			zoom: 0.6 !important;
 		}
 	}
 	.onlylogo {
-		transform: translateY(0px) !important;
+		.transform(translateY(0px)) !important;
 	}
 	.sb {
 		margin: 0px 0px 0px -6px;
@@ -710,7 +711,7 @@
 	.mobile-logo {
 		position: absolute;
 		left: 50%;
-		.transform(translateX(-50%));
+		.transform(translateX(-50%)); 
 	}
 	.onlylogo {
 		.transform(translateY(0px)) !important;

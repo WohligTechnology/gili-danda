@@ -10,13 +10,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	var getbannersliderscallback = function (data, status) {
 		console.log(data);
 		$scope.homeslide = data;
-//		        $scope.slides = _.pluck($scope.homeslide, "image");
-//		$scope.slides = [
-//			"../img/slider/1.jpg",
-//				"../img/slider/2.jpg",
-//				"../img/slider/3.jpg"
-//			];
-//		$scope.smallslides = _.pluck($scope.homeslide, "icon");
+		//		        $scope.slides = _.pluck($scope.homeslide, "image");
+		//		$scope.slides = [
+		//			"../img/slider/1.jpg",
+		//				"../img/slider/2.jpg",
+		//				"../img/slider/3.jpg"
+		//			];
+		//		$scope.smallslides = _.pluck($scope.homeslide, "icon");
 		//        _.each($scope.homeslide, function(n){
 		//            n.image = imgpath +"image?name="+n.image +"&width=500";
 		//        });
@@ -51,13 +51,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		var homelen = $scope.homeslide.length;
 		var flexi = $scope.flex.demo.data('flexslider');
 		console.log(flexi);
-//		for (var i = 0; i < $scope.homeslide.length; i++) {
-//			var x = Math.abs(i - flexi.currentSlide);
-//			var taninverse = Math.atan(x);
-//			taninverse = taninverse / Math.PI * 2;
-//			$scope.homeslide[i].zoom = 1 - taninverse / 1.8;
-//			console.log(1 - taninverse);
-//		}
+		//		for (var i = 0; i < $scope.homeslide.length; i++) {
+		//			var x = Math.abs(i - flexi.currentSlide);
+		//			var taninverse = Math.atan(x);
+		//			taninverse = taninverse / Math.PI * 2;
+		//			$scope.homeslide[i].zoom = 1 - taninverse / 1.8;
+		//			console.log(1 - taninverse);
+		//		}
 
 	};
 	$scope.iconclick = function (element) {
@@ -165,14 +165,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		TemplateService.title = $scope.menutitle;
 		$scope.navigation = NavigationService.getnav();
 
-
+	})
+	.controller('CommingsoonCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+		$scope.template = TemplateService.changecontent("commingsoon");
+		$scope.menutitle = NavigationService.makeactive("Commingsoon");
+		TemplateService.title = $scope.menutitle;
+		$scope.navigation = NavigationService.getnav();
 
 	})
 	.controller('SchoolregistrationCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog, $filter) {
 		$scope.template = TemplateService.changecontent("schoolregistration");
 		$scope.menutitle = NavigationService.makeactive("Schoolregistration");
+		$scope.showForm = false;
+		$scope.openForm = function () {
+			$scope.showForm = true;
+		};
 		TemplateService.title = $scope.menutitle;
 		$scope.navigation = NavigationService.getnav();
+		//		$scope.viewform = false;
 		var getsportsnamecallback = function (data, status) {
 			//        console.log(data);
 			$scope.sportsname = partitionarray(data, 4);
@@ -199,6 +209,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 			console.log($scope.school);
 			NavigationService.submitschoolregistration($scope.school, submitschoolregistrationcallback);
 		}
+
+		//		$scope.showform = function () {
+		//			$scope.viewform = true;
+		//		}
 
 		$scope.pushorpop = function (flag) {
 			var index = $scope.school.sports.indexOf(flag);

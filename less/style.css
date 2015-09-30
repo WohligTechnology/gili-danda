@@ -30,6 +30,9 @@
   .slider {
     min-height: 150px !important;
   }
+  .pop-descp {
+    position: static !important;
+  }
   div.home-content.text-center div.link-btn > a {
     width: 50%;
     margin: 0 auto;
@@ -250,6 +253,9 @@
   }
   .sports .vertical .verti-right .right_button {
     font-size: 9px !important;
+  }
+  .pop-descp {
+    position: static !important;
   }
   div.download.regi {
     margin: 20px 0 50px;
@@ -739,6 +745,9 @@
     width: 75%;
     margin: 0 auto;
   }
+  .sub-cat {
+    zoom: 0.7;
+  }
   .mobpads {
     padding: 4px;
   }
@@ -779,6 +788,9 @@
   }
   .slider {
     min-height: 250px !important;
+  }
+  .pop-descp {
+    position: static !important;
   }
   div.vertical div.handball-logo {
     top: -30px;
@@ -885,7 +897,7 @@
     zoom: 0.8;
   }
   .sub-cat {
-    zoom: 0.8;
+    zoom: 0.66;
   }
   .slider-text h3 {
     margin: 0px !important;
@@ -1203,6 +1215,10 @@ ul.menu-list {
   margin-top: -46px;
   margin-bottom: 25px;
 }
+ul.menu-list > li > a > span {
+  margin-left: 6px;
+  font-size: 10px;
+}
 ul.menu-list li {
   display: inline-block;
   padding: 0px 14px;
@@ -1498,12 +1514,18 @@ ul.menu-list li a:hover {
 }
 .middle-home .over-img p {
   color: #ffffff;
-  font-size: 1.2vw;
+  font-size: 23px;
   margin: 22px 0px 24px 0px;
+}
+.middle-home .over-img .know {
+  font-size: 19px;
 }
 .middle-home .over-img img {
   margin: 0 auto;
   cursor: pointer;
+}
+.middle-home .over-img .mg {
+  margin: 50px auto;
 }
 .middle-end {
   background: url("../img/home-end.jpg") no-repeat center;
@@ -1511,6 +1533,30 @@ ul.menu-list li a:hover {
   -moz-background-size: cover;
   background-size: cover;
   min-height: 453px;
+}
+.footers > .blue {
+  background-color: #0a1a72;
+  color: #fff;
+}
+.foot-links {
+  margin-top: 15px;
+  padding: 0;
+}
+.foot-links li {
+  padding: 0 8px;
+  display: inline-block;
+  border-right: 2px solid #fff;
+  line-height: 14px;
+  list-style-type: none;
+}
+.foot-links li a {
+  color: #fff;
+}
+.foot-links > li:first-child {
+  padding-left: 0;
+}
+.foot-links > li:last-child {
+  border: none;
 }
 .footers {
   background-color: #eaeaea;
@@ -1554,7 +1600,7 @@ ul.menu-list li a:hover {
 }
 .footers .part-logo ul li {
   padding: 0px 8px;
-  margin-right: 25px;
+  margin-right: 12px;
   margin-bottom: 25px;
   display: inline-block;
 }
@@ -1573,10 +1619,6 @@ ul.menu-list li a:hover {
 .footers .sponsers > p {
   margin: 50px 0;
 }
-.footers .social-icon {
-  margin-top: 38px;
-  line-height: 25px;
-}
 .footers .social-icon ul {
   list-style: none;
   display: block;
@@ -1589,7 +1631,7 @@ ul.menu-list li a:hover {
   padding: 0px 2px;
 }
 .footers .social-icon ul li i {
-  background: #dbdbdb;
+  background: #fff;
   -webkit-border-radius: 100%;
   -webkit-background-clip: padding-box;
   -moz-border-radius: 100%;
@@ -1599,7 +1641,7 @@ ul.menu-list li a:hover {
   height: 33px;
   width: 32px;
   padding: 5px 6px;
-  color: #eaeaea;
+  color: #0a1a72;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -1805,6 +1847,15 @@ ul.menu-list li a:hover {
 .home-content.text-center p {
   color: #616161;
   font-size: 17px;
+}
+.home-content.text-center .bound {
+  width: 62%;
+  margin: 0 auto;
+  text-align: left;
+}
+.home-content.text-center .weight {
+  font-size: 23px;
+  font-weight: 600;
 }
 .home-content.text-center h5 {
   font-size: 20px;
@@ -3107,7 +3158,7 @@ img.balckbak {
 .scl {
   background: url("../img/shcool.jpg");
   background-size: cover;
-  height: 900px;
+  height: 936px;
   margin-top: -26px;
   margin-bottom: -35px;
   z-index: -9;
@@ -3125,6 +3176,95 @@ img.balckbak {
 }
 .scl .left {
   left: 0;
+}
+.scl .pop-descp {
+  width: 100%;
+  position: absolute;
+  top: 310px;
+  color: #5a5a5a;
+}
+.scl .pop-descp .back {
+  background-color: #fff;
+}
+.scl .pop-descp .back .pop-up {
+  padding: 35px 20px;
+}
+.scl .pop-descp .back .pop-up .descp-head {
+  color: #0a1a72;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.scl .pop-descp .back .pop-up ol {
+  margin-bottom: 20px;
+  padding-left: 20px;
+  font-weight: 600;
+}
+.scl .pop-descp .back .pop-up ul.sport-content {
+  width: 30%;
+  padding: 0;
+  font-weight: 600;
+}
+.scl .pop-descp .back .pop-up ul.sport-content li {
+  padding: 0 8px;
+  border-right: 2px solid #5a5a5a;
+  display: inline-block;
+  line-height: 13px;
+  list-style-type: none;
+}
+.scl .pop-descp .back .pop-up ul.sport-content li:nth-child(4n+4) {
+  border: none;
+}
+.scl .pop-descp .back .pop-up ul.sport-content li:nth-child(4n+1) {
+  padding-left: 0;
+}
+.scl .pop-descp .back .pop-up .redirect {
+  margin: 2% 0;
+}
+.scl .pop-descp .back .pop-up .redirect a {
+  width: 50%;
+  padding: 10px;
+  border: 2px solid #fc7700;
+  margin: 0 auto;
+  display: block;
+  color: #fc7700;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.scl .pop-descp .back .pop-up .redirect a:hover {
+  background-color: #fc7700;
+  color: #fff;
+  -webkit-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+.scl .pop-descp .back .pop-up .info-sport ul {
+  padding-left: 20px;
+  color: #fc7700;
+  font-weight: 600;
+}
+.scl .pop-descp .back .pop-up .info-sport ul li span {
+  color: #5a5a5a;
+}
+.scl .pop-descp .back .pop-up .info-sport ul .color {
+  color: #0a1a72;
+}
+.scl .pop-descp .back .pop-up .sport-detail {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.scl .pop-descp .back .pop-up .sport-detail p.color {
+  color: #0a1a72;
+  font-weight: 600;
+}
+.scl .pop-descp .back .pop-up .sport-detail address span {
+  display: block;
+}
+.scl .pop-descp .back .pop-up .sport-detail address span:first-child {
+  color: #fc7700;
 }
 .leftpos {
   position: absolute;
@@ -3607,4 +3747,15 @@ img.balckbak {
 .margintps {
   margin-top: -33px !important;
   position: relative !important;
+}
+.comming {
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-80%, -50%);
+  -moz-transform: translate(-80%, -50%);
+  -ms-transform: translate(-80%, -50%);
+  -o-transform: translate(-80%, -50%);
+  transform: translate(-80%, -50%);
 }

@@ -1,22 +1,72 @@
 <div class="curve">
 
 </div>
-<div class="scl">
-    <div class="patc">
-        <div class="col-md-3 patches right"></div>
-        <div class="col-md-6 leftpos">
-            <div class="tabs-gallery">
-                <h1>
+<div class="register scl">
+	<div class="patc">
+		<div class="col-md-3 patches right"></div>
+		<div class="col-md-6 leftpos">
+			<div class="tabs-gallery">
+				<h1>
                school registration
            </h1>
-            </div>
-        </div>
-        <div class="col-md-3 patches left"></div>
-    </div>
-    <div class="backwhite">
-        <div class="container ">
+			</div>
+		</div>
+		<div class="col-md-3 patches left"></div>
+	</div>
+	<div class="pop-descp" >
+		<div class="container back">
+			<div class="pop-up" ng-show="!showForm">
+				<p class="descp-head">the following document contains:</p>
+				<ol>
+					<li>School Registration Form</li>
+					<li>Student Registration Form</li>
+					<li>Participant Entry Forms along with- </li>
+				</ol>
+				<div class="sports-list">
+					<p class="descp-head">Age Categories, Eligibility Criteria and Consent Form for the following sports:</p>
+					<ul class="sport-content">
+						<li>Tennis</li>
+						<li>Squash</li>
+						<li>Badminton</li>
+						<li>Table Tennis</li>
+						<li>Handball</li>
+						<li>Volleyball</li>
+						<li>Swimming</li>
+						<li>Basketball</li>
+					</ul>
+				</div>
+				<div class="redirect">
+					<a href="" ng-click="openForm()">download school registration &amp; participant entry forms here </a>
+				</div>
+				<div class="info-sport">
+					<ul>
+						<li><span class="color">Only 500 Schools will be allowed to participate at the event.</span></li>
+						<li><span class="color">Registrations open from 2nd Oct – 15th Nov’15 only.</span></li>
+						<li><span class="color">Only students of member schools can participate in any and all SFA events.</span></li>
+						<li><span>To become a member school, school authorities are requested to fill out all required details in the registration form and send the physical 
+signed and stamped copies along with your participant entry forms.</span></li>
+						<li><span>Schools will have to send cash / demand draft / cheque, in favour of SFA Events Pvt. Ltd. towards an annual registration fee of Rs.5000/-. 
+This fee entails students of the school to participate in tournaments across all 8 sports and under all age categories if they meet the SFA eligibility criteria.</span></li>
+						<li><span>There will be no additional fee that schools or students have to pay other than the annual registration fee.</span></li>
+						<li><span>In a scenario where no student from a registered school meets our eligibility criteria and is unable to participate in any sport under any category, 
+SFA will refund the annual registration fee.</span></li>
+					</ul>
+				</div>
+				<div class="sport-detail">
+					<p class="color">Send in your school registrations, participant entries, cash/cheque/demand draft to our office:</p>
+					<address>
+					<span>SFA Events Pvt. Ltd.</span>
+					<span>1306, Pancharatna Building, Opera House,</span>
+					<span>Mumbai 400 004.</span>
+				</address>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="backwhite" ng-show="showForm">
+		<div class="container ">
 
-            <!--
+			<!--
                 <input type="password" ng-model="login.oldpassword" class="form-control" ng-class="allvalidation[0].validation" required placeholder="Current Password* " />
                 
                 <input type="password" ng-model="login.newpassword" class="form-control" ng-class="allvalidation[1].validation" required placeholder="New Password *" />
@@ -27,121 +77,121 @@
 -->
 
 
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="sc-list">
-                        <p>school name</p>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="sc-input">
-                        <input type="text" class="form-control" ng-model="school.name" placeholder="Name" required>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="sc-list">
-                        <p>school address</p>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="sc-input">
-                        <input type="text" class="form-control" ng-model="school.address" placeholder="Address" required>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 padtp">
-                    <div class="sc-list">
-                        <p>Date of Establishment</p>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="row">
-                        <div class="col-md-3 padzer ">
-                            <div class="sc-input">
-                                <input type="date" class="form-control" ng-model="school.establishdate" required>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="sc-ul">
-                                <ul>
-                                    <li>
-                                        <input id="Option6" type="radio" ng-model="school.type" value="1">
-                                        <label for="Option6">Boys School</label>
-                                    </li>
-                                    <li>
-                                        <input id="Option7" type="radio" ng-model="school.type" value="2">
-                                        <label for="Option7">Girls School</label>
-                                    </li>
-                                    <li>
-                                        <input id="Option8" type="radio" ng-model="school.type" value="3">
-                                        <label for="Option8">Girls School</label>
-                                    </li>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="sc-list">
+						<p>school name</p>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="sc-input">
+						<input type="text" class="form-control" ng-model="school.name" placeholder="Name" required>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="sc-list">
+						<p>school address</p>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="sc-input">
+						<input type="text" class="form-control" ng-model="school.address" placeholder="Address" required>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 padtp">
+					<div class="sc-list">
+						<p>Date of Establishment</p>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="row">
+						<div class="col-md-3 padzer ">
+							<div class="sc-input">
+								<input type="date" class="form-control" ng-model="school.establishdate" required>
+							</div>
+						</div>
+						<div class="col-md-8">
+							<div class="sc-ul">
+								<ul>
+									<li>
+										<input id="Option6" type="radio" ng-model="school.type" value="1">
+										<label for="Option6">Boys School</label>
+									</li>
+									<li>
+										<input id="Option7" type="radio" ng-model="school.type" value="2">
+										<label for="Option7">Girls School</label>
+									</li>
+									<li>
+										<input id="Option8" type="radio" ng-model="school.type" value="3">
+										<label for="Option8">Girls School</label>
+									</li>
 
-                                </ul>
-                            </div>
-                        </div>
+								</ul>
+							</div>
+						</div>
 
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 ">
-                    <div class="sc-list">
-                        <p>contact person</p>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="sc-input">
-                        <input type="text" class="form-control" ng-model="school.contactperson" placeholder="Contact Person" required>
-                    </div>
-                </div>
-            </div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 ">
+					<div class="sc-list">
+						<p>contact person</p>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="sc-input">
+						<input type="text" class="form-control" ng-model="school.contactperson" placeholder="Contact Person" required>
+					</div>
+				</div>
+			</div>
 
-            <div class="row">
-                <div class="col-md-3 padtp">
-                    <div class="sc-list">
-                        <p>contact details</p>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="row">
-                        <div class="col-md-4 padzer">
-                            <div class="sc-input">
-                                <input type="text" class="form-control" placeholder="Email" ng-model="school.email" placeholder="Email" required>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mobpad">
-                            <div class="sc-input">
-                                <input type="text" class="form-control" placeholder="Mobile" ng-model="school.mobile" placeholder="Mobile" required>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mobpad">
-                            <div class="sc-input">
-                                <input type="text" class="form-control" placeholder="Landline" ng-model="school.landline" placeholder="Landline" required>
-                            </div>
-                        </div>
-                    </div>
+			<div class="row">
+				<div class="col-md-3 padtp">
+					<div class="sc-list">
+						<p>contact details</p>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="row">
+						<div class="col-md-4 padzer">
+							<div class="sc-input">
+								<input type="text" class="form-control" placeholder="Email" ng-model="school.email" placeholder="Email" required>
+							</div>
+						</div>
+						<div class="col-md-4 mobpad">
+							<div class="sc-input">
+								<input type="text" class="form-control" placeholder="Mobile" ng-model="school.mobile" placeholder="Mobile" required>
+							</div>
+						</div>
+						<div class="col-md-4 mobpad">
+							<div class="sc-input">
+								<input type="text" class="form-control" placeholder="Landline" ng-model="school.landline" placeholder="Landline" required>
+							</div>
+						</div>
+					</div>
 
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 padtp">
-                    <div class="sc-list">
-                        <p>Interested Sports</p>
-                    </div>
-                </div>
-                <div class="col-md-9 padzer pdbotom" >
-                    <div class="row margzero" ng-repeat="tworows in sportsname">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 padtp">
+					<div class="sc-list">
+						<p>Interested Sports</p>
+					</div>
+				</div>
+				<div class="col-md-9 padzer pdbotom">
+					<div class="row margzero" ng-repeat="tworows in sportsname">
 
-                        <div class="col-md-12 padzer">
-                            <div class="col-md-3 col-sm-4" ng-repeat="singlesportsname in tworows">
-                                <input id="Option{{singlesportsname.id+10}}" type="checkbox" ng-model="sportsflag" ng-change="pushorpop(singlesportsname.id);">
-                                <label class="checkbox" for="Option{{singlesportsname.id+10}}">{{singlesportsname.name}}</label>
-                            </div>
-                            <!--
+						<div class="col-md-12 padzer">
+							<div class="col-md-3 col-sm-4" ng-repeat="singlesportsname in tworows">
+								<input id="Option{{singlesportsname.id+10}}" type="checkbox" ng-model="sportsflag" ng-change="pushorpop(singlesportsname.id);">
+								<label class="checkbox" for="Option{{singlesportsname.id+10}}">{{singlesportsname.name}}</label>
+							</div>
+							<!--
                             <div class="col-md-2">
                                 <input id="Option11" type="checkbox">
                                 <label class="checkbox" for="Option11">Tennis</label>
@@ -155,9 +205,9 @@
                                 <label class="checkbox" for="Option13">Squash</label>
                             </div>
 -->
-                        </div>
-                    </div>
-                    <!--
+						</div>
+					</div>
+					<!--
                     <div class="row margzero">
 
                         <div class="col-md-12 padzer">
@@ -183,17 +233,17 @@
 
 
 
-                </div>
-                <!--                       <button class="btn form-control slider-btn text-center" ng-click="changepassword(login)"><a>Submit</a></button>-->
-<!--
+				</div>
+				<!--                       <button class="btn form-control slider-btn text-center" ng-click="changepassword(login)"><a>Submit</a></button>-->
+				<!--
                 <div class="slider-btn text-center" ng-click="submitschoolregistration(school);"><a>SUBMIT</a>
                 </div>
 -->
-   <div class="text-center">
-    <button class="slider-btn text-center" type="submit" ng-click="submitschoolregistration(school);">SUBMIT</button>
-           </div>
-            </div>
+				<div class="text-center">
+					<button class="slider-btn text-center" type="submit" ng-click="submitschoolregistration(school);">SUBMIT</button>
+				</div>
+			</div>
 
-        </div>
-    </div>
+		</div>
+	</div>
 </div>

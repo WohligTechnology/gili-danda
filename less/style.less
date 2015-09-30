@@ -227,6 +227,11 @@
 		margin-bottom: 25px;
 	}
 	
+	ul.menu-list > li > a > span {
+		margin-left: 6px;
+		font-size: 10px;
+	}
+	
 	ul.menu-list li {
 		display: inline-block;
 		padding: 0px 14px;
@@ -496,12 +501,18 @@
 			}
 			p {
 				color: @whit-color;
-				font-size: 1.2vw;
+				font-size: 23px;
 				margin: 22px 0px 24px 0px;
+			}
+			.know {
+				font-size: 19px;
 			}
 			img {
 				margin: 0 auto;
 				cursor: pointer;
+			}
+			.mg {
+				margin: 50px auto;
 			}
 		}
 	}
@@ -510,6 +521,34 @@
 		background: url("../img/home-end.jpg") no-repeat center;
 		.background-size(cover);
 		min-height: 453px;
+	}
+	
+	.footers > .blue {
+		background-color: @menu-color;
+		color: #fff;
+	}
+	
+	.foot-links {
+		margin-top: 15px;
+		padding: 0;
+		li {
+			padding: 0 8px;
+			display: inline-block;
+			border-right: 2px solid #fff;
+			line-height: 14px;
+			list-style-type: none;
+			a {
+				color: #fff;
+			}
+		}
+	}
+	
+	.foot-links > li:first-child {
+		padding-left: 0;
+	}
+	
+	.foot-links > li:last-child {
+		border: none;
 	}
 	
 	.footers {
@@ -553,8 +592,8 @@
 		}
 		.part-logo ul li {
 			padding: 0px 8px;
-			margin-right: 25px;
-			margin-bottom: 25px; 
+			margin-right: 12px;
+			margin-bottom: 25px;
 			display: inline-block;
 		}
 		.part-logo ul li a {
@@ -572,10 +611,10 @@
 		.sponsers > p {
 			margin: 50px 0;
 		}
-		.social-icon {
-			margin-top: 38px;
-			line-height: 25px;
-		}
+		//		.social-icon {
+		//			margin-top: 38px;
+		//			line-height: 25px;
+		//		}
 		.social-icon ul {
 			list-style: none;
 			display: block;
@@ -588,12 +627,12 @@
 			font-size: 22px;
 			padding: 0px 2px;
 			i {
-				background: @grey-color;
+				background: #fff;
 				.border-radius(100%);
 				height: 33px;
 				width: 32px;
 				padding: 5px 6px;
-				color: @footer-color;
+				color: @menu-color;
 				.transition(all 1s ease);
 			}
 			i:hover {
@@ -762,6 +801,15 @@
 		p {
 			color: #616161;
 			font-size: 17px;
+		}
+		.bound {
+			width: 62%;
+			margin: 0 auto;
+			text-align: left;
+		}
+		.weight {
+			font-size: 23px;
+			font-weight: 600;
 		}
 		h5 {
 			font-size: 20px;
@@ -2075,10 +2123,11 @@
 	.scl {
 		background: url("../img/shcool.jpg");
 		background-size: cover;
-		height: 900px;
+		height: 936px;
 		margin-top: -26px;
 		margin-bottom: -35px;
 		z-index: -9;
+		//		position: relative;
 		.patches {
 			background: url("../img/orange.png");
 			background-repeat: repeat;
@@ -2093,6 +2142,102 @@
 		}
 		.left {
 			left: 0;
+		}
+		.pop-descp {
+			width: 100%;
+			position: absolute;
+			top: 310px;
+			//			top: 50%;
+			//			left: 50%;
+			//			.transform(translate(-50%,
+			//			-40%));
+			color: @footerMenu-color;
+			.back {
+				background-color: #fff;
+				.pop-up {
+					padding: 35px 20px;
+					.descp-head {
+						color: @menu-color;
+						font-size: 18px;
+						font-weight: 600;
+						text-transform: uppercase;
+					}
+					ol {
+						margin-bottom: 20px;
+						padding-left: 20px;
+						font-weight: 600;
+					}
+					ul.sport-content {
+						width: 30%;
+						padding: 0;
+						font-weight: 600;
+						li {
+							padding: 0 8px;
+							border-right: 2px solid @footerMenu-color;
+							display: inline-block;
+							line-height: 13px;
+							list-style-type: none;
+						}
+						li:nth-child(4n+4) {
+							border: none;
+						}
+						li:nth-child(4n+1) {
+							padding-left: 0;
+						}
+					}
+					.redirect {
+						margin: 2% 0;
+						a {
+							width: 50%;
+							padding: 10px;
+							border: 2px solid @button-color;
+							margin: 0 auto;
+							display: block;
+							color: @button-color;
+							cursor: pointer;
+							font-size: 16px;
+							font-weight: 600;
+							text-transform: uppercase;
+							&:hover {
+								background-color: @button-color;
+								color: #fff;
+								.transition(all 300ms linear);
+							}
+						}
+					}
+					.info-sport {
+						ul {
+							padding-left: 20px;
+							color: @button-color;
+							font-weight: 600;
+							li {
+								span {
+									color: @footerMenu-color;
+								}
+							}
+							.color {
+								color: @menu-color;
+							}
+						}
+					}
+					.sport-detail {
+						margin-left: 20px;
+						margin-top: 20px;
+						p.color {
+							color: @menu-color;
+							font-weight: 600;
+						}
+						address {
+							span {
+								display: block;
+							}
+							span:first-child {
+								color: @button-color;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 	
@@ -2125,6 +2270,10 @@
 	.backwhite {
 		position: absolute;
 		top: 310px;
+		//		top: 50%;
+		//		left: 50%;
+		//		.transform(translate(-50%,
+		//		-40%));
 		width: 100%;
 		.container {
 			background: #fff;
@@ -2601,4 +2750,13 @@
 	.margintps {
 		margin-top: -33px !important;
 		position: relative !important;
+	}
+	
+	.comming {
+		font-size: 25px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		.transform(translate(-80%,
+		-50%));
 	}

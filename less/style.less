@@ -2763,23 +2763,80 @@
 	
 	//terms condition
 	.terms {
-		margin-top: 5%;
+		margin: 5% 0;
 		.terms-head {
-			position: relative;
-			min-height: 64px;
+			height: 64px;
 			background: url('../img/patch.jpg');
+			text-align: center;
 			.head {
+				width: 50%;
 				padding: 13px 0;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				.transform(translate(-50%,
-				-50%));
+				margin: 0;
+				display: inline-block;
 				color: @button-color;
 				background-color: #fff;
-				font-size: 36px;
+				font-size: 31px;
 				font-weight: 700;
+				text-align: center;
 				text-transform: uppercase;
+			}
+		}
+		.term-body {
+			color: @footerMenu-color;
+			p {
+				font-size: 15px;
+			}
+			.blue {
+				margin-top: 2%;
+				color: @menu-color;
+				text-transform: uppercase;
+			}
+			.term-fz {
+				font-weight: 600;
+			}
+			ol {
+				padding-left: 20px;
+				li {
+					font-size: 15px;
+					margin: 25px 0;
+				}
+			}
+			ul {
+				padding-left: 20px;
+				li {
+					font-size: 15px;
+					margin: 25px 0;
+				}
+			}
+			.rule2 {
+				margin-top: 5%;
+				.mgup {
+					margin-top: 4%;
+				}
+				.break {
+					margin-top: 2%;
+				}
+				.nomg {
+					li {
+						margin: 7px 0;
+					}
+				}
+				.no-list {
+					padding: 0;
+					li {
+						list-style-type: none;
+						span {
+							margin-right: 5px;
+						}
+					}
+				}
+				.last {
+					margin: 4% 0;
+				}
+			}
+			.rules {
+				width: 90%;
+				margin: 0 auto;
 			}
 		}
 	}

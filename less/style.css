@@ -27,6 +27,38 @@
   .sports .verti-right {
     top: 250px !important;
   }
+  .over-img {
+    top: 55% !important;
+  }
+  .fb-set {
+    margin-top: 15% !important;
+  }
+  .mg {
+    margin: 0 auto !important;
+  }
+  .curve6 {
+    display: none !important;
+  }
+  .foot-links {
+    text-align: center !important;
+  }
+  .social-icon ul {
+    float: none !important;
+    text-align: center !important;
+    margin: 4% 0 2% !important;
+  }
+  .mrgb {
+    margin-bottom: 14px !important;
+  }
+  .redirect > a {
+    width: 70% !important;
+    font-size: 13px !important;
+    text-align: center;
+    margin: 4% auto !important;
+  }
+  ul.sport-content {
+    width: 100% !important;
+  }
   .slider {
     min-height: 150px !important;
   }
@@ -34,16 +66,24 @@
     position: static !important;
   }
   div.home-content.text-center div.link-btn > a {
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
     display: block;
-    font-size: 15px;
+    font-size: 13px;
   }
   div.home-content.text-center div.link-btn > .enquire-btn {
     margin: 0 auto 2%;
   }
   div.vertical div.handball-logo {
     display: none !important;
+  }
+  .terms .head {
+    width: 60% !important;
+    padding: 15px 0 !important;
+    font-size: 21px !important;
+  }
+  .terms .rules .term-fz {
+    font-size: 16px !important;
   }
   .sponsers > p {
     text-align: center;
@@ -229,6 +269,15 @@
   .sprofile .sdata p {
     font-size: 1.5vw;
   }
+  .redirect > a {
+    width: 55% !important;
+    font-size: 13px !important;
+    text-align: center;
+    margin: 4% auto !important;
+  }
+  ul.sport-content {
+    width: 100% !important;
+  }
   .cimg {
     zoom: 0.5 !important;
   }
@@ -253,6 +302,46 @@
   }
   .sports .vertical .verti-right .right_button {
     font-size: 9px !important;
+  }
+  .mrgb {
+    margin-bottom: 10px !important;
+  }
+  .over-img {
+    top: 50% !important;
+  }
+  .curve6 {
+    display: none !important;
+  }
+  .fb-set {
+    margin-top: 15% !important;
+  }
+  .terms {
+    margin: 10% 0 15% !important;
+  }
+  .terms .head {
+    width: 100% !important;
+    padding: 20px 0 !important;
+    font-size: 18px !important;
+  }
+  .terms .rules .term-fz {
+    font-size: 14px !important;
+  }
+  .foot-links {
+    text-align: center !important;
+  }
+  .social-icon ul {
+    float: none !important;
+    text-align: center !important;
+    margin: 6% 0 !important;
+  }
+  .redirect > a {
+    width: 85% !important;
+    font-size: 11px !important;
+    text-align: center;
+    margin: 6% auto !important;
+  }
+  ul.sport-content {
+    width: 100% !important;
   }
   .pop-descp {
     position: static !important;
@@ -786,6 +875,26 @@
     top: 270px !important;
     right: -235px !important;
   }
+  .mg {
+    margin: 0 auto !important;
+  }
+  .foot-links {
+    text-align: center !important;
+  }
+  .social-icon ul {
+    float: none !important;
+    text-align: center !important;
+    margin: 3% 0 !important;
+  }
+  .redirect > a {
+    width: 75% !important;
+    font-size: 15px !important;
+    text-align: center;
+    margin: 6% auto !important;
+  }
+  ul.sport-content {
+    width: 100% !important;
+  }
   .slider {
     min-height: 250px !important;
   }
@@ -1076,6 +1185,10 @@ body {
 }
 body a {
   cursor: pointer;
+}
+body a:focus {
+  outline: none;
+  text-decoration: none;
 }
 .checkbox {
   vertical-align: baseline;
@@ -1496,7 +1609,7 @@ ul.menu-list li a:hover {
 }
 .middle-home .over-img {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   text-align: center;
   -webkit-transform: translate(-50%, -50%);
@@ -1514,11 +1627,11 @@ ul.menu-list li a:hover {
 }
 .middle-home .over-img p {
   color: #ffffff;
-  font-size: 23px;
+  font-size: 1.8vw;
   margin: 22px 0px 24px 0px;
 }
 .middle-home .over-img .know {
-  font-size: 19px;
+  font-size: 1.6vw;
 }
 .middle-home .over-img img {
   margin: 0 auto;
@@ -1538,6 +1651,10 @@ ul.menu-list li a:hover {
   background-color: #0a1a72;
   color: #fff;
 }
+.copy-mark {
+  font-size: 22px;
+  vertical-align: middle;
+}
 .foot-links {
   margin-top: 15px;
   padding: 0;
@@ -1548,6 +1665,7 @@ ul.menu-list li a:hover {
   border-right: 2px solid #fff;
   line-height: 14px;
   list-style-type: none;
+  font-weight: 300;
 }
 .foot-links li a {
   color: #fff;
@@ -1594,14 +1712,10 @@ ul.menu-list li a:hover {
   display: block;
   padding: 0;
 }
-.footers .part-logo {
-  margin-top: -20px;
-  margin-bottom: 20px;
-}
 .footers .part-logo ul li {
   padding: 0px 8px;
-  margin-right: 12px;
-  margin-bottom: 25px;
+  margin-right: 14px;
+  margin-bottom: 5px;
   display: inline-block;
 }
 .footers .part-logo ul li a {
@@ -1612,18 +1726,22 @@ ul.menu-list li a:hover {
 }
 .footers .part-logo ul li:last-child {
   margin-right: 0;
+  padding-right: 0;
 }
 .footers .part-logo ul li figcaption {
   margin-top: 15px;
 }
 .footers .sponsers > p {
-  margin: 50px 0;
+  margin: 30px 0 10px;
 }
 .footers .social-icon ul {
   list-style: none;
   display: block;
-  margin-right: 16px;
+  margin-right: 10px;
   padding: 0;
+}
+.footers .mrgb {
+  margin-bottom: 22px;
 }
 .footers .social-icon ul li {
   display: inline-block;
@@ -1631,7 +1749,7 @@ ul.menu-list li a:hover {
   padding: 0px 2px;
 }
 .footers .social-icon ul li i {
-  background: #fff;
+  background: #a2a0a0;
   -webkit-border-radius: 100%;
   -webkit-background-clip: padding-box;
   -moz-border-radius: 100%;
@@ -1655,10 +1773,12 @@ ul.menu-list li a:hover {
   color: #5a5a5a;
   text-transform: uppercase;
   margin-left: 18px;
+  font-weight: 700;
   font-size: 13px;
 }
 .footers .partners {
   margin-top: 38px;
+  margin-bottom: 40px;
 }
 .footers .newsleter {
   margin-top: 33px;
@@ -1666,6 +1786,7 @@ ul.menu-list li a:hover {
   color: #5a5a5a;
   float: right;
   font-size: 13px;
+  font-weight: 700;
 }
 .footers .input-text input {
   -webkit-border-radius: 0;
@@ -1846,15 +1967,16 @@ ul.menu-list li a:hover {
 }
 .home-content.text-center p {
   color: #616161;
-  font-size: 17px;
+  font-size: 16px;
 }
 .home-content.text-center .bound {
   width: 62%;
   margin: 0 auto;
+  font-size: 17px;
   text-align: left;
 }
 .home-content.text-center .weight {
-  font-size: 23px;
+  font-size: 22px;
   font-weight: 600;
 }
 .home-content.text-center h5 {
@@ -1872,6 +1994,7 @@ ul.menu-list li a:hover {
   display: inline-block;
   color: #fc7700;
   font-size: 18px;
+  font-weight: 600;
   text-align: center;
   text-transform: uppercase;
 }
@@ -3147,7 +3270,7 @@ img.balckbak {
   color: #FA9F4A;
 }
 .fb-set {
-  margin-top: 40px;
+  margin-top: 22%;
   border: 1px solid #e5e5e5;
   padding: 5px;
   border-radius: 4px;
@@ -3749,13 +3872,89 @@ img.balckbak {
   position: relative !important;
 }
 .comming {
-  font-size: 25px;
+  font-size: 5vw;
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-80%, -50%);
-  -moz-transform: translate(-80%, -50%);
-  -ms-transform: translate(-80%, -50%);
-  -o-transform: translate(-80%, -50%);
-  transform: translate(-80%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.terms {
+  margin: 5% 0;
+}
+.terms .terms-head {
+  height: 64px;
+  background: url('../img/patch.jpg');
+  text-align: center;
+}
+.terms .terms-head .head {
+  width: 50%;
+  padding: 13px 0;
+  margin: 0;
+  display: inline-block;
+  color: #fc7700;
+  background-color: #fff;
+  font-size: 31px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+.terms .term-body {
+  color: #5a5a5a;
+}
+.terms .term-body p {
+  font-size: 15px;
+}
+.terms .term-body .blue {
+  margin-top: 2%;
+  color: #0a1a72;
+  text-transform: uppercase;
+}
+.terms .term-body .term-fz {
+  font-weight: 600;
+}
+.terms .term-body ol {
+  padding-left: 20px;
+}
+.terms .term-body ol li {
+  font-size: 15px;
+  margin: 25px 0;
+}
+.terms .term-body ul {
+  padding-left: 20px;
+}
+.terms .term-body ul li {
+  font-size: 15px;
+  margin: 25px 0;
+}
+.terms .term-body .rule2 {
+  margin-top: 5%;
+}
+.terms .term-body .rule2 .mgup {
+  margin-top: 4%;
+}
+.terms .term-body .rule2 .break {
+  margin-top: 2%;
+}
+.terms .term-body .rule2 .nomg li {
+  margin: 7px 0;
+}
+.terms .term-body .rule2 .no-list {
+  padding: 0;
+}
+.terms .term-body .rule2 .no-list li {
+  list-style-type: none;
+}
+.terms .term-body .rule2 .no-list li span {
+  margin-right: 5px;
+}
+.terms .term-body .rule2 .last {
+  margin: 4% 0;
+}
+.terms .term-body .rules {
+  width: 90%;
+  margin: 0 auto;
 }

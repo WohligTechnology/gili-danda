@@ -41,6 +41,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "./views/template.html",
             controller: 'CommingsoonCtrl'
         })
+			.state('termscondition', {
+            url: "/termscondition",
+            templateUrl: "./views/template.html",
+            controller: 'TermsconditionCtrl'
+        })
         .state('score', {
             url: "/score",
             templateUrl: "./views/template.html",

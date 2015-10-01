@@ -74,6 +74,10 @@
 		a {
 			cursor: pointer;
 		}
+		a:focus {
+			outline: none;
+			text-decoration: none;
+		}
 	}
 	
 	// checkbox class
@@ -487,11 +491,11 @@
 		}
 		.over-img {
 			position: absolute;
-			top: 50%;
+			top: 60%;
 			left: 50%;
 			text-align: center;
 			.transform(translate(-50%,
-			-50%));
+			-50%)); 
 			.mid-det h1 {
 				font-size: 5vw;
 				color: @whit-color;
@@ -511,9 +515,9 @@
 				margin: 0 auto;
 				cursor: pointer;
 			}
-//			.mg {
-//				margin: 50px auto; 
-//			}
+			.mg {
+				margin: 50px auto;
+			}
 		}
 	}
 	
@@ -537,6 +541,7 @@
 			border-right: 2px solid #fff;
 			line-height: 14px;
 			list-style-type: none;
+			font-weight: 300;
 			a {
 				color: #fff;
 			}
@@ -562,7 +567,7 @@
 			display: block;
 			font-family: @font-titillium;
 			text-transform: uppercase;
-			font-weight: @font-bold;
+			font-weight: 700;
 			color: @footerMenu-color;
 			padding: 0;
 			margin: 0;
@@ -586,13 +591,9 @@
 			display: block;
 			padding: 0;
 		}
-		.part-logo {
-			margin-top: -20px;
-			margin-bottom: 20px;
-		}
 		.part-logo ul li {
 			padding: 0px 8px;
-			margin-right: 12px;
+			margin-right: 14px;
 			margin-bottom: 25px;
 			display: inline-block;
 		}
@@ -604,12 +605,13 @@
 		}
 		.part-logo ul li:last-child {
 			margin-right: 0;
+			padding-right: 0;
 		}
 		.part-logo ul li figcaption {
 			margin-top: 15px;
 		}
 		.sponsers > p {
-			margin: 50px 0 20px;
+			margin: 30px 0 10px;
 		}
 		//		.social-icon {
 		//			margin-top: 38px;
@@ -619,15 +621,18 @@
 			list-style: none;
 			display: block;
 			//    float: right;
-			margin-right: 16px;
+			margin-right: 10px;
 			padding: 0;
+		}
+		.mrgb {
+			margin-bottom: 22px;
 		}
 		.social-icon ul li {
 			display: inline-block;
 			font-size: 22px;
 			padding: 0px 2px;
 			i {
-				background: #fff;
+				background: @filterGrey-color;
 				.border-radius(100%);
 				height: 33px;
 				width: 32px;
@@ -644,10 +649,12 @@
 			color: @footerMenu-color;
 			text-transform: uppercase;
 			margin-left: 18px;
+			font-weight: 700;
 			font-size: @text-font;
 		}
 		.partners {
 			margin-top: 38px;
+			margin-bottom: 40px;
 		}
 		.newsleter {
 			margin-top: 33px;
@@ -655,6 +662,7 @@
 			color: @footerMenu-color;
 			float: right;
 			font-size: @text-font;
+			font-weight: 700;
 		}
 		.input-text {
 			input {
@@ -800,15 +808,16 @@
 		margin-top: 80px;
 		p {
 			color: #616161;
-			font-size: 17px;
+			font-size: 16px;
 		}
 		.bound {
 			width: 62%;
 			margin: 0 auto;
+			font-size: 17px;
 			text-align: left;
 		}
 		.weight {
-			font-size: 23px;
+			font-size: 22px;
 			font-weight: 600;
 		}
 		h5 {
@@ -825,6 +834,7 @@
 				display: inline-block;
 				color: #fc7700;
 				font-size: 18px;
+				font-weight: 600;
 				text-align: center;
 				text-transform: uppercase;
 				&:hover {
@@ -2110,7 +2120,7 @@
 	}
 	
 	.fb-set {
-		margin-top: 40px;
+		margin-top: 22%;
 		border: 1px solid #e5e5e5;
 		padding: 5px;
 		border-radius: 4px;
@@ -2753,12 +2763,12 @@
 	}
 	
 	.comming {
-		font-size: 5vw; 
+		font-size: 5vw;
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		.transform(translate(-50%,
-		-50%)); 
+		-50%));
 	}
 	
 	//terms condition

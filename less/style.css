@@ -303,6 +303,12 @@
   .sports .vertical .verti-right .right_button {
     font-size: 9px !important;
   }
+  div.footers div.part-logo {
+    text-align: center;
+  }
+  .footers .part-logo ul li {
+    margin-bottom: 25px;
+  }
   .mrgb {
     margin-bottom: 10px !important;
   }
@@ -681,6 +687,9 @@
   .footers .part-logo ul {
     text-align: center;
   }
+  .footers .part-logo ul li {
+    margin-bottom: 25px;
+  }
   .cimg {
     margin: 89px auto 0px auto !important;
   }
@@ -714,6 +723,12 @@
   .navbar-default .navbar-form {
     border-color: #e7e7e7;
     margin-top: 15px;
+  }
+  div.footers div.part-logo {
+    text-align: center;
+  }
+  .footers .part-logo ul li {
+    margin-bottom: 25px;
   }
   .map {
     padding-bottom: 80px !important;
@@ -822,6 +837,9 @@
 @media only screen and (min-width: 949px) and (max-width: 1200px) {
   .slider {
     min-height: 400px !important;
+  }
+  div.footers div.part-logo {
+    text-align: center;
   }
   .sports .btn-sports {
     font-size: 10px !important;
@@ -1727,6 +1745,7 @@ ul.menu-list li a:hover {
 .footers .part-logo ul li:last-child {
   margin-right: 0;
   padding-right: 0;
+  padding-left: 5px;
 }
 .footers .part-logo ul li figcaption {
   margin-top: 15px;

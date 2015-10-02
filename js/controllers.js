@@ -337,7 +337,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }, {
                 "icon": "img/bluemenu/aqua.png",
                 "icon2": "img/bluemenu/aquaticsor.png",
-                "game": "aquatics"
+                "game": "swim"
             }, {
                 "icon": "img/bluemenu/basketball.png",
                 "icon2": "img/bluemenu/basketballor.png",
@@ -360,7 +360,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             game.active = true;
             $scope.tab = game.game;
         };
-        $scope.makeactive($scope.games[6]);
+//        $scope.makeactive($scope.games[6]); 
 
     })
 
@@ -755,7 +755,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 "icon": "img/bluemenu/aqua.png",
                 "icon2": "img/bluemenu/aquaticsor.png",
                 "url": "aquatic",
-                "game": "aquatics"
+                "game": "swimming"
         }, {
                 "icon": "img/bluemenu/basketball.png",
                 "icon2": "img/bluemenu/basketballor.png",
@@ -785,7 +785,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         game.active = true;
         $scope.tab = game.game;
     };
-    $scope.makeactive($scope.games[6]);
+//    $scope.makeactive($scope.games[6]);
 })
 
 .controller('ScoreCtrl', function ($scope, TemplateService, NavigationService) {
@@ -818,7 +818,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, {
             "icon": "img/bluemenu/aqua.png",
             "icon2": "img/bluemenu/aquaticsor.png",
-            "game": "aquatics"
+            "game": "swimming"
         }, {
             "icon": "img/bluemenu/basketball.png",
             "icon2": "img/bluemenu/basketballor.png",
@@ -841,7 +841,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         game.active = true;
         $scope.tab = game.game;
     };
-    $scope.makeactive($scope.games[6]);
+//    $scope.makeactive($scope.games[6]);
 
 
 })
@@ -880,7 +880,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }, {
                 "icon": "img/orangemenu/aquash.png",
                 "icon2": "img/orangemenu/aquashbl.png",
-                "game": "aquatics"
+                "game": "swimming"
             }, {
                 "icon": "img/orangemenu/basketball.png",
                 "icon2": "img/orangemenu/basketballbl.png",

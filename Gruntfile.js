@@ -259,7 +259,7 @@ module.exports = function (grunt) {
       // includes files within path and its sub-directories
                     {
                         expand: false,
-                        src: ['./w/w.min.js'],
+                        src: ['./w/w.min.js','./w/w.min.css'],
                         dest: './appengine/',
                         filter: 'isFile'
                     }
@@ -317,5 +317,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.registerTask('default', ['less:development', 'concat', 'watch']);
     grunt.registerTask('production', ['copy', 'htmlmin', 'less:production', 'ngtemplates', 'cssmin', 'concat', 'uglify', 'compress:css', 'compress:js', 'compress:indexhtml', 'compress:zip']);
-    grunt.registerTask('appengine', ['copy:appengine', 'htmlmin:appengine', 'less:appengine', 'ngtemplates', 'concat', 'uglify', 'copy:jsappengine']);
+    grunt.registerTask('appengine', ['copy:appengine', 'htmlmin:appengine', 'less:production', 'ngtemplates',"cssmin", 'concat', 'uglify', 'copy:jsappengine']);
 };

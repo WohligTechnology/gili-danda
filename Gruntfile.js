@@ -57,6 +57,7 @@ module.exports = function (grunt) {
                     './js/jquery.flexslider.js',
                     './bower_components/angular/angular.js',
                     './js/angular-flexslider.js',
+                    './bower_components/fancyBox/source/jquery.fancybox.js',
                     './bower_components/bootstrap/dist/js/bootstrap.min.js',
                     './bower_components/angular-sanitize/angular-sanitize.min.js',
                     './bower_components/ui-router/release/angular-ui-router.min.js',

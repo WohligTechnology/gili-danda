@@ -96,6 +96,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })
+    .controller('SchoolregsitrationCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+        $scope.template = TemplateService.changecontent("schoolregsitration");
+        $scope.menutitle = NavigationService.makeactive("Schoolregsitration");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+
+
+    })
     .controller('HandballCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("handball");
         $scope.menutitle = NavigationService.makeactive("Handball");
@@ -180,9 +189,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
 
     })
-    .controller('SchoolregistrationCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog, $filter) {
-        $scope.template = TemplateService.changecontent("schoolregistration");
-        $scope.menutitle = NavigationService.makeactive("Schoolregistration");
+    .controller('EnquirenowCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog, $filter) {
+        $scope.template = TemplateService.changecontent("enquirenow");
+        $scope.menutitle = NavigationService.makeactive("Enquirenow");
         $scope.showForm = false;
         $scope.openForm = function () {
             $scope.showForm = true;

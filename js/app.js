@@ -16,6 +16,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "./views/template.html",
             controller: 'HomeCtrl'
         })
+        .state('schoolregsitration', {
+            url: "/schoolregsitration",
+            templateUrl: "./views/template.html",
+            controller: 'SchoolregsitrationCtrl'
+        })
         .state('profile', {
             url: "/profile",
             templateUrl: "./views/template.html",
@@ -111,10 +116,10 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "./views/template.html",
             controller: 'SchoolprofileCtrl'
         })
-        .state('schoolregistration', {
-            url: "/schoolregistration",
+        .state('enquirenow', {
+            url: "/enquirenow",
             templateUrl: "./views/template.html",
-            controller: 'SchoolregistrationCtrl'
+            controller: 'EnquirenowCtrl'
         })
         .state('contact', {
             url: "/contact",

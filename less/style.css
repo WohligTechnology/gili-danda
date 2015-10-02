@@ -3615,8 +3615,8 @@ img.balckbak {
 }
 .vertical .verti-right {
   position: absolute;
-  right: -270px;
-  top: 400px;
+  right: -174px;
+  top: 250px;
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
@@ -3624,11 +3624,11 @@ img.balckbak {
   transform: rotate(-90deg);
 }
 .vertical .verti-right a.pdn {
-  width: 16%;
+  width: 25%;
   padding: 7px 18px;
 }
 .vertical .verti-right .right_button {
-  width: 27%;
+  width: 45%;
   padding: 7px;
   margin-right: 20px;
   display: inline-block;

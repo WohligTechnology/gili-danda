@@ -24,6 +24,16 @@ module.exports = function (grunt) {
                 files: {
                     './w/w.min.css': './less/style.less'
                 }
+            },
+            appengine: {
+                options: {
+                    sourceMap: false,
+                    compress: true,
+
+                },
+                files: {
+                    './appengine/p/w.min.css': './less/style.less'
+                }
             }
         },
         cssmin: {
@@ -226,6 +236,35 @@ module.exports = function (grunt) {
 
     ],
             },
+            appengine: {
+                files: [
+
+      // includes files within path and its sub-directories
+                    {
+                        expand: true,
+                        src: ['img/**'],
+                        dest: 'appengine/'
+                    },
+                    {
+                        expand: true,
+                        src: ['fonts/**'],
+                        dest: 'appengine/'
+						 },
+
+    ],
+            },
+            jsappengine: {
+                files: [
+
+      // includes files within path and its sub-directories
+                    {
+                        expand: true,
+                        src: ['w/w.min.js'],
+                        dest: 'appengine/p/'
+                    }
+
+    ],
+            },
         },
         htmlmin: { // Task
             dist: { // Target
@@ -235,6 +274,15 @@ module.exports = function (grunt) {
                 },
                 files: { // Dictionary of files
                     './w/index.html': './indexproduction.html',
+                }
+            },
+            appengine: { // Target
+                options: { // Target options
+                    removeComments: true,
+                    collapseWhitepace: true
+                },
+                files: { // Dictionary of files
+                    './appengine/index.php': './indexappengine.html',
                 }
             },
         },
@@ -266,6 +314,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.registerTask('default', ['less:development','concat','watch']);
-    grunt.registerTask('production', ['copy', 'htmlmin', 'less:production', 'ngtemplates','cssmin', 'concat', 'uglify', 'compress:css', 'compress:js','compress:indexhtml', 'compress:zip']);
+    grunt.registerTask('default', ['less:development', 'concat', 'watch']);
+    grunt.registerTask('production', ['copy', 'htmlmin', 'less:production', 'ngtemplates', 'cssmin', 'concat', 'uglify', 'compress:css', 'compress:js', 'compress:indexhtml', 'compress:zip']);
+    grunt.registerTask('appengine', ['copy:appengine', 'htmlmin:appengine', 'less:appengine', 'ngtemplates', 'concat', 'uglify', 'copy:jsappengine']);
 };

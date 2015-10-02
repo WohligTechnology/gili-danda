@@ -2,6 +2,7 @@ bower_components/
 node_modules/
 w/
 production/
+appengine/
 
 
 # Compiled source #

@@ -32,7 +32,7 @@ module.exports = function (grunt) {
 
                 },
                 files: {
-                    './appengine/p/w.min.css': './less/style.less'
+                    './appengine/w/w.min.css': './less/style.less'
                 }
             }
         },
@@ -260,7 +260,8 @@ module.exports = function (grunt) {
                     {
                         expand: false,
                         src: ['./w/w.min.js'],
-                        dest: './appengine/p/'
+                        dest: './appengine/',
+                        filter: 'isFile'
                     }
 
     ],

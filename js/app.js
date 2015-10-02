@@ -16,10 +16,10 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "./views/template.html",
             controller: 'HomeCtrl'
         })
-        .state('schoolregsitration', {
-            url: "/schoolregsitration",
+        .state('schoolregistration', {
+            url: "/schoolregistration",
             templateUrl: "./views/template.html",
-            controller: 'SchoolregsitrationCtrl'
+            controller: 'SchoolRegistrationCtrl'
         })
         .state('profile', {
             url: "/profile",
@@ -96,10 +96,10 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "./views/template.html",
             controller: 'VollyballCtrl'
         })
-        .state('aquatic', {
-            url: "/aquatic",
+        .state('swimming', {
+            url: "/swimming",
             templateUrl: "./views/template.html",
-            controller: 'AquaticCtrl'
+            controller: 'SwimmingCtrl'
         })
         .state('tennis', {
             url: "/tennis",

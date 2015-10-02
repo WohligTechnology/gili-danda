@@ -258,9 +258,9 @@ module.exports = function (grunt) {
 
       // includes files within path and its sub-directories
                     {
-                        expand: true,
-                        src: ['w/w.min.js'],
-                        dest: 'appengine/p/'
+                        expand: false,
+                        src: ['./w/w.min.js'],
+                        dest: './appengine/p/'
                     }
 
     ],

@@ -9,9 +9,9 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
-- url: /(.+\.(gif|png|jpg|css|mp3|js|html|json|eot|woff|woff2|ttf|svg|otf|xml|txt))$
+- url: /(.+\.(gif|png|jpg|css|mp3|js|html|json|eot|woff|woff2|ttf|svg|otf|xml|txt|pdf|zip|ico))$
   static_files: \1
-  upload: .+\.(gif|png|jpg|css|mp3|js|html|json|eot|woff|woff2|ttf|svg|otf|xml|txt)$
+  upload: .+\.(gif|png|jpg|css|mp3|js|html|json|eot|woff|woff2|ttf|svg|otf|xml|txt|pdf|zip|ico)$
   application_readable: true  
   
 - url: /.*

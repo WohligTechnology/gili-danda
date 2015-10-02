@@ -54,10 +54,9 @@ module.exports = function (grunt) {
             dist: {
                 src: [
                     './bower_components/jquery/dist/jquery.js',
-                    './bower_components/flexslider/jquery.flexslider-min.js',
+                    './js/jquery.flexslider.js',
                     './bower_components/angular/angular.js',
-                    './bower_components/angular-flexslider/angular-flexslider.js',
-                    './bower_components/fancyBox/source/jquery.fancybox.js',
+                    './js/angular-flexslider.js',
                     './bower_components/bootstrap/dist/js/bootstrap.min.js',
                     './bower_components/angular-sanitize/angular-sanitize.min.js',
                     './bower_components/ui-router/release/angular-ui-router.min.js',
@@ -331,4 +330,3 @@ module.exports = function (grunt) {
     grunt.registerTask('production', ['copy', 'htmlmin', 'less:production', 'ngtemplates', 'cssmin', 'concat', 'uglify', 'compress:css', 'compress:js', 'compress:indexhtml', 'compress:zip']);
     grunt.registerTask('appengine', ['copy:appengine', 'htmlmin:appengine', 'less:production', 'ngtemplates',"cssmin", 'concat', 'uglify', 'copy:jsappengine','copy:cssappengine']);
 };
-

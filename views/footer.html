@@ -17,19 +17,25 @@
 					</div>
 				</div>
 				<div class="col-md-6">
-					<div class="row">
+					<div class="row" ng-controller="footerCtrl">
 						<div class="col-md-4">
 							<div class="newsleter">
 								<p>NEWSLETTER SIGNUP</p>
 							</div>
 						</div>
 						<div class="col-md-8 padzer">
-							<div class="input-text">
-								<input type="text" class="form-control emailclass" id="" placeholder="Enter Email Address">
-							</div>
-							<div class="button-text">
-								<button type="submit" class="btn btn-default newslettersubmit">GO!</button>
-							</div>
+						    
+						    <span class="newslettershow" ng-hide="newsletter.show">
+							    <p>Thank you for subscribing to our newsletter.</p>
+							</span>
+							<span class="newslettershow" ng-show="newsletter.show">
+							    <div class="input-text">
+							        <input type="text" ng-model="newsletter.email" class="form-control emailclass" id="" placeholder="Enter Email Address">
+							    </div>
+							    <div class="button-text">
+							        <button ng-click="savenewsletter(newsletter.email);" class="btn btn-default newslettersubmit">GO!</button>
+							    </div>
+							</span>
 						</div>
 					</div>
 				</div>

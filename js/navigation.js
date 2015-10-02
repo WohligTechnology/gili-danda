@@ -56,6 +56,9 @@ var navigationservice = angular.module('navigationservice', [])
         getnav: function() {
             return navigation;
         },
+        savenewsletter: function(email,callback) {
+            return $http.get("http://wohlig.co.in/sfabackend/index.php/json/getnewsletter?email="+email).success(callback);
+        },
         makeactive: function(menuname) {
             for (var i = 0; i < navigation.length; i++) {
                 if (navigation[i].name == menuname) {

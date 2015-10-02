@@ -360,7 +360,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             game.active = true;
             $scope.tab = game.game;
         };
-//        $scope.makeactive($scope.games[6]); 
+        //        $scope.makeactive($scope.games[6]); 
 
     })
 
@@ -785,7 +785,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         game.active = true;
         $scope.tab = game.game;
     };
-//    $scope.makeactive($scope.games[6]);
+    //    $scope.makeactive($scope.games[6]);
 })
 
 .controller('ScoreCtrl', function ($scope, TemplateService, NavigationService) {
@@ -841,7 +841,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         game.active = true;
         $scope.tab = game.game;
     };
-//    $scope.makeactive($scope.games[6]);
+    //    $scope.makeactive($scope.games[6]);
 
 
 })
@@ -915,6 +915,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     })
     .controller('headerctrl', function ($scope, TemplateService) {
         $scope.template = TemplateService;
+    })
+    .controller('footerCtrl', function ($scope, TemplateService,NavigationService) {
+    
+        $scope.newsletter={show:true};
+        
+        function closeNewsletter () {
+            $scope.newsletter.show=false;
+        }
+    
+        $scope.savenewsletter=function(email)
+        {
+            console.log("Email");
+            NavigationService.savenewsletter(email,closeNewsletter);
+        }
     })
 
 ;

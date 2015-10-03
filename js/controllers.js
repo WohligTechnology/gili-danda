@@ -192,10 +192,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     .controller('EnquirenowCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog, $filter) {
         $scope.template = TemplateService.changecontent("enquirenow");
         $scope.menutitle = NavigationService.makeactive("Enquirenow");
-//        $scope.showForm = false;
-//        $scope.openForm = function () {
-//            $scope.showForm = true;
-//        };
+        //        $scope.showForm = false;
+        //        $scope.openForm = function () {
+        //            $scope.showForm = true;
+        //        };
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         //		$scope.viewform = false;

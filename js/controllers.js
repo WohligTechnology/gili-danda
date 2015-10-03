@@ -114,9 +114,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })
-    .controller('VollyballCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
-        $scope.template = TemplateService.changecontent("vollyball");
-        $scope.menutitle = NavigationService.makeactive("Vollyball");
+    .controller('VolleyballCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+        $scope.template = TemplateService.changecontent("volleyball");
+        $scope.menutitle = NavigationService.makeactive("Volleyball"); 
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
@@ -141,9 +141,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     })
-    .controller('BatmintonCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
-        $scope.template = TemplateService.changecontent("batminton");
-        $scope.menutitle = NavigationService.makeactive("batminton");
+    .controller('BadmintonCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+        $scope.template = TemplateService.changecontent("badminton");
+        $scope.menutitle = NavigationService.makeactive("badminton");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
@@ -175,9 +175,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
 
     })
-    .controller('CommingsoonCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
-        $scope.template = TemplateService.changecontent("commingsoon");
-        $scope.menutitle = NavigationService.makeactive("Commingsoon");
+    .controller('ComingsoonCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+        $scope.template = TemplateService.changecontent("comingsoon");
+        $scope.menutitle = NavigationService.makeactive("Comingsoon");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
@@ -328,41 +328,48 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.games = // JavaScript Document
             [{
-                "icon": "img/bluemenu/tabletennis.png",
-                "icon2": "img/bluemenu/tabletennisor.png",
-                "url": "tabletennis",
-                "game": "table tennis"
+                    "icon": "img/bluemenu/tabletennis.png",
+                    "icon2": "img/bluemenu/tabletennisor.png",
+                    "url": "tabletennis",
+                    "game": "table tennis"
             }, {
-                "icon": "img/bluemenu/tennis.png",
-                "icon2": "img/bluemenu/tennisor.png",
-                "url": "tennis",
-                "game": "tennis"
+                    "icon": "img/bluemenu/tennis.png",
+                    "icon2": "img/bluemenu/tennisor.png",
+                    "url": "tennis",
+                    "game": "tennis"
             }, {
-                "icon": "img/bluemenu/batminton.png",
-                "icon2": "img/bluemenu/batmintonor.png",
-                "url": "badminton",
-                "game": "badminton"
+                    "icon": "img/bluemenu/batminton.png",
+                    "icon2": "img/bluemenu/batmintonor.png",
+                    "url": "badminton",
+                    "game": "badminton"
             }, {
-                "icon": "img/bluemenu/squash.png",
-                "icon2": "img/bluemenu/sqaushor.png",
-                "url": "squash",
-                "game": "squash"
+                    "icon": "img/bluemenu/squash.png",
+                    "icon2": "img/bluemenu/sqaushor.png",
+                    "url": "squash",
+                    "game": "squash"
             }, {
-                "icon": "img/bluemenu/aqua.png",
-                "icon2": "img/bluemenu/aquaticsor.png",
-                "url": "swimming",
-                "game": "swimming"
+                    "icon": "img/bluemenu/aqua.png",
+                    "icon2": "img/bluemenu/aquaticsor.png",
+                    "url": "swimming",
+                    "game": "swimming"
             }, {
-                "icon": "img/bluemenu/basketball.png",
-                "icon2": "img/bluemenu/basketballor.png",
-                "url": "basketball",
-                "game": "basketball"
+                    "icon": "img/bluemenu/basketball.png",
+                    "icon2": "img/bluemenu/basketballor.png",
+                    "url": "basketball",
+                    "game": "basketball"
             }, {
-                "icon": "img/bluemenu/vollyball.png",
-                "icon2": "img/bluemenu/volleyballor.png",
-                "url": "vollyball",
-                "game": "volleyball"
-            }];
+                    "icon": "img/bluemenu/vollyball.png",
+                    "icon2": "img/bluemenu/volleyballor.png",
+                    "url": "volleyball",
+                    "game": "volleyball"
+            },
+                {
+                    "icon": "img/bluemenu/handball.png",
+                    "icon2": "img/bluemenu/handballor.png",
+                    "url": "handball",
+                    "game": "Handball" 
+             }
+            ];
 
         $scope.demo = 111;
         $scope.checkthis = function () {
@@ -760,7 +767,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, {
                 "icon": "img/bluemenu/batminton.png",
                 "icon2": "img/bluemenu/batmintonor.png",
-                "url": "batminton",
+                "url": "badminton",
                 "game": "badminton"
         }, {
                 "icon": "img/bluemenu/squash.png",
@@ -780,7 +787,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, {
                 "icon": "img/bluemenu/vollyball.png",
                 "icon2": "img/bluemenu/volleyballor.png",
-                "url": "vollyball ",
+                "url": "volleyball ",
                 "game": "volleyball"
         }, {
                 "icon": "img/bluemenu/handball.png",
@@ -848,7 +855,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, {
             "icon": "img/bluemenu/vollyball.png",
             "icon2": "img/bluemenu/volleyballor.png",
-            "url": "vollyball",
+            "url": "volleyball",
             "game": "volleyball"
         }];
 
@@ -917,7 +924,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }, {
                 "icon": "img/orangemenu/volleyball.png",
                 "icon2": "img/orangemenu/volleyballbl.png",
-                "url": "vollyball",
+                "url": "volleyball",
                 "game": "volleyball"
             }];
 

@@ -41,10 +41,10 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "./views/template.html",
             controller: 'ScheduleCtrl'
         })
-        .state('commingsoon', {
-            url: "/commingsoon",
+        .state('comingsoon', {
+            url: "/comingsoon",
             templateUrl: "./views/template.html",
-            controller: 'CommingsoonCtrl'
+            controller: 'ComingsoonCtrl'
         })
         .state('termscondition', {
             url: "/termscondition",
@@ -86,15 +86,15 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "./views/template.html",
             controller: 'TabletennisCtrl'
         })
-        .state('batminton', {
-            url: "/batminton",
+        .state('badminton', {
+            url: "/badminton",
             templateUrl: "./views/template.html",
-            controller: 'BatmintonCtrl'
+            controller: 'BadmintonCtrl'
         })
-        .state('vollyball', {
-            url: "/vollyball",
+        .state('volleyball', {
+            url: "/volleyball",
             templateUrl: "./views/template.html",
-            controller: 'VollyballCtrl'
+            controller: 'VolleyballCtrl'
         })
         .state('swimming', {
             url: "/swimming",

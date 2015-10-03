@@ -230,9 +230,11 @@
 	    margin-bottom: 25px;
 	}
 	
-	ul.menu-list > li > a > span {
+	ul.menu-list > li > a > span.fz {
 	    margin-left: 6px;
-	    font-size: 10px;
+	    font-size: 11px;
+        display: block;
+        text-align: center;
 	}
 	
 	ul.menu-list li {
@@ -595,7 +597,6 @@
 	        display: block;
 	        padding: 0;
 	    }
-    
 	    .part-logo ul li {
 	        padding: 0px 8px;
 	        margin-right: 6px;
@@ -2398,7 +2399,7 @@
 	}
 	
 	div.center {
-	    text-align: center ;
+	    text-align: center;
 	}
 	
 	.contact-set {
@@ -2792,6 +2793,7 @@
 	
 	.comming {
 	    font-size: 5vw;
+        color: @menu-color;
 	    position: absolute;
 	    top: 50%;
 	    left: 50%;
@@ -2922,7 +2924,16 @@
 	    text-align: center;
 	    color: #5a5a5a;
 	    font-size: 14px;
-        &:hover {
-         color: #5a5a5a;    
-        }
+	    &:hover {
+	        color: #5a5a5a;
+	    }
 	}
+.now{
+        position: relative;
+    top: 16px;
+    line-height: 1;
+}
+.now2{
+font-size: 12px;
+}
+    

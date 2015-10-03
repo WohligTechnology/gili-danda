@@ -780,7 +780,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, {
                 "icon": "img/bluemenu/vollyball.png",
                 "icon2": "img/bluemenu/volleyballor.png",
-                "url": "/vollyball",
+                "url": "vollyball",
                 "game": "volleyball"
         }, {
                 "icon": "img/bluemenu/handball.png",

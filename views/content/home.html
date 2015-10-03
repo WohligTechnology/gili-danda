@@ -3,55 +3,55 @@
 
 </div>
 <div class="slider">
-	<flex-slider class="carousel" flex-slide="slid in homeslide track by $index" animation="slide" animation-loop="true" item-margin="1" control-nav="false" flexvar="demo" after="changeslider();" start="changeslider();">
-		<li>
-			<a href="#/schoolregistration"><img ng-src="{{slid.image | serverimage}}" class="img-responsive"></a>
+    <flex-slider class="carousel" flex-slide="slid in homeslide track by $index" animation="slide" animation-loop="true" item-margin="1" control-nav="false" flexvar="demo" after="changeslider();" start="changeslider();">
+        <li>
+            <a href="#/schoolregistration"><img ng-src="{{slid.image | serverimage}}" class="img-responsive"></a>
 
-		</li>
-	</flex-slider>
+        </li>
+    </flex-slider>
 
-	<div class="slider-text" ng-repeat="element in homeslide track by $index">
-		<!--
+    <div class="slider-text" ng-repeat="element in homeslide track by $index">
+        <!--
                 <h3 class="text-uppercase">{{element.title}}</h3>
                 <p class="">{{element.description}}</p>
                 <p>{{element.startdate}}
 -->
-		<!--                <a ng-click="clickonslider(element);" ng-show="element.link">REGISTER NOW</a>-->
-	</div>
+        <!--                <a ng-click="clickonslider(element);" ng-show="element.link">REGISTER NOW</a>-->
+    </div>
 </div>
 <div class="curve2">
 
 </div>
 <div class="sub-menu">
-	<div class="container">
-		<div class="row">
-			<div class="sub-cat">
-				<ul>
-					<li ng-repeat="element in homeslide track by $index" ng-hover="iconclick(element);">
-						<a href="{{element.link}}">
-							<figure>
-								<img class="transition" ng-src="{{element.icon |serverimage}}" ng-style="{ 'width' : element.zoom*110 }" class="img-responsive">
-								<figcaption ng-style="{ 'font-size' : element.zoom*14 }">{{element.name}}</figcaption>
-							</figure>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div class="row">
-			<div class="home-content text-center">
-				<p class="weight">Only students of member schools can participate in any and all SFA events.</p>
-				<p class="bound">To become a member school, school authorities are requested to download the following registration form, fill out the required details and send the physical signed and stamped copies to the address mentioned. You can send in your participant entry forms along with the school registration forms.</p>
-				<div class="link-btn">
-					<!--					<a href="#/" class="enquire-btn">Enquire now</a>-->
-					<a href="img/form/merge_form.pdf" target="_blank" class="form-btn" download>Download School and Participant Registration Forms here</a>
-				</div>
-				<p>School and Participant Registrations will be open from 2nd October 2015 to 15th November 2015.</p>
-			</div>
+    <div class="container">
+        <div class="row">
+            <div class="sub-cat">
+                <ul>
+                    <li ng-repeat="element in homeslide track by $index" ng-hover="iconclick(element);">
+                        <a href="{{element.link}}">
+                            <figure>
+                                <img class="transition" ng-src="{{element.icon |serverimage}}" ng-style="{ 'width' : element.zoom*110 }" class="img-responsive">
+                                <figcaption ng-style="{ 'font-size' : element.zoom*14 }">{{element.name}}</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="home-content text-center">
+                <p class="weight">Only students of member schools can participate in any and all SFA events.</p>
+                <p class="bound">To become a member school, school authorities are requested to download the following registration form, fill out the required details and send the physical signed and stamped copies to the address mentioned. You can send in your participant entry forms along with the school registration forms.</p>
+                <div class="link-btn">
+                    <!--					<a href="#/" class="enquire-btn">Enquire now</a>-->
+                    <a href="img/form/merge_form.pdf" target="_blank" class="form-btn" download>Download School and Participant Registration Forms here</a>
+                </div>
+                <p>School and Participant Registrations will be open from 2nd October 2015 to 15th November 2015.</p>
+            </div>
 
-		</div>
-	</div>
-	<!--
+        </div>
+    </div>
+    <!--
 	<div class="patch">
 		<div class="container">
 			<div class="row">
@@ -67,81 +67,81 @@
 
 </div>
 <div class="middle-home">
-	<img src="img/home-middle.jpg" class="img-responsive" style="width:100%;">
-	<div class="container">
-		<div class=" over-img">
-			<div class="col-md-offset-0 col-md-12">
-				<div class="mid-det">
-					<h1>WHAT IS SFA?</h1>
-					<img src="img/hr.png" class="nowidht">
-					<p>A NEW WAY OF PLAYING INTER-SCHOOL SPORTS.</p>
-					<a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/H4BJlv_PjMs?autoplay=1"><img src="img/play.png" class="img-responsive nowidht mg"></a>
-					<p class="know">Know everything about SFA in under 5 minutes.</p>
-				</div>
-			</div>
-			<div class="col-md-2"></div>
+    <img src="img/home-middle.jpg" class="img-responsive" style="width:100%;">
+    <div class="container">
+        <div class=" over-img">
+            <div class="col-md-offset-0 col-md-12">
+                <div class="mid-det">
+                    <h1>WHAT IS SFA?</h1>
+                    <img src="img/hr.png" class="nowidht">
+                    <p>A NEW WAY OF PLAYING INTER-SCHOOL SPORTS.</p>
+                    <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/H4BJlv_PjMs?autoplay=1"><img src="img/play.png" class="img-responsive nowidht mg"></a>
+                    <p class="know">Know everything about SFA in under 5 minutes.</p>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
 
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
 <div class="curve5">
 
 </div>
 <div class="hm-mid">
-	<div class="col-md-4 col-sm-4">
-		<figure>
-			<img src="img/home/student.jpg" class="img-responsive">
+    <div class="col-md-4 col-sm-4">
+        <figure>
+            <img src="img/home/student.jpg" class="img-responsive">
 
-			<div class="bor">
-				<div class="fig">
+            <div class="bor">
+                <div class="fig">
 
-					<p>students</p>
+                    <p>students</p>
 
-				</div>
-			</div>
-		</figure>
-	</div>
-	<div class="col-md-4 col-sm-4">
-		<figure>
-			<img src="img/home/school.jpg" class="img-responsive">
-			<div class="bor">
-				<div class="fig">
+                </div>
+            </div>
+        </figure>
+    </div>
+    <div class="col-md-4 col-sm-4">
+        <figure>
+            <img src="img/home/school.jpg" class="img-responsive">
+            <div class="bor">
+                <div class="fig">
 
-					<p style="color:#384C8B;">schools</p>
+                    <p style="color:#384C8B;">schools</p>
 
-				</div>
-			</div>
-		</figure>
-	</div>
-	<div class="col-md-4 col-sm-4">
-		<figure>
-			<img src="img/home/venue.jpg" class="img-responsive">
-			<div class="bor">
-				<div class="fig">
+                </div>
+            </div>
+        </figure>
+    </div>
+    <div class="col-md-4 col-sm-4">
+        <figure>
+            <img src="img/home/venue.jpg" class="img-responsive">
+            <div class="bor">
+                <div class="fig">
 
-					<p style="color:#449C43;">venue</p>
+                    <p style="color:#449C43;">venue</p>
 
-				</div>
-			</div>
-		</figure>
-	</div>
-	<div class="curve6">
+                </div>
+            </div>
+        </figure>
+    </div>
+    <div class="curve6">
 
-	</div>
+    </div>
 
 </div>
 <div class="container">
-	<!--
+    <!--
  <div class="feed text-center">
         <h3>live feeds</h3>
     </div>
 -->
-	<div class="row social-set text-center">
-		<div class="col-md-4 col-sm-4 ">
-			<div class="fb social-set">
-				<i class="fa fa-facebook"></i>
-				<div class="fb-set">
-					<!--
+    <div class="row social-set text-center">
+        <div class="col-md-4 col-sm-4 ">
+            <div class="fb social-set">
+                <i class="fa fa-facebook"></i>
+                <div class="fb-set">
+                    <!--
                      <div class="fb-page" data-href="https://www.facebook.com/localbanya" data-width="200" data-height="360" data-hide-cover="false" data-show-facepile="false" data-show-posts="true">
                                 <div class="fb-xfbml-parse-ignore">
                                     <blockquote cite="https://www.facebook.com/localbanya"><a href="https://www.facebook.com/localbanya">Local Banya</a>
@@ -150,34 +150,34 @@
                             </div>
 -->
 
-					<div>
-						<div class="fb-page" data-href="https://www.facebook.com/sportsforallnow" data-width="360" data-height="355" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
-							<div class="fb-xfbml-parse-ignore">
-								<blockquote cite="https://www.facebook.com/sportsforallnow"><a href="https://www.facebook.com/sportsforallnow">SFA Now</a></blockquote>
-							</div>
-						</div>
+                    <div>
+                        <div class="fb-page" data-href="https://www.facebook.com/sportsforallnow" data-width="360" data-height="355" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
+                            <div class="fb-xfbml-parse-ignore">
+                                <blockquote cite="https://www.facebook.com/sportsforallnow"><a href="https://www.facebook.com/sportsforallnow">SFA Now</a></blockquote>
+                            </div>
+                        </div>
 
-						<div id="fb-root"></div>
-						<script>
-							(function (d, s, id) {
-								var js, fjs = d.getElementsByTagName(s)[0];
-								if (d.getElementById(id)) return;
-								js = d.createElement(s);
-								js.id = id;
-								js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1452795161694777";
-								fjs.parentNode.insertBefore(js, fjs);
-							}(document, 'script', 'facebook-jssdk'));
-						</script>
+                        <div id="fb-root"></div>
+                        <script>
+                            (function (d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0];
+                                if (d.getElementById(id)) return;
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1452795161694777";
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }(document, 'script', 'facebook-jssdk'));
+                        </script>
 
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4 col-sm-4 ">
-			<div class="twit social-set">
-				<i class="fa fa-twitter"></i>
-				<div class="fb-set">
-					<!--
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 ">
+            <div class="twit social-set">
+                <i class="fa fa-twitter"></i>
+                <div class="fb-set">
+                    <!--
                            <a class="twitter-timeline" href="https://twitter.com/LocalBanya" data-widget-id="594025626274648064">Tweets by @LocalBanya</a>
                             <script>
                                 ! function (d, s, id) {
@@ -192,34 +192,35 @@
                                 }(document, "script", "twitter-wjs");
                             </script>
 -->
-					<a class="twitter-timeline" href="https://twitter.com/sfanow" data-widget-id="641859487024869376">Tweets by @sfanow</a>
-					<script>
-						! function (d, s, id) {
-							var js, fjs = d.getElementsByTagName(s)[0],
-								p = /^http:/.test(d.location) ? 'http' : 'https';
-							if (!d.getElementById(id)) {
-								js = d.createElement(s);
-								js.id = id;
-								js.src = p + "://platform.twitter.com/widgets.js";
-								fjs.parentNode.insertBefore(js, fjs);
-							}
-						}(document, "script", "twitter-wjs");
-					</script>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4 col-sm-4">
-			<div class="insta social-set">
-				<i class="fa fa-instagram"></i>
-				<!--
+                    <a class="twitter-timeline" href="https://twitter.com/sfanow" data-widget-id="641859487024869376">Tweets by @sfanow</a>
+                    <script>
+                        ! function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0],
+                                p = /^http:/.test(d.location) ? 'http' : 'https';
+                            if (!d.getElementById(id)) {
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = p + "://platform.twitter.com/widgets.js";
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }
+                        }(document, "script", "twitter-wjs");
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="insta social-set">
+                <i class="fa fa-instagram"></i>
+                <!--
                 <div class="fb-set" style="height: 365px;overflow-y: scroll;">
                      <iframe src="//instansive.com/widgets/ba0ad9aad53001654f6fac3da0abca67b15d2329.html" id="instansive_ba0ad9aad5" name="instansive_ba0ad9aad5" scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;height: 100%;"></iframe>
                 </div>
 -->
-				<div class="fb-set" style="height: 365px;overflow-y: scroll;">
-					<iframe src="//instansive.com/widgets/3022c4c499b1da4b7e2ab1b0495294bf8d9cdfff.html" id="instansive_3022c4c499" name="instansive_3022c4c499" scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
-				</div>
-			</div>
-		</div>
-	</div>
+                <div class="fb-set" style="height: 365px;overflow-y: scroll;">
+                    <script src="//instansive.com/widget/js/instansive.js"></script>
+                    <iframe src="//instansive.com/widgets/554a6dce8ad5309ecff0f538b9995e1429320d57.html" id="instansive_554a6dce8a" name="instansive_554a6dce8a" scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

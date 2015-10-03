@@ -56,15 +56,15 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "./views/template.html",
             controller: 'ScoreCtrl'
         })
-        .state('schoollanding', {
-            url: "/schoollanding",
+        .state('school', {
+            url: "/school",
             templateUrl: "./views/template.html",
-            controller: 'SchoollandingCtrl'
+            controller: 'SchoolCtrl'
         }).
-    state('studentlanding', {
-            url: "/studentlanding",
+    state('student', {
+            url: "/student",
             templateUrl: "./views/template.html",
-            controller: 'StudentlandingCtrl'
+            controller: 'StudentCtrl'
         })
         .state('handball', {
             url: "/handball",

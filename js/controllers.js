@@ -279,7 +279,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getsponsors(getsponsorscallback);
 
 
-
     })
     .controller('VenueCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("venue");

@@ -319,3 +319,5 @@ firstapp.directive('fancybox', function ($compile, $parse) {
         }
     };
 });
+
+

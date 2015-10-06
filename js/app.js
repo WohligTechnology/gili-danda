@@ -91,6 +91,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "./views/template.html",
             controller: 'BadmintonCtrl'
         })
+        .state('faqs', {
+            url: "/faqs",
+            templateUrl: "./views/template.html",
+            controller: 'FaqsCtrl'
+        })
         .state('volleyball', {
             url: "/volleyball",
             templateUrl: "./views/template.html",

@@ -266,6 +266,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 
+    })  
+    .controller('FaqsCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+        $scope.template = TemplateService.changecontent("faqs");
+        $scope.menutitle = NavigationService.makeactive("Faqs");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+ $scope.oneAtATime = true;
+      $scope.status = {
+    isFirstOpen: true,
+    isFirstDisabled: false
+  };
+
     })
     .controller('PartnerCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("partner");

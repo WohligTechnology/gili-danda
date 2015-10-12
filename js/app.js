@@ -1,4 +1,6 @@
 var $test = {};
+
+
 var firstapp = angular.module('firstapp', [
     'ui.router',
     'angular-flexslider',

@@ -1,4 +1,4 @@
-<div class="margintps">
+<div class="margintps" ng-controller="footerCtrl">
     <div class="curve3">
 
     </div>
@@ -41,7 +41,68 @@
                 </div>
             </div>
             <div class="row ">
-                <div class="col-md-12">
+                <div class="event_venue col-md-6">
+
+                    <div class="col-md-4">
+                        <div class="venue">
+                            <!--                                    <p class="evnt">Venue Partner :</p>-->
+                            <a href="http://www.dypatil.edu/sportsacademy/" target="_blank" class="blk">
+                                <figure>
+                                    <img src="img/partner-logo/dypatil.jpg" alt="sport" class="img-responsive">
+                                                                                <figcaption class="text-center text-uppercase">Venue Partner</figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="event">
+                            <!--                                    <p class="evnt">Event Partner :</p>-->
+                            <a href="http://www.dnanetworks.com/" target="_blank" class="blk">
+                                <figure>
+                                    <img src="img/partner-logo/dnalogo.jpg" alt="sport" class="img-responsive">
+                                                                                <figcaption class="text-center text-uppercase">Event Partner</figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    </div>          
+                            <div class="col-md-4">
+                        <div class="event">
+                            <!--                                    <p class="evnt">Event Partner :</p>-->
+                            <a href="http://www.dnanetworks.com/" target="_blank" class="blk">
+                                <figure>
+                                    <img src="img/partner-logo/Videography.jpg" alt="sport" class="img-responsive" title="Videography Partner">
+                                                                                <figcaption class="text-center text-uppercase">Videography Partner</figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6 part-logo">
+                   <div  style="width:100%;overflow:hidden;margin-top:30px;">
+                       
+                        <ul mycircle style="width:12000px;">
+                            <li ng-repeat="slid in games track by $index">
+                                <a href="{{slid.href}}" target="_blank">
+                                    <figure> 
+                                       <div class="imgd">
+                                        <img ng-src="{{slid.img}}" alt="{{slid.img}}" title="{{slid.game}}" class="img-responsive">
+                                        <figcaption class="text-center text-uppercase">{{slid.game}}</figcaption>
+                                        </div>
+                                    </figure>
+                                </a>
+
+                            </li>
+                           
+                        </ul>
+                       
+                   </div>
+                    
+
+                </div>
+                
+                <!--
+                <div class="col-md-8">
                     <div class="partners">
                         <p>sports partners :</p>
                     </div>
@@ -99,7 +160,7 @@
                                 <a href="http://www.maharashtrabasketball.com/" target="_blank">
                                     <figure>
                                         <img src="img/partner-logo/7.png" alt="" class="img-responsive">
-                                        <!--										<span>Coming Soon</span>-->
+                      
                                         <figcaption class="text-center text-uppercase">basketball</figcaption>
                                     </figure>
                                 </a>
@@ -108,40 +169,17 @@
                                 <a href="http://www.swimmingfederation.in/" target="_blank">
                                     <figure>
                                         <img src="img/partner-logo/8.png" alt="" class="img-responsive">
-                                        <!--										<span>Coming Soon</span>-->
+                                      
                                         <figcaption class="text-center text-uppercase">swimming</figcaption>
                                     </figure>
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    <div class="event_venue">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="venue">
-<!--                                    <p class="evnt">Venue Partner :</p>-->
-                                    <a href="http://www.dypatil.edu/sportsacademy/" target="_blank" class="blk">
-                                        <figure>
-                                            <img src="img/partner-logo/dypatil.jpg" alt="sport" class="img-responsive">
-<!--                                            <figcaption class="text-center text-uppercase">dy patil</figcaption>-->
-                                        </figure>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="event">
-<!--                                    <p class="evnt">Event Partner :</p>-->
-                                    <a href="http://www.dnanetworks.com/" target="_blank" class="blk">
-                                        <figure>
-                                            <img src="img/partner-logo/dnalogo.jpg" alt="sport" class="img-responsive">
-<!--                                            <figcaption class="text-center text-uppercase">dna</figcaption>-->
-                                        </figure>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
+-->
+
             </div>
 
         </div>
@@ -159,10 +197,10 @@
                     <div class="row">
                         <div class="col-md-8">
                             <ul class="foot-links">
-                                <li><a href="#/">All rights reserved</a></li>
+                                <li><a href="">All rights reserved</a></li>
                                 <li><a href="#/termscondition">Terms and Conditions</a></li>
                                 <li><a href="#/termscondition">Disclaimer</a></li>
-                                <li><a href="#/"><span class="copy-mark">&copy;</span> Copyright SportForAll 2015</a></li>
+                                <li><a href=""><span class="copy-mark">&copy;</span> Copyright SportForAll 2015</a></li>
                             </ul>
                         </div>
                         <div class="col-md-4">
@@ -180,6 +218,7 @@
 							<h5 class="pull-right">copyright SPORTSFORALL 2015</h5>
 						</div>
 -->
+                       
                         </div>
                     </div>
                 </div>

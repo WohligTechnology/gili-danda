@@ -326,5 +326,61 @@ firstapp.directive('fancybox', function ($compile, $parse) {
         }
     };
 });
+var $abc = "";
+firstapp.directive('mycircle', function ($compile, $parse) {
+    return {
+        restrict: 'EA',
+        replace: false,
+        link: function ($scope, element, attrs) {
+            var $element = $(element);
+            var amount = 1;
+            var myinterval = {};
+            $element.ready(function () {
+                console.log("DEMO");
+
+                $element.hover(function () {
+                    clearInterval(myinterval);
+                }, function () {
+                    
+                    
+                    myinterval = setInterval(function () {
+                        var $element = $(element);
+                        var $elementli = $element.children("li");
+                        $abc = $elementli;
 
 
+
+                        amount++;
+                        var elewidth = $elementli.eq(0).width();
+                        console.log(elewidth);
+                        var num = amount % elewidth;
+                        if (num == 0 && amount > 0) {
+                            amount = -15;
+                            console.log(amount);
+                            var $firstelement = $elementli.eq(0);
+                            $element.append("<li>" + $firstelement.html() + "</li>");
+                            $firstelement.eq(0).remove();
+                        }
+
+
+
+                        for (var i = 0; i < $elementli.length; i++) {
+                            $elementli.eq(i).css("transform", "translateX(" + (-1 * amount) + "px)");
+                            $elementli.eq(i).css("-webkit-transform", "translateX(" + (-1 * amount) + "px)");
+                            $elementli.eq(i).css("-moz-transform", "translateX(" + (-1 * amount) + "px)");
+                            $elementli.eq(i).css("-ms-transform", "translateX(" + (-1 * amount) + "px)");
+                            $elementli.eq(i).css("-o-transform", "translateX(" + (-1 * amount) + "px)");
+                        }
+
+                    }, 10);
+                    
+                });
+                
+                $element.trigger("mouseleave");
+
+
+            });
+
+        }
+    };
+});

@@ -485,6 +485,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
     })
+    .controller('DrawCtrl', function ($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("draw");
+        $scope.menutitle = NavigationService.makeactive("Draw");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+
+
+    })
     .controller('StudentprofileCtrl', function ($scope, TemplateService, NavigationService, ngDialog) {
         $scope.template = TemplateService.changecontent("studentprofile");
         $scope.menutitle = NavigationService.makeactive("Studentprofile");

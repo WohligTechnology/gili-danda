@@ -22,6 +22,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
             url: "/schoolregistration",
             templateUrl: "./views/template.html",
             controller: 'SchoolRegistrationCtrl'
+        }) 
+        .state('draw', {
+            url: "/draw",
+            templateUrl: "./views/template.html",
+            controller: 'DrawCtrl'
         })
         .state('profile', {
             url: "/profile",
@@ -303,6 +308,19 @@ firstapp.directive('giveitmargin', function ($compile, $parse) {
         }
     };
 });
+
+   firstapp.directive( 'click', '.dropdown-menu li', function( $event ) {
+
+      var $target = $( $event.currentTarget );
+
+      $target.closest( '.btn-group' )
+         .find( '[data-bind="label"]' ).text( $target.text() )
+            .end()
+         .children( '.dropdown-toggle' ).dropdown( 'toggle' );
+
+      return false;
+
+   });
 firstapp.directive('fancybox', function ($compile, $parse) {
     return {
         restrict: 'EA',

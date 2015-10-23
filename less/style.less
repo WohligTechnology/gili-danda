@@ -3196,3 +3196,45 @@ font-size: 12px;
    right: 10px;
    top: 50%;
 }
+.draw {
+ margin: 90px auto;
+}
+
+.sfa-select {
+    position: relative;
+    select {
+        .appearance(none);
+        border: none;
+        text-transform: uppercase;
+        font-size: 15px;
+        padding: 5px 10px 0px 25px;
+        width: 100%;
+        background-color: transparent;
+        outline: 0;
+        color:@menu-color;
+        cursor: pointer;
+    }
+    &:after {
+        font: normal normal normal 14px/1 FontAwesome;
+        content: '\f0dd';
+        height: 38px;
+        width: 38px;
+        background-color: @button-color;
+        color: white;
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        text-align: center;
+        line-height: 24px;
+        font-size: 30px;
+        z-index: -1;
+    }
+    .only-border {
+        border: 2px solid @menu-color;
+        width: 100%;
+        position: absolute;
+        height: 38px;
+        top: -2px;
+        z-index: -1;
+    }
+}

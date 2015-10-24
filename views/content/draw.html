@@ -7,26 +7,26 @@
 -->
 </div>
 <div class="draw">
-<div class="container">
-    <div class="row">
-        
+    <div class="container">
+        <div class="row">
+
 
 
             <div class="col-md-3">
-                    <div class="sfa-select">
-                             <select>
-                                <option>select sport</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                            </select>
-                            <span class="only-border"></span>
-                    </div>
+                <div class="sfa-select">
+                    <select>
+                        <option>select sport</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    <span class="only-border"></span>
+                </div>
             </div>
             <div class="col-md-3">
                 <div class="sfa-select">
 
-                    <select  id="sel1">
+                    <select id="sel1">
                         <option>Select category</option>
                         <option>2</option>
                         <option>3</option>
@@ -38,7 +38,7 @@
             <div class="col-md-3">
                 <div class="sfa-select">
 
-                    <select  id="sel1">
+                    <select id="sel1">
                         <option>Select gender</option>
                         <option>2</option>
                         <option>3</option>
@@ -50,7 +50,7 @@
             <div class="col-md-3">
                 <div class="sfa-select">
 
-                    <select  id="sel1">
+                    <select id="sel1">
                         <option>Select Age Group</option>
                         <option>2</option>
                         <option>3</option>
@@ -62,8 +62,67 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="text-center ">
-                    <a href="#">Get Draw</a>
+                <div class="text-center margtp">
+                    <a href="#" class="get-drwa">Get Draw</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="margtp">
+
+
+                <div class="col-xs-3">
+                    <h4>Round - 01</h4>
+                </div>
+                <div class="col-xs-3">
+                    <h4>Round - 02</h4>
+                </div>
+                <div class="col-xs-3">
+                    <h4>Round - 03</h4>
+                </div>
+                <div class="col-xs-3">
+                    <h4>Round - 04</h4>
+                </div>
+            </div>
+        </div>
+        <div class="tree">
+
+            <div class="list-tree">
+                <div class="row">
+
+
+                    <div class="tree1">
+                        <div class="col-xs-3">
+                            <ul>
+                                <div class="min-100" ng-repeat="round in r1">
+                                    <div ng-repeat="r in round track by $index">
+                                        <li class="top-bx" ng-if="$index%2==0">
+                                            <h4>{{r.name}}</h4>
+                                            <p>{{r.school}}</p>
+                                        </li>
+                                        <li class="bottom-bx" ng-if="$index%2!=0">
+                                            <h4>{{r.name}}</h4>
+                                            <p>{{r.school}}</p>
+                                        </li>
+                                    </div>
+                                </div>
+                            </ul>
+
+                        </div>
+                        <div class="col-xs-3 ">
+                            <div class="min-100" ng-repeat="round in r2 track by $index">
+
+
+                                <ul>
+                                    <li class="left-bx">
+                                        <h4>{{round.name}}</h4>
+                                        <p>{{round.school}}</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

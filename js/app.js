@@ -370,11 +370,11 @@ firstapp.directive('mycircle', function ($compile, $parse) {
 
                         amount++;
                         var elewidth = $elementli.eq(0).width();
-                        console.log(elewidth);
+//                        console.log(elewidth);
                         var num = amount % elewidth;
                         if (num == 0 && amount > 0) {
                             amount = -15;
-                            console.log(amount);
+//                            console.log(amount);
                             var $firstelement = $elementli.eq(0);
                             $element.append("<li>" + $firstelement.html() + "</li>");
                             $firstelement.eq(0).remove();

@@ -1,0 +1,12 @@
+<div ng-repeat="round in r1">
+                                    <div class="min-100" ng-repeat="r in round track by $index">
+                                        <li class="top-bx" ng-if="$index%2==0">
+                                            <h4>{{r.name}}</h4>
+                                            <p>{{r.school}}</p>
+                                        </li>
+                                        <li class="bottom-bx" ng-if="$index%2!=0">
+                                            <h4>{{r.name}}</h4>
+                                            <p>{{r.school}}</p>
+                                        </li>
+                                    </div>
+                                </div>

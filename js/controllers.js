@@ -66,8 +66,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
 
     ga('send', 'pageview', {
-            'title': 'Home Page'
-        });
+        'title': 'Home Page'
+    });
 
 })
 
@@ -77,7 +77,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-   ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Profile Page'
         });
 
@@ -88,7 +88,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-   ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'School Page'
         });
 
@@ -99,7 +99,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-   ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Student Page'
         });
 
@@ -111,7 +111,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-   ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'SchoolRegistration Page'
         });
 
@@ -124,17 +124,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
 
 
-  ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Handball Page'
         });
     })
     .controller('VolleyballCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("volleyball");
-        $scope.menutitle = NavigationService.makeactive("Volleyball"); 
+        $scope.menutitle = NavigationService.makeactive("Volleyball");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-  ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Volleyball Page'
         });
 
@@ -145,7 +145,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-  ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Handball Page'
         });
 
@@ -157,7 +157,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
 
 
-  ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Basketball Page'
         });
     })
@@ -167,7 +167,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-  ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Handball Page'
         });
 
@@ -178,7 +178,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-  ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Tabletennis Page'
         });
 
@@ -189,7 +189,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-  ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Squash Page'
         });
 
@@ -199,7 +199,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Tennis");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-  ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Handball Page'
         });
     })
@@ -215,7 +215,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Termscondition");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-      ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Termsandcondition Page'
         });
 
@@ -270,7 +270,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         }
         ga('send', 'event', 'Enquiry', 'Submit');
-          ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Enquiry Page'
         });
 
@@ -281,7 +281,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-  ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Contact Page'
         });
 
@@ -292,7 +292,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-  ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'About Page'
         });
 
@@ -303,23 +303,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-  ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Handball Page'
         });
 
-    })  
+    })
     .controller('FaqsCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("faqs");
         $scope.menutitle = NavigationService.makeactive("Faqs");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
- $scope.oneAtATime = true;
-      $scope.status = {
-    isFirstOpen: true,
-    isFirstDisabled: false
-  };
-  ga('send', 'pageview', {
+        $scope.oneAtATime = true;
+        $scope.status = {
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
+        ga('send', 'pageview', {
             'title': 'Faqs Page'
         });
     })
@@ -334,7 +334,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
         NavigationService.getsponsors(getsponsorscallback);
 
-  ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Handball Page'
         });
     })
@@ -424,7 +424,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     "icon": "img/bluemenu/handball.png",
                     "icon2": "img/bluemenu/handballor.png",
                     "url": "handball",
-                    "game": "Handball" 
+                    "game": "Handball"
              }
             ];
 
@@ -441,10 +441,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.tab = game.game;
         };
         //        $scope.makeactive($scope.games[6]); 
-  ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Venue Page'
         });
-    
+
     })
 
 .controller('MediaCtrl', function ($scope, TemplateService, NavigationService) {
@@ -480,7 +480,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             name: "The game that Made a World Record"
 
         }];
-  ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Media Page'
         });
 
@@ -491,7 +491,65 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
+        $scope.r1 = // JavaScript Document
+            [{
+                "name": "Viraj Kale",
+                "school": "Dhirubhai Ambani International School"
 
+            }, {
+                "name": "Rizwan Mirza",
+                "school": "Bombay British School"
+
+            }, {
+                "name": "Viraj Kale",
+                "school": "Dhirubhai Ambani International School"
+
+            }, {
+                "name": "Rizwan Mirza",
+                "school": "Bombay British School"
+
+            }, {
+                "name": "Viraj Kale",
+                "school": "Dhirubhai Ambani International School"
+
+
+            }, {
+                "name": "Rizwan Mirza",
+                "school": "Bombay British School"
+
+
+            }, {
+                "name": "Viraj Kale",
+                "school": "Dhirubhai Ambani International School"
+
+            }, {
+                "name": "Rizwan Mirza",
+                "school": "Bombay British School"
+
+
+            }];
+
+        $scope.r1 = _.chunk($scope.r1, 2);
+        console.log($scope.r1);
+    
+        $scope.r2 = // JavaScript Document
+            [{
+                "name": "Viraj Kale",
+                "school": "Dhirubhai Ambani International School"
+
+            }, {
+                "name": "Rizwan Mirza",
+                "school": "Bombay British School"
+
+            }, {
+                "name": "Viraj Kale",
+                "school": "Dhirubhai Ambani International School"
+
+            }, {
+                "name": "Rizwan Mirza",
+                "school": "Bombay British School"
+
+            }];
 
     })
     .controller('StudentprofileCtrl', function ($scope, TemplateService, NavigationService, ngDialog) {
@@ -649,7 +707,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         };
         $scope.makeactive($scope.games[0]);
-      ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'StudentProfile Page'
         });
 
@@ -807,7 +865,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         };
         $scope.makeactive($scope.games[0]);
-      ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'SchoolProfile Page'
         });
 
@@ -886,10 +944,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.tab = game.game;
     };
     //    $scope.makeactive($scope.games[6]);
-    
-      ga('send', 'pageview', {
-            'title': 'Sports Page'
-        });
+
+    ga('send', 'pageview', {
+        'title': 'Sports Page'
+    });
 })
 
 .controller('ScoreCtrl', function ($scope, TemplateService, NavigationService) {
@@ -953,9 +1011,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.tab = game.game;
     };
     //    $scope.makeactive($scope.games[6]);
-      ga('send', 'pageview', {
-            'title': 'Score Page'
-        });
+    ga('send', 'pageview', {
+        'title': 'Score Page'
+    });
 
 
 })
@@ -1033,7 +1091,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
             }
         };
-      ga('send', 'pageview', {
+        ga('send', 'pageview', {
             'title': 'Schedule Page'
         });
     })
@@ -1048,6 +1106,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.newsletter = {
             show: true
         };
+
         function closeNewsletter() {
             $scope.newsletter.show = false;
         }
@@ -1056,39 +1115,39 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log("Email");
             NavigationService.savenewsletter(email, closeNewsletter);
         }
-        
-                $scope.games = // JavaScript Document
+
+        $scope.games = // JavaScript Document
             [{
                 "img": "img/partner-logo/1.png",
-             "href":"http://www.mbtaworld.com/",
+                "href": "http://www.mbtaworld.com/",
                 "game": "tennis"
             }, {
                 "img": "img/partner-logo/2.png",
-                "href":"http://www.ispsquash.com/",
+                "href": "http://www.ispsquash.com/",
                 "game": "squash"
             }, {
                 "img": "img/partner-logo/3.png",
-               "href":"http://www.mbasso.in",
+                "href": "http://www.mbasso.in",
                 "game": "badminton"
-            },{
+            }, {
                 "img": "img/partner-logo/4.png",
-                "href":"http://www.msdtta.org/",
+                "href": "http://www.msdtta.org/",
                 "game": "table tennis"
             }, {
                 "img": "img/partner-logo/5.png",
-            "href":"",
+                "href": "",
                 "game": "Handball"
             }, {
                 "img": "img/partner-logo/6.png",
-              "href":"",
+                "href": "",
                 "game": "volleyball"
             }, {
                 "img": "img/partner-logo/7.png",
-                "href":"http://www.maharashtrabasketball.com/",
+                "href": "http://www.maharashtrabasketball.com/",
                 "game": "basketball"
             }, {
                 "img": "img/partner-logo/8.png",
-                "href":"http://www.swimmingfederation.in/",
+                "href": "http://www.swimmingfederation.in/",
                 "game": "swimming"
             }];
 

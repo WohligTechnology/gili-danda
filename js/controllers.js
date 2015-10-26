@@ -193,6 +193,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             'title': 'Squash Page'
         });
 
+    })  
+    .controller('JudoCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+        $scope.template = TemplateService.changecontent("judo");
+        $scope.menutitle = NavigationService.makeactive("Judo");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+        ga('send', 'pageview', {
+            'title': 'Judo Page'
+        });
+
     })
     .controller('TennisCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("tennis");

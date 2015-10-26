@@ -142,6 +142,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
             url: "/landing",
             templateUrl: "./views/template.html",
             controller: 'LandingCtrl'
+        })      
+        .state('judo', {
+            url: "/judo",
+            templateUrl: "./views/template.html",
+            controller: 'JudoCtrl'
         })
         .state('about', {
             url: "/about",

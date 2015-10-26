@@ -87,7 +87,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("School");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-
+        
+    
+        NavigationService.getschoolnames(function(data) {
+            $scope.schoolNames=_.chunk(data,data.length/2);
+            console.log($scope.schoolNames);
+            $scope.schoolHalf=$scope.schoolNames[0].length;
+            console.log(data);
+        });
         ga('send', 'pageview', {
             'title': 'School Page'
         });

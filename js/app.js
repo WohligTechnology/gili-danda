@@ -22,7 +22,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
             url: "/schoolregistration",
             templateUrl: "./views/template.html",
             controller: 'SchoolRegistrationCtrl'
-        }) 
+        })
         .state('draw', {
             url: "/draw",
             templateUrl: "./views/template.html",
@@ -142,7 +142,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
             url: "/landing",
             templateUrl: "./views/template.html",
             controller: 'LandingCtrl'
-        })      
+        })
         .state('judo', {
             url: "/judo",
             templateUrl: "./views/template.html",
@@ -314,18 +314,34 @@ firstapp.directive('giveitmargin', function ($compile, $parse) {
     };
 });
 
-   firstapp.directive( 'click', '.dropdown-menu li', function( $event ) {
+firstapp.directive('click', '.dropdown-menu li', function ($event) {
 
-      var $target = $( $event.currentTarget );
+    var $target = $($event.currentTarget);
 
-      $target.closest( '.btn-group' )
-         .find( '[data-bind="label"]' ).text( $target.text() )
-            .end()
-         .children( '.dropdown-toggle' ).dropdown( 'toggle' );
+    $target.closest('.btn-group')
+        .find('[data-bind="label"]').text($target.text())
+        .end()
+        .children('.dropdown-toggle').dropdown('toggle');
 
-      return false;
+    return false;
 
-   });
+});
+
+firstapp.filter('numberFixedLen', function () {
+    return function (n, len) {
+        var num = parseInt(n, 10);
+        len = parseInt(len, 10);
+        if (isNaN(num) || isNaN(len)) {
+            return n;
+        }
+        num = '' + num;
+        while (num.length < len) {
+            num = '0' + num;
+        }
+        return num;
+    };
+});
+
 firstapp.directive('fancybox', function ($compile, $parse) {
     return {
         restrict: 'EA',
@@ -364,8 +380,8 @@ firstapp.directive('mycircle', function ($compile, $parse) {
                 $element.hover(function () {
                     clearInterval(myinterval);
                 }, function () {
-                    
-                    
+
+
                     myinterval = setInterval(function () {
                         var $element = $(element);
                         var $elementli = $element.children("li");
@@ -375,11 +391,11 @@ firstapp.directive('mycircle', function ($compile, $parse) {
 
                         amount++;
                         var elewidth = $elementli.eq(0).width();
-//                        console.log(elewidth);
+                        //                        console.log(elewidth);
                         var num = amount % elewidth;
                         if (num == 0 && amount > 0) {
                             amount = -15;
-//                            console.log(amount);
+                            //                            console.log(amount);
                             var $firstelement = $elementli.eq(0);
                             $element.append("<li>" + $firstelement.html() + "</li>");
                             $firstelement.eq(0).remove();
@@ -396,9 +412,9 @@ firstapp.directive('mycircle', function ($compile, $parse) {
                         }
 
                     }, 10);
-                    
+
                 });
-                
+
                 $element.trigger("mouseleave");
 
 

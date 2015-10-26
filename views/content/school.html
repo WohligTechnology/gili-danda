@@ -18,28 +18,22 @@
         </div>
        </div>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
         <div class="school-name">
             <ul>
-                <li><span>01</span><p>Jamnabai Narsee School</p></li>
-                <li><span>03</span><p>Bhaktivedanta Swami Mission School</p> </li>  
-                 <li><span>02</span><p>Children's Academy </p></li>
-                <li><span>04</span><p>Dnyan Pushpa Vidya Niketan & Jr. College</p> </li>
-                <li><span>06</span><p>Dnyan Pushpa Vidya Niketan & Jr. College</p> </li>
-                <li><span>05</span><p>Dnyan Pushpa Vidya Niketan & Jr. College</p> </li>
-                <li><span>05</span><p>Dnyan Pushpa Vidya Niketan & Jr. College</p> </li>
-                <li><span>05</span><p>Dnyan Pushpa Vidya Niketan & Jr. College</p> </li>
-                <li><span>05</span><p>Dnyan Pushpa Vidya Niketan & Jr. College</p> </li>
-                <li><span>05</span><p>Dnyan Pushpa Vidya Niketan & Jr. College</p> </li>
-                <li><span>05</span><p>Dnyan Pushpa Vidya Niketan & Jr. College</p> </li>
-                <li><span>05</span><p>Dnyan Pushpa Vidya Niketan & Jr. College</p> </li>
-                <li><span>05</span><p>Dnyan Pushpa Vidya Niketan & Jr. College</p> </li>
-                <li><span>05</span><p>Dnyan Pushpa Vidya Niketan & Jr. College</p> </li>
-                <li><span>05</span><p>Dnyan Pushpa Vidya Niketan & Jr. College</p> </li>
-                <li><span>05</span><p>Dnyan Pushpa Vidya Niketan & Jr. College</p> </li>
-                <li><span>05</span><p>Dnyan Pushpa Vidya Niketan & Jr. College</p> </li>
-                <li><span>05</span><p>Dnyan Pushpa Vidya Niketan & Jr. College</p> </li>
+                <li ng-repeat="school in schoolNames[0]"><span>{{($index+1)|numberFixedLen:2}}</span><p>{{school.name}}</p></li>
+               
             </ul>
+           
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="school-name">
+            <ul>
+                <li ng-repeat="school in schoolNames[0]"><span>{{($index+1+schoolHalf)|numberFixedLen:2}}</span><p>{{school.name}}</p></li>
+               
+            </ul>
+            
         </div>
     </div>
 </div>

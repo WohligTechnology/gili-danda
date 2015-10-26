@@ -27,6 +27,9 @@ var navigationservice = angular.module('navigationservice', [])
     return {
         getbannersliders: function(callback){
          return $http.get(admin_url + 'json/getbannersliders', {}).success(callback);
+        },  
+        getschoolnames: function(callback){
+         return $http.get(admin_url + 'json/getschoolnames', {}).success(callback);
         }, 
         getsponsors: function(callback){
          return $http.get(admin_url + 'json/getsponsors', {}).success(callback);

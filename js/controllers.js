@@ -947,6 +947,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 "icon2": "img/bluemenu/handballor.png",
                 "url": "handball",
                 "game": "Handball"
+        }, {
+                "icon": "img/bluemenu/judo.png",
+                "icon2": "img/bluemenu/judoor.png",
+                "url": "judo",
+                "game": "Judo"
         }];
 
     $scope.demo = 111;

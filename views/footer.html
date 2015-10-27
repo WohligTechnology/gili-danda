@@ -30,10 +30,10 @@
 							</span>
                             <span class="newslettershow" ng-show="newsletter.show">
 							    <div class="input-text">
-							        <input type="text" ng-model="newsletter.email" class="form-control emailclass" id="" placeholder="Enter Email Address">
+							        <input type="email" ng-model="newsletter.email" class="form-control emailclass" ng-change="validEmail(newsletter.email)" ng-class="newsletter.emaildis" id="" placeholder="Enter Email Address" required>
 							    </div>
 							    <div class="button-text">
-							        <button ng-click="savenewsletter(newsletter.email);" class="btn btn-default newslettersubmit">GO!</button>
+							        <button  ng-click="savenewsletter(newsletter.email);" class="btn btn-default newslettersubmit">GO!</button>
 							    </div>
 							</span>
                         </div>

@@ -87,12 +87,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("School");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        
-    
-        NavigationService.getschoolnames(function(data) {
-            $scope.schoolNames=_.chunk(data,data.length/2);
+
+
+        NavigationService.getschoolnames(function (data) {
+            $scope.schoolNames = _.chunk(data, data.length / 2);
             console.log($scope.schoolNames);
-            $scope.schoolHalf=$scope.schoolNames[0].length;
+            $scope.schoolHalf = $scope.schoolNames[0].length;
             console.log(data);
         });
         ga('send', 'pageview', {
@@ -200,7 +200,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             'title': 'Squash Page'
         });
 
-    })  
+    })
     .controller('JudoCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("judo");
         $scope.menutitle = NavigationService.makeactive("Judo");
@@ -549,7 +549,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.r1 = _.chunk($scope.r1, 2);
         console.log($scope.r1);
-    
+
         $scope.r2 = // JavaScript Document
             [{
                 "name": "Viraj Kale",
@@ -1127,16 +1127,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     .controller('footerCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
 
         $scope.newsletter = {
-            show: true
+            show: true,
         };
 
         function closeNewsletter() {
             $scope.newsletter.show = false;
         }
 
+        $scope.validEmail = function (email) {
+            console.log(email);
+            if (email) {
+                $scope.newsletter.emaildis = "";
+            } else {
+                $scope.newsletter.emaildis = "error-red";
+            }
+            console.log($scope.newsletter.emaildis);
+        };
         $scope.savenewsletter = function (email) {
             console.log("Email");
-            NavigationService.savenewsletter(email, closeNewsletter);
+            if ($scope.newsletter.emaildis == "" && $scope.newsletter.email ) {
+                NavigationService.savenewsletter(email, closeNewsletter);
+            }
         }
 
         $scope.games = // JavaScript Document

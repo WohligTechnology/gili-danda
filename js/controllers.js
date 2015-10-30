@@ -443,6 +443,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     "icon2": "img/bluemenu/handballor.png",
                     "url": "handball",
                     "game": "Handball"
+             },
+                {
+                    "icon": "img/bluemenu/judo.png",
+                    "icon2": "img/bluemenu/judoor.png",
+                    "url": "judo",
+                    "game": "JUDO"
              }
             ];
 
@@ -1183,6 +1189,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 "img": "img/partner-logo/8.png",
                 "href": "http://www.swimmingfederation.in/",
                 "game": "swimming"
+            }, {
+                "img": "img/partner-logo/9.png",
+                "href": "",
+                "game": "judo"
             }];
 
     })

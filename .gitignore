@@ -2,7 +2,9 @@ bower_components/
 node_modules/
 w/
 production/
-appengine
+appengine/w/
+appengine/img/
+appengine/font/
 
 
 

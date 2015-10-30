@@ -2,9 +2,8 @@ bower_components/
 node_modules/
 w/
 production/
-appengine/w/
-appengine/img/
-appengine/fonts/
+appengine
+
 
 
 # Compiled source #

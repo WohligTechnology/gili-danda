@@ -1060,6 +1060,147 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //    isFirstOpen: true,
         //    isFirstDisabled: false
         //  };
+        $scope.result = [
+            {
+                player1: {
+                    name: "Viraj Kale",
+                    school: "Dhirubhai Ambani International School"
+                },
+                player2: {
+                    name: "Rizwan Mirza",
+                    school: "Bombay British School"
+                },
+                time: {
+                    time: "10:15 AM",
+                    day: "25",
+                    month: "DEC",
+                    nd: "nd",
+                    year: "2015"
+                },
+                result: {
+                    status: "Rizwan won",
+                    point1: "4-6",
+                    point2: "5-6",
+                    point3: "1-6",
+                    play: true
+                }
+            }, {
+                player1: {
+                    name: "Viraj Kale",
+                    school: "Dhirubhai Ambani International School"
+                },
+                player2: {
+                    name: "Rizwan Mirza",
+                    school: "Bombay British School"
+                },
+                time: {
+                    time: "10:15 AM",
+                    day: "25",
+                    month: "DEC",
+                    nd: "nd",
+                    year: "2015"
+                },
+                result: {
+                    status: "to be played",
+                    point1: "",
+                    point2: "",
+                    point3: "",
+                    play: false
+                }
+            }, {
+                player1: {
+                    name: "Viraj Kale",
+                    school: "Dhirubhai Ambani International School"
+                },
+                player2: {
+                    name: "Rizwan Mirza",
+                    school: "Bombay British School"
+                },
+                time: {
+                    time: "10:15 AM",
+                    day: "25",
+                    month: "DEC",
+                    nd: "nd",
+                    year: "2015"
+                },
+                result: {
+                    status: "to be played",
+                    point1: "",
+                    point2: "",
+                    point3: "",
+                    play: false
+                }
+            }, {
+                player1: {
+                    name: "Viraj Kale",
+                    school: "Dhirubhai Ambani International School"
+                },
+                player2: {
+                    name: "Rizwan Mirza",
+                    school: "Bombay British School"
+                },
+                time: {
+                    time: "10:15 AM",
+                    day: "25",
+                    month: "DEC",
+                    nd: "nd",
+                    year: "2015"
+                },
+                result: {
+                    status: "to be played",
+                    point1: "",
+                    point2: "",
+                    point3: "",
+                    play: false
+                }
+            }, {
+                player1: {
+                    name: "Viraj Kale",
+                    school: "Dhirubhai Ambani International School"
+                },
+                player2: {
+                    name: "Rizwan Mirza",
+                    school: "Bombay British School"
+                },
+                time: {
+                    time: "10:15 AM",
+                    day: "25",
+                    month: "DEC",
+                    nd: "nd",
+                    year: "2015"
+                },
+                result: {
+                    status: "to be played",
+                    point1: "",
+                    point2: "",
+                    point3: "",
+                    play: false
+                }
+            }, {
+                player1: {
+                    name: "Viraj Kale",
+                    school: "Dhirubhai Ambani International School"
+                },
+                player2: {
+                    name: "Rizwan Mirza",
+                    school: "Bombay British School"
+                },
+                time: {
+                    time: "10:15 AM",
+                    day: "25",
+                    month: "DEC",
+                    nd: "nd",
+                    year: "2015"
+                },
+                result: {
+                    status: "to be played",
+                    point1: "",
+                    point2: "",
+                    point3: "",
+                    play: false
+                }
+}];
+
 
         $scope.games = // JavaScript Document
             [{
@@ -1151,7 +1292,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
         $scope.savenewsletter = function (email) {
             console.log("Email");
-            if ($scope.newsletter.emaildis == "" && $scope.newsletter.email ) {
+            if ($scope.newsletter.emaildis == "" && $scope.newsletter.email) {
                 NavigationService.savenewsletter(email, closeNewsletter);
             }
         }

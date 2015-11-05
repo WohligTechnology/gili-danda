@@ -45,34 +45,35 @@
 <div class="container martgintp">
 
     <div class="row">
+        <div class="col-md-12">
+            <div class="blue-cat">
+                <ul>
+                    <hovericon game="game" ng-repeat="game in games" ng-click="makeactive(game);"></hovericon>
+                </ul>
+            </div>
+        </div>
 
-        <div class="blue-cat">
-            <ul>
-                <hovericon game="game" ng-repeat="game in games" ng-click="makeactive(game);"></hovericon>
-            </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <div class="stab">
+                    <ul>
+                        <li ng-class="active" ng-click="tabchange('gallerymain',1)">
+                            <h3>gallery</h3></li>
+                        <li ng-class="actives" ng-click="tabchange('statics',2)">
+                            <h3>STATISTICS</h3></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<div class="venbak">
+
+    <div class="marginegt ">
+        <div ng-show="tab2=='gallerymain'">
+            <div class=" marginlft marginlfts row">
 
 
-    <div class="text-center">
-        <div class="stab">
-            <ul>
-                <li ng-class="active" ng-click="tabchange('gallerymain',1)">
-                    <h3>gallery</h3></li>
-                <li ng-class="actives" ng-click="tabchange('statics',2)">
-                    <h3>STATISTICS</h3></li>
-            </ul>
-        </div>
-    </div>
-
-
-    <div class="container marginegt ">
-
-        <div class=" marginlft marginlfts">
-
-            <div ng-show="tab2=='gallerymain'">
                 <div class="col-md-3 ">
                     <div class="wths">
                         <div class="cat-left scrollbar-dynamic" data-jquery-scrollbar="jqueryScrollbarOptions" style="width:100%;margin-top:0px;">
@@ -435,128 +436,100 @@
                 </div>
 
             </div>
-            <div class="col-md-12 " ng-show="tab2=='statics'">
+        </div>
 
-                <div class="bg-school sch-det">
-                    <h4>table tennis - <span>medals tally</span></h4>
-                    <div class="stable">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        year
-                                    </th>
-                                    <th>
-                                        sport
-                                    </th>
+        <div ng-show="tab2=='statics'">
+            <div class="row">
+                <div class="col-md-12 ">
 
-                                    <th>
-                                        category
-                                    </th>
-                                    <th>
-                                        gold
-                                    </th>
-                                    <th>
-                                        silver
-                                    </th>
-                                    <th>
-                                        bronze
-                                    </th>
-                                </tr>
-                            </thead>
+                    <div class="bg-school sch-det">
+                        <h4>table tennis - <span>medals tally</span></h4>
+                        <div class="stable">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            year
+                                        </th>
+                                        <th>
+                                            sport
+                                        </th>
 
-                            <tbody>
-                                <tr>
-                                    <td class="lis">
-                                       <p>2016</p>
-                                    </td>
-                                    <td>
-                                        <p>
-                                            Badminton
-                                        </p>
-                                        
-                                    </td>
-                                    <td>
-                                        <ul>
-                                            <li>u-17</li>
-                                            <li>boys</li>
-                                            <li>single</li>
-                                        </ul>
-                                    </td>
-                                    <td>0</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                </tr>
-                   
-                            </tbody>
+                                        <th>
+                                            category
+                                        </th>
+                                        <th>
+                                            gold
+                                        </th>
+                                        <th>
+                                            silver
+                                        </th>
+                                        <th>
+                                            bronze
+                                        </th>
+                                    </tr>
+                                </thead>
 
-                        </table>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        played
-                                    </th>
-                                    <th>
-                                        won
-                                    </th>
+                                <tbody>
+                                    <tr>
+                                        <td class="lis">
+                                            <p>2016</p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                Badminton
+                                            </p>
 
-                                    <th>
-                                        loss
-                                    </th>
-                                   
-                                </tr>
-                            </thead>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>u-17</li>
+                                                <li>boys</li>
+                                                <li>single</li>
+                                            </ul>
+                                        </td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
 
-                            <tbody>
-                                <tr>
-                                    <td >
-                                       <p>20</p>
-                                    </td>
-                                    <td>
-                                        <p>
-                                           15
-                                        </p>
-                                        
-                                    </td>
-                                    <td>
-                                    <p>6</p>
-                                    </td>
-                                    
-                                </tr>
-                   
-                            </tbody>
+                                </tbody>
 
-                        </table>
-                        <div class="view text-center">
-                            <a href="">view more</a>
+                            </table>
+
+                            <div class="view text-center">
+                                <a href="">view more</a>
+                            </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
+
             </div>
+
 
         </div>
     </div>
-    <div class="bg-school">
-        <div class="container">
+</div>
 
-            <!--                load more tab-->
-            <!--                -->
-            <div ng-show="tab2=='gallerymain'">
-                <div class="aroww text-center col-md-offset-5 col-md-5">
-                    <img src="img/arrow.png">
-                </div>
+<div class="bg-school">
+    <div class="container">
+
+        <!--                load more tab-->
+        <!--                -->
+        <div ng-show="tab2=='gallerymain'">
+            <div class="aroww text-center col-md-offset-5 col-md-5">
+                <img src="img/arrow.png">
             </div>
-
-            <!--                ** END************-->
-
-            <!--                ********* matches tab ********-->
-
-
-            <!--                *** end *********-->
-
-
         </div>
+
+        <!--                ** END************-->
+
+        <!--                ********* matches tab ********-->
+
+
+        <!--                *** end *********-->
+
+
     </div>
 </div>

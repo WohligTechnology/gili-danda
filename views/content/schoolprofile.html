@@ -63,7 +63,7 @@ SCHOOL <span class="ptag"> (Co-ed School)</span></h3>
                     <ul>
                         <li ng-class="active" ng-click="tabchange('squad',1)">
                             <h3>SQUAD</h3></li>
-                        <li ng-class="actives" ng-click="tabchange('gallery',2)">
+                        <li ng-class="actives" ng-click="tabchange('gallerymain',2)">
                             <h3>gallery</h3></li>
                         <li ng-class="activess" ng-click="tabchange('statics',3)">
                             <h3>STATISTICS</h3></li>
@@ -74,7 +74,7 @@ SCHOOL <span class="ptag"> (Co-ed School)</span></h3>
     </div>
 
     <div class="marginegt ">
-        <div ng-show="tab2=='gallery'">
+        <div ng-show="tab2=='gallerymain'">
             <div class=" marginlft marginlfts row">
 
 
@@ -651,14 +651,14 @@ SCHOOL <span class="ptag"> (Co-ed School)</span></h3>
 
 
         </div>
-        <div class="tab2=='squad'">
+        <div ng-show="tab2=='squad'">
             <div class="row">
                 <div class="col-md-12">
                     <div class="list-active cust-li text-center">
                         <ul>
-                            <li>under -11</li>
-                            <li>under -14</li>
-                            <li>under -16</li>
+                            <li ng-class="line" ng-click="tabchange('under11',1)">under -11</li>
+                            <li ng-class="line1" ng-click="tabchange('under14',2)">under -14</li>
+                            <li ng-class="line2" ng-click="tabchange('under16',3)">under -16</li>
                         </ul>
                     </div>
                 </div>
@@ -671,7 +671,9 @@ SCHOOL <span class="ptag"> (Co-ed School)</span></h3>
 
                 </div>
             </div>
+            <div ng-show="tab3=='under11'">
             <div class="row">
+               
                 <div class="col-md-6">
                     <div class="bg-school">
 
@@ -777,7 +779,8 @@ SCHOOL <span class="ptag"> (Co-ed School)</span></h3>
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
+           
             <div class="row">
                 <div class="col-md-12">
                        <div class="view text-center feed">
@@ -785,6 +788,243 @@ SCHOOL <span class="ptag"> (Co-ed School)</span></h3>
                             </div>
                 </div>
             </div>
+             </div>
+                    <div ng-show="tab3=='under14'">
+            <div class="row">
+               
+                <div class="col-md-6">
+                    <div class="bg-school">
+
+
+                        <div class="stable">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Photo
+                                        </th>
+                                        <th>
+                                            Name
+                                        </th>
+
+                                        <th>
+                                            Date Of Birth
+                                        </th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr ng-repeat="data in result track by $index">
+                                        <td class="lis" >
+                                            <img ng-src="{{data.player.img}}">
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>{{data.name.name}}</li>
+                                                <li> id: {{data.name.id}}</li>
+                                            </ul>
+
+
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>{{data.time.day}}{{data.time.nd}} {{data.time.month}} {{data.time.year}}</li>
+                                                <li>{{data.time.age}}</li>
+
+                                            </ul>
+                                        </td>
+
+                                    </tr>
+                                    
+                                </tbody>
+
+                            </table>
+
+                         
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                   <div class="bg-school">
+
+
+                        <div class="stable">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Photo
+                                        </th>
+                                        <th>
+                                            Name
+                                        </th>
+
+                                        <th>
+                                            Date Of Birth
+                                        </th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr ng-repeat="data in result track by $index">
+                                        <td class="lis" >
+                                            <img ng-src="{{data.player.img}}">
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>{{data.name.name}}</li>
+                                                <li> id: {{data.name.id}}</li>
+                                            </ul>
+
+
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>{{data.time.day}}{{data.time.nd}} {{data.time.month}} {{data.time.year}}</li>
+                                                <li>{{data.time.age}}</li>
+
+                                            </ul>
+                                        </td>
+
+                                    </tr>
+                                    
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+           
+            <div class="row">
+                <div class="col-md-12">
+                       <div class="view text-center feed">
+                                <a href="">view more</a>
+                            </div>
+                </div>
+            </div>
+             </div>
+                    <div ng-show="tab3=='under16'">
+            <div class="row">
+               
+                <div class="col-md-6">
+                    <div class="bg-school">
+
+
+                        <div class="stable">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Photo
+                                        </th>
+                                        <th>
+                                            Name
+                                        </th>
+
+                                        <th>
+                                            Date Of Birth
+                                        </th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr ng-repeat="data in result track by $index">
+                                        <td class="lis" >
+                                            <img ng-src="{{data.player.img}}">
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>{{data.name.name}}</li>
+                                                <li> id: {{data.name.id}}</li>
+                                            </ul>
+
+
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>{{data.time.day}}{{data.time.nd}} {{data.time.month}} {{data.time.year}}</li>
+                                                <li>{{data.time.age}}</li>
+
+                                            </ul>
+                                        </td>
+
+                                    </tr>
+                                    
+                                </tbody>
+
+                            </table>
+
+                         
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                   <div class="bg-school">
+
+
+                        <div class="stable">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Photo
+                                        </th>
+                                        <th>
+                                            Name
+                                        </th>
+
+                                        <th>
+                                            Date Of Birth
+                                        </th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr ng-repeat="data in result track by $index">
+                                        <td class="lis" >
+                                            <img ng-src="{{data.player.img}}">
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>{{data.name.name}}</li>
+                                                <li> id: {{data.name.id}}</li>
+                                            </ul>
+
+
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>{{data.time.day}}{{data.time.nd}} {{data.time.month}} {{data.time.year}}</li>
+                                                <li>{{data.time.age}}</li>
+
+                                            </ul>
+                                        </td>
+
+                                    </tr>
+                                    
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+           
+            <div class="row">
+                <div class="col-md-12">
+                       <div class="view text-center feed">
+                                <a href="">view more</a>
+                            </div>
+                </div>
+            </div>
+             </div>
         </div>
     </div>
 </div>

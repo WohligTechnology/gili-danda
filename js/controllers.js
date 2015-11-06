@@ -912,6 +912,38 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         };
 
         //    end
+    
+    //under tab
+    
+            $scope.tab3 = "under11";
+        //    tab change
+        $scope.line = 'col-class';
+        $scope.line1 = '';
+        $scope.line2 = '';
+
+        console.log($scope.tab);
+        $scope.tabchange = function (tab, a) {
+            //        console.log(tab);
+            $scope.tab3 = tab;
+            if (a == 1) {
+                $scope.line = "col-class";
+                $scope.line1 = '';
+                $scope.line2 = '';
+
+            } else if (a == 2) {
+                $scope.line = '';
+                $scope.line1 = "col-class";
+                $scope.line2 = '';
+
+            } else {
+                $scope.line = '';
+                $scope.line1 = '';
+                $scope.line2 = "col-class";
+
+            }
+        };
+
+//    end
 
         $scope.foo = "World";
         $scope.list = [];

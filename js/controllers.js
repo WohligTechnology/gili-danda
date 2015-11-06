@@ -916,14 +916,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //under tab
     
             $scope.tab3 = "under11";
-        //    tab change
+   
         $scope.line = 'col-class';
         $scope.line1 = '';
         $scope.line2 = '';
 
         console.log($scope.tab);
-        $scope.tabchange = function (tab, a) {
-            //        console.log(tab);
+        $scope.tabchanges = function (tab, a) {
+         
             $scope.tab3 = tab;
             if (a == 1) {
                 $scope.line = "col-class";

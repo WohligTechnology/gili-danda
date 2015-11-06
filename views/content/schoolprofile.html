@@ -59,11 +59,13 @@ SCHOOL <span class="ptag"> (Co-ed School)</span></h3>
     <div class="row">
         <div class="col-md-12">
             <div class="text-center">
-                <div class="stab">
+                <div class="stab ">
                     <ul>
-                        <li ng-class="active" ng-click="tabchange('gallerymain',1)">
+                        <li ng-class="active" ng-click="tabchange('squad',1)">
+                            <h3>SQUAD</h3></li>
+                        <li ng-class="actives" ng-click="tabchange('gallery',2)">
                             <h3>gallery</h3></li>
-                        <li ng-class="actives" ng-click="tabchange('statics',2)">
+                        <li ng-class="activess" ng-click="tabchange('statics',3)">
                             <h3>STATISTICS</h3></li>
                     </ul>
                 </div>
@@ -72,7 +74,7 @@ SCHOOL <span class="ptag"> (Co-ed School)</span></h3>
     </div>
 
     <div class="marginegt ">
-        <div ng-show="tab2=='gallerymain'">
+        <div ng-show="tab2=='gallery'">
             <div class=" marginlft marginlfts row">
 
 
@@ -487,7 +489,7 @@ SCHOOL <span class="ptag"> (Co-ed School)</span></h3>
                                             <ul>
                                                 <li>u-17</li>
                                                 <li>boys</li>
-                                               
+
                                             </ul>
                                         </td>
                                         <td>0</td>
@@ -508,7 +510,7 @@ SCHOOL <span class="ptag"> (Co-ed School)</span></h3>
                                             <ul>
                                                 <li>u-17</li>
                                                 <li>boys</li>
-                                                
+
                                             </ul>
                                         </td>
                                         <td>0</td>
@@ -529,7 +531,7 @@ SCHOOL <span class="ptag"> (Co-ed School)</span></h3>
                                             <ul>
                                                 <li>u-17</li>
                                                 <li>boys</li>
-                                                
+
                                             </ul>
                                         </td>
                                         <td>0</td>
@@ -550,7 +552,7 @@ SCHOOL <span class="ptag"> (Co-ed School)</span></h3>
                                             <ul>
                                                 <li>u-17</li>
                                                 <li>boys</li>
-                                               
+
                                             </ul>
                                         </td>
                                         <td>0</td>
@@ -567,7 +569,7 @@ SCHOOL <span class="ptag"> (Co-ed School)</span></h3>
                         </div>
 
                     </div>
-                                  <div class="bg-school sch-det">
+                    <div class="bg-school sch-det">
                         <h4>basketball - <span>medals tally</span></h4>
                         <div class="stable">
                             <table class="table">
@@ -589,7 +591,7 @@ SCHOOL <span class="ptag"> (Co-ed School)</span></h3>
                                         <th>
                                             result
                                         </th>
-                                        
+
                                     </tr>
                                 </thead>
 
@@ -608,28 +610,31 @@ SCHOOL <span class="ptag"> (Co-ed School)</span></h3>
                                             <ul>
                                                 <li>u-17</li>
                                                 <li>boys</li>
-                                               
-                                            </ul>
-                                        </td>
-                                        <td>54 - 48</td> 
-                                        <td class="cust-li">
-                                           <ul>
-                                                <li> <h4 class="f-class">won</h4></li>
-                                                <li><div class="ver" >
-                                        <figure class="text-center">
-                                            <img src="img/replay.png">
-                                            <figcaption>Replay</figcaption>
-                                        </figure>
 
-                                    </div></li>
-                                               
                                             </ul>
-                                           
-                                            
                                         </td>
-                                      
+                                        <td>54 - 48</td>
+                                        <td class="cust-li">
+                                            <ul>
+                                                <li>
+                                                    <h4 class="f-class">won</h4></li>
+                                                <li>
+                                                    <div class="ver">
+                                                        <figure class="text-center">
+                                                            <img src="img/replay.png">
+                                                            <figcaption>Replay</figcaption>
+                                                        </figure>
+
+                                                    </div>
+                                                </li>
+
+                                            </ul>
+
+
+                                        </td>
+
                                     </tr>
-                    
+
                                 </tbody>
 
                             </table>
@@ -645,6 +650,141 @@ SCHOOL <span class="ptag"> (Co-ed School)</span></h3>
             </div>
 
 
+        </div>
+        <div class="tab2=='squad'">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="list-active cust-li text-center">
+                        <ul>
+                            <li>under -11</li>
+                            <li>under -14</li>
+                            <li>under -16</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="tab-gallery">
+                        <h4>basketball team </h4>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="bg-school">
+
+
+                        <div class="stable">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Photo
+                                        </th>
+                                        <th>
+                                            Name
+                                        </th>
+
+                                        <th>
+                                            Date Of Birth
+                                        </th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr ng-repeat="data in result track by $index">
+                                        <td class="lis" >
+                                            <img ng-src="{{data.player.img}}">
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>{{data.name.name}}</li>
+                                                <li> id: {{data.name.id}}</li>
+                                            </ul>
+
+
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>{{data.time.day}}{{data.time.nd}} {{data.time.month}} {{data.time.year}}</li>
+                                                <li>{{data.time.age}}</li>
+
+                                            </ul>
+                                        </td>
+
+                                    </tr>
+                                    
+                                </tbody>
+
+                            </table>
+
+                         
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                   <div class="bg-school">
+
+
+                        <div class="stable">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Photo
+                                        </th>
+                                        <th>
+                                            Name
+                                        </th>
+
+                                        <th>
+                                            Date Of Birth
+                                        </th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr ng-repeat="data in result track by $index">
+                                        <td class="lis" >
+                                            <img ng-src="{{data.player.img}}">
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>{{data.name.name}}</li>
+                                                <li> id: {{data.name.id}}</li>
+                                            </ul>
+
+
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>{{data.time.day}}{{data.time.nd}} {{data.time.month}} {{data.time.year}}</li>
+                                                <li>{{data.time.age}}</li>
+
+                                            </ul>
+                                        </td>
+
+                                    </tr>
+                                    
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                       <div class="view text-center">
+                                <a href="">view more</a>
+                            </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -669,5 +809,4 @@ SCHOOL <span class="ptag"> (Co-ed School)</span></h3>
 
 
     </div>
-</div>
 </div>

@@ -743,6 +743,82 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
 
 
+        // player info
+        $scope.result = [
+            {
+                player: {
+                    img: "img/player.png"
+
+                },
+                name: {
+                    pname: "Harry Giles",
+                    id: "sfase1046"
+                },
+                time: {
+                    time: "10:15 AM",
+                    day: "20",
+                    month: "march",
+                    nd: "th",
+                    year: "2004",
+                    age: "11 yrs"
+                },
+
+            }, {
+                player: {
+                    img: "img/player.png"
+
+                },
+                name: {
+                    pname: "Harry Giles",
+                    id: "sfase1046"
+                },
+                time: {
+                    time: "10:15 AM",
+                    day: "20",
+                    month: "march",
+                    nd: "th",
+                    year: "2004",
+                    age: "11 yrs"
+                },
+
+            }, {
+                player: {
+                    img: "img/player.png"
+
+                },
+                name: {
+                    pname: "Harry Giles",
+                    id: "sfase1046"
+                },
+                time: {
+                    time: "10:15 AM",
+                    day: "20",
+                    month: "march",
+                    nd: "th",
+                    year: "2004",
+                    age: "11 yrs"
+                },
+
+            }, {
+                player: {
+                    img: "img/player.png"
+
+                },
+                name: {
+                    pname: "Harry Giles",
+                    id: "sfase1046"
+                },
+                time: {
+                    time: "10:15 AM",
+                    day: "20",
+                    month: "march",
+                    nd: "th",
+                    year: "2004",
+                    age: "11 yrs"
+                },
+
+            }];
+
         $scope.gallery = [{
             image: "img/schoolgallery/g1.jpg"
         }, {
@@ -807,10 +883,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         //    end
 
-        $scope.tab2 = "gallerymain";
+        $scope.tab2 = "squad";
         //    tab change
         $scope.active = 'active';
         $scope.actives = '';
+        $scope.activess = '';
 
         console.log($scope.tab);
         $scope.tabchange = function (tab, a) {
@@ -819,10 +896,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             if (a == 1) {
                 $scope.active = "active";
                 $scope.actives = '';
+                $scope.activess = '';
 
             } else if (a == 2) {
                 $scope.active = '';
                 $scope.actives = "active";
+                $scope.activess = '';
+
+            } else {
+                $scope.active = '';
+                $scope.actives = '';
+                $scope.activess = "active";
 
             }
         };

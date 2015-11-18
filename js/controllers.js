@@ -88,6 +88,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	$scope.menutitle = NavigationService.makeactive("Enquiry");
 	TemplateService.title = $scope.menutitle;
 	$scope.navigation = NavigationService.getnav();
+
+	TemplateService.header = "./views/header2.html";
+	TemplateService.footer = "./views/footer2.html";
+
+
+
+
     var getbannersliderscallback = function (data, status) {
 		console.log(data);
 		$scope.homeslide = data;

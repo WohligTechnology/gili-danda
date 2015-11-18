@@ -113,7 +113,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 	$scope.submitEnquiry = function(enquire) {
 		NavigationService.createEnquiries(enquire, function(data,status) {
-			console.log(data);
+			console.log(status);
 		});
 	};
 

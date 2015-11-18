@@ -1,4 +1,5 @@
 var $test = {};
+var demo = 0;
 
 
 var firstapp = angular.module('firstapp', [
@@ -124,7 +125,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'VenueCtrl'
         })
         .state('schoolprofile', {
-            url: "/schoolprofile",
+            url: "/schoolprofile/:id",
             templateUrl: "./views/template.html",
             controller: 'SchoolprofileCtrl'
         })
@@ -178,9 +179,9 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
         },
         link: function (scope, element, attr) {
 
-
-
-            console.log(attr);
+		   scope.$watch('demo', function(){
+			   console.log(demo);
+		   
             var ishover;
             var $element = $(element);
             $test = $element;
@@ -202,6 +203,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
                 }
 
             });
+	   })
 
         }
 
@@ -210,7 +212,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
 
 firstapp.filter('serverimage', function () {
     return function (image) {
-        return imgpath + image;
+        return "http://localhost/sfabackend/uploads/" + image;
     };
 });
 //fancybox directive
@@ -366,6 +368,15 @@ firstapp.directive('fancybox', function ($compile, $parse) {
     };
 });
 var $abc = "";
+
+firstapp.directive('schoolsports', function() {
+  return {
+    templateUrl: function(elem, attr){
+	    console.log(attr.json);
+//      return 'customer-'+attr.jso+'.html';
+    }
+  };
+});
 firstapp.directive('mycircle', function ($compile, $parse) {
     return {
         restrict: 'EA',

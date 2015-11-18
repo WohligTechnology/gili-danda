@@ -1,6 +1,6 @@
 var adminlink="http://wohlig.co.in/sfabackend/";
 var admin_url = adminlink+"index.php/";
-//var admin_url = "http://localhost/sfabackend/index.php/";
+var admin_url = "http://localhost/sfabackend/index.php/";
 var imgpath = adminlink+"uploads/";
 var navigationservice = angular.module('navigationservice', [])
 
@@ -33,6 +33,9 @@ var navigationservice = angular.module('navigationservice', [])
         }, 
         getsponsors: function(callback){
          return $http.get(admin_url + 'json/getsponsors', {}).success(callback);
+        }, 
+        getschoolprofile : function(id,callback){
+         return $http.get(admin_url + 'json/getschoolprofile?id='+id, {}).success(callback);
         },   
            submitschoolregistration: function (school, callback) {
                console.log(school);

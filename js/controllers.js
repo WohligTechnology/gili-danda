@@ -126,7 +126,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 			$scope.enquire = {};
 			$scope.enquire.person = "Student";
 			ngDialog.open({
-				template: './views/content/thankyou.html'
+				template: './views/content/enquiry-thanks.html'
 			});
     } else {
       $scope.msg = "Please re-verify the data you've entered!";

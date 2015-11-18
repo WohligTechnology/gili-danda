@@ -1,123 +1,10 @@
 <div class="margintps" >
-    <div class="curve3">
-
-    </div>
-    <div class="footers">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="footer-menu">
-                        <ul>
-                            <li><a href="#/about">about sfa</a></li>
-                            <li><a href="#/termscondition">Legal</a></li>
-                            <!--                        <li><a href="">Careers</a></li>-->
-                            <li><a href="#/faqs">FAQs</a></li>
-                            <li style="border-right:0px;"><a href="#/contact">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="row" ng-controller="footerCtrl">
-                        <div class="col-md-4">
-                            <div class="newsleter">
-                                <p>NEWSLETTER SIGNUP</p>
-                            </div>
-                        </div>
-                        <div class="col-md-8 padzer">
-
-                            <span class="newslettershow" ng-hide="newsletter.show">
-							    <p class="thank">Thank you for subscribing to our newsletter.</p>
-							</span>
-                            <span class="newslettershow" ng-show="newsletter.show">
-							    <div class="input-text">
-							        <input type="email" ng-model="newsletter.email" class="form-control emailclass" ng-change="validEmail(newsletter.email)" ng-class="newsletter.emaildis" id="" placeholder="Enter Email Address" required>
-							    </div>
-							    <div class="button-text">
-							        <button  ng-click="savenewsletter(newsletter.email);" class="btn btn-default newslettersubmit">GO!</button>
-							    </div>
-							</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row ">
-                <div class="event_venue col-md-8">
-
-                    <div class="col-md-3">
-                        <div class="venue">
-                            <!--                                    <p class="evnt">Venue Partner :</p>-->
-                            <a href="http://www.dypatil.edu/sportsacademy/" target="_blank" class="blk">
-                                <figure>
-                                    <img src="img/partner-logo/dypatil.jpg" alt="sport" class="img-responsive">
-                                    <figcaption class="text-center text-uppercase">Venue Partner</figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="event">
-                            <!--                                    <p class="evnt">Event Partner :</p>-->
-                            <a href="http://www.dnanetworks.com/" target="_blank" class="blk">
-                                <figure>
-                                    <img src="img/partner-logo/dnalogo.jpg" alt="sport" class="img-responsive">
-                                    <figcaption class="text-center text-uppercase">Event Partner</figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="event">
-                            <!--                                    <p class="evnt">Event Partner :</p>-->
-                            <a href="http://www.greymind.in/website/" target="_blank" class="blk">
-                                <figure>
-                                    <img src="img/partner-logo/Videography.jpg" alt="sport" class="img-responsive" title="Videography Partner">
-                                    <figcaption class="text-center text-uppercase">Videography Partner</figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="event">
-                            <!--                                    <p class="evnt">Event Partner :</p>-->
-                            <a href="#" class="blk">
-                                <figure>
-                                    <img src="img/partner-logo/physiotherapy.jpg" alt="sport" class="img-responsive" title="Videography Partner">
-                                    <figcaption class="text-center text-uppercase">Physiotherapy Partner</figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 part-logo">
-                    <div style="width:100%;overflow:hidden;margin-top:30px;">
-
-                        <ul mycircle style="width:12000px;">
-                            <li ng-repeat="slid in games track by $index">
-                                <a href="{{slid.href}}" target="_blank">
-                                    <figure>
-                                        <div class="imgd">
-                                            <img ng-src="{{slid.img}}" alt="{{slid.img}}" title="{{slid.game}}" class="img-responsive">
-                                            <figcaption class="text-center text-uppercase">{{slid.game}}</figcaption>
-                                        </div>
-                                    </figure>
-                                </a>
-
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-
-                </div>
-
-                <!--
-                <div class="col-md-8">
-                    <div class="partners">
-                        <p>sports partners :</p>
-                    </div>
-                    <div class="part-logo">
-                        <ul>
+    <div class="footers fut">
+     <div class="text-center">
+         <p class="l-p">All Sports to be conducted under the aegis of:</p>
+        </div>
+                    <div class="part-logo l-logo">
+                        <ul style="text-align: center !important;">
                             <li>
                                 <a href="http://www.mbtaworld.com/" target="_blank">
                                     <figure>
@@ -183,30 +70,30 @@
                                         <figcaption class="text-center text-uppercase">swimming</figcaption>
                                     </figure>
                                 </a>
+                            </li>        
+                            <li>
+                                <a href="" target="_blank">
+                                    <figure>
+                                        <img src="img/partner-logo/9.png" alt="" class="img-responsive">
+                                      
+                                        <figcaption class="text-center text-uppercase">Judo</figcaption>
+                                    </figure>
+                                </a>
                             </li>
                         </ul>
                     </div>
-
-                </div>
--->
-
-            </div>
-
+<div class="pull-right">
+        <p class="padll">* Up to 500 schools can participate in the event.</p>
         </div>
+        
+        <div class="clearfix"></div>
+ 
         <div class="blue">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-3">
-                        <div class="sponsers text-uppercase">
-                            <p>SPONSORSHIPS AT SFA (COMING SOON)</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mrgb">
+            <div class="mrgb" style="    margin-bottom: 0px;">
                     <div class="row">
                         <div class="col-md-8">
-                            <ul class="foot-links">
+                            <ul class="foot-links marm">
                                 <li><a href="">All rights reserved</a></li>
                                 <li><a href="#/termscondition">Terms and Conditions</a></li>
                                 <li><a href="#/termscondition">Disclaimer</a></li>
@@ -214,7 +101,7 @@
                             </ul>
                         </div>
                         <div class="col-md-4">
-                            <div class="social-icon">
+                            <div class="social-icon padf">
                                 <ul class="pull-right text-center">
                                     <li> <a href="https://www.facebook.com/sportsforallnow" target="_blank"><i class="fa fa-facebook"></i></a></li>
                                     <li> <a href="https://twitter.com/sfanow" target="_blank"><i class="fa fa-twitter"></i></a></li>

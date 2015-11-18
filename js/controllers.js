@@ -339,7 +339,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 			if (data == 1) {
 				$scope.school = {};
 				ngDialog.open({
-					template: './views/content/thankyou.html'
+					template: './views/content/thankyou.html',
+					scope: $scope
 				});
 			}
 		}

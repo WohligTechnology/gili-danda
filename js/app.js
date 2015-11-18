@@ -93,6 +93,11 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
             url: "/tabletennis",
             templateUrl: "./views/template.html",
             controller: 'TabletennisCtrl'
+        }) 
+        .state('enquiry', {
+            url: "/enquiry",
+            templateUrl: "./views/template.html",
+            controller: 'EnquiryCtrl'
         })
         .state('badminton', {
             url: "/badminton",
@@ -212,7 +217,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
 
 firstapp.filter('serverimage', function () {
     return function (image) {
-        return "http://localhost/sfabackend/uploads/" + image;
+        return "http://wohlig.co.in/sfabackend/uploads/" + image;
     };
 });
 //fancybox directive

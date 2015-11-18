@@ -83,6 +83,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	});
 
 })
+    .controller('EnquiryCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+	$scope.template = TemplateService.changecontent("enquiry");
+	$scope.menutitle = NavigationService.makeactive("Enquiry");
+	TemplateService.title = $scope.menutitle;
+	$scope.navigation = NavigationService.getnav();
+    var getbannersliderscallback = function (data, status) {
+		console.log(data);
+		$scope.homeslide = data;
+	}
+	NavigationService.getbannersliders(getbannersliderscallback);
+
+	NavigationService.getschoolnames(function (data) {
+		$scope.schoolNames = _.chunk(data, data.length / 2);
+		console.log($scope.schoolNames);
+		$scope.schoolHalf = $scope.schoolNames[0].length;
+		console.log(data);
+	});
+	
+	$scope.schoolProfile = function(school){
+		console.log(school);
+		$location.path("schoolprofile/"+school.id);
+	}
+	
+
+})
 
 .controller('SchoolCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog, $location) {
 	$scope.template = TemplateService.changecontent("school");

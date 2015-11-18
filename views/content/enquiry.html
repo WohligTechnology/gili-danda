@@ -1,0 +1,128 @@
+<div class="curve">
+
+</div>
+<div class="orng-bk">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="has">
+                    <h4>Has Your Child’s School Registered For</h4>
+                    <h4>The Biggest Inter-School Sporting Tournament?</h4>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dy">
+                    <p>D.Y. Patil Sports Complex</p>
+                    <p>24<sup>th</sup> to 31<sup>st</sup> Dec 2015</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 wths">
+            <div class="slid-b">
+                <img src="img/form-banner.jpg" class="img-responsive">
+            </div>
+        </div>
+        <div class="col-md-4 wths">
+            <div class="l-4">
+                <div class="s-form">
+                    <label>I am a</label>
+                    <select>
+                        <option value="volvo">Parent</option>
+                        <option value="saab">Student</option>
+                        <option value="opel">Coach</option>
+                        <option value="audi">School Authority</option>
+                    </select>
+                </div>
+                <div class="forms-s">
+
+                    <input type="text" placeholder="Full Name">
+                </div>
+                <div class="forms-s">
+
+                    <input type="text" placeholder="Email">
+                </div>
+                <div class="forms-s">
+                    <input type="text" placeholder="Contact No.">
+                </div>
+                <div class="a-tag">
+
+                    <a href="#">Enquire Now</a>
+                </div>
+                <div class="s-c">
+                    <span>Contact Us:</span>
+                    <p>70456 84365 / 66 / 67</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="sub-cat marginpt">
+            <ul>
+                <li ng-repeat="element in homeslide track by $index" ng-hover="iconclick(element);">
+                    <a href="{{element.link}}">
+                        <figure>
+                            <img class="transition" ng-src="{{element.icon |serverimage}}" ng-style="{ 'width' : element.zoom*110 }" class="img-responsive">
+                            <figcaption ng-style="{ 'font-size' : element.zoom*14 }">{{element.name}}</figcaption>
+                        </figure>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<div class="curve">
+
+</div>
+<div class="grey-bk">
+    <div class="cabout text-center">
+        <h4>schools registered for SFA 2015</h4>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="overh">
+
+                <div class="col-md-6">
+                    <div class="school-name">
+                        <ul>
+
+                            <li ng-repeat="school in schoolNames[0]" ng-click="schoolProfile(school)">
+                                <p>{{school.name}}</p>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="school-name">
+                        <ul>
+                            <li ng-repeat="school in schoolNames[1]">
+                                <p>{{school.name}}</p>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="viewm pull-right">
+                <p>View More...</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-fluid">
+        <div class="b-img">
+            <img src="img/10-reason.png" class="img-responsive">
+        </div>
+    </div>
+</div>

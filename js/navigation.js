@@ -27,16 +27,16 @@ var navigationservice = angular.module('navigationservice', [])
     return {
         getbannersliders: function(callback){
          return $http.get(admin_url + 'json/getbannersliders', {}).success(callback);
-        },  
+        },
         getschoolnames: function(callback){
          return $http.get(admin_url + 'json/getschoolnames', {}).success(callback);
-        }, 
+        },
         getsponsors: function(callback){
          return $http.get(admin_url + 'json/getsponsors', {}).success(callback);
-        }, 
+        },
         getschoolprofile : function(id,callback){
          return $http.get(admin_url + 'json/getschoolprofile?id='+id, {}).success(callback);
-        },   
+        },
            submitschoolregistration: function (school, callback) {
                console.log(school);
             return $http({
@@ -55,7 +55,19 @@ var navigationservice = angular.module('navigationservice', [])
                 }
             }).success(callback);
         },
-      
+        createEnquiries: function (enquire, callback) {
+          console.log(enquire);
+            return $http({
+                url: admin_url + "json/createEnquiries",
+                method: "POST",
+                data: {
+                    'name': enquire.name,
+                    'email': enquire.email,
+                    'mobile': enquire.mobile,
+                    'person': enquire.person
+                }
+            }).success(callback);
+        },
         getsportsname: function(callback){
          return $http.get(admin_url + 'json/getregistrationsports', {}).success(callback);
         },

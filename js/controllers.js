@@ -100,12 +100,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		$scope.schoolHalf = $scope.schoolNames[0].length;
 		console.log(data);
 	});
-	
+
 	$scope.schoolProfile = function(school){
 		console.log(school);
 		$location.path("schoolprofile/"+school.id);
 	}
-	
+
+	$scope.viewmore = false;
+
+	$scope.enquire = {};
+	$scope.enquire.person = "Student";
+
+	$scope.submitEnquiry = function(enquire) {
+		NavigationService.createEnquiries(enquire, function(data,status) {
+			console.log(data);
+		});
+	};
+
 
 })
 
@@ -122,12 +133,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		$scope.schoolHalf = $scope.schoolNames[0].length;
 		console.log(data);
 	});
-	
+
 	$scope.schoolProfile = function(school){
 		console.log(school);
 		$location.path("schoolprofile/"+school.id);
 	}
-	
+
 	ga('send', 'pageview', {
 		'title': 'School Page'
 	});
@@ -402,7 +413,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		//    'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
 		//    'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
 		//    'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
-		//            
+		//
 		//   ];
 
 		$scope.venuslide = [{
@@ -498,7 +509,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 			game.active = true;
 			$scope.tab = game.game;
 		};
-		//        $scope.makeactive($scope.games[6]); 
+		//        $scope.makeactive($scope.games[6]);
 		ga('send', 'pageview', {
 			'title': 'Venue Page'
 		});
@@ -874,7 +885,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				},
 
             }];
-	
+
 	$scope.games = // JavaScript Document
             [{
 				"icon": "img/bluemenu/tabletennis.png",
@@ -1041,7 +1052,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		$scope.add = function (term) {
 			$scope.list.push(term);
 		}
-		
+
 
 		$scope.demo = 111;
 		$scope.checkthis = function () {
@@ -1224,7 +1235,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 		//    $scope.oneAtATime = true;
 		//    $scope.oneAtATimes = false;
-		//    
+		//
 		//      $scope.status = {
 		//    isFirstOpen: true,
 		//    isFirstDisabled: false

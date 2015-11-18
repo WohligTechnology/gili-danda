@@ -28,37 +28,34 @@
             </div>
         </div>
         <div class="col-md-4 wths">
-            <div class="l-4">
+            <form class="l-4" ng-submit="submitEnquiry(enquire);">
                 <div class="s-form">
                     <label>I am a</label>
-                    <select>
-                        <option value="volvo">Parent</option>
-                        <option value="saab">Student</option>
-                        <option value="opel">Coach</option>
-                        <option value="audi">School Authority</option>
+                    <select ng-model="enquire.person">
+                        <option value="Parent">Parent</option>
+                        <option value="Student">Student</option>
+                        <option value="Coach">Coach</option>
+                        <option value="School Authority">School Authority</option>
                     </select>
                 </div>
                 <div class="forms-s">
-
-                    <input type="text" placeholder="Full Name">
+                    <input type="text" placeholder="Full Name" ng-model="enquire.name" required>
                 </div>
                 <div class="forms-s">
-
-                    <input type="text" placeholder="Email">
+                    <input type="email" placeholder="Email" ng-model="enquire.email" required>
                 </div>
                 <div class="forms-s">
-                    <input type="text" placeholder="Contact No.">
+                    <input type="tel" placeholder="Contact No." ng-model="enquire.mobile">
                 </div>
                 <div class="a-tag">
-
-                    <a href="#">Enquire Now</a>
+                    <button type="submit">Enquire Now</button>
                 </div>
                 <div class="s-c">
                     <span>Contact Us:</span>
                     <p>70456 84365 / 66 / 67</p>
                 </div>
 
-            </div>
+            </form>
         </div>
     </div>
 </div>
@@ -88,7 +85,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="overh">
+            <div class="overh" ng-class="{'no-overflow': viewmore}">
 
                 <div class="col-md-6">
                     <div class="school-name">
@@ -114,8 +111,9 @@
                     </div>
                 </div>
             </div>
-            <div class="viewm pull-right">
-                <p>View More...</p>
+            <div class="viewm pull-right" ng-click="viewmore=!viewmore;">
+                <p ng-show="!viewmore">View More...</p>
+                <p ng-show="viewmore">View Less...</p>
             </div>
         </div>
 

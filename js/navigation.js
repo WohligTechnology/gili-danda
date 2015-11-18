@@ -56,17 +56,7 @@ var navigationservice = angular.module('navigationservice', [])
             }).success(callback);
         },
         createEnquiries: function (enquire, callback) {
-          console.log(enquire);
-            return $http({
-                url: admin_url + "json/createEnquiries",
-                method: "POST",
-                data: {
-                    'name': enquire.name,
-                    'email': enquire.email,
-                    'mobile': enquire.mobile,
-                    'person': enquire.person
-                }
-            }).success(callback);
+          return $http.get(admin_url + 'json/createEnquiries?name='+enquire.name+'&email='+enquire.email+'&mobile='+enquire.mobile+'&person='+enquire.person, {}).success(callback);
         },
         getsportsname: function(callback){
          return $http.get(admin_url + 'json/getregistrationsports', {}).success(callback);

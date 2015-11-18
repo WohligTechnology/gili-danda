@@ -93,9 +93,9 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
             url: "/tabletennis",
             templateUrl: "./views/template.html",
             controller: 'TabletennisCtrl'
-        }) 
+        })
         .state('enquiry', {
-            url: "/enquiry",
+            url: "/enquire",
             templateUrl: "./views/template.html",
             controller: 'EnquiryCtrl'
         })
@@ -186,7 +186,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
 
 		   scope.$watch('demo', function(){
 			   console.log(demo);
-		   
+
             var ishover;
             var $element = $(element);
             $test = $element;
@@ -439,3 +439,21 @@ firstapp.directive('mycircle', function ($compile, $parse) {
         }
     };
 });
+
+var formvalidation = function(allvalidation) {
+  var isvalid2 = true;
+  for (var i = 0; i < allvalidation.length; i++) {
+    console.log("checking");
+    if (allvalidation[i].field == "" || !allvalidation[i].field || allvalidation[i].field == "Please select" || allvalidation[i].field == "Please Select") {
+      allvalidation[i].validation = "ng-invalid";
+      isvalid2 = false;
+    }
+  }
+  return isvalid2;
+};
+
+var clearvalidation = function(allvalidation) {
+    for (var i = 0; i < allvalidation.length; i++) {
+        allvalidation[i].validation = "";
+    }
+};

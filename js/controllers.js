@@ -111,12 +111,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	$scope.enquire = {};
 	$scope.enquire.person = "Student";
 
-	$scope.submitEnquiry = function(enquire) {
-		NavigationService.createEnquiries(enquire, function(data,status) {
-			console.log(status);
-		});
-	};
+	var usercontactcallback = function(data, status) {
+    if (data) {
+      $scope.msgsuccess = "Kudos! We will get back to you soon!";
+      $scope.msg = "";
+      clearvalidation($scope.allvalidation);
+			$scope.enquire = {};
+			$scope.enquire.person = "Student";
+			ngDialog.open({
+				template: './views/content/thankyou.html'
+			});
+    } else {
+      $scope.msg = "Please re-verify the data you've entered!";
+      $scope.msgsuccess = "";
+    }
+  };
 
+  $scope.submitEnquiry = function(enquire) {
+    $scope.allvalidation = [{
+      field: $scope.enquire.name,
+      validation: ""
+    }, {
+      field: $scope.enquire.email,
+      validation: ""
+    }];
+
+    var check = formvalidation($scope.allvalidation);
+
+    if (check) {
+      NavigationService.createEnquiries(enquire, usercontactcallback);
+    } else {
+      $scope.msg = "Please fill mandatory fields!!";
+      $scope.msgsuccess = "";
+    };
+
+  };
 
 })
 

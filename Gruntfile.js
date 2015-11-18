@@ -63,7 +63,7 @@ module.exports = function (grunt) {
                     './bower_components/ui-router/release/angular-ui-router.min.js',
                     './bower_components/angular-bootstrap/ui-bootstrap.min.js',
                     './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-                    './bower_components/ngDialog/js/ngDialog.min.js',
+                    './bower_components/ng-dialog/js/ngDialog.min.js',
                     './bower_components/lodash/lodash.min.js',
                     './js/app.js',
                     './js/controllers.js',
@@ -167,7 +167,7 @@ module.exports = function (grunt) {
                         collapseBooleanAttributes: true,
                         collapseWhitespace: true,
                         removeAttributeQuotes: true,
-                        removeComments: true, // Only if you don't use comment directives! 
+                        removeComments: true, // Only if you don't use comment directives!
                         removeEmptyAttributes: true,
                         removeRedundantAttributes: true,
                         removeScriptTypeAttributes: true,
@@ -186,7 +186,7 @@ module.exports = function (grunt) {
                         collapseBooleanAttributes: true,
                         collapseWhitespace: true,
                         removeAttributeQuotes: true,
-                        removeComments: true, // Only if you don't use comment directives! 
+                        removeComments: true, // Only if you don't use comment directives!
                         removeEmptyAttributes: true,
                         removeRedundantAttributes: true,
                         removeScriptTypeAttributes: true,
@@ -205,7 +205,7 @@ module.exports = function (grunt) {
                         collapseBooleanAttributes: true,
                         collapseWhitespace: true,
                         removeAttributeQuotes: true,
-                        removeComments: true, // Only if you don't use comment directives! 
+                        removeComments: true, // Only if you don't use comment directives!
                         removeEmptyAttributes: true,
                         removeRedundantAttributes: true,
                         removeScriptTypeAttributes: true,

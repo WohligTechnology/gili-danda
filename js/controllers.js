@@ -103,6 +103,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         google_conversion_value: 0,
         google_remarketing_only: false
       });
+			console.log("Conversion Success");
     }
 
     var getbannersliderscallback = function(data, status) {

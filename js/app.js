@@ -185,7 +185,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
         link: function (scope, element, attr) {
 
 		   scope.$watch('demo', function(){
-			   console.log(demo);
+//			   console.log(demo);
 
             var ishover;
             var $element = $(element);

@@ -1,10 +1,10 @@
-var adminlink="http://wohlig.co.in/sfabackend/";
-var admin_url = adminlink+"index.php/";
+var adminlink = "http://wohlig.co.in/sfabackend/";
+var admin_url = adminlink + "index.php/";
 //var admin_url = "http://localhost/sfabackend/index.php/";
-var imgpath = adminlink+"uploads/";
+var imgpath = adminlink + "uploads/";
 var navigationservice = angular.module('navigationservice', [])
 
-.factory('NavigationService', function($http) {
+.factory('NavigationService', function ($http) {
     var navigation = [{
         name: "Home",
         classis: "active",
@@ -25,20 +25,20 @@ var navigationservice = angular.module('navigationservice', [])
     }];
 
     return {
-        getbannersliders: function(callback){
-         return $http.get(admin_url + 'json/getbannersliders', {}).success(callback);
+        getbannersliders: function (callback) {
+            return $http.get(admin_url + 'json/getbannersliders', {}).success(callback);
         },
-        getschoolnames: function(callback){
-         return $http.get(admin_url + 'json/getschoolnames', {}).success(callback);
+        getschoolnames: function (callback) {
+            return $http.get(admin_url + 'json/getschoolnames', {}).success(callback);
         },
-        getsponsors: function(callback){
-         return $http.get(admin_url + 'json/getsponsors', {}).success(callback);
+        getsponsors: function (callback) {
+            return $http.get(admin_url + 'json/getsponsors', {}).success(callback);
         },
-        getschoolprofile : function(id,callback){
-         return $http.get(admin_url + 'json/getschoolprofile?id='+id, {}).success(callback);
+        getschoolprofile: function (id, callback) {
+            return $http.get(admin_url + 'json/getschoolprofile?id=' + id, {}).success(callback);
         },
-           submitschoolregistration: function (school, callback) {
-               console.log(school);
+        submitschoolregistration: function (school, callback) {
+            console.log(school);
             return $http({
                 url: admin_url + "json/registerschool",
                 method: "POST",
@@ -56,18 +56,26 @@ var navigationservice = angular.module('navigationservice', [])
             }).success(callback);
         },
         createEnquiries: function (enquire, callback) {
-          return $http.get(admin_url + 'json/createEnquiries?name='+enquire.name+'&email='+enquire.email+'&mobile='+enquire.mobile+'&person='+enquire.person, {}).success(callback);
+            return $http.get(admin_url + 'json/createEnquiries?name=' + enquire.name + '&email=' + enquire.email + '&mobile=' + enquire.mobile + '&person=' + enquire.person, {}).success(callback);
         },
-        getsportsname: function(callback){
-         return $http.get(admin_url + 'json/getregistrationsports', {}).success(callback);
+
+
+        getsport: function (id, sportid, ageid, pagenum, callback) {
+            return $http.get(admin_url + 'json/getSchoolSports?id=' + id + '&sport=' + sportid + '&agegroup=' + ageid + '&pageno=' + pagenum + '&maxrow=10', {}).success(callback);
         },
-        getnav: function() {
+        getAllSports: function (callback) {
+            return $http.get(admin_url + 'json/getAllSports').success(callback);
+        },
+        getsportsname: function (callback) {
+            return $http.get(admin_url + 'json/getregistrationsports', {}).success(callback);
+        },
+        getnav: function () {
             return navigation;
         },
-        savenewsletter: function(email,callback) {
-            return $http.get("http://wohlig.co.in/sfabackend/index.php/json/getnewsletter?email="+email).success(callback);
+        savenewsletter: function (email, callback) {
+            return $http.get("http://wohlig.co.in/sfabackend/index.php/json/getnewsletter?email=" + email).success(callback);
         },
-        makeactive: function(menuname) {
+        makeactive: function (menuname) {
             for (var i = 0; i < navigation.length; i++) {
                 if (navigation[i].name == menuname) {
                     navigation[i].classis = "active";

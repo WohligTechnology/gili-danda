@@ -12,6 +12,7 @@
           <h3>{{school.school.name}} SCHOOL
             <span class="ptag"> (Co-ed School)</span>
           </h3>
+          <p>{{school.school.sfaschoolid}}</p>
           <p>{{school.school.address}}, {{school.school.location}}, {{school.school.contact}}</p>
           <ul class="spoint">
             <li class="borderrigh padlefo">
@@ -47,7 +48,7 @@
 </div>
 <div class="container martgintp">
 
-  <div class="row">
+  <div class="row" ng-if="checkmenu">
     <div class="col-md-12">
       <div class="blue-cat">
         <ul>
@@ -682,15 +683,14 @@
 
         </div>
       </div>
-      <div ng-show="tab3=='under11'">
+      <div>
         <div class="row">
 
           <div class="col-md-6">
             <div class="bg-school">
 
-
               <div class="stable">
-                <table class="table">
+                <table class="table" ng-if="result[0]">
                   <thead>
                     <tr>
                       <th>
@@ -708,7 +708,7 @@
                   </thead>
 
                   <tbody>
-                    <tr ng-repeat="data in result track by $index" ng-if="$index % 2 ==0">
+                    <tr ng-repeat="data in result[0] track by $index">
                       <td class="lis">
                         <img ng-src="{{data.image|serverimage}}">
                       </td>
@@ -743,7 +743,7 @@
 
 
               <div class="stable">
-                <table class="table">
+                <table class="table" ng-if="result[1]">
                   <thead>
                     <tr>
                       <th>
@@ -761,7 +761,7 @@
                   </thead>
 
                   <tbody>
-                    <tr ng-repeat="data in result track by $index" ng-if="$index % 2 !=0">
+                    <tr ng-repeat="data in result[1] track by $index">
                       <td class="lis">
                         <img ng-src="{{data.image|serverimage}}">
                       </td>
@@ -796,242 +796,6 @@
           <div class="col-md-12">
             <div class="view text-center feed">
               <a href="" ng-click="loadMore()">view more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div ng-show="tab3=='under14'">
-        <div class="row">
-
-          <div class="col-md-6">
-            <div class="bg-school">
-
-
-              <div class="stable">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>
-                        Photo
-                      </th>
-                      <th>
-                        Name
-                      </th>
-
-                      <th>
-                        Date Of Birth
-                      </th>
-
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr ng-repeat="data in result track by $index" ng-if="$index % 2 ==0">
-                      <td class="lis">
-                        <img ng-src="{{data.image|serverimage}}">
-                      </td>
-                      <td>
-                        <ul>
-                          <li>{{data.name}}</li>
-                          <li> id: {{data.id}}</li>
-                        </ul>
-
-
-                      </td>
-                      <td>
-                        <ul>
-                          <li>{{data.dob}}</li>
-                          <li>{{data.age}}</li>
-
-                        </ul>
-                      </td>
-
-                    </tr>
-
-                  </tbody>
-
-                </table>
-
-
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="bg-school">
-
-
-              <div class="stable">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>
-                        Photo
-                      </th>
-                      <th>
-                        Name
-                      </th>
-
-                      <th>
-                        Date Of Birth
-                      </th>
-
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr ng-repeat="data in result track by $index" ng-if="$index % 2 !=0">
-                      <td class="lis">
-                        <img ng-src="{{data.image|serverimage}}">
-                      </td>
-                      <td>
-                        <ul>
-                          <li>{{data.name}}</li>
-                          <li> id: {{data.id}}</li>
-                        </ul>
-
-
-                      </td>
-                      <td>
-                        <ul>
-                          <li>{{data.dob}}</li>
-                          <li>{{data.age}}</li>
-
-                        </ul>
-                      </td>
-
-                    </tr>
-
-                  </tbody>
-
-                </table>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <div class="view text-center feed">
-              <a href="">view more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div ng-show="tab3=='under16'">
-        <div class="row">
-
-          <div class="col-md-6">
-            <div class="bg-school">
-
-
-              <div class="stable">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>
-                        Photo
-                      </th>
-                      <th>
-                        Name
-                      </th>
-
-                      <th>
-                        Date Of Birth
-                      </th>
-
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr ng-repeat="data in result track by $index" ng-if="$index % 2 ==0">
-                      <td class="lis">
-                        <img ng-src="{{data.image|serverimage}}">
-                      </td>
-                      <td>
-                        <ul>
-                          <li>{{data.name}}</li>
-                          <li> id: {{data.id}}</li>
-                        </ul>
-
-
-                      </td>
-                      <td>
-                        <ul>
-                          <li>{{data.dob}}</li>
-                          <li>{{data.age}}</li>
-
-                        </ul>
-                      </td>
-
-                    </tr>
-
-                  </tbody>
-
-                </table>
-
-
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="bg-school">
-
-
-              <div class="stable">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>
-                        Photo
-                      </th>
-                      <th>
-                        Name
-                      </th>
-
-                      <th>
-                        Date Of Birth
-                      </th>
-
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr ng-repeat="data in result track by $index" ng-if="$index % 2 !=0">
-                      <td class="lis">
-                        <img ng-src="{{data.image|serverimage}}">
-                      </td>
-                      <td>
-                        <ul>
-                          <li>{{data.name}}</li>
-                          <li> id: {{data.id}}</li>
-                        </ul>
-
-
-                      </td>
-                      <td>
-                        <ul>
-                          <li>{{data.dob}}</li>
-                          <li>{{data.age}}</li>
-
-                        </ul>
-                      </td>
-
-                    </tr>
-
-                  </tbody>
-
-                </table>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <div class="view text-center feed">
-              <a href="">view more</a>
             </div>
           </div>
         </div>

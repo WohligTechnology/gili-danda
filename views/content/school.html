@@ -21,8 +21,7 @@
     <div class="col-md-6">
         <div class="school-name">
             <ul>
-              
-                <li ng-repeat="school in schoolNames[0]" ><span>{{($index+1)|numberFixedLen:2}}</span><p>{{school.name}}</p></li>
+                <li ng-repeat="school in schoolNames[0]" ui-sref="schoolprofile({id:school.id})"><span>{{($index+1)|numberFixedLen:2}}</span><p>{{school.name}}</p></li>
                
             </ul>
            
@@ -31,7 +30,7 @@
     <div class="col-md-6">
         <div class="school-name">
             <ul>
-                <li ng-repeat="school in schoolNames[1]"><span>{{($index+1+schoolHalf)|numberFixedLen:2}}</span><p>{{school.name}}</p></li>
+                <li ng-repeat="school in schoolNames[1]" ui-sref="schoolprofile({id:school.id})"><span>{{($index+1+schoolHalf)|numberFixedLen:2}}</span><p>{{school.name}}</p></li>
                
             </ul>
             

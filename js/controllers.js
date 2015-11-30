@@ -833,12 +833,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Schoolprofile");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-
+		$scope.checkmenu = false;
         $scope.sportsId = 0;
         $scope.pagenum = 1;
         $scope.result = [];
+		$scope.allresult = [];
         $scope.makeactive = function (game) {
-            console.log("game");
+        $scope.result = [];
+		$scope.allresult = [];
+		   $scope.sportsId = game.id;
             if (!game.grey) {
                 _.each($scope.games, function (n) {
                     n.active = false;
@@ -846,6 +849,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 game.active = true;
                 $scope.tab = game.game;
             }
+		   $scope.pagenum = 1;
+		   $scope.loadStudents();
         };
         NavigationService.getAllSports(function (data) {});
         $scope.school = {};
@@ -859,19 +864,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // Get school detail
         $scope.loadStudents = function () {
             NavigationService.getsport($stateParams.id, $scope.sportsId, $scope.ageSelected, $scope.pagenum, function (data) {
-                //console.log(data.queryresult);
+			  
                 _.each(data.queryresult, function (n) {
-                    $scope.result.push(n);
+                    $scope.allresult.push(n);
                 });
-                //$scope.result = data.queryresult;
-                _.each($scope.result, function (n) {
-                    n.dob = moment(new Date(n.dob)).format('Do MM YYYY');
-                });
+			  $scope.result = _.chunk($scope.allresult, parseInt($scope.allresult.length/2));
             });
         }
 
         NavigationService.getschoolprofile($stateParams.id, function (data) {
-
+		   
             _.each(data.sportname, function (n, key1) {
                 _.each($scope.games, function (m, key2) {
                     if (n.name == m.game) {
@@ -888,8 +890,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     }
                 });
                 if (key1 == data.sportname.length - 1) {
+				 $scope.checkmenu = true;
                     demo = 1;
-                    $scope.loadStudents();
+//                    $scope.loadStudents();
                 }
             });
             $scope.school = data;
@@ -1079,7 +1082,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.activess = '';
 
         $scope.tabchange = function (tab, a) {
-            //        console.log(tab);
+		   $scope.result = [];
+		$scope.allresult = [];
+                    console.log(tab);
             $scope.tab2 = tab;
             if (a == 1) {
                 $scope.active = "active";
@@ -1112,6 +1117,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.tabchanges = function (tab, a) {
 
+		   $scope.result = [];
+		$scope.allresult = [];
             $scope.tab3 = tab;
             if (a == 1) {
                 $scope.line = "col-class";
@@ -1163,15 +1170,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log("Android");
         };
 
-        $scope.makeactive = function (game) {
-            if (!game.grey) {
-                _.each($scope.games, function (n) {
-                    n.active = false;
-                });
-                game.active = true;
-                $scope.tab = game.game;
-            }
-        };
         //		$scope.makeactive($scope.games[0]);
         ga('send', 'pageview', {
             'title': 'SchoolProfile Page'

@@ -218,9 +218,18 @@ firstapp.directive('hovericon', function ($document) {
 firstapp.filter('serverimage', function () {
 	return function (image) {
 		if (image && image != "") {
-			return "http://wohlig.co.in/sfabackend/uploads/" + image;
+			return adminlink + "uploads/" + image;
 		}else{
-			return "http://wohlig.co.in/sfabackend/assets/img/avatar-mini.jpg";
+			return adminlink + "assets/img/icon.png";
+		}
+	};
+});
+firstapp.filter('serverimageschool', function () {
+	return function (image) {
+		if (image && image != "") {
+			return adminlink + "uploads/" + image;
+		}else{
+			return adminlink + "assets/img/school.png";
 		}
 	};
 });

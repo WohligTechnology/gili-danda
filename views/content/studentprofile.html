@@ -10,12 +10,12 @@
             <div class="col-xs-7">
                 <div class="sdata ">
 
-                    <h3>viraj kale <span>16</span></h3>
-                    <p class="fonts">Dhirubhai Ambani International School</p>
+                    <h3>{{student.studentprofile.name}} <span>16</span></h3>
+                    <p class="fonts">{{student.studentprofile.schoolname}} School</p>
                     <ul class="spoint">
                         <li class="borderrigh padlefo">
                             <p>group</p>
-                            <h2>u-17</h2>
+                            <h2>{{student.studentprofile.agegroupname}}</h2>
                         </li>
                         <li class="borderrigh">
                             <p>medals won</p>
@@ -23,7 +23,7 @@
                         </li>
                         <li class="">
                             <p>SFA id</p>
-                            <h2>SFA152</h2>
+                            <h2>{{student.studentprofile.sfastudentid}}</h2>
                         </li>
                     </ul>
                     <p>Favourite Sports</p>
@@ -44,7 +44,7 @@
 </div>
 <div class="container martgintp">
 
-    <div class="row">
+    <div class="row" ng-if="checkmenu">
         <div class="col-md-12">
             <div class="blue-cat">
                 <ul>
@@ -406,27 +406,31 @@
 
                             <div class="sch-det">
                                 <div class="col-md-10">
-                                    <h4>table tennis</h4>
+                                    <h4>{{selectedGame.game}}</h4>
                                 </div>
                             </div>
                         </div>
 
                         <!--                    ***** tab - gallery *****-->
 
-                        <div class="tab-gal" ng-show="tab1=='gallery'">
+                        <div class="tab-gal" ng-show="tab1=='gallery' && allresult!=''">
 
                             <div class="row  text-center">
                                 <div class="col-md-12 marginos">
 
-                                    <div class="col-md-4 costums" ng-repeat="gal in gallery">
+                                    <div class="col-md-4 costums" ng-repeat="gal in allresult">
                                         <div class="scooolgal">
-                                            <img ng-src="{{gal.image}}" ng-click="openModal(gal);">
+                                            <img ng-src="{{gal.thumbnail | serverimage}}" ng-click="openModal(gal);">
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
 
+                        </div>
+                        <div class="tab-gal" ng-show="allresult==''">
+							{{msg}}
+                            
                         </div>
                         <!--                    ******** END *******-->
 
@@ -592,8 +596,8 @@
 
 <div class="bg-school">
     <div class="container">
-      <div ng-show="tab2=='gallerymain'">
-            <div class="aroww text-center col-md-offset-5 col-md-5">
+      <div ng-show="tab2=='gallerymain' && showLoadmore">
+            <div class="aroww text-center col-md-offset-5 col-md-5" ng-click="loadMore()">
                 <img src="img/arrow.png">
             </div>
         </div>

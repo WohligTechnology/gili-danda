@@ -165,7 +165,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider) {
 			controller: 'PartnerCtrl'
 		})
 		.state('studentprofile', {
-			url: "/studentprofile",
+			url: "/studentprofile/:id",
 			templateUrl: "./views/template.html",
 			controller: 'StudentprofileCtrl'
 		})

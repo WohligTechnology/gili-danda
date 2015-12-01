@@ -689,19 +689,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		};
 
 		$scope.makeactive = function (game) {
-			$scope.result = [];
-			$scope.allresult = [];
-			$scope.selectedGame = game;
-			$scope.sportsId = game.id;
+			
 			if (!game.grey) {
 				_.each($scope.games, function (n) {
 					n.active = false;
 				});
 				game.active = true;
 				$scope.tab = game.game;
-			}
-			$scope.pagenum = 1;
+				$scope.result = [];
+			$scope.allresult = [];
+			$scope.selectedGame = game;
+			$scope.sportsId = game.id;
+				$scope.pagenum = 1;
 			$scope.loadStudents();
+			}
+			
 		};
 
 

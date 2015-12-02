@@ -1,5 +1,5 @@
-//var adminlink = "http://wohlig.co.in/sfabackend/";
-var adminlink = "http://localhost/sfabackend/";
+var adminlink = "http://wohlig.co.in/sfabackend/";
+//var adminlink = "http://localhost/sfabackend/";
 var admin_url = adminlink + "index.php/";
 var imgpath = adminlink + "uploads/";
 var navigationservice = angular.module('navigationservice', [])
@@ -65,13 +65,13 @@ var navigationservice = angular.module('navigationservice', [])
             return $http.get(admin_url + 'json/createEnquiries?name=' + enquire.name + '&email=' + enquire.email + '&mobile=' + enquire.mobile + '&person=' + enquire.person, {}).success(callback);
         },
         getsport: function (id, sportid, ageid, pagenum, callback) {
-            return $http.get(admin_url + 'json/getSchoolSports?id=' + id + '&sport=' + sportid + '&agegroup=' + ageid + '&pageno=' + pagenum + '&maxrow=10', {}).success(callback);
+            return $http.get(admin_url + 'json/getSchoolSports?id=' + id + '&sport=' + sportid + '&agegroup=' + ageid + '&pageno=' + pagenum + '&maxrow=100', {}).success(callback);
         },
         getgallery: function (id, sportid, pagenum, callback) {
-            return $http.get(admin_url + 'json/getgalleryimageforstudentprofile?id=' + id + '&sport=' + sportid + '&pageno=' + pagenum + '&maxrow=10', {}).success(callback);
+            return $http.get(admin_url + 'json/getgalleryimageforstudentprofile?id=' + id + '&sport=' + sportid + '&pageno=' + pagenum + '&maxrow=100', {}).success(callback);
         },
         getgalleryimage: function (id, sportid, pagenum, callback) {
-            return $http.get(admin_url + 'json/getgalleryimage?id=' + id + '&sport=' + sportid + '&pageno=' + pagenum + '&maxrow=10', {}).success(callback);
+            return $http.get(admin_url + 'json/getgalleryimage?id=' + id + '&sport=' + sportid + '&pageno=' + pagenum + '&maxrow=100', {}).success(callback);
         },
         getAllSports: function (callback) {
             return $http.get(admin_url + 'json/getAllSports').success(callback);

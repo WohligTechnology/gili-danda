@@ -889,13 +889,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		$scope.allresult = [];
 		$scope.showLoadmore = true;
 		$scope.msg = "Loading";
-	$scope.getage = function(){
-		NavigationService.getallagegroups(function (data) {
-			$scope.agegroups = data;
-			$scope.ageSelected = $scope.agegroups[0].id;
-		});
-	}
-	$scope.getage();
+		$scope.getage = function () {
+
+		}
+		$scope.getage();
 		$scope.makeactive = function (game) {
 			if (!game.grey) {
 				_.each($scope.games, function (n) {
@@ -909,12 +906,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				$scope.sportsId = game.id;
 				console.log(game);
 				$scope.pagenum = 1;
-				if ($scope.tab2 == "squad") {
-					$scope.getage();
-					$scope.loadStudents();
-				} else if ($scope.tab2 == "gallerymain") {
-					$scope.loadGallery();
-				}
+				NavigationService.getallagegroups(function (data) {
+					$scope.agegroups = data;
+					$scope.ageSelected = $scope.agegroups[0].id;
+					if ($scope.tab2 == "squad") {
+						$scope.loadStudents();
+					} else if ($scope.tab2 == "gallerymain") {
+						$scope.loadGallery();
+					}
+				});
+
 
 				$scope.tab = game.game;
 			}
@@ -941,7 +942,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 					});
 					$scope.msg = "";
 					$scope.result = _.chunk($scope.allresult, parseInt($scope.allresult.length / 2));
-				} 
+				}
 				if ($scope.allresult == "") {
 					$scope.msg = "No data";
 				}

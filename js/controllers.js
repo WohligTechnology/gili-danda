@@ -1588,41 +1588,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 		$scope.games = // JavaScript Document
       [{
-				"img": "img/partner-logo/1.png",
-				"href": "http://www.mbtaworld.com/",
-				"game": "tennis"
-      }, {
-				"img": "img/partner-logo/2.png",
-				"href": "http://www.ispsquash.com/",
-				"game": "squash"
-      }, {
-				"img": "img/partner-logo/3.png",
+				"img": "img/footer/s1.jpg",
 				"href": "http://www.mbasso.in",
 				"game": "badminton"
       }, {
-				"img": "img/partner-logo/4.png",
+				"img": "img/footer/s2.jpg",
+				"href": "",
+				"game": "handball"
+      }, {
+				"img": "img/footer/s3.jpg",
+				"href": "",
+				"game": "Judo"
+      }, {
+				"img": "img/footer/s4.jpg",
+				"href": "http://www.ispsquash.com/",
+				"game": "squash"
+      }, {
+				"img": "img/footer/s5.jpg",
+				"href": "http://www.mbtaworld.com/",
+				"game": "Tennis"
+      }, {
+				"img": "img/footer/s6.jpg",
 				"href": "http://www.msdtta.org/",
-				"game": "table tennis"
+				"game": "table Tennis"
       }, {
-				"img": "img/partner-logo/5.png",
-				"href": "",
-				"game": "Handball"
-      }, {
-				"img": "img/partner-logo/6.png",
-				"href": "",
-				"game": "volleyball"
-      }, {
-				"img": "img/partner-logo/7.png",
-				"href": "http://www.maharashtrabasketball.com/",
-				"game": "basketball"
-      }, {
-				"img": "img/partner-logo/8.png",
+				"img": "img/footer/s7.jpg",
 				"href": "http://www.swimmingfederation.in/",
 				"game": "swimming"
       }, {
-				"img": "img/partner-logo/9.png",
+				"img": "img/footer/s8.jpg",
 				"href": "",
-				"game": "judo"
+				"game": "volleyball"
+      }, {
+				"img": "img/footer/s9.jpg",
+				"href": "http://www.maharashtrabasketball.com/",
+				"game": "basket ball"
       }];
 
 	})

@@ -10,23 +10,25 @@
             <div class="col-xs-7">
                 <div class="sdata ">
 
-                    <h3>{{student.studentprofile.name}} <span>16</span></h3>
+                    <h3>{{student.studentprofile.name}}</h3>
                     <p class="fonts">{{student.studentprofile.schoolname}} School</p>
                     <ul class="spoint">
                         <li class="borderrigh padlefo">
                             <p>group</p>
                             <h2>{{student.studentprofile.agegroupname}}</h2>
                         </li>
+                        <!--
                         <li class="borderrigh">
                             <p>medals won</p>
                             <h2>430</h2>
                         </li>
-                        <li class="">
+-->
+                        <li class="border-l">
                             <p>SFA id</p>
                             <h2>{{student.studentprofile.sfastudentid}}</h2>
                         </li>
                     </ul>
-                    <p>Favourite Sports</p>
+                    <p>Sports</p>
                     <h2>Basketball</h2>
                 </div>
 
@@ -71,8 +73,11 @@
         </div>
     </div>
 
-   
-        <div class="marginegt " ng-show="tab2=='gallerymain'">
+
+    <div class="" ng-show="tab2=='gallerymain'">
+        <!--
+
+// gallery content start
             <div class=" marginlft marginlfts row">
 
 
@@ -413,7 +418,7 @@
                             </div>
                         </div>
 
-                        <!--                    ***** tab - gallery *****-->
+                 
 
                         <div class="tab-gal" ng-show="tab1=='gallery' && allresult!=''">
 
@@ -434,7 +439,7 @@
                             {{msg}}
 
                         </div>
-                        <!--                    ******** END *******-->
+                 
 
                     </div>
 
@@ -442,12 +447,28 @@
                 </div>
 
             </div>
-        </div>
+//gallery content end
+-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="another-static text-center">
+                    <img src="img/watch.png" class="img-responsive">
 
-   
-    
-        <div class="marzero" ng-show="tab2=='statics'">
-            <!--
+                    <div class="txt-sorry">
+                        <h1>Dear Participant, </h1>
+                        <h3>All your information, statistics, photographs,</h3>
+                        <h3>match videos and medals tally will be updated </h3>
+                        <h3>on this page post <span class="s-c">SFA Mumbai 2015.</span></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="marzero" ng-show="tab2=='statics'">
+        <!--
             <div class="row">
                 <div class="col-md-12 ">
 
@@ -587,7 +608,7 @@
  
                 </div>
 -->
-            <!--
+        <!--
             <div class="row">
                 <div class="col-md-12">
                     <div class="view text-center feed">
@@ -596,25 +617,27 @@
                 </div>
             </div>
 -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="another-static text-center">
-                        <img src="img/watch.png" class="img-responsive">
-                        
-                        <div class="txt-sorry">
-                        <h1>sorry.</h1>
-                            <h3>This information will be updated</h3>
-                            <h3>only after the end of the tournament.</h3>
-                        </div>
+   <div class="row">
+            <div class="col-md-12">
+                <div class="another-static text-center">
+                    <img src="img/watch.png" class="img-responsive">
+
+                    <div class="txt-sorry">
+                        <h1>Dear Participant, </h1>
+                        <h3>All your information, statistics, photographs,</h3>
+                        <h3>match videos and medals tally will be updated </h3>
+                        <h3>on this page post <span class="s-c">SFA Mumbai 2015.</span></h3>
                     </div>
                 </div>
             </div>
-
         </div>
-      
-   
+
+    </div>
+
+
 </div>
 
+<!--
 <div class="bg-school">
     <div class="container">
         <div ng-show="tab2=='gallerymain' && showLoadmore">
@@ -626,3 +649,4 @@
 
     </div>
 </div>
+-->

@@ -1,148 +1,148 @@
 <div class="media-set">
-  <img src="img/profiles.jpg" class="img-responsive">
-  <div class="container sprofile">
-    <div class="row">
-      <div class="col-xs-3 ">
-        <div class="slogo">
-          <img src="{{school.school.image | serverimageschool}}" class="img-responsive">
-        </div>
-      </div>
-      <div class="col-xs-7">
-        <div class="sdata ">
-          <h3>{{school.school.name}} SCHOOL
+    <img src="img/profiles.jpg" class="img-responsive">
+    <div class="container sprofile">
+        <div class="row">
+            <div class="col-xs-3 ">
+                <div class="slogo">
+                    <img src="{{school.school.image | serverimageschool}}" class="img-responsive">
+                </div>
+            </div>
+            <div class="col-xs-7">
+                <div class="sdata ">
+                    <h3>{{school.school.name}} SCHOOL
             <span class="ptag"> (Co-ed School)</span>
           </h3>
-          <p>{{school.school.sfaschoolid}}</p>
-          <p>{{school.school.address}}  {{school.school.location}}  {{school.school.contact}}</p>
-          <ul class="spoint">
-            <li class="borderrigh padlefo">
-              <p>participant</p>
-              <h2>{{school.school.participant.participant}}</h2>
-              <button class="cusbtn" type="submit">view more</button>
-            </li>
-            <li class="borderrigh">
-              <p>medals won</p>
-              <h2>430</h2>
-              <button class="cusbtn" type="submit">view more</button>
-            </li>
-            <li class="">
-              <p>rank</p>
-              <h2>05</h2>
+                    <p>{{school.school.sfaschoolid}}</p>
+                    <p>{{school.school.address}} {{school.school.location}} {{school.school.contact}}</p>
+                    <ul class="spoint">
+                        <li class="borderrigh padlefo">
+                            <p>participant</p>
+                            <h2>{{school.school.participant.participant}}</h2>
+                            <button class="cusbtn" type="submit">view more</button>
+                        </li>
+                        <li class="borderrigh">
+                            <p>medals won</p>
+                            <h2>430</h2>
+                            <button class="cusbtn" type="submit">view more</button>
+                        </li>
+                        <li class="">
+                            <p>rank</p>
+                            <h2>05</h2>
 
-            </li>
-          </ul>
+                        </li>
+                    </ul>
 
-        </div>
+                </div>
 
-      </div>
-<!--
+            </div>
+            <!--
       <div class="col-xs-2">
         <div class="splogo">
           <img src="img/partner-logo/jio.png" class="img-responsive">
         </div>
       </div>
 -->
+        </div>
     </div>
-  </div>
 </div>
 <div class="spo text-center">
-  <h4 class="clsports">select sport</h4>
+    <h4 class="clsports">select sport</h4>
 </div>
 <div class="container martgintp">
 
-  <div class="row" ng-if="checkmenu">
-    <div class="col-md-12">
-      <div class="blue-cat">
-        <ul>
-          <hovericon game="game" ng-repeat="game in games" ng-click="makeactive(game);"></hovericon>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="text-center">
-        <div class="stab ">
-          <ul>
-            <li ng-class="active" ng-click="tabchange('squad',1)">
-              <h3>SQUAD</h3>
-            </li>
-            <li ng-class="actives" ng-click="tabchange('gallerymain',2)">
-              <h3>gallery</h3>
-            </li>
-            <li ng-class="activess" ng-click="tabchange('statics',3)">
-              <h3>STATISTICS</h3>
-            </li>
-          </ul>
+    <div class="row" ng-if="checkmenu">
+        <div class="col-md-12">
+            <div class="blue-cat">
+                <ul>
+                    <hovericon game="game" ng-repeat="game in games" ng-click="makeactive(game);"></hovericon>
+                </ul>
+            </div>
         </div>
-      </div>
+
     </div>
-  </div>
-
-  <div class="marginegt ">
-    <div ng-show="tab2=='gallerymain'">
-      <div class=" marginlft marginlfts row">
-
-
-        <div class="col-md-3 ">
-          <div class="wths">
-            <div class="cat-left scrollbar-dynamic" data-jquery-scrollbar="jqueryScrollbarOptions" style="width:100%;margin-top:0px;">
-
-              <accordion close-others="oneAtATime">
-
-
-                <accordion-group is-open="status.open">
-                  <accordion-heading>
-                    age group <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
-                  </accordion-heading>
-                  <form class="sub-catgame">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <div class="stab ">
                     <ul>
-                      <li ng-repeat="age in agegroups">
-                        <input id="{{age.id}}" type="checkbox">
-                        <label class="checkbox" for="{{age.id}}">{{age.name}}</label>
-                      </li>
+                        <li ng-class="active" ng-click="tabchange('squad',1)">
+                            <h3>SQUAD</h3>
+                        </li>
+                        <li ng-class="actives" ng-click="tabchange('gallerymain',2)">
+                            <h3>gallery</h3>
+                        </li>
+                        <li ng-class="activess" ng-click="tabchange('statics',3)">
+                            <h3>STATISTICS</h3>
+                        </li>
                     </ul>
-                  </form>
-                </accordion-group>
-              </accordion>
-              <accordion close-others="oneAtATime">
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-                <accordion-group is-open="status.open">
-                  <accordion-heading>
-                    Year <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
-                  </accordion-heading>
-                  <form class="sub-catgame">
-                    <ul>
-                      <li>
-                        <input id="Option6" type="checkbox">
-                        <label class="checkbox" for="Option6">2015</label>
-                      </li>
-
-                    </ul>
-                  </form>
-                </accordion-group>
-              </accordion>
-              <p class="sel-game">select game</p>
-
-              <accordion close-others="oneAtATime">
+    <div class="marginegt " ng-show="tab2=='gallerymain'">
+        <div class=" marginlft marginlfts row">
 
 
-                <accordion-group is-open="status.open" ng-repeat="sport in schoolSports">
-                  <accordion-heading>
-				   {{sport.name}} <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
-                  </accordion-heading>
-                  <form class="sub-catgame">
-                    <ul>
-                      <li ng-repeat="category in sport.category">
-                        <input id="{{sport.name}}{{category.id}}" type="checkbox">
-                        <label class="checkbox" for="{{sport.name}}{{category.id}}">{{category.title}}</label>
-                      </li>
-                    </ul>
-                  </form>
-                </accordion-group>
-<!--
+            <div class="col-md-3 ">
+                <div class="wths">
+                    <div class="cat-left scrollbar-dynamic" data-jquery-scrollbar="jqueryScrollbarOptions" style="width:100%;margin-top:0px;">
+
+                        <accordion close-others="oneAtATime">
+
+
+                            <accordion-group is-open="status.open">
+                                <accordion-heading>
+                                    age group <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
+                                </accordion-heading>
+                                <form class="sub-catgame">
+                                    <ul>
+                                        <li ng-repeat="age in agegroups">
+                                            <input id="{{age.id}}" type="checkbox">
+                                            <label class="checkbox" for="{{age.id}}">{{age.name}}</label>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </accordion-group>
+                        </accordion>
+                        <accordion close-others="oneAtATime">
+
+
+                            <accordion-group is-open="status.open">
+                                <accordion-heading>
+                                    Year <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
+                                </accordion-heading>
+                                <form class="sub-catgame">
+                                    <ul>
+                                        <li>
+                                            <input id="Option6" type="checkbox">
+                                            <label class="checkbox" for="Option6">2015</label>
+                                        </li>
+
+                                    </ul>
+                                </form>
+                            </accordion-group>
+                        </accordion>
+                        <p class="sel-game">select game</p>
+
+                        <accordion close-others="oneAtATime">
+
+
+                            <accordion-group is-open="status.open" ng-repeat="sport in schoolSports">
+                                <accordion-heading>
+                                    {{sport.name}} <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
+                                </accordion-heading>
+                                <form class="sub-catgame">
+                                    <ul>
+                                        <li ng-repeat="category in sport.category">
+                                            <input id="{{sport.name}}{{category.id}}" type="checkbox">
+                                            <label class="checkbox" for="{{sport.name}}{{category.id}}">{{category.title}}</label>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </accordion-group>
+                            <!--
               </accordion>
               <accordion close-others="oneAtATime">
 
@@ -376,56 +376,57 @@
                 </accordion-group>
               </accordion>
 -->
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-9 ">
-
-          <div class="tab-gallery ">
-            <div class=" row">
-
-              <div class="sch-det">
-                <div class="col-md-10">
-                  <h4>{{selectedGame.game}}</h4>
+                    </div>
                 </div>
-              </div>
             </div>
 
-            <!--                    ***** tab - gallery *****-->
+            <div class="col-md-9 ">
 
-            <div class="tab-gal" ng-show="tab1=='gallery' && allresult!=''">
+                <div class="tab-gallery ">
+                    <div class=" row">
 
-              <div class="row  text-center">
-                <div class="col-md-12 marginos">
+                        <div class="sch-det">
+                            <div class="col-md-10">
+                                <h4>{{selectedGame.game}}</h4>
+                            </div>
+                        </div>
+                    </div>
 
-                  <div class="col-md-4 costums" ng-repeat="gal in allresult">
-                    <div class="scooolgal">
-                      <img ng-src="{{gal.thumbnail | serverimage}}" ng-click="openModal(gal);">
-                    </div> 
-                  </div>
+                    <!--                    ***** tab - gallery *****-->
+
+                    <div class="tab-gal" ng-show="tab1=='gallery' && allresult!=''">
+
+                        <div class="row  text-center">
+                            <div class="col-md-12 marginos">
+
+                                <div class="col-md-4 costums" ng-repeat="gal in allresult">
+                                    <div class="scooolgal">
+                                        <img ng-src="{{gal.thumbnail | serverimage}}" ng-click="openModal(gal);">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-gal" ng-show="allresult==''">
+
+                        {{msg}}
+
+                    </div>
+                    <!--                    ******** END *******-->
 
                 </div>
-              </div>
+
 
             </div>
-
-            <div class="tab-gal" ng-show="allresult==''">
-
-			  {{msg}}
-
-            </div>
-            <!--                    ******** END *******-->
-
-          </div>
-
 
         </div>
-
-      </div>
     </div>
 
     <div ng-show="tab2=='statics'">
+        <!--
       <div class="row">
         <div class="col-md-12 ">
 
@@ -639,166 +640,175 @@
           </div>
         </div>
       </div>
+-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="another-static text-center">
+                    <img src="img/watch2.jpg" class="img-responsive">
+
+                </div>
+            </div>
+        </div>
 
     </div>
-    <div ng-show="tab2=='squad'">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="list-active cust-li text-center">
-            <ul>
-              <li class="{{age.line}}" ng-click="tabchanges(age)" ng-repeat="age in agegroups">{{age.name}}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="tab-gallery">
-            <h4>{{selectedGame.game}}</h4>
-            <h5>{{msg}}</h5>
-          </div>
-
-        </div>
-      </div>
-      <div>
+    <div class="marginegt " ng-show="tab2=='squad'">
         <div class="row">
-
-          <div class="col-md-6">
-            <div class="bg-school">
-
-              <div class="stable">
-                <table class="table" ng-if="result[0]">
-                  <thead>
-                    <tr>
-                      <th>
-                        Photo
-                      </th>
-                      <th>
-                        Name
-                      </th>
-
-                      <th>
-                        Date Of Birth
-                      </th>
-
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr ng-repeat="data in result[0] track by $index" ui-sref="studentprofile({id:data.id})">
-                      <td class="lis">
-                        <img ng-src="{{data.image|serverimage}}">
-                      </td>
-                      <td>
-                        <ul>
-                          <li>{{data.name}}</li>
-                          <li> id: {{data.id}}</li>
-                        </ul>
-
-
-                      </td>
-                      <td>
-                        <ul>
-                          <li>{{data.dob}}</li>
-                          <li>{{data.age}}</li>
-
-                        </ul>
-                      </td>
-
-                    </tr>
-
-                  </tbody>
-
-                </table>
-
-
-              </div>
+            <div class="col-md-12">
+                <div class="list-active cust-li text-center">
+                    <ul>
+                        <li class="{{age.line}}" ng-click="tabchanges(age)" ng-repeat="age in agegroups">{{age.name}}</li>
+                    </ul>
+                </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="bg-school">
-
-
-              <div class="stable">
-                <table class="table" ng-if="result[1]">
-                  <thead>
-                    <tr>
-                      <th>
-                        Photo
-                      </th>
-                      <th>
-                        Name
-                      </th>
-
-                      <th>
-                        Date Of Birth
-                      </th>
-
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr ng-repeat="data in result[1] track by $index" ui-sref="studentprofile({id:data.id})">
-                      <td class="lis">
-                        <img ng-src="{{data.image|serverimage}}">
-                      </td>
-                      <td>
-                        <ul>
-                          <li>{{data.name}}</li>
-                          <li> id: {{data.id}}</li>
-                        </ul>
-
-
-                      </td>
-                      <td>
-                        <ul>
-                          <li>{{data.dob}}</li>
-                          <li>{{data.age}}</li>
-
-                        </ul>
-                      </td>
-
-                    </tr>
-
-                  </tbody>
-
-                </table>
-
-              </div>
-            </div>
-          </div>
         </div>
-
         <div class="row">
-          <div class="col-md-12">
-            <div class="view text-center feed">
-              <a href="" ng-click="loadMore()">view more</a>
+            <div class="col-md-12">
+                <div class="tab-gallery">
+                    <h4>{{selectedGame.game}}</h4>
+                    <h5>{{msg}}</h5>
+                </div>
+
             </div>
-          </div>
         </div>
-      </div>
+        <div>
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="bg-school">
+
+                        <div class="stable">
+                            <table class="table" ng-if="result[0]">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Photo
+                                        </th>
+                                        <th>
+                                            Name
+                                        </th>
+
+                                        <th>
+                                            Date Of Birth
+                                        </th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr ng-repeat="data in result[0] track by $index" ui-sref="studentprofile({id:data.id})">
+                                        <td class="lis">
+                                            <img ng-src="{{data.image|serverimage}}">
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>{{data.name}}</li>
+                                                <li> id: {{data.id}}</li>
+                                            </ul>
+
+
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>{{data.dob}}</li>
+                                                <li>{{data.age}}</li>
+
+                                            </ul>
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="bg-school">
+
+
+                        <div class="stable">
+                            <table class="table" ng-if="result[1]">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Photo
+                                        </th>
+                                        <th>
+                                            Name
+                                        </th>
+
+                                        <th>
+                                            Date Of Birth
+                                        </th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr ng-repeat="data in result[1] track by $index" ui-sref="studentprofile({id:data.id})">
+                                        <td class="lis">
+                                            <img ng-src="{{data.image|serverimage}}">
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>{{data.name}}</li>
+                                                <li> id: {{data.id}}</li>
+                                            </ul>
+
+
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>{{data.dob}}</li>
+                                                <li>{{data.age}}</li>
+
+                                            </ul>
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="view text-center feed">
+                        <a href="" ng-click="loadMore()">view more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+
 </div>
 
 <div class="bg-school">
-  <div class="container">
+    <div class="container">
 
-    <!--                load more tab-->
-    <!--                -->
-    <div ng-show="tab2=='gallerymain' && showLoadmore">
-      <div class="aroww text-center col-md-offset-5 col-md-5" ng-click="loadMoreGallery()">
-        <img src="img/arrow.png">
-      </div>
+        <!--                load more tab-->
+        <!--                -->
+        <div ng-show="tab2=='gallerymain' && showLoadmore">
+            <div class="aroww text-center col-md-offset-5 col-md-5" ng-click="loadMoreGallery()">
+                <img src="img/arrow.png">
+            </div>
+        </div>
+
+        <!--                ** END************-->
+
+        <!--                ********* matches tab ********-->
+
+
+        <!--                *** end *********-->
+
+
     </div>
-
-    <!--                ** END************-->
-
-    <!--                ********* matches tab ********-->
-
-
-    <!--                *** end *********-->
-
-
-  </div>
 </div>

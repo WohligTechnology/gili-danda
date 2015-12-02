@@ -220,7 +220,7 @@ firstapp.filter('serverimage', function () {
 		if (image && image != "") {
 			return adminlink + "uploads/" + image;
 		}else{
-			return adminlink + "assets/img/icon.png";
+			return adminlink + "assets/img/noimage.png";
 		}
 	};
 });
@@ -229,7 +229,7 @@ firstapp.filter('serverimageschool', function () {
 		if (image && image != "") {
 			return adminlink + "uploads/" + image;
 		}else{
-			return adminlink + "assets/img/school.png";
+			return adminlink + "assets/img/noimage.png";
 		}
 	};
 });

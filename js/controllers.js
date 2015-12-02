@@ -689,7 +689,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		};
 
 		$scope.makeactive = function (game) {
-			
+
 			if (!game.grey) {
 				_.each($scope.games, function (n) {
 					n.active = false;
@@ -697,13 +697,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				game.active = true;
 				$scope.tab = game.game;
 				$scope.result = [];
-			$scope.allresult = [];
-			$scope.selectedGame = game;
-			$scope.sportsId = game.id;
+				$scope.allresult = [];
+				$scope.selectedGame = game;
+				$scope.sportsId = game.id;
 				$scope.pagenum = 1;
-			$scope.loadStudents();
+				$scope.loadStudents();
 			}
-			
+
 		};
 
 
@@ -889,10 +889,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		$scope.allresult = [];
 		$scope.showLoadmore = true;
 		$scope.msg = "Loading";
+	$scope.getage = function(){
 		NavigationService.getallagegroups(function (data) {
 			$scope.agegroups = data;
 			$scope.ageSelected = $scope.agegroups[0].id;
 		});
+	}
+	$scope.getage();
 		$scope.makeactive = function (game) {
 			if (!game.grey) {
 				_.each($scope.games, function (n) {
@@ -907,6 +910,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				console.log(game);
 				$scope.pagenum = 1;
 				if ($scope.tab2 == "squad") {
+					$scope.getage();
 					$scope.loadStudents();
 				} else if ($scope.tab2 == "gallerymain") {
 					$scope.loadGallery();
@@ -931,13 +935,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		// Get school detail
 		$scope.loadStudents = function () {
 			NavigationService.getsport($stateParams.id, $scope.sportsId, $scope.ageSelected, $scope.pagenum, function (data) {
-				if(data.queryresult != ''){
-				_.each(data.queryresult, function (n) {
-					$scope.allresult.push(n);
-				});
+				if (data.queryresult != '') {
+					_.each(data.queryresult, function (n) {
+						$scope.allresult.push(n);
+					});
 					$scope.msg = "";
-				$scope.result = _.chunk($scope.allresult, parseInt($scope.allresult.length / 2));
-				}else{
+					$scope.result = _.chunk($scope.allresult, parseInt($scope.allresult.length / 2));
+				} 
+				if ($scope.allresult == "") {
 					$scope.msg = "No data";
 				}
 			});
@@ -984,11 +989,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 			});
 			$scope.school = data;
 			$scope.sportid = [];
-			_.each(data.sportname, function(n, key){
+			_.each(data.sportname, function (n, key) {
 				$scope.sportid.push(n.id);
 			});
 			console.log($scope.sportid);
-			NavigationService.filterGames($scope.sportid, function(data){
+			NavigationService.filterGames($scope.sportid, function (data) {
 				$scope.schoolSports = data;
 			});
 

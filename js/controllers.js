@@ -732,7 +732,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				}
 			});
 			$scope.student = data;
-
+			_.each(data.sportsparticipated, function(n,key){
+				console.log(n);
+				if(key == 0){
+					$scope.sportsnames = n.name;
+				}else{
+					$scope.sportsnames = $scope.sportsnames+ ", " + n.name;
+				}
+				
+			});
 			_.each(data.sportname, function (n, key) {
 				//lodash
 				//console.log(n);
@@ -989,6 +997,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				}
 			});
 			$scope.school = data;
+			
+			 
 			$scope.sportid = [];
 			_.each(data.sportname, function (n, key) {
 				$scope.sportid.push(n.id);

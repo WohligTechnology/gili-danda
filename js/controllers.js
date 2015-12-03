@@ -183,7 +183,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('StudentCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+.controller('StudentCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog, $location) {
     $scope.template = TemplateService.changecontent("student");
     $scope.menutitle = NavigationService.makeactive("Student");
     TemplateService.title = $scope.menutitle;
@@ -193,32 +193,128 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         'title': 'Student Page'
     });
 
+    $scope.idSearch = {};
+    $scope.idSearch.search = '';
     $scope.searchById = {};
     $scope.searchById.search = '';
     $scope.searchById.pageno = 1;
-
-    $scope.getSearchById = function () {
-        console.log($scope.searchById);
-        $scope.searchById.search = parseInt($scope.searchById.search.substr(5));
-        NavigationService.studentSearchById($scope.searchById, function (data) {
-            if (data) {
-                console.log(data);
-            }
-        })
-    }
+    $scope.searchCount = 0;
+    $scope.searchResults = [];
 
     $scope.searchByName = {};
     $scope.searchByName.school = '';
     $scope.searchByName.student = '';
     $scope.searchByName.pageno = 1;
 
+    $scope.pages = {};
+    $scope.pages.beforeCurrent = [];
+    $scope.pages.afterCurrent = [];
+    $scope.hideLast = false;
+    $scope.showNoResults = false;
+
+    var lastpage = 1;
+
+    $scope.getSearchById = function (val) {
+        console.log(val);
+        $scope.searchById.search = parseInt(val.substr(5));
+        NavigationService.studentSearchById($scope.searchById, function (data) {
+            if (data) {
+                if (data != "false") {
+                    $scope.showNoResults = false;
+                    $location.url("/studentprofile/" + data.id);
+                } else {
+                    $scope.showNoResults = true;
+                    $scope.searchCount = 0;
+                    $scope.searchById = {};
+                    $scope.searchById.search = '';
+                    $scope.searchById.pageno = 1;
+                    $scope.searchByName = {};
+                    $scope.searchByName.school = '';
+                    $scope.searchByName.student = '';
+                    $scope.searchByName.pageno = 1;
+                    $scope.idSearch = {};
+                    $scope.idSearch.search = '';
+                }
+                console.log(data);
+            }
+        })
+    }
+
     $scope.getSearchByName = function () {
         console.log($scope.searchByName);
         NavigationService.studentSearchByName($scope.searchByName, function (data) {
             if (data) {
+                $scope.pages = {};
+                $scope.pages.beforeCurrent = [];
+                $scope.pages.afterCurrent = [];
                 console.log(data);
+                $scope.searchCount = data.totalvalues;
+                $scope.searchResults = data.queryresult;
+                lastpage = data.lastpage;
+
+                if (data.queryresult.length > 0) {
+                    $scope.hideLast = false;
+                    $scope.showNoResults = true;
+                    $scope.pages.lastpage = data.lastpage;
+                    $scope.pages.currentpage = data.pageno;
+
+                    // $scope.pages.lastpage = 50;
+                    // $scope.pages.currentpage = 47;
+
+                    if ($scope.pages.lastpage == $scope.pages.currentpage)
+                        $scope.hideLast = true;
+
+                    if ($scope.pages.currentpage == 2) {
+                        $scope.pages.beforeCurrent[0] = 1;
+                    }
+                    if ($scope.pages.currentpage > 2) {
+                        $scope.pages.beforeCurrent[0] = $scope.pages.currentpage - 2;
+                        $scope.pages.beforeCurrent[1] = $scope.pages.currentpage - 1;
+                    }
+                    if (($scope.pages.lastpage - $scope.pages.currentpage) >= 2) {
+                        $scope.pages.afterCurrent[0] = $scope.pages.currentpage + 1;
+                        $scope.pages.afterCurrent[1] = $scope.pages.currentpage + 2;
+                        if ($scope.pages.afterCurrent[1] == $scope.pages.lastpage) {
+                            $scope.hideLast = true;
+                        }
+                    }
+                    if (($scope.pages.lastpage - $scope.pages.currentpage) == 1) {
+                        $scope.pages.afterCurrent[0] = $scope.pages.currentpage + 1;
+                        $scope.hideLast = true;
+                    }
+
+                } else {
+                    if (data.queryresult.length == 0 && $scope.searchResults.length == 0) {
+                        $scope.showNoResults = true;
+                        $scope.searchById = {};
+                        $scope.searchById.search = '';
+                        $scope.searchById.pageno = 1;
+                        $scope.searchByName = {};
+                        $scope.searchByName.school = '';
+                        $scope.searchByName.student = '';
+                        $scope.searchByName.pageno = 1;
+                        $scope.idSearch = {};
+                        $scope.idSearch.search = '';
+                    }
+                }
+
             }
         })
+    }
+
+    $scope.getPaginationResults = function (val) {
+        if (val == 'next') {
+            $scope.searchByName.pageno++;
+        } else if (val == 'prev') {
+            $scope.searchByName.pageno--;
+        } else {
+            $scope.searchByName.pageno = val;
+        }
+        $scope.getSearchByName();
+    }
+
+    $scope.goToProfile = function (id) {
+        $location.url("/studentprofile/" + id);
     }
 
 })

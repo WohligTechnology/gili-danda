@@ -3,7 +3,7 @@
 ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
 ~"only screen and (min-device-pixel-ratio: 1.5)";
 @mobile: ~"only screen and (max-width: 468px)";
-@mobile-me: ~"only screen and (max-width: 320px)";
+@mobile-me: ~"only screen and (max-width: 319px)";
 @mobile-slider-school: ~"only screen and (min-width: 600px)";
 @tablet: ~"only screen and (min-width: 469px) and (max-width: 949px)";
 @customsc: ~"only screen and (min-width: 768px) and (max-width: 998px)";
@@ -13,7 +13,8 @@
 @desktop-xl: ~"only screen and (min-width: 1129px)";
 @desktopsmall: ~"only screen and (min-width: 950px) and (max-width: 998px)";
 @moo: ~"only screen and (min-width: 849px) and (max-width: 998px)";
-;
+@banner: ~"only screen and (min-width: 469px) and (max-width: 715px)";
+@circle: ~"only screen and (min-width: 319px) and (max-width: 374px)";
 //// *********  custom slider css 998 to 1200  *********
 @media @moo {
     .sports .cus-imgs {
@@ -30,30 +31,37 @@
 }
 //// *********  custom slider css 469 to 768 *********
 @media @slider {
+    .b-rad {
+        width: 170px !important;
+        height: 170px !important;
+    }
+    .sprofile {
+        zoom: 0.8;
+    }
+    .sprofile .slogo {
+        zoom: 0.79;
+        overflow: visible !important;
+        padding-top: 32px !important;
+    }
     .grey-bk {
-  
-    margin-top: -10px !important;
-    padding-top: 36px !important;
-}
+        margin-top: -10px !important;
+        padding-top: 36px !important;
+    }
     .w100 {
-    min-height: auto !important;
-}
+        min-height: auto !important;
+    }
     .orng-bk .has {
-    border-right: 0px solid #3A3A3A !important;
-}
+        border-right: 0px solid #3A3A3A !important;
+    }
     .orng-bk .dy p {
-
-    text-align: center;
-}
+        text-align: center;
+    }
     .orng-bk .has h4 {
-
-    text-align: center;
-}
+        text-align: center;
+    }
     .orng-bk {
-  
-    margin-top: -12px !important;
-   
-}
+        margin-top: -12px !important;
+    }
     .slider .flex-direction-nav a.flex-prev:before {
         content: '';
         height: 40px !important;
@@ -364,6 +372,20 @@
     }
 }
 // *********   end *********
+@media @banner {
+    .sprofile .sdata ul {
+        margin-top: 20px !important;
+        margin-bottom: 12px !important;
+        margin-top: 6px !important;
+    }
+    .b-rad {
+        width: 130px !important;
+        height: 130px !important;
+    }
+    .sprofile {
+        zoom: 0.7 !important;
+    }
+}
 /// *********  desktop 950 to 1120 *********
 @media @desktop {
     .landing-text h1 {
@@ -415,40 +437,56 @@
 // end
 // css for  mobile max 468
 @media @mobile {
-    .another-static{
-    min-height: 600px !important;
-  img {
-    margin: 0 auto;
-}
-}
+    .sprofile .sdata h3 {
+        margin: 0px 0 0 !important;
+    }
+    .sprofile .sdata ul {
+        margin-top: 20px !important;
+        margin-bottom: 12px !important;
+        margin-top: 6px !important;
+    }
+    .b-rad {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .sprofile .slogo {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    .sprofile {
+        zoom: 0.6 !important;
+        padding-top: 20px !important;
+    }
+    .another-static {
+        min-height: 600px !important;
+        img {
+            margin: 0 auto;
+        }
+    }
     .martgintp .blue-cat ul li figcaption {
-  width: auto !important;
-}
-    .hovers{
+        width: auto !important;
+    }
+    .hovers {
         margin: 10px 40px;
     }
     .martgintp .blue-cat ul li {
-margin: 10px 0px !important; 
-            width: 33% !important;
-            position: relative !important;
-}
+        margin: 10px 0px !important;
+        width: 33% !important;
+        position: relative !important;
+    }
     .padll {
-    padding-right: 20px !important;
-}
+        padding-right: 20px !important;
+    }
     .l-p {
-  
-    font-size: 13px !important;
-  
-}
+        font-size: 13px !important;
+    }
     .grey-bk {
-  
-    margin-top: -10px !important;
-            padding-top: 30px !important;
-  
-}
+        margin-top: -10px !important;
+        padding-top: 30px !important;
+    }
     .w100 {
-    min-height: auto !important;
-}
+        min-height: auto !important;
+    }
     .orng-bk .has h4 {
         font-size: 20px !important;
         text-align: center;
@@ -990,6 +1028,19 @@ margin: 10px 0px !important;
     }
 }
 // ********* end **********
+@media @circle {
+    .b-rad {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    .sprofile .slogo {
+        padding-top: 26px;
+    }
+    .sprofile {
+    zoom: 0.5!important;
+ 
+}
+}
 // ********* tablet css ****************
 @media @tablet {
     .slider {

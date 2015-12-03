@@ -82,6 +82,12 @@ var navigationservice = angular.module('navigationservice', [])
         getallagegroups: function (callback) {
             return $http.get(admin_url + 'json/getallagegroups', {}).success(callback);
         },
+        studentSearchById: function (studentId, callback) {
+            return $http.get(admin_url + 'json/studentSearchById?id=' + studentId.search + '&pageno=' + studentId.pageno, {}).success(callback);
+        },
+        studentSearchByName: function (name, callback) {
+            return $http.get(admin_url + 'json/studentSearchByName?studentname=' + name.student + '&pageno=' + name.pageno + '&school=' + name.school, {}).success(callback);
+        },
         getnav: function () {
             return navigation;
         },

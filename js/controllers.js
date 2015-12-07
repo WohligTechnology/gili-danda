@@ -1009,7 +1009,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
     })
-    .controller('SchoolprofileCtrl', function ($scope, TemplateService, NavigationService, ngDialog, $stateParams) {
+    .controller('SchoolprofileCtrl', function ($scope, TemplateService, NavigationService, ngDialog, $stateParams, $timeout) {
         $scope.template = TemplateService.changecontent("schoolprofile");
         $scope.menutitle = NavigationService.makeactive("Schoolprofile");
         TemplateService.title = $scope.menutitle;
@@ -1038,15 +1038,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.sportsId = game.id;
                 console.log(game);
                 $scope.pagenum = 1;
-                NavigationService.getallagegroups(function (data) {
-                    $scope.agegroups = data;
-                    $scope.ageSelected = $scope.agegroups[0].id;
+//                NavigationService.getallagegroups(function (data) {
+//                    $scope.agegroups = data;
+//                    $scope.ageSelected = $scope.agegroups[0].id;
                     if ($scope.tab2 == "squad") {
                         $scope.loadStudents();
                     } else if ($scope.tab2 == "gallerymain") {
                         $scope.loadGallery();
                     }
-                });
+//                });
 
 
                 $scope.tab = game.game;
@@ -1064,6 +1064,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.pagenum = $scope.pagenum + 1;
             $scope.loadGallery();
         }
+	   $timeout(function(){
+		   if($scope.result==""){
+			   $scope.msg = "No data";
+		   }
+	   },4000);
 
         // Get school detail
         $scope.loadStudents = function () {
@@ -1098,7 +1103,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
 
         NavigationService.getschoolprofile($stateParams.id, function (data) {
-
+		   $scope.agegroups = data.agegroup;
+		   if($scope.agegroups != ''){
+                    $scope.ageSelected = $scope.agegroups[0].agegroup;
+		   }
             _.each(data.sportname, function (n, key1) {
                 _.each($scope.games, function (m, key2) {
                     if (n.name == m.game) {
@@ -1119,6 +1127,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     demo = 1;
                     //                    $scope.loadStudents();
                 }
+			  
+                    
             });
             $scope.school = data;
 
@@ -1128,9 +1138,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.sportid.push(n.id);
             });
             console.log($scope.sportid);
-            NavigationService.filterGames($scope.sportid, function (data) {
-                $scope.schoolSports = data;
-            });
+//            NavigationService.filterGames($scope.sportid, function (data) {
+//                $scope.schoolSports = data;
+//            });
 
         });
 
@@ -1261,14 +1271,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.line2 = '';
 
         $scope.tabchanges = function (age) {
-
             $scope.result = [];
             $scope.allresult = [];
             _.each($scope.agegroups, function (n) {
                 n.line = "";
             })
             age.line = "col-class";
-            $scope.ageSelected = age.id;
+            $scope.ageSelected = age.agegroup;
             $scope.result = [];
             $scope.pagenum = 1;
             $scope.loadStudents();

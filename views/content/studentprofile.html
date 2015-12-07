@@ -19,7 +19,7 @@
 
                     <p class="fonts">{{student.studentprofile.schoolname}} School</p>
                     <ul class="spoint">
-                        <li class="borderrigh padlefo">
+                        <li class="borderrigh padlefo" ng-if="student.studentprofile.agegroupname">
                             <p>group</p>
                             <h2>{{student.studentprofile.agegroupname}}</h2>
                         </li>
@@ -29,15 +29,15 @@
                             <h2>430</h2>
                         </li>
 -->
-                        <li class="border-l">
+                        <li class="border-l" ng-if="student.studentprofile.sfastudentid">
                             <p>SFA id</p>
                             <h2>{{student.studentprofile.sfastudentid}}</h2>
                         </li>   
-                        <li class="border-l">
+                        <li class="border-l" ng-if="student.studentprofile.dob">
                             <p>DOB</p>
                             <h2>{{student.studentprofile.dob | date: formate : mediumDate }}</h2>
                         </li>   
-                        <li class="border-l">
+                        <li class="border-l" ng-if="student.studentprofile.gender">
                             <p>Gender</p>
                             <h2 ng-if="student.studentprofile.gender ==1 ">Male</h2>
                             <h2 ng-if="student.studentprofile.gender ==2 ">Female</h2>

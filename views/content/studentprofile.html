@@ -35,11 +35,12 @@
                         </li>   
                         <li class="border-l">
                             <p>DOB</p>
-                            <h2></h2>
+                            <h2>{{student.studentprofile.dob | date: formate : mediumDate }}</h2>
                         </li>   
                         <li class="border-l">
                             <p>Gender</p>
-                            <h2></h2>
+                            <h2 ng-if="student.studentprofile.gender ==1 ">Male</h2>
+                            <h2 ng-if="student.studentprofile.gender ==2 ">Female</h2>
                         </li>
                     </ul>
                     <p>Sports</p>

@@ -215,8 +215,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     var lastpage = 1;
 
     $scope.getSearchById = function (val) {
-        console.log(val);
         $scope.searchById.search = parseInt(val.substr(5));
+	   if(val.substr(0,5) == "sfast" || val.substr(0,5) == "SFAST"){
         NavigationService.studentSearchById($scope.searchById, function (data) {
             if (data) {
                 if (data != "false") {
@@ -238,6 +238,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 console.log(data);
             }
         })
+	   }
     }
 
     $scope.getSearchByName = function () {

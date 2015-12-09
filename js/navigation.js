@@ -64,11 +64,14 @@ var navigationservice = angular.module('navigationservice', [])
         createEnquiries: function (enquire, callback) {
             return $http.get(admin_url + 'json/createEnquiries?name=' + enquire.name + '&email=' + enquire.email + '&mobile=' + enquire.mobile + '&person=' + enquire.person, {}).success(callback);
         },
-        getsport: function (id, sportid, ageid, pagenum, callback) {
-            return $http.get(admin_url + 'json/getSchoolSports?id=' + id + '&sport=' + sportid + '&agegroup=' + ageid + '&pageno=' + pagenum + '&maxrow=100', {}).success(callback);
+        getsport: function (id, sportid, ageid, callback) {
+            return $http.get(admin_url + 'json/getSchoolSports?id=' + id + '&sport=' + sportid + '&agegroup=' + ageid, {}).success(callback);
         },
         getgallery: function (id, sportid, pagenum, callback) {
             return $http.get(admin_url + 'json/getgalleryimageforstudentprofile?id=' + id + '&sport=' + sportid + '&pageno=' + pagenum + '&maxrow=100', {}).success(callback);
+        },
+        getAgeGroup: function (id, sportid, callback) {
+            return $http.get(admin_url + 'json/getAgeGroup?id=' + id + '&sport=' + sportid , {}).success(callback);
         },
         getgalleryimage: function (id, sportid, pagenum, callback) {
             return $http.get(admin_url + 'json/getgalleryimage?id=' + id + '&sport=' + sportid + '&pageno=' + pagenum + '&maxrow=100', {}).success(callback);

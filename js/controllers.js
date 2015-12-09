@@ -1043,7 +1043,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				//                    $scope.agegroups = data;
 				//                    $scope.ageSelected = $scope.agegroups[0].id;
 				if ($scope.tab2 == "squad") {
-					$scope.loadStudents();
+					$scope.loadSportStudent();
 				} else if ($scope.tab2 == "gallerymain") {
 					$scope.loadGallery();
 				}
@@ -1059,7 +1059,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 		$scope.loadMore = function () {
 			$scope.pagenum = $scope.pagenum + 1;
-			$scope.loadStudents();
+			$scope.loadSportStudent();
 		}
 		$scope.loadMoreGallery = function () {
 			$scope.pagenum = $scope.pagenum + 1;
@@ -1073,11 +1073,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 		// Get school detail
 		$scope.loadStudents = function () {
-			NavigationService.getsport($stateParams.id, $scope.sportsId, $scope.ageSelected, $scope.pagenum, function (data) {
-				if (data.queryresult != '') {
-					_.each(data.queryresult, function (n) {
-						$scope.allresult.push(n);
-					});
+			NavigationService.getsport($stateParams.id, $scope.sportsId, $scope.ageSelected, function (data) {
+				if (data != '') {
+						$scope.allresult = data;
 					$scope.msg = "";
 					$scope.result = _.chunk($scope.allresult, parseInt($scope.allresult.length / 2));
 				}
@@ -1086,9 +1084,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				}
 			});
 		}
+		
+		$scope.loadSportStudent = function(){
+			NavigationService.getAgeGroup($stateParams.id,  $scope.sportsId, function(data, status){
+				console.log(data);
+				$scope.agegroups = data;
+				$scope.ageSelected = data[0].id;
+				$scope.loadStudents();
+			});
+		}
 
 		$scope.loadGallery = function () {
-			console.log($stateParams.id);
 			NavigationService.getgalleryimage($stateParams.id, $scope.sportsId, $scope.pagenum, function (data) {
 				if (data.queryresult != '') {
 					_.each(data.queryresult, function (n) {
@@ -1104,10 +1110,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		}
 
 		NavigationService.getschoolprofile($stateParams.id, function (data) {
-			$scope.agegroups = data.agegroup;
-			if ($scope.agegroups != '') {
-				$scope.ageSelected = $scope.agegroups[0].agegroup;
-			}
+			
 			if (data.sportname != '') {
 				_.each(data.sportname, function (n, key1) {
 					_.each($scope.games, function (m, key2) {

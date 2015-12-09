@@ -1074,10 +1074,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		// Get school detail
 		$scope.loadStudents = function () {
 			NavigationService.getsport($stateParams.id, $scope.sportsId, $scope.ageSelected, function (data) {
+				console.log(data);
 				if (data != '') {
-						$scope.allresult = data;
+					$scope.allresult = data;
 					$scope.msg = "";
 					$scope.result = _.chunk($scope.allresult, parseInt($scope.allresult.length / 2));
+					if($scope.result[2]){
+						$scope.result[0].push($scope.result[2][0]);
+					}
+					console.log($scope.result);
 				}
 				if ($scope.allresult == "") {
 					$scope.msg = "No data";
@@ -1089,8 +1094,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 			NavigationService.getAgeGroup($stateParams.id,  $scope.sportsId, function(data, status){
 				console.log(data);
 				$scope.agegroups = data;
-				$scope.ageSelected = data[0].id;
+				if(data[0]){
+				$scope.ageSelected = data[0].agegroup;
 				$scope.loadStudents();
+				}
 			});
 		}
 
@@ -1306,34 +1313,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 			$scope.result = [];
 			$scope.pagenum = 1;
 			$scope.loadStudents();
-			//			$scope.tab3 = tab;
-			//			if (a == 1) {
-			//				$scope.line = "col-class";
-			//				$scope.line1 = '';
-			//				$scope.line2 = '';
-			//				$scope.ageSelected = 1;
-			//				$scope.result = [];
-			//				$scope.pagenum = 1;
-			//				$scope.loadStudents();
-			//			} else if (a == 2) {
-			//				$scope.line = '';
-			//				$scope.line1 = "col-class";
-			//				$scope.line2 = '';
-			//
-			//				$scope.ageSelected = 2;
-			//				$scope.result = [];
-			//				$scope.pagenum = 1;
-			//				$scope.loadStudents();
-			//			} else {
-			//				$scope.line = '';
-			//				$scope.line1 = '';
-			//				$scope.line2 = "col-class";
-			//
-			//				$scope.ageSelected = 3;
-			//				$scope.result = [];
-			//				$scope.pagenum = 1;
-			//				$scope.loadStudents();
-			//			}
 		};
 
 		//    end

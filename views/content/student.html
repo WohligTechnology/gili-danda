@@ -83,26 +83,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="p80 pull-right pag-ul" ng-if="searchCount!=0">
-<!--
-                    <ul>
-                        <li>
-                            <p><i class="fa fa-chevron-left"></i></p>
-                        </li>
-                        <li>
-                            <p>1</p>
-                        </li>
-                        <li>
-                            <p>2</p>
-                        </li>
-                        <li>
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <p><i class="fa fa-chevron-right"></i></p>
-                        </li>
-                    </ul>
--->
-                    <ul ng-if="searchCount!=0">
+                <ul ng-if="searchCount!=0">
                         <li ng-if="pages.currentpage>1" ng-click="getPaginationResults('prev');">
                             <p><i class="fa fa-chevron-left"></i></p>
                         </li>
@@ -115,10 +96,7 @@
                         <li ng-repeat="after in pages.afterCurrent track by $index" ng-click="getPaginationResults(after);">
                             <p>{{after}}</p>
                         </li>
-<!--
-                        <li ng-hide="hideLast"><span>...</span></li>
-                        <li ng-hide="hideLast" ng-click="getPaginationResults(pages.lastpage);"><a>{{pages.lastpage}}</a></li>
--->
+
                         <li ng-hide="hideLast" ng-click="getPaginationResults('next');">
                             <p><i class="fa fa-chevron-right"></i></p>
                         </li>

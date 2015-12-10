@@ -1,10 +1,10 @@
-@import "../bower_components/lesshat/build/lesshat.less";
-@import "../bower_components/bootstrap/dist/css/bootstrap.min.css";
-@import "../bower_components/ui-select/dist/select.min.css";
-@import "../bower_components/fontawesome/css/font-awesome.min.css";
-@import "../bower_components/fancyBox/source/jquery.fancybox.css";
-@import "../bower_components/flexslider/flexslider.css";
-@import "../bower_components/ng-dialog/css/ngDialog.min.css";
+@import  "../bower_components/lesshat/build/lesshat.less";
+@import (inline) "../bower_components/bootstrap/dist/css/bootstrap.min.css";
+@import (inline) "../bower_components/ui-select/dist/select.min.css";
+@import (inline) "../bower_components/fontawesome/css/font-awesome.min.css";
+@import (inline) "../bower_components/fancyBox/source/jquery.fancybox.css";
+@import (inline) "../bower_components/flexslider/flexslider.css";
+@import (inline) "../bower_components/ng-dialog/css/ngDialog.min.css";
 @import (inline) "../bower_components/fontawesome/css/font-awesome.css";
 @import "../less/mobile.less";
 @menu-color: #0a1a72;
@@ -73,6 +73,17 @@ body {
         text-decoration: none;
     }
 }
+
+
+.only-border {
+        border: 2px solid @menu-color;
+        width: 100%;
+        position: absolute;
+        height: 42px;
+        top: -2px;
+        z-index: -1;
+}
+
 // checkbox class
 .checkbox {
     vertical-align: baseline;
@@ -2994,7 +3005,8 @@ div.center {
 }
 .sfa-select {
     position: relative;
-    select {
+    z-index: 99;
+    .select {
         .appearance(none);
         border: none;
         text-transform: uppercase;
@@ -3005,9 +3017,13 @@ div.center {
         outline: 0;
         color: @menu-color;
         cursor: pointer;
+        position: absolute;
     }
-    &:after {
-        font: normal normal normal 14px/1 FontAwesome;
+
+}
+
+.sfa-select:after{
+           font: normal normal normal 14px/1 FontAwesome;
         content: '\f0dd';
         height: 42px;
         width: 42px;
@@ -3020,15 +3036,6 @@ div.center {
         line-height: 30px;
         font-size: 30px;
         z-index: -1;
-    }
-    .only-border {
-        border: 2px solid @menu-color;
-        width: 100%;
-        position: absolute;
-        height: 42px;
-        top: -2px;
-        z-index: -1;
-    }
 }
 .get-drwa {
     background: @button-color;
@@ -3798,4 +3805,8 @@ body.ngdialog-open {
 }
 .stable {
     margin-bottom: 100px;
+}
+.p50{
+    padding-top: 50px;
+    z-index: -9;
 }

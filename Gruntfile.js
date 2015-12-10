@@ -323,11 +323,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.registerTask('default', ['less:development', 'concat', 'watch']);
-    grunt.registerTask('production', ['copy', 'htmlmin', 'less:production', 'ngtemplates', 'cssmin', 'concat', 'uglify', 'compress:css', 'compress:js', 'compress:indexhtml', 'compress:zip']);
-    grunt.registerTask('appengine', ['copy:appengine', 'htmlmin:appengine', 'less:production', 'ngtemplates',"cssmin", 'concat', 'uglify', 'copy:jsappengine','copy:cssappengine']);
+    grunt.registerTask('production', ['copy', 'htmlmin', 'less:production', 'ngtemplates', 'concat', 'uglify', 'compress:css', 'compress:js', 'compress:indexhtml', 'compress:zip']);
+    grunt.registerTask('appengine', ['copy:appengine', 'htmlmin:appengine', 'less:development', 'ngtemplates', 'concat', 'uglify', 'copy:jsappengine','copy:cssappengine']);
 };

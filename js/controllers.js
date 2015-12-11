@@ -774,7 +774,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       }];
 
 	})
-	.controller('StudentprofileCtrl', function ($scope, TemplateService, NavigationService, ngDialog, $stateParams) {
+	.controller('StudentprofileCtrl', function ($scope, TemplateService, NavigationService, ngDialog, $stateParams, $filter) {
 		$scope.template = TemplateService.changecontent("studentprofile");
 		$scope.menutitle = NavigationService.makeactive("Studentprofile");
 		TemplateService.title = $scope.menutitle;
@@ -835,7 +835,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		NavigationService.getstudentprofile($stateParams.id, function (data) {
 			_.each(data.sportsparticipated, function (n, key1) {
 				_.each($scope.games, function (m, key2) {
-					if (n.name == m.game) {
+					if ($filter('lowercase')(n.name) == $filter('lowercase')(m.game)) {
 						m.grey = false;
 						m.id = n.id;
 						if (!$scope.tab) {
@@ -999,6 +999,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				"icon2": "img/bluemenu/volleyballor.png",
 				"game": "volleyball",
 				"grey": true
+      }, {
+				"icon": "img/bluemenu/handball.png",
+				"icon2": "img/bluemenu/handballor.png",
+				"game": "handball",
+				"grey": true
+      }, {
+				"icon": "img/bluemenu/judo.png",
+				"icon2": "img/bluemenu/judoor.png",
+				"game": "judo",
+				"grey": true
       }];
 
 		$scope.demo = 111;
@@ -1079,7 +1089,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 					$scope.allresult = data;
 					$scope.msg = "";
 					$scope.result = _.chunk($scope.allresult, parseInt($scope.allresult.length / 2));
-					if($scope.result[2]){
+					if ($scope.result[2]) {
 						$scope.result[0].push($scope.result[2][0]);
 					}
 					console.log($scope.result);
@@ -1089,14 +1099,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				}
 			});
 		}
-		
-		$scope.loadSportStudent = function(){
-			NavigationService.getAgeGroup($stateParams.id,  $scope.sportsId, function(data, status){
+
+		$scope.loadSportStudent = function () {
+			NavigationService.getAgeGroup($stateParams.id, $scope.sportsId, function (data, status) {
 				console.log(data);
 				$scope.agegroups = data;
-				if(data[0]){
-				$scope.ageSelected = data[0].agegroup;
-				$scope.loadStudents();
+				if (data[0]) {
+					$scope.ageSelected = data[0].agegroup;
+					$scope.loadStudents();
 				}
 			});
 		}
@@ -1117,7 +1127,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		}
 
 		NavigationService.getschoolprofile($stateParams.id, function (data) {
-			
+
 			if (data.sportname != '') {
 				_.each(data.sportname, function (n, key1) {
 					_.each($scope.games, function (m, key2) {
@@ -1158,53 +1168,56 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 			//            });
 
 		});
+	$scope.loadSportsCategory = function(){
+		
+	}
 
 		$scope.games = // JavaScript Document
       [{
 				"icon": "img/bluemenu/tabletennis.png",
 				"icon2": "img/bluemenu/tabletennisor.png",
 				"game": "table tennis",
-		 		"grey":true
+				"grey": true
       }, {
 				"icon": "img/bluemenu/tennis.png",
 				"icon2": "img/bluemenu/tennisor.png",
 				"game": "tennis",
-		 		"grey":true
+				"grey": true
       }, {
 				"icon": "img/bluemenu/batminton.png",
 				"icon2": "img/bluemenu/batmintonor.png",
 				"game": "badminton",
-		 		"grey":true
+				"grey": true
       }, {
 				"icon": "img/bluemenu/squash.png",
 				"icon2": "img/bluemenu/sqaushor.png",
 				"game": "squash",
-		 		"grey":true
+				"grey": true
       }, {
 				"icon": "img/bluemenu/aqua.png",
 				"icon2": "img/bluemenu/aquaticsor.png",
 				"game": "swimming",
-		 		"grey":true
+				"grey": true
       }, {
 				"icon": "img/bluemenu/basketball.png",
 				"icon2": "img/bluemenu/basketballor.png",
 				"game": "basketball",
-		 		"grey":true
+				"grey": true
       }, {
 				"icon": "img/bluemenu/vollyball.png",
 				"icon2": "img/bluemenu/volleyballor.png",
 				"game": "volleyball",
-		 		"grey":true
+				"grey": true
       }, {
 				"icon": "img/bluemenu/handball.png",
 				"icon2": "img/bluemenu/handballor.png",
 				"game": "handball",
-		 		"grey":true
+				"grey": true
       }, {
 				"icon": "img/bluemenu/judo.png",
 				"icon2": "img/bluemenu/judoor.png",
 				"game": "judo",
-		 		"grey":true
+				"grey": true
       }];
 
 		$scope.zoomposition = 0;

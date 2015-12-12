@@ -1,4 +1,4 @@
-@import  "../bower_components/lesshat/build/lesshat.less";
+@import "../bower_components/lesshat/build/lesshat.less";
 @import (inline) "../bower_components/bootstrap/dist/css/bootstrap.min.css";
 @import (inline) "../bower_components/ui-select/dist/select.min.css";
 @import (inline) "../bower_components/fontawesome/css/font-awesome.min.css";
@@ -73,17 +73,14 @@ body {
         text-decoration: none;
     }
 }
-
-
 .only-border {
-        border: 2px solid @menu-color;
-        width: 100%;
-        position: absolute;
-        height: 42px;
-        top: -2px;
-        z-index: -1;
+    border: 2px solid @menu-color;
+    width: 100%;
+    position: absolute;
+    height: 42px;
+    top: -2px;
+    z-index: -1;
 }
-
 // checkbox class
 .checkbox {
     vertical-align: baseline;
@@ -1013,11 +1010,13 @@ hr.hr-width {
             }
             li.grey {
                 .filter(grayscale(1) brightness(1.5));
-  -ms-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-  filter: grayscale(100%);
-//  filter: url(grayscale.svg); /* Firefox 4+ */
-  filter: gray; 
+                -ms-filter: (grayscale(1) brightness(1.5));
+                -o-filter: (grayscale(1) brightness(1.5));
+                filter: (grayscale(1) brightness(1.5));
+                //  filter: url(grayscale.svg); /* Firefox 4+ */
+                filter: gray;
+                filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
+                /* Firefox 10+, Firefox on Android */
             }
             li.bigger,
             li.active {
@@ -2621,7 +2620,8 @@ div.center {
     position: absolute;
     top: 50%;
     left: 50%;
-    .transform(translate(-50%, -50%));
+    .transform(translate(-50%,
+    -50%));
 }
 //terms condition
 .terms {
@@ -3024,23 +3024,21 @@ div.center {
         cursor: pointer;
         position: absolute;
     }
-
 }
-
-.sfa-select:after{
-           font: normal normal normal 14px/1 FontAwesome;
-        content: '\f0dd';
-        height: 42px;
-        width: 42px;
-        background-color: @button-color;
-        color: white;
-        position: absolute;
-        top: -2px;
-        right: -2px;
-        text-align: center;
-        line-height: 30px;
-        font-size: 30px;
-        z-index: -1;
+.sfa-select:after {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: '\f0dd';
+    height: 42px;
+    width: 42px;
+    background-color: @button-color;
+    color: white;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 30px;
+    z-index: -1;
 }
 .get-drwa {
     background: @button-color;
@@ -3780,10 +3778,10 @@ body.ngdialog-open {
         line-height: 88%;
     }
 }
-.pads40{
+.pads40 {
     padding-top: 45px;
 }
-.pads400{
+.pads400 {
     padding-top: 45px !important;
 }
 .text-sr {
@@ -3791,7 +3789,7 @@ body.ngdialog-open {
     font-weight: 600;
     padding-top: 0px;
     padding-bottom: 70px;
-    img{
+    img {
         margin: 0px auto;
     }
     h4 {
@@ -3817,7 +3815,7 @@ body.ngdialog-open {
 .stable {
     margin-bottom: 100px;
 }
-.p50{
+.p50 {
     padding-top: 50px;
     z-index: -9;
 }

@@ -1423,14 +1423,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	$scope.demo = 111;
 	$scope.checkthis = function () {};
 
-	$scope.makeactive = function (game) {
-		_.each($scope.games, function (n) {
-			n.active = false;
-		});
-		game.active = true;
-		$scope.tab = game.game;
-	};
-	$scope.makeactive($scope.games[6]);
+//	$scope.makeactive = function (game) {
+//		_.each($scope.games, function (n) {
+//			n.active = false;
+//		});
+//		game.active = true;
+//		$scope.tab = game.game;
+//	};
+//	$scope.makeactive($scope.games[6]);
 
 	ga('send', 'pageview', {
 		'title': 'Sports Page'

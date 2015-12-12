@@ -1013,6 +1013,11 @@ hr.hr-width {
             }
             li.grey {
                 .filter(grayscale(1) brightness(1.5));
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+//  filter: url(grayscale.svg); /* Firefox 4+ */
+  filter: gray; 
             }
             li.bigger,
             li.active {

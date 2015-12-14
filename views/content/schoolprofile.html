@@ -513,16 +513,40 @@
 
         <div class="if-data" ng-if="msg!='No data'">
             <div class="row">
-                <div class="col-md-12">
+                <div class="p80">
+                    <div class="col-md-offset-3 col-md-3">
+                        <!--
                     <div class="list-active cust-li text-center">
                         <ul>
                             <li class="{{age.line}}" ng-click="tabchanges(age)" ng-repeat="age in agegroups">{{age.name}}</li>
                         </ul>
                     </div>
+-->
+                        <div class="sfa-select">
+                            <select id="sel1" class="select">
+                                <option>ALL</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                            <span class="only-border"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="sfa-select">
+                            <select id="sel1" class="select">
+                                <option>ALL</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                            <span class="only-border"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-<!--
+            <!--
             <div class="row">
                 <div class="col-md-12">
                     <div class="list-active cust-li text-center">

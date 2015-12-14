@@ -1,64 +1,90 @@
-<div class="curve">
-
+<div class="media-set">
+    <img src="img/home/16.png" class="img-responsive img">
 </div>
-
-<div class="school-back">
-    
-<div class="landings">
-<!--    <img src="img/school/latestuse1.png" class="pd155 img-responsive"> -->
-    
-    <div class="container">
-    <div class="row pads400">
-        <div class="col-md-6">
-        <div class="text-sp">
-            <h3>Note: </h3>
-            <h4 class="list-cl">List of all the participants</h4>
-            <h4>from your school will be</h4>
-            <h4>updated after the receipt </h4>
-            <h4>of participant entry forms. </h4>
-            <h4>The due date for final entries</h4>
-            <h4>is 20<sup>th</sup> December 2015</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <div class="sl-p text-center">
+                <p class="stu-f">Search your school profile </p>
+                <div class="s-input feed">
+                    <p class="stu-f">Search by Name of The School</p>
+                    <div class="searchs ">
+                        <form class="sfms stu-sfms ng-pristine ng-valid">
+                            <input type="text" class="inbinding" name="q" value="Enter your SFA ID" ng-model="idSearch.search">
+                            <input type="image" value="Search" src="img/searchbig.png" class="sbs" ng-click="getSearchById(idSearch.search);">
+                        </form>
+                    </div>
+                    <h3 class="font-hclass">OR</h3>
+                            <p class="stu-f">Search by School SFA ID</p>
+                    <div class="searchs ">
+                        <form class="sfms stu-sfms ng-pristine ng-valid">
+                            <input type="text" class="inbinding" name="q" value="Enter your SFA ID" ng-model="idSearch.search">
+                            <input type="image" value="Search" src="img/searchbig.png" class="sbs" ng-click="getSearchById(idSearch.search);">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-md-6">
-        <div class="text-sr text-center ">
-            <img src="img/schoolp.png" class="img-responsive">
-            <h4>profiles will be</h4>
-            <h3 class="class-spr">updated post</h3>
-            <h3 class="spr-class">sfa 2015</h3>
+    </div>
+    <div class="show-result" >
+        <div class="row">
+            <div class="c-text text-center">
+                <p class="serc-fnt">0 Search Results</p>
+            </div>
+            <div class="col-md-12 rwo-class" >
+                <div class="col-md-3">
+                    <div class="im-c">
+                        <img src="img/noimage.png">
+                    </div>
+                </div>
+          
+                <div class="col-md-2 ">
+                    <div class="s-info p15">
+                        <p>Name</p>
+                        <p>SFA ID</p>
+                        <p>Sports Participated</p>
+                        <p>Rank</p>
+                    </div>
+                </div>
+                <div class="col-md-5 ">
+                    <div class="s-info p15">
+                        <p>: Jamnabai Narsee School</p>
+                        <p>: SFAST001238</p>
+                        <p>: BADMINTON,BADMINTON</p>
+                        <p>: 6<sup>th</sup> </p>
+                    </div>
+                </div>
+                
+                <div class="col-md-2">
+                    <div class="pull-right s-info pos-view">
+                        <p class="vh" ng-click="goToProfile(student.id);">View full profile</p>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="p80 pull-right pag-ul" ng-if="searchCount!=0">
+                <ul ng-if="searchCount!=0">
+                        <li ng-if="pages.currentpage>1" ng-click="getPaginationResults('prev');">
+                            <p><i class="fa fa-chevron-left"></i></p>
+                        </li>
+                        <li ng-repeat="before in pages.beforeCurrent track by $index" ng-click="getPaginationResults(before);">
+                            <p>{{before}}</p>
+                        </li>
+                        <li>
+                            <p>{{pages.currentpage}}</p>
+                        </li>
+                        <li ng-repeat="after in pages.afterCurrent track by $index" ng-click="getPaginationResults(after);">
+                            <p>{{after}}</p>
+                        </li>
+
+                        <li ng-hide="hideLast" ng-click="getPaginationResults('next');">
+                            <p><i class="fa fa-chevron-right"></i></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="container">
-       <div class="row">
-                   <div class="col-md-10">
-             <div class="landing-text">
-        <h1>schools registered for SFA 2015</h1>
-    </div>
-        </div>
-       </div>
-<div class="row">
-    <div class="col-md-6">
-        <div class="school-name">
-            <ul>
-                <li ng-repeat="school in schoolNames[0]" ui-sref="schoolprofile({id:school.id})"><span>{{($index+1)|numberFixedLen:2}}</span><p>{{school.name}}</p></li>
-               
-            </ul>
-           
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="school-name">
-            <ul>
-                <li ng-repeat="school in schoolNames[1]" ui-sref="schoolprofile({id:school.id})"><span>{{($index+1+schoolHalf)|numberFixedLen:2}}</span><p>{{school.name}}</p></li>
-               
-            </ul>
-            
-        </div>
-    </div>
-</div>
-    </div>
-   
-</div>
 </div>

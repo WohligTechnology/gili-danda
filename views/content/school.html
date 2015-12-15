@@ -1,4 +1,75 @@
-<div class="media-set">
+<div class="curve">
+
+</div>
+
+<div class="school-back">
+    
+<div class="landings">
+<!--    <img src="img/school/latestuse1.png" class="pd155 img-responsive"> -->
+    
+    <div class="container">
+    <div class="row pads400">
+        <div class="col-md-6">
+        <div class="text-sp">
+            <h3>Note: </h3>
+            <h4 class="list-cl">List of all the participants</h4>
+            <h4>from your school will be</h4>
+            <h4>updated after the receipt </h4>
+            <h4>of participant entry forms. </h4>
+            <h4>The due date for final entries</h4>
+            <h4>is 20<sup>th</sup> December 2015</h4>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+        <div class="text-sr text-center ">
+            <img src="img/schoolp.png" class="img-responsive">
+            <h4>profiles will be</h4>
+            <h3 class="class-spr">updated post</h3>
+            <h3 class="spr-class">sfa 2015</h3>
+
+            </div>
+        </div>
+    </div>
+    <div class="show-result" >
+    
+    <div class="container">
+       <div class="row">
+                   <div class="col-md-10">
+             <div class="landing-text">
+        <h1>schools registered for SFA 2015</h1>
+    </div>
+        </div>
+       </div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="school-name">
+            <ul>
+                <li ng-repeat="school in schoolNames[0]" ui-sref="schoolprofile({id:school.id})"><span>{{($index+1)|numberFixedLen:2}}</span><p>{{school.name}}</p></li>
+               
+            </ul>
+           
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="school-name">
+            <ul>
+                <li ng-repeat="school in schoolNames[1]" ui-sref="schoolprofile({id:school.id})"><span>{{($index+1+schoolHalf)|numberFixedLen:2}}</span><p>{{school.name}}</p></li>
+               
+            </ul>
+            
+        </div>
+    </div>
+</div>
+    </div>
+   
+</div>
+</div>
+<!--    // latest ui for school-->
+    
+<!--
+    
+    <div class="media-set">
     <img src="img/home/16.png" class="img-responsive img">
 </div>
 <div class="container">
@@ -88,3 +159,4 @@
         </div>
     </div>
 </div>
+    -->

@@ -1,451 +1,174 @@
 <div class="media-set">
-    <img src="img/schedule.jpg" class="img-responsive img">
+    <img src="img/score.png" class="img-responsive img">
     <div class="media-text">
-        <h2>scores and statistics</h2>
+        <h2>score & statistics</h2>
     </div>
 </div>
-<div class="container martgintp mhsmargin">
-    <div class="row">
-        <div class="blue-cat">
-            <ul>
-                <hovericon game="game" ng-repeat="game in games" ng-click="makeactive(game);"></hovericon>
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="container-fluid marginegtss">
-    <div class="row marginlft margin50">
-        <div class="col-md-3">
-            <div class="cat-left scrollbar-dynamic" data-jquery-scrollbar="jqueryScrollbarOptions">
-
-                <accordion close-others="oneAtATime">
-
-
-                    <accordion-group is-open="status.open">
-                        <accordion-heading>
-                            age group <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
-                        </accordion-heading>
-                        <form class="sub-catgame">
-                            <ul>
-                                <li>
-                                    <input id="Option" type="checkbox">
-                                    <label class="checkbox" for="Option">all</label>
-                                </li>
-                                <li>
-                                    <input id="option2" type="checkbox">
-                                    <label class="checkbox" for="option2">under - 9</label>
-                                </li>
-                                <li>
-                                    <input id="option3" type="checkbox">
-                                    <label class="checkbox" for="option3">under - 11</label>
-                                </li>
-                                <li>
-                                    <input id="option4" type="checkbox">
-                                    <label class="checkbox" for="option4">under - 13</label>
-                                </li>
-                                <li>
-                                    <input id="option5" type="checkbox">
-                                    <label class="checkbox" for="option5">under - 16</label>
-                                </li>
-                            </ul>
-                        </form>
-                    </accordion-group>
-                </accordion>
-                <accordion close-others="oneAtATime">
-
-
-                    <accordion-group is-open="status.open">
-                        <accordion-heading>
-                            Year <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
-                        </accordion-heading>
-                        <form class="sub-catgame">
-                            <ul>
-                                <li>
-                                    <input id="Option6" type="checkbox">
-                                    <label class="checkbox" for="Option6">2015</label>
-                                </li>
-
-                            </ul>
-                        </form>
-                    </accordion-group>
-                </accordion>
-                <p class="sel-game">select game</p>
-
-                <accordion close-others="oneAtATime">
-
-
-                    <accordion-group is-open="status.open">
-                        <accordion-heading>
-                            table tennis <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
-                        </accordion-heading>
-                        <form class="sub-catgame">
-                            <ul>
-                                <li>
-                                    <input id="Option7" type="checkbox">
-                                    <label class="checkbox" for="Option7">all</label>
-                                </li>
-                                <li>
-                                    <input id="option8" type="checkbox">
-                                    <label class="checkbox" for="option8">under - 9</label>
-                                </li>
-                                <li>
-                                    <input id="option9" type="checkbox">
-                                    <label class="checkbox" for="option9">under - 11</label>
-                                </li>
-                                <li>
-                                    <input id="option10" type="checkbox">
-                                    <label class="checkbox" for="option10">under - 13</label>
-                                </li>
-                                <li>
-                                    <input id="option11" type="checkbox">
-                                    <label class="checkbox" for="option11">under - 16</label>
-                                </li>
-                            </ul>
-                        </form>
-                    </accordion-group>
-                </accordion>
-                <accordion close-others="oneAtATime">
-
-
-                    <accordion-group is-open="status.open">
-                        <accordion-heading>
-                            aquatics <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
-                        </accordion-heading>
-                        <form class="sub-catgame">
-                            <ul>
-                                <li>
-                                    <input id="Option12" type="checkbox">
-                                    <label class="checkbox" for="Option12">all</label>
-                                </li>
-                                <li>
-                                    <input id="option13" type="checkbox">
-                                    <label class="checkbox" for="option13">under - 9</label>
-                                </li>
-                                <li>
-                                    <input id="option14" type="checkbox">
-                                    <label class="checkbox" for="option14">under - 11</label>
-                                </li>
-                                <li>
-                                    <input id="option15" type="checkbox">
-                                    <label class="checkbox" for="option15">under - 13</label>
-                                </li>
-                                <li>
-                                    <input id="option16" type="checkbox">
-                                    <label class="checkbox" for="option16">under - 16</label>
-                                </li>
-                            </ul>
-                        </form>
-                    </accordion-group>
-                </accordion>
-                <accordion close-others="oneAtATime">
-
-
-                    <accordion-group is-open="status.open">
-                        <accordion-heading>
-                            basketball <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
-                        </accordion-heading>
-                        <form class="sub-catgame">
-                            <ul>
-                                <li>
-                                    <input id="Option17" type="checkbox">
-                                    <label class="checkbox" for="Option17">all</label>
-                                </li>
-                                <li>
-                                    <input id="option18" type="checkbox">
-                                    <label class="checkbox" for="option18">under - 9</label>
-                                </li>
-                                <li>
-                                    <input id="option19" type="checkbox">
-                                    <label class="checkbox" for="option19">under - 11</label>
-                                </li>
-                                <li>
-                                    <input id="option20" type="checkbox">
-                                    <label class="checkbox" for="option20">under - 13</label>
-                                </li>
-                                <li>
-                                    <input id="option21" type="checkbox">
-                                    <label class="checkbox" for="option21">under - 16</label>
-                                </li>
-                            </ul>
-                        </form>
-                    </accordion-group>
-                </accordion>
-                <accordion close-others="oneAtATime">
-
-
-                    <accordion-group is-open="status.open">
-                        <accordion-heading>
-                            tennis <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
-                        </accordion-heading>
-                        <form class="sub-catgame">
-                            <ul>
-                                <li>
-                                    <input id="Option22" type="checkbox">
-                                    <label class="checkbox" for="Option22">all</label>
-                                </li>
-                                <li>
-                                    <input id="option23" type="checkbox">
-                                    <label class="checkbox" for="option23">under - 9</label>
-                                </li>
-                                <li>
-                                    <input id="option24" type="checkbox">
-                                    <label class="checkbox" for="option24">under - 11</label>
-                                </li>
-                                <li>
-                                    <input id="option25" type="checkbox">
-                                    <label class="checkbox" for="option25">under - 13</label>
-                                </li>
-                                <li>
-                                    <input id="option26" type="checkbox">
-                                    <label class="checkbox" for="option26">under - 16</label>
-                                </li>
-                            </ul>
-                        </form>
-                    </accordion-group>
-                </accordion>
-                <accordion close-others="oneAtATime">
-
-
-                    <accordion-group is-open="status.open">
-                        <accordion-heading>
-                            squash <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
-                        </accordion-heading>
-                        <form class="sub-catgame">
-                            <ul>
-                                <li>
-                                    <input id="Option27" type="checkbox">
-                                    <label class="checkbox" for="Option27">all</label>
-                                </li>
-                                <li>
-                                    <input id="option28" type="checkbox">
-                                    <label class="checkbox" for="option28">under - 9</label>
-                                </li>
-                                <li>
-                                    <input id="option29" type="checkbox">
-                                    <label class="checkbox" for="option29">under - 11</label>
-                                </li>
-                                <li>
-                                    <input id="option30" type="checkbox">
-                                    <label class="checkbox" for="option30">under - 13</label>
-                                </li>
-                                <li>
-                                    <input id="option31" type="checkbox">
-                                    <label class="checkbox" for="option31">under - 16</label>
-                                </li>
-                            </ul>
-                        </form>
-                    </accordion-group>
-                </accordion>
-                <accordion close-others="oneAtATime">
-
-
-                    <accordion-group is-open="status.open">
-                        <accordion-heading>
-                            badminton <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
-                        </accordion-heading>
-                        <form class="sub-catgame">
-                            <ul>
-                                <li>
-                                    <input id="Option32" type="checkbox">
-                                    <label class="checkbox" for="Option32">all</label>
-                                </li>
-                                <li>
-                                    <input id="option33" type="checkbox">
-                                    <label class="checkbox" for="option33">under - 9</label>
-                                </li>
-                                <li>
-                                    <input id="option34" type="checkbox">
-                                    <label class="checkbox" for="option34">under - 11</label>
-                                </li>
-                                <li>
-                                    <input id="option35" type="checkbox">
-                                    <label class="checkbox" for="option35">under - 13</label>
-                                </li>
-                                <li>
-                                    <input id="option36" type="checkbox">
-                                    <label class="checkbox" for="option36">under - 16</label>
-                                </li>
-                            </ul>
-                        </form>
-                    </accordion-group>
-                </accordion>
-                <accordion close-others="oneAtATime">
-
-
-                    <accordion-group is-open="status.open">
-                        <accordion-heading>
-                            handball <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
-                        </accordion-heading>
-                        <form class="sub-catgame">
-                            <ul>
-                                <li>
-                                    <input id="Option37" type="checkbox">
-                                    <label class="checkbox" for="Option37">all</label>
-                                </li>
-                                <li>
-                                    <input id="option38" type="checkbox">
-                                    <label class="checkbox" for="option38">under - 9</label>
-                                </li>
-                                <li>
-                                    <input id="option39" type="checkbox">
-                                    <label class="checkbox" for="option39">under - 11</label>
-                                </li>
-                                <li>
-                                    <input id="option40" type="checkbox">
-                                    <label class="checkbox" for="option40">under - 13</label>
-                                </li>
-                                <li>
-                                    <input id="option41" type="checkbox">
-                                    <label class="checkbox" for="option41">under - 16</label>
-                                </li>
-                            </ul>
-                        </form>
-                    </accordion-group>
-                </accordion>
-                <accordion close-others="oneAtATime">
-
-
-                    <accordion-group is-open="status.open">
-                        <accordion-heading>
-                            vollyball <i class="pull-left" ng-class="{'fa fa-angle-down': status.open, 'fa fa-angle-right': !status.open}"></i>
-                        </accordion-heading>
-                        <form class="sub-catgame">
-                            <ul>
-                                <li>
-                                    <input id="Option42" type="checkbox">
-                                    <label class="checkbox" for="Option42">all</label>
-                                </li>
-                                <li>
-                                    <input id="option43" type="checkbox">
-                                    <label class="checkbox" for="option43">under - 9</label>
-                                </li>
-                                <li>
-                                    <input id="option44" type="checkbox">
-                                    <label class="checkbox" for="option44">under - 11</label>
-                                </li>
-                                <li>
-                                    <input id="option45" type="checkbox">
-                                    <label class="checkbox" for="option45"5>under - 13</label>
-                                </li>
-                                <li>
-                                    <input id="option46" type="checkbox">
-                                    <label class="checkbox" for="option46">under - 16</label>
-                                </li>
-                            </ul>
-                        </form>
-                    </accordion-group>
-                </accordion>
+<div class="draw">
+    <div class="container">
+        <div class="row">
+    <div class="col-md-3">
+                <div class="sfa-select">
+                    <select id="sel1"  class="select">
+                        <option>select sport</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    <span class="only-border"></span>
+                </div>
             </div>
-        </div>
-        <div class="col-md-8 width">
-            <div class="sch-det text-center">
-                <h2>basketball</h2>
-            </div>
-            <div class="searchs text-center">
-                <form action="/search" method="get" class="sfms">
-                    <input type="text" class="inbinding" name="q" value="sfa id/school/name">
-                    <input type="image" value="Search" src="img/searchbig.png" class="sbs">
-                </form>
-            </div>
-            <div class="search-rsl text-center">
-                <h4>search result 00</h4>
-            </div>
-            
-            <div class="row">
-                <div class="table-sch">
-                    <table class="table">
+            <div class="col-md-3">
+                <div class="sfa-select">
 
-                        <thead>
-                            <tr class="score-hd ">
-                                <th class="pad-rig">schools</th>
-                                <th>gold</th>
-                                <th>Silver</th>
-                                <th>Bronze</th>
-                                <th>Total</th>
-                            </tr>
-                        </thead>
-                        <tbody class="tr-body">
-                            <tr class="th-blue">
-                                <td class="col-scr">bombay scottish</td>
-                                <td >7</td>
-                                <td >5</td>
-                                <td >2</td>
-                                <td >8</td>
-                               
-                            </tr>
-                            <tr class="th-blue">
-                                <td class="col-scr">campion school</td>
-                                <td >7</td>
-                                <td >5</td>
-                                <td >2</td>
-                                <td >8</td>
-                               
-                            </tr>
-                            <tr class="th-blue">
-                                <td class="col-scr">Dhirubhai Ambani Int.</td>
-                                <td >7</td>
-                                <td >5</td>
-                                <td >2</td>
-                                <td >8</td>
-                               
-                            </tr>
-                            <tr class="th-blue">
-                                <td class="col-scr">St.Gregorios High School</td>
-                                <td >7</td>
-                                <td >5</td>
-                                <td >2</td>
-                                <td >8</td>
-                               
-                            </tr>
-                            <tr class="th-blue">
-                                <td class="col-scr">Swami Vivekanand Intl.</td>
-                                <td >7</td>
-                                <td >5</td>
-                                <td >2</td>
-                                <td >8</td>
-                               
-                            </tr>
-                               <tr class="th-blue">
-                                <td class="col-scr">American School of Bombay</td>
-                                <td >7</td>
-                                <td >5</td>
-                                <td >2</td>
-                                <td >8</td>
-                               
-                            </tr>
-                               <tr class="th-blue">
-                                <td class="col-scr">Dav Public School</td>
-                                <td >7</td>
-                                <td >5</td>
-                                <td >2</td>
-                                <td >8</td>
-                               
-                            </tr>
-                                <tr class="th-blue">
-                                <td class="col-scr">Hiranandani Foundation </td>
-                                <td >7</td>
-                                <td >5</td>
-                                <td >2</td>
-                                <td >8</td>
-                               
-                            </tr>
-                                <tr class="th-blue">
-                                <td class="col-scr">Don Bosco High School</td>
-                                <td >7</td>
-                                <td >5</td>
-                                <td >2</td>
-                                <td >8</td>
-                               
-                            </tr>
-                      
-                        </tbody>
-                    </table>
-                    <div class="aroww text-center">
-                        <img src="img/arrow.png">
-                    </div>
+                    <select id="sel1" class="select">
+                        <option>Select category</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    <span class="only-border"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="sfa-select" >
+
+                    <select id="sel1" class="select">
+                        <option>Select gender</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    <span class="only-border"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="sfa-select">
+
+                    <select id="sel1" class="select">
+                        <option>Select Age Group</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    <span class="only-border"></span>
                 </div>
             </div>
         </div>
+       
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center margtp p50">
+                    <a href="#" class="get-drwa">Get Statistics</a>
+                </div>
+            </div>
+        </div>
+        
+<!--
+                <div class="row">
+                
+            <div class="col-md-12">
+                <div class="tab-gallery c-text">
+                <h4>basketball under-14 - <span style="color:#fc7700">matches</span></h4>
+                </div>
+                <div class="sch-table">
+                    <table class="table">
+                        <thead class="f-normal">
+                            <tr>
+                                <th>year</th>
+                                <th>Team - 01</th>
+                                <th>Team - 02</th>
+                                <th>Score</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="cols-bg ver-td" >
+                                <td>
+                                    <h4 class="tx-c margin0">2015</h4>
 
+                                </td>
+                                <td>
+                                    <h4 class="tx-c margin0">don bosco school</h4>
+
+                                </td> 
+                                <td>
+                                    <h4 class="tx-c margin0">don bosco school</h4>
+
+                                </td>
+                                <td class="cust-li pos-ab text-center">
+                                   <h4 class="margin0">43 - 54</h4>
+                                </td>
+                                <td class="cust-li">
+                              
+                                    <h4 class="tx-c disp-in margin0">don bosco school win</h4>
+      <div class="disp-in vertic-mi">
+                                        <figure class="text-center">
+                                            <img src="img/replay.png">
+                                            <figcaption>Replay</figcaption>
+                                        </figure>
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+-->
+        
+<!--        // for swimming-->
+        
+                  <div class="row">
+                
+            <div class="col-md-12">
+                <div class="tab-gallery c-text">
+                <h4>swimming 50m freestyle under-16 Boys - <span style="color:#fc7700">matches</span></h4>
+                </div>
+                <div class="sch-table">
+                    <table class="table">
+                        <thead class="f-normal">
+                            <tr>
+                                <th>year</th>
+                                <th>athelte</th>
+                                <th>school name</th>
+                                <th>Result</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="cols-bg ver-td" >
+                                <td>
+                                    <h4 class="tx-c margin0">2015</h4>
+
+                                </td>
+                                <td>
+                                    <h4 class="tx-c margin0">soheb shaikh</h4>
+
+                                </td> 
+                                <td>
+                                    <h4 class="tx-c margin0">don bosco school</h4>
+
+                                </td>
+                            
+                                <td class="cust-li">
+                              
+                                    <h4 class="tx-c disp-in margin0">02:04:2</h4>
+      <div class="disp-in vertic-mi">
+                                        <figure class="text-center">
+                                            <img src="img/replay.png">
+                                            <figcaption>Replay</figcaption>
+                                        </figure>
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
     </div>
 </div>

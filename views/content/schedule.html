@@ -58,10 +58,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="text-center margtp p50">
-                    <a href="#" class="get-drwa">Get Draw</a>
+                    <a href="#" class="get-drwa">Get schedule</a>
                 </div>
             </div>
         </div>
+<!--        // for all sports-->
+<!--
         <div class="row">
             <div class="col-md-12">
                 <div class="sch-table margintop">
@@ -104,6 +106,45 @@
                                         <li>{{data.result.point1}} </li>
                                         <li>{{data.result.point1}} </li>
                                     </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+-->
+<!--        //for swimming-->
+        
+                <div class="row">
+            <div class="col-md-12">
+                <div class="sch-table margintop">
+                    <table class="table">
+                        <thead class="f-normal">
+                            <tr>
+                                <th>Athlete</th>
+                                
+                                <th>Time & Date</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="col-bg" ng-repeat="data in result track by $index">
+                                <td>
+                                    <h4 class="copy-marks margin0">{{data.player1.name}}</h4>
+                                    <p>{{data.player1.school}}</p>
+                                </td>
+                             
+                                <td class="cust-li pos-ab text-center">
+                                    <ul class="big-li">
+                                        <li>{{data.time.time}}</li>
+                                        <li>{{data.time.day}}<sup style="text-transform: capitalize;">{{data.time.nd}}</sup> {{data.time.month}} {{data.time.year}}</li>
+                                    </ul>
+                                </td>
+                                <td class="cust-li text-center">
+                                    
+                                    <h4 class="copy-marks margin0">{{data.result.status}}</h4>
+                                   
                                 </td>
                             </tr>
                         </tbody>

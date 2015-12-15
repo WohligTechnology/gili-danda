@@ -1039,6 +1039,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		$scope.makeactive = function (game) {
 			if (!game.grey) {
 				_.each($scope.games, function (n) {
+					if(n.game != "all")
 					n.active = false;
 				});
 				game.active = true;
@@ -1053,6 +1054,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				//                    $scope.agegroups = data;
 				//                    $scope.ageSelected = $scope.agegroups[0].id;
 				if ($scope.tab2 == "squad") {
+					if(game.game == "all"){
+						$scope.sportsId=0;
+						$scope.ageSelected=0;
+						$scope.category=0;
+						$scope.loadStudents();
+					}
 					$scope.loadSportStudent();
 				} else if ($scope.tab2 == "gallerymain") {
 					$scope.loadGallery();
@@ -1083,7 +1090,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 		// Get school detail
 		$scope.loadStudents = function () {
-			NavigationService.getsport($stateParams.id, $scope.sportsId, $scope.ageSelected, function (data) {
+			NavigationService.getsport($stateParams.id, $scope.sportsId, $scope.ageSelected, $scope.category, function (data) {
 				console.log(data);
 				if (data != '') {
 					$scope.allresult = data;
@@ -1099,14 +1106,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				}
 			});
 		}
+		
+		$scope.loadCategory = function(){
+			NavigationService.getSportsCategory($stateParams.id, $scope.sportsId, $scope.ageSelected, function (data, status) {
+						$scope.sportsCategory = data;
+						if (data != '') {
+							$scope.category = data[0].id;
+							$scope.loadStudents();
+						}
+					});
+		}
 
 		$scope.loadSportStudent = function () {
 			NavigationService.getAgeGroup($stateParams.id, $scope.sportsId, function (data, status) {
-				console.log(data);
 				$scope.agegroups = data;
 				if (data[0]) {
 					$scope.ageSelected = data[0].agegroup;
-					$scope.loadStudents();
+					$scope.loadCategory();
 				}
 			});
 		}
@@ -1168,12 +1184,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 			//            });
 
 		});
-	$scope.loadSportsCategory = function(){
-		
-	}
+		$scope.loadSportsCategory = function () {
+
+		}
 
 		$scope.games = // JavaScript Document
       [{
+				"icon": "img/bluemenu/tabletennis.png",
+				"icon2": "img/bluemenu/tabletennisor.png",
+				"game": "all",
+				"grey": true
+      },{
 				"icon": "img/bluemenu/tabletennis.png",
 				"icon2": "img/bluemenu/tabletennisor.png",
 				"game": "table tennis",
@@ -1269,7 +1290,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		};
 
 		//    end
-
 		$scope.tab2 = "squad";
 		//    tab change
 		$scope.active = 'active';
@@ -1323,6 +1343,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 			})
 			age.line = "col-class";
 			$scope.ageSelected = age.agegroup;
+			$scope.result = [];
+			$scope.pagenum = 1;
+			$scope.loadCategory();
+		};
+	
+		$scope.categorychanges = function (category) {
+			$scope.result = [];
+			$scope.allresult = [];
+			_.each($scope.agegroups, function (n) {
+				n.line = "";
+			})
+			category.line = "col-class";
+			$scope.category = category.id;
 			$scope.result = [];
 			$scope.pagenum = 1;
 			$scope.loadStudents();

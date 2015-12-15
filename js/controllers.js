@@ -1539,6 +1539,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		//    isFirstOpen: true,
 		//    isFirstDisabled: false
 		//  };
+	
+		NavigationService.isStudentSports(function(data){
+			$scope.sports = data;
+		});
 		$scope.result = [{
 			player1: {
 				name: "Viraj Kale",

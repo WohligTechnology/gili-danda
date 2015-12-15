@@ -34,6 +34,9 @@ var navigationservice = angular.module('navigationservice', [])
         getsponsors: function (callback) {
             return $http.get(admin_url + 'json/getsponsors', {}).success(callback);
         },
+        isStudentSports: function (callback) {
+            return $http.get(admin_url + 'json/isStudentSports', {}).success(callback);
+        },
         getschoolprofile: function (id, callback) {
             return $http.get(admin_url + 'json/getschoolprofile?id=' + id, {}).success(callback);
         },

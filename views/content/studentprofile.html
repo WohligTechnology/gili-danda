@@ -17,7 +17,7 @@
                         <span class='st_googleplus_large' displayText='Google +'></span>
                     </div>
 
-                    <p class="fonts">{{student.studentprofile.schoolname}} School</p>
+                    <p class="fonts" ui-sref="schoolprofile({id:student.studentprofile.schoolid})">{{student.studentprofile.schoolname}}</p>
                     <ul class="spoint">
                         <li class="borderrigh padlefo" ng-if="student.studentprofile.agegroupname">
                             <p>group</p>

@@ -9,10 +9,8 @@
     <div class="col-md-3">
                 <div class="sfa-select">
                     <select id="sel1"  class="select">
-                        <option>select sport</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                        <option value="">select sport</option>
+                        <option value="{{sport.id}}" ng-repeat="sport in sports">{{sport.name}}</option>
                     </select>
                     <span class="only-border"></span>
                 </div>
@@ -45,10 +43,9 @@
                 <div class="sfa-select">
 
                     <select id="sel1" class="select">
-                        <option>Select Age Group</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                        <option value="">Select Age Group</option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
                     </select>
                     <span class="only-border"></span>
                 </div>
@@ -63,7 +60,6 @@
             </div>
         </div>
 <!--        // for all sports-->
-<!--
         <div class="row">
             <div class="col-md-12">
                 <div class="sch-table margintop">
@@ -113,7 +109,6 @@
                 </div>
             </div>
         </div>
--->
 <!--        //for swimming-->
         
                 <div class="row">

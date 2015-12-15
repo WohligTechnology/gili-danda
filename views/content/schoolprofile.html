@@ -523,23 +523,19 @@
                     </div>
 -->
                         <div class="sfa-select">
-                            <select id="sel1" class="select">
-                                <option>ALL</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
+                            <select id="sel1" class="select" ng-model="ageSelected" ng-change="tabchanges(ageSelected)">
+                                <option value="">Age groups</option>
+                                <option value="{{age.agegroup}}" ng-repeat="age in agegroups">{{age.name}}</option>
                             </select>
                             <span class="only-border"></span>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="sfa-select">
-                            <select id="sel1" class="select">
-                                <option>ALL</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                            </select>
+                            <select id="sel1" class="select" ng-model="category" ng-change="categorychanges(category)">
+                                <option value="">Category</option>
+                                <option value="{{cat.id}}" ng-repeat="cat in sportsCategory">{{cat.title}}</option>
+                            </select>	
                             <span class="only-border"></span>
                         </div>
                     </div>

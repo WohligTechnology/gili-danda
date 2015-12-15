@@ -1,5 +1,5 @@
-var adminlink = "http://wohlig.co.in/sfabackend/";
-//var adminlink = "http://localhost/sfabackend/";
+//var adminlink = "http://wohlig.co.in/sfabackend/";
+var adminlink = "http://localhost/sfabackend/";
 var admin_url = adminlink + "index.php/";
 var imgpath = adminlink + "uploads/";
 var navigationservice = angular.module('navigationservice', [])
@@ -64,8 +64,8 @@ var navigationservice = angular.module('navigationservice', [])
         createEnquiries: function (enquire, callback) {
             return $http.get(admin_url + 'json/createEnquiries?name=' + enquire.name + '&email=' + enquire.email + '&mobile=' + enquire.mobile + '&person=' + enquire.person, {}).success(callback);
         },
-        getsport: function (id, sportid, ageid, callback) {
-            return $http.get(admin_url + 'json/getSchoolSports?id=' + id + '&sport=' + sportid + '&agegroup=' + ageid, {}).success(callback);
+        getsport: function (id, sportid, ageid, category, callback) {
+            return $http.get(admin_url + 'json/getSchoolSports?id=' + id + '&sport=' + sportid + '&agegroup=' + ageid + '&category=' + category, {}).success(callback);
         },
         getgallery: function (id, sportid, pagenum, callback) {
             return $http.get(admin_url + 'json/getgalleryimageforstudentprofile?id=' + id + '&sport=' + sportid + '&pageno=' + pagenum + '&maxrow=100', {}).success(callback);
@@ -75,6 +75,9 @@ var navigationservice = angular.module('navigationservice', [])
         },
         getgalleryimage: function (id, sportid, pagenum, callback) {
             return $http.get(admin_url + 'json/getgalleryimage?id=' + id + '&sport=' + sportid + '&pageno=' + pagenum + '&maxrow=100', {}).success(callback);
+        },
+        getSportsCategory: function (id, sportid, agegroup, callback) {
+            return $http.get(admin_url + 'json/getSportsCategory?id=' + id + '&sport=' + sportid + '&agegroup=' + agegroup, {}).success(callback);
         },
         getAllSports: function (callback) {
             return $http.get(admin_url + 'json/getAllSports').success(callback);

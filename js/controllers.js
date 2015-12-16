@@ -176,9 +176,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	$scope.schoolProfile = function (school) {
 		$location.path("schoolprofile/" + school.id);
 	}
-	
-	$scope.getSearchById = function(id){
-		
+
+	$scope.getSearchById = function (id) {
+
 	}
 
 	ga('send', 'pageview', {
@@ -776,8 +776,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				"school": "Bombay British School"
 
       }];
-   
-    $scope.r3 = // JavaScript Document
+
+		$scope.r3 = // JavaScript Document
       [{
 				"name": "Viraj Kale",
 				"school": "Dhirubhai Ambani International School"
@@ -786,8 +786,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				"name": "Rizwan Mirza",
 				"school": "Bombay British School"
 
-      }];   
-    $scope.r4 = // JavaScript Document
+      }];
+		$scope.r4 = // JavaScript Document
       [{
 				"name": "Viraj Kale",
 				"school": "Dhirubhai Ambani International School"
@@ -1054,30 +1054,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		$scope.msg = "Loading";
 		$scope.category = "";
 		$scope.ageSelected = "";
+		$scope.checkstart = true;
 		$scope.getage = function () {
 
 		}
 		$scope.getage();
-		$scope.makeactive = function (game) {
+		$scope.makeactive = function (state, game) {
+
+			if (state == 0) {
+				$scope.checkstart = true;
+			} else {
+				$scope.checkstart = false;
+			}
+
 			if (!game.grey) {
 				_.each($scope.games, function (n) {
 					n.active = false;
 				});
-				game.active = true;
+				if (state == 0) {
+					game.active = true;
+				}
 
 				$scope.result = [];
 				$scope.allresult = [];
-					$scope.selectedGame = game;
-				
-					$scope.sportsId = game.id;
+				//					$scope.selectedGame = game;
+
+				$scope.sportsId = game.id;
 				$scope.pagenum = 1;
 				if ($scope.tab2 == "squad") {
-					if (game.game == "all") {
-						$scope.sportsId = "";
-						$scope.ageSelected = "";
-						$scope.category = "";
-//						$scope.loadStudents();
-					}
 					$scope.loadSportStudent();
 				} else if ($scope.tab2 == "gallerymain") {
 					$scope.loadGallery();
@@ -1105,6 +1109,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 		// Get school detail
 		$scope.loadStudents = function () {
+
 			NavigationService.getsport($stateParams.id, $scope.sportsId, $scope.ageSelected, $scope.category, function (data) {
 				console.log(data);
 				if (data != '') {
@@ -1167,10 +1172,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 							m.grey = false;
 							m.id = n.id;
 							if (!$scope.tab) {
-								$scope.makeactive(m);
-								if(m.game != "all"){
-								$scope.sportsId = n.id;
-								}
+								$scope.makeactive(1, m);
 							}
 						} else {
 							if (m.grey != false) {
@@ -1551,6 +1553,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		$scope.filter.category = "";
 		$scope.filter.sport = "";
 		$scope.filter.gender = "";
+		$scope.filter.agegroup = "";
+		$scope.sportselected = "";
+		$scope.result = [];
+		$scope.schedule = {};
 
 		//    $scope.oneAtATime = true;
 		//    $scope.oneAtATimes = false;
@@ -1559,173 +1565,215 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		//    isFirstOpen: true,
 		//    isFirstDisabled: false
 		//  };
-	
-		NavigationService.isStudentSports(function(data){
+
+		NavigationService.isStudentSports(function (data) {
 			$scope.sports = data;
 		});
-	
-		$scope.sportChange = function(){
-			NavigationService.getSportsCategory("",$scope.filter.sport,"", function(data){
+
+		$scope.sportChange = function () {
+			console.log($scope.filter.sportid.split(','));
+			$scope.sportselected = $scope.filter.sportid.split(',')[1];
+			$scope.filter.sport = $scope.filter.sportid.split(',')[0];
+
+			NavigationService.getSportsCategory("", $scope.filter.sport, "", function (data) {
 				$scope.category = data;
 			})
 			$scope.categoryChange();
 		}
-		
-		$scope.categoryChange = function(){
-			NavigationService.scheduleAgeGroup($scope.filter.category, $scope.filter.sport, $scope.filter.gender, function(data){
+
+		$scope.categoryChange = function () {
+			NavigationService.scheduleAgeGroup($scope.filter.category, $scope.filter.sport, $scope.filter.gender, function (data) {
 				$scope.agegroup = data;
 			})
 		}
-		
-		$scope.genderChange = function(){
+
+		$scope.genderChange = function () {
 			$scope.categoryChange();
 		}
-		
-		$scope.getSchedule = function(){
-			NavigationService.getschedule($scope.filter, function(data){
-				console.log(data);
+
+		$scope.getSchedule = function () {
+			$scope.result = [];
+
+			if ($scope.sportselected == 'Swimming') {
+				console.log($scope.sportselected);
+				NavigationService.getAllSwimmingMatch($scope.filter, function (data) {
+					_.each(data.queryresult, function (n) {
+						$scope.schedule = {};
+						$scope.schedule.matchdate = n.matchdate;
+						$scope.schedule.matchresult = n.matchresult;
+						if (n.studentid && n.studentid != '') {
+							$scope.schedule.team = n.studentname;
+							$scope.schedule.teamsfa = n.studentsfaid;
+						}
+						if (n.teamid && n.teamid != '') {
+							$scope.schedule.team = n.teamname;
+							$scope.schedule.teamsfa = n.teamsfaid;
+						}
+						$scope.result.push($scope.schedule);
+					});
+				});
+			}
+			NavigationService.getschedule($scope.filter, function (data) {
+				_.each(data.queryresult, function (n) {
+					$scope.schedule = {};
+					$scope.schedule.matchdate = n.matchdate;
+					$scope.schedule.matchresult = n.matchresult;
+					if (n.student1name && n.student1name != '') {
+						$scope.schedule.team1 = n.student1name;
+						$scope.schedule.team2 = n.student2name;
+						$scope.schedule.school1 = n.school1name;
+						$scope.schedule.school2 = n.school2name;
+					}
+					if (n.team1name && n.team1name != '') {
+						$scope.schedule.team1 = n.team1name;
+						$scope.schedule.team2 = n.team2name;
+						$scope.schedule.school1 = n.team1sfaid;
+						$scope.schedule.school2 = n.team2sfaid;
+					}
+					$scope.result.push($scope.schedule);
+				});
 			});
 		}
-		
-		$scope.result = [{
-			player1: {
-				name: "Viraj Kale",
-				school: "Dhirubhai Ambani International School"
-			},
-			player2: {
-				name: "Rizwan Mirza",
-				school: "Bombay British School"
-			},
-			time: {
-				time: "10:15 AM",
-				day: "25",
-				month: "DEC",
-				nd: "nd",
-				year: "2015"
-			},
-			result: {
-				status: "Rizwan won",
-				point1: "4-6",
-				point2: "5-6",
-				point3: "1-6",
-				play: true
-			}
-    }, {
-			player1: {
-				name: "Viraj Kale",
-				school: "Dhirubhai Ambani International School"
-			},
-			player2: {
-				name: "Rizwan Mirza",
-				school: "Bombay British School"
-			},
-			time: {
-				time: "10:15 AM",
-				day: "25",
-				month: "DEC",
-				nd: "nd",
-				year: "2015"
-			},
-			result: {
-				status: "to be played",
-				point1: "",
-				point2: "",
-				point3: "",
-				play: false
-			}
-    }, {
-			player1: {
-				name: "Viraj Kale",
-				school: "Dhirubhai Ambani International School"
-			},
-			player2: {
-				name: "Rizwan Mirza",
-				school: "Bombay British School"
-			},
-			time: {
-				time: "10:15 AM",
-				day: "25",
-				month: "DEC",
-				nd: "nd",
-				year: "2015"
-			},
-			result: {
-				status: "to be played",
-				point1: "",
-				point2: "",
-				point3: "",
-				play: false
-			}
-    }, {
-			player1: {
-				name: "Viraj Kale",
-				school: "Dhirubhai Ambani International School"
-			},
-			player2: {
-				name: "Rizwan Mirza",
-				school: "Bombay British School"
-			},
-			time: {
-				time: "10:15 AM",
-				day: "25",
-				month: "DEC",
-				nd: "nd",
-				year: "2015"
-			},
-			result: {
-				status: "to be played",
-				point1: "",
-				point2: "",
-				point3: "",
-				play: false
-			}
-    }, {
-			player1: {
-				name: "Viraj Kale",
-				school: "Dhirubhai Ambani International School"
-			},
-			player2: {
-				name: "Rizwan Mirza",
-				school: "Bombay British School"
-			},
-			time: {
-				time: "10:15 AM",
-				day: "25",
-				month: "DEC",
-				nd: "nd",
-				year: "2015"
-			},
-			result: {
-				status: "to be played",
-				point1: "",
-				point2: "",
-				point3: "",
-				play: false
-			}
-    }, {
-			player1: {
-				name: "Viraj Kale",
-				school: "Dhirubhai Ambani International School"
-			},
-			player2: {
-				name: "Rizwan Mirza",
-				school: "Bombay British School"
-			},
-			time: {
-				time: "10:15 AM",
-				day: "25",
-				month: "DEC",
-				nd: "nd",
-				year: "2015"
-			},
-			result: {
-				status: "to be played",
-				point1: "",
-				point2: "",
-				point3: "",
-				play: false
-			}
-    }];
+
+		//		$scope.result = [{
+		//			player1: {
+		//				name: "Viraj Kale",
+		//				school: "Dhirubhai Ambani International School"
+		//			},
+		//			player2: {
+		//				name: "Rizwan Mirza",
+		//				school: "Bombay British School"
+		//			},
+		//			time: {
+		//				time: "10:15 AM",
+		//				day: "25",
+		//				month: "DEC",
+		//				nd: "nd",
+		//				year: "2015"
+		//			},
+		//			result: {
+		//				status: "Rizwan won",
+		//				point1: "4-6",
+		//				point2: "5-6",
+		//				point3: "1-6",
+		//				play: true
+		//			}
+		//    }, {
+		//			player1: {
+		//				name: "Viraj Kale",
+		//				school: "Dhirubhai Ambani International School"
+		//			},
+		//			player2: {
+		//				name: "Rizwan Mirza",
+		//				school: "Bombay British School"
+		//			},
+		//			time: {
+		//				time: "10:15 AM",
+		//				day: "25",
+		//				month: "DEC",
+		//				nd: "nd",
+		//				year: "2015"
+		//			},
+		//			result: {
+		//				status: "to be played",
+		//				point1: "",
+		//				point2: "",
+		//				point3: "",
+		//				play: false
+		//			}
+		//    }, {
+		//			player1: {
+		//				name: "Viraj Kale",
+		//				school: "Dhirubhai Ambani International School"
+		//			},
+		//			player2: {
+		//				name: "Rizwan Mirza",
+		//				school: "Bombay British School"
+		//			},
+		//			time: {
+		//				time: "10:15 AM",
+		//				day: "25",
+		//				month: "DEC",
+		//				nd: "nd",
+		//				year: "2015"
+		//			},
+		//			result: {
+		//				status: "to be played",
+		//				point1: "",
+		//				point2: "",
+		//				point3: "",
+		//				play: false
+		//			}
+		//    }, {
+		//			player1: {
+		//				name: "Viraj Kale",
+		//				school: "Dhirubhai Ambani International School"
+		//			},
+		//			player2: {
+		//				name: "Rizwan Mirza",
+		//				school: "Bombay British School"
+		//			},
+		//			time: {
+		//				time: "10:15 AM",
+		//				day: "25",
+		//				month: "DEC",
+		//				nd: "nd",
+		//				year: "2015"
+		//			},
+		//			result: {
+		//				status: "to be played",
+		//				point1: "",
+		//				point2: "",
+		//				point3: "",
+		//				play: false
+		//			}
+		//    }, {
+		//			player1: {
+		//				name: "Viraj Kale",
+		//				school: "Dhirubhai Ambani International School"
+		//			},
+		//			player2: {
+		//				name: "Rizwan Mirza",
+		//				school: "Bombay British School"
+		//			},
+		//			time: {
+		//				time: "10:15 AM",
+		//				day: "25",
+		//				month: "DEC",
+		//				nd: "nd",
+		//				year: "2015"
+		//			},
+		//			result: {
+		//				status: "to be played",
+		//				point1: "",
+		//				point2: "",
+		//				point3: "",
+		//				play: false
+		//			}
+		//    }, {
+		//			player1: {
+		//				name: "Viraj Kale",
+		//				school: "Dhirubhai Ambani International School"
+		//			},
+		//			player2: {
+		//				name: "Rizwan Mirza",
+		//				school: "Bombay British School"
+		//			},
+		//			time: {
+		//				time: "10:15 AM",
+		//				day: "25",
+		//				month: "DEC",
+		//				nd: "nd",
+		//				year: "2015"
+		//			},
+		//			result: {
+		//				status: "to be played",
+		//				point1: "",
+		//				point2: "",
+		//				point3: "",
+		//				play: false
+		//			}
+		//    }];
 
 
 		$scope.games = // JavaScript Document

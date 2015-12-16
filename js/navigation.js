@@ -82,6 +82,9 @@ var navigationservice = angular.module('navigationservice', [])
         getschedule: function (filter, callback) {
             return $http.get(admin_url + 'json/getschedule?sport=' + filter.sport + '&sportscategory=' + filter.category + '&agegroup=' + filter.agegroup + '&gender=' + filter.gender, {}).success(callback);
         },
+        getAllSwimmingMatch: function (filter, callback) {
+            return $http.get(admin_url + 'json/getAllSwimmingMatch?sport=' + filter.sport + '&sportscategory=' + filter.category + '&agegroup=' + filter.agegroup + '&gender=' + filter.gender, {}).success(callback);
+        },
         getSportsCategory: function (id, sportid, agegroup, callback) {
             return $http.get(admin_url + 'json/getSportsCategory?id=' + id + '&sport=' + sportid + '&agegroup=' + agegroup, {}).success(callback);
         },

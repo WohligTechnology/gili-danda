@@ -8,9 +8,9 @@
         <div class="row">
     <div class="col-md-3">
                 <div class="sfa-select">
-                    <select id="sel1"  class="select" ng-model="filter.sport" ng-change="sportChange()">
+                    <select id="sel1"  class="select" ng-model="filter.sportid" ng-change="sportChange()">
                         <option value="">select sport</option>
-                        <option value="{{sport.id}}" ng-repeat="sport in sports">{{sport.name}}</option>
+                        <option value="{{sport.id}},{{sport.name}}" ng-repeat="sport in sports">{{sport.name}}</option>
                     </select>
                     <span class="only-border"></span>
                 </div>
@@ -55,7 +55,7 @@
             </div>
         </div>
 <!--        // for all sports-->
-        <div class="row">
+        <div class="row" ng-if="sportselected!='Swimming' && sportselected!='' && result!=''">
             <div class="col-md-12">
                 <div class="sch-table margintop">
                     <table class="table">
@@ -70,12 +70,12 @@
                         <tbody>
                             <tr class="col-bg" ng-repeat="data in result track by $index">
                                 <td>
-                                    <h4 class="copy-marks margin0">{{data.player1.name}}</h4>
-                                    <p>{{data.player1.school}}</p>
+                                    <h4 class="copy-marks margin0">{{data.team1}}</h4>
+                                    <p>{{data.school1}}</p>
                                 </td>
                                 <td>
-                                    <h4 class="copy-marks margin0">{{data.player2.name}}</h4>
-                                    <p>{{data.player2.school}}</p>
+                                    <h4 class="copy-marks margin0">{{data.team2}}</h4>
+                                    <p>{{data.school2}}</p>
                                 </td>
                                 <td class="cust-li pos-ab text-center">
                                     <ul class="big-li">
@@ -91,7 +91,7 @@
                                         </figure>
 
                                     </div>
-                                    <h4 class="copy-marks margin0">{{data.result.status}}</h4>
+                                    <h4 class="copy-marks margin0">{{data.matchresult}}</h4>
                                     <ul class="big-li f-12">
                                         <li>{{data.result.point1}} </li>
                                         <li>{{data.result.point1}} </li>
@@ -105,8 +105,7 @@
             </div>
         </div>
 <!--        //for swimming-->
-        
-                <div class="row">
+                <div class="row" ng-if="sportselected=='Swimming' && result!=''">
             <div class="col-md-12">
                 <div class="sch-table margintop">
                     <table class="table">
@@ -121,8 +120,8 @@
                         <tbody>
                             <tr class="col-bg" ng-repeat="data in result track by $index">
                                 <td>
-                                    <h4 class="copy-marks margin0">{{data.player1.name}}</h4>
-                                    <p>{{data.player1.school}}</p>
+                                    <h4 class="copy-marks margin0">{{data.team}}</h4>
+                                    <p>{{data.teamsfa}}</p>
                                 </td>
                              
                                 <td class="cust-li pos-ab text-center">
@@ -133,7 +132,7 @@
                                 </td>
                                 <td class="cust-li ver-md text-center">
                                     
-                                    <h4 class="margin0">{{data.result.status}}</h4>
+                                    <h4 class="margin0">{{data.matchresult}}</h4>
                                    
                                 </td>
                             </tr>

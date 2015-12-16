@@ -56,7 +56,7 @@
         <div class="col-md-12">
             <div class="blue-cat">
                 <ul>
-                    <hovericon game="game" ng-repeat="game in games" ng-click="makeactive(game);"></hovericon>
+                    <hovericon game="game" ng-repeat="game in games" ng-click="makeactive(0,game);"></hovericon>
                 </ul>
             </div>
         </div>
@@ -564,7 +564,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" ng-if="checkstart">
 
                 <div class="col-md-6">
                     <div class="bg-school">
@@ -581,7 +581,7 @@
                                         </th>
 
                                         <th>
-                                            Category
+                                            Team
                                         </th>
 
                                     </tr>
@@ -602,7 +602,7 @@
                                         </td>
                                         <td>
                                             <ul>
-                                                <li>{{data.title}}</li>
+                                                <li>{{data.teamname}}</li>
 
                                             </ul>
                                         </td>
@@ -633,7 +633,7 @@
                                         </th>
 
                                         <th>
-                                            Category
+                                            Team
                                         </th>
 
                                     </tr>
@@ -654,7 +654,7 @@
                                         </td>
                                         <td>
                                             <ul>
-                                                <li>{{data.title}}</li>
+                                                <li>{{data.teamname}}</li>
 
                                             </ul>
                                         </td>

@@ -8,7 +8,7 @@
         <div class="row">
     <div class="col-md-3">
                 <div class="sfa-select">
-                    <select id="sel1"  class="select">
+                    <select id="sel1"  class="select" ng-model="filter.sport" ng-change="sportChange(filter.sport)">
                         <option value="">select sport</option>
                         <option value="{{sport.id}}" ng-repeat="sport in sports">{{sport.name}}</option>
                     </select>
@@ -17,12 +17,9 @@
             </div>
             <div class="col-md-3">
                 <div class="sfa-select">
-
-                    <select id="sel1" class="select">
-                        <option>Select category</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                    <select id="sel1" class="select" ng-model="filter.category" ng-change="categoryChange(filter.category)">
+                        <option value="">Select category</option>
+                        <option value="{{cat.id}}" ng-repeat="cat in category">{{cat.title}}</option>
                     </select>
                     <span class="only-border"></span>
                 </div>
@@ -30,11 +27,10 @@
             <div class="col-md-3">
                 <div class="sfa-select" >
 
-                    <select id="sel1" class="select">
-                        <option>Select gender</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                    <select id="sel1" class="select" ng-model="filter.gender">
+                        <option value="">Select Gender</option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
                     </select>
                     <span class="only-border"></span>
                 </div>
@@ -42,10 +38,9 @@
             <div class="col-md-3">
                 <div class="sfa-select">
 
-                    <select id="sel1" class="select">
+                    <select id="sel1" class="select" ng-model="filter.agegroup">
                         <option value="">Select Age Group</option>
-                        <option value="1">Male</option>
-                        <option value="2">Female</option>
+                        <option value="{{age.agegroup}}" ng-repeat="age in agegroup">{{age.name}}</option>
                     </select>
                     <span class="only-border"></span>
                 </div>
@@ -54,8 +49,8 @@
        
         <div class="row">
             <div class="col-md-12">
-                <div class="text-center margtp p50">
-                    <a href="#" class="get-drwa">Get schedule</a>
+                <div class="text-center margtp p50" ng-click="getSchedule()">
+                    <a class="get-drwa">Get schedule</a>
                 </div>
             </div>
         </div>

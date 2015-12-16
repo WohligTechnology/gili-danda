@@ -82,6 +82,9 @@ var navigationservice = angular.module('navigationservice', [])
         getSportsCategory: function (id, sportid, agegroup, callback) {
             return $http.get(admin_url + 'json/getSportsCategory?id=' + id + '&sport=' + sportid + '&agegroup=' + agegroup, {}).success(callback);
         },
+        scheduleAgeGroup: function (category, sport, gender, callback) {
+            return $http.get(admin_url + 'json/scheduleAgeGroup?category=' + category + '&sport=' + sport + '&gender=' + gender, {}).success(callback);
+        },
         getAllSports: function (callback) {
             return $http.get(admin_url + 'json/getAllSports').success(callback);
         },

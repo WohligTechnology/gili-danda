@@ -1531,6 +1531,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		$scope.menutitle = NavigationService.makeactive("Schedule");
 		TemplateService.title = $scope.menutitle;
 		$scope.navigation = NavigationService.getnav();
+		$scope.filter = {};
+		$scope.filter.category = "";
+		$scope.filter.sport = "";
+		$scope.filter.gender = "";
 
 		//    $scope.oneAtATime = true;
 		//    $scope.oneAtATimes = false;
@@ -1543,6 +1547,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		NavigationService.isStudentSports(function(data){
 			$scope.sports = data;
 		});
+	
+		$scope.sportChange = function(sport){
+			NavigationService.getSportsCategory("",sport,"", function(data){
+				$scope.category = data;
+			})
+		}
+		
+		$scope.categoryChange = function(category){
+			NavigationService.scheduleAgeGroup($scope.filter.category, $scope.filter.sport, $scope.filter.gender, function(data){
+				$scope.agegroup = data;
+			})
+		}
+		
 		$scope.result = [{
 			player1: {
 				name: "Viraj Kale",

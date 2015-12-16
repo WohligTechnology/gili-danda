@@ -776,7 +776,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				"school": "Bombay British School"
 
       }];
+   
+    $scope.r3 = // JavaScript Document
+      [{
+				"name": "Viraj Kale",
+				"school": "Dhirubhai Ambani International School"
 
+      }, {
+				"name": "Rizwan Mirza",
+				"school": "Bombay British School"
+
+      }];   
+    $scope.r4 = // JavaScript Document
+      [{
+				"name": "Viraj Kale",
+				"school": "Dhirubhai Ambani International School"
+
+      }];
 	})
 	.controller('StudentprofileCtrl', function ($scope, TemplateService, NavigationService, ngDialog, $stateParams, $filter) {
 		$scope.template = TemplateService.changecontent("studentprofile");

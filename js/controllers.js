@@ -1564,16 +1564,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 			$scope.sports = data;
 		});
 	
-		$scope.sportChange = function(sport){
-			NavigationService.getSportsCategory("",sport,"", function(data){
+		$scope.sportChange = function(){
+			NavigationService.getSportsCategory("",$scope.filter.sport,"", function(data){
 				$scope.category = data;
 			})
+			$scope.categoryChange();
 		}
 		
-		$scope.categoryChange = function(category){
+		$scope.categoryChange = function(){
 			NavigationService.scheduleAgeGroup($scope.filter.category, $scope.filter.sport, $scope.filter.gender, function(data){
 				$scope.agegroup = data;
 			})
+		}
+		
+		$scope.genderChange = function(){
+			$scope.categoryChange();
+		}
+		
+		$scope.getSchedule = function(){
+			NavigationService.getschedule($scope.filter, function(data){
+				console.log(data);
+			});
 		}
 		
 		$scope.result = [{

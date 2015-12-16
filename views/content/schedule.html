@@ -8,7 +8,7 @@
         <div class="row">
     <div class="col-md-3">
                 <div class="sfa-select">
-                    <select id="sel1"  class="select" ng-model="filter.sport" ng-change="sportChange(filter.sport)">
+                    <select id="sel1"  class="select" ng-model="filter.sport" ng-change="sportChange()">
                         <option value="">select sport</option>
                         <option value="{{sport.id}}" ng-repeat="sport in sports">{{sport.name}}</option>
                     </select>
@@ -17,7 +17,7 @@
             </div>
             <div class="col-md-3">
                 <div class="sfa-select">
-                    <select id="sel1" class="select" ng-model="filter.category" ng-change="categoryChange(filter.category)">
+                    <select id="sel1" class="select" ng-model="filter.category" ng-change="categoryChange()">
                         <option value="">Select category</option>
                         <option value="{{cat.id}}" ng-repeat="cat in category">{{cat.title}}</option>
                     </select>
@@ -27,7 +27,7 @@
             <div class="col-md-3">
                 <div class="sfa-select" >
 
-                    <select id="sel1" class="select" ng-model="filter.gender">
+                    <select id="sel1" class="select" ng-model="filter.gender" ng-change="genderChange()">
                         <option value="">Select Gender</option>
                         <option value="1">Male</option>
                         <option value="2">Female</option>

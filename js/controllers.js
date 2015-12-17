@@ -754,6 +754,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				"school": "Bombay British School"
 
 
+      }, {
+				"name": "Viraj Kale",
+				"school": "Dhirubhai Ambani International School"
+
+      }, {
+				"name": "Rizwan Mirza",
+				"school": "Bombay British School"
+
+
       }];
 
 		$scope.r1 = _.chunk($scope.r1, 2);
@@ -770,6 +779,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       }, {
 				"name": "Viraj Kale",
 				"school": "Dhirubhai Ambani International School"
+
+      }, {
+				"name": "Rizwan Mirza",
+				"school": "Bombay British School"
 
       }, {
 				"name": "Rizwan Mirza",

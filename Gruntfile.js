@@ -65,6 +65,7 @@ module.exports = function (grunt) {
                     './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
                     './bower_components/ng-dialog/js/ngDialog.min.js',
                     './bower_components/lodash/lodash.min.js',
+                    "bower_components/angular-momentjs/angular-momentjs.min.js",
                     './js/app.js',
                     './js/controllers.js',
                     './js/templateservice.js',

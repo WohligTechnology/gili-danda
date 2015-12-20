@@ -3,184 +3,15 @@ var demo = 0;
 
 
 var firstapp = angular.module('firstapp', [
-<<<<<<< Updated upstream
-    'ui.router',
-    'angular-flexslider',
-    'phonecatControllers',
-    'templateservicemod',
-    'navigationservice',
-	'angular-momentjs'
-]);
-
-firstapp.config(function ($stateProvider, $urlRouterProvider, $momentProvider) {
-
-	$stateProvider
-
-		.state('home', {
-			url: "/home",
-			templateUrl: "./views/template.html",
-			controller: 'HomeCtrl'
-		})
-		.state('schoolregistration', {
-			url: "/schoolregistration",
-			templateUrl: "./views/template.html",
-			controller: 'SchoolRegistrationCtrl'
-		})
-		.state('draw', {
-			url: "/draw",
-			templateUrl: "./views/template.html",
-			controller: 'DrawCtrl'
-		})
-		.state('profile', {
-			url: "/profile",
-			templateUrl: "./views/template.html",
-			controller: 'ProfileCtrl'
-		})
-		.state('sports', {
-			url: "/sports",
-			templateUrl: "./views/template.html",
-			controller: 'SportsCtrl'
-		})
-		.state('media', {
-			url: "/media",
-			templateUrl: "./views/template.html",
-			controller: 'MediaCtrl'
-		})
-		.state('schedule', {
-			url: "/schedule",
-			templateUrl: "./views/template.html",
-			controller: 'ScheduleCtrl'
-		})
-		.state('comingsoon', {
-			url: "/comingsoon",
-			templateUrl: "./views/template.html",
-			controller: 'ComingsoonCtrl'
-		})
-		.state('termscondition', {
-			url: "/termscondition",
-			templateUrl: "./views/template.html",
-			controller: 'TermsconditionCtrl'
-		})
-		.state('score', {
-			url: "/score",
-			templateUrl: "./views/template.html",
-			controller: 'ScoreCtrl'
-		})
-		.state('school', {
-			url: "/school",
-			templateUrl: "./views/template.html",
-			controller: 'SchoolCtrl'
-		}).
-	state('student', {
-			url: "/student",
-			templateUrl: "./views/template.html",
-			controller: 'StudentCtrl'
-		})
-		.state('handball', {
-			url: "/handball",
-			templateUrl: "./views/template.html",
-			controller: 'HandballCtrl'
-		})
-		.state('basketball', {
-			url: "/basketball",
-			templateUrl: "./views/template.html",
-			controller: 'BasketballCtrl'
-		})
-		.state('squash', {
-			url: "/squash",
-			templateUrl: "./views/template.html",
-			controller: 'SquashCtrl'
-		})
-		.state('tabletennis', {
-			url: "/tabletennis",
-			templateUrl: "./views/template.html",
-			controller: 'TabletennisCtrl'
-		})
-		.state('enquiry', {
-			url: "/enquire",
-			templateUrl: "./views/template.html",
-			controller: 'EnquiryCtrl'
-		})
-		.state('badminton', {
-			url: "/badminton",
-			templateUrl: "./views/template.html",
-			controller: 'BadmintonCtrl'
-		})
-		.state('faqs', {
-			url: "/faqs",
-			templateUrl: "./views/template.html",
-			controller: 'FaqsCtrl'
-		})
-		.state('volleyball', {
-			url: "/volleyball",
-			templateUrl: "./views/template.html",
-			controller: 'VolleyballCtrl'
-		})
-		.state('swimming', {
-			url: "/swimming",
-			templateUrl: "./views/template.html",
-			controller: 'SwimmingCtrl'
-		})
-		.state('tennis', {
-			url: "/tennis",
-			templateUrl: "./views/template.html",
-			controller: 'TennisCtrl'
-		})
-		.state('venue', {
-			url: "/venue",
-			templateUrl: "./views/template.html",
-			controller: 'VenueCtrl'
-		})
-		.state('schoolprofile', {
-			url: "/schoolprofile/:id",
-			templateUrl: "./views/template.html",
-			controller: 'SchoolprofileCtrl'
-		})
-		.state('enquirenow', {
-			url: "/enquirenow",
-			templateUrl: "./views/template.html",
-			controller: 'EnquirenowCtrl'
-		})
-		.state('contact', {
-			url: "/contact",
-			templateUrl: "./views/template.html",
-			controller: 'ContactCtrl'
-		})
-		.state('landing', {
-			url: "/landing",
-			templateUrl: "./views/template.html",
-			controller: 'LandingCtrl'
-		})
-		.state('judo', {
-			url: "/judo",
-			templateUrl: "./views/template.html",
-			controller: 'JudoCtrl'
-		})
-		.state('about', {
-			url: "/about",
-			templateUrl: "./views/template.html",
-			controller: 'AboutCtrl'
-		})
-		.state('partner', {
-			url: "/partner",
-			templateUrl: "./views/template.html",
-			controller: 'PartnerCtrl'
-		})
-		.state('studentprofile', {
-			url: "/studentprofile/:id",
-			templateUrl: "./views/template.html",
-			controller: 'StudentprofileCtrl'
-		})
-	$urlRouterProvider.otherwise("/home");
-=======
   'ui.router',
   'angular-flexslider',
   'phonecatControllers',
   'templateservicemod',
   'navigationservice',
+  'angular-momentjs'
 ]);
 
-firstapp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
+firstapp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider
 
@@ -341,8 +172,6 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
     });
   $locationProvider.html5Mode(true);
   $urlRouterProvider.otherwise("/home");
->>>>>>> Stashed changes
-
 })
 
 

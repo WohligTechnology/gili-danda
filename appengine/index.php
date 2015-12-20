@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="w/w.min.css">
     <script src="w/w.min.js"></script>
 
+<base href="/">
     <!--[if IE]><script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script><![endif]-->
 

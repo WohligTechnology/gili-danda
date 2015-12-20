@@ -8,9 +8,10 @@ var firstapp = angular.module('firstapp', [
     'phonecatControllers',
     'templateservicemod',
     'navigationservice',
+	'angular-momentjs'
 ]);
 
-firstapp.config(function ($stateProvider, $urlRouterProvider) {
+firstapp.config(function ($stateProvider, $urlRouterProvider, $momentProvider) {
 
 	$stateProvider
 

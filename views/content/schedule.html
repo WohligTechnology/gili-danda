@@ -1,147 +1,152 @@
 <div class="media-set">
-    <img src="img/schedule.png" class="img-responsive img">
+	<img src="img/schedule.png" class="img-responsive img">
 
 </div>
 
 <div class="draw min800">
-    <div class="container">
-        <div class="row">
-    <div class="col-md-3">
-                <div class="sfa-select">
-                    <select id="sel1"  class="select" ng-model="filter.sportid" ng-change="sportChange()">
-                        <option value="">select sport</option>
-                        <option value="{{sport.id}},{{sport.name}}" ng-repeat="sport in sports">{{sport.name}}</option>
-                    </select>
-                    <span class="only-border"></span>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="sfa-select">
-                    <select id="sel1" class="select" ng-model="filter.category" ng-change="categoryChange()">
-                        <option value="">Select category</option>
-                        <option value="{{cat.id}}" ng-repeat="cat in category">{{cat.title}}</option>
-                    </select>
-                    <span class="only-border"></span>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="sfa-select" >
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="sfa-select">
+					<select id="sel1" class="select" ng-model="filter.sportid" ng-change="sportChange()">
+						<option value="">select sport</option>
+						<option value="{{sport.id}},{{sport.name}}" ng-repeat="sport in sports">{{sport.name}}</option>
+					</select>
+					<span class="only-border"></span>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="sfa-select">
+					<select id="sel1" class="select" ng-model="filter.category" ng-change="categoryChange()">
+						<option value="">Select category</option>
+						<option value="{{cat.id}}" ng-repeat="cat in category">{{cat.title}}</option>
+					</select>
+					<span class="only-border"></span>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="sfa-select">
 
-                    <select id="sel1" class="select" ng-model="filter.gender" ng-change="genderChange()">
-                        <option value="">Select Gender</option>
-                        <option value="1">Male</option>
-                        <option value="2">Female</option>
-                    </select>
-                    <span class="only-border"></span>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="sfa-select">
+					<select id="sel1" class="select" ng-model="filter.gender" ng-change="genderChange()">
+						<option value="">Select Gender</option>
+						<option value="1">Male</option>
+						<option value="2">Female</option>
+					</select>
+					<span class="only-border"></span>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="sfa-select">
 
-                    <select id="sel1" class="select" ng-model="filter.agegroup">
-                        <option value="">Select Age Group</option>
-                        <option value="{{age.agegroup}}" ng-repeat="age in agegroup">{{age.name}}</option>
-                    </select>
-                    <span class="only-border"></span>
-                </div>
-            </div>
-        </div>
-       
-        <div class="row">
-            <div class="col-md-12">
-                <div class="text-center margtp p50" ng-click="getSchedule()">
-                    <a class="get-drwa">Get schedule</a>
-                </div>
-            </div>
-        </div>
-<!--        // for all sports-->
-        <div class="row" ng-if="sportselected!='Swimming' && sportselected!='' && result!=''">
-            <div class="col-md-12">
-                <div class="sch-table margintop">
-                    <table class="table">
-                        <thead class="f-normal">
-                            <tr>
-                                <th>Player -01</th>
-                                <th>Player -02</th>
-                                <th>Time & Date</th>
-                                <th>Result</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="col-bg" ng-repeat="data in result track by $index">
-                                <td>
-                                    <h4 class="copy-marks margin0">{{data.team1}}</h4>
-                                    <p>{{data.school1}}</p>
-                                </td>
-                                <td>
-                                    <h4 class="copy-marks margin0">{{data.team2}}</h4>
-                                    <p>{{data.school2}}</p>
-                                </td>
-                                <td class="cust-li pos-ab text-center">
-                                    <ul class="big-li">
-                                        <li>{{data.matchdate}}</li>
-                                        <li>{{data.time.day}}<sup style="text-transform: capitalize;">{{data.time.nd}}</sup> {{data.time.month}} {{data.time.year}}</li>
-                                    </ul>
-                                </td>
-                                <td class="cust-li">
-                                    <div class="pull-right" ng-show="data.result.play">
-                                        <figure class="text-center">
-                                            <img src="img/replay.png">
-                                            <figcaption>Replay</figcaption>
-                                        </figure>
+					<select id="sel1" class="select" ng-model="filter.agegroup">
+						<option value="">Select Age Group</option>
+						<option value="{{age.agegroup}}" ng-repeat="age in agegroup">{{age.name}}</option>
+					</select>
+					<span class="only-border"></span>
+				</div>
+			</div>
+		</div>
 
-                                    </div>
-                                    <h4 class="copy-marks margin0">{{data.matchresult}}</h4>
-<!--
+		<div class="row">
+			<div class="col-md-12">
+				<div class="text-center margtp p50" ng-click="getSchedule()">
+					<a class="get-drwa">Get schedule</a>
+				</div>
+			</div>
+		</div>
+		<!--        // for all sports-->
+		<!--
+       10:15 AM
+25nd DEC 2015
+-->
+		<div class="row" ng-if="sportselected!='Swimming' && sportselected!='' && result!=''">
+			<div class="col-md-12">
+				<div class="sch-table margintop">
+					<table class="table">
+						<thead class="f-normal">
+							<tr>
+								<th>Player -01</th>
+								<th>Player -02</th>
+								<th>Time & Date</th>
+								<th>Result</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="col-bg" ng-repeat="data in result track by $index">
+								<td>
+									<h4 class="copy-marks margin0">{{data.team1}}</h4>
+									<p>{{data.school1}}</p>
+								</td>
+								<td>
+									<h4 class="copy-marks margin0">{{data.team2}}</h4>
+									<p>{{data.school2}}</p>
+								</td>
+								<td class="cust-li pos-ab text-center">
+									<ul class="big-li">
+										<li>{{data.matchdate}}</li>
+										<li>{{data.starttime}}</li>
+										<!--                                        <li>{{data.time.day}}<sup style="text-transform: capitalize;">{{data.time.nd}}</sup> {{data.time.month}} {{data.time.year}}</li>-->
+									</ul>
+								</td>
+								<td class="cust-li">
+									<div class="pull-right" ng-show="data.result.play">
+										<figure class="text-center">
+											<img src="img/replay.png">
+											<figcaption>Replay</figcaption>
+										</figure>
+
+									</div>
+									<h4 class="copy-marks margin0">{{data.matchresult}}</h4>
+									<!--
                                     <ul class="big-li f-12">
                                         <li>{{data.result.point1}} </li>
                                         <li>{{data.result.point1}} </li>
                                         <li>{{data.result.point1}} </li>
                                     </ul>
 -->
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-<!--        //for swimming-->
-                <div class="row" ng-if="sportselected=='Swimming' && result!=''">
-            <div class="col-md-12">
-                <div class="sch-table margintop">
-                    <table class="table">
-                        <thead class="f-normal">
-                            <tr>
-                                <th>Athlete</th>
-                                
-                                <th>Time & Date</th>
-                                <th>Result</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="col-bg" ng-repeat="data in result track by $index">
-                                <td>
-                                    <h4 class="copy-marks margin0">{{data.team}}</h4>
-                                    <p>{{data.teamsfa}}</p>
-                                </td>
-                             
-                                <td class="cust-li pos-ab text-center">
-                                    <ul class="big-li">
-                                        <li>{{data.matchdate}}</li>
-                                        <li>{{data.time.day}}<sup style="text-transform: capitalize;">{{data.time.nd}}</sup> {{data.time.month}} {{data.time.year}}</li>
-                                    </ul>
-                                </td>
-                                <td class="cust-li ver-md text-center">
-                                    
-                                    <h4 class="margin0">{{data.matchresult}}</h4>
-                                   
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!--        //for swimming-->
+		<div class="row" ng-if="sportselected=='Swimming' && result!=''">
+			<div class="col-md-12">
+				<div class="sch-table margintop">
+					<table class="table">
+						<thead class="f-normal">
+							<tr>
+								<th>Athlete</th>
+
+								<th>Time & Date</th>
+								<th>Result</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="col-bg" ng-repeat="data in result track by $index">
+								<td>
+									<h4 class="copy-marks margin0">{{data.team}}</h4>
+									<p>{{data.teamsfa}}</p>
+								</td>
+
+								<td class="cust-li pos-ab text-center">
+									<ul class="big-li">
+										<li>{{data.matchdate|amDateFormat:'Do MMM YYYY'}}</li>
+										<li>{{data.starttime}}</li>
+									</ul>
+								</td>
+								<td class="cust-li ver-md text-center">
+
+									<h4 class="margin0">{{data.matchresult}}</h4>
+
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

@@ -717,6 +717,45 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		$scope.menutitle = NavigationService.makeactive("Draw");
 		TemplateService.title = $scope.menutitle;
 		$scope.navigation = NavigationService.getnav();
+	$scope.filter = {};
+		$scope.filter.category = "";
+		$scope.filter.sport = "";
+		$scope.filter.gender = "";
+		$scope.filter.agegroup = "";
+		$scope.sportselected = "";
+		$scope.result = [];
+		$scope.schedule = {};
+
+		NavigationService.isStudentSports(function (data) {
+			$scope.sports = data;
+		});
+
+		$scope.sportChange = function () {
+			console.log($scope.filter.sportid.split(','));
+			$scope.sportselected = $scope.filter.sportid.split(',')[1];
+			$scope.filter.sport = $scope.filter.sportid.split(',')[0];
+
+			NavigationService.getSportsCategory("", $scope.filter.sport, "", function (data) {
+				$scope.category = data;
+			})
+			$scope.categoryChange();
+		}
+
+		$scope.categoryChange = function () {
+			NavigationService.scheduleAgeGroup($scope.filter.category, $scope.filter.sport, $scope.filter.gender, function (data) {
+				$scope.agegroup = data;
+			})
+		}
+
+		$scope.genderChange = function () {
+			$scope.categoryChange();
+		}
+		
+		$scope.getDraw = function(){
+			NavigationService.getDraw($scope.filter, function(data){
+				console.log(data);
+			});
+		}
 
 		$scope.r1 = // JavaScript Document
       [{
@@ -1557,7 +1596,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('ScheduleCtrl', function ($scope, TemplateService, NavigationService) {
+.controller('ScheduleCtrl', function ($scope, TemplateService, NavigationService, $moment, $filter) {
 		$scope.template = TemplateService.changecontent("schedule");
 		$scope.menutitle = NavigationService.makeactive("Schedule");
 		TemplateService.title = $scope.menutitle;
@@ -1578,7 +1617,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		//    isFirstOpen: true,
 		//    isFirstDisabled: false
 		//  };
-
 		NavigationService.isStudentSports(function (data) {
 			$scope.sports = data;
 		});
@@ -1614,6 +1652,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 						$scope.schedule = {};
 						$scope.schedule.matchdate = n.matchdate;
 						$scope.schedule.matchresult = n.matchresult;
+						$scope.schedule.starttime = n.starttime;
 						if (n.studentid && n.studentid != '') {
 							$scope.schedule.team = n.studentname;
 							$scope.schedule.teamsfa = n.studentsfaid;
@@ -1631,6 +1670,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 					$scope.schedule = {};
 					$scope.schedule.matchdate = n.matchdate;
 					$scope.schedule.matchresult = n.matchresult;
+					$scope.schedule.starttime = n.starttime;
 					if (n.student1name && n.student1name != '') {
 						$scope.schedule.team1 = n.student1name;
 						$scope.schedule.team2 = n.student2name;
@@ -1643,6 +1683,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 						$scope.schedule.school1 = n.team1sfaid;
 						$scope.schedule.school2 = n.team2sfaid;
 					}
+//					console.log(moment.formate(n.matchdate,'YYYY MMM'));
 					$scope.result.push($scope.schedule);
 				});
 			});

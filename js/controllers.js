@@ -864,7 +864,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	})
 	.controller('StudentprofileCtrl', function ($scope, TemplateService, NavigationService, ngDialog, $stateParams, $filter) {
 		$scope.template = TemplateService.changecontent("studentprofile");
-		$scope.menutitle = NavigationService.makeactive("Studentprofile");
+		$scope.menutitle = NavigationService.makeactive("Student Profile");
 		TemplateService.title = $scope.menutitle;
 		$scope.navigation = NavigationService.getnav();
 		$scope.checkmenu = false;

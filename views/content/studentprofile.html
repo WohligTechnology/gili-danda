@@ -9,15 +9,17 @@
             </div>
             <div class="col-xs-8">
                 <div class="sdata ">
-   <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher: "17c77c69-67a4-44ac-84df-96581a0b17c6", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+                  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+                 <!-- <script type="text/javascript">stLight.options({publisher: "17c77c69-67a4-44ac-84df-96581a0b17c6", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script> -->
+
                     <h3 class="dp">{{student.studentprofile.name}}</h3>
-                 
+
                     <div class="sp-class">
                         <span class='st_facebook_large' displayText='Facebook'></span>
                         <span class='st_twitter_large' displayText='Tweet'></span>
                         <span class='st_googleplus_large' displayText='Google +'></span>
                     </div>
+
 
                     <p class="fonts" ui-sref="schoolprofile({id:student.studentprofile.schoolid})">{{student.studentprofile.schoolname}}</p>
                     <ul class="spoint">
@@ -34,11 +36,11 @@
                         <li class="border-l" ng-if="student.studentprofile.sfastudentid">
                             <p>SFA id</p>
                             <h2>{{student.studentprofile.sfastudentid}}</h2>
-                        </li>   
+                        </li>
                         <li class="border-l" ng-if="student.studentprofile.dob">
                             <p>Date of Birth</p>
                             <h2>{{student.studentprofile.dob | date: formate : mediumDate }}</h2>
-                        </li>   
+                        </li>
                         <li class="border-l" ng-if="student.studentprofile.gender">
                             <p>Gender</p>
                             <h2 ng-if="student.studentprofile.gender ==1 ">Male</h2>
@@ -440,7 +442,7 @@
                             </div>
                         </div>
 
-                 
+
 
                         <div class="tab-gal" ng-show="tab1=='gallery' && allresult!=''">
 
@@ -461,7 +463,7 @@
                             {{msg}}
 
                         </div>
-                 
+
 
                     </div>
 
@@ -629,7 +631,7 @@
                     </div>
 
                     </div>
- 
+
                 </div>
 -->
         <!--

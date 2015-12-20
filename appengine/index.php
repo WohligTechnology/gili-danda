@@ -2,6 +2,7 @@
 <html lang="en" ng-app="firstapp">
 
 <head ng-controller="headerctrl">
+  <base href="http://localhost:8080/">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="">
@@ -13,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="w/w.min.css">
     <script src="w/w.min.js"></script>
 
-<base href="/">
+
     <!--[if IE]><script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script><![endif]-->
 

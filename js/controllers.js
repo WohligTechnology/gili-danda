@@ -7,6 +7,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	$scope.template = TemplateService.changecontent("home");
 	$scope.menutitle = NavigationService.makeactive("Home");
 	TemplateService.title = $scope.menutitle;
+	TemplateService.keywords = "Inter school sports, Sports tournaments, Inter school sports in Mumbai, Sports for kids";
+	TemplateService.description = "Sports For All (SFA) is an inter-school sporting platform for school children to play, compete and grow in various sports.";
 	$scope.navigation = NavigationService.getnav();
 	var getbannersliderscallback = function (data, status) {
 		$scope.homeslide = data;
@@ -189,8 +191,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 .controller('StudentCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog, $location) {
 	$scope.template = TemplateService.changecontent("student");
-	$scope.menutitle = NavigationService.makeactive("Student");
+	$scope.menutitle = NavigationService.makeactive("Students");
 	TemplateService.title = $scope.menutitle;
+	TemplateService.keywords = "SFA students registration for sports, SFA sports registration for students, SFA student registration, Registration for students in SFA";
+	TemplateService.description = "SFA provides student registration that allows them to participate and compete with students from various schools across Mumbai.";
 	$scope.navigation = NavigationService.getnav();
 
 	ga('send', 'pageview', {
@@ -326,8 +330,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 .controller('SchoolRegistrationCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
 	$scope.template = TemplateService.changecontent("schoolregistration");
-	$scope.menutitle = NavigationService.makeactive("Schoolregistration");
+	$scope.menutitle = NavigationService.makeactive("School Registration");
 	TemplateService.title = $scope.menutitle;
+	TemplateService.keywords = "School registration for SFA, SFA registration for schools, SFA registration for championship, School registration for championship in SFA";
+	TemplateService.description = "Register your school for SFA inter-school championship in sports.";
 	$scope.navigation = NavigationService.getnav();
 
 	ga('send', 'pageview', {
@@ -442,8 +448,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	})
 	.controller('TermsconditionCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
 		$scope.template = TemplateService.changecontent("termscondition");
-		$scope.menutitle = NavigationService.makeactive("Termscondition");
+		$scope.menutitle = NavigationService.makeactive("T&C");
 		TemplateService.title = $scope.menutitle;
+		TemplateService.keywords = "SFA terms and conditions, Terms and conditions for participates, SFA terms and conditions for schools, Terms and conditions for students";
+		TemplateService.description = "Read the entire terms and conditions for Sports For All (SFA).";
 		$scope.navigation = NavigationService.getnav();
 		ga('send', 'pageview', {
 			'title': 'Termsandcondition Page'
@@ -504,8 +512,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	})
 	.controller('ContactCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
 		$scope.template = TemplateService.changecontent("contact");
-		$scope.menutitle = NavigationService.makeactive("Contact");
+		$scope.menutitle = NavigationService.makeactive("Contact Us");
 		TemplateService.title = $scope.menutitle;
+		TemplateService.keywords = "SFA contact address, SFA contact number, SFA business address, Contact address for SFA";
+		TemplateService.description = "View the contact details of Sports For All (SFA).";
 		$scope.navigation = NavigationService.getnav();
 
 		ga('send', 'pageview', {
@@ -515,8 +525,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	})
 	.controller('AboutCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
 		$scope.template = TemplateService.changecontent("about");
-		$scope.menutitle = NavigationService.makeactive("About");
+		$scope.menutitle = NavigationService.makeactive("About Us");
 		TemplateService.title = $scope.menutitle;
+		TemplateService.keywords = "SFA sports, SFA interschool championship, SFA school competitions, SFA tournaments";
+		TemplateService.description = "Sports For All (SFA) aims to revolutionize school sports in Mumbai and across India by motivating, guiding and enhancing the playing skills of children and building a sustainable environment for sports.";
 		$scope.navigation = NavigationService.getnav();
 
 		ga('send', 'pageview', {
@@ -537,8 +549,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	})
 	.controller('FaqsCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
 		$scope.template = TemplateService.changecontent("faqs");
-		$scope.menutitle = NavigationService.makeactive("Faqs");
+		$scope.menutitle = NavigationService.makeactive("FAQ");
 		TemplateService.title = $scope.menutitle;
+		TemplateService.keywords = "Queries about sports, Queries about competitions, FAQ for SFA, SFA FAQ";
+		TemplateService.description = "Check out the frequently asked questions about Sports For All (SFA).";
 		$scope.navigation = NavigationService.getnav();
 
 		$scope.oneAtATime = true;
@@ -568,6 +582,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		$scope.template = TemplateService.changecontent("venue");
 		$scope.menutitle = NavigationService.makeactive("Venue");
 		TemplateService.title = $scope.menutitle;
+		TemplateService.description = "SFA will be conducted at D. Y. Patil Sports Academy which is located at Sion-Panvel Expressway in Nerul, Navi Mumbai.";
+		TemplateService.keywords = "Venue for SFA, SFA venue, SFA venue in Mumbai, Venue for SFA in Mumbai";
 		$scope.navigation = NavigationService.getnav();
 
 
@@ -750,7 +766,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		$scope.genderChange = function () {
 			$scope.categoryChange();
 		}
-		
+
 		$scope.getDraw = function(){
 			NavigationService.getDraw($scope.filter, function(data){
 				console.log(data);
@@ -1456,6 +1472,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	$scope.template = TemplateService.changecontent("sports");
 	$scope.menutitle = NavigationService.makeactive("Sports");
 	TemplateService.title = $scope.menutitle;
+	TemplateService.keywords = "Sports competitions, Interschool champion ship, Sports for schools, Inter school sports competition";
+	TemplateService.description = "SFA is currently conducting sports competitions in Table Tennis, Tennis, Badminton, Squash, Swimming, Basketball, Volleyball, Handball and Judo.";
 	$scope.navigation = NavigationService.getnav();
 
 	$scope.games = // JavaScript Document

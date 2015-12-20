@@ -39,7 +39,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-K98G4P');</script>
 
 
-<link rel="canonical" href="http://www.sfanow.in/#/home">
+<link rel="canonical" href="http://www.sfanow.in/home">
     <script>
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];

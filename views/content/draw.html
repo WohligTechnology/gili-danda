@@ -63,16 +63,16 @@
                     <div class="margtp">
 
 
-                        <div class="col-xs-3">
+                        <div class="col-xs-3" ng-if="match[0].match">
                             <h4>Round - 01</h4>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-xs-3" ng-if="rounds[0]">
                             <h4>Round - 02</h4>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-xs-3" ng-if="rounds[1]">
                             <h4>Round - 03</h4>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-xs-3" ng-if="rounds[2]">
                             <h4>Round - 04</h4>
                         </div>
                     </div>
@@ -86,75 +86,63 @@
                             <div class="tree1">
                                 <div class="col-xs-3">
                                     <ul>
-                                        <div class="min-100" ng-repeat="round in r1">
-                                            <div ng-repeat="r in round track by $index">
+                                        <div class="min-100" ng-repeat="round in match[0].match">
+                                            <div ng-repeat="r in round.player track by $index">
                                                 <li class="top-bx" ng-if="$index%2==0">
-                                                    <h4>{{r.name}}</h4>
-                                                    <p>{{r.school}}</p>
+                                                    <h4>{{r.studentname}}</h4>
+                                                    <p>{{r.schoolname}}</p>
                                                 </li>
                                                 <li class="bottom-bx" ng-if="$index%2!=0">
-                                                    <h4>{{r.name}}</h4>
-                                                    <p>{{r.school}}</p>
+                                                    <h4>{{r.studentname}}</h4>
+                                                    <p>{{r.schoolname}}</p>
                                                 </li>
-                                                <!--
-                                          <li class=" none-bx" >
-                                        <h4>Rizan Khan</h4>
-                                        <p>Bombay British School</p>
-                                    </li>
--->
                                             </div>
                                         </div>
                                     </ul>
 
                                 </div>
-                                <div class="col-xs-3 ">
-                                    <div class="min-100" ng-repeat="round in r2 track by $index">
+                                <div class="col-xs-3">
+                                    <div class="min-100" ng-repeat="round in rounds[0] track by $index">
 
 
                                         <ul>
                                             <li class="left-bx top2-bx" ng-if="$index%2==0">
-                                                <h4>{{round.name}}</h4>
-                                                <p>{{round.school}}</p>
+                                                <h4>{{round.studentname}}</h4>
+                                                <p>{{round.schoolname}}</p>
                                             </li>
                                             <li class="left-bx bottom2-bx" ng-if="$index%2!=0">
-                                                <h4>{{round.name}}</h4>
-                                                <p>{{round.school}}</p>
+                                                <h4>{{round.studentname}}</h4>
+                                                <p>{{round.schoolname}}</p>
                                             </li>
-                                            <!--
-                                    <li class="left-bx none-bx" >
-                                        <h4>Rizan Khan</h4>
-                                        <p>Bombay British School</p>
-                                    </li>
--->
                                         </ul>
                                     </div>
 
                                 </div>
                                 <div class="col-xs-3 ">
-                                    <div class="min-200" ng-repeat="round in r3 track by $index">
+                                    <div class="min-200" ng-repeat="round in rounds[1] track by $index">
 
 
                                         <ul>
                                             <li class="left-bx top3-bx" ng-if="$index%2==0">
-                                                <h4>{{round.name}}</h4>
-                                                <p>{{round.school}}</p>
+                                                <h4>{{round.studentname}}</h4>
+                                                <p>{{round.schoolname}}</p>
                                             </li>
                                             <li class="left-bx bottom3-bx" ng-if="$index%2!=0">
-                                                <h4>{{round.name}}</h4>
-                                                <p>{{round.school}}</p>
+                                                <h4>{{round.studentname}}</h4>
+                                                <p>{{round.schoolname}}</p>
                                             </li>
                                         </ul>
                                     </div>
 
                                 </div>
                                 <div class="col-xs-3 ">
-                                    <div class="min-300" ng-repeat="round in r4 track by $index">
+                                    <div class="min-300" ng-repeat="round in rounds[2] track by $index">
 
 
                                         <ul>
                                             <li class="left-bx">
-                                                <h4>{{round.name}}</h4>
-                                                <p>{{round.school}}</p>
+                                                <h4>{{round.studentname}}</h4>
+                                                <p>{{round.schoolname}}</p>
                                             </li>
                                         </ul>
                                     </div>

@@ -5,7 +5,7 @@
     </div>
 </div>
 <div class="draw">
-    
+
     <div class="container">
   <div class="font-up text-center">
 				<h1>
@@ -13,68 +13,60 @@
            </h1>
 			</div>
         <div class="row">
-    <div class="col-md-3">
-                <div class="sfa-select">
-                    <select id="sel1"  class="select">
-                        <option>select sport</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                    </select>
-                    <span class="only-border"></span>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="sfa-select">
+          <div class="col-md-3">
+              <div class="sfa-select">
+                  <select id="sel1" class="select" ng-model="filter.sportid" ng-change="sportChange()">
+                      <option value="">select sport</option>
+                      <option value="{{sport.id}},{{sport.name}}" ng-repeat="sport in sports">{{sport.name}}</option>
+                  </select>
+                  <span class="only-border"></span>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="sfa-select">
+                  <select id="sel1" class="select" ng-model="filter.category" ng-change="categoryChange()">
+                      <option value="">Select category</option>
+                      <option value="{{cat.id}}" ng-repeat="cat in category">{{cat.title}}</option>
+                  </select>
+                  <span class="only-border"></span>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="sfa-select">
 
-                    <select id="sel1" class="select">
-                        <option>Select category</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                    </select>
-                    <span class="only-border"></span>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="sfa-select" >
+                  <select id="sel1" class="select" ng-model="filter.gender" ng-change="genderChange()">
+                      <option value="">Select Gender</option>
+                      <option value="1">Male</option>
+                      <option value="2">Female</option>
+                  </select>
+                  <span class="only-border"></span>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="sfa-select">
 
-                    <select id="sel1" class="select">
-                        <option>Select gender</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                    </select>
-                    <span class="only-border"></span>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="sfa-select">
-
-                    <select id="sel1" class="select">
-                        <option>Select Age Group</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                    </select>
-                    <span class="only-border"></span>
-                </div>
-            </div>
+                  <select id="sel1" class="select" ng-model="filter.agegroup" ng-change="agechange()">
+                      <option value="">Select Age Group</option>
+                      <option value="{{age.agegroup}},{{age.name}}" ng-repeat="age in agegroup">{{age.name}}</option>
+                  </select>
+                  <span class="only-border"></span>
+              </div>
+          </div>
         </div>
-       
-        <div class="row">
+
+        <div class="row" ng-show="filter.category!='' && filter.gender!='' && filter.sport!='' && filter.agegroup!=''">
             <div class="col-md-12">
                 <div class="text-center margtp p50">
-                    <a href="#" class="get-drwa">Get Statistics</a>
+                    <a href="#" class="get-drwa" ng-click="getScore()">Get Statistics</a>
                 </div>
             </div>
         </div>
-        
+
                 <div class="row">
-                
-            <div class="col-md-12">
+
+            <div class="col-md-12" ng-if="scores">
                 <div class="tab-gallery c-text">
-                <h4>basketball under-14 - <span style="color:#fc7700">matches</span></h4>
+                <h4>{{sportselected}} - {{agegroupselected}} - <span style="color:#fc7700">matches</span></h4>
                 </div>
                 <div class="sch-table">
                     <table class="table">
@@ -88,7 +80,35 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="cols-bg ver-td" >
+                            <tr class="cols-bg ver-td" ng-repeat="score in scores">
+                                <td>
+                                    <h4 class="tx-c margin0">2015</h4>
+
+                                </td>
+                                <td>
+                                    <h4 class="tx-c margin0">{{score.players[0].name}}</h4>
+
+                                </td>
+                                <td>
+                                    <h4 class="tx-c margin0">{{score.players[1].name}}</h4>
+
+                                </td>
+                                <td class="cust-li pos-ab text-center">
+                                   <h4 class="margin0">{{score.players[0].result}} - {{score.players[1].result}}</h4>
+                                </td>
+                                <td class="cust-li">
+
+                                    <h4 class="tx-c disp-in margin0" ng-if="score.players[0].result!='' && score.players[1].result!=''">{{score.result}} Win</h4>
+      <div class="disp-in vertic-mi">
+                                        <figure class="text-center">
+                                            <img src="img/replay.png">
+                                            <figcaption>Replay</figcaption>
+                                        </figure>
+
+                                    </div>
+                                </td>
+                            </tr>
+                                   <!-- <tr class="cols-bg ver-td" >
                                 <td>
                                     <h4 class="tx-c margin0">2015</h4>
 
@@ -96,7 +116,7 @@
                                 <td>
                                     <h4 class="tx-c margin0">don bosco school</h4>
 
-                                </td> 
+                                </td>
                                 <td>
                                     <h4 class="tx-c margin0">don bosco school</h4>
 
@@ -105,7 +125,7 @@
                                    <h4 class="margin0">43 - 54</h4>
                                 </td>
                                 <td class="cust-li">
-                              
+
                                     <h4 class="tx-c disp-in margin0">don bosco school win</h4>
       <div class="disp-in vertic-mi">
                                         <figure class="text-center">
@@ -124,7 +144,7 @@
                                 <td>
                                     <h4 class="tx-c margin0">don bosco school</h4>
 
-                                </td> 
+                                </td>
                                 <td>
                                     <h4 class="tx-c margin0">don bosco school</h4>
 
@@ -133,7 +153,7 @@
                                    <h4 class="margin0">43 - 54</h4>
                                 </td>
                                 <td class="cust-li">
-                              
+
                                     <h4 class="tx-c disp-in margin0">don bosco school win</h4>
       <div class="disp-in vertic-mi">
                                         <figure class="text-center">
@@ -152,7 +172,7 @@
                                 <td>
                                     <h4 class="tx-c margin0">don bosco school</h4>
 
-                                </td> 
+                                </td>
                                 <td>
                                     <h4 class="tx-c margin0">don bosco school</h4>
 
@@ -161,7 +181,7 @@
                                    <h4 class="margin0">43 - 54</h4>
                                 </td>
                                 <td class="cust-li">
-                              
+
                                     <h4 class="tx-c disp-in margin0">don bosco school win</h4>
       <div class="disp-in vertic-mi">
                                         <figure class="text-center">
@@ -171,46 +191,18 @@
 
                                     </div>
                                 </td>
-                            </tr>
-                                   <tr class="cols-bg ver-td" >
-                                <td>
-                                    <h4 class="tx-c margin0">2015</h4>
-
-                                </td>
-                                <td>
-                                    <h4 class="tx-c margin0">don bosco school</h4>
-
-                                </td> 
-                                <td>
-                                    <h4 class="tx-c margin0">don bosco school</h4>
-
-                                </td>
-                                <td class="cust-li pos-ab text-center">
-                                   <h4 class="margin0">43 - 54</h4>
-                                </td>
-                                <td class="cust-li">
-                              
-                                    <h4 class="tx-c disp-in margin0">don bosco school win</h4>
-      <div class="disp-in vertic-mi">
-                                        <figure class="text-center">
-                                            <img src="img/replay.png">
-                                            <figcaption>Replay</figcaption>
-                                        </figure>
-
-                                    </div>
-                                </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-        
+
 <!--        // for swimming-->
-        
+
 <!--
                   <div class="row">
-                
+
             <div class="col-md-12">
                 <div class="tab-gallery c-text">
                 <h4>swimming 50m freestyle under-16 Boys - <span style="color:#fc7700">matches</span></h4>
@@ -223,7 +215,7 @@
                                 <th>athelte</th>
                                 <th>school name</th>
                                 <th>Result</th>
-                                
+
                             </tr>
                         </thead>
                         <tbody>
@@ -235,14 +227,14 @@
                                 <td>
                                     <h4 class="tx-c margin0">soheb shaikh</h4>
 
-                                </td> 
+                                </td>
                                 <td>
                                     <h4 class="tx-c margin0">don bosco school</h4>
 
                                 </td>
-                            
+
                                 <td class="cust-li">
-                              
+
                                     <h4 class="tx-c disp-in margin0">02:04:2</h4>
       <div class="disp-in vertic-mi">
                                         <figure class="text-center">
@@ -259,6 +251,6 @@
             </div>
         </div>
 -->
-        
+
     </div>
 </div>

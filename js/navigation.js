@@ -1,5 +1,5 @@
-// var adminlink = "http://wohlig.co.in/sfabackend/";
-var adminlink = "http://localhost/sfabackend/";
+var adminlink = "http://wohlig.co.in/sfabackend/";
+// var adminlink = "http://localhost/sfabackend/";
 var admin_url = adminlink + "index.php/";
 var imgpath = adminlink + "uploads/";
 var navigationservice = angular.module('navigationservice', [])
@@ -84,6 +84,9 @@ var navigationservice = angular.module('navigationservice', [])
         },
         getDraw: function (filter, callback) {
             return $http.get(admin_url + 'json/getDraw?sport=' + filter.sport + '&sportscategory=' + filter.category + '&agegroup=' + filter.agegroup + '&gender=' + filter.gender, {}).success(callback);
+        },
+        getScore: function (filter, callback) {
+            return $http.get(admin_url + 'json/getScore?sport=' + filter.sport + '&sportscategory=' + filter.category + '&agegroup=' + filter.agegroupid + '&gender=' + filter.gender, {}).success(callback);
         },
         getAllSwimmingMatch: function (filter, callback) {
             return $http.get(admin_url + 'json/getAllSwimmingMatch?sport=' + filter.sport + '&sportscategory=' + filter.category + '&agegroup=' + filter.agegroup + '&gender=' + filter.gender, {}).success(callback);

@@ -1553,48 +1553,45 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	$scope.menutitle = NavigationService.makeactive("Score");
 	TemplateService.title = $scope.menutitle;
 	$scope.navigation = NavigationService.getnav();
+	$scope.filter = {};
+		$scope.filter.category = "";
+		$scope.filter.sport = "";
+		$scope.filter.gender = "";
+		$scope.filter.agegroup = "";
+		$scope.sportselected = "";
+		$scope.result = [];
+		$scope.schedule = {};
 
-	$scope.games = // JavaScript Document
-    [{
-			"icon": "img/bluemenu/overall.png",
-			"icon2": "img/bluemenu/overallor.png",
-			"game": "overall"
-    }, {
-			"icon": "img/bluemenu/tabletennis.png",
-			"icon2": "img/bluemenu/tabletennisor.png",
-			"url": "tabletennis",
-			"game": "table tennis"
-    }, {
-			"icon": "img/bluemenu/tennis.png",
-			"icon2": "img/bluemenu/tennisor.png",
-			"url": "tennis",
-			"game": "tennis"
-    }, {
-			"icon": "img/bluemenu/batminton.png",
-			"icon2": "img/bluemenu/batmintonor.png",
-			"url": "badminton",
-			"game": "badminton"
-    }, {
-			"icon": "img/bluemenu/squash.png",
-			"icon2": "img/bluemenu/sqaushor.png",
-			"url": "badminton",
-			"game": "badminton"
-    }, {
-			"icon": "img/bluemenu/aqua.png",
-			"icon2": "img/bluemenu/aquaticsor.png",
-			"url": "swimming",
-			"game": "swimming"
-    }, {
-			"icon": "img/bluemenu/basketball.png",
-			"icon2": "img/bluemenu/basketballor.png",
-			"url": "basketball",
-			"game": "basketball"
-    }, {
-			"icon": "img/bluemenu/vollyball.png",
-			"icon2": "img/bluemenu/volleyballor.png",
-			"url": "volleyball",
-			"game": "volleyball"
-    }];
+		NavigationService.isStudentSports(function (data) {
+			$scope.sports = data;
+		});
+
+		$scope.sportChange = function () {
+			console.log($scope.filter.sportid.split(','));
+			$scope.sportselected = $scope.filter.sportid.split(',')[1];
+			$scope.filter.sport = $scope.filter.sportid.split(',')[0];
+
+			NavigationService.getSportsCategory("", $scope.filter.sport, "", function (data) {
+				$scope.category = data;
+			})
+			$scope.categoryChange();
+		}
+
+		$scope.categoryChange = function () {
+			NavigationService.scheduleAgeGroup($scope.filter.category, $scope.filter.sport, $scope.filter.gender, function (data) {
+				$scope.agegroup = data;
+			})
+		}
+
+		$scope.genderChange = function () {
+			$scope.categoryChange();
+		}
+
+		$scope.getDraw = function(){
+			NavigationService.getDraw($scope.filter, function(data){
+				console.log(data);
+			});
+		}
 
 	$scope.demo = 111;
 	$scope.checkthis = function () {};

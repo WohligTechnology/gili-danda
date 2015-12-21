@@ -1,26 +1,26 @@
 <div class="media-set">
-    <img src="img/profiles.jpg" class="img-responsive img">
-    <div class="container sprofile">
-        <div class="row">
-            <div class="col-xs-4">
-                <div class="slogo">
-                    <img src="{{school.school.image | serverimageschool}}" class="img-responsive b-rad">
-                </div>
-            </div>
-            <div class="col-xs-8">
-                <div class="sdata ">
-                    <h3>{{school.school.name}}
+  <img src="img/profiles.jpg" class="img-responsive img">
+  <div class="container sprofile">
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="slogo">
+          <img src="{{school.school.image | serverimageschool}}" class="img-responsive b-rad">
+        </div>
+      </div>
+      <div class="col-xs-8">
+        <div class="sdata ">
+          <h3>{{school.school.name}}
             <span class="ptag"> (Co-ed School)</span>
           </h3>
-                    <p>{{school.school.sfaschoolid}}</p>
-                    <p>{{school.school.address}}</p>
-                    <ul class="spoint">
-                        <li class="borderrigh padlefo">
-                            <p>School Contingent Strength</p>
-                            <h2>{{school.participant.studentcount}}</h2>
-                            <!--                            <button class="cusbtn" type="submit">view more</button>-->
-                        </li>
-                        <!--
+          <p>{{school.school.sfaschoolid}}</p>
+          <p>{{school.school.address}}</p>
+          <ul class="spoint">
+            <li class="borderrigh padlefo">
+              <p>School Contingent Strength</p>
+              <h2>{{school.participant.studentcount}}</h2>
+              <!--                            <button class="cusbtn" type="submit">view more</button>-->
+            </li>
+            <!--
                         <li class="borderrigh">
                             <p>medals won</p>
                             <h2>430</h2>
@@ -32,61 +32,61 @@
 
                         </li>
 -->
-                    </ul>
+          </ul>
 
-                </div>
+        </div>
 
-            </div>
-            <!--
+      </div>
+      <!--
       <div class="col-xs-2">
         <div class="splogo">
           <img src="img/partner-logo/jio.png" class="img-responsive">
         </div>
       </div>
 -->
-        </div>
     </div>
+  </div>
 </div>
 <div class="spo text-center">
-    <h4 class="clsports">Sports participating</h4>
+  <h4 class="clsports">Sports participating</h4>
 </div>
 <div class="container martgintp">
 
-    <div class="row" ng-if="checkmenu">
-        <div class="col-md-12">
-            <div class="blue-cat">
-                <ul>
-                    <hovericon game="game" ng-repeat="game in games" ng-click="makeactive(0,game);"></hovericon>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="text-center">
-                <div class="stab ">
-                    <ul>
-                        <li ng-class="active" ng-click="tabchange('squad',1)">
-                            <h3>SQUAD</h3>
-                        </li>
-                        <li ng-class="actives" ng-click="tabchange('gallerymain',2)">
-                            <h3>gallery</h3>
-                        </li>
-                        <li ng-class="activess" ng-click="tabchange('statics',3)">
-                            <h3>STATISTICS</h3>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <div class="row" ng-if="checkmenu">
+    <div class="col-md-12">
+      <div class="blue-cat">
+        <ul>
+          <hovericon game="game" ng-repeat="game in games" ng-click="makeactive(0,game);"></hovericon>
+        </ul>
+      </div>
     </div>
 
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center">
+        <div class="stab ">
+          <ul>
+            <li ng-class="active" ng-click="tabchange('squad',1)">
+              <h3>Players</h3>
+            </li>
+            <li ng-class="actives" ng-click="tabchange('gallerymain',2)">
+              <h3>gallery</h3>
+            </li>
+            <li ng-class="activess" ng-click="tabchange('statics',3)">
+              <h3>STATISTICS</h3>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <div class="marginegt min800" ng-show="tab2=='gallerymain'">
 
-        <!--
-        
+  <div class="marginegt min800" ng-show="tab2=='gallerymain'">
+
+    <!--
+
         <div class=" marginlft marginlfts row">
 
 
@@ -147,8 +147,8 @@
                                     </ul>
                                 </form>
                             </accordion-group>
-                            
-                            
+
+
               </accordion>
                     </div>
                 </div>
@@ -166,7 +166,7 @@
                         </div>
                     </div>
 
-             
+
 
                     <div class="tab-gal" ng-show="tab1=='gallery' && allresult!=''">
 
@@ -189,7 +189,7 @@
                         {{msg}}
 
                     </div>
-                 
+
 
                 </div>
 
@@ -197,18 +197,18 @@
             </div>
 
         </div>
-        
-        
+
+
 -->
 
-        <!--
+    <!--
         // past changes dont delete
         <div class="row">
             <div class="col-md-12">
                 <div class="another-static text-center">
                     <img src="img/cm.jpg" class="img-responsive">
 
-                    
+
                     <div class="txt-sorry">
                         <h1>Student Profiles, </h1>
                         <h3>All your information, statistics, photographs,</h3>
@@ -220,35 +220,35 @@
             </div>
         </div>
 -->
-        <!--        // no data for gallery-->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="text-sp">
-                        <h3>Note: </h3>
-                        <h4 class="list-cl">List of all the participants</h4>
-                        <h4>from your school will be</h4>
-                        <h4>updated after the receipt </h4>
-                        <h4>of participant entry forms. </h4>
-                        <h4>The due date for final entries</h4>
-                        <h4>is 20<sup>th</sup> December 2015</h4>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="text-sr text-center">
-                        <img src="img/schoolp.png" class="img-responsive">
-                        <h4>profiles will be</h4>
-                        <h3 class="class-spr">updated post</h3>
-                        <h3 class="spr-class">sfa 2015</h3>
-                    </div>
-                </div>
-            </div>
+    <!--        // no data for gallery-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="text-sp">
+            <h3>Note: </h3>
+            <h4 class="list-cl">List of all the participants</h4>
+            <h4>from your school will be</h4>
+            <h4>updated after the receipt </h4>
+            <h4>of participant entry forms. </h4>
+            <h4>The due date for final entries</h4>
+            <h4>is 20<sup>th</sup> December 2015</h4>
+          </div>
         </div>
-
+        <div class="col-md-6">
+          <div class="text-sr text-center">
+            <img src="img/schoolp.png" class="img-responsive">
+            <h4>profiles will be</h4>
+            <h3 class="class-spr">updated post</h3>
+            <h3 class="spr-class">sfa 2015</h3>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="marginegt min800" ng-show="tab2=='statics'">
-        <!--
+  </div>
+
+  <div class="marginegt min800" ng-show="tab2=='statics'">
+    <!--
       <div class="row">
         <div class="col-md-12 ">
 
@@ -464,14 +464,14 @@
       </div>
 -->
 
-        <!--
+    <!--
         //past changes
         <div class="row">
             <div class="col-md-12">
                 <div class="another-static text-center">
                     <img src="img/cm.jpg" class="img-responsive">
 
-                    
+
                     <div class="txt-sorry">
                         <h1>Student Profiles, </h1>
                         <h3>All your information, statistics, photographs,</h3>
@@ -483,66 +483,66 @@
             </div>
         </div>
 -->
-        <!--        //no data static-->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="text-sp">
-                        <h3>Note: </h3>
-                        <h4 class="list-cl">List of all the participants</h4>
-                        <h4>from your school will be</h4>
-                        <h4>updated after the receipt </h4>
-                        <h4>of participant entry forms. </h4>
-                        <h4>The due date for final entries</h4>
-                        <h4>is 20<sup>th</sup> December 2015</h4>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="text-sr text-center">
-                        <img src="img/schoolp.png" class="img-responsive">
-                        <h4>profiles will be</h4>
-                        <h3 class="class-spr">updated post</h3>
-                        <h3 class="spr-class">sfa 2015</h3>
-                    </div>
-                </div>
-            </div>
+    <!--        //no data static-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="text-sp">
+            <h3>Note: </h3>
+            <h4 class="list-cl">List of all the participants</h4>
+            <h4>from your school will be</h4>
+            <h4>updated after the receipt </h4>
+            <h4>of participant entry forms. </h4>
+            <h4>The due date for final entries</h4>
+            <h4>is 20<sup>th</sup> December 2015</h4>
+          </div>
         </div>
-
+        <div class="col-md-6">
+          <div class="text-sr text-center">
+            <img src="img/schoolp.png" class="img-responsive">
+            <h4>profiles will be</h4>
+            <h3 class="class-spr">updated post</h3>
+            <h3 class="spr-class">sfa 2015</h3>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="marginegt min800" ng-show="tab2=='squad'" style="">
 
-        <div class="if-data" ng-if="msg!='No data'">
-            <div class="row">
-                <div class="p80">
-                    <div class="col-md-offset-3 col-md-3">
-                        <!--
-                    <div class="list-active cust-li text-center">
-                        <ul>
-                            <li class="{{age.line}}" ng-click="tabchanges(age)" ng-repeat="age in agegroups">{{age.name}}</li>
-                        </ul>
-                    </div>
--->
-                        <div class="sfa-select">
-                            <select id="sel1" class="select" ng-model="ageSelected" ng-change="tabchanges(ageSelected)">
-                                <option value="">Age groups</option>
-                                <option value="{{age.agegroup}}" ng-repeat="age in agegroups">{{age.name}}</option>
-                            </select>
-                            <span class="only-border"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="sfa-select">
-                            <select id="sel1" class="select" ng-model="category" ng-change="categorychanges(category)">
-                                <option value="">Category</option>
-                                <option value="{{cat.id}}" ng-repeat="cat in sportsCategory">{{cat.title}}</option>
-                            </select>	
-                            <span class="only-border"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  </div>
+  <div class="marginegt min800" ng-show="tab2=='squad'" style="">
 
+    <div class="if-data" ng-if="msg!='No data'">
+      <div class="row">
+        <div class="p80">
+          <div class="col-md-offset-3 col-md-3">
             <!--
+                    <div class="list-active cust-li text-center">
+                        <ul>
+                            <li class="{{age.line}}" ng-click="tabchanges(age)" ng-repeat="age in agegroups">{{age.name}}</li>
+                        </ul>
+                    </div>
+-->
+            <div class="sfa-select">
+              <select id="sel1" class="select" ng-model="ageSelected" ng-change="tabchanges(ageSelected)">
+                <option value="">Age groups</option>
+                <option value="{{age.agegroup}}" ng-repeat="age in agegroups">{{age.name}}</option>
+              </select>
+              <span class="only-border"></span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="sfa-select">
+              <select id="sel1" class="select" ng-model="category" ng-change="categorychanges(category)">
+                <option value="">Category</option>
+                <option value="{{cat.id}}" ng-repeat="cat in sportsCategory">{{cat.title}}</option>
+              </select>
+              <span class="only-border"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--
             <div class="row">
                 <div class="col-md-12">
                     <div class="list-active cust-li text-center">
@@ -554,123 +554,134 @@
             </div>
 -->
 
-            <div class="row" ng-if="school.participant.studentcount!=0">
-                <div class="col-md-12">
-                    <div class="tab-gallery">
-                        <h4>{{selectedGame.game}}</h4>
-                        <!--					<h5>{{msg}}</h5>-->
-                    </div>
+      <div class="row" ng-if="school.participant.studentcount!=0">
+        <div class="col-md-12">
+          <div class="tab-gallery">
+            <h4>{{selectedGame.game}}</h4>
+            <!--					<h5>{{msg}}</h5>-->
+          </div>
 
-                </div>
-            </div>
-
-            <div class="row" ng-if="checkstart">
-
-                <div class="col-md-6">
-                    <div class="bg-school">
-
-                        <div class="stable">
-                            <table class="table" ng-if="result[0]">
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            Photo
-                                        </th>
-                                        <th>
-                                            Name
-                                        </th>
-
-                                        <th>
-                                            Team
-                                        </th>
-
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr ng-repeat="data in result[0] track by $index" ui-sref="studentprofile({id:data.id})">
-                                        <td class="lis">
-                                            <img ng-src="{{data.image|serverimage}}">
-                                        </td>
-                                        <td>
-                                            <ul>
-                                                <li>{{data.name}}</li>
-                                                <li> id: {{data.id}}</li>
-                                            </ul>
-
-
-                                        </td>
-                                        <td>
-                                            <ul>
-                                                <li>{{data.teamname}}</li>
-
-                                            </ul>
-                                        </td>
-
-                                    </tr>
-
-                                </tbody>
-
-                            </table>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="bg-school">
-
-
-                        <div class="stable">
-                            <table class="table" ng-if="result[1]">
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            Photo
-                                        </th>
-                                        <th>
-                                            Name
-                                        </th>
-
-                                        <th>
-                                            Team
-                                        </th>
-
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr ng-repeat="data in result[1] track by $index" ui-sref="studentprofile({id:data.id})">
-                                        <td class="lis">
-                                            <img ng-src="{{data.image|serverimage}}">
-                                        </td>
-                                        <td>
-                                            <ul>
-                                                <li>{{data.name}}</li>
-                                                <li> id: {{data.id}}</li>
-                                            </ul>
-
-
-                                        </td>
-                                        <td>
-                                            <ul>
-                                                <li>{{data.teamname}}</li>
-
-                                            </ul>
-                                        </td>
-
-                                    </tr>
-
-                                </tbody>
-
-                            </table>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-        <!--
+      </div>
+
+      <div class="row" ng-if="checkstart">
+
+        <div class="col-md-6">
+          <div class="bg-school">
+
+            <div class="stable">
+              <table class="table" ng-if="result[0]">
+                <thead>
+                  <tr>
+                    <th>
+                      Photo
+                    </th>
+                    <th>
+                      Name
+                    </th>
+                    <th ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">
+                      Team
+                    </th>
+
+                    <th ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">
+                      category
+                    </th>
+
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr ng-repeat="data in result[0] track by $index" ui-sref="studentprofile({id:data.id})">
+                    <td class="lis">
+                      <img ng-src="{{data.image|serverimage}}">
+                    </td>
+                    <td>
+                      <ul>
+                        <li>{{data.name}}</li>
+                        <li> id: {{data.id}}</li>
+                      </ul>
+
+
+                    </td>
+                    <td>
+                      <ul>
+                        <li  ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">{{data.teamname}}</li>
+                        <li  ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">{{data.title}}</li>
+
+                      </ul>
+                    </td>
+
+                  </tr>
+
+                </tbody>
+
+              </table>
+
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="bg-school">
+
+
+            <div class="stable">
+              <table class="table" ng-if="result[1]">
+                <thead>
+                  <tr>
+                    <th>
+                      Photo
+                    </th>
+                    <th>
+                      Name
+                    </th>
+
+                    <th ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">
+                      Team
+                    </th>
+
+                    <th ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">
+                      category
+                    </th>
+
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr ng-repeat="data in result[1] track by $index" ui-sref="studentprofile({id:data.id})">
+                    <td class="lis">
+                      <img ng-src="{{data.image|serverimage}}">
+                    </td>
+                    <td>
+                      <ul>
+                        <li>{{data.name}}</li>
+                        <li> id: {{data.id}}</li>
+                      </ul>
+
+
+                    </td>
+                    <td>
+                      <ul>
+
+                          <li  ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">{{data.teamname}}</li>
+                          <li  ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">{{data.title}}</li>
+
+
+                      </ul>
+                    </td>
+
+                  </tr>
+
+                </tbody>
+
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
 		<div class="row" ng-if="school.participant.studentcount!=0">
 			<div class="col-md-12">
 				<div class="view text-center feed">
@@ -683,31 +694,31 @@
 
 
 
-        <div class="container" ng-if="school.participant.studentcount==0 || msg=='No data'">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="text-sp" style="margin-top:0px">
-                        <h3>Note: </h3>
-                        <h4 class="list-cl">List of all the participants</h4>
-                        <h4>from your school will be</h4>
-                        <h4>updated after the receipt </h4>
-                        <h4>of participant entry forms. </h4>
-                        <h4>The due date for final entries</h4>
-                        <h4>is 20<sup>th</sup> December 2015</h4>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="text-sr text-center" style="padding-top:0px">
-                        <img src="img/schoolp.png" class="img-responsive">
-                        <h4>profiles will be</h4>
-                        <h3 class="class-spr">updated post</h3>
-                        <h3 class="spr-class">sfa 2015</h3>
-                    </div>
-                </div>
-            </div>
+    <div class="container" ng-if="school.participant.studentcount==0 || msg=='No data'">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="text-sp" style="margin-top:0px">
+            <h3>Note: </h3>
+            <h4 class="list-cl">List of all the participants</h4>
+            <h4>from your school will be</h4>
+            <h4>updated after the receipt </h4>
+            <h4>of participant entry forms. </h4>
+            <h4>The due date for final entries</h4>
+            <h4>is 20<sup>th</sup> December 2015</h4>
+          </div>
         </div>
-
+        <div class="col-md-6">
+          <div class="text-sr text-center" style="padding-top:0px">
+            <img src="img/schoolp.png" class="img-responsive">
+            <h4>profiles will be</h4>
+            <h3 class="class-spr">updated post</h3>
+            <h3 class="spr-class">sfa 2015</h3>
+          </div>
+        </div>
+      </div>
     </div>
+
+  </div>
 </div>
 
 

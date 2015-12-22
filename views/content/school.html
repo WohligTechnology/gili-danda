@@ -3,10 +3,10 @@
 </div>
 
 <div class="school-back">
-    
+
 <div class="landings">
 <!--    <img src="img/school/latestuse1.png" class="pd155 img-responsive"> -->
-    
+
     <div class="container">
     <div class="row pads400">
         <div class="col-md-6">
@@ -32,7 +32,7 @@
         </div>
     </div>
     <div class="show-result" >
-    
+
     <div class="container">
         <div class="row">
         <div class="col-md-offset-3 col-md-6">
@@ -41,7 +41,7 @@
                     <p class="stu-f">Search by School Name</p>
                     <div class="searchs ">
                         <form class="sfms stu-sfms ng-pristine ng-valid">
-                            <input type="text" class="inbinding" name="q" value="Enter your SFA ID" ng-model="idSearch.search">
+                            <input type="text" class="inbinding" name="q" value="Enter your SFA ID" ng-model="search.name">
                             <input type="image" value="Search" src="img/searchbig.png" class="sbs" ng-click="getSearchById(idSearch.search);">
                         </form>
                     </div>
@@ -60,30 +60,30 @@
     <div class="col-md-6">
         <div class="school-name">
             <ul>
-                <li ng-repeat="school in schoolNames[0]" ui-sref="schoolprofile({id:school.id})"><span>{{($index+1)|numberFixedLen:2}}</span><p>{{school.name}}</p></li>
-               
+                <li ng-repeat="school in schoolNames[0] | filter:search" ui-sref="schoolprofile({id:school.id})"><span>{{($index+1)|numberFixedLen:2}}</span><p>{{school.name}}</p></li>
+
             </ul>
-           
+
         </div>
     </div>
     <div class="col-md-6">
         <div class="school-name">
             <ul>
-                <li ng-repeat="school in schoolNames[1]" ui-sref="schoolprofile({id:school.id})"><span>{{($index+1+schoolHalf)|numberFixedLen:2}}</span><p>{{school.name}}</p></li>
-               
+                <li ng-repeat="school in schoolNames[1] | filter:search" ui-sref="schoolprofile({id:school.id})"><span>{{($index+1+schoolHalf)|numberFixedLen:2}}</span><p>{{school.name}}</p></li>
+
             </ul>
-            
+
         </div>
     </div>
 </div>
     </div>
-   
+
 </div>
 </div>
 <!--    // latest ui for school-->
-    
+
 <!--
-    
+
     <div class="media-set">
     <img src="img/home/16.png" class="img-responsive img">
 </div>
@@ -123,7 +123,7 @@
                         <img src="img/noimage.png">
                     </div>
                 </div>
-          
+
                 <div class="col-md-2 ">
                     <div class="s-info p15">
                         <p>Name</p>
@@ -140,7 +140,7 @@
                         <p>: 6<sup>th</sup> </p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-2">
                     <div class="pull-right s-info pos-view">
                         <p class="vh" ng-click="goToProfile(student.id);">View full profile</p>

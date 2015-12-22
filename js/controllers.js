@@ -840,41 +840,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 		$scope.r2 = // JavaScript Document
       [{
-				"name": "Viraj Kale",
-				"school": "Dhirubhai Ambani International School"
+				"studentname": "Viraj Kale",
+				"schoolname": "Dhirubhai Ambani International School"
 
       }, {
-				"name": "Rizwan Mirza",
-				"school": "Bombay British School"
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
 
       }, {
-				"name": "Viraj Kale",
-				"school": "Dhirubhai Ambani International School"
+				"studentname": "Viraj Kale",
+				"schoolname": "Dhirubhai Ambani International School"
 
       }, {
-				"name": "Rizwan Mirza",
-				"school": "Bombay British School"
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
 
       }, {
-				"name": "Rizwan Mirza",
-				"school": "Bombay British School"
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
 
       }];
 
 		$scope.r3 = // JavaScript Document
       [{
-				"name": "Viraj Kale",
-				"school": "Dhirubhai Ambani International School"
+				"studentname": "Viraj Kale",
+				"schoolname": "Dhirubhai Ambani International School"
 
       }, {
-				"name": "Rizwan Mirza",
-				"school": "Bombay British School"
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
 
       }];
 		$scope.r4 = // JavaScript Document
       [{
-				"name": "Viraj Kale",
-				"school": "Dhirubhai Ambani International School"
+				"studentname": "Viraj Kale",
+				"schoolname": "Dhirubhai Ambani International School"
 
       }];
 	})
@@ -1613,8 +1613,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 			NavigationService.getScore($scope.filter, function(data){
 				console.log(data);
 				$scope.scores = data.queryresult;
-				_.each(data.queryresult, function(n){
-					n.result = (n.players[0].result > n.players[1].result) ? n.players[0].name : n.players[1].name
+				_.each($scope.scores, function(n){
+					console.log(n.players[0].result);
+					console.log(n.players[1].result);
+					if(n.players[0].result > n.players[1].result){
+						n.result = n.players[0].name;
+					}else {
+						n.result = n.players[1].name;
+					}
+					console.log(n.result);
 				})
 			});
 		}

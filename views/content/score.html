@@ -65,8 +65,8 @@
                 <div class="row">
 
             <div class="col-md-12" ng-if="scores">
-                <div class="tab-gallery c-text">
-                <h4>{{sportselected}} - {{agegroupselected}} - <span style="color:#fc7700">matches</span></h4>
+                <div class="c-text">
+                <h4 class="h4-em">{{sportselected}} - {{agegroupselected}} - <span style="color:#fc7700">matches</span></h4>
                 </div>
                 <div class="sch-table">
                     <table class="table">
@@ -86,11 +86,13 @@
 
                                 </td>
                                 <td>
-                                    <h4 class="tx-c margin0">{{score.players[0].name}}</h4>
+                                    <h4 class="tx-c margin0" ng-if="score.players[0].studentname!=''">{{score.players[0].studentname}}</h4>
+                                    <h4 class="tx-c margin0" ng-if="score.players[0].teamname!=''">{{score.players[0].teamname}}</h4>
 
                                 </td>
                                 <td>
-                                    <h4 class="tx-c margin0">{{score.players[1].name}}</h4>
+                                    <h4 class="tx-c margin0" ng-if="score.players[1].schoolname!=''">{{score.players[1].schoolname}}</h4>
+                                    <h4 class="tx-c margin0" ng-if="score.players[1].teamname!=''">{{score.players[1].teamname}}</h4>
 
                                 </td>
                                 <td class="cust-li pos-ab text-center">

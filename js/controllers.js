@@ -859,6 +859,50 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				"studentname": "Rizwan Mirza",
 				"schoolname": "Bombay British School"
 
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
       }];
 
 		$scope.r3 = // JavaScript Document
@@ -870,8 +914,60 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				"studentname": "Rizwan Mirza",
 				"schoolname": "Bombay British School"
 
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
       }];
 		$scope.r4 = // JavaScript Document
+      [{
+				"studentname": "Viraj Kale",
+				"schoolname": "Dhirubhai Ambani International School"
+
+      },{
+				"studentname": "Viraj Kale",
+				"schoolname": "Dhirubhai Ambani International School"
+
+      },{
+				"studentname": "Viraj Kale",
+				"schoolname": "Dhirubhai Ambani International School"
+
+      },{
+				"studentname": "Viraj Kale",
+				"schoolname": "Dhirubhai Ambani International School"
+
+      }];
+    		$scope.r5 = // JavaScript Document
+      [{
+				"studentname": "Viraj Kale",
+				"schoolname": "Dhirubhai Ambani International School"
+
+      },{
+				"studentname": "Viraj Kale",
+				"schoolname": "Dhirubhai Ambani International School"
+
+      }];    	
+    $scope.r6 = // JavaScript Document
       [{
 				"studentname": "Viraj Kale",
 				"schoolname": "Dhirubhai Ambani International School"

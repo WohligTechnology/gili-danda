@@ -80,11 +80,11 @@
                 <div class="tree">
 
                     <div class="list-tree">
-                        <div class="row">
+                        <div class="r1170">
 
 
                             <div class="tree1">
-                                <div class="col-xs-3">
+                                <div class="w285">
                                     <ul>
                                         <div class="min-100" ng-repeat="round in match[0].match">
                                             <div ng-repeat="r in round.player track by $index">
@@ -101,7 +101,7 @@
                                     </ul>
 
                                 </div>
-                                <div class="col-xs-3">
+                                <div class="w285">
                                     <!-- <div class="min-100" ng-repeat="round in rounds[0] track by $index"> -->
                                     <div class="min-100" ng-repeat="round in r2 track by $index">
 
@@ -119,7 +119,7 @@
                                     </div>
 
                                 </div>
-                                <div class="col-xs-3 ">
+                                <div class="w285">
                                     <!-- <div class="min-200" ng-repeat="round in rounds[1] track by $index"> -->
                                     <div class="min-200" ng-repeat="round in r3 track by $index">
 
@@ -137,13 +137,17 @@
                                     </div>
 
                                 </div>
-                                <div class="col-xs-3 ">
+                                <div class="w285 ">
                                     <!-- <div class="min-300" ng-repeat="round in rounds[2] track by $index"> -->
                                     <div class="min-300" ng-repeat="round in r4 track by $index">
 
 
                                         <ul>
-                                            <li class="left-bx">
+                                            <li class="left-bx" ng-if="$index%2==0">
+                                                <h4>{{round.studentname}}</h4>
+                                                <p>{{round.schoolname}}</p>
+                                            </li>
+                                             <li class="left-bx bottom3-bx" ng-if="$index%2!=0">
                                                 <h4>{{round.studentname}}</h4>
                                                 <p>{{round.schoolname}}</p>
                                             </li>
@@ -151,6 +155,26 @@
                                     </div>
 
                                 </div>
+<!--
+                                <div class="w285">
+                                  
+                                    <div class="min-300" ng-repeat="round in r5 track by $index">
+
+
+                                        <ul>
+                                            <li class="left-bx" ng-if="$index%2==0">
+                                                <h4>{{round.studentname}}</h4>
+                                                <p>{{round.schoolname}}</p>
+                                            </li>
+                                             <li class="left-bx bottom3-bx" ng-if="$index%2!=0">
+                                                <h4>{{round.studentname}}</h4>
+                                                <p>{{round.schoolname}}</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+-->
                             </div>
                         </div>
                     </div>

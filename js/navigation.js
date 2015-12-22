@@ -1,5 +1,5 @@
-// var adminlink = "http://wohlig.co.in/sfabackend/";
-var adminlink = "http://localhost/sfabackend/";
+ var adminlink = "http://wohlig.co.in/sfabackend/";
+//var adminlink = "http://localhost/sfabackend/";
 var admin_url = adminlink + "index.php/";
 var imgpath = adminlink + "uploads/";
 var navigationservice = angular.module('navigationservice', [])

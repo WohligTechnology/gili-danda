@@ -791,47 +791,47 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 		$scope.r1 = // JavaScript Document
       [{
-				"name": "Viraj Kale",
-				"school": "Dhirubhai Ambani International School"
+				"studentname": "Viraj Kale",
+				"schoolname": "Dhirubhai Ambani International School"
 
       }, {
-				"name": "Rizwan Mirza",
-				"school": "Bombay British School"
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
 
       }, {
-				"name": "Viraj Kale",
-				"school": "Dhirubhai Ambani International School"
+				"studentname": "Viraj Kale",
+				"schoolname": "Dhirubhai Ambani International School"
 
       }, {
-				"name": "Rizwan Mirza",
-				"school": "Bombay British School"
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
 
       }, {
-				"name": "Viraj Kale",
-				"school": "Dhirubhai Ambani International School"
-
-
-      }, {
-				"name": "Rizwan Mirza",
-				"school": "Bombay British School"
+				"studentname": "Viraj Kale",
+				"schoolname": "Dhirubhai Ambani International School"
 
 
       }, {
-				"name": "Viraj Kale",
-				"school": "Dhirubhai Ambani International School"
-
-      }, {
-				"name": "Rizwan Mirza",
-				"school": "Bombay British School"
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
 
 
       }, {
-				"name": "Viraj Kale",
-				"school": "Dhirubhai Ambani International School"
+				"studentname": "Viraj Kale",
+				"schoolname": "Dhirubhai Ambani International School"
 
       }, {
-				"name": "Rizwan Mirza",
-				"school": "Bombay British School"
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
+
+
+      }, {
+				"studentname": "Viraj Kale",
+				"schoolname": "Dhirubhai Ambani International School"
+
+      }, {
+				"studentname": "Rizwan Mirza",
+				"schoolname": "Bombay British School"
 
 
       }];

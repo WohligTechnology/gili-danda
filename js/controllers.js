@@ -1705,29 +1705,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 						$scope.result.push($scope.schedule);
 					});
 				});
-			}
+			}else{
 			NavigationService.getschedule($scope.filter, function (data) {
 				_.each(data.queryresult, function (n) {
 					$scope.schedule = {};
 					$scope.schedule.matchdate = n.matchdate;
 					$scope.schedule.matchresult = n.matchresult;
 					$scope.schedule.starttime = n.starttime;
-					if (n.student1name && n.student1name != '') {
-						$scope.schedule.team1 = n.student1name;
-						$scope.schedule.team2 = n.student2name;
-						$scope.schedule.school1 = n.school1name;
-						$scope.schedule.school2 = n.school2name;
+
+					if (n.players[0].studentname && n.players[0].studentname != '') {
+						$scope.schedule.team1 = n.players[0].studentname;
+						$scope.schedule.school1 = n.players[0].schoolname;
 					}
-					if (n.team1name && n.team1name != '') {
-						$scope.schedule.team1 = n.team1name;
-						$scope.schedule.team2 = n.team2name;
-						$scope.schedule.school1 = n.team1sfaid;
-						$scope.schedule.school2 = n.team2sfaid;
+					if (n.players[0].teamname && n.players[0].teamname != '') {
+						$scope.schedule.team1 = n.players[0].teamname;
+						$scope.schedule.school1 = n.players[0].teamsfaid;
 					}
+
+					if(n.players[1]){
+					if (n.players[1].studentname && n.players[1].studentname != '') {
+						$scope.schedule.team2 = n.players[1].studentname;
+						$scope.schedule.school2 = n.players[1].schoolname;
+					}
+				}
+				if(n.players[1]){
+					if (n.players[1].teamname && n.players[1].teamname != '') {
+						$scope.schedule.team2 = n.players[1].teamname;
+						$scope.schedule.school2 = n.players[1].teamsfaid;
+					}
+				}
 //					console.log(moment.formate(n.matchdate,'YYYY MMM'));
 					$scope.result.push($scope.schedule);
 				});
+				console.log($scope.result);
 			});
+		}
 		}
 
 		//		$scope.result = [{

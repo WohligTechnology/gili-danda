@@ -49,7 +49,6 @@
                 </div>
             </div>
         </div>
-
         <div class="row" ng-show="filter.category!='' && filter.gender!='' && filter.sport!='' && filter.agegroup!=''">
             <div class="col-md-12">
                 <div class="text-center margtp p50">
@@ -58,7 +57,7 @@
             </div>
         </div>
         <!--               ui for all sports except swimming-->
-        <div class="scroll-w">
+        <div class="scroll-w" ng-if="sportselected!='swimming' && match!=''">
             <div class="scroll-on">
                 <!--
                 <div class="row">
@@ -81,7 +80,7 @@
                 </div>
 -->
 
-               
+
                 <div class="tree">
 
                     <div class="list-tree">
@@ -93,12 +92,10 @@
                                 <!--                               round 1-->
 
                                 <div class="w285">
-                                    <h4>Round - 01</h4>
+                                    <h4 ng-if="match[0].match">Round - 01</h4>
                                     <ul>
-                                        <!-- <div class="min-100" ng-repeat="round in match[0].match">
-                                            <div ng-repeat="r in round.player track by $index"> -->
-                                        <div class="min-100" ng-repeat="round in r1">
-                                            <div ng-repeat="r in round track by $index">
+                                        <div class="min-100" ng-repeat="round in match[0].match">
+                                            <div ng-repeat="r in round.player track by $index">
 
                                                 <li class="top-bx" ng-if="$index%2==0">
                                                     <h4>{{r.studentname}}</h4>
@@ -116,11 +113,8 @@
 
                                 <!--                                round 2-->
                                 <div class="w285">
-                                    <h4 >Round - 02</h4>
-                                    <!-- <div class="min-100" ng-repeat="round in rounds[0] track by $index"> -->
-                                    <div class="min-100" ng-repeat="round in r2 track by $index">
-
-
+                                    <h4 ng-if="rounds[0]">Round - 02</h4>
+                                    <div class="min-100" ng-repeat="round in rounds[0] track by $index">
                                         <ul>
                                             <li class="left-bx top2-bx" ng-if="$index%2==0">
                                                 <h4>{{round.studentname}}</h4>
@@ -136,11 +130,8 @@
                                 </div>
                                 <!--                                round 3-->
                                 <div class="w285">
-                                    <h4 >Round - 03</h4>
-                                    <!-- <div class="min-200" ng-repeat="round in rounds[1] track by $index"> -->
-                                    <div class="min-200" ng-repeat="round in r3 track by $index">
-
-
+                                    <h4 ng-if="rounds[1]">Round - 03</h4>
+                                    <div class="min-200" ng-repeat="round in rounds[1] track by $index">
                                         <ul>
                                             <li class="left-bx top3-bx" ng-if="$index%2==0">
                                                 <h4>{{round.studentname}}</h4>
@@ -156,10 +147,8 @@
                                 </div>
                                 <!--                                round 4-->
                                 <div class="w285 ">
-                                    <h4 >Round - 04</h4>
-                                    <!-- <div class="min-300" ng-repeat="round in rounds[2] track by $index"> -->
-                                    <div class="min-300" ng-repeat="round in r4 track by $index">
-
+                                    <h4 ng-if="rounds[2]">Round - 04</h4>
+                                    <div class="min-300" ng-repeat="round in rounds[2] track by $index">
                                         <!--top4-bx class and bottom4-bx class commented-->
                                         <ul>
                                             <li class="left-bx top4-bx" ng-if="$index%2==0">
@@ -175,10 +164,10 @@
 
                                 </div>
                                 <!--                                round 5-->
-<!--
+
                                 <div class="w285">
-                                    <h4>Round - 05</h4>
-                                    <div class="min-400" ng-repeat="round in r5 track by $index">
+                                    <h4 ng-if="rounds[3]">Round - 05</h4>
+                                    <div class="min-400" ng-repeat="round in rounds[3] track by $index">
 
 
                                         <ul>
@@ -194,12 +183,10 @@
                                     </div>
 
                                 </div>
--->
                                 <!--                                        round -6-->
-<!--
                                 <div class="w285">
-                                    <h4 >Round - 06</h4>
-                                    <div class="min-500" ng-repeat="round in r6 track by $index">
+                                    <h4 ng-if="rounds[4]">Round - 06</h4>
+                                    <div class="min-500" ng-repeat="round in rounds[4] track by $index">
 
 
                                         <ul>
@@ -212,19 +199,18 @@
                                     </div>
 
                                 </div>
--->
+
                             </div>
                         </div>
                     </div>
                 </div>
-                
 
-           
+
+
             </div>
         </div>
-        
         <!--                ui for swimming -->
-        <div class="row">
+        <div class="row" ng-if="sportselected=='swimming' && match!=''">
             <div class="col-md-6">
                 <div class="head">
                    <h4>Heats</h4>
@@ -254,7 +240,7 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="col-md-6">
@@ -306,14 +292,14 @@
                                 </div>
                                 </div>
                             </li>
-                        
+
                         </ul>
                     </div>
-                    
+
                 </div>
-                
+
             </div>
-            
+
         </div>
     </div>
 </div>

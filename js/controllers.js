@@ -741,6 +741,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		$scope.sportselected = "";
 		$scope.result = [];
 		$scope.schedule = {};
+		$scope.match = [];
 
 		NavigationService.isStudentSports(function (data) {
 			$scope.sports = data;
@@ -966,7 +967,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 				"studentname": "Viraj Kale",
 				"schoolname": "Dhirubhai Ambani International School"
 
-      }];    	
+      }];
     $scope.r6 = // JavaScript Document
       [{
 				"studentname": "Viraj Kale",

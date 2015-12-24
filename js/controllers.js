@@ -1674,6 +1674,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		$scope.sportselected = "";
 		$scope.agegroupselected = "";
 		$scope.result = [];
+		$scope.scores = [];
 		$scope.schedule = {};
 
 		NavigationService.isStudentSports(function (data) {
@@ -1707,8 +1708,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		}
 
 		$scope.getScore = function(){
+			$scope.scores = [];
 			NavigationService.getScore($scope.filter, function(data){
-				console.log(data);
 				$scope.scores = data.queryresult;
 				_.each($scope.scores, function(n){
 					console.log(n.players[0].result);

@@ -399,7 +399,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	})
 	.controller('TabletennisCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
 		$scope.template = TemplateService.changecontent("tabletennis");
-		$scope.menutitle = NavigationService.makeactive("Tabletennis");
+		$scope.menutitle = NavigationService.makeactive("Table Tennis");
 		TemplateService.title = $scope.menutitle;
 		$scope.navigation = NavigationService.getnav();
 

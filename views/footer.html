@@ -1,52 +1,59 @@
-<div class="margintps" ng-controller="footerCtrl">
-    <div class="curve3">
-
-    </div>
-    <div class="footers">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="footer-menu">
-                        <ul>
-                            <li style="padding-left: 0px;"><a href="about">about sfa</a></li>
-                            <li><a href="termscondition">Legal</a></li>
-                            <!--                        <li><a href="">Careers</a></li>-->
-                            <li><a href="faqs">FAQs</a></li>
-                            <li style="border-right:0px;"><a href="contact">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="row" ng-controller="footerCtrl">
-                        <div class="col-md-4">
-                            <div class="newsleter">
-                                <p>NEWSLETTER SIGNUP</p>
-                            </div>
-                        </div>
-                        <div class="col-md-8 padzer">
-
-                            <span class="newslettershow" ng-hide="newsletter.show">
-							    <p class="thank">Thank you for subscribing to our newsletter.</p>
-							</span>
-                            <span class="newslettershow" ng-show="newsletter.show">
-							    <div class="input-text">
-							        <input type="email" ng-model="newsletter.email" class="form-control emailclass" ng-change="validEmail(newsletter.email)" ng-class="newsletter.emaildis" id="" placeholder="Enter Email Address" required>
-							    </div>
-							    <div class="button-text">
-							        <button  ng-click="savenewsletter(newsletter.email);" class="btn btn-default newslettersubmit">GO!</button>
-							    </div>
-							</span>
-                        </div>
-                    </div>
-                </div>
+<div class="margintps relative" ng-controller="footerCtrl">
+  <div class="curve3"></div>
+  <img class="jit-india" src="img/ab-jitega.png"/>
+  <div class="footers">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="footer-menu">
+            <ul>
+              <li style="padding-left: 0px;">
+                <a href="about">about sfa</a>
+              </li>
+              <li>
+                <a href="termscondition">Legal</a>
+              </li>
+              <!--                        <li><a href="">Careers</a></li>-->
+              <li>
+                <a href="faqs">FAQs</a>
+              </li>
+              <li style="border-right:0px;">
+                <a href="contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row" ng-controller="footerCtrl">
+            <div class="col-md-4">
+              <div class="newsleter">
+                <p>NEWSLETTER SIGNUP</p>
+              </div>
             </div>
-            <div class="row ">
-                <!--
+            <div class="col-md-8 padzer">
+
+              <span class="newslettershow" ng-hide="newsletter.show">
+                <p class="thank">Thank you for subscribing to our newsletter.</p>
+              </span>
+              <span class="newslettershow" ng-show="newsletter.show">
+                <div class="input-text">
+                  <input class="form-control emailclass" id="" ng-change="validEmail(newsletter.email)" ng-class="newsletter.emaildis" ng-model="newsletter.email" placeholder="Enter Email Address" required type="email">
+                </div>
+                <div class="button-text">
+                  <button class="btn btn-default newslettersubmit" ng-click="savenewsletter(newsletter.email);">GO!</button>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row ">
+        <!--
                 <div class="event_venue col-md-8">
 
                     <div class="col-md-3">
                         <div class="venue">
-                        
+
                             <a href="http://www.dypatil.edu/sportsacademy/" target="_blank" class="blk">
                                 <figure>
                                     <img src="img/partner-logo/dypatil.jpg" alt="sport" class="img-responsive">
@@ -57,7 +64,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="event">
-                          
+
                             <a href="http://www.dnanetworks.com/" target="_blank" class="blk">
                                 <figure>
                                     <img src="img/partner-logo/dnalogo.jpg" alt="sport" class="img-responsive">
@@ -68,7 +75,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="event">
-                       
+
                             <a href="http://www.greymind.in/website/" target="_blank" class="blk">
                                 <figure>
                                     <img src="img/partner-logo/Videography.jpg" alt="sport" class="img-responsive" title="Videography Partner">
@@ -79,7 +86,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="event">
-                    
+
                             <a href="#" class="blk">
                                 <figure>
                                     <img src="img/partner-logo/physiotherapy.jpg" alt="sport" class="img-responsive" title="Videography Partner">
@@ -90,7 +97,7 @@
                     </div>
                 </div>
 -->
-                <!--
+        <!--
                 <div class="col-md-4 part-logo">
                     <div style="width:100%;overflow:hidden;margin-top:30px;">
 
@@ -115,7 +122,7 @@
                 </div>
 -->
 
-                <!--
+        <!--
                 <div class="col-md-8">
                     <div class="partners">
                         <p>sports partners :</p>
@@ -174,7 +181,7 @@
                                 <a href="http://www.maharashtrabasketball.com/" target="_blank">
                                     <figure>
                                         <img src="img/partner-logo/7.png" alt="" class="img-responsive">
-                      
+
                                         <figcaption class="text-center text-uppercase">basketball</figcaption>
                                     </figure>
                                 </a>
@@ -183,7 +190,7 @@
                                 <a href="http://www.swimmingfederation.in/" target="_blank">
                                     <figure>
                                         <img src="img/partner-logo/8.png" alt="" class="img-responsive">
-                                      
+
                                         <figcaption class="text-center text-uppercase">swimming</figcaption>
                                     </figure>
                                 </a>
@@ -193,7 +200,7 @@
 
                 </div>
 -->
-                <!--
+        <!--
                 <div class="col-md-12">
 
 
@@ -209,68 +216,68 @@
                     </div>
                 </div>
 -->
-            </div>
-            <div class="row">
-                <div class="col-md-12">
+      </div>
+      <div class="row">
+        <div class="col-md-12">
 
-
-                    <div class="sponser-l back-ll">
-                        <p>partners</p>
-                        <ul>
-                                 <li>
-                                <div class="l-m text-center">
-                                    <a href="http://www.dypatil.edu/sportsacademy/" target="_blank"><img src="img/footer/p1.jpg"></a>
-                                    <p>venue partner</p>
-                                </div>
-                            </li>
-                                  <li>
-                                <div class="l-m text-center">
-                                    <a href="http://www.dnanetworks.com/" target="_blank"> <img src="img/footer/p2.jpg"></a>
-                                    <p>event partner</p>
-                                </div>
-                            </li>
-                               
-                            <li>
-                                <div class="l-m text-center">
-                                    <a href="http://www.greymind.in/website/" target="_blank"> <img src="img/footer/p3.jpg"></a>
-                                    <p>videography partner</p>
-                                </div>
-                            </li>     
-                               <li>
-                                <div class="l-m text-center">
-                                    <a href="#" target="_blank"> <img src="img/footer/p6.jpg"></a>
-                                    <p>Hospital parter </p>
-                                </div>
-                            </li>
-                                <li>
-                                <div class="l-m text-center">
-                                    <a href="http://www.ssbm.co.in/" target="_blank"> <img src="img/footer/p5.jpg"></a>
-                                    <p>physiotherapy partner</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="l-m text-center">
-                                    <a href="http://www.enerzal.com/" target="_blank"> <img src="img/footer/p4.jpg"></a>
-                                    <p>energy drink partner</p>
-                                </div>
-                            </li>
-                        
-                      
-                   
-
-
-                        </ul>
-                    </div>
+          <div class="sponser-l back-ll">
+            <p>partners</p>
+            <ul>
+              <li>
+                <div class="l-m text-center">
+                  <a href="http://www.dypatil.edu/sportsacademy/" target="_blank"><img src="img/footer/p1.jpg"></a>
+                  <p>venue partner</p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
+              </li>
+              <li>
+                <div class="l-m text-center">
+                  <a href="http://www.dnanetworks.com/" target="_blank">
+                    <img src="img/footer/p2.jpg"></a>
+                  <p>event partner</p>
+                </div>
+              </li>
 
+              <li>
+                <div class="l-m text-center">
+                  <a href="http://www.greymind.in/website/" target="_blank">
+                    <img src="img/footer/p3.jpg"></a>
+                  <p>videography partner</p>
+                </div>
+              </li>
+              <li>
+                <div class="l-m text-center">
+                  <a href="#" target="_blank">
+                    <img src="img/footer/p6.jpg"></a>
+                  <p>Hospital parter
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="l-m text-center">
+                  <a href="http://www.ssbm.co.in/" target="_blank">
+                    <img src="img/footer/p5.jpg"></a>
+                  <p>physiotherapy partner</p>
+                </div>
+              </li>
+              <li>
+                <div class="l-m text-center">
+                  <a href="http://www.enerzal.com/" target="_blank">
+                    <img src="img/footer/p4.jpg"></a>
+                  <p>energy drink partner</p>
+                </div>
+              </li>
 
-                    <div class="sponser-l back-ll">
-                        <p>sports partners</p>
-                        <!--
-                        
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="sponser-l back-ll">
+            <p>sports partners</p>
+            <!--
+
                         <ul>
                             <li>
                                 <div class="l-m text-center">
@@ -333,70 +340,92 @@
                                 </div>
                             </li>
                         </ul>
-                        
+
 -->
-                        <div style="width:100%;overflow:hidden;margin-top:30px;">
+            <div style="width:100%;overflow:hidden;margin-top:30px;">
 
-                            <ul mycircle style="width:12000px;">
-                                <li ng-repeat="slid in games track by $index">
-                                    <a href="{{slid.href}}" target="_blank">
-                                        <figure>
-                                            <div class="imgd l-m">
-                                                <img ng-src="{{slid.img}}" alt="{{slid.img}}" title="{{slid.game}}" class="img-responsive">
-                                                <p class="text-center text-uppercase">{{slid.game}}</p>
-                                            </div>
-                                        </figure>
-                                    </a>
+              <ul mycircle style="width:12000px;">
+                <li ng-repeat="slid in games track by $index">
+                  <a href="{{slid.href}}" target="_blank">
+                    <figure>
+                      <div class="imgd l-m">
+                        <img alt="{{slid.img}}" class="img-responsive" ng-src="{{slid.img}}" title="{{slid.game}}">
+                        <p class="text-center text-uppercase">{{slid.game}}</p>
+                      </div>
+                    </figure>
+                  </a>
 
-                                </li>
+                </li>
 
-                            </ul>
+              </ul>
 
-                        </div>
-                    </div>
-                </div>
             </div>
+          </div>
         </div>
-        <div class="blue">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-3">
-                        <div class="sponsers text-uppercase">
-                            <p>SPONSORSHIPS AT SFA (COMING SOON)</p>
-                        </div>
-                    </div>
-                </div>
+      </div>
+    </div>
+    <div class="blue">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-3">
+            <div class="sponsers text-uppercase">
+              <p>SPONSORSHIPS AT SFA (COMING SOON)</p>
+            </div>
+          </div>
+        </div>
 
-                <div class="mrgb">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <ul class="foot-links">
-                                <li><a href="">All rights reserved</a></li>
-                                <li><a href="termscondition">Terms and Conditions</a></li>
-                                <li><a href="termscondition">Disclaimer</a></li>
-                                <li><a href=""><span class="copy-mark">&copy;</span> Copyright SportForAll 2015</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="social-icon">
-                                <ul class="pull-right text-center">
-                                    <li> <a href="https://www.facebook.com/sportsforallnow" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                    <li> <a href="https://twitter.com/sfanow" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                    <!--									<li> <a href=""><i class="fa fa-youtube"></i></a></li>-->
-                                    <li><a href="https://instagram.com/sfanow/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
+        <div class="mrgb">
+          <div class="row">
+            <div class="col-md-8">
+              <ul class="foot-links">
+                <li>
+                  <a href="">All rights reserved</a>
+                </li>
+                <li>
+                  <a href="termscondition">Terms and Conditions</a>
+                </li>
+                <li>
+                  <a href="termscondition">Disclaimer</a>
+                </li>
+                <li>
+                  <a href="">
+                    <span class="copy-mark">&copy;</span>
+                    Copyright SportForAll 2015</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <div class="social-icon">
+                <ul class="pull-right text-center">
+                  <li>
+                    <a href="https://www.facebook.com/sportsforallnow" target="_blank">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/sfanow" target="_blank">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                  </li>
+                  <!--									<li> <a href=""><i class="fa fa-youtube"></i></a></li>-->
+                  <li>
+                    <a href="https://instagram.com/sfanow/" target="_blank">
+                      <i class="fa fa-instagram"></i>
+                    </a>
+                  </li>
+                </ul>
 
-                            </div>
-                            <!--
+              </div>
+              <!--
 						<div class="copy">
 							<h5 class="pull-right">copyright SPORTSFORALL 2015</h5>
 						</div>
 -->
 
-                        </div>
-                    </div>
-                </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>

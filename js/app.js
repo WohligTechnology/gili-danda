@@ -471,3 +471,23 @@ var clearvalidation = function(allvalidation) {
     allvalidation[i].validation = "";
   }
 };
+
+firstapp.directive('smartGallery', function($compile, $parse) {
+  return {
+    restrict: 'EA',
+    replace: false,
+    link: function($scope, element, attrs) {
+      $element = $(element);
+      var width;
+      function changeSqaure() {
+        width = $(window).width()/attrs.smartGallery;
+        $(".monsanry .mimage").width(width);
+        $(".monsanry .mimage").height(width);
+      }
+      changeSqaure();
+      $(window).resize(function() {
+        changeSqaure();
+      });
+    }
+  };
+});

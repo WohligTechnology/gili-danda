@@ -7,6 +7,7 @@
 @import (inline) "../bower_components/ng-dialog/css/ngDialog.min.css";
 @import (inline) "../bower_components/fontawesome/css/font-awesome.css";
 @import "../less/mobile.less";
+
 @menu-color: #0a1a72;
 @subMenu-color: #303030;
 @login-color: #fc7700;
@@ -33,6 +34,12 @@ sans-serif;
 @text-font: 13px;
 @font-bold: 700;
 .keyframes(~'translatecomets3, 0% { transform: translate(1000px,0px); } 100%{ transform: translate(-1000px,0px); }');
+
+@font-face {
+  font-family: "Manus";
+  src: url(../fonts/manus.ttf);
+}
+
 @font-face {
     font-family: 'Titillium Web';
     src: url(../fonts/TitilliumWeb-Regular.ttf);
@@ -4498,23 +4505,23 @@ body.ngdialog-open {
                 background-color: #cbcbcb;
                  width: 100%;
                 padding: 5px 6px 5px 6px;
-            } 
+            }
             .back-cl3 {
                 background-color: #dbbc85;
                  width: 100%;
                 padding: 5px 6px 5px 6px;
-            } 
+            }
             .back-cl4 {
                 background-color: #f3f3f3;
                  width: 100%;
                 padding: 5px 6px 5px 6px;
-            } 
+            }
             .back-cl5 {
                 background-color: #5c4c4b;
                  width: 100%;
                 padding: 5px 6px 5px 6px;
-            }  
-           
+            }
+
             li {
                 display: flex;
                 width: 100%;
@@ -4556,4 +4563,25 @@ body.ngdialog-open {
         font-size: 25px !important;
     padding-left: 9px;
     vertical-align: middle;
+}
+.full-image {
+  width: 100%;
+  height: auto;
+}
+.at-middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  .transform(translate(-50%, -50%));
+}
+.relative {
+  position: relative;
+}
+.slant-font {
+    background-color: @menu-color;
+    padding: 25px 0;
+    font-family: "Manus";
+    color: white;
+    font-size: 3.8em;
 }

@@ -34,14 +34,47 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+           <div class="margintop">
+            <div class="col-md-6">
+                <div class="btn-pdf pull-right">
+                    <a href="">CHAMPIONS OF SFA 2015: WINNER</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+             <div class="btn-pdf ">
+                    <a href="">SCHOOL RANKING LEADER BOARD</a>
+                </div>
+<!--
                 <div class="text-center margintop">
                     <a href="img/form/allsportpdf.pdf" target="_blank" class="draw-btn">draws & schedule</a>
                     
                 </div>
+-->
+            </div>
+           
             </div>
             
         </div>
+        <div class="emailer">
+    <div class="container">Videos of individual matches will soon be hosted on the respective participant and school profile page. If you would like for us to notify you on the same, kindly leave your email address here:</div>
+
+    <div class="email-form footers" ng-controller="footerCtrl">
+        <span class="newslettershow" ng-hide="newsletter.show">
+      <p class="thank">Thank you for subscribing to our newsletter.</p>
+    </span>
+        <div class="mdl">
+            <span class="newslettershow" ng-show="newsletter.show">
+        <div class="input-text">
+          <input class="form-control emailclass" id="" ng-change="validEmail(newsletter.email)" ng-class="newsletter.emaildis" ng-model="newsletter.email" placeholder="Email Address" required type="email">
+        </div>
+        <div class="button-text">
+          <button class="btn btn-default newslettersubmit" ng-click="savenewsletter(newsletter.email);">GO!</button>
+        </div>
+      </span>
+        </div>
+    </div>
+</div>
+<!--
         <div class="row">
             <div class="home-content text-center">
                 <span class="new-h">REGISTRATION FOR <div class="relativ">  <span class="bold-bk">SFA MUMBAI 2015</span></div>   IS NOW CLOSED</span>
@@ -64,20 +97,11 @@
                 <li><span class="bold">Venue:</span> D.Y. Sports Complex, Nerul.</li>
                
                 </ul>
-<!--                <p class="p15"><sup>*</sup>Entry open to all</p>-->
-<!--                <p></p>-->
-<!--
-                <p class="weight">Only students of member schools can participate in any and all SFA events.</p>
-                <p class="bound">To become a member school, school authorities are requested to download the following registration form, fill out the required details and send the physical signed and stamped copies to the address mentioned. You can send in your participant entry forms along with the school registration forms.</p>
-                <div class="link-btn">
-                    					<a href="#/" class="enquire-btn">Enquire now</a>
-                    <a href="img/form/School-and-Participant-Registration-Forms.pdf" target="_blank" class="form-btn" download>Download School and Participant Registration Forms here</a>
-                </div>
-                <p>School and Participant Registrations will be open from 2nd October 2015 to 20th December 2015.</p>
--->
+
             </div>
 
         </div>
+-->
     </div>
     <!--
 	<div class="patch">
@@ -117,15 +141,16 @@
             <div class="col-md-8 paddlr">
                 <div class="">
 <!--                    <img src="img/1.jpg" class="img-responsive" style="width:100%;">-->
-                     <div class="image-hols" ng-style="{'background-image':'url(img/1.jpg)'}">
+                     <div class="image-hols" ng-style="{'background-image':'url(img/n1.jpg)'}">
                     <div class=" over-img">
 
                         <div class="mid-det">
-                            <h1>WHAT IS SFA?</h1>
-                            <img src="img/hr.png" class="nowidht">
-                            <p>A NEW WAY OF PLAYING INTER-SCHOOL SPORTS.</p>
-                            <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/OPza36UHubA?autoplay=1"><img src="img/play.png" class="img-responsive nowidht mg"></a>
-                            <p class="know">Know everything about SFA in under 5 minutes.</p>
+                           
+<!--                            <p>A NEW WAY OF PLAYING INTER-SCHOOL SPORTS.</p>-->
+                            <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/pIPashZ8S2Q?autoplay=1"><img src="img/play.png" class="img-responsive nowidht mg"></a>
+                             <h1>THE BEGINNING</h1>
+                            <img src="img/hr.png" class="nowidht"> 
+<!--                            <p class="know">Know everything about SFA in under 5 minutes.</p>-->
                         </div>
 
 
@@ -154,11 +179,11 @@
                             <!--                <img src="img/video/v1.jpg" class="img-responsive" style="width:100%;">-->
                     </li>
                     <li>
-                        <div class="image-hol" ng-style="{'background-image':'url(img/video/v2.jpg)'}">
+                        <div class="image-hol" ng-style="{'background-image':'url(img/video/vn1.jpg)'}">
                                  <div class=" over-img top65">
                                 <div class="mid-det ">
-                                    <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/ETOadh9aOAE?autoplay=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
-                                    <h3 class="dif">Registration PROCESS</h3>
+                                    <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/daIvWD7U_D8?autoplay=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
+                                    <h3 class="dif">A Sneak Peek</h3>
                                     <img src="img/video/hr.png" class="nowidht">
                                 </div>
 
@@ -188,6 +213,7 @@
                             <p>students</p>
                         </a>
                     </div>
+                     <p class="cl-pl">Coming soon</p>
                 </div>
             </figure>
         </div>
@@ -200,6 +226,7 @@
                             <p style="color:#384C8B;">schools</p>
                         </a>
                     </div>
+                     <p class="cl-pl">Coming soon</p>
                 </div>
             </figure>
         </div>
@@ -212,6 +239,7 @@
                             <p style="color:#449C43;">venue</p>
                         </a>
                     </div>
+                     <p class="cl-pl">Coming soon</p>
                 </div>
             </figure>
         </div>

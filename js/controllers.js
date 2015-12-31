@@ -4,10 +4,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 .controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
-    $scope.template = TemplateService.changecontent("home-new");
+    $scope.template = TemplateService.changecontent("home");
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
-    TemplateService.header = "./views/header3.html";
+    TemplateService.header = "./views/header2.html";
+    
     TemplateService.keywords = "Inter school sports, Sports tournaments, Inter school sports in Mumbai, Sports for kids";
     TemplateService.description = "Sports For All (SFA) is an inter-school sporting platform for school children to play, compete and grow in various sports.";
     $scope.navigation = NavigationService.getnav();
@@ -104,6 +105,28 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       }, {
             "image": "img/homegallery/6.jpg"
       }];
+    
+    
+            $scope.newsletter = {
+            show: true,
+        };
+
+        function closeNewsletter() {
+            $scope.newsletter.show = false;
+        }
+
+        $scope.validEmail = function (email) {
+            if (email) {
+                $scope.newsletter.emaildis = "";
+            } else {
+                $scope.newsletter.emaildis = "error-red";
+            }
+        };
+        $scope.savenewsletter = function (email) {
+            if ($scope.newsletter.emaildis == "" && $scope.newsletter.email) {
+                NavigationService.savenewsletter(email, closeNewsletter);
+            }
+        }
 
 })
 
@@ -486,6 +509,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService.changecontent("termscondition");
         $scope.menutitle = NavigationService.makeactive("T&C");
         TemplateService.title = $scope.menutitle;
+        TemplateService.header = "./views/header2.html";
         TemplateService.keywords = "SFA terms and conditions, Terms and conditions for participates, SFA terms and conditions for schools, Terms and conditions for students";
         TemplateService.description = "Read the entire terms and conditions for Sports For All (SFA).";
         $scope.navigation = NavigationService.getnav();
@@ -550,6 +574,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService.changecontent("contact");
         $scope.menutitle = NavigationService.makeactive("Contact Us");
         TemplateService.title = $scope.menutitle;
+        TemplateService.header = "./views/header2.html";
         TemplateService.keywords = "SFA contact address, SFA contact number, SFA business address, Contact address for SFA";
         TemplateService.description = "View the contact details of Sports For All (SFA).";
         $scope.navigation = NavigationService.getnav();
@@ -563,6 +588,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.template = TemplateService.changecontent("about");
         $scope.menutitle = NavigationService.makeactive("About Us");
         TemplateService.title = $scope.menutitle;
+       TemplateService.header = "./views/header2.html";
         TemplateService.keywords = "SFA sports, SFA interschool championship, SFA school competitions, SFA tournaments";
         TemplateService.description = "Sports For All (SFA) aims to revolutionize school sports in Mumbai and across India by motivating, guiding and enhancing the playing skills of children and building a sustainable environment for sports.";
         $scope.navigation = NavigationService.getnav();

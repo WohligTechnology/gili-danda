@@ -409,6 +409,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		});
 
 	})
+
 	.controller('SquashCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
 		$scope.template = TemplateService.changecontent("squash");
 		$scope.menutitle = NavigationService.makeactive("Squash");

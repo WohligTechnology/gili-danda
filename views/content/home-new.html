@@ -242,11 +242,28 @@ TOP 5 SPORTS SCHOOLS on the overall ranking table</h4>
     <div class="row">
         <div class="col-md-12">
             <div class="text-center fd-msg">
-                
+                <h2 class="fm-title">FOUNDER'S  MESSAGE</h2>
+                <hr class="cl-hr-mid hidden-xs hidden-sm">
+                <div class="fontder-img">
+                   <figure>
+                    <img src="img/fm.png" class="fm-img">
+                    <figcaption>
+                        <h3 class="fm-title margin0">Rishikesh Joshi</h3>
+                        <h3 class="fm-title">CEO </h3>
+                    </figcaption>
+                    </figure>
+                </div>
+                <div class="fm-txt">
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque </p>
+                    <a href="" class="rd-m">Read more</a>
+                </div>
             </div>
         </div>
         
     </div>
+</div>
+<div class="text-center feed">
+    <h1 class="col-mf">Sharing Experiences</h1>
 </div>
 <div class="curve5"></div>
 <div class="hm-mid">
@@ -260,6 +277,7 @@ TOP 5 SPORTS SCHOOLS on the overall ranking table</h4>
                         <p>Participant</p>
                     </a>
                 </div>
+                 <p class="cl-pl">Coming soon</p>
             </div>
         </figure>
     </div>
@@ -270,8 +288,10 @@ TOP 5 SPORTS SCHOOLS on the overall ranking table</h4>
                 <div class="fig">
                     <a href="school">
                         <p style="color:#384C8B;">Parent</p>
+                        
                     </a>
                 </div>
+                 <p class="cl-pl">Coming soon</p>
             </div>
         </figure>
     </div>
@@ -284,7 +304,9 @@ TOP 5 SPORTS SCHOOLS on the overall ranking table</h4>
                         <p style="color:#449C43;">Coach</p>
                     </a>
                 </div>
+                <p class="cl-pl">Coming soon</p>
             </div>
+            
         </figure>
     </div>
     <div class="curve6 blue-curve"></div>
@@ -297,9 +319,9 @@ TOP 5 SPORTS SCHOOLS on the overall ranking table</h4>
 
 <!-- Gallery -->
 <div class="monsanry">
-    <div class="mimage" ng-repeat="r in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]" smart-gallery="5">
+    <div class="mimage" ng-repeat="r in rn track by $index" smart-gallery="5">
         <div class="layer"></div>
-        <div class="img-tag" style="background-image: url(img/homegallery/1.jpg)" fancybox href="img/homegallery/1.jpg"></div>
+<a class="various fancybox2" rel="gallery1" href="{{r.image}}"> <div class="img-tag" style="background-image: url({{r.image}})" ></div></a>
     </div>
 </div>
 <!-- Gallery -->

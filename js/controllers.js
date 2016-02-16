@@ -7,8 +7,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.template = TemplateService.changecontent("home");
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
-    TemplateService.header = "./views/header2.html";
-    
+    TemplateService.header = "./views/header.html";
+
     TemplateService.keywords = "Inter school sports, Sports tournaments, Inter school sports in Mumbai, Sports for kids";
     TemplateService.description = "Sports For All (SFA) is an inter-school sporting platform for school children to play, compete and grow in various sports.";
     $scope.navigation = NavigationService.getnav();
@@ -105,8 +105,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
       }, {
             "image": "img/homegallery/6.jpg"
       }];
-    
-    
+
+
             $scope.newsletter = {
             show: true,
         };

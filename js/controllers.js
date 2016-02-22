@@ -1037,7 +1037,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
       }];
     })
-    .controller('StudentprofileCtrl', function ($scope, TemplateService, NavigationService, ngDialog, $stateParams, $filter) {
+    .controller('StudentprofileCtrl', function ($scope, TemplateService, NavigationService, ngDialog, $stateParams, $filter, $state) {
         $scope.template = TemplateService.changecontent("studentprofile");
         $scope.menutitle = NavigationService.makeactive("Student Profile");
         TemplateService.title = $scope.menutitle;
@@ -1049,6 +1049,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.allresult = [];
         $scope.msg = "Loading";
         $scope.showLoadmore = true;
+        $scope.years = [];
         $scope.gallery = [{
             image: "img/schoolgallery/g1.jpg"
     }, {
@@ -1094,6 +1095,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         };
 
+        $scope.yearClicked = function(year){
+          console.log($scope.years);
+        }
 
         NavigationService.getstudentprofile($stateParams.id, function (data) {
             _.each(data.sportsparticipated, function (n, key1) {
@@ -1139,7 +1143,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
         $scope.loadStudents = function () {
-            NavigationService.getgallery($stateParams.id, $scope.sportsId, $scope.pagenum, function (data) {
+            NavigationService.getschoolgallery($stateParams.id, $scope.sportsId, $scope.pagenum, function (data) {
 
                 if (data.queryresult != '') {
                     _.each(data.queryresult, function (n) {

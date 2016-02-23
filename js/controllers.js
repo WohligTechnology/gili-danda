@@ -2,7 +2,7 @@ var test1 = {};
 var school = {};
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngDialog', 'ngSanitize', 'angular-flexslider'])
 
-.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("home");
     $scope.menutitle = NavigationService.makeactive("Home");
@@ -12,7 +12,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.keywords = "Inter school sports, Sports tournaments, Inter school sports in Mumbai, Sports for kids";
     TemplateService.description = "Sports For All (SFA) is an inter-school sporting platform for school children to play, compete and grow in various sports.";
     $scope.navigation = NavigationService.getnav();
-    var getbannersliderscallback = function (data, status) {
+    var getbannersliderscallback = function(data, status) {
         $scope.homeslide = data;
         //		        $scope.slides = _.pluck($scope.homeslide, "image");
         //		$scope.slides = [
@@ -31,7 +31,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.flex = {
         demo: true
     };
-    $scope.clickonslider = function (data) {
+    $scope.clickonslider = function(data) {
         window.location.href = data.link;
     };
     //    $scope.homeslide = [{
@@ -51,7 +51,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //    }];
 
 
-    $scope.changeslider = function () {
+    $scope.changeslider = function() {
         var homelen = $scope.homeslide.length;
         var flexi = $scope.flex.demo.data('flexslider');
         //		for (var i = 0; i < $scope.homeslide.length; i++) {
@@ -63,7 +63,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //		}
 
     };
-    $scope.iconclick = function (element) {
+    $scope.iconclick = function(element) {
         var indexele = $scope.homeslide.indexOf(element);
         $scope.flex.demo.flexslider(indexele);
     };
@@ -73,64 +73,64 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
 
     $scope.rn = // JavaScript Document
-      [{
+        [{
             "image": "img/homegallery/1.jpg"
 
-      }, {
+        }, {
             "image": "img/homegallery/2.jpg"
-      }, {
+        }, {
             "image": "img/homegallery/3.jpg"
-      }, {
+        }, {
             "image": "img/homegallery/4.jpg"
-      }, {
+        }, {
             "image": "img/homegallery/5.jpg"
-      }, {
+        }, {
             "image": "img/homegallery/6.jpg"
-      }, {
+        }, {
             "image": "img/homegallery/7.jpg"
-      }, {
+        }, {
             "image": "img/homegallery/8.jpg"
-      }, {
+        }, {
             "image": "img/homegallery/9.jpg"
-      }, {
+        }, {
             "image": "img/homegallery/1.jpg"
-      }, {
+        }, {
             "image": "img/homegallery/2.jpg"
-      }, {
+        }, {
             "image": "img/homegallery/3.jpg"
-      }, {
+        }, {
             "image": "img/homegallery/4.jpg"
-      }, {
+        }, {
             "image": "img/homegallery/5.jpg"
-      }, {
+        }, {
             "image": "img/homegallery/6.jpg"
-      }];
+        }];
 
 
-            $scope.newsletter = {
-            show: true,
-        };
+    $scope.newsletter = {
+        show: true,
+    };
 
-        function closeNewsletter() {
-            $scope.newsletter.show = false;
+    function closeNewsletter() {
+        $scope.newsletter.show = false;
+    }
+
+    $scope.validEmail = function(email) {
+        if (email) {
+            $scope.newsletter.emaildis = "";
+        } else {
+            $scope.newsletter.emaildis = "error-red";
         }
-
-        $scope.validEmail = function (email) {
-            if (email) {
-                $scope.newsletter.emaildis = "";
-            } else {
-                $scope.newsletter.emaildis = "error-red";
-            }
-        };
-        $scope.savenewsletter = function (email) {
-            if ($scope.newsletter.emaildis == "" && $scope.newsletter.email) {
-                NavigationService.savenewsletter(email, closeNewsletter);
-            }
+    };
+    $scope.savenewsletter = function(email) {
+        if ($scope.newsletter.emaildis == "" && $scope.newsletter.email) {
+            NavigationService.savenewsletter(email, closeNewsletter);
         }
+    }
 
 })
 
-.controller('ProfileCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+.controller('ProfileCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("profile");
         $scope.menutitle = NavigationService.makeactive("Profile");
         TemplateService.title = $scope.menutitle;
@@ -141,7 +141,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
     })
-    .controller('EnquiryCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog, $window) {
+    .controller('EnquiryCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog, $window) {
         $scope.template = TemplateService.changecontent("enquiry");
         $scope.menutitle = NavigationService.makeactive("Enquiry");
         TemplateService.title = $scope.menutitle;
@@ -150,7 +150,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.header = "./views/header2.html";
         TemplateService.footer = "./views/footer2.html";
 
-        $scope.fireConversion = function () {
+        $scope.fireConversion = function() {
             $window.google_trackConversion({
                 google_conversion_id: 948280784,
                 google_conversion_language: "en",
@@ -163,17 +163,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         }
 
-        var getbannersliderscallback = function (data, status) {
+        var getbannersliderscallback = function(data, status) {
             $scope.homeslide = data;
         }
         NavigationService.getbannersliders(getbannersliderscallback);
 
-        NavigationService.getschoolnames(function (data) {
+        NavigationService.getschoolnames(function(data) {
             $scope.schoolNames = _.chunk(data, data.length / 2);
             $scope.schoolHalf = $scope.schoolNames[0].length;
         });
 
-        $scope.schoolProfile = function (school) {
+        $scope.schoolProfile = function(school) {
             $location.path("schoolprofile/" + school.id);
         }
 
@@ -182,7 +182,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.enquire = {};
         $scope.enquire.person = "Student";
 
-        var usercontactcallback = function (data, status) {
+        var usercontactcallback = function(data, status) {
             if (data) {
                 $scope.msgsuccess = "Kudos! We will get back to you soon!";
                 $scope.msg = "";
@@ -199,14 +199,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         };
 
-        $scope.submitEnquiry = function (enquire) {
+        $scope.submitEnquiry = function(enquire) {
             $scope.allvalidation = [{
                 field: $scope.enquire.name,
                 validation: ""
-      }, {
+            }, {
                 field: $scope.enquire.email,
                 validation: ""
-      }];
+            }];
 
             var check = formvalidation($scope.allvalidation);
 
@@ -221,23 +221,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     })
 
-.controller('SchoolCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog, $location) {
+.controller('SchoolCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog, $location) {
     $scope.template = TemplateService.changecontent("school");
     $scope.menutitle = NavigationService.makeactive("School");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
 
-    NavigationService.getschoolnames(function (data) {
+    NavigationService.getschoolnames(function(data) {
         $scope.schoolNames = _.chunk(data, data.length / 2);
         $scope.schoolHalf = $scope.schoolNames[0].length;
     });
 
-    $scope.schoolProfile = function (school) {
+    $scope.schoolProfile = function(school) {
         $location.path("schoolprofile/" + school.id);
     }
 
-    $scope.getSearchById = function (id) {
+    $scope.getSearchById = function(id) {
 
     }
 
@@ -247,7 +247,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('StudentCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog, $location) {
+.controller('StudentCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog, $location) {
     $scope.template = TemplateService.changecontent("student");
     $scope.menutitle = NavigationService.makeactive("Students");
     TemplateService.title = $scope.menutitle;
@@ -280,10 +280,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     var lastpage = 1;
 
-    $scope.getSearchById = function (val) {
+    $scope.getSearchById = function(val) {
         $scope.searchById.search = parseInt(val.substr(5));
         if (val.substr(0, 5) == "sfast" || val.substr(0, 5) == "SFAST") {
-            NavigationService.studentSearchById($scope.searchById, function (data) {
+            NavigationService.studentSearchById($scope.searchById, function(data) {
                 if (data) {
                     if (data != "false") {
                         $scope.showNoResults = false;
@@ -307,9 +307,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
     }
 
-    $scope.getSearchByName = function () {
+    $scope.getSearchByName = function() {
         console.log($scope.searchByName);
-        NavigationService.studentSearchByName($scope.searchByName, function (data) {
+        NavigationService.studentSearchByName($scope.searchByName, function(data) {
             if (data) {
                 $scope.pages = {};
                 $scope.pages.beforeCurrent = [];
@@ -369,7 +369,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         })
     }
 
-    $scope.getPaginationResults = function (val) {
+    $scope.getPaginationResults = function(val) {
         if (val == 'next') {
             $scope.searchByName.pageno++;
         } else if (val == 'prev') {
@@ -380,13 +380,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.getSearchByName();
     }
 
-    $scope.goToProfile = function (id) {
+    $scope.goToProfile = function(id) {
         $location.url("/studentprofile/" + id);
     }
 
 })
 
-.controller('SchoolRegistrationCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+.controller('SchoolRegistrationCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
     $scope.template = TemplateService.changecontent("schoolregistration");
     $scope.menutitle = NavigationService.makeactive("School Registration");
     TemplateService.title = $scope.menutitle;
@@ -400,7 +400,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('HandballCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+.controller('HandballCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("handball");
         $scope.menutitle = NavigationService.makeactive("Handball");
         TemplateService.title = $scope.menutitle;
@@ -411,7 +411,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             'title': 'Handball Page'
         });
     })
-    .controller('VolleyballCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    .controller('VolleyballCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("volleyball");
         $scope.menutitle = NavigationService.makeactive("Volleyball");
         TemplateService.title = $scope.menutitle;
@@ -422,7 +422,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
     })
-    .controller('SwimmingCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    .controller('SwimmingCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("swimming");
         $scope.menutitle = NavigationService.makeactive("Swimming");
         TemplateService.title = $scope.menutitle;
@@ -433,7 +433,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
     })
-    .controller('BasketballCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    .controller('BasketballCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("basketball");
         $scope.menutitle = NavigationService.makeactive("basketball");
         TemplateService.title = $scope.menutitle;
@@ -444,7 +444,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             'title': 'Basketball Page'
         });
     })
-    .controller('BadmintonCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    .controller('BadmintonCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("badminton");
         $scope.menutitle = NavigationService.makeactive("badminton");
         TemplateService.title = $scope.menutitle;
@@ -455,7 +455,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
     })
-    .controller('TabletennisCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    .controller('TabletennisCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("tabletennis");
         $scope.menutitle = NavigationService.makeactive("Table Tennis");
         TemplateService.title = $scope.menutitle;
@@ -467,7 +467,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     })
 
-.controller('SquashCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+.controller('SquashCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("squash");
         $scope.menutitle = NavigationService.makeactive("Squash");
         TemplateService.title = $scope.menutitle;
@@ -478,7 +478,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
     })
-    .controller('JudoCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    .controller('JudoCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("judo");
         $scope.menutitle = NavigationService.makeactive("Judo");
         TemplateService.title = $scope.menutitle;
@@ -489,7 +489,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
     })
-    .controller('TennisCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    .controller('TennisCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("tennis");
         $scope.menutitle = NavigationService.makeactive("Tennis");
         TemplateService.title = $scope.menutitle;
@@ -498,14 +498,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             'title': 'Handball Page'
         });
     })
-    .controller('ComingsoonCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    .controller('ComingsoonCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("comingsoon");
         $scope.menutitle = NavigationService.makeactive("Comingsoon");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
     })
-    .controller('TermsconditionCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    .controller('TermsconditionCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("termscondition");
         $scope.menutitle = NavigationService.makeactive("T&C");
         TemplateService.title = $scope.menutitle;
@@ -518,7 +518,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
     })
-    .controller('EnquirenowCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog, $filter) {
+    .controller('EnquirenowCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog, $filter) {
         $scope.template = TemplateService.changecontent("enquirenow");
         $scope.menutitle = NavigationService.makeactive("Enquirenow");
         //        $scope.showForm = false;
@@ -528,7 +528,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         //		$scope.viewform = false;
-        var getsportsnamecallback = function (data, status) {
+        var getsportsnamecallback = function(data, status) {
             $scope.sportsname = partitionarray(data, 4);
         }
         NavigationService.getsportsname(getsportsnamecallback);
@@ -538,7 +538,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.school.sports = [];
         $scope.sportsflag = "";
         $scope.school.establishdate = new Date();
-        var submitschoolregistrationcallback = function (data, status) {
+        var submitschoolregistrationcallback = function(data, status) {
             if (data == 1) {
                 $scope.school = {};
                 ngDialog.open({
@@ -547,7 +547,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 });
             }
         }
-        $scope.submitschoolregistration = function (school) {
+        $scope.submitschoolregistration = function(school) {
             $scope.school = school;
             NavigationService.submitschoolregistration($scope.school, submitschoolregistrationcallback);
         }
@@ -556,7 +556,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //			$scope.viewform = true;
         //		}
 
-        $scope.pushorpop = function (flag) {
+        $scope.pushorpop = function(flag) {
             var index = $scope.school.sports.indexOf(flag);
             if (index == -1) {
                 $scope.school.sports.push(flag);
@@ -570,7 +570,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
     })
-    .controller('ContactCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    .controller('ContactCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("contact");
         $scope.menutitle = NavigationService.makeactive("Contact Us");
         TemplateService.title = $scope.menutitle;
@@ -584,11 +584,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
     })
-    .controller('AboutCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    .controller('AboutCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("about");
         $scope.menutitle = NavigationService.makeactive("About Us");
         TemplateService.title = $scope.menutitle;
-       TemplateService.header = "./views/header2.html";
+        TemplateService.header = "./views/header2.html";
         TemplateService.keywords = "SFA sports, SFA interschool championship, SFA school competitions, SFA tournaments";
         TemplateService.description = "Sports For All (SFA) aims to revolutionize school sports in Mumbai and across India by motivating, guiding and enhancing the playing skills of children and building a sustainable environment for sports.";
         $scope.navigation = NavigationService.getnav();
@@ -598,7 +598,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
     })
-    .controller('LandingCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    .controller('LandingCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("landing");
         $scope.menutitle = NavigationService.makeactive("Landing");
         TemplateService.title = $scope.menutitle;
@@ -609,7 +609,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
     })
-    .controller('FaqsCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    .controller('FaqsCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("faqs");
         $scope.menutitle = NavigationService.makeactive("FAQ");
         TemplateService.title = $scope.menutitle;
@@ -626,12 +626,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             'title': 'Faqs Page'
         });
     })
-    .controller('PartnerCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    .controller('PartnerCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("partner");
         $scope.menutitle = NavigationService.makeactive("Partner");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        var getsponsorscallback = function (data, status) {
+        var getsponsorscallback = function(data, status) {
             $scope.sponsors = data.queryresult;
         }
         NavigationService.getsponsors(getsponsorscallback);
@@ -640,7 +640,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             'title': 'Handball Page'
         });
     })
-    .controller('VenueCtrl', function ($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    .controller('VenueCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         $scope.template = TemplateService.changecontent("venue");
         $scope.menutitle = NavigationService.makeactive("Venue");
         TemplateService.title = $scope.menutitle;
@@ -661,85 +661,85 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             image: "img/venuegal/g1.jpg"
 
 
-    }, {
+        }, {
             image: "img/venuegal/g2.jpg"
 
 
-    }, {
+        }, {
             image: "img/venuegal/g3.jpg"
 
-    }, {
+        }, {
             image: "img/venuegal/g4.jpg"
 
-    }, {
+        }, {
             image: "img/venuegal/g5.jpg"
 
-    }, {
+        }, {
             image: "img/venuegal/g6.jpg"
 
-    }, {
+        }, {
             image: "img/venuegal/g7.jpg"
 
-    }, {
+        }, {
             image: "img/venuegal/g8.jpg"
 
-    }];
+        }];
 
         $scope.slides = _.pluck($scope.venuslide, "image");
 
         $scope.games = // JavaScript Document
-      [{
+            [{
                 "icon": "img/bluemenu/tabletennis.png",
                 "icon2": "img/bluemenu/tabletennisor.png",
                 "url": "tabletennis",
                 "game": "table tennis"
-      }, {
+            }, {
                 "icon": "img/bluemenu/tennis.png",
                 "icon2": "img/bluemenu/tennisor.png",
                 "url": "tennis",
                 "game": "tennis"
-      }, {
+            }, {
                 "icon": "img/bluemenu/batminton.png",
                 "icon2": "img/bluemenu/batmintonor.png",
                 "url": "badminton",
                 "game": "badminton"
-      }, {
+            }, {
                 "icon": "img/bluemenu/squash.png",
                 "icon2": "img/bluemenu/sqaushor.png",
                 "url": "squash",
                 "game": "squash"
-      }, {
+            }, {
                 "icon": "img/bluemenu/aqua.png",
                 "icon2": "img/bluemenu/aquaticsor.png",
                 "url": "swimming",
                 "game": "swimming"
-      }, {
+            }, {
                 "icon": "img/bluemenu/basketball.png",
                 "icon2": "img/bluemenu/basketballor.png",
                 "url": "basketball",
                 "game": "basketball"
-      }, {
+            }, {
                 "icon": "img/bluemenu/vollyball.png",
                 "icon2": "img/bluemenu/volleyballor.png",
                 "url": "volleyball",
                 "game": "volleyball"
-      }, {
+            }, {
                 "icon": "img/bluemenu/handball.png",
                 "icon2": "img/bluemenu/handballor.png",
                 "url": "handball",
                 "game": "Handball"
-      }, {
+            }, {
                 "icon": "img/bluemenu/judo.png",
                 "icon2": "img/bluemenu/judoor.png",
                 "url": "judo",
                 "game": "JUDO"
-      }];
+            }];
 
         $scope.demo = 111;
-        $scope.checkthis = function () {};
+        $scope.checkthis = function() {};
 
-        $scope.makeactive = function (game) {
-            _.each($scope.games, function (n) {
+        $scope.makeactive = function(game) {
+            _.each($scope.games, function(n) {
                 n.active = false;
             });
             game.active = true;
@@ -752,7 +752,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     })
 
-.controller('MediaCtrl', function ($scope, TemplateService, NavigationService) {
+.controller('MediaCtrl', function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("media");
         $scope.menutitle = NavigationService.makeactive("Media");
         TemplateService.title = $scope.menutitle;
@@ -763,34 +763,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             name: "SACHIN SUPPORTS SFA - Hindustan Times"
 
 
-    }, {
+        }, {
             image: "img/print/print2.png",
             name: "Little Sania Makes Her School Proud"
 
 
-    }, {
+        }, {
             image: "img/print/print3.png",
             name: "SFA made me reach the Goal: Amrish Patel"
 
-    }, {
+        }, {
             image: "img/print/print4.png",
             name: "The well Equipped venue ever for inter school.."
 
-    }, {
+        }, {
             image: "img/print/print5.png",
             name: "Felt Like I was Playing on international Venue"
 
-    }, {
+        }, {
             image: "img/print/print6.png",
             name: "The game that Made a World Record"
 
-    }];
+        }];
         ga('send', 'pageview', {
             'title': 'Media Page'
         });
 
     })
-    .controller('DrawCtrl', function ($scope, TemplateService, NavigationService) {
+    .controller('DrawCtrl', function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("draw");
         $scope.menutitle = NavigationService.makeactive("Draw");
         TemplateService.title = $scope.menutitle;
@@ -805,43 +805,43 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.schedule = {};
         $scope.match = [];
 
-        NavigationService.isStudentSports(function (data) {
+        NavigationService.isStudentSports(function(data) {
             $scope.sports = data;
         });
 
-        $scope.sportChange = function () {
+        $scope.sportChange = function() {
             console.log($scope.filter.sportid.split(','));
             $scope.sportselected = $scope.filter.sportid.split(',')[1];
             $scope.filter.sport = $scope.filter.sportid.split(',')[0];
 
-            NavigationService.getSportsCategory("", $scope.filter.sport, "", function (data) {
+            NavigationService.getSportsCategory("", $scope.filter.sport, "", function(data) {
                 $scope.category = data;
             })
             $scope.categoryChange();
         }
 
-        $scope.categoryChange = function () {
-            NavigationService.scheduleAgeGroup($scope.filter.category, $scope.filter.sport, $scope.filter.gender, function (data) {
+        $scope.categoryChange = function() {
+            NavigationService.scheduleAgeGroup($scope.filter.category, $scope.filter.sport, $scope.filter.gender, function(data) {
                 $scope.agegroup = data;
             })
         }
 
-        $scope.genderChange = function () {
+        $scope.genderChange = function() {
             $scope.categoryChange();
         }
 
         $scope.round = [];
         $scope.rounds = [];
 
-        $scope.getDraw = function () {
-            NavigationService.getDraw($scope.filter, function (data) {
+        $scope.getDraw = function() {
+            NavigationService.getDraw($scope.filter, function(data) {
                 console.log(data);
                 $scope.match = data;
-                _.each(data, function (n, key) {
+                _.each(data, function(n, key) {
                     if (key != 0) {
-                        _.each(n.match, function (m, key1) {
+                        _.each(n.match, function(m, key1) {
                             $scope.round = [];
-                            _.each(m.player, function (k, key2) {
+                            _.each(m.player, function(k, key2) {
                                 $scope.round.push(k);
                             })
                             $scope.rounds.push($scope.round);
@@ -853,191 +853,191 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
 
         $scope.r1 = // JavaScript Document
-      [{
+            [{
                 "studentname": "Viraj Kale",
                 "schoolname": "Dhirubhai Ambani International School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Viraj Kale",
                 "schoolname": "Dhirubhai Ambani International School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Viraj Kale",
                 "schoolname": "Dhirubhai Ambani International School"
 
 
-      }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
-
-
-      }, {
-                "studentname": "Viraj Kale",
-                "schoolname": "Dhirubhai Ambani International School"
-
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
 
-      }, {
+            }, {
                 "studentname": "Viraj Kale",
                 "schoolname": "Dhirubhai Ambani International School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
 
-      }];
+            }, {
+                "studentname": "Viraj Kale",
+                "schoolname": "Dhirubhai Ambani International School"
+
+            }, {
+                "studentname": "Rizwan Mirza",
+                "schoolname": "Bombay British School"
+
+
+            }];
 
         $scope.r1 = _.chunk($scope.r1, 2);
 
         $scope.r2 = // JavaScript Document
-      [{
+            [{
                 "studentname": "Viraj Kale",
                 "schoolname": "Dhirubhai Ambani International School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Viraj Kale",
                 "schoolname": "Dhirubhai Ambani International School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }];
+            }];
 
         $scope.r3 = // JavaScript Document
-      [{
+            [{
                 "studentname": "Viraj Kale",
                 "schoolname": "Dhirubhai Ambani International School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }, {
+            }, {
                 "studentname": "Rizwan Mirza",
                 "schoolname": "Bombay British School"
 
-      }];
+            }];
         $scope.r4 = // JavaScript Document
-      [{
+            [{
                 "studentname": "Viraj Kale",
                 "schoolname": "Dhirubhai Ambani International School"
 
-      }, {
+            }, {
                 "studentname": "Viraj Kale",
                 "schoolname": "Dhirubhai Ambani International School"
 
-      }, {
+            }, {
                 "studentname": "Viraj Kale",
                 "schoolname": "Dhirubhai Ambani International School"
 
-      }, {
+            }, {
                 "studentname": "Viraj Kale",
                 "schoolname": "Dhirubhai Ambani International School"
 
-      }];
+            }];
         $scope.r5 = // JavaScript Document
-      [{
+            [{
                 "studentname": "Viraj Kale",
                 "schoolname": "Dhirubhai Ambani International School"
 
-      }, {
+            }, {
                 "studentname": "Viraj Kale",
                 "schoolname": "Dhirubhai Ambani International School"
 
-      }];
+            }];
         $scope.r6 = // JavaScript Document
-      [{
+            [{
                 "studentname": "Viraj Kale",
                 "schoolname": "Dhirubhai Ambani International School"
 
-      }];
+            }];
     })
-    .controller('StudentprofileCtrl', function ($scope, TemplateService, NavigationService, ngDialog, $stateParams, $filter, $state) {
+    .controller('StudentprofileCtrl', function($scope, TemplateService, NavigationService, ngDialog, $stateParams, $filter, $state) {
         $scope.template = TemplateService.changecontent("studentprofile");
         $scope.menutitle = NavigationService.makeactive("Student Profile");
         TemplateService.title = $scope.menutitle;
@@ -1052,20 +1052,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.years = [];
         $scope.gallery = [{
             image: "img/schoolgallery/g1.jpg"
-    }, {
+        }, {
             image: "img/schoolgallery/g2.jpg"
-    }, {
+        }, {
             image: "img/schoolgallery/g3.jpg"
-    }, {
+        }, {
             image: "img/schoolgallery/g4.jpg"
-    }, {
+        }, {
             image: "img/schoolgallery/g5.jpg"
-    }, {
+        }, {
             image: "img/schoolgallery/g6.jpg"
-    }];
+        }];
+
         $scope.zoomposition = 0;
 
-        $scope.openModal = function (gal) {
+        $scope.openModal = function(gal) {
 
             $scope.zoomposition = $scope.gallery.indexOf(gal);
 
@@ -1077,10 +1078,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         };
 
-        $scope.makeactive = function (game) {
+        $scope.makeactive = function(game) {
 
             if (!game.grey) {
-                _.each($scope.games, function (n) {
+                _.each($scope.games, function(n) {
                     n.active = false;
                 });
                 game.active = true;
@@ -1091,17 +1092,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.sportsId = game.id;
                 $scope.pagenum = 1;
                 $scope.loadStudents();
+                $scope.gallobj.pagenum = 1;
+                $scope.loadStudentsGallery();
+                $scope.loadStudentStats();
             }
 
         };
 
-        $scope.yearClicked = function(year){
-          console.log($scope.years);
+        $scope.yearClicked = function(year) {
+            // console.log($scope.years);
+            var foundindex = _.indexOf($scope.gallobj.year, year);
+            if (foundindex == -1) {
+                $scope.gallobj.year.push(year);
+            } else {
+                $scope.gallobj.year.splice(foundindex, 1);
+            }
+            $scope.loadStudentsGallery();
         }
 
-        NavigationService.getstudentprofile($stateParams.id, function (data) {
-            _.each(data.sportsparticipated, function (n, key1) {
-                _.each($scope.games, function (m, key2) {
+        NavigationService.getstudentprofile($stateParams.id, function(data) {
+            _.each(data.sportsparticipated, function(n, key1) {
+                _.each($scope.games, function(m, key2) {
                     if ($filter('lowercase')(n.name) == $filter('lowercase')(m.game)) {
                         m.grey = false;
                         m.id = n.id;
@@ -1124,7 +1135,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
             });
             $scope.student = data;
-            _.each(data.sportsparticipated, function (n, key) {
+            _.each(data.sportsparticipated, function(n, key) {
                 console.log(n);
                 if (key == 0) {
                     $scope.sportsnames = n.name;
@@ -1133,7 +1144,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
 
             });
-            _.each(data.sportname, function (n, key) {
+            _.each(data.sportname, function(n, key) {
                 //lodash
                 //console.log(n);
                 //console.log(n.name + ', ' + key);
@@ -1142,30 +1153,69 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             });
         });
 
-        $scope.loadStudents = function () {
-            NavigationService.getschoolgallery($stateParams.id, $scope.sportsId, $scope.pagenum, function (data) {
+        $scope.loadStudents = function() {
+            // NavigationService.getschoolgallery($stateParams.id, $scope.sportsId, $scope.pagenum, function(data) {
+            //
+            //     if (data.queryresult != '') {
+            //         _.each(data.queryresult, function(n) {
+            //             $scope.allresult.push(n);
+            //         });
+            //     } else {
+            //         $scope.showLoadmore = false;
+            //     }
+            //     if ($scope.allresult == "") {
+            //         $scope.msg = "No data";
+            //     }
+            //
+            // });
+        }
 
-                if (data.queryresult != '') {
-                    _.each(data.queryresult, function (n) {
-                        $scope.allresult.push(n);
-                    });
-                } else {
-                    $scope.showLoadmore = false;
-                }
-                if ($scope.allresult == "") {
+        $scope.gallobj = {};
+        $scope.gallobj.year = [];
+        $scope.gallobj.schoolid = '';
+        $scope.gallobj.studentid = $stateParams.id;
+        $scope.gallobj.sportid = '';
+        $scope.gallobj.sportscategory = $scope.sportsId;
+        $scope.gallobj.agegroup = [];
+        $scope.loadStudentsGallery = function() {
+            $scope.gallobj.studentid = $stateParams.id;
+            $scope.gallobj.sportscategory = $scope.sportsId;
+            NavigationService.getschoolgallerynew($scope.gallobj, function(data) {
+                if (data.length > 0)
+                    $scope.allresult = _.chunk(data, 3);
+                else {
+                    $scope.allresult = [];
                     $scope.msg = "No data";
                 }
-
+                console.log($scope.allresult);
             });
         }
 
 
-        $scope.loadMore = function () {
+        $scope.loadStudentStats = function() {
+            $scope.statobj = {};
+            $scope.statobj.schoolid = '';
+            $scope.statobj.studentid = $stateParams.id;
+            $scope.statobj.sportscategory = $scope.sportsId;
+            NavigationService.getStats($scope.statobj, function(data) {
+                console.log(data);
+                $scope.studentStats = data;
+                // if (data.length > 0)
+                //     $scope.allresult = _.chunk(data, 3);
+                // else {
+                //     $scope.allresult = [];
+                //     $scope.msg = "No data";
+                // }
+                // console.log($scope.allresult);
+            });
+        }
+
+        $scope.loadMore = function() {
             $scope.pagenum = $scope.pagenum + 1;
             $scope.loadStudents();
         }
 
-        $scope.nextImage = function (oldposition) {
+        $scope.nextImage = function(oldposition) {
             if (oldposition == ($scope.gallery.length - 1)) {
                 $scope.zoomposition = 0;
             } else {
@@ -1173,7 +1223,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
         };
 
-        $scope.previousImage = function (oldposition) {
+        $scope.previousImage = function(oldposition) {
             if (oldposition == 0) {
                 $scope.zoomposition = ($scope.gallery.length - 1);
             } else {
@@ -1187,7 +1237,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.class = 'act';
         $scope.classb = '';
 
-        $scope.tabchange1 = function (tab, a) {
+        $scope.tabchange1 = function(tab, a) {
             $scope.tab1 = tab;
             if (a == 1) {
                 $scope.class = "act";
@@ -1207,7 +1257,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.active = 'active';
         $scope.actives = '';
 
-        $scope.tabchange = function (tab, a) {
+        $scope.tabchange = function(tab, a) {
             $scope.tab2 = tab;
             if (a == 1) {
                 $scope.active = "active";
@@ -1227,59 +1277,59 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.image = "https://www.google.com/images/srpr/logo11w.png";
 
-        $scope.openBox = function (id) {
+        $scope.openBox = function(id) {
             $(id).attr('openbox', 'show');
         }
 
-        $scope.add = function (term) {
+        $scope.add = function(term) {
             $scope.list.push(term);
         }
         $scope.games = // JavaScript Document
-      [{
+            [{
                 "icon": "img/bluemenu/tabletennis.png",
                 "icon2": "img/bluemenu/tabletennisor.png",
                 "game": "table tennis"
-      }, {
+            }, {
                 "icon": "img/bluemenu/tennis.png",
                 "icon2": "img/bluemenu/tennisor.png",
                 "game": "tennis",
                 "grey": true
-      }, {
+            }, {
                 "icon": "img/bluemenu/batminton.png",
                 "icon2": "img/bluemenu/batmintonor.png",
                 "game": "badminton"
-      }, {
+            }, {
                 "icon": "img/bluemenu/squash.png",
                 "icon2": "img/bluemenu/sqaushor.png",
                 "game": "squash"
-      }, {
+            }, {
                 "icon": "img/bluemenu/aqua.png",
                 "icon2": "img/bluemenu/aquaticsor.png",
                 "game": "swimming",
                 "grey": true
-      }, {
+            }, {
                 "icon": "img/bluemenu/basketball.png",
                 "icon2": "img/bluemenu/basketballor.png",
                 "game": "basketball",
-      }, {
+            }, {
                 "icon": "img/bluemenu/vollyball.png",
                 "icon2": "img/bluemenu/volleyballor.png",
                 "game": "volleyball",
                 "grey": true
-      }, {
+            }, {
                 "icon": "img/bluemenu/handball.png",
                 "icon2": "img/bluemenu/handballor.png",
                 "game": "handball",
                 "grey": true
-      }, {
+            }, {
                 "icon": "img/bluemenu/judo.png",
                 "icon2": "img/bluemenu/judoor.png",
                 "game": "judo",
                 "grey": true
-      }];
+            }];
 
         $scope.demo = 111;
-        $scope.checkthis = function () {};
+        $scope.checkthis = function() {};
 
         //		$scope.makeactive($scope.games[0]);
         ga('send', 'pageview', {
@@ -1287,364 +1337,430 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
     })
-    .controller('SchoolprofileCtrl', function ($scope, TemplateService, NavigationService, ngDialog, $stateParams, $timeout, $filter) {
-        $scope.template = TemplateService.changecontent("schoolprofile");
-        $scope.menutitle = NavigationService.makeactive("Schoolprofile");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
-        $scope.checkmenu = false;
-        $scope.sportsId = 0;
-        $scope.pagenum = 1;
-        $scope.result = [];
-        $scope.allresult = [];
-        $scope.showLoadmore = true;
-        $scope.msg = "Loading";
-        $scope.category = "";
-        $scope.ageSelected = "";
-        $scope.checkstart = true;
-        $scope.getage = function () {
 
+.controller('SchoolprofileCtrl', function($scope, TemplateService, NavigationService, ngDialog, $stateParams, $timeout, $filter) {
+    $scope.template = TemplateService.changecontent("schoolprofile");
+    $scope.menutitle = NavigationService.makeactive("Schoolprofile");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.checkmenu = false;
+    $scope.sportsId = 0;
+    $scope.pagenum = 1;
+    $scope.result = [];
+    $scope.allresult = [];
+    $scope.showLoadmore = true;
+    $scope.msg = "Loading";
+    $scope.category = "";
+    $scope.ageSelected = "";
+    $scope.checkstart = true;
+    $scope.getage = function() {
+
+    }
+    $scope.getage();
+    $scope.makeactive = function(state, game) {
+      console.log(game);
+        if (state == 0) {
+            $scope.checkstart = true;
+        } else {
+            $scope.checkstart = false;
         }
-        $scope.getage();
-        $scope.makeactive = function (state, game) {
 
+        if (!game.grey) {
+            _.each($scope.games, function(n) {
+                n.active = false;
+            });
             if (state == 0) {
-                $scope.checkstart = true;
-            } else {
-                $scope.checkstart = false;
+                game.active = true;
             }
 
-            if (!game.grey) {
-                _.each($scope.games, function (n) {
-                    n.active = false;
-                });
-                if (state == 0) {
-                    game.active = true;
-                }
+            $scope.result = [];
+            $scope.allresult = [];
+            //					$scope.selectedGame = game;
 
-                $scope.result = [];
-                $scope.allresult = [];
-                //					$scope.selectedGame = game;
-
-                $scope.sportsId = game.id;
-                $scope.pagenum = 1;
-                if ($scope.tab2 == "squad") {
-                    $scope.loadSportStudent();
-                } else if ($scope.tab2 == "gallerymain") {
-                    $scope.loadGallery();
-                }
-                $scope.tab = game.game;
+            $scope.sportsId = game.id;
+            console.log("Game Id = " + game.id);
+            $scope.pagenum = 1;
+            if ($scope.tab2 == "squad") {
+                $scope.loadSportStudent();
+            } else if ($scope.tab2 == "gallerymain") {
+                $scope.loadGallery();
             }
-        };
-        NavigationService.getAllSports(function (data) {});
-        $scope.school = {};
-        var check = 0;
+            $scope.tab = game.game;
+            $scope.loadSchoolGallery();
+            $scope.loadSchoolStats();
+        }
+    };
+    NavigationService.getAllSports(function(data) {});
+    $scope.school = {};
+    var check = 0;
 
-        $scope.loadMore = function () {
-            $scope.pagenum = $scope.pagenum + 1;
-            $scope.loadSportStudent();
+    $scope.loadMore = function() {
+        $scope.pagenum = $scope.pagenum + 1;
+        $scope.loadSportStudent();
+    }
+    $scope.loadMoreGallery = function() {
+        $scope.pagenum = $scope.pagenum + 1;
+        $scope.loadGallery();
+    }
+    $timeout(function() {
+        if ($scope.result == "") {
+            $scope.msg = "No data";
         }
-        $scope.loadMoreGallery = function () {
-            $scope.pagenum = $scope.pagenum + 1;
-            $scope.loadGallery();
+    }, 4000);
+
+    $scope.yearClicked = function(year) {
+        // console.log($scope.years);
+        var foundindex = _.indexOf($scope.gallobj.year, year);
+        if (foundindex == -1) {
+            $scope.gallobj.year.push(year);
+        } else {
+            $scope.gallobj.year.splice(foundindex, 1);
         }
-        $timeout(function () {
-            if ($scope.result == "") {
+        $scope.loadSchoolGallery();
+    }
+
+    $scope.ageClicked = function(age) {
+        console.log($scope.agegroups);
+        var foundindex = _.indexOf($scope.gallobj.agegroup, age);
+        if (foundindex == -1) {
+            $scope.gallobj.agegroup.push(age);
+        } else {
+            $scope.gallobj.agegroup.splice(foundindex, 1);
+        }
+        $scope.loadSchoolGallery();
+    }
+
+    $scope.gallobj = {};
+    $scope.gallobj.year = [];
+    $scope.gallobj.pagenum = 1;
+    $scope.gallobj.schoolid = $stateParams.id;
+    $scope.gallobj.studentid = '';
+    $scope.gallobj.sportid = '';
+    $scope.gallobj.sportscategory = $scope.sportsId;
+    $scope.gallobj.agegroup = [];
+    $scope.loadSchoolGallery = function() {
+        $scope.gallobj.schoolid = $stateParams.id;
+        $scope.gallobj.sportscategory = $scope.sportsId;
+        NavigationService.getschoolgallerynew($scope.gallobj, function(data) {
+            if (data.length > 0)
+                $scope.schoolgallery = _.chunk(data, 3);
+            else {
+                $scope.schoolgallery = [];
                 $scope.msg = "No data";
             }
-        }, 4000);
-
-        // Get school detail
-        $scope.loadStudents = function () {
-
-            NavigationService.getsport($stateParams.id, $scope.sportsId, $scope.ageSelected, $scope.category, function (data) {
-                console.log(data);
-                if (data != '') {
-                    $scope.allresult = data;
-                    $scope.msg = "";
-                    $scope.result = _.chunk($scope.allresult, parseInt($scope.allresult.length / 2));
-                    if ($scope.result[2]) {
-                        $scope.result[0].push($scope.result[2][0]);
-                    }
-                    console.log($scope.result);
-                }
-                if ($scope.allresult == "") {
-                    $scope.msg = "No data";
-                }
-            });
-        }
-
-        $scope.loadCategory = function () {
-            NavigationService.getSportsCategory($stateParams.id, $scope.sportsId, $scope.ageSelected, function (data, status) {
-                $scope.sportsCategory = data;
-                if ($scope.category = "") {
-                    $scope.category = "";
-                }
-                $scope.loadStudents();
-            });
-        }
-
-        $scope.loadSportStudent = function () {
-            console.log("in load sportstudent");
-            NavigationService.getAgeGroup($stateParams.id, $scope.sportsId, function (data, status) {
-                $scope.agegroups = data;
-                if ($scope.ageSelected == "") {
-                    $scope.ageSelected = "";
-                }
-                $scope.loadCategory();
-            });
-        }
-
-        $scope.loadGallery = function () {
-            NavigationService.getgalleryimage($stateParams.id, $scope.sportsId, $scope.pagenum, function (data) {
-                if (data.queryresult != '') {
-                    _.each(data.queryresult, function (n) {
-                        $scope.allresult.push(n);
-                    });
-                } else {
-                    $scope.showLoadmore = false;
-                }
-                if ($scope.allresult == "") {
-                    $scope.msg = "No data";
-                }
-            });
-        }
-
-        NavigationService.getschoolprofile($stateParams.id, function (data) {
-
-            if (data.sportname != '') {
-                _.each(data.sportname, function (n, key1) {
-                    _.each($scope.games, function (m, key2) {
-                        if ($filter('lowercase')(n.name) == $filter('lowercase')(m.game) || m.game == "all") {
-                            m.grey = false;
-                            m.id = n.id;
-                            if (!$scope.tab) {
-                                $scope.makeactive(1, m);
-                            }
-                        } else {
-                            if (m.grey != false) {
-                                m.grey = true;
-                            }
-                        }
-                    });
-                    if (key1 == data.sportname.length - 1) {
-                        $scope.checkmenu = true;
-                        demo = 1;
-                        //                    $scope.loadStudents();
-                    }
-
-
-                });
-            } else {
-                $scope.checkmenu = true;
-            }
-            $scope.school = data;
-
-
-            $scope.sportid = [];
-            _.each(data.sportname, function (n, key) {
-                $scope.sportid.push(n.id);
-            });
-            console.log($scope.sportid);
-            //            NavigationService.filterGames($scope.sportid, function (data) {
-            //                $scope.schoolSports = data;
-            //            });
-
+            console.log($scope.schoolgallery);
         });
-        $scope.loadSportsCategory = function () {
+    }
 
-        }
+    $scope.loadSchoolStats = function() {
+        $scope.statobj = {};
+        $scope.statobj.studentid = '';
+        $scope.statobj.schoolid = $stateParams.id;
+        $scope.statobj.sportscategory = $scope.sportsId;
+        NavigationService.getStats($scope.statobj, function(data) {
+            console.log(data);
+            $scope.schoolStats = data;
+            // if (data.length > 0)
+            //     $scope.allresult = _.chunk(data, 3);
+            // else {
+            //     $scope.allresult = [];
+            //     $scope.msg = "No data";
+            // }
+            // console.log($scope.allresult);
+        });
+    }
 
-        $scope.games = // JavaScript Document
-      [{
-                "icon": "img/bluemenu/tabletennis.png",
-                "icon2": "img/bluemenu/tabletennisor.png",
-                "game": "table tennis",
-                "grey": true
-      }, {
-                "icon": "img/bluemenu/tennis.png",
-                "icon2": "img/bluemenu/tennisor.png",
-                "game": "tennis",
-                "grey": true
-      }, {
-                "icon": "img/bluemenu/batminton.png",
-                "icon2": "img/bluemenu/batmintonor.png",
-                "game": "badminton",
-                "grey": true
-      }, {
-                "icon": "img/bluemenu/squash.png",
-                "icon2": "img/bluemenu/sqaushor.png",
-                "game": "squash",
-                "grey": true
-      }, {
-                "icon": "img/bluemenu/aqua.png",
-                "icon2": "img/bluemenu/aquaticsor.png",
-                "game": "swimming",
-                "grey": true
-      }, {
-                "icon": "img/bluemenu/basketball.png",
-                "icon2": "img/bluemenu/basketballor.png",
-                "game": "basketball",
-                "grey": true
-      }, {
-                "icon": "img/bluemenu/vollyball.png",
-                "icon2": "img/bluemenu/volleyballor.png",
-                "game": "volleyball",
-                "grey": true
-      }, {
-                "icon": "img/bluemenu/handball.png",
-                "icon2": "img/bluemenu/handballor.png",
-                "game": "handball",
-                "grey": true
-      }, {
-                "icon": "img/bluemenu/judo.png",
-                "icon2": "img/bluemenu/judoor.png",
-                "game": "judo",
-                "grey": true
-      }];
+    // Get school detail
+    $scope.loadStudents = function() {
 
-        $scope.zoomposition = 0;
-
-        $scope.openModal = function (gal) {
-
-            $scope.zoomposition = $scope.gallery.indexOf(gal);
-
-            ngDialog.open({
-                template: './views/directive/zoomimage.html',
-                scope: $scope
-            });
-        };
-
-        $scope.nextImage = function (oldposition) {
-            if (oldposition == ($scope.gallery.length - 1)) {
-                $scope.zoomposition = 0;
-            } else {
-                $scope.zoomposition++;
+        NavigationService.getsport($stateParams.id, $scope.sportsId, $scope.ageSelected, $scope.category, function(data) {
+            console.log(data);
+            if (data != '') {
+                $scope.allresult = data;
+                $scope.msg = "";
+                $scope.result = _.chunk($scope.allresult, parseInt($scope.allresult.length / 2));
+                if ($scope.result[2]) {
+                    $scope.result[0].push($scope.result[2][0]);
+                }
+                console.log($scope.result);
             }
-        };
-
-        $scope.previousImage = function (oldposition) {
-            if (oldposition == 0) {
-                $scope.zoomposition = ($scope.gallery.length - 1);
-            } else {
-                $scope.zoomposition--;
+            if ($scope.allresult == "") {
+                $scope.msg = "No data";
             }
-        };
+        });
+    }
 
-
-        $scope.tab1 = "gallery";
-        //    tab change
-        $scope.class = 'act';
-        $scope.classb = '';
-
-        $scope.tabchange1 = function (tab, a) {
-            //        console.log(tab);
-            $scope.tab1 = tab;
-            if (a == 1) {
-                $scope.class = "act";
-                $scope.classb = '';
-
-            } else if (a == 2) {
-                $scope.class = '';
-                $scope.classb = "act";
-
+    $scope.loadCategory = function() {
+        NavigationService.getSportsCategory($stateParams.id, $scope.sportsId, $scope.ageSelected, function(data, status) {
+            $scope.sportsCategory = data;
+            if ($scope.category = "") {
+                $scope.category = "";
             }
-        };
-
-        //    end
-        $scope.tab2 = "squad";
-        //    tab change
-        $scope.active = 'active';
-        $scope.actives = '';
-        $scope.activess = '';
-
-        $scope.tabchange = function (tab, a) {
-            $scope.result = [];
-            $scope.allresult = [];
-            $scope.tab2 = tab;
-            if (a == 1) {
-                $scope.active = "active";
-                $scope.actives = '';
-                $scope.activess = '';
-                $scope.allresult = [];
-                $scope.pagenum = 0;
-                $scope.loadMore();
-
-            } else if (a == 2) {
-                $scope.active = '';
-                $scope.actives = "active";
-                $scope.activess = '';
-                $scope.allresult = [];
-                $scope.pagenum = 0;
-                $scope.loadMoreGallery();
-
-            } else {
-                $scope.active = '';
-                $scope.actives = '';
-                $scope.activess = "active";
-
-            }
-        };
-
-        //    end
-
-        //under tab
-
-        $scope.tab3 = "under11";
-
-
-        $scope.line = 'col-class';
-        $scope.line1 = '';
-        $scope.line2 = '';
-
-        $scope.tabchanges = function (age) {
-            $scope.result = [];
-            $scope.allresult = [];
-
-            $scope.ageSelected = age;
-            $scope.result = [];
-            $scope.pagenum = 1;
-            $scope.loadCategory();
-        };
-
-        $scope.categorychanges = function (category) {
-            $scope.result = [];
-            $scope.allresult = [];
-            $scope.category = category;
-            $scope.result = [];
-            $scope.pagenum = 1;
             $scope.loadStudents();
-        };
-
-        //    end
-
-        $scope.foo = "World";
-        $scope.list = [];
-
-        $scope.image = "https://www.google.com/images/srpr/logo11w.png";
-
-        $scope.openBox = function (id) {
-            $(id).attr('openbox', 'show');
-        }
-
-        $scope.add = function (term) {
-            $scope.list.push(term);
-        }
-
-
-        $scope.demo = 111;
-        $scope.checkthis = function () {};
-
-        //		$scope.makeactive($scope.games[0]);
-        ga('send', 'pageview', {
-            'title': 'SchoolProfile Page'
         });
+    }
 
-    })
+    $scope.loadSportStudent = function() {
+        console.log("in load sportstudent");
+        NavigationService.getAgeGroup($stateParams.id, $scope.sportsId, function(data, status) {
+            $scope.agegroups = data;
+            if ($scope.ageSelected == "") {
+                $scope.ageSelected = "";
+            }
+            $scope.loadCategory();
+        });
+    }
 
-.controller('SportsCtrl', function ($scope, TemplateService, NavigationService, $location) {
+    $scope.loadGallery = function() {
+        // NavigationService.getgalleryimage($stateParams.id, $scope.sportsId, $scope.pagenum, function(data) {
+        //     if (data.queryresult != '') {
+        //         _.each(data.queryresult, function(n) {
+        //             $scope.allresult.push(n);
+        //         });
+        //     } else {
+        //         $scope.showLoadmore = false;
+        //     }
+        //     if ($scope.allresult == "") {
+        //         $scope.msg = "No data";
+        //     }
+        // });
+    }
 
-    $scope.goto = function (data) {
+    NavigationService.getschoolprofile($stateParams.id, function(data) {
+
+        if (data.sportname != '') {
+            _.each(data.sportname, function(n, key1) {
+                _.each($scope.games, function(m, key2) {
+                    if ($filter('lowercase')(n.name) == $filter('lowercase')(m.game) || m.game == "all") {
+                        m.grey = false;
+                        m.id = n.id;
+                        if (!$scope.tab) {
+                            $scope.makeactive(1, m);
+                        }
+                    } else {
+                        if (m.grey != false) {
+                            m.grey = true;
+                        }
+                    }
+                });
+                if (key1 == data.sportname.length - 1) {
+                    $scope.checkmenu = true;
+                    demo = 1;
+                    //                    $scope.loadStudents();
+                }
+
+
+            });
+        } else {
+            $scope.checkmenu = true;
+        }
+        $scope.school = data;
+
+
+        $scope.sportid = [];
+        _.each(data.sportname, function(n, key) {
+            $scope.sportid.push(n.id);
+        });
+        console.log($scope.sportid);
+        //            NavigationService.filterGames($scope.sportid, function (data) {
+        //                $scope.schoolSports = data;
+        //            });
+
+    });
+    $scope.loadSportsCategory = function() {
+
+    }
+
+    $scope.games = // JavaScript Document
+        [{
+            "icon": "img/bluemenu/tabletennis.png",
+            "icon2": "img/bluemenu/tabletennisor.png",
+            "game": "table tennis",
+            "grey": true
+        }, {
+            "icon": "img/bluemenu/tennis.png",
+            "icon2": "img/bluemenu/tennisor.png",
+            "game": "tennis",
+            "grey": true
+        }, {
+            "icon": "img/bluemenu/batminton.png",
+            "icon2": "img/bluemenu/batmintonor.png",
+            "game": "badminton",
+            "grey": true
+        }, {
+            "icon": "img/bluemenu/squash.png",
+            "icon2": "img/bluemenu/sqaushor.png",
+            "game": "squash",
+            "grey": true
+        }, {
+            "icon": "img/bluemenu/aqua.png",
+            "icon2": "img/bluemenu/aquaticsor.png",
+            "game": "swimming",
+            "grey": true
+        }, {
+            "icon": "img/bluemenu/basketball.png",
+            "icon2": "img/bluemenu/basketballor.png",
+            "game": "basketball",
+            "grey": true
+        }, {
+            "icon": "img/bluemenu/vollyball.png",
+            "icon2": "img/bluemenu/volleyballor.png",
+            "game": "volleyball",
+            "grey": true
+        }, {
+            "icon": "img/bluemenu/handball.png",
+            "icon2": "img/bluemenu/handballor.png",
+            "game": "handball",
+            "grey": true
+        }, {
+            "icon": "img/bluemenu/judo.png",
+            "icon2": "img/bluemenu/judoor.png",
+            "game": "judo",
+            "grey": true
+        }];
+
+    $scope.zoomposition = 0;
+
+    $scope.openModal = function(gal) {
+
+        $scope.zoomposition = $scope.gallery.indexOf(gal);
+
+        ngDialog.open({
+            template: './views/directive/zoomimage.html',
+            scope: $scope
+        });
+    };
+
+    $scope.nextImage = function(oldposition) {
+        if (oldposition == ($scope.gallery.length - 1)) {
+            $scope.zoomposition = 0;
+        } else {
+            $scope.zoomposition++;
+        }
+    };
+
+    $scope.previousImage = function(oldposition) {
+        if (oldposition == 0) {
+            $scope.zoomposition = ($scope.gallery.length - 1);
+        } else {
+            $scope.zoomposition--;
+        }
+    };
+
+
+    $scope.tab1 = "gallery";
+    //    tab change
+    $scope.class = 'act';
+    $scope.classb = '';
+
+    $scope.tabchange1 = function(tab, a) {
+        //        console.log(tab);
+        $scope.tab1 = tab;
+        if (a == 1) {
+            $scope.class = "act";
+            $scope.classb = '';
+
+        } else if (a == 2) {
+            $scope.class = '';
+            $scope.classb = "act";
+
+        }
+    };
+
+    //    end
+    $scope.tab2 = "squad";
+    //    tab change
+    $scope.active = 'active';
+    $scope.actives = '';
+    $scope.activess = '';
+
+    $scope.tabchange = function(tab, a) {
+        $scope.result = [];
+        $scope.allresult = [];
+        $scope.tab2 = tab;
+        if (a == 1) {
+            $scope.active = "active";
+            $scope.actives = '';
+            $scope.activess = '';
+            $scope.allresult = [];
+            $scope.pagenum = 0;
+            $scope.loadMore();
+
+        } else if (a == 2) {
+            $scope.active = '';
+            $scope.actives = "active";
+            $scope.activess = '';
+            $scope.allresult = [];
+            $scope.pagenum = 0;
+            $scope.loadMoreGallery();
+
+        } else {
+            $scope.active = '';
+            $scope.actives = '';
+            $scope.activess = "active";
+
+        }
+    };
+
+    //    end
+
+    //under tab
+
+    $scope.tab3 = "under11";
+
+
+    $scope.line = 'col-class';
+    $scope.line1 = '';
+    $scope.line2 = '';
+
+    $scope.tabchanges = function(age) {
+        $scope.result = [];
+        $scope.allresult = [];
+
+        $scope.ageSelected = age;
+        $scope.result = [];
+        $scope.pagenum = 1;
+        $scope.loadCategory();
+    };
+
+    $scope.categorychanges = function(category) {
+        $scope.result = [];
+        $scope.allresult = [];
+        $scope.category = category;
+        $scope.result = [];
+        $scope.pagenum = 1;
+        $scope.loadStudents();
+    };
+
+    //    end
+
+    $scope.foo = "World";
+    $scope.list = [];
+
+    $scope.image = "https://www.google.com/images/srpr/logo11w.png";
+
+    $scope.openBox = function(id) {
+        $(id).attr('openbox', 'show');
+    }
+
+    $scope.add = function(term) {
+        $scope.list.push(term);
+    }
+
+
+    $scope.demo = 111;
+    $scope.checkthis = function() {};
+
+    //		$scope.makeactive($scope.games[0]);
+    ga('send', 'pageview', {
+        'title': 'SchoolProfile Page'
+    });
+
+})
+
+.controller('SportsCtrl', function($scope, TemplateService, NavigationService, $location) {
+
+    $scope.goto = function(data) {
         $location.path(data);
     };
 
@@ -1656,62 +1772,62 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
 
     $scope.games = // JavaScript Document
-    [
-      //        {
-      //        "icon": "img/bluemenu/overall.png",
-      //        "icon2": "img/bluemenu/overallor.png",
-      //        "game": "overall"
-      //        },
+        [
+            //        {
+            //        "icon": "img/bluemenu/overall.png",
+            //        "icon2": "img/bluemenu/overallor.png",
+            //        "game": "overall"
+            //        },
             {
                 "icon": "img/bluemenu/tabletennis.png",
                 "icon2": "img/bluemenu/tabletennisor.png",
                 "game": "table tennis",
                 "url": "tabletennis"
-      }, {
+            }, {
                 "icon": "img/bluemenu/tennis.png",
                 "icon2": "img/bluemenu/tennisor.png",
                 "url": "tennis",
                 "game": "tennis"
-      }, {
+            }, {
                 "icon": "img/bluemenu/batminton.png",
                 "icon2": "img/bluemenu/batmintonor.png",
                 "url": "badminton",
                 "game": "badminton"
-      }, {
+            }, {
                 "icon": "img/bluemenu/squash.png",
                 "icon2": "img/bluemenu/sqaushor.png",
                 "url": "squash",
                 "game": "squash"
-      }, {
+            }, {
                 "icon": "img/bluemenu/aqua.png",
                 "icon2": "img/bluemenu/aquaticsor.png",
                 "url": "swimming",
                 "game": "swimming"
-      }, {
+            }, {
                 "icon": "img/bluemenu/basketball.png",
                 "icon2": "img/bluemenu/basketballor.png",
                 "url": "basketball",
                 "game": "basketball"
-      }, {
+            }, {
                 "icon": "img/bluemenu/vollyball.png",
                 "icon2": "img/bluemenu/volleyballor.png",
                 "url": "volleyball ",
                 "game": "volleyball"
-      }, {
+            }, {
                 "icon": "img/bluemenu/handball.png",
                 "icon2": "img/bluemenu/handballor.png",
                 "url": "handball",
                 "game": "Handball"
-      }, {
+            }, {
                 "icon": "img/bluemenu/judo.png",
                 "icon2": "img/bluemenu/judoor.png",
                 "url": "judo",
                 "game": "Judo"
-      }
-    ];
+            }
+        ];
 
     $scope.demo = 111;
-    $scope.checkthis = function () {};
+    $scope.checkthis = function() {};
 
     //	$scope.makeactive = function (game) {
     //		_.each($scope.games, function (n) {
@@ -1727,7 +1843,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
 })
 
-.controller('ScoreCtrl', function ($scope, TemplateService, NavigationService) {
+.controller('ScoreCtrl', function($scope, TemplateService, NavigationService) {
     $scope.template = TemplateService.changecontent("score");
     $scope.menutitle = NavigationService.makeactive("Score");
     TemplateService.title = $scope.menutitle;
@@ -1743,41 +1859,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.scores = [];
     $scope.schedule = {};
 
-    NavigationService.isStudentSports(function (data) {
+    NavigationService.isStudentSports(function(data) {
         $scope.sports = data;
     });
 
-    $scope.agechange = function () {
+    $scope.agechange = function() {
         $scope.agegroupselected = $scope.filter.agegroup.split(',')[1];
         $scope.filter.agegroupid = $scope.filter.agegroup.split(',')[0];
     }
 
-    $scope.sportChange = function () {
+    $scope.sportChange = function() {
         console.log($scope.filter.sportid.split(','));
         $scope.sportselected = $scope.filter.sportid.split(',')[1];
         $scope.filter.sport = $scope.filter.sportid.split(',')[0];
 
-        NavigationService.getSportsCategory("", $scope.filter.sport, "", function (data) {
+        NavigationService.getSportsCategory("", $scope.filter.sport, "", function(data) {
             $scope.category = data;
         })
         $scope.categoryChange();
     }
 
-    $scope.categoryChange = function () {
-        NavigationService.scheduleAgeGroup($scope.filter.category, $scope.filter.sport, $scope.filter.gender, function (data) {
+    $scope.categoryChange = function() {
+        NavigationService.scheduleAgeGroup($scope.filter.category, $scope.filter.sport, $scope.filter.gender, function(data) {
             $scope.agegroup = data;
         })
     }
 
-    $scope.genderChange = function () {
+    $scope.genderChange = function() {
         $scope.categoryChange();
     }
 
-    $scope.getScore = function () {
+    $scope.getScore = function() {
         $scope.scores = [];
-        NavigationService.getScore($scope.filter, function (data) {
+        NavigationService.getScore($scope.filter, function(data) {
             $scope.scores = data.queryresult;
-            _.each($scope.scores, function (n) {
+            _.each($scope.scores, function(n) {
                 console.log(n.players[0].result);
                 console.log(n.players[1].result);
                 if (n.players[0].result > n.players[1].result) {
@@ -1791,10 +1907,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
 
     $scope.demo = 111;
-    $scope.checkthis = function () {};
+    $scope.checkthis = function() {};
 
-    $scope.makeactive = function (game) {
-        _.each($scope.games, function (n) {
+    $scope.makeactive = function(game) {
+        _.each($scope.games, function(n) {
             n.active = false;
         });
         game.active = true;
@@ -1808,7 +1924,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('ScheduleCtrl', function ($scope, TemplateService, NavigationService, $moment, $filter) {
+.controller('ScheduleCtrl', function($scope, TemplateService, NavigationService, $moment, $filter) {
         $scope.template = TemplateService.changecontent("schedule");
         $scope.menutitle = NavigationService.makeactive("Schedule");
         TemplateService.title = $scope.menutitle;
@@ -1829,38 +1945,38 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         //    isFirstOpen: true,
         //    isFirstDisabled: false
         //  };
-        NavigationService.isStudentSports(function (data) {
+        NavigationService.isStudentSports(function(data) {
             $scope.sports = data;
         });
 
-        $scope.sportChange = function () {
+        $scope.sportChange = function() {
             console.log($scope.filter.sportid.split(','));
             $scope.sportselected = $scope.filter.sportid.split(',')[1];
             $scope.filter.sport = $scope.filter.sportid.split(',')[0];
 
-            NavigationService.getSportsCategory("", $scope.filter.sport, "", function (data) {
+            NavigationService.getSportsCategory("", $scope.filter.sport, "", function(data) {
                 $scope.category = data;
             })
             $scope.categoryChange();
         }
 
-        $scope.categoryChange = function () {
-            NavigationService.scheduleAgeGroup($scope.filter.category, $scope.filter.sport, $scope.filter.gender, function (data) {
+        $scope.categoryChange = function() {
+            NavigationService.scheduleAgeGroup($scope.filter.category, $scope.filter.sport, $scope.filter.gender, function(data) {
                 $scope.agegroup = data;
             })
         }
 
-        $scope.genderChange = function () {
+        $scope.genderChange = function() {
             $scope.categoryChange();
         }
 
-        $scope.getSchedule = function () {
+        $scope.getSchedule = function() {
             $scope.result = [];
 
             if ($scope.sportselected == 'Swimming') {
                 console.log($scope.sportselected);
-                NavigationService.getAllSwimmingMatch($scope.filter, function (data) {
-                    _.each(data.queryresult, function (n) {
+                NavigationService.getAllSwimmingMatch($scope.filter, function(data) {
+                    _.each(data.queryresult, function(n) {
                         $scope.schedule = {};
                         $scope.schedule.matchdate = n.matchdate;
                         $scope.schedule.matchresult = n.matchresult;
@@ -1877,8 +1993,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     });
                 });
             } else {
-                NavigationService.getschedule($scope.filter, function (data) {
-                    _.each(data.queryresult, function (n) {
+                NavigationService.getschedule($scope.filter, function(data) {
+                    _.each(data.queryresult, function(n) {
                         $scope.schedule = {};
                         $scope.schedule.matchdate = n.matchdate;
                         $scope.schedule.matchresult = n.matchresult;
@@ -2055,48 +2171,48 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
         $scope.games = // JavaScript Document
-      [{
+            [{
                 "icon": "img/orangemenu/tabletennis.png",
                 "icon2": "img/orangemenu/tabletennisbl.png",
                 "url": "tabletennis",
                 "game": "table tennis"
-      }, {
+            }, {
                 "icon": "img/orangemenu/tennis.png",
                 "icon2": "img/orangemenu/tennisbl.png",
                 "url": "tennis",
                 "game": "tennis"
-      }, {
+            }, {
                 "icon": "img/orangemenu/batminton.png",
                 "icon2": "img/orangemenu/batmintonbl.png",
                 "url": "badminton",
                 "game": "badminton"
-      }, {
+            }, {
                 "icon": "img/orangemenu/squash.png",
                 "icon2": "img/orangemenu/squashbl.png",
                 "url": "squash",
                 "game": "squash"
-      }, {
+            }, {
                 "icon": "img/orangemenu/aquash.png",
                 "icon2": "img/orangemenu/aquashbl.png",
                 "url": "swimming",
                 "game": "swimming"
-      }, {
+            }, {
                 "icon": "img/orangemenu/basketball.png",
                 "icon2": "img/orangemenu/basketballbl.png",
                 "url": "basketball",
                 "game": "basketball"
-      }, {
+            }, {
                 "icon": "img/orangemenu/volleyball.png",
                 "icon2": "img/orangemenu/volleyballbl.png",
                 "url": "volleyball",
                 "game": "volleyball"
-      }];
+            }];
 
         $scope.demo = 111;
-        $scope.checkthis = function () {};
+        $scope.checkthis = function() {};
 
-        $scope.makeactive = function (game) {
-            _.each($scope.games, function (n) {
+        $scope.makeactive = function(game) {
+            _.each($scope.games, function(n) {
                 n.active = false;
             });
             game.active = true;
@@ -2105,7 +2221,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.makeactive($scope.games[6]);
 
         $scope.jqueryScrollbarOptions = {
-            "onScroll": function (y, x) {
+            "onScroll": function(y, x) {
                 if (y.scroll == y.maxScroll) {
                     alert('Scrolled to bottom');
                 }
@@ -2115,13 +2231,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             'title': 'Schedule Page'
         });
     })
-    .controller('headerctrl', function ($scope, TemplateService) {
+    .controller('headerctrl', function($scope, TemplateService) {
         $scope.template = TemplateService;
-        $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+        $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
             $(window).scrollTop(0);
         });
     })
-    .controller('footerCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+    .controller('footerCtrl', function($scope, TemplateService, NavigationService, $timeout) {
 
         $scope.newsletter = {
             show: true,
@@ -2131,57 +2247,57 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.newsletter.show = false;
         }
 
-        $scope.validEmail = function (email) {
+        $scope.validEmail = function(email) {
             if (email) {
                 $scope.newsletter.emaildis = "";
             } else {
                 $scope.newsletter.emaildis = "error-red";
             }
         };
-        $scope.savenewsletter = function (email) {
+        $scope.savenewsletter = function(email) {
             if ($scope.newsletter.emaildis == "" && $scope.newsletter.email) {
                 NavigationService.savenewsletter(email, closeNewsletter);
             }
         }
 
         $scope.games = // JavaScript Document
-      [{
+            [{
                 "img": "img/footer/s1.jpg",
                 "href": "http://www.mbasso.in",
                 "game": "badminton"
-      }, {
+            }, {
                 "img": "img/footer/s2.jpg",
                 "href": "",
                 "game": "handball"
-      }, {
+            }, {
                 "img": "img/footer/s3.jpg",
                 "href": "",
                 "game": "Judo"
-      }, {
+            }, {
                 "img": "img/footer/s4.jpg",
                 "href": "http://www.ispsquash.com/",
                 "game": "squash"
-      }, {
+            }, {
                 "img": "img/footer/s5.jpg",
                 "href": "http://www.mbtaworld.com/",
                 "game": "Tennis"
-      }, {
+            }, {
                 "img": "img/footer/s6.jpg",
                 "href": "http://www.msdtta.org/",
                 "game": "table Tennis"
-      }, {
+            }, {
                 "img": "img/footer/s7.jpg",
                 "href": "http://www.swimmingfederation.in/",
                 "game": "swimming"
-      }, {
+            }, {
                 "img": "img/footer/s8.jpg",
                 "href": "",
                 "game": "volleyball"
-      }, {
+            }, {
                 "img": "img/footer/s9.jpg",
                 "href": "http://www.maharashtrabasketball.com/",
                 "game": "basket ball"
-      }];
+            }];
 
     })
 

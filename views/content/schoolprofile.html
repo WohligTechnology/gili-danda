@@ -273,9 +273,18 @@
                                  <li>{{medals.sportscategory}}</li>
                               </ul>
                            </td>
-                           <td>0</td>
-                           <td>1</td>
-                           <td>1</td>
+                           <td ng-if="!medals.medal">0</td>
+                           <td ng-if="!medals.medal">0</td>
+                           <td ng-if="!medals.medal">0</td>
+                           <td ng-if="medals.medal=='1'">1</td>
+                           <td ng-if="medals.medal=='1'">0</td>
+                           <td ng-if="medals.medal=='1'">0</td>
+                           <td ng-if="medals.medal=='2'">0</td>
+                           <td ng-if="medals.medal=='2'">1</td>
+                           <td ng-if="medals.medal=='2'">0</td>
+                           <td ng-if="medals.medal=='3'">0</td>
+                           <td ng-if="medals.medal=='3'">0</td>
+                           <td ng-if="medals.medal=='3'">1</td>
                         </tr>
                         <!-- <tr>
                     <td class="lis">
@@ -343,7 +352,7 @@
                      </tbody>
                   </table>
                </div>
-              <div class="stable" ng-if="schoolStats.medals.length==0">No Medals</div>
+               <div class="stable" ng-if="schoolStats.medals.length==0">No Medals</div>
             </div>
             <div class="bg-school sch-det">
                <h4>{{tab}} -
@@ -408,7 +417,7 @@
                   </table>
                </div>
                <div class="stable" ng-if="schoolStats.matches.length==0">
-                 No Matches
+                  No Matches
                </div>
             </div>
          </div>

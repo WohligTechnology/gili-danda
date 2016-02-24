@@ -1378,7 +1378,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             //					$scope.selectedGame = game;
 
             $scope.sportsId = game.id;
-            console.log("Game Id = " + game.id);
             $scope.pagenum = 1;
             if ($scope.tab2 == "squad") {
                 $scope.loadSportStudent();

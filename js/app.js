@@ -3,15 +3,15 @@ var demo = 0;
 
 
 var firstapp = angular.module('firstapp', [
-  'ui.router',
-  'angular-flexslider',
-  'phonecatControllers',
-  'templateservicemod',
-  'navigationservice',
-  'angular-momentjs'
+    'ui.router',
+    'angular-flexslider',
+    'phonecatControllers',
+    'templateservicemod',
+    'navigationservice',
+    'angular-momentjs'
 ]);
 
-firstapp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+firstapp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $stateProvider
 
@@ -175,7 +175,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $locationProvider)
 })
 
 
-firstapp.directive('hovericon', function ($document) {
+firstapp.directive('hovericon', function($document) {
     return {
         restrict: 'EA',
         replace: true,
@@ -183,15 +183,15 @@ firstapp.directive('hovericon', function ($document) {
         scope: {
             game: '='
         },
-        link: function (scope, element, attr) {
+        link: function(scope, element, attr) {
 
-            scope.$watch('demo', function () {
+            scope.$watch('demo', function() {
                 //			   console.log(demo);
 
                 var ishover;
                 var $element = $(element);
                 $test = $element;
-                $element.ready(function () {
+                $element.ready(function() {
 
                     if (scope.game.grey) {
                         $element.addClass("grey");
@@ -200,9 +200,9 @@ firstapp.directive('hovericon', function ($document) {
                         var $bottom = $element.children(".bottom");
                         $bottom.width($top.width());
 
-                        $element.hover(function () {
+                        $element.hover(function() {
                             $element.addClass("bigger");
-                        }, function () {
+                        }, function() {
                             $element.removeClass("bigger");
                             $bottom.width($top.width());
                         });
@@ -216,8 +216,8 @@ firstapp.directive('hovericon', function ($document) {
     }
 });
 
-firstapp.filter('serverimage', function () {
-    return function (image) {
+firstapp.filter('serverimage', function() {
+    return function(image) {
         if (image && image != "") {
             return adminlink + "uploads/" + image;
         } else {
@@ -225,12 +225,52 @@ firstapp.filter('serverimage', function () {
         }
     };
 });
-firstapp.filter('serverimageschool', function () {
-    return function (image) {
+firstapp.filter('serverimageschool', function() {
+    return function(image) {
         if (image && image != "") {
             return adminlink + "uploads/" + image;
         } else {
             return adminlink + "assets/img/noimage.png";
+        }
+    };
+});
+firstapp.filter('splitset', function() {
+    return function(score) {
+        if (score && score != "") {
+            console.log(score);
+            if (score.indexOf('s1') != -1 && score.length > 10) {
+                console.log(score);
+                score = score.split('-').join(' ');
+                var splited = score.split('s1').join('set1-');
+                // console.log(splited);
+                splited = splited.split("s2").join(' set2-')
+                    // console.log(splited);
+                splited = splited.split(" ");
+                // console.log(splited);
+                var final = "";
+                if (splited[0] && splited[2]) {
+                    var moresplit1 = splited[0].split('-');
+                    var moresplit2 = splited[2].split('-');
+                    final = "GAME 1 : " + moresplit1[1] + "/" + moresplit2[1];
+                }
+                if (splited[1] && splited[3]) {
+                    var moresplit1 = splited[1].split('-');
+                    var moresplit2 = splited[3].split('-');
+                    final += " GAME 2 : " + moresplit1[1] + "/" + moresplit2[1];
+                }
+                // console.log(final);
+                return final;
+            } else if (score.indexOf('s') != -1) {
+                // console.log(score);
+                score = score.split('-').join('');
+                // console.log(score);
+                var splited = score.split('s');
+                // console.log(splited);
+                var final = "GAME 1 : " + splited[1] + "/" + splited[2];
+                return final;
+            } else {
+                return score;
+            }
         }
     };
 });
@@ -248,15 +288,15 @@ function partitionarray(myarray, number) {
     }
     return newarray;
 };
-firstapp.directive('fancybox', function ($compile, $parse) {
+firstapp.directive('fancybox', function($compile, $parse) {
     return {
         restrict: 'C',
         replace: false,
-        link: function ($scope, element, attrs) {
+        link: function($scope, element, attrs) {
 
-            $scope.$watch(function () {
+            $scope.$watch(function() {
                 return element.attr('openbox')
-            }, function (openbox) {
+            }, function(openbox) {
                 if (openbox == 'show') {
 
                     var options = $parse(attrs.options)($scope) || {};
@@ -269,10 +309,10 @@ firstapp.directive('fancybox', function ($compile, $parse) {
 
                     }
 
-                    var onClosed = options.onClosed || function () {};
+                    var onClosed = options.onClosed || function() {};
 
-                    options.onClosed = function () {
-                        $scope.$apply(function () {
+                    options.onClosed = function() {
+                        $scope.$apply(function() {
                             onClosed();
                             element.attr('openbox', 'hide');
                         });
@@ -286,11 +326,11 @@ firstapp.directive('fancybox', function ($compile, $parse) {
 });
 
 
-firstapp.directive('fancybox2', function ($compile, $parse) {
+firstapp.directive('fancybox2', function($compile, $parse) {
     return {
         restrict: 'C',
         replace: false,
-        link: function ($scope, element, attrs) {
+        link: function($scope, element, attrs) {
 
             $(".fancybox2").fancybox({
                 openEffect: 'none',
@@ -303,16 +343,16 @@ firstapp.directive('fancybox2', function ($compile, $parse) {
 });
 
 
-firstapp.directive('img', function ($compile, $parse) {
+firstapp.directive('img', function($compile, $parse) {
     return {
         restrict: 'E',
         replace: false,
-        link: function ($scope, element, attrs) {
+        link: function($scope, element, attrs) {
             var $element = $(element);
             if (!attrs.noloading) {
                 $element.after("<img src='img/loading.gif' class='loading' />");
                 var $loading = $element.next(".loading");
-                $element.load(function () {
+                $element.load(function() {
                     $loading.remove();
                     $(this).addClass("doneLoading");
                 });
@@ -323,11 +363,11 @@ firstapp.directive('img', function ($compile, $parse) {
     };
 });
 
-firstapp.directive('giveitmargin', function ($compile, $parse) {
+firstapp.directive('giveitmargin', function($compile, $parse) {
     return {
         restrict: 'EA',
         replace: false,
-        link: function ($scope, element, attrs) {
+        link: function($scope, element, attrs) {
             $element = $(element);
             var i = 0;
 
@@ -342,17 +382,17 @@ firstapp.directive('giveitmargin', function ($compile, $parse) {
                     $("ul.menu-list").css("margin-left", marginleft);
                 }
             }
-            $element.find("img").load(function () {
+            $element.find("img").load(function() {
                 addmarginleft(++i);
             });
-            $(window).resize(function () {
+            $(window).resize(function() {
                 addmarginleft(++i);
             });
         }
     };
 });
 
-firstapp.directive('click', '.dropdown-menu li', function ($event) {
+firstapp.directive('click', '.dropdown-menu li', function($event) {
 
     var $target = $($event.currentTarget);
 
@@ -365,8 +405,8 @@ firstapp.directive('click', '.dropdown-menu li', function ($event) {
 
 });
 
-firstapp.filter('numberFixedLen', function () {
-    return function (n, len) {
+firstapp.filter('numberFixedLen', function() {
+    return function(n, len) {
         var num = parseInt(n, 10);
         len = parseInt(len, 10);
         if (isNaN(num) || isNaN(len)) {
@@ -380,14 +420,14 @@ firstapp.filter('numberFixedLen', function () {
     };
 });
 
-firstapp.directive('fancybox', function ($compile, $parse) {
+firstapp.directive('fancybox', function($compile, $parse) {
     return {
         restrict: 'EA',
         replace: false,
-        link: function ($scope, element, attrs) {
+        link: function($scope, element, attrs) {
             $element = $(element);
             console.log("Checking Fancybox");
-            setTimeout(function () {
+            setTimeout(function() {
                 $(".various").fancybox({
                     maxWidth: 800,
                     maxHeight: 600,
@@ -405,31 +445,31 @@ firstapp.directive('fancybox', function ($compile, $parse) {
 });
 var $abc = "";
 
-firstapp.directive('schoolsports', function () {
+firstapp.directive('schoolsports', function() {
     return {
-        templateUrl: function (elem, attr) {
+        templateUrl: function(elem, attr) {
             console.log(attr.json);
             //      return 'customer-'+attr.jso+'.html';
         }
     };
 });
-firstapp.directive('mycircle', function ($compile, $parse) {
+firstapp.directive('mycircle', function($compile, $parse) {
     return {
         restrict: 'EA',
         replace: false,
-        link: function ($scope, element, attrs) {
+        link: function($scope, element, attrs) {
             var $element = $(element);
             var amount = 1;
             var myinterval = {};
-            $element.ready(function () {
+            $element.ready(function() {
                 console.log("DEMO");
 
-                $element.hover(function () {
+                $element.hover(function() {
                     clearInterval(myinterval);
-                }, function () {
+                }, function() {
 
 
-                    myinterval = setInterval(function () {
+                    myinterval = setInterval(function() {
                         var $element = $(element);
                         var $elementli = $element.children("li");
                         $abc = $elementli;
@@ -471,7 +511,7 @@ firstapp.directive('mycircle', function ($compile, $parse) {
     };
 });
 
-var formvalidation = function (allvalidation) {
+var formvalidation = function(allvalidation) {
     var isvalid2 = true;
     for (var i = 0; i < allvalidation.length; i++) {
         console.log("checking");
@@ -483,17 +523,17 @@ var formvalidation = function (allvalidation) {
     return isvalid2;
 };
 
-var clearvalidation = function (allvalidation) {
+var clearvalidation = function(allvalidation) {
     for (var i = 0; i < allvalidation.length; i++) {
         allvalidation[i].validation = "";
     }
 };
 
-firstapp.directive('smartGallery', function ($compile, $parse) {
+firstapp.directive('smartGallery', function($compile, $parse) {
     return {
         restrict: 'EA',
         replace: false,
-        link: function ($scope, element, attrs) {
+        link: function($scope, element, attrs) {
             $element = $(element);
             var width;
 
@@ -503,7 +543,7 @@ firstapp.directive('smartGallery', function ($compile, $parse) {
                 $(".monsanry .mimage").height(width);
             }
             changeSqaure();
-            $(window).resize(function () {
+            $(window).resize(function() {
                 changeSqaure();
             });
         }

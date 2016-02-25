@@ -71,7 +71,7 @@
                      <h3>Players</h3>
                   </li>
                   <li ng-class="actives" ng-click="tabchange('gallerymain',2)">
-                     <h3>gallery</h3>
+                     <h3>match videos</h3>
                   </li>
                   <li ng-class="activess" ng-click="tabchange('statics',3)">
                      <h3>STATISTICS</h3>
@@ -273,9 +273,9 @@
                                  <li>{{medals.sportscategory}}</li>
                               </ul>
                            </td>
-                           <td ng-if="!medals.medal">0</td>
-                           <td ng-if="!medals.medal">0</td>
-                           <td ng-if="!medals.medal">0</td>
+                           <td ng-if="!medals.medal || medals.medal=='0'">0</td>
+                           <td ng-if="!medals.medal || medals.medal=='0'">0</td>
+                           <td ng-if="!medals.medal || medals.medal=='0'">0</td>
                            <td ng-if="medals.medal=='1'">1</td>
                            <td ng-if="medals.medal=='1'">0</td>
                            <td ng-if="medals.medal=='1'">0</td>
@@ -366,9 +366,14 @@
                               year
                            </th>
                            <th>
-                              aganist
+                              opponent name
                            </th>
-
+                           <th>
+                              opponent school
+                           </th>
+                           <th>
+                              round
+                           </th>
                            <th>
                               category
                            </th>
@@ -381,35 +386,48 @@
                         </tr>
                      </thead>
                      <tbody>
-                        <tr>
+                        <tr ng-repeat="matches in schoolStats.matches">
                            <td class="lis">
-                              <p>2016</p>
+                              <p>{{matches.year}}</p>
                            </td>
                            <td>
-                              <p>
-                                 don bosco school
-                              </p>
+                              <p>{{matches.opponent}}</p>
                            </td>
                            <td>
                               <ul>
-                                 <li>u-17</li>
-                                 <li>boys</li>
+                                 <li>{{matches.against}}</li>
+                                 <!-- <li>don bosco school</li> -->
                               </ul>
                            </td>
-                           <td>54 - 48</td>
+                           <td>
+                              <p>{{matches.round}}</p>
+                           </td>
+                           <td>
+                              <ul>
+                                 <ul>
+                                    <li>{{matches.agegroup}}</li>
+                                    <!-- <li>boys</li> -->
+                                    <li>{{matches.sportscategory}}</li>
+                                 </ul>
+                              </ul>
+                           </td>
+                           <td>{{matches.score | splitset}}</td>
                            <td class="cust-li">
                               <ul>
                                  <li>
-                                    <h4 class="f-class">won</h4>
+                                    <h4 class="f-class" ng-if="matches.result==1">Won</h4>
+                                    <h4 class="f-class" ng-if="matches.result==2">Lost</h4>
                                  </li>
-                                 <!-- <li>
-                                    <div class="ver">
-                                       <figure class="text-center">
-                                          <img src="img/replay.png">
-                                          <figcaption>Replay</figcaption>
-                                       </figure>
+                                 <li class="vers">
+                                    <div class="vers">
+                                       <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/{{matches.url}}?autoplay=1">
+                                          <figure class="text-center">
+                                             <img src="img/replay.png">
+                                             <figcaption>Replay</figcaption>
+                                          </figure>
+                                       </a>
                                     </div>
-                                 </li> -->
+                                 </li>
                               </ul>
                            </td>
                         </tr>

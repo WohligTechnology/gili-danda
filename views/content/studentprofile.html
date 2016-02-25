@@ -88,7 +88,7 @@
             <div class="stab">
                <ul>
                   <li ng-class="active" ng-click="tabchange('gallerymain',1)">
-                     <h3>gallery</h3></li>
+                     <h3>match videos</h3></li>
                   <li ng-class="actives" ng-click="tabchange('statics',2)">
                      <h3>STATISTICS</h3></li>
                </ul>
@@ -474,7 +474,7 @@
          <div class="col-md-12 ">
             <div class="bg-school sch-det">
                <h4>{{tab}} - <span>medals tally</span></h4>
-               <div class="stable">
+               <div class="stable" ng-if="studentStats.medals.length>0">
                   <table class="table">
                      <thead>
                         <tr>
@@ -517,9 +517,9 @@
                                  <li>{{medals.sportscategory}}</li>
                               </ul>
                            </td>
-                           <td ng-if="!medals.medal">0</td>
-                           <td ng-if="!medals.medal">0</td>
-                           <td ng-if="!medals.medal">0</td>
+                           <td ng-if="!medals.medal || medals.medal=='0'">0</td>
+                           <td ng-if="!medals.medal || medals.medal=='0'">0</td>
+                           <td ng-if="!medals.medal || medals.medal=='0'">0</td>
                            <td ng-if="medals.medal=='1'">1</td>
                            <td ng-if="medals.medal=='1'">0</td>
                            <td ng-if="medals.medal=='1'">0</td>
@@ -554,10 +554,11 @@
                      </tbody>
                   </table>
                </div>
+               <div class="stable" ng-if="studentStats.medals.length==0">No Medals</div>
             </div>
             <div class="bg-school sch-det">
                <h4>{{tab}}  - <span>matches</span></h4>
-               <div class="stable">
+               <div class="stable" ng-if="studentStats.matches.length>0">
                   <table class="table">
                      <thead>
                         <tr>
@@ -565,9 +566,14 @@
                               year
                            </th>
                            <th>
-                              aganist
+                              opponent name
                            </th>
-
+                           <th>
+                              opponent school
+                           </th>
+                           <th>
+                              round
+                           </th>
                            <th>
                               category
                            </th>
@@ -587,10 +593,16 @@
                               <p>{{matches.year}}</p>
                            </td>
                            <td>
+                             <p>{{matches.opponent}}</p>
+                           </td>
+                           <td>
                               <ul>
                                  <li>{{matches.against}}</li>
                                  <!-- <li>don bosco school</li> -->
                               </ul>
+                           </td>
+                           <td>
+                             <p>{{matches.round}}</p>
                            </td>
                            <td>
                               <ul>
@@ -599,21 +611,23 @@
                                  <li>{{matches.sportscategory}}</li>
                               </ul>
                            </td>
-                           <td>{{matches.score}}</td>
+                           <td>{{matches.score | splitset}}</td>
                            <td class="cust-li">
                               <ul>
                                  <li>
                                     <h4 class="f-class" ng-if="matches.result==1">Won</h4>
                                     <h4 class="f-class" ng-if="matches.result==2">Lost</h4>
                                  </li>
-                                 <!-- <li class="vers">
+                                 <li class="vers">
                                     <div class="vers">
-                                       <figure class="text-center">
-                                          <img src="img/replay.png">
-                                          <figcaption>Replay</figcaption>
-                                       </figure>
+                                       <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/{{matches.url}}?autoplay=1">
+                                          <figure class="text-center">
+                                             <img src="img/replay.png">
+                                             <figcaption>Replay</figcaption>
+                                          </figure>
+                                       </a>
                                     </div>
-                                 </li> -->
+                                 </li>
                               </ul>
                            </td>
                         </tr>
@@ -652,17 +666,18 @@
                      </tbody>
                   </table>
                </div>
+               <div class="stable" ng-if="studentStats.matches.length==0">No Matches</div>
             </div>
          </div>
       </div>
 
-      <div class="row">
+      <!-- <div class="row">
          <div class="col-md-12">
             <div class="view text-center feed">
                <a href="">view more</a>
             </div>
          </div>
-      </div>
+      </div> -->
       <!-- <div class="row">
             <div class="col-md-12">
                 <div class="another-static text-center">

@@ -1181,9 +1181,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.gallobj.studentid = $stateParams.id;
             $scope.gallobj.sportscategory = $scope.sportsId;
             NavigationService.getschoolgallerynew($scope.gallobj, function(data) {
-                if (data.length > 0)
-                    $scope.allresult = _.chunk(data, 3);
-                else {
+                if (data.length > 0) {
+                    var galleryArray = [];
+                    _.each(data, function(n) {
+                        if (n.url)
+                            galleryArray.push(n);
+                    })
+                    if (galleryArray.length > 0)
+                        $scope.allresult = _.chunk(galleryArray, 3);
+                    else {
+                        $scope.allresult = [];
+                        $scope.msg = "No data";
+                    }
+                } else {
                     $scope.allresult = [];
                     $scope.msg = "No data";
                 }
@@ -1199,7 +1209,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.statobj.sportscategory = $scope.sportsId;
             NavigationService.getStats($scope.statobj, function(data) {
                 console.log(data);
-                $scope.studentStats = data;
+                var statsobj = {};
+                var medalsArray = [];
+                if (data.medals) {
+                    _.each(data.medals, function(n) {
+                        if (n.year) {
+                            medalsArray.push(n);
+                        }
+                    });
+                }
+                var matchesArray = [];
+                if (data.matches) {
+                    _.each(data.matches, function(n) {
+                        if (n.year) {
+                            matchesArray.push(n);
+                        }
+                    });
+                }
+                statsobj.medals = medalsArray;
+                statsobj.matches = matchesArray;
+                // $scope.schoolStats = statsobj;
+                $scope.studentStats = statsobj;
                 // if (data.length > 0)
                 //     $scope.allresult = _.chunk(data, 3);
                 // else {
@@ -1358,7 +1388,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
     $scope.getage();
     $scope.makeactive = function(state, game) {
-      console.log(game);
+        console.log(game);
         if (state == 0) {
             $scope.checkstart = true;
         } else {
@@ -1441,9 +1471,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.gallobj.schoolid = $stateParams.id;
         $scope.gallobj.sportscategory = $scope.sportsId;
         NavigationService.getschoolgallerynew($scope.gallobj, function(data) {
-            if (data.length > 0)
-                $scope.schoolgallery = _.chunk(data, 3);
-            else {
+            if (data.length > 0) {
+                var galleryArray = [];
+                _.each(data, function(n) {
+                    if (n.url)
+                        galleryArray.push(n);
+                })
+                if (galleryArray.length > 0)
+                    $scope.schoolgallery = _.chunk(galleryArray, 3);
+                else {
+                    $scope.schoolgallery = [];
+                    $scope.msg = "No data";
+                }
+            } else {
                 $scope.schoolgallery = [];
                 $scope.msg = "No data";
             }
@@ -1458,7 +1498,26 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.statobj.sportscategory = $scope.sportsId;
         NavigationService.getStats($scope.statobj, function(data) {
             console.log(data);
-            $scope.schoolStats = data;
+            var statsobj = {};
+            var medalsArray = [];
+            if (data.medals) {
+                _.each(data.medals, function(n) {
+                    if (n.year) {
+                        medalsArray.push(n);
+                    }
+                });
+            }
+            var matchesArray = [];
+            if (data.matches) {
+                _.each(data.matches, function(n) {
+                    if (n.year) {
+                        matchesArray.push(n);
+                    }
+                });
+            }
+            statsobj.medals = medalsArray;
+            statsobj.matches = matchesArray;
+            $scope.schoolStats = statsobj;
             // if (data.length > 0)
             //     $scope.allresult = _.chunk(data, 3);
             // else {

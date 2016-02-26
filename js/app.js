@@ -237,36 +237,34 @@ firstapp.filter('serverimageschool', function() {
 firstapp.filter('splitset', function() {
     return function(score) {
         if (score && score != "") {
-            console.log(score);
             if (score.indexOf('s1') != -1 && score.length > 10) {
-                console.log(score);
                 score = score.split('-').join(' ');
-                var splited = score.split('s1').join('set1-');
-                // console.log(splited);
-                splited = splited.split("s2").join(' set2-')
-                    // console.log(splited);
+                var splited = score;
+                for (var i = 1; i <= 10; i++) {
+                    if (i == 1)
+                        splited = splited.split("s" + i).join('set' + i + '-');
+                    else {
+                        splited = splited.split("s" + i).join(' set' + i + '-');
+                    }
+                }
                 splited = splited.split(" ");
-                // console.log(splited);
                 var final = "";
-                if (splited[0] && splited[2]) {
-                    var moresplit1 = splited[0].split('-');
-                    var moresplit2 = splited[2].split('-');
-                    final = "GAME 1 : " + moresplit1[1] + "/" + moresplit2[1];
+                var arrLength = splited.length;
+                for (var i = 0; i < splited.length; i++) {
+                    if (splited[i] && splited[(arrLength / 2) + i]) {
+                        var moresplit1 = splited[i].split('-');
+                        var moresplit2 = splited[(arrLength / 2) + i].split('-');
+                        if (i == 0)
+                            final += "GAME " + (i + 1) + " : " + moresplit1[1] + "/" + moresplit2[1];
+                        else
+                            final += " GAME " + (i + 1) + " : " + moresplit1[1] + "/" + moresplit2[1];
+                    }
                 }
-                if (splited[1] && splited[3]) {
-                    var moresplit1 = splited[1].split('-');
-                    var moresplit2 = splited[3].split('-');
-                    final += " GAME 2 : " + moresplit1[1] + "/" + moresplit2[1];
-                }
-                // console.log(final);
                 return final;
-            } else if (score.indexOf('s') != -1) {
-                // console.log(score);
+            } else if (score.indexOf('s') != -1 && score.indexOf('s2') == -1 && score.indexOf('s3') == -1) {
                 score = score.split('-').join('');
-                // console.log(score);
-                var splited = score.split('s');
-                // console.log(splited);
-                var final = "GAME 1 : " + splited[1] + "/" + splited[2];
+                var splited = score.split('s1');
+                var final = "GAME : " + splited[1] + "/" + splited[2];
                 return final;
             } else {
                 return score;

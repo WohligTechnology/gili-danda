@@ -412,13 +412,13 @@
                               </ul>
                            </td>
                            <td>{{matches.score | splitset}}</td>
-                           <td class="cust-li">
-                              <ul>
+                           <td class="">
+                              <ul class="text-center">
                                  <li>
-                                    <h4 class="f-class" ng-if="matches.result==1">Won</h4>
-                                    <h4 class="f-class" ng-if="matches.result==2">Lost</h4>
+                                    <h4 ng-if="matches.result==1">Won</h4>
+                                    <h4 ng-if="matches.result==2">Lost</h4>
                                  </li>
-                                 <li class="vers">
+                                 <li class="vers" ng-if="matches.url">
                                     <div class="vers">
                                        <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/{{matches.url}}?autoplay=1">
                                           <figure class="text-center">
@@ -440,13 +440,13 @@
             </div>
          </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
          <div class="col-md-12">
             <div class="view text-center feed">
                <a href="">view more</a>
             </div>
          </div>
-      </div>
+      </div> -->
 
 
       <!--

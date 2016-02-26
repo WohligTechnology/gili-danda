@@ -270,21 +270,23 @@
                            <td>
                               <ul>
                                  <li>{{medals.agegroup}}</li>
+                                 <li ng-if="medals.gender=='1'">BOYS</li>
+                                 <li ng-if="medals.gender=='2'">GIRLS</li>
                                  <li>{{medals.sportscategory}}</li>
                               </ul>
                            </td>
+                           <!-- <td ng-if="!medals.medal || medals.medal=='0'">0</td>
                            <td ng-if="!medals.medal || medals.medal=='0'">0</td>
-                           <td ng-if="!medals.medal || medals.medal=='0'">0</td>
-                           <td ng-if="!medals.medal || medals.medal=='0'">0</td>
-                           <td ng-if="medals.medal=='1'">1</td>
-                           <td ng-if="medals.medal=='1'">0</td>
-                           <td ng-if="medals.medal=='1'">0</td>
-                           <td ng-if="medals.medal=='2'">0</td>
+                           <td ng-if="!medals.medal || medals.medal=='0'">0</td> -->
+                           <td>{{medals.gold}}</td>
+                           <td>{{medals.silver}}</td>
+                           <td>{{medals.bronze}}</td>
+                           <!-- <td ng-if="medals.medal=='2'">0</td>
                            <td ng-if="medals.medal=='2'">1</td>
                            <td ng-if="medals.medal=='2'">0</td>
                            <td ng-if="medals.medal=='3'">0</td>
                            <td ng-if="medals.medal=='3'">0</td>
-                           <td ng-if="medals.medal=='3'">1</td>
+                           <td ng-if="medals.medal=='3'">1</td> -->
                         </tr>
                         <!-- <tr>
                     <td class="lis">
@@ -406,7 +408,8 @@
                               <ul>
                                  <ul>
                                     <li>{{matches.agegroup}}</li>
-                                    <!-- <li>boys</li> -->
+                                    <li ng-if="matches.gender=='1'">BOYS</li>
+                                    <li ng-if="matches.gender=='2'">GIRLS</li>
                                     <li>{{matches.sportscategory}}</li>
                                  </ul>
                               </ul>

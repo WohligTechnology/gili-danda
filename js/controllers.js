@@ -1515,7 +1515,53 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     }
                 });
             }
-            statsobj.medals = medalsArray;
+
+            function groupBy(array, f) {
+                var groups = {};
+                array.forEach(function(o) {
+                    var group = JSON.stringify(f(o));
+                    groups[group] = groups[group] || [];
+                    groups[group].push(o);
+                });
+                return Object.keys(groups).map(function(group) {
+                    return groups[group];
+                })
+            }
+            var result = groupBy(medalsArray, function(item) {
+                return [item.agegroup, item.sport, item.sportscategory, item.year, item.gender];
+            });
+            console.log(result);
+            var groupmedals = [];
+            _.each(result, function(group) {
+                var medalCount = {
+                    gold: 0,
+                    silver: 0,
+                    bronze: 0
+                }
+                _.each(group, function(n) {
+                    if (n.medal == '1') {
+                        medalCount.gold++;
+                    }
+                    if (n.medal == '2') {
+                        medalCount.silver++;
+                    }
+                    if (n.medal == '3') {
+                        medalCount.bronze++;
+                    }
+                });
+                groupmedals.push({
+                    gold: medalCount.gold,
+                    silver: medalCount.silver,
+                    bronze: medalCount.bronze,
+                    agegroup: group[0].agegroup,
+                    sport: group[0].sport,
+                    sportscategory: group[0].sportscategory,
+                    gender: group[0].gender,
+                    year: group[0].year
+                });
+            });
+            console.log(groupmedals);
+            statsobj.medals = groupmedals;
             statsobj.matches = matchesArray;
             $scope.schoolStats = statsobj;
             // if (data.length > 0)

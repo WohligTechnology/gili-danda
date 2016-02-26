@@ -263,7 +263,7 @@ firstapp.filter('splitset', function() {
                 return final;
             } else if (score.indexOf('s') != -1 && score.indexOf('s2') == -1 && score.indexOf('s3') == -1) {
                 score = score.split('-').join('');
-                var splited = score.split('s1');
+                var splited = score.split('s');
                 var final = "GAME : " + splited[1] + "/" + splited[2];
                 return final;
             } else {

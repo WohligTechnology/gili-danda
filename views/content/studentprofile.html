@@ -472,7 +472,7 @@
    <div class="marzero" ng-show="tab2=='statics'">
       <div class="row">
          <div class="col-md-12 ">
-            <div class="bg-school sch-det">
+            <!-- <div class="bg-school sch-det">
                <h4>{{tab}} - <span>medals tally</span></h4>
                <div class="stable" ng-if="studentStats.medals.length>0">
                   <table class="table">
@@ -513,7 +513,6 @@
                            <td>
                               <ul>
                                  <li>{{medals.agegroup}}</li>
-                                 <!-- <li>boys</li> -->
                                  <li>{{medals.sportscategory}}</li>
                               </ul>
                            </td>
@@ -530,32 +529,11 @@
                            <td ng-if="medals.medal=='3'">0</td>
                            <td ng-if="medals.medal=='3'">1</td>
                         </tr>
-                        <!-- <tr>
-                           <td class="lis">
-                              <p>2016</p>
-                           </td>
-                           <td>
-                              <p>
-                                 Badminton
-                              </p>
-
-                           </td>
-                           <td>
-                              <ul>
-                                 <li>u-17</li>
-                                 <li>boys</li>
-                                 <li>single</li>
-                              </ul>
-                           </td>
-                           <td>0</td>
-                           <td>1</td>
-                           <td>1</td>
-                        </tr> -->
                      </tbody>
                   </table>
                </div>
                <div class="stable" ng-if="studentStats.medals.length==0">No Medals</div>
-            </div>
+            </div> -->
             <div class="bg-school sch-det">
                <h4>{{tab}}  - <span>matches</span></h4>
                <div class="stable" ng-if="studentStats.matches.length>0">
@@ -607,7 +585,8 @@
                            <td>
                               <ul>
                                  <li>{{matches.agegroup}}</li>
-                                 <!-- <li>boys</li> -->
+                                 <li ng-if="matches.gender=='1'">BOYS</li>
+                                 <li ng-if="matches.gender=='2'">GIRLS</li>
                                  <li>{{matches.sportscategory}}</li>
                               </ul>
                            </td>

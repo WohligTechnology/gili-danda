@@ -170,7 +170,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $locationProvider) 
             templateUrl: "./views/template.html",
             controller: 'StudentprofileCtrl'
         });
-    // $locationProvider.html5Mode(true);
+        if(isproduction)
+        {
+            $locationProvider.html5Mode(true);
+        }
+
     $urlRouterProvider.otherwise("/home");
 })
 

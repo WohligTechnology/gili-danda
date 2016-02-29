@@ -47,7 +47,7 @@
                      <h2 ng-if="student.studentprofile.gender ==2 ">Female</h2>
                   </li>
                </ul>
-               <p>Sports</p>
+               <p>Sports Participated</p>
                <h2 class="clsports j-cs">{{sportsnames}}</h2>
             </div>
 
@@ -587,7 +587,7 @@
                                  <li>{{matches.agegroup}}</li>
                                  <li ng-if="matches.gender=='1'">BOYS</li>
                                  <li ng-if="matches.gender=='2'">GIRLS</li>
-                                 <li>{{matches.sportscategory}}</li>
+                                 <li>{{matches.sportscategory}}s</li>
                               </ul>
                            </td>
                            <td>{{matches.score | splitset}}</td>

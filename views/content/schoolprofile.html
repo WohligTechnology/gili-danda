@@ -272,7 +272,7 @@
                                  <li>{{medals.agegroup}}</li>
                                  <li ng-if="medals.gender=='1'">BOYS</li>
                                  <li ng-if="medals.gender=='2'">GIRLS</li>
-                                 <li>{{medals.sportscategory}}</li>
+                                 <li>{{medals.sportscategory}}s</li>
                               </ul>
                            </td>
                            <!-- <td ng-if="!medals.medal || medals.medal=='0'">0</td>
@@ -368,6 +368,9 @@
                               year
                            </th>
                            <th>
+                              student name
+                           </th>
+                           <th>
                               opponent name
                            </th>
                            <th>
@@ -393,6 +396,9 @@
                               <p>{{matches.year}}</p>
                            </td>
                            <td>
+                              <p>{{matches.studentname}}</p>
+                           </td>
+                           <td>
                               <p>{{matches.opponent}}</p>
                            </td>
                            <td>
@@ -410,7 +416,7 @@
                                     <li>{{matches.agegroup}}</li>
                                     <li ng-if="matches.gender=='1'">BOYS</li>
                                     <li ng-if="matches.gender=='2'">GIRLS</li>
-                                    <li>{{matches.sportscategory}}</li>
+                                    <li>{{matches.sportscategory}}s</li>
                                  </ul>
                               </ul>
                            </td>

@@ -1037,336 +1037,338 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             }];
     })
-    .controller('StudentprofileCtrl', function($scope, TemplateService, NavigationService, ngDialog, $stateParams, $filter, $state) {
-        $scope.template = TemplateService.changecontent("studentprofile");
-        $scope.menutitle = NavigationService.makeactive("Student Profile");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
-        $scope.checkmenu = false;
-        $scope.result = [];
-        $scope.sportsId = 0;
-        $scope.pagenum = 1;
-        $scope.allresult = [];
-        $scope.msg = "Loading";
-        $scope.showLoadmore = true;
-        $scope.years = [];
-        $scope.gallery = [{
-            image: "img/schoolgallery/g1.jpg"
-        }, {
-            image: "img/schoolgallery/g2.jpg"
-        }, {
-            image: "img/schoolgallery/g3.jpg"
-        }, {
-            image: "img/schoolgallery/g4.jpg"
-        }, {
-            image: "img/schoolgallery/g5.jpg"
-        }, {
-            image: "img/schoolgallery/g6.jpg"
-        }];
 
-        $scope.zoomposition = 0;
+.controller('StudentprofileCtrl', function($scope, TemplateService, NavigationService, ngDialog, $stateParams, $filter, $state) {
+    $scope.template = TemplateService.changecontent("studentprofile");
+    $scope.menutitle = NavigationService.makeactive("Student Profile");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.checkmenu = false;
+    $scope.result = [];
+    $scope.sportsId = 0;
+    $scope.pagenum = 1;
+    $scope.allresult = [];
+    $scope.msg = "Loading";
+    $scope.showLoadmore = true;
+    $scope.years = [];
+    $scope.gallery = [{
+        image: "img/schoolgallery/g1.jpg"
+    }, {
+        image: "img/schoolgallery/g2.jpg"
+    }, {
+        image: "img/schoolgallery/g3.jpg"
+    }, {
+        image: "img/schoolgallery/g4.jpg"
+    }, {
+        image: "img/schoolgallery/g5.jpg"
+    }, {
+        image: "img/schoolgallery/g6.jpg"
+    }];
 
-        $scope.openModal = function(gal) {
+    $scope.zoomposition = 0;
 
-            $scope.zoomposition = $scope.gallery.indexOf(gal);
+    $scope.openModal = function(gal) {
 
-            ngDialog.open({
-                disableAnimation: true,
-                template: './views/directive/zoomimage.html',
-                scope: $scope
+        $scope.zoomposition = $scope.gallery.indexOf(gal);
 
-            });
-        };
+        ngDialog.open({
+            disableAnimation: true,
+            template: './views/directive/zoomimage.html',
+            scope: $scope
 
-        $scope.makeactive = function(game) {
-
-            if (!game.grey) {
-                _.each($scope.games, function(n) {
-                    n.active = false;
-                });
-                game.active = true;
-                $scope.tab = game.game;
-                $scope.result = [];
-                $scope.allresult = [];
-                $scope.selectedGame = game;
-                $scope.sportsId = game.id;
-                $scope.pagenum = 1;
-                $scope.loadStudents();
-                $scope.gallobj.pagenum = 1;
-                $scope.loadStudentsGallery();
-                $scope.loadStudentStats();
-            }
-
-        };
-
-        $scope.yearClicked = function(year) {
-            // console.log($scope.years);
-            var foundindex = _.indexOf($scope.gallobj.year, year);
-            if (foundindex == -1) {
-                $scope.gallobj.year.push(year);
-            } else {
-                $scope.gallobj.year.splice(foundindex, 1);
-            }
-            $scope.loadStudentsGallery();
-        }
-
-        NavigationService.getstudentprofile($stateParams.id, function(data) {
-            _.each(data.sportsparticipated, function(n, key1) {
-                _.each($scope.games, function(m, key2) {
-                    if ($filter('lowercase')(n.name) == $filter('lowercase')(m.game)) {
-                        m.grey = false;
-                        m.id = n.id;
-                        if (!$scope.tab) {
-                            $scope.makeactive(m);
-                            $scope.sportsId = n.id;
-                        }
-                    } else {
-                        if (m.grey != false) {
-                            m.grey = true;
-                        }
-                    }
-                });
-                if (key1 == data.sportsparticipated.length - 1) {
-                    if (data.sportsparticipated != '') {
-                        $scope.checkmenu = true;
-                    }
-                    demo = 1;
-                    //					$scope.loadStudents();
-                }
-            });
-            $scope.student = data;
-            _.each(data.sportsparticipated, function(n, key) {
-                console.log(n);
-                if (key == 0) {
-                    $scope.sportsnames = n.name;
-                } else {
-                    $scope.sportsnames = $scope.sportsnames + ", " + n.name;
-                }
-
-            });
-            _.each(data.sportname, function(n, key) {
-                //lodash
-                //console.log(n);
-                //console.log(n.name + ', ' + key);
-                //console.log(n.id + ', ' + key);
-                //console.log(n.icon + ', ' + key);
-            });
         });
+    };
 
-        $scope.loadStudents = function() {
-            // NavigationService.getschoolgallery($stateParams.id, $scope.sportsId, $scope.pagenum, function(data) {
-            //
-            //     if (data.queryresult != '') {
-            //         _.each(data.queryresult, function(n) {
-            //             $scope.allresult.push(n);
-            //         });
-            //     } else {
-            //         $scope.showLoadmore = false;
-            //     }
-            //     if ($scope.allresult == "") {
-            //         $scope.msg = "No data";
-            //     }
-            //
-            // });
+    $scope.makeactive = function(game) {
+
+        if (!game.grey) {
+            _.each($scope.games, function(n) {
+                n.active = false;
+            });
+            game.active = true;
+            $scope.tab = game.game;
+            $scope.result = [];
+            $scope.allresult = [];
+            $scope.selectedGame = game;
+            $scope.sportsId = game.id;
+            $scope.pagenum = 1;
+            $scope.loadStudents();
+            $scope.gallobj.pagenum = 1;
+            $scope.loadStudentsGallery();
+            $scope.loadStudentStats();
         }
 
-        $scope.gallobj = {};
-        $scope.gallobj.year = [];
-        $scope.gallobj.schoolid = '';
-        $scope.gallobj.studentid = $stateParams.id;
-        $scope.gallobj.sportid = '';
-        $scope.gallobj.sportscategory = $scope.sportsId;
-        $scope.gallobj.agegroup = [];
-        $scope.loadStudentsGallery = function() {
-            $scope.gallobj.studentid = $stateParams.id;
-            $scope.gallobj.sportscategory = $scope.sportsId;
-            NavigationService.getschoolgallerynew($scope.gallobj, function(data) {
-                if (data.length > 0) {
-                    var galleryArray = [];
-                    _.each(data, function(n) {
-                        if (n.url)
-                            galleryArray.push(n);
-                    })
-                    if (galleryArray.length > 0)
-                        $scope.allresult = _.chunk(galleryArray, 3);
-                    else {
-                        $scope.allresult = [];
-                        $scope.msg = "No data";
+    };
+
+    $scope.yearClicked = function(year) {
+        // console.log($scope.years);
+        var foundindex = _.indexOf($scope.gallobj.year, year);
+        if (foundindex == -1) {
+            $scope.gallobj.year.push(year);
+        } else {
+            $scope.gallobj.year.splice(foundindex, 1);
+        }
+        $scope.loadStudentsGallery();
+    }
+
+    NavigationService.getstudentprofile($stateParams.id, function(data) {
+        _.each(data.sportsparticipated, function(n, key1) {
+            _.each($scope.games, function(m, key2) {
+                if ($filter('lowercase')(n.name) == $filter('lowercase')(m.game)) {
+                    m.grey = false;
+                    m.id = n.id;
+                    if (!$scope.tab) {
+                        $scope.makeactive(m);
+                        $scope.sportsId = n.id;
                     }
                 } else {
+                    if (m.grey != false) {
+                        m.grey = true;
+                    }
+                }
+            });
+            if (key1 == data.sportsparticipated.length - 1) {
+                if (data.sportsparticipated != '') {
+                    $scope.checkmenu = true;
+                }
+                demo = 1;
+                //					$scope.loadStudents();
+            }
+        });
+        $scope.student = data;
+        _.each(data.sportsparticipated, function(n, key) {
+            console.log(n);
+            if (key == 0) {
+                $scope.sportsnames = n.name;
+            } else {
+                $scope.sportsnames = $scope.sportsnames + ", " + n.name;
+            }
+
+        });
+        _.each(data.sportname, function(n, key) {
+            //lodash
+            //console.log(n);
+            //console.log(n.name + ', ' + key);
+            //console.log(n.id + ', ' + key);
+            //console.log(n.icon + ', ' + key);
+        });
+    });
+
+    $scope.loadStudents = function() {
+        // NavigationService.getschoolgallery($stateParams.id, $scope.sportsId, $scope.pagenum, function(data) {
+        //
+        //     if (data.queryresult != '') {
+        //         _.each(data.queryresult, function(n) {
+        //             $scope.allresult.push(n);
+        //         });
+        //     } else {
+        //         $scope.showLoadmore = false;
+        //     }
+        //     if ($scope.allresult == "") {
+        //         $scope.msg = "No data";
+        //     }
+        //
+        // });
+    }
+
+    $scope.gallobj = {};
+    $scope.gallobj.year = [];
+    $scope.gallobj.schoolid = '';
+    $scope.gallobj.studentid = $stateParams.id;
+    $scope.gallobj.sportid = '';
+    $scope.gallobj.sportscategory = $scope.sportsId;
+    $scope.gallobj.agegroup = [];
+    $scope.loadStudentsGallery = function() {
+        $scope.gallobj.studentid = $stateParams.id;
+        $scope.gallobj.sportscategory = $scope.sportsId;
+        NavigationService.getschoolgallerynew($scope.gallobj, function(data) {
+            if (data.length > 0) {
+                var galleryArray = [];
+                _.each(data, function(n) {
+                    if (n.url)
+                        galleryArray.push(n);
+                })
+                if (galleryArray.length > 0)
+                    $scope.allresult = _.chunk(galleryArray, 3);
+                else {
                     $scope.allresult = [];
                     $scope.msg = "No data";
                 }
-                console.log($scope.allresult);
-            });
-        }
-
-
-        $scope.loadStudentStats = function() {
-            $scope.statobj = {};
-            $scope.statobj.schoolid = '';
-            $scope.statobj.studentid = $stateParams.id;
-            $scope.statobj.sportscategory = $scope.sportsId;
-            NavigationService.getStats($scope.statobj, function(data) {
-                console.log(data);
-                var statsobj = {};
-                var medalsArray = [];
-                if (data.medals) {
-                    _.each(data.medals, function(n) {
-                        if (n.year) {
-                            medalsArray.push(n);
-                        }
-                    });
-                }
-                var matchesArray = [];
-                if (data.matches) {
-                    _.each(data.matches, function(n) {
-                        if (n.year) {
-                            matchesArray.push(n);
-                        }
-                    });
-                }
-                statsobj.medals = medalsArray;
-                statsobj.matches = matchesArray;
-                // $scope.schoolStats = statsobj;
-                $scope.studentStats = statsobj;
-                // if (data.length > 0)
-                //     $scope.allresult = _.chunk(data, 3);
-                // else {
-                //     $scope.allresult = [];
-                //     $scope.msg = "No data";
-                // }
-                // console.log($scope.allresult);
-            });
-        }
-
-        $scope.loadMore = function() {
-            $scope.pagenum = $scope.pagenum + 1;
-            $scope.loadStudents();
-        }
-
-        $scope.nextImage = function(oldposition) {
-            if (oldposition == ($scope.gallery.length - 1)) {
-                $scope.zoomposition = 0;
             } else {
-                $scope.zoomposition++;
+                $scope.allresult = [];
+                $scope.msg = "No data";
             }
-        };
-
-        $scope.previousImage = function(oldposition) {
-            if (oldposition == 0) {
-                $scope.zoomposition = ($scope.gallery.length - 1);
-            } else {
-                $scope.zoomposition--;
-            }
-        };
-
-
-        $scope.tab1 = "gallery";
-        //    tab change
-        $scope.class = 'act';
-        $scope.classb = '';
-
-        $scope.tabchange1 = function(tab, a) {
-            $scope.tab1 = tab;
-            if (a == 1) {
-                $scope.class = "act";
-                $scope.classb = '';
-
-            } else if (a == 2) {
-                $scope.class = '';
-                $scope.classb = "act";
-
-            }
-        };
-
-        //    end
-
-        $scope.tab2 = "gallerymain";
-        //    tab change
-        $scope.active = 'active';
-        $scope.actives = '';
-
-        $scope.tabchange = function(tab, a) {
-            $scope.tab2 = tab;
-            if (a == 1) {
-                $scope.active = "active";
-                $scope.actives = '';
-
-            } else if (a == 2) {
-                $scope.active = '';
-                $scope.actives = "active";
-
-            }
-        };
-
-        //    end
-
-        $scope.foo = "World";
-        $scope.list = [];
-
-        $scope.image = "https://www.google.com/images/srpr/logo11w.png";
-
-        $scope.openBox = function(id) {
-            $(id).attr('openbox', 'show');
-        }
-
-        $scope.add = function(term) {
-            $scope.list.push(term);
-        }
-        $scope.games = // JavaScript Document
-            [{
-                "icon": "img/bluemenu/tabletennis.png",
-                "icon2": "img/bluemenu/tabletennisor.png",
-                "game": "table tennis"
-            }, {
-                "icon": "img/bluemenu/tennis.png",
-                "icon2": "img/bluemenu/tennisor.png",
-                "game": "tennis",
-                "grey": true
-            }, {
-                "icon": "img/bluemenu/batminton.png",
-                "icon2": "img/bluemenu/batmintonor.png",
-                "game": "badminton"
-            }, {
-                "icon": "img/bluemenu/squash.png",
-                "icon2": "img/bluemenu/sqaushor.png",
-                "game": "squash"
-            }, {
-                "icon": "img/bluemenu/aqua.png",
-                "icon2": "img/bluemenu/aquaticsor.png",
-                "game": "swimming",
-                "grey": true
-            }, {
-                "icon": "img/bluemenu/basketball.png",
-                "icon2": "img/bluemenu/basketballor.png",
-                "game": "basketball",
-            }, {
-                "icon": "img/bluemenu/vollyball.png",
-                "icon2": "img/bluemenu/volleyballor.png",
-                "game": "volleyball",
-                "grey": true
-            }, {
-                "icon": "img/bluemenu/handball.png",
-                "icon2": "img/bluemenu/handballor.png",
-                "game": "handball",
-                "grey": true
-            }, {
-                "icon": "img/bluemenu/judo.png",
-                "icon2": "img/bluemenu/judoor.png",
-                "game": "judo",
-                "grey": true
-            }];
-
-        $scope.demo = 111;
-        $scope.checkthis = function() {};
-
-        //		$scope.makeactive($scope.games[0]);
-        ga('send', 'pageview', {
-            'title': 'StudentProfile Page'
+            console.log($scope.allresult);
         });
+    }
 
-    })
+
+    $scope.loadStudentStats = function() {
+        $scope.statobj = {};
+        $scope.statobj.schoolid = '';
+        $scope.statobj.studentid = $stateParams.id;
+        $scope.statobj.sportscategory = $scope.sportsId;
+        NavigationService.getStats($scope.statobj, function(data) {
+            console.log(data);
+            var statsobj = {};
+            var medalsArray = [];
+            if (data.medals) {
+                _.each(data.medals, function(n) {
+                    if (n.year) {
+                        medalsArray.push(n);
+                    }
+                });
+            }
+            var matchesArray = [];
+            if (data.matches) {
+                _.each(data.matches, function(n) {
+                    if (n.year) {
+                        n.score = n.score + n.opponentscore;
+                        matchesArray.push(n);
+                    }
+                });
+            }
+            statsobj.medals = medalsArray;
+            statsobj.matches = matchesArray;
+            // $scope.schoolStats = statsobj;
+            $scope.studentStats = statsobj;
+            // if (data.length > 0)
+            //     $scope.allresult = _.chunk(data, 3);
+            // else {
+            //     $scope.allresult = [];
+            //     $scope.msg = "No data";
+            // }
+            // console.log($scope.allresult);
+        });
+    }
+
+    $scope.loadMore = function() {
+        $scope.pagenum = $scope.pagenum + 1;
+        $scope.loadStudents();
+    }
+
+    $scope.nextImage = function(oldposition) {
+        if (oldposition == ($scope.gallery.length - 1)) {
+            $scope.zoomposition = 0;
+        } else {
+            $scope.zoomposition++;
+        }
+    };
+
+    $scope.previousImage = function(oldposition) {
+        if (oldposition == 0) {
+            $scope.zoomposition = ($scope.gallery.length - 1);
+        } else {
+            $scope.zoomposition--;
+        }
+    };
+
+
+    $scope.tab1 = "gallery";
+    //    tab change
+    $scope.class = 'act';
+    $scope.classb = '';
+
+    $scope.tabchange1 = function(tab, a) {
+        $scope.tab1 = tab;
+        if (a == 1) {
+            $scope.class = "act";
+            $scope.classb = '';
+
+        } else if (a == 2) {
+            $scope.class = '';
+            $scope.classb = "act";
+
+        }
+    };
+
+    //    end
+
+    $scope.tab2 = "gallerymain";
+    //    tab change
+    $scope.active = 'active';
+    $scope.actives = '';
+
+    $scope.tabchange = function(tab, a) {
+        $scope.tab2 = tab;
+        if (a == 1) {
+            $scope.active = "active";
+            $scope.actives = '';
+
+        } else if (a == 2) {
+            $scope.active = '';
+            $scope.actives = "active";
+
+        }
+    };
+
+    //    end
+
+    $scope.foo = "World";
+    $scope.list = [];
+
+    $scope.image = "https://www.google.com/images/srpr/logo11w.png";
+
+    $scope.openBox = function(id) {
+        $(id).attr('openbox', 'show');
+    }
+
+    $scope.add = function(term) {
+        $scope.list.push(term);
+    }
+    $scope.games = // JavaScript Document
+        [{
+            "icon": "img/bluemenu/tabletennis.png",
+            "icon2": "img/bluemenu/tabletennisor.png",
+            "game": "table tennis"
+        }, {
+            "icon": "img/bluemenu/tennis.png",
+            "icon2": "img/bluemenu/tennisor.png",
+            "game": "tennis",
+            "grey": true
+        }, {
+            "icon": "img/bluemenu/batminton.png",
+            "icon2": "img/bluemenu/batmintonor.png",
+            "game": "badminton"
+        }, {
+            "icon": "img/bluemenu/squash.png",
+            "icon2": "img/bluemenu/sqaushor.png",
+            "game": "squash"
+        }, {
+            "icon": "img/bluemenu/aqua.png",
+            "icon2": "img/bluemenu/aquaticsor.png",
+            "game": "swimming",
+            "grey": true
+        }, {
+            "icon": "img/bluemenu/basketball.png",
+            "icon2": "img/bluemenu/basketballor.png",
+            "game": "basketball",
+        }, {
+            "icon": "img/bluemenu/vollyball.png",
+            "icon2": "img/bluemenu/volleyballor.png",
+            "game": "volleyball",
+            "grey": true
+        }, {
+            "icon": "img/bluemenu/handball.png",
+            "icon2": "img/bluemenu/handballor.png",
+            "game": "handball",
+            "grey": true
+        }, {
+            "icon": "img/bluemenu/judo.png",
+            "icon2": "img/bluemenu/judoor.png",
+            "game": "judo",
+            "grey": true
+        }];
+
+    $scope.demo = 111;
+    $scope.checkthis = function() {};
+
+    //		$scope.makeactive($scope.games[0]);
+    ga('send', 'pageview', {
+        'title': 'StudentProfile Page'
+    });
+
+})
 
 .controller('SchoolprofileCtrl', function($scope, TemplateService, NavigationService, ngDialog, $stateParams, $timeout, $filter) {
     $scope.template = TemplateService.changecontent("schoolprofile");
@@ -1511,6 +1513,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             if (data.matches) {
                 _.each(data.matches, function(n) {
                     if (n.year) {
+                        n.score = n.score + "-" + n.opponentscore;
                         matchesArray.push(n);
                     }
                 });

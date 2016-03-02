@@ -1223,7 +1223,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             if (data.matches) {
                 _.each(data.matches, function(n) {
                     if (n.year) {
-                        n.score = n.score + n.opponentscore;
+                        n.score = n.score + "-" + n.opponentscore;
                         matchesArray.push(n);
                     }
                 });
@@ -1419,6 +1419,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.tab = game.game;
             $scope.loadSchoolGallery();
             $scope.loadSchoolStats();
+            $scope.getSchoolStudents();
         }
     };
     NavigationService.getAllSports(function(data) {});
@@ -1577,9 +1578,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
     }
 
+    $scope.studentListObj = {};
+    $scope.studentListObj.school = $stateParams.id;
+    $scope.studentListObj.sport = $scope.sportsId;
+    $scope.studentListObj.agegroup = "";
+    $scope.studentListObj.gender = "";
+    $scope.getSchoolStudents = function() {
+        // $scope.studentListObj.school = $stateParams.id;
+        // $scope.studentListObj.sport = $scope.sportsId;
+        // NavigationService.getSchoolStudents($scope.studentListObj, function(data) {
+        //     console.log(data);
+        // });
+    }
+
+
     // Get school detail
     $scope.loadStudents = function() {
-
         NavigationService.getsport($stateParams.id, $scope.sportsId, $scope.ageSelected, $scope.category, function(data) {
             console.log(data);
             if (data != '') {

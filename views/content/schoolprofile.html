@@ -572,7 +572,7 @@
             </div>
          </div>
 
-         <div class="row">
+         <div class="row" ng-if="result.length>0">
             <div class="col-md-6">
                <div class="bg-school">
                   <div class="stable">
@@ -659,6 +659,9 @@
                   </div>
                </div>
             </div>
+         </div>
+         <div class="row text-center" ng-if="result.length==0">
+            {{msgStud}}
          </div>
       </div>
       <!--

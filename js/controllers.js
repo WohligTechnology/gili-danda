@@ -1616,12 +1616,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(data);
             if (data.length > 0) {
                 $scope.result = _.chunk(data, parseInt(data.length / 2));
-                $scope.msg = "";
-            }else{
-              $scope.msg = "No Data";
-            }
-            if ($scope.result[2]) {
-                $scope.result[0].push($scope.result[2][0]);
+                $scope.msgStud = "";
+                if ($scope.result[2]) {
+                    $scope.result[0].push($scope.result[2][0]);
+                }
+            } else {
+                $scope.msgStud = "No Players";
+                $scope.result = [];
             }
         });
     }

@@ -123,7 +123,7 @@
              return $http.get(admin_url + 'json/getStatistics?schoolid=' + obj.schoolid + '&studentid=' + obj.studentid + '&sportscategory=' + obj.sportscategory, {}).success(callback);
          },
          getSchoolStudents: function(obj, callback) {
-             return $http.get(admin_url + 'json/getplayerlist?schoolid=' + obj.school + '&sports=' + obj.sport + '&agegroup=' + obj.agegroup + '&gender=' + obj.gender, {}).success(callback);
+             return $http.get(admin_url + 'json/getSchoolSports?id=' + obj.school + '&sport=' + obj.sport + '&agegroup=' + obj.agegroup + '&gender=' + obj.gender, {}).success(callback);
          },
          getnav: function() {
              return navigation;

@@ -367,10 +367,10 @@
                            <th>
                               year
                            </th>
-                           <th>
+                           <th ng-if="sportsId==1 || sportsId==3 || sportsId==4 || sportsId==5 || sportsId==6 || sportsId==7 || sportsId==9 || sportsId==10 || sportsId==11">
                               student name
                            </th>
-                           <th>
+                           <th ng-if="sportsId==1 || sportsId==3 || sportsId==4 || sportsId==5 || sportsId==6 || sportsId==7 || sportsId==9 || sportsId==10 || sportsId==11">
                               opponent name
                            </th>
                            <th>
@@ -395,10 +395,10 @@
                            <td class="lis">
                               <p>{{matches.year}}</p>
                            </td>
-                           <td>
+                           <td ng-if="sportsId==1 || sportsId==3 || sportsId==4 || sportsId==5 || sportsId==6 || sportsId==7 || sportsId==9 || sportsId==10 || sportsId==11">
                               <p>{{matches.studentname}}</p>
                            </td>
-                           <td>
+                           <td ng-if="sportsId==1 || sportsId==3 || sportsId==4 || sportsId==5 || sportsId==6 || sportsId==7 || sportsId==9 || sportsId==10 || sportsId==11">
                               <p>{{matches.opponent}}</p>
                            </td>
                            <td>
@@ -505,7 +505,7 @@
    </div>
    <div class="marginegt min800" ng-show="tab2=='squad'" style="">
 
-      <div class="if-data" ng-hide="true">
+      <div class="if-data">
          <div class="row">
             <div class="p80">
                <div class="col-md-offset-3 col-md-3">
@@ -517,7 +517,7 @@
                     </div>
 -->
                   <div class="sfa-select">
-                     <select id="sel1" class="select" ng-model="ageSelected" ng-change="tabchanges(ageSelected)">
+                     <select id="sel1" class="select" ng-model="studentListObj.agegroup" ng-change="getSchoolStudents()">
                         <option value="">Age groups</option>
                         <option value="{{age.agegroup}}" ng-repeat="age in agegroups">{{age.name}}</option>
                      </select>
@@ -532,21 +532,21 @@
                   </div> -->
                </div>
                <div class="col-md-3">
-                  <div class="sfa-select">
+                  <!-- <div class="sfa-select">
                      <select id="sel1" class="select" ng-model="category" ng-change="categorychanges(category)">
                         <option value="">Category</option>
                         <option value="{{cat.id}}" ng-repeat="cat in sportsCategory">{{cat.title}}</option>
                      </select>
                      <span class="only-border"></span>
-                  </div>
-                  <!-- <div class="sfa-select">
+                  </div> -->
+                  <div class="sfa-select">
                      <select id="sel1" class="select" ng-model="studentListObj.gender" ng-change="getSchoolStudents();">
                         <option value="">GENDER</option>
                         <option value="1">MALE</option>
                         <option value="2">FEMALE</option>
                      </select>
                      <span class="only-border"></span>
-                  </div> -->
+                  </div>
                </div>
             </div>
          </div>
@@ -588,9 +588,9 @@
                               <th ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">
                                  Team
                               </th>
-                              <th ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">
+                              <!-- <th ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">
                                  category
-                              </th>
+                              </th> -->
                            </tr>
                         </thead>
                         <tbody>
@@ -601,13 +601,13 @@
                               <td>
                                  <ul>
                                     <li>{{data.name}}</li>
-                                    <li> id: {{data.id}}</li>
+                                    <li> id: SFAST{{data.id}}</li>
                                  </ul>
                               </td>
                               <td>
                                  <ul>
-                                    <li ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">{{data.teamname}}</li>
-                                    <li ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">{{data.title}}</li>
+                                    <li ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">{{data.title}}</li>
+                                    <!-- <li ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">{{data.title}}</li> -->
                                  </ul>
                               </td>
                            </tr>
@@ -631,9 +631,9 @@
                               <th ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">
                                  Team
                               </th>
-                              <th ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">
+                              <!-- <th ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">
                                  category
-                              </th>
+                              </th> -->
                            </tr>
                         </thead>
                         <tbody>
@@ -644,13 +644,13 @@
                               <td>
                                  <ul>
                                     <li>{{data.name}}</li>
-                                    <li> id: {{data.id}}</li>
+                                    <li> id: SFAST{{data.id}}</li>
                                  </ul>
                               </td>
                               <td>
                                  <ul>
-                                    <li ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">{{data.teamname}}</li>
-                                    <li ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">{{data.title}}</li>
+                                    <li ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">{{data.title}}</li>
+                                    <!-- <li ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">{{data.title}}</li> -->
                                  </ul>
                               </td>
                            </tr>
@@ -674,7 +674,7 @@
 
 
 
-      <div class="container" ng-if="school.participant.studentcount==0 || msg=='No data'">
+      <!-- <div class="container" ng-if="school.participant.studentcount==0 || msg=='No data'">
          <div class="row">
             <div class="col-md-6">
                <div class="text-sp" style="margin-top:0px">
@@ -696,7 +696,7 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> -->
 
    </div>
 </div>

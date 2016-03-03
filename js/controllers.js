@@ -281,8 +281,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     var lastpage = 1;
 
     $scope.getSearchById = function(val) {
-        $scope.searchById.search = parseInt(val.substr(5));
-        if (val.substr(0, 5) == "sfast" || val.substr(0, 5) == "SFAST") {
+        console.log(val);
+        if (val.indexOf("SFAST") == -1) {
+            $scope.searchById.search = parseInt(val);
             NavigationService.studentSearchById($scope.searchById, function(data) {
                 if (data) {
                     if (data != "false") {
@@ -304,6 +305,31 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     console.log(data);
                 }
             })
+        } else {
+            $scope.searchById.search = parseInt(val.substr(5));
+            if (val.substr(0, 5) == "sfast" || val.substr(0, 5) == "SFAST") {
+                NavigationService.studentSearchById($scope.searchById, function(data) {
+                    if (data) {
+                        if (data != "false") {
+                            $scope.showNoResults = false;
+                            $location.url("/studentprofile/" + data.id);
+                        } else {
+                            $scope.showNoResults = true;
+                            $scope.searchCount = 0;
+                            $scope.searchById = {};
+                            $scope.searchById.search = '';
+                            $scope.searchById.pageno = 1;
+                            $scope.searchByName = {};
+                            $scope.searchByName.school = '';
+                            $scope.searchByName.student = '';
+                            $scope.searchByName.pageno = 1;
+                            $scope.idSearch = {};
+                            $scope.idSearch.search = '';
+                        }
+                        console.log(data);
+                    }
+                })
+            }
         }
     }
 
@@ -1584,31 +1610,40 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.studentListObj.agegroup = "";
     $scope.studentListObj.gender = "";
     $scope.getSchoolStudents = function() {
-        // $scope.studentListObj.school = $stateParams.id;
-        // $scope.studentListObj.sport = $scope.sportsId;
-        // NavigationService.getSchoolStudents($scope.studentListObj, function(data) {
-        //     console.log(data);
-        // });
+        $scope.studentListObj.school = $stateParams.id;
+        $scope.studentListObj.sport = $scope.sportsId;
+        NavigationService.getSchoolStudents($scope.studentListObj, function(data) {
+            console.log(data);
+            if (data.length > 0) {
+                $scope.result = _.chunk(data, parseInt(data.length / 2));
+                $scope.msg = "";
+            }else{
+              $scope.msg = "No Data";
+            }
+            if ($scope.result[2]) {
+                $scope.result[0].push($scope.result[2][0]);
+            }
+        });
     }
 
 
     // Get school detail
     $scope.loadStudents = function() {
-        NavigationService.getsport($stateParams.id, $scope.sportsId, $scope.ageSelected, $scope.category, function(data) {
-            console.log(data);
-            if (data != '') {
-                $scope.allresult = data;
-                $scope.msg = "";
-                $scope.result = _.chunk($scope.allresult, parseInt($scope.allresult.length / 2));
-                if ($scope.result[2]) {
-                    $scope.result[0].push($scope.result[2][0]);
-                }
-                console.log($scope.result);
-            }
-            if ($scope.allresult == "") {
-                $scope.msg = "No data";
-            }
-        });
+        // NavigationService.getsport($stateParams.id, $scope.sportsId, $scope.ageSelected, $scope.category, function(data) {
+        //     console.log(data);
+        //     if (data != '') {
+        //         $scope.allresult = data;
+        //         $scope.msg = "";
+        //         $scope.result = _.chunk($scope.allresult, parseInt($scope.allresult.length / 2));
+        //         if ($scope.result[2]) {
+        //             $scope.result[0].push($scope.result[2][0]);
+        //         }
+        //         console.log($scope.result);
+        //     }
+        //     if ($scope.allresult == "") {
+        //         $scope.msg = "No data";
+        //     }
+        // });
     }
 
     $scope.loadCategory = function() {

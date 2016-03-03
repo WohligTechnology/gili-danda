@@ -170,10 +170,9 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $locationProvider) 
             templateUrl: "./views/template.html",
             controller: 'StudentprofileCtrl'
         });
-        if(isproduction)
-        {
-            $locationProvider.html5Mode(true);
-        }
+    if (isproduction) {
+        $locationProvider.html5Mode(true);
+    }
 
     $urlRouterProvider.otherwise("/home");
 })
@@ -245,9 +244,9 @@ firstapp.filter('splitset', function() {
                 score = score.split('-').join(' ');
                 var splited = score;
                 for (var i = 1; i <= 10; i++) {
-                    if (i == 1)
+                    if (i == 1) {
                         splited = splited.split("s" + i).join('set' + i + '-');
-                    else {
+                    } else {
                         splited = splited.split("s" + i).join(' set' + i + '-');
                     }
                 }
@@ -265,9 +264,9 @@ firstapp.filter('splitset', function() {
                     }
                 }
                 return final;
-            } else if (score.indexOf('s') != -1 && score.indexOf('s2') == -1 && score.indexOf('s3') == -1) {
+            } else if (score.indexOf('s1') != -1 && score.indexOf('s2') == -1 && score.indexOf('s3') == -1) {
                 score = score.split('-').join('');
-                var splited = score.split('s');
+                var splited = score.split('s1');
                 var final = "GAME : " + splited[1] + "/" + splited[2];
                 return final;
             } else {

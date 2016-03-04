@@ -52,10 +52,11 @@
             <div class="col-md-12 rwo-class" ng-repeat="student in searchResults track by $index" ng-if="searchCount!=0">
                 <div class="col-md-3">
                     <div class="im-c">
-                        <img src="img/noimage.png">
+                        <!-- <img ng-src="img/noimage.png"> -->
+                        <img ng-src="{{student.image1 | serverimage}}">
                     </div>
                 </div>
-          
+
                 <div class="col-md-2 ">
                     <div class="s-info p15">
                         <p>Name</p>
@@ -72,7 +73,7 @@
                         <p ui-sref="schoolprofile({id:student.schoolid})" class="cpointer">: {{student.school}} </p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-2">
                     <div class="pull-right s-info pos-view">
                         <p class="vh" ng-click="goToProfile(student.id);">View full profile</p>

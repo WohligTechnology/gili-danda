@@ -1115,6 +1115,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.tab = game.game;
             $scope.result = [];
             $scope.allresult = [];
+            $scope.studentStats = {
+                "medals": [],
+                "matches": []
+            };
             $scope.selectedGame = game;
             $scope.sportsId = game.id;
             $scope.pagenum = 1;
@@ -1433,6 +1437,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             $scope.result = [];
             $scope.allresult = [];
+            $scope.schoolStats = {
+                "medals": [],
+                "matches": []
+            };
             //					$scope.selectedGame = game;
 
             $scope.sportsId = game.id;

@@ -1253,7 +1253,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             if (data.matches) {
                 _.each(data.matches, function(n) {
                     if (n.year) {
-                        n.score = n.score + "-" + n.opponentscore;
+                        if (n.score && n.opponentscore) {
+                            n.score = n.score + "-" + n.opponentscore;
+                        } else {
+                            n.score = "";
+                        }
                         matchesArray.push(n);
                     }
                 });
@@ -1548,7 +1552,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             if (data.matches) {
                 _.each(data.matches, function(n) {
                     if (n.year) {
-                        n.score = n.score + "-" + n.opponentscore;
+                        if (n.score && n.opponentscore) {
+                            n.score = n.score + "-" + n.opponentscore;
+                        } else {
+                            n.score = "";
+                        }
                         matchesArray.push(n);
                     }
                 });

@@ -1,5 +1,5 @@
 //Gruntfile
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
     //Initializing the configuration object
     grunt.initConfig({
@@ -65,7 +65,8 @@ module.exports = function (grunt) {
                     './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
                     './bower_components/ng-dialog/js/ngDialog.min.js',
                     './bower_components/lodash/lodash.min.js',
-                    "bower_components/angular-momentjs/angular-momentjs.min.js",
+                    './bower_components/angular-loading-bar/build/loading-bar.min.js',
+                    './bower_components/angular-momentjs/angular-momentjs.min.js',
                     './js/app.js',
                     './js/controllers.js',
                     './js/templateservice.js',
@@ -104,14 +105,12 @@ module.exports = function (grunt) {
                 options: {
                     archive: 'production.zip'
                 },
-                files: [
-                    {
-                        expand: true,
-                        cwd: 'production/',
-                        src: ['**'],
-                        dest: './'
-                    }
-                    ]
+                files: [{
+                    expand: true,
+                    cwd: 'production/',
+                    src: ['**'],
+                    dest: './'
+                }]
             },
             css: {
                 options: {
@@ -174,7 +173,7 @@ module.exports = function (grunt) {
                         removeScriptTypeAttributes: true,
                         removeStyleLinkTypeAttributes: true
                     },
-                    bootstrap: function (module, script) {
+                    bootstrap: function(module, script) {
                         return "firstapp.run(['$templateCache', function($templateCache) {" + script + "}]);";
                     }
                 },
@@ -193,7 +192,7 @@ module.exports = function (grunt) {
                         removeScriptTypeAttributes: true,
                         removeStyleLinkTypeAttributes: true
                     },
-                    bootstrap: function (module, script) {
+                    bootstrap: function(module, script) {
                         return "firstapp.run(['$templateCache', function($templateCache) {" + script + "}]);";
                     }
                 },
@@ -212,7 +211,7 @@ module.exports = function (grunt) {
                         removeScriptTypeAttributes: true,
                         removeStyleLinkTypeAttributes: true
                     },
-                    bootstrap: function (module, script) {
+                    bootstrap: function(module, script) {
                         return "firstapp.run(['$templateCache', function($templateCache) {" + script + "}]);";
                     }
                 },
@@ -224,60 +223,58 @@ module.exports = function (grunt) {
             main: {
                 files: [
 
-      // includes files within path and its sub-directories
+                    // includes files within path and its sub-directories
                     {
                         expand: true,
                         src: ['img/**'],
                         dest: 'production/'
-                    },
-                    {
+                    }, {
                         expand: true,
                         src: ['fonts/**'],
                         dest: 'production/'
                     },
 
-    ],
+                ],
             },
             appengine: {
                 files: [
 
-      // includes files within path and its sub-directories
+                    // includes files within path and its sub-directories
                     {
                         expand: true,
                         src: ['img/**'],
                         dest: 'appengine/'
-                    },
-                    {
+                    }, {
                         expand: true,
                         src: ['fonts/**'],
                         dest: 'appengine/'
-						 },
+                    },
 
-    ],
+                ],
             },
             jsappengine: {
                 files: [
 
-      // includes files within path and its sub-directories
+                    // includes files within path and its sub-directories
                     {
                         expand: false,
                         src: ['./w/w.min.js'],
                         dest: './appengine/'
                     }
 
-    ],
+                ],
             },
             cssappengine: {
                 files: [
 
-      // includes files within path and its sub-directories
+                    // includes files within path and its sub-directories
                     {
                         expand: false,
                         src: ['./w/w.min.css'],
                         dest: './appengine/'
                     }
 
-    ],
+                ],
             },
         },
         htmlmin: { // Task
@@ -329,5 +326,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.registerTask('default', ['less:development', 'concat', 'watch']);
     grunt.registerTask('production', ['copy', 'htmlmin', 'less:production', 'ngtemplates', 'concat', 'uglify', 'compress:css', 'compress:js', 'compress:indexhtml', 'compress:zip']);
-    grunt.registerTask('appengine', ['copy:appengine', 'htmlmin:appengine', 'less:development', 'ngtemplates', 'concat', 'uglify', 'copy:jsappengine','copy:cssappengine']);
+    grunt.registerTask('appengine', ['copy:appengine', 'htmlmin:appengine', 'less:development', 'ngtemplates', 'concat', 'uglify', 'copy:jsappengine', 'copy:cssappengine']);
 };

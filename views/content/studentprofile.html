@@ -587,7 +587,7 @@
                                  <li>{{matches.agegroup}}</li>
                                  <li ng-if="matches.gender=='1'">BOYS</li>
                                  <li ng-if="matches.gender=='2'">GIRLS</li>
-                                 <li>{{matches.sportscategory}}s</li>
+                                 <li ng-if="matches.sportscategory">{{matches.sportscategory}}s</li>
                               </ul>
                            </td>
                            <td>{{matches.score | splitset}}</td>

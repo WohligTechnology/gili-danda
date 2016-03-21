@@ -242,6 +242,9 @@ firstapp.filter('serverimageschool', function() {
 firstapp.filter('splitset', function() {
     return function(score) {
         if (score && score != "") {
+            if (score.indexOf('s1') != -1 && score.indexOf('-') == -1) {
+                return "";
+            }
             if (score.indexOf('s1') != -1 && score.length > 10) {
                 score = score.split('-').join(' ');
                 var splited = score;

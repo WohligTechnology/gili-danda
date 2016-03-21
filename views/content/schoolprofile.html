@@ -399,11 +399,13 @@
                               <p>{{matches.studentname}}</p>
                            </td>
                            <td ng-if="sportsId==1 || sportsId==3 || sportsId==4 || sportsId==5 || sportsId==6 || sportsId==7 || sportsId==9 || sportsId==10 || sportsId==11">
-                              <p>{{matches.opponent}}</p>
+                              <p ng-if="matches.opponent">{{matches.opponent}}</p>
+                              <p ng-if="!matches.opponent">-</p>
                            </td>
                            <td>
                               <ul>
-                                 <li>{{matches.against}}</li>
+                                 <li ng-if="matches.against">{{matches.against}}</li>
+                                 <li ng-if="!matches.against">-</li>
                                  <!-- <li>don bosco school</li> -->
                               </ul>
                            </td>

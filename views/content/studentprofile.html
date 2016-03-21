@@ -571,11 +571,13 @@
                               <p>{{matches.year}}</p>
                            </td>
                            <td>
-                              <p>{{matches.opponent}}</p>
+                              <p ng-if="matches.opponent">{{matches.opponent}}</p>
+                              <p ng-if="!matches.opponent">-</p>
                            </td>
                            <td>
                               <ul>
-                                 <li>{{matches.against}}</li>
+                                 <li ng-if="matches.against">{{matches.against}}</li>
+                                 <li ng-if="!matches.against">-</li>
                                  <!-- <li>don bosco school</li> -->
                               </ul>
                            </td>

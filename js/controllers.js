@@ -1253,11 +1253,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             if (data.matches) {
                 _.each(data.matches, function(n) {
                     if (n.year) {
-                        if (n.score && n.opponentscore) {
-                            n.score = n.score + "-" + n.opponentscore;
-                        } else {
-                            n.score = "";
+                        var finalscore = "";
+                        if (n.score) {
+                            finalscore += n.score;
                         }
+                        if (n.opponentscore) {
+                            finalscore += "-" + n.opponentscore;
+                        }
+                        n.score = finalscore;
                         matchesArray.push(n);
                     }
                 });
@@ -1552,11 +1555,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             if (data.matches) {
                 _.each(data.matches, function(n) {
                     if (n.year) {
-                        if (n.score && n.opponentscore) {
-                            n.score = n.score + "-" + n.opponentscore;
-                        } else {
-                            n.score = "";
+                        var finalscore = "";
+                        if (n.score) {
+                            finalscore += n.score;
                         }
+                        if (n.opponentscore) {
+                            finalscore += "-" + n.opponentscore;
+                        }
+                        n.score = finalscore;
+
+                        // if (n.score && n.opponentscore) {
+                        //     n.score = n.score + "-" + n.opponentscore;
+                        // } else {
+                        //     n.score = "";
+                        // }
                         matchesArray.push(n);
                     }
                 });

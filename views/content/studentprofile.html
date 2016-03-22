@@ -572,12 +572,12 @@
                            </td>
                            <td>
                               <p ng-if="matches.opponent">{{matches.opponent}}</p>
-                              <p ng-if="!matches.opponent">-</p>
+                              <p ng-if="!matches.opponent" style="font-size: 30px;">-</p>
                            </td>
                            <td>
                               <ul>
                                  <li ng-if="matches.against">{{matches.against}}</li>
-                                 <li ng-if="!matches.against">-</li>
+                                 <li ng-if="!matches.against" style="font-size: 30px;">-</li>
                                  <!-- <li>don bosco school</li> -->
                               </ul>
                            </td>
@@ -598,6 +598,9 @@
                                  <li>
                                     <h4 ng-if="matches.result==1">Won</h4>
                                     <h4 ng-if="matches.result==2">Lost</h4>
+                                    <h4 ng-if="matches.result==3">No Show</h4>
+                                    <h4 ng-if="matches.result==4">Walkover</h4>
+                                    <h4 ng-if="matches.result==5">Bye</h4>
                                  </li>
                                  <li class="vers" ng-if="matches.url">
                                     <div class="vers">

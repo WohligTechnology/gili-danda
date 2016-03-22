@@ -400,12 +400,12 @@
                            </td>
                            <td ng-if="sportsId==1 || sportsId==3 || sportsId==4 || sportsId==5 || sportsId==6 || sportsId==7 || sportsId==9 || sportsId==10 || sportsId==11">
                               <p ng-if="matches.opponent">{{matches.opponent}}</p>
-                              <p ng-if="!matches.opponent">-</p>
+                              <p ng-if="!matches.opponent" style="font-size: 30px;">-</p>
                            </td>
                            <td>
                               <ul>
                                  <li ng-if="matches.against">{{matches.against}}</li>
-                                 <li ng-if="!matches.against">-</li>
+                                 <li ng-if="!matches.against" style="font-size: 30px;">-</li>
                                  <!-- <li>don bosco school</li> -->
                               </ul>
                            </td>
@@ -428,6 +428,9 @@
                                  <li>
                                     <h4 ng-if="matches.result==1">Won</h4>
                                     <h4 ng-if="matches.result==2">Lost</h4>
+                                    <h4 ng-if="matches.result==3">No Show</h4>
+                                    <h4 ng-if="matches.result==4">Walkover</h4>
+                                    <h4 ng-if="matches.result==5">Bye</h4>
                                  </li>
                                  <li class="vers" ng-if="matches.url">
                                     <div class="vers">

@@ -1321,10 +1321,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     //    end
 
-    $scope.tab2 = "gallerymain";
+    $scope.tab2 = "statics";
     //    tab change
-    $scope.active = 'active';
-    $scope.actives = '';
+    $scope.active = '';
+    $scope.actives = 'active';
 
     $scope.tabchange = function(tab, a) {
         $scope.tab2 = tab;
@@ -1461,6 +1461,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.loadSchoolGallery();
             $scope.loadSchoolStats();
             $scope.getSchoolStudents();
+            $scope.loadSportStudent();
         }
     };
     NavigationService.getAllSports(function(data) {});
@@ -1534,9 +1535,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log($scope.schoolgallery);
         });
     }
-
+    $scope.statobj = {};
+    $scope.statobj.gender = '';
+    $scope.statobj.agegroup = '';
     $scope.loadSchoolStats = function() {
-        $scope.statobj = {};
         $scope.statobj.studentid = '';
         $scope.statobj.schoolid = $stateParams.id;
         $scope.statobj.sportscategory = $scope.sportsId;

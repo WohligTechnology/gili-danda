@@ -222,7 +222,50 @@
    </div>
 
    <div class="marginegt min800" ng-show="tab2=='statics'">
-
+      <div class="row">
+         <div class="p80">
+            <div class="col-md-offset-3 col-md-3">
+               <!--
+                <div class="list-active cust-li text-center">
+                    <ul>
+                        <li class="{{age.line}}" ng-click="tabchanges(age)" ng-repeat="age in agegroups">{{age.name}}</li>
+                    </ul>
+                </div>
+-->
+               <div class="sfa-select">
+                  <select id="sel1" class="select" ng-model="statobj.agegroup" ng-change="loadSchoolStats()">
+                     <option value="">Age groups</option>
+                     <option value="{{age.agegroup}}" ng-repeat="age in agegroups">{{age.name}}</option>
+                  </select>
+                  <span class="only-border"></span>
+               </div>
+               <!-- <div class="sfa-select">
+                 <select id="sel1" class="select" ng-model="studentListObj.agegroup" ng-change="getSchoolStudents();">
+                    <option value="">Age group</option>
+                    <option value="{{age.agegroup}}" ng-repeat="age in agegroups">{{age.name}}</option>
+                 </select>
+                 <span class="only-border"></span>
+              </div> -->
+            </div>
+            <div class="col-md-3">
+               <!-- <div class="sfa-select">
+                 <select id="sel1" class="select" ng-model="category" ng-change="categorychanges(category)">
+                    <option value="">Category</option>
+                    <option value="{{cat.id}}" ng-repeat="cat in sportsCategory">{{cat.title}}</option>
+                 </select>
+                 <span class="only-border"></span>
+              </div> -->
+               <div class="sfa-select">
+                  <select id="sel1" class="select" ng-model="statobj.gender" ng-change="loadSchoolStats();">
+                     <option value="">GENDER</option>
+                     <option value="1">MALE</option>
+                     <option value="2">FEMALE</option>
+                  </select>
+                  <span class="only-border"></span>
+               </div>
+            </div>
+         </div>
+      </div>
       <div class="row">
          <div class="col-md-12 ">
 

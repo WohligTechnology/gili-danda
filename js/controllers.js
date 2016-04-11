@@ -822,6 +822,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.filter = {};
+        // $scope.filter.category = "41";
+        // $scope.filter.sport = "6";
+        // $scope.filter.gender = "1";
+        // $scope.filter.agegroup = "7";
         $scope.filter.category = "";
         $scope.filter.sport = "";
         $scope.filter.gender = "";
@@ -860,21 +864,28 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.rounds = [];
 
         $scope.getDraw = function() {
+            // $scope.filter.category = "1";
             NavigationService.getDraw($scope.filter, function(data) {
-                console.log(data);
                 $scope.match = data;
-                _.each(data, function(n, key) {
-                    if (key != 0) {
-                        _.each(n.match, function(m, key1) {
-                            $scope.round = [];
-                            _.each(m.player, function(k, key2) {
-                                $scope.round.push(k);
-                            })
-                            $scope.rounds.push($scope.round);
+                var data2 = data.splice(1);
+                _.each(data2, function(n) {
+                    $scope.round = [];
+                    _.each(n.match, function(m) {
+                        _.each(m.player, function(k) {
+                            $scope.round.push(k);
                         })
-                    }
+                    })
+                    $scope.rounds.push($scope.round);
                 })
-                console.log($scope.rounds);
+                _.each(data2[data2.length - 1].match, function(n) {
+                    _.each(n.player, function(m) {
+                        if (m.result == "1") {
+                            var arr = [];
+                            arr.push(m)
+                            $scope.rounds.push(arr);
+                        }
+                    })
+                })
             });
         }
 

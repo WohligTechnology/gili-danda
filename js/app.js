@@ -458,6 +458,29 @@ firstapp.directive('fancybox', function($compile, $parse) {
         }
     };
 });
+firstapp.directive('fancyboxButton', function($compile, $parse) {
+    return {
+        restrict: 'EA',
+        replace: false,
+        link: function($scope, element, attrs) {
+            $element = $(element);
+            console.log("Checking Fancybox");
+            setTimeout(function() {
+                $(".varies").fancybox({
+                    maxWidth: 800,
+                    maxHeight: 600,
+                    fitToView: false,
+                    width: '70%',
+                    height: '70%',
+                    autoSize: false,
+                    closeClick: false,
+                    openEffect: 'none',
+                    closeEffect: 'none'
+                });
+            }, 100);
+        }
+    };
+});
 var $abc = "";
 
 firstapp.directive('schoolsports', function() {

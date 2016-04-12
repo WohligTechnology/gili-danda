@@ -171,7 +171,13 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $locationProvider, 
             url: "/studentprofile/:id",
             templateUrl: "./views/template.html",
             controller: 'StudentprofileCtrl'
-        });
+          })
+        .state('training', {
+            url: "/training",
+            templateUrl: "./views/template.html",
+            controller: 'TrainingCtrl'
+          })
+        ;
     if (isproduction) {
         $locationProvider.html5Mode(true);
     }

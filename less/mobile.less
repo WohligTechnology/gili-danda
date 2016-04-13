@@ -10,7 +10,8 @@
 @slider: ~"only screen and (min-width: 469px) and (max-width: 767px)";
 @desktop: ~"only screen and (min-width: 950px) and (max-width: 1128px)";
 @custom: ~"only screen and (min-width: 949px) and (max-width: 1200px)";
-@desktop-xl: ~"only screen and (min-width: 1129px)";
+@desktop-xl: ~"only screen and (min-width: 1129px) and (max-width:1200px)";
+@desktop-xs: ~"only screen and (min-width: 999px) and (max-width:1128px)";
 @desktopsmall: ~"only screen and (min-width: 950px) and (max-width: 998px)";
 @moo: ~"only screen and (min-width: 849px) and (max-width: 998px)";
 @banner: ~"only screen and (min-width: 469px) and (max-width: 715px)";
@@ -23,6 +24,16 @@
     }
 }
 
+@media @desktop-xl{
+  .fancy1 .ptl img {
+    top: 0% !important;
+    width: 9% !important;
+    left: 91% !important;
+  }
+}
+@media @desktop-xs{
+
+}
 @media @desktopsmall {
     .sprofile .slogo {
         zoom: 0.8;
@@ -317,6 +328,36 @@
             }
         }
     }
+    .fancy1 {
+      .ptl {
+      img {
+    top: 1% !important;
+    left: 89% !important;
+  }}}
+    .train {
+        .head {
+            width: 60% !important;
+            padding: 15px 0 !important;
+            font-size: 21px !important;
+              }
+              .train-body{
+                .run{
+                  .runn{
+                .btn1{
+                  width: 138px !important;
+                }
+                }
+                }
+                .swim{
+                  .swims{
+                .btn1{
+                  width: 138px !important;
+                }
+                }
+                }
+              }
+            }
+
     .download {
         margin: 40px 0;
         a {
@@ -529,6 +570,25 @@
     .sprofile {
         zoom: 0.7 !important;
     }
+
+    .train{
+      .train-body{
+        .run{
+          .runn{
+            h3{
+              font-size: 20px;
+            }
+          }
+        }
+        .swim{
+          .swims{
+            h3{
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
 }
 
 /// *********  desktop 950 to 1120 *********
@@ -578,6 +638,7 @@
     .onlylogo {
         zoom: 0.9 !important;
     }
+
 }
 
 // end
@@ -959,6 +1020,46 @@
             }
         }
     }
+  .fancy1
+    {
+    .ptl
+    {
+      img {
+    top: 1% !important;
+    left: 89% !important;
+  }
+  }
+}
+    .train {
+        margin: 10% 0 15% !important;
+        .head {
+            width: 100% !important;
+            padding: 20px 0 !important;
+            font-size: 22px !important;
+        }
+        .train-body{
+          .run{
+            .runn{
+              h3{
+                font-size: 20px !important;
+              }
+              .btn1{
+                    width: 138px !important;
+              }
+            }
+          }
+          .swim{
+            .swims{
+              h3{
+                font-size: 20px !important;
+              }
+              .btn1{
+                    width: 138px !important;
+              }
+            }
+          }
+        }
+      }
     .foot-links {
         text-align: center !important;
     }
@@ -1857,6 +1958,39 @@
     }
     .tab-info {
         margin: 20px 0 10px !important;
+    }
+    .fancy1{
+      .ptl {
+        img {
+    top: 1% !important;
+    width: 7% !important;
+    left: 92% !important;
+        }
+      }
+    }
+    //training
+    .train{
+      .train-head{
+        h2.head{
+            font-size: 26px !important;
+          }
+      }
+      .train-body {
+                .run{
+                  .runn{
+                    button.btn1 {
+                          width: 140px !important;
+                          }
+                  }
+            }
+            .swim{
+              .swims{
+                button.btn1 {
+                      width: 140px !important;
+                      }
+              }
+        }
+      }
     }
 }
 

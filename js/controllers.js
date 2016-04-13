@@ -822,14 +822,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.filter = {};
-        // $scope.filter.category = "41";
-        // $scope.filter.sport = "6";
-        // $scope.filter.gender = "1";
-        // $scope.filter.agegroup = "7";
-        $scope.filter.category = "";
-        $scope.filter.sport = "";
-        $scope.filter.gender = "";
-        $scope.filter.agegroup = "";
+        $scope.filter.category = "1";
+        $scope.filter.sport = "1";
+        $scope.filter.gender = "1";
+        $scope.filter.agegroup = "1";
+        // $scope.filter.category = "";
+        // $scope.filter.sport = "";
+        // $scope.filter.gender = "";
+        // $scope.filter.agegroup = "";
         $scope.sportselected = "";
         $scope.result = [];
         $scope.schedule = {};
@@ -888,7 +888,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 })
             });
         }
-
+  $scope.getDraw();
         $scope.r1 = // JavaScript Document
             [{
                 "studentname": "Viraj Kale",

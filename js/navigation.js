@@ -128,6 +128,5 @@ var navigationservice = angular.module('navigationservice', [])
             }
             return menuname;
         },
-
-    }
+    };
 });

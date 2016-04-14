@@ -2433,7 +2433,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     .controller('TrainingCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("training");
-        $scope.menutitle = NavigationService.makeactive("Training And Development");
+        $scope.menutitle = NavigationService.makeactive("Training & Development");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
       })

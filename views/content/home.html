@@ -3,48 +3,48 @@
 
 </div>
 <div class="slider">
-    <flex-slider class="carousel" flex-slide="slid in homeslide track by $index" animation="slide" animation-loop="true" item-margin="1" control-nav="false" flexvar="demo" after="changeslider();" start="changeslider();">
-        <li>
-            <a href="#"><img ng-src="{{slid.image | serverimage}}" class="img-responsive"></a>
+   <flex-slider class="carousel" flex-slide="slid in homeslide track by $index" animation="slide" animation-loop="true" item-margin="1" control-nav="false" flexvar="demo" after="changeslider();" start="changeslider();">
+      <li>
+         <a href="#"><img ng-src="{{slid.image | serverimage}}" class="img-responsive"></a>
 
-        </li>
-    </flex-slider>
+      </li>
+   </flex-slider>
 
-    <div class="slider-text" ng-repeat="element in homeslide track by $index">
+   <div class="slider-text" ng-repeat="element in homeslide track by $index">
 
-    </div>
+   </div>
 </div>
 <div class="curve2">
 
 </div>
 <div class="sub-menu">
-    <div class="container">
-        <div class="row">
-            <div class="sub-cat">
-                <ul>
-                    <li ng-repeat="element in homeslide track by $index" ng-hover="iconclick(element);">
+   <div class="container">
+      <div class="row">
+         <div class="sub-cat">
+            <ul>
+               <li ng-repeat="element in homeslide track by $index" ng-hover="iconclick(element);">
 
-                            <figure>
-                                <img class="transition" ng-src="{{element.icon |serverimage}}" ng-style="{ 'width' : element.zoom*110 }" class="img-responsive">
-                                <figcaption ng-style="{ 'font-size' : element.zoom*14 }">{{element.name}}</figcaption>
-                            </figure>
+                  <figure>
+                     <img class="transition" ng-src="{{element.icon |serverimage}}" ng-style="{ 'width' : element.zoom*110 }" class="img-responsive">
+                     <figcaption ng-style="{ 'font-size' : element.zoom*14 }">{{element.name}}</figcaption>
+                  </figure>
 
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-           <div class="margintop">
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="row">
+         <div class="margintop">
             <div class="col-md-6">
-                <div class="btn-pdf pl-right tx-center m17">
-                    <a href="img/form/allcombine.pdf" target="_blank">CHAMPIONS OF SFA 2015: WINNERS</a>
-                </div>
+               <div class="btn-pdf pl-right tx-center m17">
+                  <a href="img/form/allcombine.pdf" target="_blank">CHAMPIONS OF SFA 2015: WINNERS</a>
+               </div>
             </div>
             <div class="col-md-6">
-             <div class="btn-pdf tx-center">
-                    <a href="img/form/leaderborad.pdf" target="_blank">SCHOOL RANKING LEADER BOARD</a>
-                </div>
-<!--
+               <div class="btn-pdf tx-center">
+                  <a href="img/form/leaderborad.pdf" target="_blank">SCHOOL RANKING LEADER BOARD</a>
+               </div>
+               <!--
                 <div class="text-center margintop">
                     <a href="img/form/allsportpdf.pdf" target="_blank" class="draw-btn">draws & schedule</a>
 
@@ -52,29 +52,31 @@
 -->
             </div>
 
-            </div>
+         </div>
 
-        </div>
-        <div class="emailer">
-    <div class="container">Videos of individual matches will soon be hosted on the respective participant and school profile page. If you would like for us to notify you on the same, kindly leave your email address here:</div>
-
-    <div class="email-form footers" ng-controller="footerCtrl">
-        <span class="newslettershow" ng-hide="newsletter.show">
-      <p class="thank">Thank you for subscribing to our newsletter.</p>
-    </span>
-        <div class="mdl">
+      </div>
+      <div class="emailer">
+         <div class="container">Videos of individual matches will soon be hosted on the respective participant and school profile page. If you would like for us to notify you on the same, kindly leave your email address here:</div>
+         <div class="email-form footers">
+            <span class="newslettershow" ng-hide="newsletter.show">
+              <p class="thank">Thank you for subscribing to our newsletter.</p>
+            </span>
             <span class="newslettershow" ng-show="newsletter.show">
-        <div class="input-text">
-          <input class="form-control emailclass" id="" ng-change="validEmail(newsletter.email)" ng-class="newsletter.emaildis" ng-model="newsletter.email" placeholder="Email Address" required type="email">
-        </div>
-        <div class="button-text">
-          <button class="btn btn-default newslettersubmit" ng-click="savenewsletter(newsletter.email);">GO!</button>
-        </div>
-      </span>
-        </div>
-    </div>
-</div>
-<!--
+              <form ng-submit="savenewsletter(newsletter.email);">
+                <div class="mdl">
+                    <div class="input-text">
+                      <input class="form-control emailclass" ng-model="newsletter.email" placeholder="Email Address" required type="email">
+                    </div>
+                    <div class="button-text">
+                      <button type="submit" class="btn btn-default newslettersubmit">GO!</button>
+                    </div>
+                </div>
+              </form>
+            </span>
+         </div>
+      </div>
+
+      <!--
         <div class="row">
             <div class="home-content text-center">
                 <span class="new-h">REGISTRATION FOR <div class="relativ">  <span class="bold-bk">SFA MUMBAI 2015</span></div>   IS NOW CLOSED</span>
@@ -102,8 +104,8 @@
 
         </div>
 -->
-    </div>
-    <!--
+   </div>
+   <!--
 	<div class="patch">
 		<div class="container">
 			<div class="row">
@@ -118,7 +120,7 @@
 -->
 </div>
 <div class="middle-home">
-    <!--
+   <!--
     <img src="img/home-middle.jpg" class="img-responsive" style="width:100%;">
     <div class="container">
         <div class=" over-img">
@@ -136,171 +138,170 @@
         </div>
     </div>
 -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8 paddlr">
-                <div class="">
-<!--                    <img src="img/1.jpg" class="img-responsive" style="width:100%;">-->
-                     <div class="image-hols" ng-style="{'background-image':'url(img/n1.jpg)'}">
-                    <div class=" over-img">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-8 paddlr">
+            <div class="">
+               <!--                    <img src="img/1.jpg" class="img-responsive" style="width:100%;">-->
+               <div class="image-hols" ng-style="{'background-image':'url(img/n1.jpg)'}">
+                  <div class=" over-img">
 
-                        <div class="mid-det">
+                     <div class="mid-det">
 
-<!--                            <p>A NEW WAY OF PLAYING INTER-SCHOOL SPORTS.</p>-->
-                            <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/pIPashZ8S2Q?autoplay=1"><img src="img/play.png" class="img-responsive nowidht mg"></a>
-                             <h1>THE BEGINNING</h1>
-                            <img src="img/hr.png" class="nowidht">
-<!--                            <p class="know">Know everything about SFA in under 5 minutes.</p>-->
+                        <!--                            <p>A NEW WAY OF PLAYING INTER-SCHOOL SPORTS.</p>-->
+                        <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/pIPashZ8S2Q?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img src="img/play.png" class="img-responsive nowidht mg"></a>
+                        <h1>THE BEGINNING</h1>
+                        <img src="img/hr.png" class="nowidht">
+                        <!--                            <p class="know">Know everything about SFA in under 5 minutes.</p>-->
+                     </div>
+
+
+
+                  </div>
+               </div>
+            </div>
+
+         </div>
+         <div class="col-md-4 paddlr">
+            <ul class="v_ul paddlr margzero">
+               <li>
+                  <div class="image-hol" ng-style="{'background-image':'url(img/video/v1.jpg)'}">
+                     <div class=" over-img top65">
+                        <div class="mid-det ">
+                           <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/yMTveHlyZqA?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
+                           <h3 class="dif">Founder’s Message</h3>
+                           <img src="img/video/hr.png" class="nowidht">
+
                         </div>
 
 
 
-                    </div>
-                </div>
-                </div>
+                     </div>
 
+                     <!--                <img src="img/video/v1.jpg" class="img-responsive" style="width:100%;">-->
+               </li>
+               <li>
+                  <div class="image-hol" ng-style="{'background-image':'url(img/video/vn1.jpg)'}">
+                     <div class=" over-img top65">
+                        <div class="mid-det ">
+                           <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/daIvWD7U_D8?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
+                           <h3 class="dif">A Sneak Peek</h3>
+                           <img src="img/video/hr.png" class="nowidht">
+                        </div>
+
+
+
+                     </div>
+
+                  </div>
+                  <!--                <img src="img/video/v2.jpg" class="img-responsive" style="width:100%;">-->
+               </li>
+            </ul>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-4 paddlr">
+               <div class="image-hol" ng-style="{'background-image':'url(img/video/day-02.png)'}">
+                  <div class=" over-img top65">
+                     <div class="mid-det ">
+                        <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/Tuw5hBP500c?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
+                        <h3 class="dif">DAY - 02</h3>
+                        <img src="img/video/hr.png" class="nowidht">
+                     </div>
+
+
+
+                  </div>
+
+               </div>
             </div>
             <div class="col-md-4 paddlr">
-                <ul class="v_ul paddlr margzero">
-                    <li>
-                        <div class="image-hol" ng-style="{'background-image':'url(img/video/v1.jpg)'}">
-                            <div class=" over-img top65">
-                                <div class="mid-det ">
-    <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/yMTveHlyZqA?autoplay=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
-                                    <h3 class="dif">Founder’s Message</h3>
-                                    <img src="img/video/hr.png" class="nowidht">
-
-                                </div>
+               <div class="image-hol" ng-style="{'background-image':'url(img/video/day-03.png)'}">
+                  <div class=" over-img top65">
+                     <div class="mid-det ">
+                        <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/Yl2ujehIjb4?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
+                        <h3 class="dif">DAY - 03</h3>
+                        <img src="img/video/hr.png" class="nowidht">
+                     </div>
 
 
 
-                            </div>
+                  </div>
 
-                            <!--                <img src="img/video/v1.jpg" class="img-responsive" style="width:100%;">-->
-                    </li>
-                    <li>
-                        <div class="image-hol" ng-style="{'background-image':'url(img/video/vn1.jpg)'}">
-                                 <div class=" over-img top65">
-                                <div class="mid-det ">
-                                    <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/daIvWD7U_D8?autoplay=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
-                                    <h3 class="dif">A Sneak Peek</h3>
-                                    <img src="img/video/hr.png" class="nowidht">
-                                </div>
-
-
-
-                            </div>
-
-                        </div>
-                        <!--                <img src="img/video/v2.jpg" class="img-responsive" style="width:100%;">-->
-                    </li>
-                </ul>
-                </div>
+               </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 paddlr">
-                              <div class="image-hol" ng-style="{'background-image':'url(img/video/day-02.png)'}">
-                                 <div class=" over-img top65">
-                                <div class="mid-det ">
-                                    <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/Tuw5hBP500c?autoplay=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
-                                    <h3 class="dif">DAY - 02</h3>
-                                    <img src="img/video/hr.png" class="nowidht">
-                                </div>
+            <div class="col-md-4 paddlr">
+               <div class="image-hol" ng-style="{'background-image':'url(img/video/day-04.png)'}">
+                  <div class=" over-img top65">
+                     <div class="mid-det ">
+                        <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/zISIvzjK04o?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
+                        <h3 class="dif">DAY - 04</h3>
+                        <img src="img/video/hr.png" class="nowidht">
+                     </div>
 
 
 
-                            </div>
+                  </div>
 
-                        </div>
-                </div>
-                <div class="col-md-4 paddlr">
-                                 <div class="image-hol" ng-style="{'background-image':'url(img/video/day-03.png)'}">
-                                 <div class=" over-img top65">
-                                <div class="mid-det ">
-                                    <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/Yl2ujehIjb4?autoplay=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
-                                    <h3 class="dif">DAY - 03</h3>
-                                    <img src="img/video/hr.png" class="nowidht">
-                                </div>
-
-
-
-                            </div>
-
-                        </div>
-                </div>
-                <div class="col-md-4 paddlr">
-                                 <div class="image-hol" ng-style="{'background-image':'url(img/video/day-04.png)'}">
-                                 <div class=" over-img top65">
-                                <div class="mid-det ">
-                                    <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/zISIvzjK04o?autoplay=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
-                                    <h3 class="dif">DAY - 04</h3>
-                                    <img src="img/video/hr.png" class="nowidht">
-                                </div>
-
-
-
-                            </div>
-
-                        </div>
-                </div>
+               </div>
             </div>
-                    <div class="row">
-                <div class="col-md-4 paddlr">
-                              <div class="image-hol" ng-style="{'background-image':'url(img/video/drone-video.png)'}">
-                                 <div class=" over-img top65">
-                                <div class="mid-det ">
-                                    <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/O2FTKgcTuts?autoplay=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
-                                    <h3 class="dif">Bird’s eye View</h3>
-                                    <img src="img/video/hr.png" class="nowidht">
-                                    <h4 class="col-white">OF SFA MUMBAI 2015</h4>
-                                </div>
+         </div>
+         <div class="row">
+            <div class="col-md-4 paddlr">
+               <div class="image-hol" ng-style="{'background-image':'url(img/video/drone-video.png)'}">
+                  <div class=" over-img top65">
+                     <div class="mid-det ">
+                        <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/O2FTKgcTuts?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
+                        <h3 class="dif">Bird’s eye View</h3>
+                        <img src="img/video/hr.png" class="nowidht">
+                        <h4 class="col-white">OF SFA MUMBAI 2015</h4>
+                     </div>
 
 
 
-                            </div>
+                  </div>
 
-                        </div>
-                </div>
-                <div class="col-md-4 paddlr">
-                                 <div class="image-hol" ng-style="{'background-image':'url(img/video/farahkhan-thumb.png)'}">
-                                 <div class=" over-img top65">
-                                <div class="mid-det ">
-                                    <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/pOxHiYXvgs0
-?autoplay=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
-                                    <h3 class="dif">Farah Khan</h3>
-                                    <img src="img/video/hr.png" class="nowidht">
-                                    <h4 class="col-white">AT SFA MUMBAI 2015</h4>
-                                </div>
-
-
-
-                            </div>
-
-                        </div>
-                </div>
-                <div class="col-md-4 paddlr">
-                                 <div class="image-hol" ng-style="{'background-image':'url(img/video/purav-raja.png)'}">
-                                 <div class=" over-img top65">
-                                <div class="mid-det ">
-                                    <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/k-hFdgV0xw4?autoplay=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
-                                    <h3 class="dif">Purav Raja</h3>
-                                    <img src="img/video/hr.png" class="nowidht">
-                                    <h4 class="col-white">AT SFA MUMBAI 2015</h4>
-                                </div>
-
-
-
-                            </div>
-
-                        </div>
-                </div>
+               </div>
             </div>
-        </div>
-    </div>
-    <div class="curve5">
+            <div class="col-md-4 paddlr">
+               <div class="image-hol" ng-style="{'background-image':'url(img/video/farahkhan-thumb.png)'}">
+                  <div class=" over-img top65">
+                     <div class="mid-det ">
+                        <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/pOxHiYXvgs0?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
+                        <h3 class="dif">Farah Khan</h3>
+                        <img src="img/video/hr.png" class="nowidht">
+                        <h4 class="col-white">AT SFA MUMBAI 2015</h4>
+                     </div>
 
-    </div>
-<!--
+
+
+                  </div>
+
+               </div>
+            </div>
+            <div class="col-md-4 paddlr">
+               <div class="image-hol" ng-style="{'background-image':'url(img/video/purav-raja.png)'}">
+                  <div class=" over-img top65">
+                     <div class="mid-det ">
+                        <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/k-hFdgV0xw4?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img src="img/video/play.png" class="img-responsive nowidht mr-img hidden-sm hidden-xs"> <img src="img/play.png" class="img-responsive nowidht mr-img hidden-md hidden-lg"></a>
+                        <h3 class="dif">Purav Raja</h3>
+                        <img src="img/video/hr.png" class="nowidht">
+                        <h4 class="col-white">AT SFA MUMBAI 2015</h4>
+                     </div>
+
+
+
+                  </div>
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="curve5">
+
+   </div>
+   <!--
     <div class="hm-mid">
         <div class="col-md-4 col-sm-4">
             <figure>
@@ -348,18 +349,18 @@
 
     </div>
 -->
-    <div class="container">
-        <!--
+   <div class="container">
+      <!--
  <div class="feed text-center">
         <h3>live feeds</h3>
     </div>
 -->
-        <div class="row social-set text-center">
-            <div class="col-md-4 col-sm-4 ">
-                <div class="fb social-set">
-                    <i class="fa fa-facebook"></i>
-                    <div class="fb-set">
-                        <!--
+      <div class="row social-set text-center">
+         <div class="col-md-4 col-sm-4 ">
+            <div class="fb social-set">
+               <i class="fa fa-facebook"></i>
+               <div class="fb-set">
+                  <!--
                      <div class="fb-page" data-href="https://www.facebook.com/localbanya" data-width="200" data-height="360" data-hide-cover="false" data-show-facepile="false" data-show-posts="true">
                                 <div class="fb-xfbml-parse-ignore">
                                     <blockquote cite="https://www.facebook.com/localbanya"><a href="https://www.facebook.com/localbanya">Local Banya</a>
@@ -368,34 +369,34 @@
                             </div>
 -->
 
-                        <div>
-                            <div class="fb-page" data-href="https://www.facebook.com/sportsforallnow" data-width="360" data-height="355" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
-                                <div class="fb-xfbml-parse-ignore">
-                                    <blockquote cite="https://www.facebook.com/sportsforallnow"><a href="https://www.facebook.com/sportsforallnow">SFA Now</a></blockquote>
-                                </div>
-                            </div>
-
-                            <div id="fb-root"></div>
-                            <script>
-                                (function (d, s, id) {
-                                    var js, fjs = d.getElementsByTagName(s)[0];
-                                    if (d.getElementById(id)) return;
-                                    js = d.createElement(s);
-                                    js.id = id;
-                                    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1452795161694777";
-                                    fjs.parentNode.insertBefore(js, fjs);
-                                }(document, 'script', 'facebook-jssdk'));
-                            </script>
-
+                  <div>
+                     <div class="fb-page" data-href="https://www.facebook.com/sportsforallnow" data-width="360" data-height="355" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
+                        <div class="fb-xfbml-parse-ignore">
+                           <blockquote cite="https://www.facebook.com/sportsforallnow"><a href="https://www.facebook.com/sportsforallnow">SFA Now</a></blockquote>
                         </div>
-                    </div>
-                </div>
+                     </div>
+
+                     <div id="fb-root"></div>
+                     <script>
+                        (function(d, s, id) {
+                           var js, fjs = d.getElementsByTagName(s)[0];
+                           if (d.getElementById(id)) return;
+                           js = d.createElement(s);
+                           js.id = id;
+                           js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1452795161694777";
+                           fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));
+                     </script>
+
+                  </div>
+               </div>
             </div>
-            <div class="col-md-4 col-sm-4 ">
-                <div class="twit social-set">
-                    <i class="fa fa-twitter"></i>
-                    <div class="fb-set">
-                        <!--
+         </div>
+         <div class="col-md-4 col-sm-4 ">
+            <div class="twit social-set">
+               <i class="fa fa-twitter"></i>
+               <div class="fb-set">
+                  <!--
                            <a class="twitter-timeline" href="https://twitter.com/LocalBanya" data-widget-id="594025626274648064">Tweets by @LocalBanya</a>
                             <script>
                                 ! function (d, s, id) {
@@ -410,35 +411,35 @@
                                 }(document, "script", "twitter-wjs");
                             </script>
 -->
-                        <a class="twitter-timeline" href="https://twitter.com/sfanow" data-widget-id="641859487024869376">Tweets by @sfanow</a>
-                        <script>
-                            ! function (d, s, id) {
-                                var js, fjs = d.getElementsByTagName(s)[0],
-                                    p = /^http:/.test(d.location) ? 'http' : 'https';
-                                if (!d.getElementById(id)) {
-                                    js = d.createElement(s);
-                                    js.id = id;
-                                    js.src = p + "://platform.twitter.com/widgets.js";
-                                    fjs.parentNode.insertBefore(js, fjs);
-                                }
-                            }(document, "script", "twitter-wjs");
-                        </script>
-                    </div>
-                </div>
+                  <a class="twitter-timeline" href="https://twitter.com/sfanow" data-widget-id="641859487024869376">Tweets by @sfanow</a>
+                  <script>
+                     ! function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0],
+                           p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if (!d.getElementById(id)) {
+                           js = d.createElement(s);
+                           js.id = id;
+                           js.src = p + "://platform.twitter.com/widgets.js";
+                           fjs.parentNode.insertBefore(js, fjs);
+                        }
+                     }(document, "script", "twitter-wjs");
+                  </script>
+               </div>
             </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="insta social-set">
-                    <i class="fa fa-instagram"></i>
-                    <!--
+         </div>
+         <div class="col-md-4 col-sm-4">
+            <div class="insta social-set">
+               <i class="fa fa-instagram"></i>
+               <!--
                 <div class="fb-set" style="height: 365px;overflow-y: scroll;">
                      <iframe src="//instansive.com/widgets/ba0ad9aad53001654f6fac3da0abca67b15d2329.html" id="instansive_ba0ad9aad5" name="instansive_ba0ad9aad5" scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;height: 100%;"></iframe>
                 </div>
 -->
-                    <div class="fb-set" style="height: 365px;overflow-y: scroll;">
-                        <script src="//instansive.com/widget/js/instansive.js"></script>
-                        <iframe src="//instansive.com/widgets/554a6dce8ad5309ecff0f538b9995e1429320d57.html" id="instansive_554a6dce8a" name="instansive_554a6dce8a" scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
-                    </div>
-                </div>
+               <div class="fb-set" style="height: 365px;overflow-y: scroll;">
+                  <script src="//instansive.com/widget/js/instansive.js"></script>
+                  <iframe src="//instansive.com/widgets/554a6dce8ad5309ecff0f538b9995e1429320d57.html" id="instansive_554a6dce8a" name="instansive_554a6dce8a" scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+               </div>
             </div>
-        </div>
-    </div>
+         </div>
+      </div>
+   </div>

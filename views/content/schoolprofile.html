@@ -56,7 +56,7 @@
       <div class="col-md-12">
          <div class="blue-cat">
             <ul>
-               <hovericon game="game" ng-repeat="game in games" ng-click="makeactive(0,game);"></hovericon>
+               <hovericon game="game" ng-repeat="game in games" ng-click="makeactive(0,game);" ng-if="games"></hovericon>
             </ul>
          </div>
       </div>
@@ -162,7 +162,7 @@
                         <div class="col-md-4 costums" ng-repeat="gal in gallery" ng-if="gal.url">
                            <div class="scooolgal">
                               <!-- <img ng-src="{{gal.thumbnail | serverimage}}" ng-click="openModal(gal);"> -->
-                              <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/{{gal.url}}?autoplay=1&modestbranding=1&showinfo=0&rel=0&loop=1"><img ng-src="http://img.youtube.com/vi/{{gal.url}}/mqdefault.jpg" class="img-responsive nowidht mg"></a>
+                              <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/{{gal.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1"><img ng-src="http://img.youtube.com/vi/{{gal.url}}/mqdefault.jpg" class="img-responsive nowidht mg"></a>
                            </div>
                         </div>
                      </div>
@@ -477,7 +477,7 @@
                                  </li>
                                  <li class="vers" ng-if="matches.url">
                                     <div class="vers">
-                                       <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/{{matches.url}}?autoplay=1&modestbranding=1&showinfo=0&rel=0&loop=1">
+                                       <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/{{matches.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1">
                                           <figure class="text-center">
                                              <img src="img/replay.png">
                                              <figcaption>Replay</figcaption>
@@ -633,9 +633,9 @@
                               <th>
                                  Name
                               </th>
-                              <th ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">
+                              <!-- <th ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">
                                  Team
-                              </th>
+                              </th> -->
                               <!-- <th ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">
                                  category
                               </th> -->
@@ -652,12 +652,12 @@
                                     <li> id: SFAST{{data.id}}</li>
                                  </ul>
                               </td>
-                              <td>
+                              <!-- <td>
                                  <ul>
-                                    <li ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">{{data.title}}</li>
+                                    <li ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">{{data.title}}</li> -->
                                     <!-- <li ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">{{data.title}}</li> -->
-                                 </ul>
-                              </td>
+                                 <!-- </ul>
+                              </td> -->
                            </tr>
                         </tbody>
                      </table>
@@ -676,9 +676,9 @@
                               <th>
                                  Name
                               </th>
-                              <th ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">
+                              <!-- <th ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">
                                  Team
-                              </th>
+                              </th> -->
                               <!-- <th ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">
                                  category
                               </th> -->
@@ -695,12 +695,12 @@
                                     <li> id: SFAST{{data.id}}</li>
                                  </ul>
                               </td>
-                              <td>
+                              <!-- <td>
                                  <ul>
-                                    <li ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">{{data.title}}</li>
+                                    <li ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">{{data.title}}</li> -->
                                     <!-- <li ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">{{data.title}}</li> -->
-                                 </ul>
-                              </td>
+                                 <!-- </ul>
+                              </td> -->
                            </tr>
                         </tbody>
                      </table>

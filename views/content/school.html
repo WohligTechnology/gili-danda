@@ -1,14 +1,14 @@
 <div class="media-set">
-    <img src="img/sc.png" class="img-responsive img">
+   <img src="img/sc.png" class="img-responsive img">
 
 </div>
 <div class="">
 
-<div class="landings feed" style="margin-top: 10px;">
-<!--    <img src="img/school/latestuse1.png" class="pd155 img-responsive"> -->
+   <div class="landings feed" style="margin-top: 10px;">
+      <!--    <img src="img/school/latestuse1.png" class="pd155 img-responsive"> -->
 
-    <div class="container">
-    <!-- <div class="row pads400">
+      <div class="container">
+         <!-- <div class="row pads400">
         <div class="col-md-6">
         <div class="text-sp">
             <h3>Note: </h3>
@@ -31,58 +31,58 @@
             </div>
         </div>
     </div> -->
-    <div class="show-result" >
+         <div class="show-result">
 
-    <div class="container">
-        <div class="row">
-        <div class="col-md-offset-3 col-md-6">
-        <div class="sl-p text-center">
-                <div class="s-input">
-                    <p class="stu-f">Search by School Name</p>
-                    <div class="searchs ">
-                        <form class="sfms stu-sfms ng-pristine ng-valid">
-                            <input type="text" class="inbinding" name="q" value="Enter your SFA ID" ng-model="search.name">
-                            <input type="image" value="Search" src="img/searchbig.png" class="sbs" ng-click="getSearchById(idSearch.search);">
-                        </form>
-                    </div>
-                </div>
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-offset-3 col-md-6">
+                     <div class="sl-p text-center">
+                        <div class="s-input">
+                           <p class="stu-f">Search by School Name</p>
+                           <div class="searchs ">
+                              <form class="sfms stu-sfms ng-pristine ng-valid">
+                                 <input type="text" class="inbinding" name="q" value="Enter your SFA ID" ng-model="search.name">
+                                 <input type="image" value="Search" src="img/searchbig.png" class="sbs" ng-click="getSearchById(idSearch.search);">
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-10">
+                     <div class="landing-text">
+                        <h1>schools registered for SFA 2015</h1>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="school-name">
+                        <ul>
+                           <li ng-repeat="school in schoolNames[0] | filter:search" ng-click="goToSchool(school);"><span>{{($index+1)|numberFixedLen:2}}</span>
+                              <p>{{school.name}}</p>
+                           </li>
+                        </ul>
+
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="school-name">
+                        <ul>
+                           <li ng-repeat="school in schoolNames[1] | filter:search" ng-click="goToSchool(school);"><span>{{($index+1+schoolHalf)|numberFixedLen:2}}</span>
+                              <p>{{school.name}}</p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
-        </div>
-       <div class="row">
-                   <div class="col-md-10">
-             <div class="landing-text">
-        <h1>schools registered for SFA 2015</h1>
-    </div>
-        </div>
-       </div>
-<div class="row">
-    <div class="col-md-6">
-        <div class="school-name">
-            <ul>
-                <li ng-repeat="school in schoolNames[0] | filter:search" ui-sref="schoolprofile({id:school.id})"><span>{{($index+1)|numberFixedLen:2}}</span><p>{{school.name}}</p></li>
+         </div>
+      </div>
+      <!--    // latest ui for school-->
 
-            </ul>
-
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="school-name">
-            <ul>
-                <li ng-repeat="school in schoolNames[1] | filter:search" ui-sref="schoolprofile({id:school.id})"><span>{{($index+1+schoolHalf)|numberFixedLen:2}}</span><p>{{school.name}}</p></li>
-
-            </ul>
-
-        </div>
-    </div>
-</div>
-    </div>
-
-</div>
-</div>
-<!--    // latest ui for school-->
-
-<!--
+      <!--
 
     <div class="media-set">
     <img src="img/home/16.png" class="img-responsive img">

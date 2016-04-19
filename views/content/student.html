@@ -70,13 +70,13 @@
                         <p>: {{student.name}}</p>
                         <p>: {{student.sfaid}}</p>
                         <p>: {{student.dob}}</p>
-                        <p ui-sref="schoolprofile({id:student.schoolid})" class="cpointer">: {{student.school}} </p>
+                        <p ng-click="goToSchool(student);" class="cpointer">: {{student.school}} </p>
                     </div>
                 </div>
 
                 <div class="col-md-2">
                     <div class="pull-right s-info pos-view">
-                        <p class="vh" ng-click="goToProfile(student.id);">View full profile</p>
+                        <p class="vh" ng-click="goToProfile(student);">View full profile</p>
                     </div>
                 </div>
             </div>

@@ -791,301 +791,357 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     })
 
 .controller('MediaCtrl', function($scope, TemplateService, NavigationService) {
-        $scope.template = TemplateService.changecontent("media");
-        $scope.menutitle = NavigationService.makeactive("Media");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+    $scope.template = TemplateService.changecontent("media");
+    $scope.menutitle = NavigationService.makeactive("Media");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
 
-        $scope.medias = [{
-            image: "img/print/print1.png",
-            name: "SACHIN SUPPORTS SFA - Hindustan Times"
+    $scope.medias = [{
+        image: "img/print/print1.png",
+        name: "SACHIN SUPPORTS SFA - Hindustan Times"
+
+
+    }, {
+        image: "img/print/print2.png",
+        name: "Little Sania Makes Her School Proud"
+
+
+    }, {
+        image: "img/print/print3.png",
+        name: "SFA made me reach the Goal: Amrish Patel"
+
+    }, {
+        image: "img/print/print4.png",
+        name: "The well Equipped venue ever for inter school.."
+
+    }, {
+        image: "img/print/print5.png",
+        name: "Felt Like I was Playing on international Venue"
+
+    }, {
+        image: "img/print/print6.png",
+        name: "The game that Made a World Record"
+
+    }];
+    ga('send', 'pageview', {
+        'title': 'Media Page'
+    });
+
+})
+
+.controller('DrawCtrl', function($scope, TemplateService, NavigationService) {
+    $scope.template = TemplateService.changecontent("draw");
+    $scope.menutitle = NavigationService.makeactive("Draw");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    $scope.filter = {};
+    // $scope.filter.category = "1";
+    // $scope.filter.sport = "1";
+    // $scope.filter.gender = "1";
+    // $scope.filter.agegroup = "1";
+    $scope.filter.category = "";
+    $scope.filter.sport = "";
+    $scope.filter.gender = "";
+    $scope.filter.agegroup = "";
+    $scope.sportselected = "";
+    $scope.result = [];
+    $scope.schedule = {};
+    $scope.match = [];
+
+    NavigationService.isStudentSports(function(data) {
+        $scope.sports = data;
+    });
+
+    $scope.sportChange = function() {
+        console.log($scope.filter.sportid.split(','));
+        $scope.sportselected = $scope.filter.sportid.split(',')[1];
+        $scope.filter.sport = $scope.filter.sportid.split(',')[0];
+
+        NavigationService.getSportsCategory("", $scope.filter.sport, "", function(data) {
+            $scope.category = data;
+        })
+        $scope.categoryChange();
+    }
+
+    $scope.categoryChange = function() {
+        NavigationService.scheduleAgeGroup($scope.filter.category, $scope.filter.sport, $scope.filter.gender, function(data) {
+            $scope.agegroup = data;
+        })
+    }
+
+    $scope.genderChange = function() {
+        $scope.categoryChange();
+    }
+
+    $scope.round = [];
+    $scope.rounds = [];
+
+    $scope.getDraw = function() {
+        // $scope.filter.category = "1";
+        NavigationService.getDraw($scope.filter, function(data) {
+            $scope.match = [];
+            var grouped = _.groupBy(data, 'round');
+            _.each(grouped, function(key, value) {
+                $scope.match.push(key);
+            })
+            console.log($scope.match);
+            _.each($scope.match, function(n) {
+                _.each(n, function(m) {
+                    m.round = m.round.trim();
+                    if (m.round == "1") {
+                        m.round = "Round - 01";
+                    } else if (m.round == "2") {
+                        m.round = "Round - 02";
+                    } else if (m.round == "3") {
+                        m.round = "Round - 03";
+                    } else if (m.round == "4") {
+                        m.round = "Round - 04";
+                    } else if (m.round == "5") {
+                        m.round = "Round - 05";
+                    } else if (m.round == "6") {
+                        m.round = "Round - 06";
+                    } else if (m.round == "final") {
+                        m.round = "Finals";
+                    } else if (m.round == "semifinal") {
+                        m.round = "Semi Finals";
+                    } else if (m.round == "quarterfinal") {
+                        m.round = "Quater Finals";
+                    }
+                    var arr1 = [{
+                        "player": m.player1,
+                        "round": m.round,
+                        "winner": m.winner
+                    }];
+                    var arr2 = [{
+                        "player": m.player2,
+                        "round": m.round,
+                        "winner": m.winner
+                    }];
+                    if (m.round != "thirdplace") {
+                        $scope.round.push(arr1);
+                        $scope.round.push(arr2);
+                    }
+                })
+                if ($scope.round.length > 0)
+                    $scope.rounds.push($scope.round);
+                $scope.round = [];
+            })
+            var finals = [];
+            finals.push($scope.rounds[$scope.rounds.length - 1][0]);
+            $scope.rounds.push(finals);
+            console.log($scope.rounds);
+            $scope.match[0] = _.chunk($scope.rounds[0], 2);
+            console.log($scope.match);
+            // $scope.match = data;
+            // var data2 = data.splice(1);
+            // _.each(data2, function(n) {
+            //     $scope.round = [];
+            //     _.each(n.match, function(m) {
+            //         _.each(m.player, function(k) {
+            //             $scope.round.push(k);
+            //         })
+            //     })
+            //     $scope.rounds.push($scope.round);
+            // })
+            // _.each(data2[data2.length - 1].match, function(n) {
+            //     _.each(n.player, function(m) {
+            //         if (m.result == "1") {
+            //             var arr = [];
+            //             arr.push(m)
+            //             $scope.rounds.push(arr);
+            //         }
+            //     })
+            // })
+        });
+    }
+
+    $scope.getDraw();
+
+    $scope.r1 = // JavaScript Document
+        [{
+            "studentname": "Viraj Kale",
+            "schoolname": "Dhirubhai Ambani International School"
+
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
+
+        }, {
+            "studentname": "Viraj Kale",
+            "schoolname": "Dhirubhai Ambani International School"
+
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
+
+        }, {
+            "studentname": "Viraj Kale",
+            "schoolname": "Dhirubhai Ambani International School"
 
 
         }, {
-            image: "img/print/print2.png",
-            name: "Little Sania Makes Her School Proud"
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
 
         }, {
-            image: "img/print/print3.png",
-            name: "SFA made me reach the Goal: Amrish Patel"
+            "studentname": "Viraj Kale",
+            "schoolname": "Dhirubhai Ambani International School"
 
         }, {
-            image: "img/print/print4.png",
-            name: "The well Equipped venue ever for inter school.."
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
+
 
         }, {
-            image: "img/print/print5.png",
-            name: "Felt Like I was Playing on international Venue"
+            "studentname": "Viraj Kale",
+            "schoolname": "Dhirubhai Ambani International School"
 
         }, {
-            image: "img/print/print6.png",
-            name: "The game that Made a World Record"
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
+
 
         }];
-        ga('send', 'pageview', {
-            'title': 'Media Page'
-        });
 
-    })
-    .controller('DrawCtrl', function($scope, TemplateService, NavigationService) {
-        $scope.template = TemplateService.changecontent("draw");
-        $scope.menutitle = NavigationService.makeactive("Draw");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
-        $scope.filter = {};
-        // $scope.filter.category = "1";
-        // $scope.filter.sport = "1";
-        // $scope.filter.gender = "1";
-        // $scope.filter.agegroup = "1";
-        $scope.filter.category = "";
-        $scope.filter.sport = "";
-        $scope.filter.gender = "";
-        $scope.filter.agegroup = "";
-        $scope.sportselected = "";
-        $scope.result = [];
-        $scope.schedule = {};
-        $scope.match = [];
+    $scope.r1 = _.chunk($scope.r1, 2);
 
-        NavigationService.isStudentSports(function(data) {
-            $scope.sports = data;
-        });
+    $scope.r2 = // JavaScript Document
+        [{
+            "studentname": "Viraj Kale",
+            "schoolname": "Dhirubhai Ambani International School"
 
-        $scope.sportChange = function() {
-            console.log($scope.filter.sportid.split(','));
-            $scope.sportselected = $scope.filter.sportid.split(',')[1];
-            $scope.filter.sport = $scope.filter.sportid.split(',')[0];
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-            NavigationService.getSportsCategory("", $scope.filter.sport, "", function(data) {
-                $scope.category = data;
-            })
-            $scope.categoryChange();
-        }
+        }, {
+            "studentname": "Viraj Kale",
+            "schoolname": "Dhirubhai Ambani International School"
 
-        $scope.categoryChange = function() {
-            NavigationService.scheduleAgeGroup($scope.filter.category, $scope.filter.sport, $scope.filter.gender, function(data) {
-                $scope.agegroup = data;
-            })
-        }
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-        $scope.genderChange = function() {
-            $scope.categoryChange();
-        }
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-        $scope.round = [];
-        $scope.rounds = [];
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-        $scope.getDraw = function() {
-            // $scope.filter.category = "1";
-            NavigationService.getDraw($scope.filter, function(data) {
-                $scope.match = data;
-                var data2 = data.splice(1);
-                _.each(data2, function(n) {
-                    $scope.round = [];
-                    _.each(n.match, function(m) {
-                        _.each(m.player, function(k) {
-                            $scope.round.push(k);
-                        })
-                    })
-                    $scope.rounds.push($scope.round);
-                })
-                _.each(data2[data2.length - 1].match, function(n) {
-                    _.each(n.player, function(m) {
-                        if (m.result == "1") {
-                            var arr = [];
-                            arr.push(m)
-                            $scope.rounds.push(arr);
-                        }
-                    })
-                })
-            });
-        }
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-        $scope.r1 = // JavaScript Document
-            [{
-                "studentname": "Viraj Kale",
-                "schoolname": "Dhirubhai Ambani International School"
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-            }, {
-                "studentname": "Viraj Kale",
-                "schoolname": "Dhirubhai Ambani International School"
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-            }, {
-                "studentname": "Viraj Kale",
-                "schoolname": "Dhirubhai Ambani International School"
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-            }, {
-                "studentname": "Viraj Kale",
-                "schoolname": "Dhirubhai Ambani International School"
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
+        }];
 
+    $scope.r3 = // JavaScript Document
+        [{
+            "studentname": "Viraj Kale",
+            "schoolname": "Dhirubhai Ambani International School"
 
-            }, {
-                "studentname": "Viraj Kale",
-                "schoolname": "Dhirubhai Ambani International School"
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-            }];
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-        $scope.r1 = _.chunk($scope.r1, 2);
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-        $scope.r2 = // JavaScript Document
-            [{
-                "studentname": "Viraj Kale",
-                "schoolname": "Dhirubhai Ambani International School"
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
+        }, {
+            "studentname": "Rizwan Mirza",
+            "schoolname": "Bombay British School"
 
-            }, {
-                "studentname": "Viraj Kale",
-                "schoolname": "Dhirubhai Ambani International School"
+        }];
+    $scope.r4 = // JavaScript Document
+        [{
+            "studentname": "Viraj Kale",
+            "schoolname": "Dhirubhai Ambani International School"
 
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
+        }, {
+            "studentname": "Viraj Kale",
+            "schoolname": "Dhirubhai Ambani International School"
 
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
+        }, {
+            "studentname": "Viraj Kale",
+            "schoolname": "Dhirubhai Ambani International School"
 
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
+        }, {
+            "studentname": "Viraj Kale",
+            "schoolname": "Dhirubhai Ambani International School"
 
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
+        }];
+    $scope.r5 = // JavaScript Document
+        [{
+            "studentname": "Viraj Kale",
+            "schoolname": "Dhirubhai Ambani International School"
 
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
+        }, {
+            "studentname": "Viraj Kale",
+            "schoolname": "Dhirubhai Ambani International School"
 
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
+        }];
+    $scope.r6 = // JavaScript Document
+        [{
+            "studentname": "Viraj Kale",
+            "schoolname": "Dhirubhai Ambani International School"
 
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
-
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
-
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
-
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
-
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
-
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
-
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
-
-            }];
-
-        $scope.r3 = // JavaScript Document
-            [{
-                "studentname": "Viraj Kale",
-                "schoolname": "Dhirubhai Ambani International School"
-
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
-
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
-
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
-
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
-
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
-
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
-
-            }, {
-                "studentname": "Rizwan Mirza",
-                "schoolname": "Bombay British School"
-
-            }];
-        $scope.r4 = // JavaScript Document
-            [{
-                "studentname": "Viraj Kale",
-                "schoolname": "Dhirubhai Ambani International School"
-
-            }, {
-                "studentname": "Viraj Kale",
-                "schoolname": "Dhirubhai Ambani International School"
-
-            }, {
-                "studentname": "Viraj Kale",
-                "schoolname": "Dhirubhai Ambani International School"
-
-            }, {
-                "studentname": "Viraj Kale",
-                "schoolname": "Dhirubhai Ambani International School"
-
-            }];
-        $scope.r5 = // JavaScript Document
-            [{
-                "studentname": "Viraj Kale",
-                "schoolname": "Dhirubhai Ambani International School"
-
-            }, {
-                "studentname": "Viraj Kale",
-                "schoolname": "Dhirubhai Ambani International School"
-
-            }];
-        $scope.r6 = // JavaScript Document
-            [{
-                "studentname": "Viraj Kale",
-                "schoolname": "Dhirubhai Ambani International School"
-
-            }];
-    })
+        }];
+})
 
 .controller('StudentprofileCtrl', function($scope, TemplateService, NavigationService, ngDialog, $stateParams, $filter, $state) {
     $scope.template = TemplateService.changecontent("studentprofile");

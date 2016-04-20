@@ -1,4 +1,5 @@
  var adminlink = "http://wohlig.co.in/sfabackend/";
+ var adminlink = "http://192.168.1.133/sfabackend/";
  var admin_url = adminlink + "index.php/";
  var imgpath = adminlink + "uploads/";
  var navigationservice = angular.module('navigationservice', [])

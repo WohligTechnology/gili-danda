@@ -176,8 +176,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $locationProvider, 
             url: "/training",
             templateUrl: "./views/template.html",
             controller: 'TrainingCtrl'
-          })
-        ;
+          });
     if (isproduction) {
         $locationProvider.html5Mode(true);
     }

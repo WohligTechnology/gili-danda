@@ -14,7 +14,7 @@ var firstapp = angular.module('firstapp', [
 firstapp.config(function($stateProvider, $urlRouterProvider, $locationProvider, cfpLoadingBarProvider) {
     cfpLoadingBarProvider.includeBar = false;
     cfpLoadingBarProvider.includeSpinner = true;
-    cfpLoadingBarProvider.spinnerTemplate = '<div class="loading-bar"><img src="img/load.gif"></div>';
+    cfpLoadingBarProvider.spinnerTemplate = '<div class="loading-bar"><img src="img/load.gif" width="125px"></div>';
     $stateProvider
 
         .state('home', {

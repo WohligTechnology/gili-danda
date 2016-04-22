@@ -14,7 +14,7 @@ var firstapp = angular.module('firstapp', [
 firstapp.config(function($stateProvider, $urlRouterProvider, $locationProvider, cfpLoadingBarProvider) {
     cfpLoadingBarProvider.includeBar = false;
     cfpLoadingBarProvider.includeSpinner = true;
-    cfpLoadingBarProvider.spinnerTemplate = '<div class="loading-bar"><img src="img/load.gif" width="125px"></div>';
+    cfpLoadingBarProvider.spinnerTemplate = '<div class="loading-bar"><img src="img/load.gif" style="width:125px"></div>';
     $stateProvider
 
         .state('home', {
@@ -585,4 +585,12 @@ firstapp.directive('smartGallery', function($compile, $parse) {
             });
         }
     };
+});
+
+$(document).ready(function() {
+ $('#downloadAllButton').click(function() {
+   $('a.download_file > img').trigger( "click" );
+
+   return true;
+ });
 });

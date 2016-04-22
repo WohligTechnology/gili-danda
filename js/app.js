@@ -176,13 +176,18 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $locationProvider, 
             url: "/training",
             templateUrl: "./views/template.html",
             controller: 'TrainingCtrl'
+          })
+          .state('pre-registration', {
+              url: "/pre-registration",
+              templateUrl: "./views/template.html",
+              controller: 'PreRegistrationCtrl'
           });
     if (isproduction) {
         $locationProvider.html5Mode(true);
     }
 
     $urlRouterProvider.otherwise("/home");
-})
+});
 
 
 firstapp.directive('hovericon', function($document) {

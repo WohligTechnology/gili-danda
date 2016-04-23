@@ -7,7 +7,7 @@
 @import (inline) "../bower_components/ng-dialog/css/ngDialog.min.css";
 @import (inline) "../bower_components/fontawesome/css/font-awesome.css";
 @import (inline) "../bower_components/angular-loading-bar/build/loading-bar.min.css";
-@import "../less/mobile.less"; 
+@import "../less/mobile.less";
 @import "../less/fancybox-override.less";
 @menu-color: #0a1a72;
 @subMenu-color: #303030;
@@ -4572,14 +4572,14 @@ body.ngdialog-open {
             .timage1{
               img{
                 width: 50%;
-height: 126px;
+                height: 126px;
                 margin: 0 auto;
               }
             }
             .timage2{
               img{
                 width: 90%;
-height: 156px;
+                height: 156px;
                 margin: 0 auto;
                 margin-top:-14px;
               }
@@ -4631,6 +4631,72 @@ height: 156px;
                 margin: 0 auto;
                 margin-top: 40px;
               }
+            }
+        }
+    }
+}
+.backwhites {
+    position: absolute;
+    top: 310px;
+    //		top: 50%;
+    //		left: 50%;
+    //		.transform(translate(-50%,
+    //		-40%));
+    width: 100%;
+    .container {
+        background: #fff;
+        padding: 20px 15px;
+        .form-control {
+            .border-radius(0);
+            width: 100%;
+            background-color: @grey-color;
+            box-shadow: 0 0 0 0;
+            border-color: @grey-color;
+            padding: 10px 0 10px 12px;
+            height: 40px;
+            outline: 0;
+        }
+        select{
+          width: 60%;
+          background-color: @grey-color;
+          box-shadow: 0 0 0 0;
+          border-color: @grey-color;
+          padding: 7px 0 8px 12px;
+          height: 40px;
+          outline: 0;
+        }
+        .row {
+            margin: 20px auto;
+        }
+        .mar5{
+            margin: 5px auto;
+        }
+        .mar10{
+          margin: 10px auto;
+        }
+    }
+    .sc-list {
+        p {
+            text-transform: uppercase;
+            color: @menu-color;
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+    .sc-ul {
+        ul {
+            display: block;
+            list-style: none;
+            li {
+                display: inline-block;
+                padding: 0 10px;
+                .checkbox {
+                    margin: 0 !important;
+                }
+                input[type=checkbox] {}
+                input[type=checkbox]:checked + .checkbox:before {}
+                .checkbox:before {}
+                label {}
             }
         }
     }

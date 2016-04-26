@@ -3,20 +3,20 @@
 
     <head ng-controller="headerctrl">
         <base href="http://sfanow.in/">
-        
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
 
-        <meta name="description" content="{{template.description}}" ng-if="template.description!='';">
-        <meta name="keywords" content="{{template.keywords}}" ng-if="template.keywords!='';">
         <meta name="description" content="Sports For All (SFA) is an inter-school sporting platform for school children to play, compete and grow in various sports." ng-if="template.keywords=='';">
         <meta name="keywords" content="Inter school sports, Sports tournaments, Inter school sports in Mumbai, Sports for kids" ng-if="template.description=='';">
+        <meta name="description" content="{{template.description}}" ng-if="template.description!='';">
+        <meta name="keywords" content="{{template.keywords}}" ng-if="template.keywords!='';">
 
         <meta property="og:site_name" content="Sports For All (SFA)">
         <meta property="og:title" content="Sports For All (SFA)">
         <meta property="og:description" content="Sports For All (SFA) is an inter-school sporting platform for school children to play, compete and grow in various sports.">
         <meta property="og:type" content="website">
         <meta property="og:image" content="http://sfanow.in/img/fb-banner.jpg">
+        <link rel="canonical" href="http://sfanow.in/">
 
         <title ng-bind="'SFA - '+template.title">SFA</title>
 

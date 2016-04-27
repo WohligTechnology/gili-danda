@@ -1016,193 +1016,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // })
         });
     }
-
-    // $scope.getDraw();
-
-    $scope.r1 = // JavaScript Document
-        [{
-            "studentname": "Viraj Kale",
-            "schoolname": "Dhirubhai Ambani International School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Viraj Kale",
-            "schoolname": "Dhirubhai Ambani International School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Viraj Kale",
-            "schoolname": "Dhirubhai Ambani International School"
-
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-
-        }, {
-            "studentname": "Viraj Kale",
-            "schoolname": "Dhirubhai Ambani International School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-
-        }, {
-            "studentname": "Viraj Kale",
-            "schoolname": "Dhirubhai Ambani International School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-
-        }];
-
-    $scope.r1 = _.chunk($scope.r1, 2);
-
-    $scope.r2 = // JavaScript Document
-        [{
-            "studentname": "Viraj Kale",
-            "schoolname": "Dhirubhai Ambani International School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Viraj Kale",
-            "schoolname": "Dhirubhai Ambani International School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }];
-
-    $scope.r3 = // JavaScript Document
-        [{
-            "studentname": "Viraj Kale",
-            "schoolname": "Dhirubhai Ambani International School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }, {
-            "studentname": "Rizwan Mirza",
-            "schoolname": "Bombay British School"
-
-        }];
-    $scope.r4 = // JavaScript Document
-        [{
-            "studentname": "Viraj Kale",
-            "schoolname": "Dhirubhai Ambani International School"
-
-        }, {
-            "studentname": "Viraj Kale",
-            "schoolname": "Dhirubhai Ambani International School"
-
-        }, {
-            "studentname": "Viraj Kale",
-            "schoolname": "Dhirubhai Ambani International School"
-
-        }, {
-            "studentname": "Viraj Kale",
-            "schoolname": "Dhirubhai Ambani International School"
-
-        }];
-    $scope.r5 = // JavaScript Document
-        [{
-            "studentname": "Viraj Kale",
-            "schoolname": "Dhirubhai Ambani International School"
-
-        }, {
-            "studentname": "Viraj Kale",
-            "schoolname": "Dhirubhai Ambani International School"
-
-        }];
-    $scope.r6 = // JavaScript Document
-        [{
-            "studentname": "Viraj Kale",
-            "schoolname": "Dhirubhai Ambani International School"
-
-        }];
 })
 
 .controller('StudentprofileCtrl', function($scope, TemplateService, NavigationService, ngDialog, $stateParams, $filter, $state) {
@@ -2580,6 +2393,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Pre-Registration");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        //submit registration form
+        $scope.school = {};
+        $scope.school.sports = [];
+        $scope.school.dob = new Date();
+        var submitpreregistrationcallback = function(data, status) {
+            if (data == 1) {
+                $scope.school = {};
+                ngDialog.open({
+                    template: './views/content/thankyou.html',
+                    scope: $scope
+                });
+            }
+        }
+        $scope.submitpreregistration = function(school) {
+            $scope.school = school;
+            NavigationService.submitpreregistration($scope.school, submitpreregistrationcallback);
+        }
     })
 
 .controller('headerctrl', function($scope, TemplateService) {

@@ -131,7 +131,7 @@
 						</div>
 						<div class="col-md-4 mobpad">
 							<div class="sc-input">
-								<input type="text" class="form-control" placeholder="Mobile" ng-model="school.mobile" placeholder="Mobile" required>
+								<input type="text" class="form-control" placeholder="Mobile" ng-model="school.contact" placeholder="Mobile" required>
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-4">	</div>
@@ -160,8 +160,7 @@
 									<label class="checkbox pl0" for="Option11">Aquatic</label></li>
 									<li class="inlblo"><input id="Option12" type="checkbox">
 									<label class="checkbox pl0" for="Option12">Carrom</label></li>
-									<li class="inlblo"><input id="Option13" type="checkbox">
-									<label class="checkbox pl0" for="Option13">Hockey</label></li>
+
 									<li class="inlblo"><input id="Option14" type="checkbox">
 									<label class="checkbox pl0" for="Option14">Khokho</label></li>
 									<li class="inlblo"><input id="Option15" type="checkbox">
@@ -170,8 +169,7 @@
 									<label class="checkbox pl0" for="Option16">Archery</label></li>
 									<li class="inlblo"><input id="Option17" type="checkbox">
 									<label class="checkbox pl0" for="Option17">Chess</label></li>
-									<li class="inlblo"><input id="Option18" type="checkbox">
-									<label class="checkbox pl0" for="Option18">Judo</label></li>
+
 									<li class="inlblo"><input id="Option19" type="checkbox">
 									<label class="checkbox pl0" for="Option19">MMA</label></li>
 									<li class="inlblo"><input id="Option20" type="checkbox">
@@ -239,7 +237,7 @@
     </div>
     </div>
 				<div class="text-center">
-					<button class="slider-btn text-center" type="submit">SUBMIT</button>
+					<button class="slider-btn text-center" ng-click="submitpreregistration(school);" type="submit">SUBMIT</button>
 				</div>
 			</div>
 

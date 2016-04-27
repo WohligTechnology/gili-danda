@@ -73,9 +73,11 @@
                  data: {
                      'type': school.type,
                     'name': school.name,
+                    'school': school.schoolname,
+                    'dob': school.dd + "/" + school.mm + "/" + school.yy ,
                      'email': school.email,
-                     'contact': school.contact
-                    //  'sports': school.sports
+                     'contact': school.contact,
+                     'sports': school.sports
                  }
              }).success(callback);
          },

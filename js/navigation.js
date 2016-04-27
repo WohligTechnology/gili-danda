@@ -1,4 +1,4 @@
- var adminlink = "http://wohlig.co.in/sfabackend/";
+ // var adminlink = "http://wohlig.co.in/sfabackend/";
  var adminlink = "http://192.168.1.133/sfabackend/";
  var admin_url = adminlink + "index.php/";
  var imgpath = adminlink + "uploads/";
@@ -64,6 +64,22 @@
                  }
              }).success(callback);
          },
+
+         submitpreregistration: function(school, callback) {
+             console.log(school);
+             return $http({
+                 url: admin_url + "json/preregistration",
+                 method: "POST",
+                 data: {
+                     'type': school.type,
+                    'name': school.name,
+                     'email': school.email,
+                     'contact': school.contact
+                    //  'sports': school.sports
+                 }
+             }).success(callback);
+         },
+
          createEnquiries: function(enquire, callback) {
              return $http.get(admin_url + 'json/createEnquiries?name=' + enquire.name + '&email=' + enquire.email + '&mobile=' + enquire.mobile + '&person=' + enquire.person, {}).success(callback);
          },

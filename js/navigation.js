@@ -1,5 +1,5 @@
  var adminlink = "http://wohlig.co.in/sfabackend/";
- // var adminlink = "http://192.168.1.133/sfabackend/";
+ var adminlink = "http://192.168.1.133/sfabackend/";
  var admin_url = adminlink + "index.php/";
  var imgpath = adminlink + "uploads/";
  var navigationservice = angular.module('navigationservice', [])
@@ -89,7 +89,7 @@
              return $http.get(admin_url + 'json/getschedule?sport=' + filter.sport + '&sportscategory=' + filter.category + '&agegroup=' + filter.agegroup + '&gender=' + filter.gender, {}).success(callback);
          },
          getDraw: function(filter, callback) {
-             return $http.get(admin_url + 'json/getDraw?sport=' + filter.sport + '&sportscategory=' + filter.category + '&agegroup=' + filter.agegroup + '&gender=' + filter.gender, {}).success(callback);
+             return $http.get(admin_url + 'json/getDraw?sport=' + filter.sport + '&sportscategory=' + filter.sportscategory + '&agegroup=' + filter.agegroup + '&gender=' + filter.gender, {}).success(callback);
          },
          getScore: function(filter, callback) {
              return $http.get(admin_url + 'json/getScore?sport=' + filter.sport + '&sportscategory=' + filter.category + '&agegroup=' + filter.agegroupid + '&gender=' + filter.gender, {}).success(callback);
@@ -129,6 +129,9 @@
          },
          savenewsletter: function(email, callback) {
              return $http.get("http://wohlig.co.in/sfabackend/index.php/json/getnewsletter?email=" + email).success(callback);
+         },
+         getDropdowns: function(filter, callback) {
+             return $http.get(admin_url + 'json/getdropdowns?sport=' + filter.sport + '&sportscategory=' + filter.sportscategory + '&agegroup=' + filter.agegroup + '&gender=' + filter.gender, {}).success(callback);
          },
          makeactive: function(menuname) {
              for (var i = 0; i < navigation.length; i++) {

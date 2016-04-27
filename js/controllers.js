@@ -835,12 +835,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.filter = {};
-    // $scope.filter.category = "1";
-    // $scope.filter.sport = "1";
-    // $scope.filter.gender = "1";
-    // $scope.filter.agegroup = "1";
-    $scope.filter.category = "";
+    // $scope.filter.sport = "basketball";
+    // $scope.filter.sportscategory = "single";
+    // $scope.filter.gender = "male";
+    // $scope.filter.agegroup = "U-11";
     $scope.filter.sport = "";
+    $scope.filter.sportscategory = "";
     $scope.filter.gender = "";
     $scope.filter.agegroup = "";
     $scope.sportselected = "";
@@ -848,30 +848,58 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.schedule = {};
     $scope.match = [];
 
-    NavigationService.isStudentSports(function(data) {
-        $scope.sports = data;
-    });
+    $scope.allsports = [{
+        name: "badminton"
+    }, {
+        name: "basketball"
+    }, {
+        name: "handball"
+    }, {
+        name: "judo"
+    }, {
+        name: "squash"
+    }, {
+        name: "table tennis"
+    }, {
+        name: "tennis"
+    }, {
+        name: "volleyball"
+    }, {
+        name: "swimming"
+    }];
+
+
+    // NavigationService.isStudentSports(function(data) {
+    //     $scope.sports = data;
+    // });
 
     $scope.sportChange = function() {
-        console.log($scope.filter.sportid.split(','));
-        $scope.sportselected = $scope.filter.sportid.split(',')[1];
-        $scope.filter.sport = $scope.filter.sportid.split(',')[0];
-
-        NavigationService.getSportsCategory("", $scope.filter.sport, "", function(data) {
-            $scope.category = data;
+        // console.log($scope.filter.sportid.split(','));
+        // $scope.sportselected = $scope.filter.sportid.split(',')[1];
+        // $scope.filter.sport = $scope.filter.sportid.split(',')[0];
+        //
+        // NavigationService.getSportsCategory("", $scope.filter.sport, "", function(data) {
+        //     $scope.category = data;
+        // })
+        // $scope.categoryChange();
+        NavigationService.getDropdowns($scope.filter, function(data) {
+            $scope.allsportcategory = _.uniq(data, 'sportcategory');
+            $scope.allgender = _.uniq(data, 'gender');
+            $scope.allagegroup = _.uniq(data, 'agegroup');
+            console.log(data);
         })
-        $scope.categoryChange();
     }
+    $scope.sportChange();
 
-    $scope.categoryChange = function() {
-        NavigationService.scheduleAgeGroup($scope.filter.category, $scope.filter.sport, $scope.filter.gender, function(data) {
-            $scope.agegroup = data;
-        })
-    }
-
-    $scope.genderChange = function() {
-        $scope.categoryChange();
-    }
+    // $scope.categoryChange = function() {
+    //     NavigationService.scheduleAgeGroup($scope.filter.category, $scope.filter.sport, $scope.filter.gender, function(data) {
+    //         $scope.agegroup = data;
+    //     })
+    // }
+    //
+    // $scope.genderChange = function() {
+    //     $scope.categoryChange();
+    // }
 
     $scope.round = [];
     $scope.rounds = [];
@@ -880,6 +908,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // $scope.filter.category = "1";
         NavigationService.getDraw($scope.filter, function(data) {
             $scope.match = [];
+            $scope.round = [];
+            $scope.rounds = [];
             var grouped = _.groupBy(data, 'round');
             _.each(grouped, function(key, value) {
                 $scope.match.push(key);
@@ -909,13 +939,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     }
                     var arr1 = [{
                         "player": m.player1,
+                        "school": m.player1school,
                         "round": m.round,
-                        "winner": m.winner
+                        "winner": m.winnername,
+                        "score": m.score
                     }];
                     var arr2 = [{
                         "player": m.player2,
+                        "school": m.player2school,
                         "round": m.round,
-                        "winner": m.winner
+                        "winner": m.winnername,
+                        "score": m.score
                     }];
                     if (m.round != "thirdplace") {
                         $scope.round.push(arr1);
@@ -927,8 +961,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.round = [];
             })
             var finals = [];
+            // $scope.rounds[$scope.rounds.length - 1][1][0].round = "Winner";
             finals.push($scope.rounds[$scope.rounds.length - 1][0]);
             $scope.rounds.push(finals);
+            // $scope.toPush = 6 - $scope.rounds.length;
+            // for (var i = 0; i < $scope.toPush; i++) {
+            //     $scope.rounds.unshift([]);
+            // }
             console.log($scope.rounds);
             $scope.match[0] = _.chunk($scope.rounds[0], 2);
             console.log($scope.match);
@@ -955,7 +994,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
     }
 
-    $scope.getDraw();
+    // $scope.getDraw();
 
     $scope.r1 = // JavaScript Document
         [{
@@ -2506,19 +2545,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 })
 
 .controller('TrainingCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-    //Used to name the .html file
-    $scope.template = TemplateService.changecontent("training");
-    $scope.menutitle = NavigationService.makeactive("Training & Development");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
-})
-.controller('PreRegistrationCtrl', function($scope, TemplateService, NavigationService, $timeout) {
-    //Used to name the .html file
-    $scope.template = TemplateService.changecontent("pre-registration");
-    $scope.menutitle = NavigationService.makeactive("Pre-Registration");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
-})
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("training");
+        $scope.menutitle = NavigationService.makeactive("Training & Development");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+    })
+    .controller('PreRegistrationCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("pre-registration");
+        $scope.menutitle = NavigationService.makeactive("Pre-Registration");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+    })
 
 .controller('headerctrl', function($scope, TemplateService) {
         $scope.template = TemplateService;

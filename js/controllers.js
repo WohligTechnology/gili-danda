@@ -2395,6 +2395,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
     //submit registration form
     $scope.school = {};
+    $scope.school.newsletter = false;
     $scope.school.sports = [];
     $scope.school.dob = new Date();
     var submitpreregistrationcallback = function(data, status) {
@@ -2410,13 +2411,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.submitpreregistration = function(school) {
       $scope.school = school;
       if ($scope.school.sports && $scope.school.sports.length > 0) {
+        $scope.showErr = false;
         var instring = "";
         _.each($scope.school.sports, function(n) {
           instring += n + ",";
         })
         $scope.school.sports = instring.substring(0, instring.length - 1);
+
+        NavigationService.submitpreregistration($scope.school, submitpreregistrationcallback);
+      } else {
+        $scope.showErr = true;
       }
-      NavigationService.submitpreregistration($scope.school, submitpreregistrationcallback);
+
     }
 
     $scope.pushorpop = function(flag) {
@@ -2427,7 +2433,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.school.sports.splice(index, 1);
       }
     }
-    $scope.allsports = ['Aquatic', 'Carrom', 'Khokho', 'Tennis', 'Archery', 'Chess'];
+    $scope.allsports = ['Aquatic', 'Carrom', 'Khokho', 'Tennis', 'Archery', 'Chess', 'MMA', 'Throw ball', 'Athletics', 'Fencing', 'Hockey', 'Shooting', 'Ultimate Frisbee', 'Badminton', 'Football', 'Judo', 'Squash', 'Volleyball', 'Basketball', 'Gymnastics', 'Kabaddi', 'Table Tennis', 'Wrestling', 'Boxing', 'Handball', 'Karate', 'Taekwondo'];
 
     $scope.getTimes = function(val) {
       return new Array(val);

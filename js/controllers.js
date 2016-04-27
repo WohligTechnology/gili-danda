@@ -829,7 +829,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('DrawCtrl', function($scope, TemplateService, NavigationService) {
+.controller('DrawCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     $scope.template = TemplateService.changecontent("draw");
     $scope.menutitle = NavigationService.makeactive("Draw");
     TemplateService.title = $scope.menutitle;
@@ -905,7 +905,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.rounds = [];
 
     $scope.getDraw = function() {
-        // $scope.filter.category = "1";
+        // $scope.filter.category = "1"
         NavigationService.getDraw($scope.filter, function(data) {
             $scope.match = [];
             $scope.round = [];
@@ -961,16 +961,39 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.round = [];
             })
             var finals = [];
-            // $scope.rounds[$scope.rounds.length - 1][1][0].round = "Winner";
             finals.push($scope.rounds[$scope.rounds.length - 1][0]);
             $scope.rounds.push(finals);
-            // $scope.toPush = 6 - $scope.rounds.length;
-            // for (var i = 0; i < $scope.toPush; i++) {
-            //     $scope.rounds.unshift([]);
-            // }
             console.log($scope.rounds);
             $scope.match[0] = _.chunk($scope.rounds[0], 2);
             console.log($scope.match);
+
+            var li3 = setInterval(function() {
+                if (document.getElementById('li3')) {
+                    document.getElementById('li3').className = "left-bx top3-bx";
+                    clearInterval(li3);
+                }
+            }, 100);
+            var li4 = setInterval(function() {
+                if (document.getElementById('li4')) {
+                    document.getElementById('li4').className = "left-bx top4-bx";
+                    clearInterval(li4);
+                }
+            }, 100);
+            var li5 = setInterval(function() {
+                if (document.getElementById('li5')) {
+                    document.getElementById('li5').className = "left-bx top5-bx";
+                    clearInterval(li5);
+                }
+            }, 100);
+            $timeout(function() {
+                if (document.getElementById('li' + $scope.rounds.length))
+                    document.getElementById('li' + $scope.rounds.length).className = "left-bx noborder";
+            }, 2000);
+
+
+
+
+
             // $scope.match = data;
             // var data2 = data.splice(1);
             // _.each(data2, function(n) {

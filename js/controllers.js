@@ -877,6 +877,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.filter.sportscategory = "";
         $scope.filter.gender = "";
         $scope.filter.agegroup = "";
+        $scope.match = [];
+        $scope.round = [];
+        $scope.rounds = [];
     }
 
     $scope.sportChange = function() {
@@ -892,11 +895,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.allsportcategory = _.uniq(data, 'sportcategory');
                 $scope.allgender = _.uniq(data, 'gender');
                 $scope.allagegroup = _.uniq(data, 'agegroup');
-                console.log(data);
             })
 
             if ($scope.filter.sport != '' && $scope.filter.gender != '' && $scope.filter.agegroup != '') {
                 $scope.getDraw();
+            } else {
+                $scope.noDraws = true;
             }
 
         }
@@ -977,11 +981,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     $scope.round = [];
                 })
                 var finals = [];
-                finals.push($scope.rounds[$scope.rounds.length - 1][0]);
+                var toPush = _.cloneDeep($scope.rounds[$scope.rounds.length - 1][0]);
+                finals.push(toPush);
+                finals[0][0].round = "Winner";
                 $scope.rounds.push(finals);
-                console.log($scope.rounds);
                 $scope.match[0] = _.chunk($scope.rounds[0], 2);
-                console.log($scope.match);
 
                 var li3 = setInterval(function() {
                     if (document.getElementById('li3')) {

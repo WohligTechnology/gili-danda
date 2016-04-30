@@ -56,37 +56,18 @@
          </div>
       </div> -->
       <!--               ui for all sports except swimming-->
-      <div class="scroll-w" ng-if="sportselected!='swimming' && match!=''">
+      <div class="scroll-w">
          <div class="scroll-on">
-            <!--
-                <div class="row">
-                    <div class="margtp">
-
-
-                        <div class="col-xs-3" ng-if="match[0].match">
-                            <h4>Round - 01</h4>
-                        </div>
-                        <div class="col-xs-3" ng-if="rounds[0]">
-                            <h4>Round - 02</h4>
-                        </div>
-                        <div class="col-xs-3" ng-if="rounds[1]">
-                            <h4>Round - 03</h4>
-                        </div>
-                        <div class="col-xs-3" ng-if="rounds[2]">
-                            <h4>Round - 04</h4>
-                        </div>
-                    </div>
-                </div>
--->
-
-
             <div class="tree" ng-if="filter.sport=='badminton' || filter.sport=='judo' || filter.sport=='squash' || filter.sport=='tabletennis' || filter.sport=='tennis'">
                <div class="list-tree">
+                  <div class="text-center" ng-if="noDraws==true">
+                     <h1>No Draws</h1>
+                  </div>
                   <div class="r1170">
                      <div class="tree1">
                         <!--                               round 1-->
                         <div class="w285">
-                           <h4 ng-if="match[0]">Round - 01</h4>
+                           <h4 ng-if="match[0]">{{match[0][0][0][0].round}}</h4>
                            <ul>
                               <div class="min-100" ng-repeat="round in match[0]">
                                  <div ng-repeat="r in round track by $index">
@@ -209,11 +190,14 @@
 
          <div class="tree" ng-if="filter.sport=='basketball' || filter.sport=='handball' || filter.sport=='vollyball'">
             <div class="list-tree">
+               <div class="text-center" ng-if="noDraws==true">
+                  <h1>No Draws</h1>
+               </div>
                <div class="r1170">
                   <div class="tree1">
                      <!--                               round 1-->
                      <div class="w285">
-                        <h4 ng-if="match[0]">Round - 01</h4>
+                        <h4 ng-if="match[0]">{{match[0][0][0][0].round}}</h4>
                         <ul>
                            <div class="min-100" ng-repeat="round in match[0]">
                               <div ng-repeat="r in round track by $index">

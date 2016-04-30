@@ -874,6 +874,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     // });
 
     $scope.clearOthers = function() {
+        $scope.noDraws = false;
         $scope.filter.sportscategory = "";
         $scope.filter.gender = "";
         $scope.filter.agegroup = "";
@@ -899,7 +900,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             if ($scope.filter.sport != '' && $scope.filter.gender != '' && $scope.filter.agegroup != '') {
                 $scope.getDraw();
-            } else {
+            } else if ($scope.filter.sport != '' && $scope.filter.gender != '') {
                 $scope.noDraws = true;
             }
 

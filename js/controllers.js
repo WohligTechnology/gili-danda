@@ -922,9 +922,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.getDraw = function() {
         // $scope.filter.category = "1"
-        if ($scope.filter.sport == 'basketball' || $scope.filter.sport == 'handball' || $scope.filter.sport == 'volleyball') {
-            $scope.filter.sportscategory = "single";
-        }
+        // if ($scope.filter.sport == 'basketball' || $scope.filter.sport == 'handball' || $scope.filter.sport == 'volleyball') {
+        //     $scope.filter.sportscategory = "single";
+        // }
         NavigationService.getDraw($scope.filter, function(data) {
             if (data.length > 0) {
                 $scope.noDraws = false;

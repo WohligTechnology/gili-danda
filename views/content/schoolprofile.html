@@ -1,10 +1,13 @@
 <div class="media-set">
    <img src="img/profiles.jpg" class="img-responsive img">
-   <div class="container sprofile">
+   <pre>
+     {{notFound}}
+   </pre>
+   <div class="container sprofile" ng-hide="notFound">
       <div class="row">
          <div class="col-xs-4">
             <div class="slogo">
-               <img src="{{school.school.image | serverimageschool}}" class="img-responsive b-rad">
+               <img ng-src="{{school.school.image | serverimageschool}}" class="img-responsive b-rad">
             </div>
          </div>
          <div class="col-xs-8">
@@ -46,11 +49,20 @@
 -->
       </div>
    </div>
+   <div class="container sprofile text-center" ng-show="notFound">
+      <div class="row">
+         <div class="col-xs-12">
+            <div class="sdata ">
+               <h3 class="dp">School Not Found</h3
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
-<div class="spo text-center">
+<div class="spo text-center" ng-hide="notFound">
    <h4 class="clsports">Sports participating</h4>
 </div>
-<div class="container martgintp">
+<div class="container martgintp" ng-hide="notFound">
 
    <div class="row" ng-if="checkmenu">
       <div class="col-md-12">
@@ -655,8 +667,8 @@
                               <!-- <td>
                                  <ul>
                                     <li ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">{{data.title}}</li> -->
-                                    <!-- <li ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">{{data.title}}</li> -->
-                                 <!-- </ul>
+                              <!-- <li ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">{{data.title}}</li> -->
+                              <!-- </ul>
                               </td> -->
                            </tr>
                         </tbody>
@@ -698,8 +710,8 @@
                               <!-- <td>
                                  <ul>
                                     <li ng-if="(tab|lowercase) == 'basketball' ||(tab|lowercase) == 'vollyball' ||(tab|lowercase) == 'handball'">{{data.title}}</li> -->
-                                    <!-- <li ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">{{data.title}}</li> -->
-                                 <!-- </ul>
+                              <!-- <li ng-if="(tab|lowercase) == 'table tennis' || (tab|lowercase) == 'tennis' ||(tab|lowercase) == 'badminton' ||(tab|lowercase) == 'squash'||(tab|lowercase) == 'judo'||(tab|lowercase) == 'swimming'">{{data.title}}</li> -->
+                              <!-- </ul>
                               </td> -->
                            </tr>
                         </tbody>

@@ -1121,46 +1121,44 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
 
     NavigationService.getstudentprofile($stateParams.id, function(data) {
-        _.each(data.sportsparticipated, function(n, key1) {
-            _.each($scope.games, function(m, key2) {
-                if ($filter('lowercase')(n.name) == $filter('lowercase')(m.game)) {
-                    m.grey = false;
-                    m.id = n.id;
-                    if (!$scope.tab) {
-                        $scope.makeactive(m);
-                        $scope.sportsId = n.id;
+        if (data.studentprofile && data.studentprofile.id) {
+            $scope.notFound = false;
+            _.each(data.sportsparticipated, function(n, key1) {
+                _.each($scope.games, function(m, key2) {
+                    if ($filter('lowercase')(n.name) == $filter('lowercase')(m.game)) {
+                        m.grey = false;
+                        m.id = n.id;
+                        if (!$scope.tab) {
+                            $scope.makeactive(m);
+                            $scope.sportsId = n.id;
+                        }
+                    } else {
+                        if (m.grey != false) {
+                            m.grey = true;
+                        }
                     }
-                } else {
-                    if (m.grey != false) {
-                        m.grey = true;
+                });
+                if (key1 == data.sportsparticipated.length - 1) {
+                    if (data.sportsparticipated != '') {
+                        $scope.checkmenu = true;
                     }
+                    demo = 1;
+                    //					$scope.loadStudents();
                 }
             });
-            if (key1 == data.sportsparticipated.length - 1) {
-                if (data.sportsparticipated != '') {
-                    $scope.checkmenu = true;
+            $scope.student = data;
+            _.each(data.sportsparticipated, function(n, key) {
+                console.log(n);
+                if (key == 0) {
+                    $scope.sportsnames = n.name;
+                } else {
+                    $scope.sportsnames = $scope.sportsnames + ", " + n.name;
                 }
-                demo = 1;
-                //					$scope.loadStudents();
-            }
-        });
-        $scope.student = data;
-        _.each(data.sportsparticipated, function(n, key) {
-            console.log(n);
-            if (key == 0) {
-                $scope.sportsnames = n.name;
-            } else {
-                $scope.sportsnames = $scope.sportsnames + ", " + n.name;
-            }
 
-        });
-        _.each(data.sportname, function(n, key) {
-            //lodash
-            //console.log(n);
-            //console.log(n.name + ', ' + key);
-            //console.log(n.id + ', ' + key);
-            //console.log(n.icon + ', ' + key);
-        });
+            });
+        } else {
+            $scope.notFound = true;
+        }
     });
 
     $scope.loadStudents = function() {
@@ -1697,46 +1695,42 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
 
     NavigationService.getschoolprofile($stateParams.id, function(data) {
-
-        if (data.sportname != '') {
-            _.each(data.sportname, function(n, key1) {
-                _.each($scope.games, function(m, key2) {
-                    if ($filter('lowercase')(n.name) == $filter('lowercase')(m.game) || m.game == "all") {
-                        m.grey = false;
-                        m.id = n.id;
-                        if (!$scope.tab) {
-                            $scope.makeactive(1, m);
+        if (data.school && data.school.id) {
+            $scope.notFound = false;
+            if (data.sportname != '') {
+                _.each(data.sportname, function(n, key1) {
+                    _.each($scope.games, function(m, key2) {
+                        if ($filter('lowercase')(n.name) == $filter('lowercase')(m.game) || m.game == "all") {
+                            m.grey = false;
+                            m.id = n.id;
+                            if (!$scope.tab) {
+                                $scope.makeactive(1, m);
+                            }
+                        } else {
+                            if (m.grey != false) {
+                                m.grey = true;
+                            }
                         }
-                    } else {
-                        if (m.grey != false) {
-                            m.grey = true;
-                        }
+                    });
+                    if (key1 == data.sportname.length - 1) {
+                        $scope.checkmenu = true;
+                        demo = 1;
                     }
                 });
-                if (key1 == data.sportname.length - 1) {
-                    $scope.checkmenu = true;
-                    demo = 1;
-                    //                    $scope.loadStudents();
-                }
-
-
+            } else {
+                $scope.checkmenu = true;
+            }
+            $scope.school = data;
+            $scope.sportid = [];
+            _.each(data.sportname, function(n, key) {
+                $scope.sportid.push(n.id);
             });
+            console.log($scope.sportid);
         } else {
-            $scope.checkmenu = true;
+            $scope.notFound = true;
         }
-        $scope.school = data;
-
-
-        $scope.sportid = [];
-        _.each(data.sportname, function(n, key) {
-            $scope.sportid.push(n.id);
-        });
-        console.log($scope.sportid);
-        //            NavigationService.filterGames($scope.sportid, function (data) {
-        //                $scope.schoolSports = data;
-        //            });
-
     });
+
     $scope.loadSportsCategory = function() {
 
     }

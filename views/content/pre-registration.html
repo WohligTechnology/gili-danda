@@ -62,7 +62,7 @@
 					</div>
 					<div class="col-md-9 col-sm-9">
 						<div class="sc-input">
-							<input type="text" class="form-control" required ng-model="school.name" placeholder="{{school.type}} Name" required>
+							<input type="text" class="form-control" required ng-model="school.name" placeholder="{{school.type}} Name" required onkeyup="javascript:this.value=this.value.replace(/[<,>]/g,'');">
 						</div>
 					</div>
 				</div>
@@ -74,7 +74,7 @@
 					</div>
 					<div class="col-md-9 col-sm-9">
 						<div class="sc-input">
-							<input type="text" required class="form-control" ng-model="school.schoolname" placeholder="School" required>
+							<input type="text" required class="form-control" ng-model="school.schoolname" placeholder="School" required onkeyup="javascript:this.value=this.value.replace(/[<,>]/g,'');">
 						</div>
 					</div>
 				</div>
@@ -100,7 +100,18 @@
 								<label class="pl0 pr3" for="">MM</label>&nbsp;
 								<select required ng-model="school.mm" class="selsize" name="">
 									<option value="">Select Month</option>
-									<option ng-repeat="n in getTimes(12) track by $index">{{$index+1}}</option>
+									<option value="January">January</option>
+									<option value="February">February</option>
+									<option value="March">March</option>
+									<option value="April">April</option>
+									<option value="May">May</option>
+									<option value="June">June</option>
+									<option value="July">July</option>
+									<option value="August">August</option>
+									<option value="September">September</option>
+									<option value="October">October</option>
+									<option value="November">November</option>
+									<option value="December">December</option>
 								</select>
 							</div>
 							<div class="col-md-3">
@@ -124,12 +135,12 @@
 						<div class="row mar10">
 							<div class="col-md-4 padzer">
 								<div class="sc-input">
-									<input type="email" class="form-control" placeholder="Email" ng-model="school.email" placeholder="Email" required>
+									<input type="email" class="form-control" placeholder="Email" ng-model="school.email" placeholder="Email" required onkeyup="javascript:this.value=this.value.replace(/[<,>]/g,'');">
 								</div>
 							</div>
 							<div class="col-md-4 mobpad">
 								<div class="sc-input">
-									<input type="text" class="form-control" placeholder="Mobile" ng-model="school.contact" placeholder="Mobile" required>
+									<input type="text" class="form-control" placeholder="Mobile" ng-model="school.contact" placeholder="Mobile" required onkeyup="javascript:this.value=this.value.replace(/[<,>]/g,'');">
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4"> </div>

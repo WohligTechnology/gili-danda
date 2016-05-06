@@ -880,20 +880,28 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }
 
     $scope.sportChange = function() {
-            // console.log($scope.filter.sportid.split(','));
-            // $scope.sportselected = $scope.filter.sportid.split(',')[1];
-            // $scope.filter.sport = $scope.filter.sportid.split(',')[0];
-            //
-            // NavigationService.getSportsCategory("", $scope.filter.sport, "", function(data) {
-            //     $scope.category = data;
-            // })
-            // $scope.categoryChange();
-            NavigationService.getDropdowns($scope.filter, function(data) {
-                $scope.allsportcategory = _.uniq(data, 'sportcategory');
-                $scope.allgender = _.uniq(data, 'gender');
-                $scope.allagegroup = _.uniq(data, 'agegroup');
-            })
+        $scope.match = [];
+        $scope.round = [];
+        $scope.rounds = [];
+        // console.log($scope.filter.sportid.split(','));
+        // $scope.sportselected = $scope.filter.sportid.split(',')[1];
+        // $scope.filter.sport = $scope.filter.sportid.split(',')[0];
+        //
+        // NavigationService.getSportsCategory("", $scope.filter.sport, "", function(data) {
+        //     $scope.category = data;
+        // })
+        // $scope.categoryChange();
 
+        $scope.noDraws = false;
+        $scope.noCategory = false;
+        $scope.noGender = false;
+        $scope.noAgegrp = false;
+
+
+        NavigationService.getDropdowns($scope.filter, function(data) {
+            $scope.allsportcategory = _.uniq(data, 'sportcategory');
+            $scope.allgender = _.uniq(data, 'gender');
+            $scope.allagegroup = _.uniq(data, 'agegroup');
             if ($scope.filter.sport == "basketball" || $scope.filter.sport == "handball" || $scope.filter.sport == "volleyball") {
                 if ($scope.filter.sport != '' && $scope.filter.gender != '' && $scope.filter.agegroup != '') {
                     $scope.noDraws = false;
@@ -908,6 +916,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     $scope.noDraws = false;
                     $scope.noGender = false;
                     $scope.noAgegrp = true;
+                }
+                if (data.length == 0 && $scope.filter.gender != '') {
+                    $scope.noDraws = true;
+                    $scope.noCategory = false;
+                    $scope.noGender = false;
+                    $scope.noAgegrp = false;
                 }
             } else {
                 if ($scope.filter.sport != '' && $scope.filter.sportscategory != '' && $scope.filter.gender != '' && $scope.filter.agegroup != '') {
@@ -932,9 +946,22 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     $scope.noGender = false;
                     $scope.noAgegrp = true;
                 }
+                if (data.length == 0 && $scope.filter.gender != '') {
+                    $scope.noDraws = true;
+                    $scope.noCategory = false;
+                    $scope.noGender = false;
+                    $scope.noAgegrp = false;
+                } else if (data.length == 0 && $scope.filter.gender == '') {
+                    $scope.noDraws = false;
+                    $scope.noCategory = false;
+                    $scope.noGender = true;
+                    $scope.noAgegrp = false;
+                }
             }
-        }
-        // $scope.sportChange();
+        })
+    }
+
+    // $scope.sportChange();
 
     // $scope.categoryChange = function() {
     //     NavigationService.scheduleAgeGroup($scope.filter.category, $scope.filter.sport, $scope.filter.gender, function(data) {

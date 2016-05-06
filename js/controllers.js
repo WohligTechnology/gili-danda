@@ -874,13 +874,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     // });
 
     $scope.clearOthers = function() {
-        $scope.noDraws = false;
         $scope.filter.sportscategory = "";
         $scope.filter.gender = "";
         $scope.filter.agegroup = "";
-        $scope.match = [];
-        $scope.round = [];
-        $scope.rounds = [];
     }
 
     $scope.sportChange = function() {
@@ -898,12 +894,45 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.allagegroup = _.uniq(data, 'agegroup');
             })
 
-            if ($scope.filter.sport != '' && $scope.filter.gender != '' && $scope.filter.agegroup != '') {
-                $scope.getDraw();
-            } else if ($scope.filter.sport != '' && $scope.filter.gender != '') {
-                $scope.noDraws = true;
+            if ($scope.filter.sport == "basketball" || $scope.filter.sport == "handball" || $scope.filter.sport == "volleyball") {
+                if ($scope.filter.sport != '' && $scope.filter.gender != '' && $scope.filter.agegroup != '') {
+                    $scope.noDraws = false;
+                    $scope.noGender = false;
+                    $scope.noAgegrp = false;
+                    $scope.getDraw();
+                } else if ($scope.filter.sport != '' && $scope.filter.gender == '') {
+                    $scope.noDraws = false;
+                    $scope.noGender = true;
+                    $scope.noAgegrp = false;
+                } else if ($scope.filter.sport != '' && $scope.filter.gender != '' && $scope.filter.agegroup == '') {
+                    $scope.noDraws = false;
+                    $scope.noGender = false;
+                    $scope.noAgegrp = true;
+                }
+            } else {
+                if ($scope.filter.sport != '' && $scope.filter.sportscategory != '' && $scope.filter.gender != '' && $scope.filter.agegroup != '') {
+                    $scope.noDraws = false;
+                    $scope.noCategory = false;
+                    $scope.noGender = false;
+                    $scope.noAgegrp = false;
+                    $scope.getDraw();
+                } else if ($scope.filter.sport != '' && $scope.filter.sportscategory == '') {
+                    $scope.noDraws = false;
+                    $scope.noCategory = true;
+                    $scope.noGender = false;
+                    $scope.noAgegrp = false;
+                } else if ($scope.filter.sport != '' && $scope.filter.sportscategory != '' && $scope.filter.gender == '') {
+                    $scope.noDraws = false;
+                    $scope.noCategory = false;
+                    $scope.noGender = true;
+                    $scope.noAgegrp = false;
+                } else if ($scope.filter.sport != '' && $scope.filter.sportscategory != '' && $scope.filter.gender != '' && $scope.filter.agegroup == '') {
+                    $scope.noDraws = false;
+                    $scope.noCategory = false;
+                    $scope.noGender = false;
+                    $scope.noAgegrp = true;
+                }
             }
-
         }
         // $scope.sportChange();
 
@@ -921,6 +950,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.rounds = [];
 
     $scope.getDraw = function() {
+        $scope.noDraws = false;
+        $scope.noCategory = false;
+        $scope.noGender = false;
+        $scope.noAgegrp = false;
+        $scope.match = [];
+        $scope.round = [];
+        $scope.rounds = [];
         // $scope.filter.category = "1"
         // if ($scope.filter.sport == 'basketball' || $scope.filter.sport == 'handball' || $scope.filter.sport == 'volleyball') {
         //     $scope.filter.sportscategory = "single";
@@ -935,7 +971,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 _.each(grouped, function(key, value) {
                     $scope.match.push(key);
                 })
-                console.log($scope.match);
                 _.each($scope.match, function(n) {
                     _.each(n, function(m) {
                         m.round = m.round.trim();

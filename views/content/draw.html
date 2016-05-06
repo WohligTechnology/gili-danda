@@ -58,10 +58,19 @@
       <!--               ui for all sports except swimming-->
       <div class="scroll-w">
          <div class="scroll-on">
-            <div class="tree" ng-if="filter.sport=='badminton' || filter.sport=='judo' || filter.sport=='squash' || filter.sport=='tabletennis' || filter.sport=='tennis'">
+            <div class="tree" ng-if="filter.sport!='basketball' && filter.sport!='handball' && filter.sport!='volleyball'">
                <div class="list-tree">
                   <div class="text-center" ng-if="noDraws==true">
                      <h1>No Draws</h1>
+                  </div>
+                  <div class="text-center" ng-if="noGender==true">
+                     <h1>Select Gender</h1>
+                  </div>
+                  <div class="text-center" ng-if="noCategory==true">
+                     <h1>Select Category</h1>
+                  </div>
+                  <div class="text-center" ng-if="noAgegrp==true">
+                     <h1>Select Agegroup</h1>
                   </div>
                   <div class="r1170">
                      <div class="tree1">
@@ -72,7 +81,7 @@
                               <div class="min-100" ng-repeat="round in match[0]">
                                  <div ng-repeat="r in round track by $index">
                                     <li id="li1" class="top-bx" ng-if="$index%2==0">
-                                       <h4>{{r[0].player}}</h4>
+                                       <h4 class="elipses">{{r[0].player}}</h4>
                                        <p class="pull-left">{{r[0].school}}</p>
                                        <div class="pull-right" ng-if="$index%2==0">
                                           <p>{{r[0].score}}</p>
@@ -81,7 +90,7 @@
                                        <!-- <p>{{r[0].score}}</p> -->
                                     </li>
                                     <li class="bottom-bx" ng-if="$index%2!=0">
-                                       <h4>{{r[0].player}}</h4>
+                                       <h4 class="elipses">{{r[0].player}}</h4>
                                        <p>{{r[0].school}}</p>
                                     </li>
                                  </div>
@@ -94,7 +103,7 @@
                            <div class="min-100" ng-repeat="round in rounds[1] track by $index">
                               <ul>
                                  <li id="li2" class="left-bx top2-bx" ng-if="$index%2==0">
-                                    <h4>{{round[0].player}}</h4>
+                                    <h4 class="elipses">{{round[0].player}}</h4>
                                     <p class="pull-left">{{round[0].school}}</p>
                                     <div class="pull-right" ng-if="$index%2==0">
                                        <p>{{round[0].score}}</p>
@@ -102,7 +111,7 @@
                                     <div class="clearfix"></div>
                                  </li>
                                  <li class="left-bx bottom2-bx" ng-if="$index%2!=0">
-                                    <h4>{{round[0].player}}</h4>
+                                    <h4 class="elipses">{{round[0].player}}</h4>
                                     <p>{{round[0].school}}</p>
                                  </li>
                               </ul>
@@ -114,7 +123,7 @@
                            <div class="min-200" ng-repeat="round in rounds[2] track by $index">
                               <ul>
                                  <li id="li3" class="left-bx top3-bx" ng-if="$index%2==0">
-                                    <h4>{{round[0].player}}</h4>
+                                    <h4 class="elipses">{{round[0].player}}</h4>
                                     <p class="pull-left">{{round[0].school}}</p>
                                     <div class="pull-right" ng-if="$index%2==0">
                                        <p>{{round[0].score}}</p>
@@ -123,7 +132,7 @@
                                  </li>
 
                                  <li class="left-bx bottom3-bx" ng-if="$index%2!=0">
-                                    <h4>{{round[0].player}}</h4>
+                                    <h4 class="elipses">{{round[0].player}}</h4>
                                     <p>{{round[0].school}}</p>
                                  </li>
                               </ul>
@@ -136,7 +145,7 @@
                               <!--top4-bx class and bottom4-bx class commented-->
                               <ul>
                                  <li id="li4" class="left-bx top4-bx" ng-if="$index%2==0">
-                                    <h4>{{round[0].player}}</h4>
+                                    <h4 class="elipses">{{round[0].player}}</h4>
                                     <p class="pull-left">{{round[0].school}}</p>
                                     <div class="pull-right" ng-if="$index%2==0">
                                        <p>{{round[0].score}}</p>
@@ -144,7 +153,7 @@
                                     <div class="clearfix"></div>
                                  </li>
                                  <li class="left-bx bottom4-bx" ng-if="$index%2!=0">
-                                    <h4>{{round[0].player}}</h4>
+                                    <h4 class="elipses">{{round[0].player}}</h4>
                                     <p>{{round[0].school}}</p>
                                  </li>
                               </ul>
@@ -156,7 +165,7 @@
                            <div class="min-400" ng-repeat="round in rounds[4] track by $index">
                               <ul>
                                  <li id="li5" class="left-bx top5-bx" ng-if="$index%2==0">
-                                    <h4>{{round[0].player}}</h4>
+                                    <h4 class="elipses">{{round[0].player}}</h4>
                                     <p class="pull-left">{{round[0].school}}</p>
                                     <div class="pull-right" ng-if="$index%2==0">
                                        <p>{{round[0].score}}</p>
@@ -164,7 +173,7 @@
                                     <div class="clearfix"></div>
                                  </li>
                                  <li class="left-bx bottom5-bx" ng-if="$index%2!=0">
-                                    <h4>{{round[0].player}}</h4>
+                                    <h4 class="elipses">{{round[0].player}}</h4>
                                     <p>{{round[0].school}}</p>
                                  </li>
                               </ul>
@@ -176,7 +185,7 @@
                            <div class="min-500" ng-repeat="round in rounds[5] track by $index">
                               <ul>
                                  <li class="left-bx">
-                                    <h4>{{round[0].winner}}</h4>
+                                    <h4 class="elipses">{{round[0].winner}}</h4>
                                     <p>{{round[0].school}}</p>
                                  </li>
                               </ul>
@@ -193,6 +202,15 @@
                <div class="text-center" ng-if="noDraws==true">
                   <h1>No Draws</h1>
                </div>
+               <div class="text-center" ng-if="noGender==true">
+                  <h1>Select Gender</h1>
+               </div>
+               <div class="text-center" ng-if="noCategory==true">
+                  <h1>Select Category</h1>
+               </div>
+               <div class="text-center" ng-if="noAgegrp==true">
+                  <h1>Select Agegroup</h1>
+               </div>
                <div class="r1170">
                   <div class="tree1">
                      <!--                               round 1-->
@@ -202,7 +220,7 @@
                            <div class="min-100" ng-repeat="round in match[0]">
                               <div ng-repeat="r in round track by $index">
                                  <li id="li1" class="top-bx" ng-if="$index%2==0">
-                                    <h4>{{r[0].school}}</h4>
+                                    <h4 class="elipses">{{r[0].school}}</h4>
                                     <!-- <p class="pull-left">{{r[0].school}}</p> -->
                                     <div class="pull-right" ng-if="$index%2==0">
                                        <p>{{r[0].score}}</p>
@@ -211,7 +229,7 @@
                                     <!-- <p>{{r[0].score}}</p> -->
                                  </li>
                                  <li class="bottom-bx" ng-if="$index%2!=0">
-                                    <h4>{{r[0].school}}</h4>
+                                    <h4 class="elipses">{{r[0].school}}</h4>
                                     <!-- <p>{{r[0].school}}</p> -->
                                  </li>
                               </div>
@@ -224,7 +242,7 @@
                         <div class="min-100" ng-repeat="round in rounds[1] track by $index">
                            <ul>
                               <li id="li2" class="left-bx top2-bx" ng-if="$index%2==0">
-                                 <h4>{{round[0].school}}</h4>
+                                 <h4 class="elipses">{{round[0].school}}</h4>
                                  <!-- <p class="pull-left">{{round[0].school}}</p> -->
                                  <div class="pull-right" ng-if="$index%2==0">
                                     <p>{{round[0].score}}</p>
@@ -232,7 +250,7 @@
                                  <div class="clearfix"></div>
                               </li>
                               <li class="left-bx bottom2-bx" ng-if="$index%2!=0">
-                                 <h4>{{round[0].school}}</h4>
+                                 <h4 class="elipses">{{round[0].school}}</h4>
                                  <!-- <p>{{round[0].school}}</p> -->
                               </li>
                            </ul>
@@ -244,7 +262,7 @@
                         <div class="min-200" ng-repeat="round in rounds[2] track by $index">
                            <ul>
                               <li id="li3" class="left-bx top3-bx" ng-if="$index%2==0">
-                                 <h4>{{round[0].school}}</h4>
+                                 <h4 class="elipses">{{round[0].school}}</h4>
                                  <!-- <p class="pull-left">{{round[0].school}}</p> -->
                                  <div class="pull-right" ng-if="$index%2==0">
                                     <p>{{round[0].score}}</p>
@@ -253,7 +271,7 @@
                               </li>
 
                               <li class="left-bx bottom3-bx" ng-if="$index%2!=0">
-                                 <h4>{{round[0].school}}</h4>
+                                 <h4 class="elipses">{{round[0].school}}</h4>
                                  <!-- <p>{{round[0].school}}</p> -->
                               </li>
                            </ul>
@@ -266,7 +284,7 @@
                            <!--top4-bx class and bottom4-bx class commented-->
                            <ul>
                               <li id="li4" class="left-bx top4-bx" ng-if="$index%2==0">
-                                 <h4>{{round[0].school}}</h4>
+                                 <h4 class="elipses">{{round[0].school}}</h4>
                                  <!-- <p class="pull-left">{{round[0].school}}</p> -->
                                  <div class="pull-right" ng-if="$index%2==0">
                                     <p>{{round[0].score}}</p>
@@ -274,7 +292,7 @@
                                  <div class="clearfix"></div>
                               </li>
                               <li class="left-bx bottom4-bx" ng-if="$index%2!=0">
-                                 <h4>{{round[0].school}}</h4>
+                                 <h4 class="elipses">{{round[0].school}}</h4>
                                  <!-- <p>{{round[0].school}}</p> -->
                               </li>
                            </ul>
@@ -286,7 +304,7 @@
                         <div class="min-400" ng-repeat="round in rounds[4] track by $index">
                            <ul>
                               <li id="li5" class="left-bx top5-bx" ng-if="$index%2==0">
-                                 <h4>{{round[0].school}}</h4>
+                                 <h4 class="elipses">{{round[0].school}}</h4>
                                  <!-- <p class="pull-left">{{round[0].school}}</p> -->
                                  <div class="pull-right" ng-if="$index%2==0">
                                     <p>{{round[0].score}}</p>
@@ -294,7 +312,7 @@
                                  <div class="clearfix"></div>
                               </li>
                               <li class="left-bx bottom5-bx" ng-if="$index%2!=0">
-                                 <h4>{{round[0].school}}</h4>
+                                 <h4 class="elipses">{{round[0].school}}</h4>
                                  <!-- <p>{{round[0].school}}</p> -->
                               </li>
                            </ul>
@@ -306,7 +324,7 @@
                         <div class="min-500" ng-repeat="round in rounds[5] track by $index">
                            <ul>
                               <li class="left-bx">
-                                 <h4>{{round[0].school}}</h4>
+                                 <h4 class="elipses">{{round[0].school}}</h4>
                                  <!-- <p>{{round[0].school}}</p> -->
                               </li>
                            </ul>

@@ -1025,6 +1025,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                             "school": m.player1school,
                             "round": m.round,
                             "winner": m.winnername,
+                            "winnerschool": m.winnerschool,
                             "score": m.score
                         }];
                         var arr2 = [{
@@ -1032,6 +1033,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                             "school": m.player2school,
                             "round": m.round,
                             "winner": m.winnername,
+                            "winnerschool": m.winnerschool,
                             "score": m.score
                         }];
                         if (m.round != "thirdplace") {
@@ -1505,6 +1507,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.loadSchoolStats();
             $scope.getSchoolStudents();
             $scope.loadSportStudent();
+            $scope.loadSchoolImgGallery();
         }
     };
     NavigationService.getAllSports(function(data) {});
@@ -1516,6 +1519,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.loadSportStudent();
     }
     $scope.loadMoreGallery = function() {
+        $scope.pagenum = $scope.pagenum + 1;
+        $scope.loadGallery();
+    }
+    $scope.loadMoreImgGallery = function() {
         $scope.pagenum = $scope.pagenum + 1;
         $scope.loadGallery();
     }
@@ -1569,15 +1576,72 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     $scope.schoolgallery = _.chunk(galleryArray, 3);
                 else {
                     $scope.schoolgallery = [];
-                    $scope.msg = "No data";
+                    $scope.msgVideo = "No Videos Yet";
                 }
             } else {
                 $scope.schoolgallery = [];
-                $scope.msg = "No data";
+                $scope.msgVideo = "No Videos Yet";
             }
             console.log($scope.schoolgallery);
         });
     }
+
+    $scope.yearClickedImg = function(year) {
+        var foundindex = _.indexOf($scope.gallimgobj.year, year);
+        if (foundindex == -1) {
+            $scope.gallimgobj.year.push(year);
+        } else {
+            $scope.gallimgobj.year.splice(foundindex, 1);
+        }
+        $scope.loadSchoolImgGallery();
+    }
+
+    $scope.ageClickedImg = function(age) {
+        var foundindex = _.indexOf($scope.gallimgobj.agegroup, age);
+        if (foundindex == -1) {
+            $scope.gallimgobj.agegroup.push(age);
+        } else {
+            $scope.gallimgobj.agegroup.splice(foundindex, 1);
+        }
+        $scope.loadSchoolImgGallery();
+    }
+
+    $scope.gallimgobj = {};
+    $scope.gallimgobj.year = [];
+    $scope.gallimgobj.pagenum = 1;
+    $scope.gallimgobj.schoolid = $stateParams.id;
+    $scope.gallimgobj.studentid = '';
+    $scope.gallimgobj.sportid = '';
+    $scope.gallimgobj.sportscategory = $scope.sportsId;
+    $scope.gallimgobj.agegroup = [];
+    $scope.loadSchoolImgGallery = function() {
+        console.log("here");
+        $scope.gallimgobj.schoolid = $stateParams.id;
+        $scope.gallimgobj.sportscategory = $scope.sportsId;
+        NavigationService.getschoolimagegallery($scope.gallimgobj, function(data) {
+            if (data.length > 0) {
+                console.log(data);
+                data = data[0].images.split(',');
+                console.log(data);
+                var galleryArray = [];
+                _.each(data, function(n) {
+                    if (n)
+                        galleryArray.push(n);
+                })
+                if (galleryArray.length > 0)
+                    $scope.schoolimggallery = _.chunk(galleryArray, 3);
+                else {
+                    $scope.schoolimggallery = [];
+                    $scope.msgGall = "No Galleries Yet";
+                }
+            } else {
+                $scope.schoolimggallery = [];
+                $scope.msgGall = "No Galleries Yet";
+            }
+            console.log($scope.schoolimggallery);
+        });
+    }
+
     $scope.statobj = {};
     $scope.statobj.gender = '';
     $scope.statobj.agegroup = '';
@@ -1694,7 +1758,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     $scope.result[0].push($scope.result[2][0]);
                 }
             } else {
-                $scope.msgStud = "No Players";
+                $scope.msgStud = "No Students";
                 $scope.result = [];
             }
         });
@@ -1899,32 +1963,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.active = 'active';
     $scope.actives = '';
     $scope.activess = '';
+    $scope.activesss = '';
 
     $scope.tabchange = function(tab, a) {
-        $scope.result = [];
-        $scope.allresult = [];
         $scope.tab2 = tab;
         if (a == 1) {
             $scope.active = "active";
             $scope.actives = '';
             $scope.activess = '';
-            $scope.allresult = [];
+            $scope.activesss = '';
             $scope.pagenum = 0;
-            $scope.loadMore();
-
         } else if (a == 2) {
             $scope.active = '';
             $scope.actives = "active";
             $scope.activess = '';
-            $scope.allresult = [];
+            $scope.activesss = '';
+            $scope.pagenum = 0;
+        } else if (a == 4) {
+            $scope.active = '';
+            $scope.actives = "";
+            $scope.activess = '';
+            $scope.activesss = 'active';
             $scope.pagenum = 0;
             $scope.loadMoreGallery();
-
         } else {
             $scope.active = '';
             $scope.actives = '';
             $scope.activess = "active";
-
+            $scope.activesss = "";
         }
     };
 

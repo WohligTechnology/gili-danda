@@ -1,5 +1,5 @@
  var adminlink = "http://wohlig.co.in/sfabackend/";
- // var adminlink = "http://192.168.1.133/sfabackend/";
+ // var adminlink = "http://192.168.0.110/sfabackend/";
  var admin_url = adminlink + "index.php/";
  var imgpath = adminlink + "uploads/";
  var navigationservice = angular.module('navigationservice', [])
@@ -96,6 +96,9 @@
      },
      getschoolgallerynew: function(obj, callback) {
        return $http.get(admin_url + 'json/getschoolgallery?schoolid=' + obj.schoolid + '&sportid=' + obj.sportid + '&studentid=' + obj.studentid + '&year=' + obj.year + '&agegroup=' + obj.agegroup + '&sportscategory=' + obj.sportscategory + '&pageno=' + obj.pagenum + '&maxrow=100', {}).success(callback);
+     },
+     getschoolimagegallery: function(obj, callback) {
+       return $http.get(admin_url + 'json/getschoolimagegallery?schoolid=' + obj.schoolid + '&sportid=' + obj.sportid + '&studentid=' + obj.studentid + '&year=' + obj.year + '&agegroup=' + obj.agegroup + '&sportscategory=' + obj.sportscategory + '&pageno=' + obj.pagenum + '&maxrow=100', {}).success(callback);
      },
      getAgeGroup: function(id, sportid, callback) {
        return $http.get(admin_url + 'json/getAgeGroup?id=' + id + '&sport=' + sportid, {}).success(callback);

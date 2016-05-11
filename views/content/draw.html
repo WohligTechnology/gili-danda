@@ -83,7 +83,7 @@
                                     <li id="li1" class="top-bx" ng-if="$index%2==0">
                                        <h4 class="elipses">{{r[0].player}}</h4>
                                        <p class="pull-left">{{r[0].school}}</p>
-                                       <div class="pull-right" ng-if="$index%2==0">
+                                       <div class="pull-right" ng-if="r[0].player==r[0].winner">
                                           <p>{{r[0].score}}</p>
                                        </div>
                                        <div class="clearfix"></div>
@@ -91,7 +91,11 @@
                                     </li>
                                     <li class="bottom-bx" ng-if="$index%2!=0">
                                        <h4 class="elipses">{{r[0].player}}</h4>
-                                       <p>{{r[0].school}}</p>
+                                       <p class="pull-left">{{r[0].school}}</p>
+                                       <div class="pull-right" ng-if="r[0].player==r[0].winner">
+                                          <p>{{r[0].score}}</p>
+                                       </div>
+                                       <div class="clearfix"></div>
                                     </li>
                                  </div>
                               </div>
@@ -105,14 +109,18 @@
                                  <li id="li2" class="left-bx top2-bx" ng-if="$index%2==0">
                                     <h4 class="elipses">{{round[0].player}}</h4>
                                     <p class="pull-left">{{round[0].school}}</p>
-                                    <div class="pull-right" ng-if="$index%2==0">
+                                    <div class="pull-right" ng-if="round[0].player==round[0].winner">
                                        <p>{{round[0].score}}</p>
                                     </div>
                                     <div class="clearfix"></div>
                                  </li>
                                  <li class="left-bx bottom2-bx" ng-if="$index%2!=0">
                                     <h4 class="elipses">{{round[0].player}}</h4>
-                                    <p>{{round[0].school}}</p>
+                                    <p class="pull-left">{{round[0].school}}</p>
+                                    <div class="pull-right" ng-if="round[0].player==round[0].winner">
+                                       <p>{{round[0].score}}</p>
+                                    </div>
+                                    <div class="clearfix"></div>
                                  </li>
                               </ul>
                            </div>
@@ -125,7 +133,7 @@
                                  <li id="li3" class="left-bx top3-bx" ng-if="$index%2==0">
                                     <h4 class="elipses">{{round[0].player}}</h4>
                                     <p class="pull-left">{{round[0].school}}</p>
-                                    <div class="pull-right" ng-if="$index%2==0">
+                                    <div class="pull-right" ng-if="round[0].player==round[0].winner">
                                        <p>{{round[0].score}}</p>
                                     </div>
                                     <div class="clearfix"></div>
@@ -133,7 +141,11 @@
 
                                  <li class="left-bx bottom3-bx" ng-if="$index%2!=0">
                                     <h4 class="elipses">{{round[0].player}}</h4>
-                                    <p>{{round[0].school}}</p>
+                                    <p class="pull-left">{{round[0].school}}</p>
+                                    <div class="pull-right" ng-if="round[0].player==round[0].winner">
+                                       <p>{{round[0].score}}</p>
+                                    </div>
+                                    <div class="clearfix"></div>
                                  </li>
                               </ul>
                            </div>
@@ -147,14 +159,18 @@
                                  <li id="li4" class="left-bx top4-bx" ng-if="$index%2==0">
                                     <h4 class="elipses">{{round[0].player}}</h4>
                                     <p class="pull-left">{{round[0].school}}</p>
-                                    <div class="pull-right" ng-if="$index%2==0">
+                                    <div class="pull-right" ng-if="round[0].player==round[0].winner">
                                        <p>{{round[0].score}}</p>
                                     </div>
                                     <div class="clearfix"></div>
                                  </li>
                                  <li class="left-bx bottom4-bx" ng-if="$index%2!=0">
                                     <h4 class="elipses">{{round[0].player}}</h4>
-                                    <p>{{round[0].school}}</p>
+                                    <p class="pull-left">{{round[0].school}}</p>
+                                    <div class="pull-right" ng-if="round[0].player==round[0].winner">
+                                       <p>{{round[0].score}}</p>
+                                    </div>
+                                    <div class="clearfix"></div>
                                  </li>
                               </ul>
                            </div>
@@ -167,14 +183,18 @@
                                  <li id="li5" class="left-bx top5-bx" ng-if="$index%2==0">
                                     <h4 class="elipses">{{round[0].player}}</h4>
                                     <p class="pull-left">{{round[0].school}}</p>
-                                    <div class="pull-right" ng-if="$index%2==0">
+                                    <div class="pull-right" ng-if="round[0].player==round[0].winner">
                                        <p>{{round[0].score}}</p>
                                     </div>
                                     <div class="clearfix"></div>
                                  </li>
                                  <li class="left-bx bottom5-bx" ng-if="$index%2!=0">
                                     <h4 class="elipses">{{round[0].player}}</h4>
-                                    <p>{{round[0].school}}</p>
+                                    <p class="pull-left">{{round[0].school}}</p>
+                                    <div class="pull-right" ng-if="round[0].player==round[0].winner">
+                                       <p>{{round[0].score}}</p>
+                                    </div>
+                                    <div class="clearfix"></div>
                                  </li>
                               </ul>
                            </div>
@@ -222,7 +242,7 @@
                                  <li id="li1" class="top-bx" ng-if="$index%2==0">
                                     <h4 class="elipses">{{r[0].school}}</h4>
                                     <!-- <p class="pull-left">{{r[0].school}}</p> -->
-                                    <div class="pull-right" ng-if="$index%2==0">
+                                    <div class="pull-right" ng-if="r[0].school==r[0].winnerschool">
                                        <p>{{r[0].score}}</p>
                                     </div>
                                     <div class="clearfix"></div>
@@ -230,7 +250,11 @@
                                  </li>
                                  <li class="bottom-bx" ng-if="$index%2!=0">
                                     <h4 class="elipses">{{r[0].school}}</h4>
-                                    <!-- <p>{{r[0].school}}</p> -->
+                                    <!-- <p class="pull-left">{{r[0].school}}</p> -->
+                                    <div class="pull-right" ng-if="r[0].school==r[0].winnerschool">
+                                       <p>{{r[0].score}}</p>
+                                    </div>
+                                    <div class="clearfix"></div>
                                  </li>
                               </div>
                            </div>
@@ -244,7 +268,7 @@
                               <li id="li2" class="left-bx top2-bx" ng-if="$index%2==0">
                                  <h4 class="elipses">{{round[0].school}}</h4>
                                  <!-- <p class="pull-left">{{round[0].school}}</p> -->
-                                 <div class="pull-right" ng-if="$index%2==0">
+                                 <div class="pull-right" ng-if="round[0].school==round[0].winnerschool">
                                     <p>{{round[0].score}}</p>
                                  </div>
                                  <div class="clearfix"></div>
@@ -252,6 +276,10 @@
                               <li class="left-bx bottom2-bx" ng-if="$index%2!=0">
                                  <h4 class="elipses">{{round[0].school}}</h4>
                                  <!-- <p>{{round[0].school}}</p> -->
+                                 <div class="pull-right" ng-if="round[0].school==round[0].winnerschool">
+                                    <p>{{round[0].score}}</p>
+                                 </div>
+                                 <div class="clearfix"></div>
                               </li>
                            </ul>
                         </div>
@@ -264,7 +292,7 @@
                               <li id="li3" class="left-bx top3-bx" ng-if="$index%2==0">
                                  <h4 class="elipses">{{round[0].school}}</h4>
                                  <!-- <p class="pull-left">{{round[0].school}}</p> -->
-                                 <div class="pull-right" ng-if="$index%2==0">
+                                 <div class="pull-right" ng-if="round[0].school==round[0].winnerschool">
                                     <p>{{round[0].score}}</p>
                                  </div>
                                  <div class="clearfix"></div>
@@ -272,7 +300,11 @@
 
                               <li class="left-bx bottom3-bx" ng-if="$index%2!=0">
                                  <h4 class="elipses">{{round[0].school}}</h4>
-                                 <!-- <p>{{round[0].school}}</p> -->
+                                 <!-- <p class="pull-left">{{round[0].school}}</p> -->
+                                 <div class="pull-right" ng-if="round[0].school==round[0].winnerschool">
+                                    <p>{{round[0].score}}</p>
+                                 </div>
+                                 <div class="clearfix"></div>
                               </li>
                            </ul>
                         </div>
@@ -286,14 +318,18 @@
                               <li id="li4" class="left-bx top4-bx" ng-if="$index%2==0">
                                  <h4 class="elipses">{{round[0].school}}</h4>
                                  <!-- <p class="pull-left">{{round[0].school}}</p> -->
-                                 <div class="pull-right" ng-if="$index%2==0">
+                                 <div class="pull-right" ng-if="round[0].school==round[0].winnerschool">
                                     <p>{{round[0].score}}</p>
                                  </div>
                                  <div class="clearfix"></div>
                               </li>
                               <li class="left-bx bottom4-bx" ng-if="$index%2!=0">
                                  <h4 class="elipses">{{round[0].school}}</h4>
-                                 <!-- <p>{{round[0].school}}</p> -->
+                                 <!-- <p class="pull-left">{{round[0].school}}</p> -->
+                                 <div class="pull-right" ng-if="round[0].school==round[0].winnerschool">
+                                    <p>{{round[0].score}}</p>
+                                 </div>
+                                 <div class="clearfix"></div>
                               </li>
                            </ul>
                         </div>
@@ -306,14 +342,18 @@
                               <li id="li5" class="left-bx top5-bx" ng-if="$index%2==0">
                                  <h4 class="elipses">{{round[0].school}}</h4>
                                  <!-- <p class="pull-left">{{round[0].school}}</p> -->
-                                 <div class="pull-right" ng-if="$index%2==0">
+                                 <div class="pull-right" ng-if="round[0].school==round[0].winnerschool">
                                     <p>{{round[0].score}}</p>
                                  </div>
                                  <div class="clearfix"></div>
                               </li>
                               <li class="left-bx bottom5-bx" ng-if="$index%2!=0">
                                  <h4 class="elipses">{{round[0].school}}</h4>
-                                 <!-- <p>{{round[0].school}}</p> -->
+                                 <!-- <p class="pull-left">{{round[0].school}}</p> -->
+                                 <div class="pull-right" ng-if="round[0].school==round[0].winnerschool">
+                                    <p>{{round[0].score}}</p>
+                                 </div>
+                                 <div class="clearfix"></div>
                               </li>
                            </ul>
                         </div>

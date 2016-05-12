@@ -88,9 +88,9 @@
                      <li ng-class="actives" ng-click="tabchange('gallerymain',2)">
                         <h3>match videos</h3>
                      </li>
-                     <li ng-class="activesss" ng-click="tabchange('imagegall',4)">
+                     <!-- <li ng-class="activesss" ng-click="tabchange('imagegall',4)">
                         <h3>Gallery</h3>
-                     </li>
+                     </li> -->
                      <li ng-class="activess" ng-click="tabchange('statics',3)">
                         <h3>STATISTICS</h3>
                      </li>
@@ -239,7 +239,7 @@
 
       </div>
 
-      <div class="marginegt min800" ng-show="tab2=='imagegall'">
+      <!-- <div class="marginegt min800" ng-show="tab2=='imagegall'">
          <div class=" marginlft marginlfts row">
             <div class="col-md-3 ">
                <div class="wths">
@@ -282,7 +282,7 @@
                            </form>
                         </accordion-group>
                      </accordion>
-                     <!-- <p class="sel-game">select game</p> -->
+                     <p class="sel-game">select game</p>
 
                      <accordion close-others="oneAtATime">
                         <accordion-group is-open="status.open" ng-repeat="sport in schoolSports">
@@ -317,7 +317,7 @@
                         <div class="col-md-12 marginos" ng-repeat="gallery in schoolimggallery">
                            <div class="col-md-4 costums" ng-repeat="gal in gallery">
                               <div class="scooolgal">
-                                 <!-- <img ng-src="{{gal.thumbnail | serverimage}}" ng-click="openModal(gal);"> -->
+                               <img ng-src="{{gal.thumbnail | serverimage}}" ng-click="openModal(gal);"> 
                                  <a class="various fancybox.iframe" fancybox href="{{gal | serverimage}}"><img ng-src="{{gal | serverimage}}" class="img-responsive nowidht mg"></a>
                               </div>
                            </div>
@@ -330,7 +330,7 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> -->
 
       <div class="marginegt min800" ng-show="tab2=='statics'">
          <div class="row">

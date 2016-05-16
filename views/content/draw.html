@@ -58,7 +58,7 @@
       <!--               ui for all sports except swimming-->
       <div class="scroll-w">
          <div class="scroll-on">
-            <div class="tree" ng-if="filter.sport!='basketball' && filter.sport!='handball' && filter.sport!='volleyball'">
+            <div class="tree" ng-if="filter.sport!='basketball' && filter.sport!='handball' && filter.sport!='volleyball' && filter.sport!='swimming'">
                <div class="list-tree">
                   <div class="text-center" ng-if="noDraws==true">
                      <h1>No Draws</h1>
@@ -377,96 +377,127 @@
       </div>
 
       <!--                ui for swimming -->
-      <!-- <div class="row" ng-if="sportselected=='swimming' && match!=''">
-            <div class="col-md-6">
-                <div class="head">
-                   <h4>Heats</h4>
-                    <div class="swimming-round">
-                        <ul>
-                            <li >
-                              <div class="back-cl">
-                               <div class="side-le">
-                                <h4>Viraj Kale</h4>
-                                <p>Dhirubhai Ambani International School</p>
-                                </div>
-                                <div class="side-rt">
-                                <span>00:00:00</span>
-                                </div>
-                                </div>
-                            </li>
-                              <li>
-                              <div class="back-cl2">
-                               <div class="side-le">
-                                <h4>Viraj Kale</h4>
-                                <p>Dhirubhai Ambani International School</p>
-                                </div>
-                                <div class="side-rt">
-                                <span>00:00:00</span>
-                                </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-md-6">
-                        <div class="head">
-                   <h4>Final</h4>
-                    <div class="swimming-round">
-                        <ul>
-                            <li >
-                              <div class="back-cl3">
-                               <div class="side-le">
-                                <h4>Viraj Kale</h4>
-                                <p>Dhirubhai Ambani International School</p>
-                                </div>
-                                <div class="side-rt">
-                                <span>00:00:00</span>
-                                </div>
-                                </div>
-                            </li>
-                              <li>
-                              <div class="back-cl4">
-                               <div class="side-le">
-                                <h4>Viraj Kale</h4>
-                                <p>Dhirubhai Ambani International School</p>
-                                </div>
-                                <div class="side-rt">
-                                <span>00:00:00</span>
-                                </div>
-                                </div>
-                            </li>
-                             <li>
-                              <div class="back-cl5">
-                               <div class="side-le">
-                                <h4>Viraj Kale</h4>
-                                <p>Dhirubhai Ambani International School</p>
-                                </div>
-                                <div class="side-rt">
-                                <span>00:00:00</span>
-                                </div>
-                                </div>
-                            </li>
-                             <li>
-                              <div class="back-cl2">
-                               <div class="side-le">
-                                <h4>Viraj Kale</h4>
-                                <p>Dhirubhai Ambani International School</p>
-                                </div>
-                                <div class="side-rt">
-                                <span>00:00:00</span>
-                                </div>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </div>
-
-                </div>
+      <!-- <div class="row" ng-if="filter.sport=='swimming'"> -->
+      <div class="row">
+         <div class="col-md-6">
+            <div class="head">
+               <h4>Heat 1</h4>
+               <div class="swimming-round">
+                  <ul>
+                     <li>
+                        <div class="back-cl">
+                           <div class="side-le">
+                              <h4>Viraj Kale</h4>
+                              <p>Dhirubhai Ambani International School</p>
+                           </div>
+                           <div class="side-rt">
+                              <span>00:00:00</span>
+                           </div>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="back-cl2">
+                           <div class="side-le">
+                              <h4>Viraj Kale</h4>
+                              <p>Dhirubhai Ambani International School</p>
+                           </div>
+                           <div class="side-rt">
+                              <span>00:00:00</span>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
 
             </div>
+            <div class="head">
+               <h4>Heat 2</h4>
+               <div class="swimming-round">
+                  <ul>
+                     <li>
+                        <div class="back-cl">
+                           <div class="side-le">
+                              <h4>Viraj Kale</h4>
+                              <p>Dhirubhai Ambani International School</p>
+                           </div>
+                           <div class="side-rt">
+                              <span>00:00:00</span>
+                           </div>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="back-cl2">
+                           <div class="side-le">
+                              <h4>Viraj Kale</h4>
+                              <p>Dhirubhai Ambani International School</p>
+                           </div>
+                           <div class="side-rt">
+                              <span>00:00:00</span>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
 
-        </div> -->
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="head">
+               <h4>Final</h4>
+               <div class="swimming-round">
+                  <ul>
+                     <li>
+                        <div class="back-cl3">
+                           <div class="side-le">
+                              <h4>Viraj Kale</h4>
+                              <p>Dhirubhai Ambani International School</p>
+                           </div>
+                           <div class="side-rt">
+                              <span>00:00:00</span>
+                           </div>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="back-cl4">
+                           <div class="side-le">
+                              <h4>Viraj Kale</h4>
+                              <p>Dhirubhai Ambani International School</p>
+                           </div>
+                           <div class="side-rt">
+                              <span>00:00:00</span>
+                           </div>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="back-cl5">
+                           <div class="side-le">
+                              <h4>Viraj Kale</h4>
+                              <p>Dhirubhai Ambani International School</p>
+                           </div>
+                           <div class="side-rt">
+                              <span>00:00:00</span>
+                           </div>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="back-cl2">
+                           <div class="side-le">
+                              <h4>Viraj Kale</h4>
+                              <p>Dhirubhai Ambani International School</p>
+                           </div>
+                           <div class="side-rt">
+                              <span>00:00:00</span>
+                           </div>
+                        </div>
+                     </li>
+
+                  </ul>
+               </div>
+
+            </div>
+
+         </div>
+
+      </div>
    </div>
 </div>

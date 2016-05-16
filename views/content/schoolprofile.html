@@ -317,7 +317,7 @@
                         <div class="col-md-12 marginos" ng-repeat="gallery in schoolimggallery">
                            <div class="col-md-4 costums" ng-repeat="gal in gallery">
                               <div class="scooolgal">
-                               <img ng-src="{{gal.thumbnail | serverimage}}" ng-click="openModal(gal);"> 
+                               <img ng-src="{{gal.thumbnail | serverimage}}" ng-click="openModal(gal);">
                                  <a class="various fancybox.iframe" fancybox href="{{gal | serverimage}}"><img ng-src="{{gal | serverimage}}" class="img-responsive nowidht mg"></a>
                               </div>
                            </div>
@@ -379,21 +379,20 @@
          </div>
          <div class="row">
             <div class="col-md-12 ">
-
                <div class="bg-school sch-det">
                   <h4>{{tab}} -
               <span>medals tally</span>
             </h4>
-                  <div class="stable" ng-if="schoolStats.medals.length>0">
+                  <div class="stable" ng-if="medalsTally.length>0">
                      <table class="table">
                         <thead>
                            <tr>
                               <th>
                                  year
                               </th>
-                              <th>
+                              <!-- <th>
                                  sport
-                              </th>
+                              </th> -->
 
                               <th>
                                  category
@@ -409,113 +408,40 @@
                               </th>
                            </tr>
                         </thead>
-
                         <tbody>
-                           <tr ng-repeat="medals in schoolStats.medals">
+                           <tr ng-repeat="medals in medalsTally">
                               <td class="lis">
                                  <p>{{medals.year}}</p>
                               </td>
-                              <td>
+                              <!-- <td>
                                  <p>
                                     {{medals.sport}}
                                  </p>
 
-                              </td>
+                              </td> -->
                               <td>
                                  <ul>
                                     <li>{{medals.agegroup}}</li>
-                                    <li ng-if="medals.gender=='1'">BOYS</li>
-                                    <li ng-if="medals.gender=='2'">GIRLS</li>
-                                    <li ng-if="medals.sportscategory">{{medals.sportscategory}}s</li>
+                                    <li ng-if="medals.gender=='male'">BOYS</li>
+                                    <li ng-if="medals.gender=='female'">GIRLS</li>
+                                    <li ng-if="medals.sportcategory">{{medals.sportcategory}}</li>
                                  </ul>
                               </td>
-                              <!-- <td ng-if="!medals.medal || medals.medal=='0'">0</td>
-                           <td ng-if="!medals.medal || medals.medal=='0'">0</td>
-                           <td ng-if="!medals.medal || medals.medal=='0'">0</td> -->
                               <td>{{medals.gold}}</td>
                               <td>{{medals.silver}}</td>
                               <td>{{medals.bronze}}</td>
-                              <!-- <td ng-if="medals.medal=='2'">0</td>
-                           <td ng-if="medals.medal=='2'">1</td>
-                           <td ng-if="medals.medal=='2'">0</td>
-                           <td ng-if="medals.medal=='3'">0</td>
-                           <td ng-if="medals.medal=='3'">0</td>
-                           <td ng-if="medals.medal=='3'">1</td> -->
-                           </tr>
-                           <!-- <tr>
-                    <td class="lis">
-                      <p>2016</p>
-                    </td>
-                    <td>
-                      <p>
-                        Badminton
-                      </p>
-
-                    </td>
-                    <td>
-                      <ul>
-                        <li>u-17</li>
-                        <li>boys</li>
-
-                      </ul>
-                    </td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>1</td>
-                  </tr>
-                  <tr>
-                    <td class="lis">
-                      <p>2016</p>
-                    </td>
-                    <td>
-                      <p>
-                        Badminton
-                      </p>
-
-                    </td>
-                    <td>
-                      <ul>
-                        <li>u-17</li>
-                        <li>boys</li>
-
-                      </ul>
-                    </td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>1</td>
-                  </tr>
-                  <tr>
-                    <td class="lis">
-                      <p>2016</p>
-                    </td>
-                    <td>
-                      <p>
-                        Badminton
-                      </p>
-
-                    </td>
-                    <td>
-                      <ul>
-                        <li>u-17</li>
-                        <li>boys</li>
-
-                      </ul>
-                    </td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>1</td>
-                  </tr> -->
                         </tbody>
                      </table>
                   </div>
-                  <div class="stable text-center" ng-if="schoolStats.medals.length==0"><h2>No Medals</h2></div>
+                  <div class="stable text-center" ng-if="medalsTally.length==0">
+                     <h2>No Medals</h2></div>
                </div>
                <div class="bg-school sch-det">
                   <h4>{{tab}} -
               <span>Matches</span>
             </h4>
                   <div class="stable" ng-if="schoolStats.matches.length>0">
-                     <table class="table">
+                     <table class="table" ng-if="statobj.sportscategory!=9">
                         <thead>
                            <tr>
                               <th>
@@ -589,6 +515,63 @@
                                     <li class="vers" ng-if="matches.url">
                                        <div class="vers">
                                           <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/{{matches.url}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1">
+                                             <figure class="text-center">
+                                                <img src="img/replay.png">
+                                                <figcaption>Replay</figcaption>
+                                             </figure>
+                                          </a>
+                                       </div>
+                                    </li>
+                                 </ul>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                     <table class="table" ng-if="statobj.sportscategory==9">
+                        <thead>
+                           <tr>
+                              <th>
+                                 year
+                              </th>
+                              <th>
+                                 student name
+                              </th>
+                              <th>
+                                 category
+                              </th>
+                              <th>
+                                 timing
+                              </th>
+                              <th>
+                                 standing
+                              </th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr ng-repeat="matches in schoolStats.matches">
+                              <td class="lis">
+                                 <p>{{matches.year}}</p>
+                              </td>
+                              <td>
+                                 <p>{{matches.studentname}}</p>
+                              </td>
+                              <td>
+                                 <ul>
+                                    <ul>
+                                       <li ng-if="matches.category">{{matches.category}}</li>
+                                    </ul>
+                                 </ul>
+                              </td>
+                              <td>{{matches.timing}}</td>
+                              <td class="">
+                                 <ul class="text-center">
+                                    <li>
+                                       <h4 ng-if="matches.position=='1' || matches.position=='2' || matches.position=='3'">Won</h4>
+                                       <h4 ng-if="matches.position!='1' && matches.position!='2' && matches.position!='3'">Lost</h4>
+                                    </li>
+                                    <li class="vers" ng-if="matches.link">
+                                       <div class="vers">
+                                          <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/{{matches.link}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1">
                                              <figure class="text-center">
                                                 <img src="img/replay.png">
                                                 <figcaption>Replay</figcaption>

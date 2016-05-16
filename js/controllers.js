@@ -1277,47 +1277,59 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.loadStudentStats = function() {
         $scope.statobj = {};
         $scope.statobj.schoolid = '';
+        $scope.statobj.gender = '';
+        $scope.statobj.agegroup = '';
         $scope.statobj.studentid = $stateParams.id;
         $scope.statobj.sportscategory = $scope.sportsId;
-        NavigationService.getStats($scope.statobj, function(data) {
-            console.log(data);
-            var statsobj = {};
-            var medalsArray = [];
-            if (data.medals) {
-                _.each(data.medals, function(n) {
-                    if (n.year) {
-                        medalsArray.push(n);
-                    }
-                });
-            }
-            var matchesArray = [];
-            if (data.matches) {
-                _.each(data.matches, function(n) {
-                    if (n.year) {
-                        var finalscore = "";
-                        if (n.score) {
-                            finalscore += n.score;
+        if ($scope.statobj.sportscategory != 9) {
+            NavigationService.getStats($scope.statobj, function(data) {
+                console.log(data);
+                var statsobj = {};
+                var medalsArray = [];
+                if (data.medals) {
+                    _.each(data.medals, function(n) {
+                        if (n.year) {
+                            medalsArray.push(n);
                         }
-                        if (n.opponentscore) {
-                            finalscore += "-" + n.opponentscore;
+                    });
+                }
+                var matchesArray = [];
+                if (data.matches) {
+                    _.each(data.matches, function(n) {
+                        if (n.year) {
+                            var finalscore = "";
+                            if (n.score) {
+                                finalscore += n.score;
+                            }
+                            if (n.opponentscore) {
+                                finalscore += "-" + n.opponentscore;
+                            }
+                            n.score = finalscore;
+                            matchesArray.push(n);
                         }
-                        n.score = finalscore;
-                        matchesArray.push(n);
-                    }
-                });
-            }
-            statsobj.medals = medalsArray;
-            statsobj.matches = matchesArray;
-            // $scope.schoolStats = statsobj;
-            $scope.studentStats = statsobj;
-            // if (data.length > 0)
-            //     $scope.allresult = _.chunk(data, 3);
-            // else {
-            //     $scope.allresult = [];
-            //     $scope.msg = "No data";
-            // }
-            // console.log($scope.allresult);
-        });
+                    });
+                }
+                statsobj.medals = medalsArray;
+                statsobj.matches = matchesArray;
+                // $scope.schoolStats = statsobj;
+                $scope.studentStats = statsobj;
+                // if (data.length > 0)
+                //     $scope.allresult = _.chunk(data, 3);
+                // else {
+                //     $scope.allresult = [];
+                //     $scope.msg = "No data";
+                // }
+                // console.log($scope.allresult);
+            });
+        } else {
+            NavigationService.getSwimmingStats($scope.statobj, function(data) {
+                console.log(data);
+                var statsobj = {};
+                statsobj.matches = data;
+                statsobj.medals = [];
+                $scope.studentStats = statsobj;
+            })
+        }
     }
 
     $scope.loadMore = function() {
@@ -1649,96 +1661,109 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.statobj.studentid = '';
         $scope.statobj.schoolid = $stateParams.id;
         $scope.statobj.sportscategory = $scope.sportsId;
-        NavigationService.getStats($scope.statobj, function(data) {
+        NavigationService.getMedalsTally($scope.statobj, function(data) {
             console.log(data);
-            var statsobj = {};
-            var medalsArray = [];
-            if (data.medals) {
-                _.each(data.medals, function(n) {
-                    if (n.year) {
-                        medalsArray.push(n);
-                    }
-                });
-            }
-            var matchesArray = [];
-            if (data.matches) {
-                _.each(data.matches, function(n) {
-                    if (n.year) {
-                        var finalscore = "";
-                        if (n.score) {
-                            finalscore += n.score;
+            $scope.medalsTally = data;
+        })
+        if ($scope.statobj.sportscategory != 9) {
+            NavigationService.getStats($scope.statobj, function(data) {
+                console.log(data);
+                var statsobj = {};
+                var medalsArray = [];
+                if (data.medals) {
+                    _.each(data.medals, function(n) {
+                        if (n.year) {
+                            medalsArray.push(n);
                         }
-                        if (n.opponentscore) {
-                            finalscore += "-" + n.opponentscore;
-                        }
-                        n.score = finalscore;
-
-                        // if (n.score && n.opponentscore) {
-                        //     n.score = n.score + "-" + n.opponentscore;
-                        // } else {
-                        //     n.score = "";
-                        // }
-                        matchesArray.push(n);
-                    }
-                });
-            }
-
-            function groupBy(array, f) {
-                var groups = {};
-                array.forEach(function(o) {
-                    var group = JSON.stringify(f(o));
-                    groups[group] = groups[group] || [];
-                    groups[group].push(o);
-                });
-                return Object.keys(groups).map(function(group) {
-                    return groups[group];
-                })
-            }
-            var result = groupBy(medalsArray, function(item) {
-                return [item.agegroup, item.sport, item.sportscategory, item.year, item.gender];
-            });
-            console.log(result);
-            var groupmedals = [];
-            _.each(result, function(group) {
-                var medalCount = {
-                    gold: 0,
-                    silver: 0,
-                    bronze: 0
+                    });
                 }
-                _.each(group, function(n) {
-                    if (n.medal == '1') {
-                        medalCount.gold++;
-                    }
-                    if (n.medal == '2') {
-                        medalCount.silver++;
-                    }
-                    if (n.medal == '3') {
-                        medalCount.bronze++;
-                    }
+                var matchesArray = [];
+                if (data.matches) {
+                    _.each(data.matches, function(n) {
+                        if (n.year) {
+                            var finalscore = "";
+                            if (n.score) {
+                                finalscore += n.score;
+                            }
+                            if (n.opponentscore) {
+                                finalscore += "-" + n.opponentscore;
+                            }
+                            n.score = finalscore;
+
+                            // if (n.score && n.opponentscore) {
+                            //     n.score = n.score + "-" + n.opponentscore;
+                            // } else {
+                            //     n.score = "";
+                            // }
+                            matchesArray.push(n);
+                        }
+                    });
+                }
+
+                function groupBy(array, f) {
+                    var groups = {};
+                    array.forEach(function(o) {
+                        var group = JSON.stringify(f(o));
+                        groups[group] = groups[group] || [];
+                        groups[group].push(o);
+                    });
+                    return Object.keys(groups).map(function(group) {
+                        return groups[group];
+                    })
+                }
+                var result = groupBy(medalsArray, function(item) {
+                    return [item.agegroup, item.sport, item.sportscategory, item.year, item.gender];
                 });
-                groupmedals.push({
-                    gold: medalCount.gold,
-                    silver: medalCount.silver,
-                    bronze: medalCount.bronze,
-                    agegroup: group[0].agegroup,
-                    sport: group[0].sport,
-                    sportscategory: group[0].sportscategory,
-                    gender: group[0].gender,
-                    year: group[0].year
+                console.log(result);
+                var groupmedals = [];
+                _.each(result, function(group) {
+                    var medalCount = {
+                        gold: 0,
+                        silver: 0,
+                        bronze: 0
+                    }
+                    _.each(group, function(n) {
+                        if (n.medal == '1') {
+                            medalCount.gold++;
+                        }
+                        if (n.medal == '2') {
+                            medalCount.silver++;
+                        }
+                        if (n.medal == '3') {
+                            medalCount.bronze++;
+                        }
+                    });
+                    groupmedals.push({
+                        gold: medalCount.gold,
+                        silver: medalCount.silver,
+                        bronze: medalCount.bronze,
+                        agegroup: group[0].agegroup,
+                        sport: group[0].sport,
+                        sportscategory: group[0].sportscategory,
+                        gender: group[0].gender,
+                        year: group[0].year
+                    });
                 });
+                console.log(groupmedals);
+                statsobj.medals = groupmedals;
+                statsobj.matches = matchesArray;
+                $scope.schoolStats = statsobj;
+                // if (data.length > 0)
+                //     $scope.allresult = _.chunk(data, 3);
+                // else {
+                //     $scope.allresult = [];
+                //     $scope.msg = "No data";
+                // }
+                // console.log($scope.allresult);
             });
-            console.log(groupmedals);
-            statsobj.medals = groupmedals;
-            statsobj.matches = matchesArray;
-            $scope.schoolStats = statsobj;
-            // if (data.length > 0)
-            //     $scope.allresult = _.chunk(data, 3);
-            // else {
-            //     $scope.allresult = [];
-            //     $scope.msg = "No data";
-            // }
-            // console.log($scope.allresult);
-        });
+        } else {
+            NavigationService.getSwimmingStats($scope.statobj, function(data) {
+                var statsobj = {};
+                statsobj.matches = data;
+                statsobj.medals = [];
+                $scope.schoolStats = statsobj;
+            })
+        }
     }
 
     $scope.studentListObj = {};
@@ -2531,7 +2556,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
     })
-    .controller('PreRegistrationCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
+    .controller('PreRegistrationCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog, $state) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("pre-registration");
         $scope.menutitle = NavigationService.makeactive("Pre-Registration");
@@ -2548,10 +2573,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.school = {};
                 ngDialog.open({
                     template: './views/content/thankyou.html',
-                    scope: $scope
+                    scope: $scope,
+                    preCloseCallback: function(value) {
+                        $state.go('home');
+                    }
                 });
             }
         }
+
         $scope.submitpreregistration = function(school) {
             $scope.school = school;
             if ($scope.school.sports && $scope.school.sports.length > 0) {
@@ -2577,7 +2606,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.school.sports.splice(index, 1);
             }
         }
-        $scope.allsports = ['Aquatic', 'Carrom', 'Khokho', 'Tennis', 'Archery', 'Chess', 'MMA', 'Throw ball', 'Athletics', 'Fencing', 'Hockey', 'Shooting', 'Ultimate Frisbee', 'Badminton', 'Football', 'Judo', 'Squash', 'Volleyball', 'Basketball', 'Gymnastics', 'Kabaddi', 'Table Tennis', 'Wrestling', 'Boxing', 'Handball', 'Karate', 'Taekwondo'];
+        $scope.allsports = ['Aquatics', 'Carrom', 'Kho-Kho', 'Tennis', 'Archery', 'Chess', 'MMA', 'Throwball', 'Athletics', 'Fencing', 'Hockey', 'Shooting', 'Badminton', 'Football', 'Judo', 'Squash', 'Volleyball', 'Basketball', 'Gymnastics', 'Kabaddi', 'Table Tennis', 'Wrestling', 'Boxing', 'Handball', 'Karate', 'Taekwondo'];
 
         $scope.getTimes = function(val) {
             return new Array(val);

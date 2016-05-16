@@ -552,7 +552,7 @@
                <div class="bg-school sch-det">
                   <h4>{{tab}}  - <span>matches</span></h4>
                   <div class="stable" ng-if="studentStats.matches.length>0">
-                     <table class="table">
+                     <table class="table" ng-if="statobj.sportscategory!=9">
                         <thead>
                            <tr>
                               <th>
@@ -631,42 +631,63 @@
                               </td>
                               <td></td>
                            </tr>
-                           <!-- <tr>
-                           <td class="lis">
-                              <p>2016</p>
-                           </td>
-                           <td>
-                              <ul>
-                                 <li>Soheb Shaikh</li>
-                                 <li>don bosco school</li>
-                              </ul>
-                           </td>
-                           <td>
-                              <ul>
-                                 <li>u-17</li>
-                                 <li>boys</li>
-                              </ul>
-                           </td>
-                           <td>54 - 48</td>
-                           <td class="cust-li">
-                              <ul>
-                                 <li>
-                                    <h4 class="f-class">won</h4></li>
-                                 <li class="vers">
-                                    <div class="vers">
-                                       <figure class="text-center">
-                                          <img src="img/replay.png">
-                                          <figcaption>Replay</figcaption>
-                                       </figure>
-                                    </div>
-                                 </li>
-                              </ul>
-                           </td>
-                        </tr> -->
+                        </tbody>
+                     </table>
+                     <table class="table" ng-if="statobj.sportscategory==9">
+                        <thead>
+                           <tr>
+                              <th>
+                                 year
+                              </th>
+                              <th>
+                                 category
+                              </th>
+                              <th>
+                                 timming
+                              </th>
+                              <th>
+                                 standing
+                              </th>
+                           </tr>
+                        </thead>
+
+                        <tbody>
+                           <tr ng-repeat="matches in studentStats.matches">
+                              <td class="lis">
+                                 <p>{{matches.year}}</p>
+                              </td>
+                              <td>
+                                 <ul>
+                                    <li ng-if="matches.category">{{matches.category}}</li>
+                                 </ul>
+                              </td>
+                              <td>{{matches.timing}}</td>
+                              <td class="">
+                                 <ul class="text-center">
+                                    <li>
+                                       <h4 ng-if="matches.position=='1' || matches.position=='2' || matches.position=='3'">Won</h4>
+                                       <h4 ng-if="matches.position!='1' && matches.position!='2' && matches.position!='3'">Lost</h4>
+                                    </li>
+                                    <li class="vers" ng-if="matches.link">
+                                       <div class="vers">
+                                          <a class="various fancybox.iframe" fancybox href="http://www.youtube.com/embed/{{matches.link}}?autoplay=1&modestbranding=0&showinfo=0&rel=0&loop=1">
+                                             <figure class="text-center">
+                                                <img src="img/replay.png">
+                                                <figcaption>Replay</figcaption>
+                                             </figure>
+                                          </a>
+                                       </div>
+                                    </li>
+                                 </ul>
+                              </td>
+                              <td></td>
+                           </tr>
                         </tbody>
                      </table>
                   </div>
-                  <div class="stable" ng-if="studentStats.matches.length==0">No Matches</div>
+                  <div class="stable text-center" ng-if="studentStats.matches.length==0">
+                     <h2>No Matches</h2>
+                  </div>
                </div>
             </div>
          </div>

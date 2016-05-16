@@ -40,14 +40,14 @@
 									<input class="square-radio" id="Option2" required ng-model="school.type" value="School" type="radio" name="register">
 									<label class="pl0" for="Option2">School</label>
 								</div>
-								<div class="col-md-2 col-sm-3">
-									<input class="square-radio" id="Option3" required ng-model="school.type" value="Student" type="radio" name="register">
-									<label class="pl0" for="Option3">Student</label>
+								<div class="col-md-3 col-sm-3">
+									<input class="square-radio" id="Option3" required ng-model="school.type" value="Student/Parent" type="radio" name="register">
+									<label class="pl0" for="Option3">Student/Parent</label>
 								</div>
-								<div class="col-md-2 col-sm-3">
+								<!-- <div class="col-md-2 col-sm-3">
 									<input class="square-radio" id="Option4" required ng-model="school.type" value="Parent" type="radio" name="register">
 									<label class="pl0" for="Option4">Parent</label>
-								</div>
+								</div> -->
 
 							</div>
 						</div>
@@ -78,7 +78,20 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row" ng-if="school.type=='School'">
+					<div class="col-md-3 col-sm-3">
+						<div class="sc-list">
+							<p>School Address</p>
+						</div>
+					</div>
+					<div class="col-md-9 col-sm-9">
+						<div class="sc-input">
+							<textarea name="name" rows="3" required class="form-control" ng-model="school.schoolname" placeholder="School Address" onkeyup="javascript:this.value=this.value.replace(/[<,>]/g,'');" style="height: auto;"></textarea>
+							<!-- <input type="text" required class="form-control" ng-model="school.schoolname" placeholder="School" > -->
+						</div>
+					</div>
+				</div>
+				<div class="row" ng-if="school.type=='Student/Parent'">
 					<div class="col-md-3 col-sm-3 padtp">
 						<div class="sc-list">
 							<p>participants dob</p>

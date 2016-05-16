@@ -738,7 +738,9 @@
                            <tbody>
                               <tr ng-repeat="data in result[0] track by $index" ui-sref="studentprofile({id:data.id})">
                                  <td class="lis">
-                                    <img ng-src="{{data.image|serverimage}}">
+                                    <div class="incentre">
+                                       <img ng-src="{{data.image|serverimage}}">
+                                    </div>
                                  </td>
                                  <td>
                                     <ul>
@@ -781,7 +783,9 @@
                            <tbody>
                               <tr ng-repeat="data in result[1] track by $index" ui-sref="studentprofile({id:data.id})">
                                  <td class="lis">
-                                    <img ng-src="{{data.image|serverimage}}">
+                                    <div class="incentre">
+                                       <img ng-src="{{data.image|serverimage}}">
+                                    </div>
                                  </td>
                                  <td>
                                     <ul>

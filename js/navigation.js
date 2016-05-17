@@ -67,6 +67,10 @@
 
          submitpreregistration: function(school, callback) {
              console.log(school);
+             var dob = "";
+             if (school.type == "Student/Parent") {
+                 dob = school.dd + "/" + school.mm + "/" + school.yy;
+             }
              return $http({
                  url: admin_url + "json/preregistration",
                  method: "POST",
@@ -74,11 +78,12 @@
                      'type': school.type,
                      'name': school.name,
                      'school': school.schoolname,
-                     'dob': school.dd + "/" + school.mm + "/" + school.yy,
+                     'dob': dob,
                      'email': school.email,
                      'contact': school.contact,
                      'sports': school.sports,
-                     'newsletter': school.newsletter
+                     'newsletter': school.newsletter,
+                     "address": school.address
                  }
              }).success(callback);
          },

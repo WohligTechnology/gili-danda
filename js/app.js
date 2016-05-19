@@ -181,6 +181,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $locationProvider, 
               url: "/pre-registration",
               templateUrl: "./views/template.html",
               controller: 'PreRegistrationCtrl'
+          })
+          .state('registration-form', {
+              url: "/registrationform",
+              templateUrl: "./views/template.html",
+              controller: 'RegistrationFormCtrl'
           });
     if (isproduction) {
         $locationProvider.html5Mode(true);

@@ -255,6 +255,51 @@ ul.menu-list li {
     position: relative;
     padding: 0 14px;
 }
+ul.menu-list li.orange {
+  background-image: linear-gradient(#FC7700, #FC7700);
+  padding:3px 0;
+  margin: 0 0 0 20px;
+}
+.orange:before {
+  left: -12px;
+  height: 100%;
+  width: 24px;
+  position: absolute;
+  content: "";
+  top: 0;
+  background-image: -webkit-linear-gradient( top , #FC7700 0%, #FC7700 100%);
+  background-image: linear-gradient(to bottom, #FC7700 0%, #FC7700 100%);
+  -webkit-transform: skew(-42deg);
+  -moz-transform: skew(-42deg);
+  -ms-transform: skew(-42deg);
+  -o-transform: skew(-42deg);
+  transform: skew(-42deg);
+  z-index: -1;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.orange:after {
+  right: -12px;
+  height: 100%;
+  width: 24px;
+  position: absolute;
+  content: "";
+  top: 0;
+  background-image: -webkit-linear-gradient( top , #FC7700 0%, #FC7700 100%);
+background-image: linear-gradient(to bottom, #FC7700 0%, #FC7700 100%);
+  -webkit-transform: skew(-42deg);
+  -moz-transform: skew(-42deg);
+  -ms-transform: skew(-42deg);
+  -o-transform: skew(-42deg);
+  transform: skew(-42deg);
+  z-index: -1;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
 ul.menu-list li.logoli {
     margin: 0 -20px 0 -15px;
 }
@@ -267,7 +312,7 @@ ul.menu-list li:hover .dropdown-menu {
     min-width: 68px;
     padding: 0;
     margin: 1px 0 0;
-    left: 8%;
+    left: -7%;
     text-align: center;
     li {
         padding: 0 !important;
@@ -4813,6 +4858,31 @@ body.ngdialog-open {
             border-bottom: 1px solid;
             border-color: rgba(99, 99, 99, 0.7);
             .register-content {
+              position:relative;
+              .come{
+                font-size: 2vw;
+                color: #F49448;
+                position: absolute;
+                top: 172%;
+                left: 12%;
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+              }
+              h1 {
+                font-size: 2vw;
+                color: #F49448;
+                position: absolute;
+                top: 400%;
+                left: 10%;
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+              }
                 h3 {
                     font-family: @font-titillium;
                     color: @filterBlue-color;
@@ -4840,15 +4910,16 @@ body.ngdialog-open {
                     border-width: 2px;
                     border-color: #fb7700;
                     border-style: solid;
-                    width: 146px;
-                    height: 30px;
+                    width: 205px;
+                    height: 28px;
                     font-family: @font-titillium;
                     color: #fb7700;
-                    font-size: 15px;
+                    font-size: 13px;
                     font-weight: 600;
                     line-height: 14.863px;
                     text-align: center;
                     text-transform: uppercase;
+                    margin: 0 5px 0 0;
                     &:focus{
                       outline: 0;
                     }

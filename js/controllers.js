@@ -2667,19 +2667,23 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 "img": "img/footer/s4.jpg",
                 "href": "http://www.ispsquash.com/",
                 "game": "squash"
-            }, {
-                "img": "img/footer/s5.jpg",
-                "href": "http://www.mbtaworld.com/",
-                "game": "Tennis"
-            }, {
+            },
+            //  {
+            //     "img": "img/footer/s5.jpg",
+            //     "href": "http://www.mbtaworld.com/",
+            //     "game": "Tennis"
+            // },
+            {
                 "img": "img/footer/s6.jpg",
                 "href": "http://www.msdtta.org/",
                 "game": "table Tennis"
-            }, {
-                "img": "img/footer/s7.jpg",
-                "href": "http://www.swimmingfederation.in/",
-                "game": "swimming"
-            }, {
+             },
+            //{
+            //     "img": "img/footer/s7.jpg",
+            //     "href": "http://www.swimmingfederation.in/",
+            //     "game": "swimming"
+            // },
+             {
                 "img": "img/footer/s8.jpg",
                 "href": "",
                 "game": "volleyball"

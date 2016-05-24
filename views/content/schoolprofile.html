@@ -558,7 +558,9 @@
                               <td>
                                  <ul>
                                     <ul>
-                                       <li ng-if="matches.category">{{matches.category}}</li>
+                                       <li ng-if="matches.category">{{matches.category}}
+                                          <span ng-if="matches.heat"> - {{matches.heat}}</span>
+                                       </li>
                                     </ul>
                                  </ul>
                               </td>
@@ -566,8 +568,9 @@
                               <td class="">
                                  <ul class="text-center">
                                     <li>
-                                       <h4 ng-if="matches.position=='1' || matches.position=='2' || matches.position=='3'">Won</h4>
-                                       <h4 ng-if="matches.position!='1' && matches.position!='2' && matches.position!='3'">Lost</h4>
+                                       <h4>{{matches.position}}</h4>
+                                       <!-- <h4 ng-if="matches.position=='1' || matches.position=='2' || matches.position=='3'">Won</h4>
+                                       <h4 ng-if="matches.position!='1' && matches.position!='2' && matches.position!='3'">Lost</h4> -->
                                     </li>
                                     <li class="vers" ng-if="matches.link">
                                        <div class="vers">

@@ -256,9 +256,24 @@ ul.menu-list li {
     padding: 0 14px;
 }
 ul.menu-list li.orange {
-  background-image: linear-gradient(#FC7700, #FC7700);
+  // background-image: linear-gradient(#FC7700, #FC7700);
+  animation: colorchange 4s infinite;
+  -webkit-animation: colorchange 4s infinite;
   padding:3px 0;
   margin: 0 0 0 20px;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes colorchange {
+    0%   {background: orange;}
+    100% {background: green;}
+        // transition: all 0.3s ease;
+}
+
+/* Standard syntax */
+@keyframes colorchange {
+    0%   {background: orange;}
+    100% {background: green;}
+        // transition: all 0.3s ease;
 }
 .orange:before {
   left: -12px;
@@ -267,8 +282,10 @@ ul.menu-list li.orange {
   position: absolute;
   content: "";
   top: 0;
-  background-image: -webkit-linear-gradient( top , #FC7700 0%, #FC7700 100%);
-  background-image: linear-gradient(to bottom, #FC7700 0%, #FC7700 100%);
+  animation: colorchange 4s infinite;
+  -webkit-animation: colorchange 4s infinite;
+  // background-image: -webkit-linear-gradient( top , #FC7700 0%, #FC7700 100%);
+  // background-image: linear-gradient(to bottom, #FC7700 0%, #FC7700 100%);
   -webkit-transform: skew(-42deg);
   -moz-transform: skew(-42deg);
   -ms-transform: skew(-42deg);
@@ -287,8 +304,10 @@ ul.menu-list li.orange {
   position: absolute;
   content: "";
   top: 0;
-  background-image: -webkit-linear-gradient( top , #FC7700 0%, #FC7700 100%);
-background-image: linear-gradient(to bottom, #FC7700 0%, #FC7700 100%);
+  animation: colorchange 4s infinite;
+  -webkit-animation: colorchange 4s infinite;
+//   background-image: -webkit-linear-gradient( top , #FC7700 0%, #FC7700 100%);
+// background-image: linear-gradient(to bottom, #FC7700 0%, #FC7700 100%);
   -webkit-transform: skew(-42deg);
   -moz-transform: skew(-42deg);
   -ms-transform: skew(-42deg);

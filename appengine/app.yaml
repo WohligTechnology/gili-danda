@@ -1,5 +1,5 @@
 application: model-hexagon-108010
-version: 7
+version: 2
 runtime: php55
 api_version: 1
 threadsafe: no

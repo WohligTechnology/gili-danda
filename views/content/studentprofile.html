@@ -36,7 +36,7 @@
                   </div>
 
 
-                  <p class="fonts" ui-sref="schoolprofile({id:student.studentprofile.schoolid})">{{student.studentprofile.schoolname}}</p>
+                  <p class="fonts" ng-click="goToSchool(student.studentprofile);">{{student.studentprofile.schoolname}}</p>
                   <ul class="spoint">
                      <li class="borderrigh padlefo" ng-if="student.studentprofile.agegroupname">
                         <p>group</p>
@@ -54,7 +54,12 @@
                      </li>
                      <li class="border-l" ng-if="student.studentprofile.dob">
                         <p>Date of Birth</p>
-                        <h2>{{student.studentprofile.dob | date: formate : mediumDate }}</h2>
+                        <h2 ng-if="student.studentprofile.dob && student.studentprofile.dob!='' && student.studentprofile.dob!='0000-00-00'">
+                          {{student.studentprofile.dob | date: formate : mediumDate }}
+                        </h2>
+                        <h2 ng-if="!student.studentprofile.dob || student.studentprofile.dob=='' || student.studentprofile.dob=='0000-00-00'">
+                          Date not available
+                        </h2>
                      </li>
                      <li class="border-l" ng-if="student.studentprofile.gender && student.studentprofile.gender!=0">
                         <p>Gender</p>
@@ -640,6 +645,12 @@
                                  year
                               </th>
                               <th>
+                                 Age group
+                              </th>
+                              <th>
+                                 Gender
+                              </th>
+                              <th>
                                  category
                               </th>
                               <th>
@@ -655,6 +666,12 @@
                            <tr ng-repeat="matches in studentStats.matches">
                               <td class="lis">
                                  <p>{{matches.year}}</p>
+                              </td>
+                              <td>
+                                 <p>{{matches.agegroup}}</p>
+                              </td>
+                              <td>
+                                 <p>{{matches.gender}}</p>
                               </td>
                               <td>
                                  <ul>

@@ -537,6 +537,12 @@
                                  student name
                               </th>
                               <th>
+                                 Age group
+                              </th>
+                              <th>
+                                 Gender
+                              </th>
+                              <th>
                                  category
                               </th>
                               <th>
@@ -554,6 +560,12 @@
                               </td>
                               <td>
                                  <p>{{matches.studentname}}</p>
+                              </td>
+                              <td>
+                                 <p>{{matches.agegroup}}</p>
+                              </td>
+                              <td>
+                                 <p>{{matches.gender}}</p>
                               </td>
                               <td>
                                  <ul>
@@ -739,7 +751,7 @@
                               </tr>
                            </thead>
                            <tbody>
-                              <tr ng-repeat="data in result[0] track by $index" ui-sref="studentprofile({id:data.id})">
+                              <tr ng-repeat="data in result[0] track by $index" ng-click="goToProfile(data);">
                                  <td class="lis">
                                     <div class="incentre">
                                        <img ng-src="{{data.image|serverimage}}">

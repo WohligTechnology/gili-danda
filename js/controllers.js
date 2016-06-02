@@ -1104,7 +1104,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('StudentprofileCtrl', function($scope, TemplateService, NavigationService, ngDialog, $stateParams, $filter, $state) {
+.controller('StudentprofileCtrl', function($scope, TemplateService, NavigationService, ngDialog, $stateParams, $filter, $state, $location) {
     $scope.template = TemplateService.changecontent("studentprofile");
     $scope.menutitle = NavigationService.makeactive("Student Profile");
     TemplateService.title = $scope.menutitle;
@@ -1133,6 +1133,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }, {
         image: "img/schoolgallery/g6.jpg"
     }];
+
+    $scope.goToSchool = function(school) {
+        $location.url("/schoolprofile/" + school.schoolid + "-" + school.schoolname.split(' ').join('_'));
+    }
 
     $scope.zoomposition = 0;
 
@@ -1460,7 +1464,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('SchoolprofileCtrl', function($scope, TemplateService, NavigationService, ngDialog, $stateParams, $timeout, $filter) {
+.controller('SchoolprofileCtrl', function($scope, TemplateService, NavigationService, ngDialog, $stateParams, $timeout, $filter, $location) {
     $scope.template = TemplateService.changecontent("schoolprofile");
     $scope.menutitle = NavigationService.makeactive("Schoolprofile");
     TemplateService.title = $scope.menutitle;
@@ -1480,6 +1484,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.checkstart = true;
     $scope.getage = function() {
 
+    }
+
+    $scope.goToProfile = function(student) {
+        $location.url("/studentprofile/" + student.id + "-" + student.name.split(' ').join('_'));
     }
 
     $scope.getage();
@@ -2556,7 +2564,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
     })
-.controller('RegistrationFormCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    .controller('RegistrationFormCtrl', function($scope, TemplateService, NavigationService, $timeout) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("registration");
         $scope.menutitle = NavigationService.makeactive("Registration-Form");
@@ -2652,46 +2660,47 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $scope.games = // JavaScript Document
             [{
-                "img": "img/footer/s1.jpg",
-                "href": "http://www.mbasso.in",
-                "game": "badminton"
-            }, {
-                "img": "img/footer/s2.jpg",
-                "href": "",
-                "game": "handball"
-            }, {
-                "img": "img/footer/s3.jpg",
-                "href": "",
-                "game": "Judo"
-            }, {
-                "img": "img/footer/s4.jpg",
-                "href": "http://www.ispsquash.com/",
-                "game": "squash"
-            },
-            //  {
-            //     "img": "img/footer/s5.jpg",
-            //     "href": "http://www.mbtaworld.com/",
-            //     "game": "Tennis"
-            // },
-            {
-                "img": "img/footer/s6.jpg",
-                "href": "http://www.msdtta.org/",
-                "game": "table Tennis"
-             },
-            //{
-            //     "img": "img/footer/s7.jpg",
-            //     "href": "http://www.swimmingfederation.in/",
-            //     "game": "swimming"
-            // },
-             {
-                "img": "img/footer/s8.jpg",
-                "href": "",
-                "game": "volleyball"
-            }, {
-                "img": "img/footer/s9.jpg",
-                "href": "http://www.maharashtrabasketball.com/",
-                "game": "basket ball"
-            }];
+                    "img": "img/footer/s1.jpg",
+                    "href": "http://www.mbasso.in",
+                    "game": "badminton"
+                }, {
+                    "img": "img/footer/s2.jpg",
+                    "href": "",
+                    "game": "handball"
+                }, {
+                    "img": "img/footer/s3.jpg",
+                    "href": "",
+                    "game": "Judo"
+                }, {
+                    "img": "img/footer/s4.jpg",
+                    "href": "http://www.ispsquash.com/",
+                    "game": "squash"
+                },
+                //  {
+                //     "img": "img/footer/s5.jpg",
+                //     "href": "http://www.mbtaworld.com/",
+                //     "game": "Tennis"
+                // },
+                {
+                    "img": "img/footer/s6.jpg",
+                    "href": "http://www.msdtta.org/",
+                    "game": "table Tennis"
+                },
+                //{
+                //     "img": "img/footer/s7.jpg",
+                //     "href": "http://www.swimmingfederation.in/",
+                //     "game": "swimming"
+                // },
+                {
+                    "img": "img/footer/s8.jpg",
+                    "href": "",
+                    "game": "volleyball"
+                }, {
+                    "img": "img/footer/s9.jpg",
+                    "href": "http://www.maharashtrabasketball.com/",
+                    "game": "basket ball"
+                }
+            ];
 
     })
 

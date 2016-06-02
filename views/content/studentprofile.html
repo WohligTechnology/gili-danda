@@ -36,7 +36,7 @@
                   </div>
 
 
-                  <p class="fonts" ui-sref="schoolprofile({id:student.studentprofile.schoolid})">{{student.studentprofile.schoolname}}</p>
+                  <p class="fonts" ng-click="goToSchool(student.studentprofile);">{{student.studentprofile.schoolname}}</p>
                   <ul class="spoint">
                      <li class="borderrigh padlefo" ng-if="student.studentprofile.agegroupname">
                         <p>group</p>

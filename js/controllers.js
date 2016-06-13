@@ -2564,12 +2564,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
     })
-    .controller('RegistrationFormCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    .controller('RegistrationFormCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog) {
         //Used to name the .html file
         $scope.template = TemplateService.changecontent("registration");
         $scope.menutitle = NavigationService.makeactive("Registration-Form");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+
+            ngDialog.open({
+                disableAnimation: true,
+                template: './views/directive/registrationvideo.html',
+                scope: $scope
+
+            });
+
     })
     .controller('PreRegistrationCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog, $state) {
         //Used to name the .html file

@@ -2577,6 +2577,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 scope: $scope
 
             });
+         $scope.openVideo = function() {
+            ngDialog.open({
+                disableAnimation: true,
+                template: './views/directive/registrationvideo.html',
+                scope: $scope
+
+            });
+          };
+
 
     })
     .controller('PreRegistrationCtrl', function($scope, TemplateService, NavigationService, $timeout, ngDialog, $state) {

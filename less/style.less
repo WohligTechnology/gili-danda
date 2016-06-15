@@ -243,7 +243,7 @@ ul.menu-list {
     text-transform: uppercase;
     margin-top: -46px;
     margin-bottom: 25px;
-    text-align: center; 
+    text-align: center;
 }
 ul.menu-list > li > a > span.fz {
     margin-left: 6px;
@@ -257,71 +257,77 @@ ul.menu-list li {
     padding: 0 14px;
 }
 ul.menu-list li.orange {
-  // background-image: linear-gradient(#FC7700, #FC7700);
-  animation: colorchange 4s infinite;
-  -webkit-animation: colorchange 4s infinite;
-  padding:3px 0;
-  margin: 0 0 0 20px;
-  .color-white{
-    color: #fff !important;
-  }
+    // background-image: linear-gradient(#FC7700, #FC7700);
+    animation: colorchange 4s infinite;
+    -webkit-animation: colorchange 4s infinite;
+    padding: 3px 0;
+    margin: 0 0 0 20px;
+    .color-white {
+        color: #fff !important;
+    }
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes colorchange {
-    0%   {background: orange;}
-    100% {background: green;}
-        // transition: all 0.3s ease;
+    0% {
+        background: orange;
+    }
+    100% {
+        background: green;
+    }
+    // transition: all 0.3s ease;
 }
-
 /* Standard syntax */
 @keyframes colorchange {
-    0%   {background: orange;}
-    100% {background: green;}
-        // transition: all 0.3s ease;
+    0% {
+        background: orange;
+    }
+    100% {
+        background: green;
+    }
+    // transition: all 0.3s ease;
 }
 .orange:before {
-  left: -12px;
-  height: 100%;
-  width: 24px;
-  position: absolute;
-  content: "";
-  top: 0;
-  animation: colorchange 4s infinite;
-  -webkit-animation: colorchange 4s infinite;
-  // background-image: -webkit-linear-gradient( top , #FC7700 0%, #FC7700 100%);
-  // background-image: linear-gradient(to bottom, #FC7700 0%, #FC7700 100%);
-  -webkit-transform: skew(-42deg);
-  -moz-transform: skew(-42deg);
-  -ms-transform: skew(-42deg);
-  -o-transform: skew(-42deg);
-  transform: skew(-42deg);
-  z-index: -1;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+    left: -12px;
+    height: 100%;
+    width: 24px;
+    position: absolute;
+    content: "";
+    top: 0;
+    animation: colorchange 4s infinite;
+    -webkit-animation: colorchange 4s infinite;
+    // background-image: -webkit-linear-gradient( top , #FC7700 0%, #FC7700 100%);
+    // background-image: linear-gradient(to bottom, #FC7700 0%, #FC7700 100%);
+    -webkit-transform: skew(-42deg);
+    -moz-transform: skew(-42deg);
+    -ms-transform: skew(-42deg);
+    -o-transform: skew(-42deg);
+    transform: skew(-42deg);
+    z-index: -1;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 .orange:after {
-  right: -12px;
-  height: 100%;
-  width: 24px;
-  position: absolute;
-  content: "";
-  top: 0;
-  animation: colorchange 4s infinite;
-  -webkit-animation: colorchange 4s infinite;
-//   background-image: -webkit-linear-gradient( top , #FC7700 0%, #FC7700 100%);
-// background-image: linear-gradient(to bottom, #FC7700 0%, #FC7700 100%);
-  -webkit-transform: skew(-42deg);
-  -moz-transform: skew(-42deg);
-  -ms-transform: skew(-42deg);
-  -o-transform: skew(-42deg);
-  transform: skew(-42deg);
-  z-index: -1;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+    right: -12px;
+    height: 100%;
+    width: 24px;
+    position: absolute;
+    content: "";
+    top: 0;
+    animation: colorchange 4s infinite;
+    -webkit-animation: colorchange 4s infinite; //   background-image: -webkit-linear-gradient( top , #FC7700 0%, #FC7700 100%);
+    // background-image: linear-gradient(to bottom, #FC7700 0%, #FC7700 100%);
+    -webkit-transform: skew(-42deg);
+    -moz-transform: skew(-42deg);
+    -ms-transform: skew(-42deg);
+    -o-transform: skew(-42deg);
+    transform: skew(-42deg);
+    z-index: -1;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 ul.menu-list li.logoli {
     margin: 0 -20px 0 -15px;
@@ -336,14 +342,14 @@ ul.menu-list li:hover .dropdown-menu {
     min-width: 68px;
     padding: 0;
     margin: 1px 0 0;
-    top:96%;
+    top: 96%;
     left: -7%;
     text-align: center;
     li {
         padding: 0 !important;
         display: block;
         a {
-            padding: 4px 9px 2px 9px !important;
+            padding: 4px 9px 2px !important;
             &:hover {
                 color: #fff !important;
                 background-color: @menu-color !important;
@@ -2444,14 +2450,14 @@ div.center {
         padding-bottom: 8px;
         text-transform: capitalize;
         font-size: 15px;
-        a{
-          font-size: 16px;
-          color: #333;
-          text-transform:none;
-          &:hover{
-            text-decoration: underline !important;
+        a {
+            font-size: 16px;
             color: #333;
-          }
+            text-transform: none;
+            &:hover {
+                text-decoration: underline !important;
+                color: #333;
+            }
         }
     }
     .padtops {
@@ -4721,8 +4727,8 @@ body.ngdialog-open {
                     line-height: 14.863px;
                     text-align: center;
                     text-transform: uppercase;
-                    &:focus{
-                      outline: 0;
+                    &:focus {
+                        outline: 0;
                     }
                 }
             }
@@ -4784,8 +4790,8 @@ body.ngdialog-open {
                     line-height: 14.863px;
                     text-align: center;
                     text-transform: uppercase;
-                    &:focus{
-                      outline: 0;
+                    &:focus {
+                        outline: 0;
                     }
                 }
             }
@@ -4843,34 +4849,39 @@ body.ngdialog-open {
             font-weight: 700;
             text-align: center;
             text-transform: uppercase;
+            img {
+                max-width: 56px;
+                vertical-align: text-bottom;
+                margin: 0 20px;
+            }
         }
     }
     .register-body {
-          margin-top: 60px;
+        margin-top: 60px;
         .regbutton {
-              text-align: center;
-              margin-bottom: 40px;
+            text-align: center;
+            margin-bottom: 40px;
             button {
                 background-color: @filterBlue-color;
             }
             .btn2 {
-                color:#fff;
-                width:100%;
-                padding:10px;
+                color: #fff;
+                width: 100%;
+                padding: 10px;
                 font-size: 16px;
                 border-color: @filterBlue-color;
                 letter-spacing: 1px;
                 text-transform: uppercase;
-                &:focus{
-                  outline: 0;
+                &:focus {
+                    outline: 0;
                 }
             }
             .statement {
-              p{
-                color: #535353;
-                font-size: 18px;
-                margin-top: 5px;
-              }
+                p {
+                    color: #535353;
+                    font-size: 18px;
+                    margin-top: 5px;
+                }
             }
         }
         .para {
@@ -4895,40 +4906,40 @@ body.ngdialog-open {
             border-bottom: 1px solid;
             border-color: rgba(99, 99, 99, 0.7);
             .register-content {
-              position:relative;
-              .come{
-                font-size: 2vw;
-                color: #F49448;
-                position: absolute;
-                top: 172%;
-                left: 12%;
-                -webkit-transform: translate(-50%, -50%);
-                -moz-transform: translate(-50%, -50%);
-                -o-transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-              }
-              h1 {
-                font-size: 2vw;
-                color: #F49448;
-                position: absolute;
-                top: 400%;
-                left: 10%;
-                -webkit-transform: translate(-50%, -50%);
-                -moz-transform: translate(-50%, -50%);
-                -o-transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-              }
-              h4 {
-                font-family: @font-titillium;
-                color: @filterBlue-color;
-                font-size: 18px;
-                font-weight: 600;
-                line-height: 14.863px;
-                text-align: left;
-                letter-spacing: 0px
-              }
+                position: relative;
+                .come {
+                    font-size: 2vw;
+                    color: #F49448;
+                    position: absolute;
+                    top: 172%;
+                    left: 12%;
+                    -webkit-transform: translate(-50%, -50%);
+                    -moz-transform: translate(-50%, -50%);
+                    -o-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                }
+                h1 {
+                    font-size: 2vw;
+                    color: #F49448;
+                    position: absolute;
+                    top: 400%;
+                    left: 10%;
+                    -webkit-transform: translate(-50%, -50%);
+                    -moz-transform: translate(-50%, -50%);
+                    -o-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                }
+                h4 {
+                    font-family: @font-titillium;
+                    color: @filterBlue-color;
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 14.863px;
+                    text-align: left;
+                    letter-spacing: 0;
+                }
                 h3 {
                     font-family: @font-titillium;
                     color: @filterBlue-color;
@@ -4966,8 +4977,8 @@ body.ngdialog-open {
                     text-align: center;
                     text-transform: uppercase;
                     margin: 0 5px 0 0;
-                    &:focus{
-                      outline: 0;
+                    &:focus {
+                        outline: 0;
                     }
                 }
             }
@@ -4978,13 +4989,13 @@ body.ngdialog-open {
         }
     }
 }
-.impdata{
-  h4{
-    font-family: 'Titillium Web', sans-serif;
-    color: #535353;
-    margin-top: 24px;
-    font-weight: 600;
-    line-height: 14.863px;
-    letter-spacing: 0px;
-  }
+.impdata {
+    h4 {
+        font-family: 'Titillium Web', sans-serif;
+        color: #535353;
+        margin-top: 24px;
+        font-weight: 600;
+        line-height: 14.863px;
+        letter-spacing: 0;
+    }
 }

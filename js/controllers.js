@@ -17,6 +17,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     if ($state.current.name === "showvideo") {
       ngDialog.open({
           disableAnimation: true,
+          template: './views/directive/homevideo.html',
           scope: $scope
 
       });

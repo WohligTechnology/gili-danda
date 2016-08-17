@@ -22,6 +22,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $locationProvider, 
             templateUrl: "./views/template.html",
             controller: 'HomeCtrl'
         })
+        .state('showvideo', {
+            url: "/showvideo",
+            templateUrl: "./views/template.html",
+            controller: 'HomeCtrl'
+        })
         .state('schoolregistration', {
             url: "/schoolregistration",
             templateUrl: "./views/template.html",

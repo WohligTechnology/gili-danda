@@ -2,7 +2,7 @@ var test1 = {};
 var school = {};
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngDialog', 'ngSanitize', 'angular-flexslider', 'angular-loading-bar'])
 
-.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout, $state, ngDialog) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("home");
     $scope.menutitle = NavigationService.makeactive("Home");
@@ -12,6 +12,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.keywords = "Inter school sports, Sports tournaments, Inter school sports in Mumbai, Sports for kids";
     TemplateService.description = "Sports For All (SFA) is an inter-school sporting platform for school children to play, compete and grow in various sports.";
     $scope.navigation = NavigationService.getnav();
+
+    console.log($state.current.name);
+    if ($state.current.name === "showvideo") {
+      ngDialog.open({
+          disableAnimation: true,
+          scope: $scope
+
+      });
+    }
+
     var getbannersliderscallback = function(data, status) {
         $scope.homeslide = data;
         //		        $scope.slides = _.pluck($scope.homeslide, "image");
@@ -2570,13 +2580,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Registration-Form");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        ngDialog.open({
+          disableAnimation: true,
+          template: './views/directive/registrationvideo.html',
+          scope: $scope
 
-            ngDialog.open({
-                disableAnimation: true,
-                template: './views/directive/registrationvideo.html',
-                scope: $scope
+        });
 
-            });
          $scope.openVideo = function() {
             ngDialog.open({
                 disableAnimation: true,

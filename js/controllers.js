@@ -2581,12 +2581,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Registration-Form");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        ngDialog.open({
-          disableAnimation: true,
-          template: './views/directive/registrationvideo.html',
-          scope: $scope
-
-        });
+        // ngDialog.open({
+        //   disableAnimation: true,
+        //   template: './views/directive/registrationvideo.html',
+        //   scope: $scope
+        //
+        // });
 
          $scope.openVideo = function() {
             ngDialog.open({
